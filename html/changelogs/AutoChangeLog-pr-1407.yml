@@ -1,4 +1,0 @@
-author: "Vladmar11"
-delete-after: True
-changes:
-  - refactor: "Оптимизация do_after, do_mob и прогрессбара"

@@ -4884,6 +4884,11 @@ GLOBAL_LIST_EMPTY(loadout_items_by_category)
 	category = "Одежда"
 	path = /obj/item/clothing/suit/roguetown/shirt/fancyjacket/triumph_padded
 
+/datum/loadout_item/shalwarpants
+	name = "Shalwar Pants"
+	category = "Одежда"
+	path = /obj/item/clothing/under/roguetown/tights/shalwar
+
 /datum/loadout_item/greendress
 	name = "Light Green Dress"
 	category = "Одежда"
@@ -4944,14 +4949,14 @@ GLOBAL_LIST_EMPTY(loadout_items_by_category)
 	triumph_cost = 12
 
 /datum/loadout_item/donator_crowcane_blade
-	name = "Donator Kit - Crow Cane Blade - Required: Rapier or Sabre"
+	name = "Donator Kit - Crow Cane Blade - Required: Decorated Rapier or Decorated Sabre"
 	category = list("Оружие", "Донат")
 	path = /obj/item/enchantingkit/crowcane_blade
 	donatitem = TRUE
 	donat_tier = 2
 
 /datum/loadout_item/donator_crowcane_scabbard
-	name = "Donator Kit - Crow Cane Scabbard - Required: Simple Scabbard"
+	name = "Donator Kit - Crow Cane Scabbard - Required: Decorated Scabbard, Golden"
 	category = list("Оружие", "Донат")
 	path = /obj/item/enchantingkit/crowcane_scabbard
 	donatitem = TRUE
@@ -4962,14 +4967,12 @@ GLOBAL_LIST_EMPTY(loadout_items_by_category)
 	category = list("Оружие", "Донат")
 	path = /obj/item/enchantingkit/jezail
 	donatitem = TRUE
-	donat_tier = 2
 
 /datum/loadout_item/donator_teppo
 	name = "Donator Kit - Teppo - Required: Arquebus, Hakenbüchse, or Barker"
 	category = list("Оружие", "Донат")
 	path = /obj/item/enchantingkit/teppo
 	donatitem = TRUE
-	donat_tier = 2
 
 /datum/loadout_item/triumph_thinwinterdress
 	name = "Thin Winter Dress"
@@ -5024,13 +5027,6 @@ GLOBAL_LIST_EMPTY(loadout_items_by_category)
 	path = /obj/item/enchantingkit/donator_koruu_ravoxclerichelm
 	donatitem = TRUE
 	donat_tier = 3
-
-/datum/loadout_item/donator/universal/headpiece_oathkeeperdeclone
-	name = "Donator Item - Oathtaker's Decoration, Standalone"
-	category = list("Головные уборы", "Донат")
-	path = /obj/item/clothing/head/roguetown/decoration/orle/donator_oathkeeper/crest
-	donatitem = TRUE
-	donat_tier = 2
 
 /datum/loadout_item/donator/universal/greatcoat
 	name = "Donator Item - Greatcoat"
@@ -5165,3 +5161,22 @@ GLOBAL_LIST_EMPTY(loadout_items_by_category)
 	path = /obj/item/enchantingkit/donator_koruu_astrataclerichelm
 	donatitem = TRUE
 	donat_tier = 3
+
+/datum/loadout_item/donator/lief_friend
+	name = "Donator Item - Aurum's Amulets"
+	category = list("Аксессуары", "Донат")
+	path = /obj/item/clothing/neck/roguetown/psicross/liefdonator
+	donatitem = TRUE
+
+/datum/loadout_item/donator/rezathedwarf
+	name = "Donator Item - Glimmering Cloak (Only Male, No Small Races)"
+	category = list("Плащи", "Донат")
+	path = /obj/item/clothing/cloak/half/donator_rezathedwarf
+	donatitem = TRUE
+
+/datum/loadout_item/donator/rezathedwarf/blade
+	name = "Donator Kit - The Enclave Blade - Required: Sabre"
+	path = /obj/item/enchantingkit/weapon/donator_rezathedwarf_blade
+	category = list("Оружие", "Донат")
+	donatitem = TRUE
+	donat_tier = 2
