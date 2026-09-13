@@ -1868,6 +1868,12 @@
 	result_item = null
 	icon_loadout = /obj/item/clothing/head/roguetown/helmet/heavy/astratahelm/cleric/koruu
 	exact_type = TRUE
+
+/obj/item/enchantingkit/weapon/donator_rezathedwarf_blade
+	name = "'The Enclave Blade' morphing elixir"
+	desc = "A small container of special morphing dust, perfect to make a specific item. It can be used to alter the appearance of a Steel Sabre."
+	target_items = list(/obj/item/rogueweapon/sword/sabre)
+	result_item = /obj/item/rogueweapon/sword/sabre/donator_rezathedwarf
 /////////////////////////////
 // ! Triumph-Exc. Kits !   //
 /////////////////////////////
