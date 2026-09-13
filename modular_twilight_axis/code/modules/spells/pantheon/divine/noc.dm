@@ -263,7 +263,7 @@
 	self_cast_possible = FALSE
 	primary_resource_cost = SPELLCOST_MIRACLE
 	secondary_resource_cost = SPELLCOST_MIRACLE
-	invocation_type = INVOCATION_SHOUT
+	invocation_type = INVOCATION_WHISPER
 	invocations = list("Темнейшая ночь, ослепи!")
 	charge_required = TRUE
 	charge_time = 1 SECONDS
@@ -394,7 +394,7 @@
 	name = "Arcyne Affinity"
 	desc = "Allows you to learn a spellpack. \n \
 	<b>MAGISTER</b>: Arc Bolt, Spit Fire, Arcyne Lance \n \
-	<b>CONTROLLER</b>: Frost Bolt, Geas, Gravity, Wither \n \
+	<b>CONTROLLER</b>: Geas, Gravity, Wither \n \
 	<b>SEER</b>: Attune Hawk, Attune Haste, Fortitude, Arcyne Forge, Mending, Mindlink"
 	button_icon_state = "spellpack"
 	click_to_activate = FALSE
