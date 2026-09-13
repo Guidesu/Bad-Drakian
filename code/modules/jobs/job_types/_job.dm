@@ -130,8 +130,8 @@
 	/// This job is immune to species-based swapped gender locks
 	var/immune_to_genderswap = FALSE
 
-	/// Jobs that are obsfuscated on actor screen
-	var/obsfuscated_job = FALSE
+	/// Jobs that are obfuscated on actor screen
+	var/obfuscated_job = FALSE
 
 	///Jobs that are hidden from actor screen
 	var/hidden_job = FALSE
@@ -351,6 +351,13 @@
 	if(!ishuman(H))
 		return
 
+	var/mob_name = H.real_name
+	if(!mob_name || mob_name == "DELETED")
+		if(H.mind?.name && H.mind.name != "DELETED")
+			mob_name = H.mind.name
+		else if(M && M.client && M.client.prefs && M.client.prefs.real_name)
+			mob_name = M.client.prefs.real_name
+
 	if(spells && H.mind)
 		for(var/S in spells)
 			H.mind.AddSpell(new S)
@@ -393,7 +400,7 @@
 		var/used_title = display_title || title
 		if((H.titles_pref == TITLES_F) && f_title)
 			used_title = f_title
-		scom_announce("[H.real_name] the [used_title] arrives to [SSticker.realm_name].")
+		scom_announce("[mob_name] the [used_title] arrives to [SSticker.realm_name].")
 	if(give_bank_account)
 		if(give_bank_account > TRUE)
 			SStreasury.create_bank_account(H, give_bank_account)
@@ -409,24 +416,18 @@
 
 	if(cmode_music)
 		H.cmode_music = cmode_music
-	var/department = SSjob.bitflag_to_department(department_flag, obsfuscated_job)
 	if (!hidden_job)
-		var/mob/living/carbon/human/Hu = H
-		if (istype(H, /mob/living/carbon/human))
-			if (obsfuscated_job) // WANDERER
-				GLOB.actors_list[department] += list("[H.mobid]" = "[H.real_name] as the [Hu.dna.species.name] Adventurer<BR>")
-			else
-				GLOB.actors_list[department] += list("[H.mobid]" = "[H.real_name] as the [Hu.dna.species.name] [H.mind.assigned_role]<BR>")
+		var/mob_rank
+		if (obfuscated_job)
+			mob_rank = "Adventurer"
 		else
-			if (obsfuscated_job)
-				GLOB.actors_list[department] += list("[H.mobid]" = "[H.real_name] as Adventurer<BR>")
-			else
-				GLOB.actors_list[department] += list("[H.mobid]" = "[H.real_name] as [H.mind.assigned_role]<BR>")
+			mob_rank = H.mind.assigned_role
+		GLOB.actors_list[H.mobid] = list("name" = mob_name, "rank" = mob_rank)
 
 	if(islist(advclass_cat_rolls))
 		hugboxify_for_class_selection(H)
 
-	log_admin("[H.key]/([H.real_name]) has joined as [H.mind.assigned_role].")
+	log_admin("[H.key]/([mob_name]) has joined as [H.mind.assigned_role].")
 
 /// Sets the ready-up repair kit stash entry based on the mob's current armor traits.
 /// Safe to call multiple times — later calls overwrite earlier ones, so loadout-based armor picks can re-run this to upgrade the kit after choose_loadout finishes.

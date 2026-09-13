@@ -129,6 +129,16 @@
 		images += cone_image
 	return cone_image
 
+/// The override image update_cone() shows our own client in place of us so it ignores our transform
+/// anything animating our transform has to animate this too for the client to see it.
+/mob/living/proc/get_cone_self_image()
+	if(!client)
+		return null
+	for(var/image/cone_image as anything in client.hidden_images)
+		if(cone_image.loc == src)
+			return cone_image
+	return null
+
 /mob/living/update_cone()
 	if(!client)
 		return
@@ -306,7 +316,7 @@
 		var/cyclops_left = HAS_TRAIT(src, TRAIT_CYCLOPS_LEFT)
 		var/cyclops_right = HAS_TRAIT(src, TRAIT_CYCLOPS_RIGHT)
 
-		if(H.has_status_effect(STATUS_EFFECT_BLINDED))
+		if(H.has_status_effect(STATUS_EFFECT_BLINDED) || H.has_status_effect(STATUS_EFFECT_PSYPOWDER)) //TA EDIT
 			fovangle |= FOV_LEFT
 			fovangle |= FOV_RIGHT
 
