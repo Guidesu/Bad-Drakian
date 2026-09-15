@@ -1702,7 +1702,6 @@
 	if(!get_detail_tag())
 		return
 	var/mutable_appearance/pic = mutable_appearance(icon(icon, "[icon_state][detail_tag]"))
-	message_admins("[pic.icon_state]")
 	pic.appearance_flags = RESET_COLOR
 	if(get_detail_color())
 		pic.color = get_detail_color()
@@ -4289,4 +4288,10 @@ As Excaliber."
 	founder of the house in his days as a slave. On its handle reads, originally read, \"The Chosen Have Nothing to Fear,\" but a new \
 	line was added across the other side of the handle. \"Except the Conqueror.\""
 	icon_state = "rezasword"
+	icon = 'icons/obj/items/donor_weapons.dmi'
+
+/obj/item/rogueweapon/sword/sabre/donator_limetease
+	name = "Malevolent Sabre"
+	desc = "A sinister-looking sabre with a deep malevolent aura. Its blade seems to pulse with an otherworldly energy only a god could imbue."
+	icon_state = "limesaber"
 	icon = 'icons/obj/items/donor_weapons.dmi'
