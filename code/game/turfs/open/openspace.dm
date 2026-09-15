@@ -16,6 +16,9 @@ GLOBAL_DATUM_INIT(openspace_backdrop_one_for_all, /mutable_appearance, mutable_a
 	smooth = SMOOTH_MORE
 	neighborlay_override = "staticedge"
 
+/turf/open/transparent/openspace // TA EDIT
+	parent_type = /turf/open/openspace // TA EDIT
+
 /turf/open/openspace/cardinal_smooth(adjacencies)
 	roguesmooth(adjacencies)
 

@@ -84,7 +84,7 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 	if(istype(src, /turf/open/openspace))
 		isopenspa = TRUE
 	else
-		if(path == /turf/open/openspace)
+		if(path == /turf/open/openspace || path == /turf/open/transparent/openspace) // TA EDIT
 			isopenspa = TRUE
 
 	var/old_opacity = opacity
@@ -202,7 +202,7 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 		if(new_baseturfs.len == 1)
 			new_baseturfs = new_baseturfs[1]
 
-		if(turf_type == /turf/open/openspace)
+		if(turf_type == /turf/open/openspace || turf_type == /turf/open/transparent/openspace) // TA EDIT
 			var/turf/below = get_step_multiz(src, DOWN)
 			if(!below) //We are at the LOWEST z-level.
 				turf_type = /turf/open/floor/rogue/naturalstone
@@ -229,7 +229,7 @@ GLOBAL_LIST_INIT(blacklisted_automated_baseturfs, typecacheof(list(
 
 	var/used_type = baseturfs
 
-	if(baseturfs == /turf/open/openspace)
+	if(baseturfs == /turf/open/openspace || baseturfs == /turf/open/transparent/openspace) // TA EDIT
 		var/turf/below = get_step_multiz(src, DOWN)
 		if(!below) //We are at the LOWEST z-level.
 			used_type = /turf/open/floor/rogue/naturalstone

@@ -78,7 +78,7 @@
 /turf/open/floor/rogue/cobble,
 /area/rogue/outdoors/woods/wretch_lair)
 "am" = (
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/eventarea/multiz)
 "an" = (
 /obj/structure/fluff/psycross/graggar/decorated,
@@ -89,7 +89,7 @@
 /turf/open/floor/rogue/snowpatchy,
 /area/rogue/outdoors/banditcamp)
 "ap" = (
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/outdoors/woods/wretch_lair)
 "aq" = (
 /obj/structure/chair/stool/rogue,
@@ -169,7 +169,7 @@
 /turf/open/floor/rogue/ruinedwood/spiral,
 /area/rogue/under/cave/inhumen)
 "aD" = (
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/cave)
 "aF" = (
 /turf/open/floor/rogue/cobble,
@@ -620,7 +620,7 @@
 "cv" = (
 /obj/structure/fluff/railing/border/north,
 /obj/structure/fluff/railing/border,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/under/cave/inhumen)
 "cw" = (
 /obj/structure/table/vtable/v2,
@@ -667,7 +667,7 @@
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/outdoors/woods/wretch_lair)
 "cH" = (
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/banditcamp)
 "cI" = (
 /obj/structure/fluff/walldeco/church/line,
@@ -1071,7 +1071,7 @@
 /area/rogue/under/cave/inhumen)
 "eB" = (
 /obj/structure/fluff/railing/corner/south_west,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/outdoors/woods/wretch_lair)
 "eC" = (
 /obj/structure/fluff/railing/corner/south_west,
@@ -1193,7 +1193,7 @@
 "fc" = (
 /obj/structure/fluff/railing/border/north,
 /obj/structure/fluff/railing/border/east,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/vampire_manor)
 "fd" = (
 /obj/structure/flora/roguegrass/bush/westleach,
@@ -1696,7 +1696,7 @@
 /area/rogue/indoors/vampire_manor)
 "hb" = (
 /obj/structure/fluff/railing/corner/north_east,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/banditcamp)
 "hc" = (
 /obj/effect/decal/cleanable/dirt/cobweb{
@@ -1756,7 +1756,7 @@
 /area/rogue/outdoors/banditcamp)
 "hu" = (
 /obj/structure/fluff/railing/border/east,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/cave)
 "hv" = (
 /obj/structure/table/wood/fancy/purple,
@@ -1962,7 +1962,7 @@
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/outdoors/woods)
 "iv" = (
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/under/cave/inhumen)
 "iw" = (
 /obj/structure/closet/crate/chest/old_crate,
@@ -2002,7 +2002,7 @@
 /turf/open/floor/rogue/tile/bfloorz,
 /area/rogue/indoors/vampire_manor)
 "iH" = (
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/vampire_manor)
 "iK" = (
 /obj/structure/flora/roguetree/stump,
@@ -2468,7 +2468,7 @@
 "kv" = (
 /obj/structure/fluff/railing/border,
 /obj/structure/fluff/railing/border/west,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/outdoors/woods/wretch_lair)
 "kw" = (
 /obj/structure/fluff/walldeco/chains,
@@ -2583,7 +2583,7 @@
 /area/rogue/indoors/vampire_manor)
 "kL" = (
 /obj/structure/fluff/railing/border,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/under/cave/inhumen)
 "kM" = (
 /obj/structure/fermentation_keg/water,
@@ -2820,7 +2820,7 @@
 /area/rogue/outdoors/woods/wretch_lair)
 "lF" = (
 /obj/structure/fluff/railing/corner/south_east,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/outdoors/woods/wretch_lair)
 "lG" = (
 /obj/structure/stairs{
@@ -3030,7 +3030,7 @@
 "mB" = (
 /obj/structure/fluff/railing/border,
 /obj/structure/fluff/railing/border/north,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/under/cave/inhumen)
 "mC" = (
 /obj/structure/fermentation_keg/water,
@@ -3068,7 +3068,7 @@
 "mJ" = (
 /obj/structure/fluff/railing/border/west,
 /obj/structure/fluff/railing/border/east,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/vampire_manor)
 "mK" = (
 /obj/structure/chair/bench/couchablack,
@@ -3108,7 +3108,7 @@
 /area/rogue/indoors/banditcamp)
 "mW" = (
 /obj/structure/fluff/railing/corner/south_west,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/outdoors/mountains)
 "mX" = (
 /obj/machinery/light/rogue/candle/floorcandle/alt{
@@ -3207,7 +3207,7 @@
 /area/rogue/indoors/vampire_manor)
 "nB" = (
 /obj/structure/fluff/railing/border/west,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/cave)
 "nD" = (
 /obj/effect/decal/remains/human,
@@ -4086,7 +4086,7 @@
 /area/rogue/outdoors/woods/wretch_lair)
 "rf" = (
 /obj/structure/fluff/railing/border/west,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/vampire_manor)
 "rg" = (
 /obj/item/reagent_containers/glass/bucket,
@@ -4551,7 +4551,7 @@
 /area/rogue/indoors/banditcamp)
 "sH" = (
 /obj/structure/fluff/railing/border,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/outdoors/woods/wretch_lair)
 "sI" = (
 /obj/structure/table/wood/poor,
@@ -4599,12 +4599,12 @@
 /area/rogue/outdoors/banditcamp)
 "sW" = (
 /obj/structure/fluff/railing/border/north,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/banditcamp)
 "sY" = (
 /obj/structure/fluff/railing/border,
 /obj/structure/fluff/railing/corner,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/under/cave/inhumen)
 "ta" = (
 /obj/structure/closet/crate/chest/old_crate,
@@ -4880,7 +4880,7 @@
 /area/rogue/under/cave/inhumen)
 "ua" = (
 /obj/structure/fluff/railing/border/north,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/cave)
 "ud" = (
 /obj/structure/chair/stool/rogue,
@@ -5059,7 +5059,7 @@
 /area/rogue/outdoors/woods/wretch_lair)
 "uR" = (
 /obj/structure/fluff/railing/border/north,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/vampire_manor)
 "uS" = (
 /turf/open/floor/rogue/twig,
@@ -5871,7 +5871,7 @@
 /area/rogue/outdoors/banditcamp)
 "yJ" = (
 /obj/structure/fluff/railing/border,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/outdoors/mountains)
 "yK" = (
 /obj/effect/decal/cleanable/blood{
@@ -5938,7 +5938,7 @@
 /area/rogue/indoors/vampire_manor)
 "yW" = (
 /obj/structure/fluff/railing/border/north,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/outdoors/woods/wretch_lair)
 "yY" = (
 /obj/structure/closet/crate/chest,
@@ -5966,7 +5966,7 @@
 "za" = (
 /obj/structure/fluff/railing/border/north,
 /obj/structure/fluff/railing/border,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/banditcamp)
 "zc" = (
 /obj/effect/decal/cleanable/blood,
@@ -6565,7 +6565,7 @@
 "Bl" = (
 /obj/structure/fluff/railing/border/east,
 /obj/structure/fluff/railing/border/west,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/vampire_manor)
 "Bm" = (
 /turf/open/water/bath{
@@ -6891,7 +6891,7 @@
 /area/rogue/indoors/vampire_manor)
 "CD" = (
 /obj/structure/fluff/railing/corner,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/outdoors/mountains)
 "CE" = (
 /obj/effect/landmark/vteleport,
@@ -6900,7 +6900,7 @@
 /area/rogue/indoors/vampire_manor)
 "CG" = (
 /obj/structure/fluff/railing/border,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/cave)
 "CH" = (
 /obj/structure/handcart{
@@ -7277,7 +7277,7 @@
 /area/rogue/outdoors/woods)
 "En" = (
 /obj/structure/fluff/railing/corner,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/banditcamp)
 "Ep" = (
 /obj/structure/table/wood/fancy/black,
@@ -7356,7 +7356,7 @@
 /area/rogue/outdoors/woods/wretch_lair)
 "EH" = (
 /obj/structure/fluff/railing/corner,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/cave)
 "EI" = (
 /obj/effect/decal/cobbleedge{
@@ -7410,7 +7410,7 @@
 /obj/structure/stairs{
 	dir = 1
 	},
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/vampire_manor)
 "EV" = (
 /obj/structure/fluff/railing/border/west,
@@ -7637,7 +7637,7 @@
 /obj/structure/fluff/railing/border,
 /obj/structure/fluff/railing/border/north,
 /obj/structure/fluff/railing/border/east,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/outdoors/woods/wretch_lair)
 "Gd" = (
 /obj/machinery/light/rogue/firebowl/church,
@@ -8329,7 +8329,7 @@
 /obj/structure/fluff/railing/border/north,
 /obj/structure/fluff/railing/border,
 /obj/structure/fluff/railing/border/west,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/banditcamp)
 "Jq" = (
 /obj/structure/fluff/walldeco/church/line{
@@ -8400,7 +8400,7 @@
 /area/rogue/outdoors/woods/vampire_lair)
 "JD" = (
 /obj/structure/fluff/railing/border/west,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/outdoors/woods/wretch_lair)
 "JE" = (
 /obj/structure/table/wood/poor,
@@ -8617,7 +8617,7 @@
 /area/rogue/under/cave/inhumen)
 "Kh" = (
 /obj/structure/fluff/railing/border,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/vampire_manor)
 "Ki" = (
 /obj/structure/stairs{
@@ -8689,7 +8689,7 @@
 /area/rogue/outdoors/woods/vampire_lair)
 "KE" = (
 /obj/structure/fluff/railing/corner/north_east,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/vampire_manor)
 "KG" = (
 /obj/structure/stairs{
@@ -9044,7 +9044,7 @@
 /area/rogue/indoors/vampire_manor)
 "LM" = (
 /obj/structure/fluff/railing/corner/south_west,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/vampire_manor)
 "LN" = (
 /obj/structure/flora/hotspring_rocks/small{
@@ -9613,7 +9613,7 @@
 /obj/structure/fluff/railing/border,
 /obj/structure/fluff/railing/border/north,
 /obj/structure/fluff/railing/border/east,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/under/cave/inhumen)
 "On" = (
 /obj/structure/ritualcircle/zizo,
@@ -9621,7 +9621,7 @@
 /area/rogue/indoors/vampire_manor)
 "Oo" = (
 /obj/structure/fluff/railing/border/east,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/vampire_manor)
 "Oq" = (
 /obj/effect/decal/cobble/mossy{
@@ -10065,7 +10065,7 @@
 /area/rogue/outdoors/woods/vampire_lair)
 "Qt" = (
 /obj/structure/fluff/railing/corner/south_east,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/vampire_manor)
 "Qu" = (
 /obj/structure/table/wood/fancy/royalblack,
@@ -10128,7 +10128,7 @@
 /turf/open/floor/rogue/tile/brick,
 /area/rogue/indoors/vampire_manor)
 "QM" = (
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/outdoors/mountains)
 "QN" = (
 /obj/structure/fluff/railing/corner/north_east,
@@ -10767,7 +10767,7 @@
 "TP" = (
 /obj/structure/fluff/railing/border/west,
 /obj/effect/decal/cleanable/dirt/cobweb,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/vampire_manor)
 "TQ" = (
 /obj/structure/flora/newtree,
@@ -10775,7 +10775,7 @@
 /area/rogue/outdoors/woods/vampire_lair)
 "TR" = (
 /obj/structure/fluff/railing/corner,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/vampire_manor)
 "TS" = (
 /obj/effect/decal/carpet/kover_purple,
@@ -11113,7 +11113,7 @@
 /area/rogue/indoors/vampire_manor)
 "Vp" = (
 /obj/structure/fluff/railing/corner/north_east,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/outdoors/woods/wretch_lair)
 "Vq" = (
 /obj/effect/decal/cleanable/blood/old{
@@ -11221,7 +11221,7 @@
 /obj/structure/fluff/railing/border/north,
 /obj/structure/fluff/railing/border/west,
 /obj/machinery/light/rogue/candle/l,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/under/cave/inhumen)
 "VQ" = (
 /obj/structure/stairs{
@@ -11532,7 +11532,7 @@
 /area/rogue/indoors/vampire_manor)
 "Xe" = (
 /obj/machinery/light/rogue/chand,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/vampire_manor)
 "Xf" = (
 /obj/structure/table/finestone,
@@ -11952,7 +11952,7 @@
 "YG" = (
 /obj/structure/fluff/railing/border/north,
 /obj/structure/fluff/railing/border/west,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/indoors/vampire_manor)
 "YH" = (
 /obj/structure/fluff/railing/border/west{
@@ -12130,7 +12130,7 @@
 /area/rogue/indoors/cave)
 "Zr" = (
 /obj/structure/fluff/railing/border/north,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/under/cave/inhumen)
 "Zt" = (
 /obj/structure/healingfountain,
@@ -12224,7 +12224,7 @@
 /obj/structure/fluff/railing/border,
 /obj/structure/fluff/railing/border/north,
 /obj/structure/fluff/railing/border/west,
-/turf/open/openspace,
+/turf/open/transparent/openspace,
 /area/rogue/under/cave/inhumen)
 "ZR" = (
 /obj/structure/stairs{
