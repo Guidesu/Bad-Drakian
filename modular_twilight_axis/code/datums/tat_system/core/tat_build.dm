@@ -200,6 +200,7 @@
 		_cached_owner_patron_type = new_patron_type
 		skills?.sanitize(FALSE)
 		traits?.sanitize()
+		items?.sanitize()
 		invalidate_ui_data_cache()
 
 	if(loadout_changed)
