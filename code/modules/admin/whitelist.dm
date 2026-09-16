@@ -29,6 +29,11 @@
 	value_mode = VALUE_MODE_FLAG
 	protection = CONFIG_ENTRY_LOCKED
 
+/datum/config_entry/keyed_list/whitelist_remove_blacklist
+	key_mode = KEY_MODE_TEXT
+	value_mode = VALUE_MODE_FLAG
+	protection = CONFIG_ENTRY_LOCKED
+
 #define WHITELIST_REMOVE_LIMIT 4
 #define WHITELIST_REMOVE_WINDOW (24 HOURS)
 #define WHITELIST_REMOVE_LIMIT_FILE "data/whitelist_remove_limits.sav"
@@ -97,6 +102,15 @@ GLOBAL_VAR_INIT(whitelist_remove_limits_loaded, FALSE)
 		return TRUE
 	for(var/exempt_id in exempt_ids)
 		if(sender.mention == "<@[exempt_id]>" || sender.mention == "<@![exempt_id]>")
+			return TRUE
+	return FALSE
+
+/proc/whitelist_remove_blacklisted(datum/tgs_chat_user/sender)
+	var/list/blacklisted_ids = CONFIG_GET(keyed_list/whitelist_remove_blacklist)
+	if("[sender.id]" in blacklisted_ids)
+		return TRUE
+	for(var/blacklisted_id in blacklisted_ids)
+		if(sender.mention == "<@[blacklisted_id]>" || sender.mention == "<@![blacklisted_id]>")
 			return TRUE
 	return FALSE
 
@@ -254,6 +268,10 @@ GLOBAL_VAR_INIT(whitelist_remove_limits_loaded, FALSE)
 		if("remove")
 			if(length(all_params) < 2)
 				. += "Invalid argument"
+				return
+
+			if(whitelist_remove_blacklisted(sender))
+				. += "You are not allowed to remove users from the whitelist."
 				return
 
 			var/remove_limit_exempt = whitelist_remove_limit_exempt(sender)
