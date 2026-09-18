@@ -163,10 +163,7 @@
 #define PETITION_COST_MASTERWORK 400
 
 /proc/ta_economy_realm_name()
-	var/realm = SSmapping?.map_adjustment?.realm_name
-	if(!realm)
-		return "Azuria"
-	return realm
+	return get_realm_name()
 
 /proc/ta_economy_map_name()
 	return SSmapping?.config?.map_name || ""
@@ -346,4 +343,3 @@
 		"pledge_lower" = ta_economy_pledge_lower(),
 		"pledge_grace_capital" = ta_economy_pledge_grace_capital(),
 	)
-

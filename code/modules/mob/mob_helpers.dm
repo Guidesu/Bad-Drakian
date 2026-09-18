@@ -214,9 +214,9 @@
 					newletter += newletter
 
 			if(newletter == " " && prob(7))
-				newletter = "... uh..."
+				newletter="u"
 			else if(newletter == "." && prob(5))
-				newletter = "*IR*."
+				newletter="ch"
 		else
 			if(rand(1, 3) == 3)
 				if(lowerletter == "o")

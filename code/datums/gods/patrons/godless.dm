@@ -4,20 +4,20 @@
 		"Godlessness", "Godlessness", "Godlessness", "Godlessness", "Godlessness", "Atheism"
 	)
 	domain = "Humanity"
-	desc = "Gods exist, but you either don’t know them or don’t worship them. You follow your instincts or your mind."
-	worshippers = "Animals incapable of thinking and true cynics."
+	desc = "The Gods exists, but either you do not know them or do not worship them. You guide yourself by your instincts or your reasons."
+	worshippers = "Beasts, Apostates, and the truly Cynical"
 	associated_faith = /datum/faith/godless
 	preference_accessible = FALSE
 	undead_hater = FALSE
 	confess_lines = list(
-		"GODS ARE NOTHING!",
+		"Gods are WORTHLESS!",
 		"I DON'T NEED GODS!",
-		"NO GODS - NO MASTERS!",
+		"NO GODS, NO MASTERS!",
 	)
 
 /datum/patron/godless/can_pray(mob/living/follower)
 	. = ..()
-	to_chat(follower, span_danger("You don't worship gods. Who do you pray to?"))
+	to_chat(follower, span_danger("You worship no gods, who are you praying to?"))
 	return FALSE
 
 /datum/patron/godless/on_lesser_heal(
@@ -28,5 +28,5 @@
 	conditional_buff,
 	situational_bonus
 )
-	*message_out = span_info("Without any reason, [target] is healed!")
-	*message_self = span_notice("My wounds are closing for no reason.")
+	*message_out = span_info("Without any particular cause or reason, [target] is healed!")
+	*message_self = span_notice("My wounds close without cause.")

@@ -36,7 +36,7 @@
 	. = ..()
 	. += span_info("The kingdom is often beset with antagonists, both lesser and greater. Their presence is greatly influenced by the round's chosen storyteller, the whims of many higher powers, and pure circumstance-and-chance.")
 	. += span_info("Clicking the 'Villain Selection' tab in the character creation menu allows you to opt into being a villain at the round's start, yourself. Such include bandits, vampyres, liches, verebeasts, usurpers, and more.")
-	. += span_info("Ghosts, voyeurs, and those still in the lobby can intermittently receive prompts to spawn in as a lesser villan or an arcyne-summoned familiar. These roles are usually less independant, and are oft-beheld to another's command.")
+	. += span_info("Ghosts, voyeurs, and those still in the lobby can intermittently receive prompts to spawn as a lesser villain or an arcyne-summoned familiar. These roles are usually less independent and are often beholden to another's command.")
 	. += span_info("Uniquely, the 'Wretch' role functions as a static slot for villainy. While Wretches can spawn in nearly all rounds, they're also held to a higher standard and have a customizable bounty planted on their heads.")
 	. += span_info("With all that being said, however, villainy isn't restricted to just the antagonists. All roles can indulge in villainy, both lesser and greater, so long as it can be justified beyond 'meaningless violence' or 'witless kleptomania.'")
 	. += span_info("Remember that you are ultimately an actor in this virtual theatre, alongside everyone else. Working with the tempo-and-tact of others is the key to making a memorable - and enjoyable - experience for everyone involved.")

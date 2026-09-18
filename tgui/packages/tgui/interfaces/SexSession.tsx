@@ -56,7 +56,7 @@ export const SexSession = () => {
   // TA EDIT END
 
   return (
-    <Window title="Satisfy Desires" width={500} height={600}>
+    <Window title="Sate Desires" width={500} height={600}>
       <Window.Content scrollable>
         <Stack vertical fill>
           <Stack.Item>
@@ -201,7 +201,7 @@ export const SexSession = () => {
                 <Stack.Item>
                   <Box textAlign="center">
                     <Input
-                      placeholder="Set excitation..."
+                      placeholder="Set arousal..."
                       value={arousalInput}
                       onChange={setArousalInput}
                       width="180px"

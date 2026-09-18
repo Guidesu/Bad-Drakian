@@ -303,35 +303,35 @@
 /datum/sex_session/proc/get_force_string()
 	switch(force)
 		if(SEX_FORCE_LOW)
-			return "<font color='#eac8de'>GENTLY</font>"
+			return "<font color='#eac8de'>GENTLE</font>"
 		if(SEX_FORCE_MID)
-			return "<font color='#e9a8d1'>PERSISTENT</font>"
+			return "<font color='#e9a8d1'>FIRM</font>"
 		if(SEX_FORCE_HIGH)
-			return "<font color='#f05ee1'>RUDE</font>"
+			return "<font color='#f05ee1'>ROUGH</font>"
 		if(SEX_FORCE_EXTREME)
-			return "<font color='#d146f5'>RELENTLESS</font>"
+			return "<font color='#d146f5'>BRUTAL</font>"
 
 /datum/sex_session/proc/get_speed_string()
 	switch(speed)
 		if(SEX_SPEED_LOW)
 			return "<font color='#eac8de'>SLOW</font>"
 		if(SEX_SPEED_MID)
-			return "<font color='#e9a8d1'>GRADUALLY</font>"
+			return "<font color='#e9a8d1'>STEADY</font>"
 		if(SEX_SPEED_HIGH)
-			return "<font color='#f05ee1'>FAST</font>"
+			return "<font color='#f05ee1'>QUICK</font>"
 		if(SEX_SPEED_EXTREME)
-			return "<font color='#d146f5'>RELENTLESS</font>"
+			return "<font color='#d146f5'>UNRELENTING</font>"
 
 /datum/sex_session/proc/get_manual_arousal_string()
 	switch(manual_arousal)
 		if(SEX_MANUAL_AROUSAL_DEFAULT)
-			return "<font color='#eac8de'>VARIABLE ERECTION</font>"
+			return "<font color='#eac8de'>NATURAL</font>"
 		if(SEX_MANUAL_AROUSAL_UNAROUSED)
-			return "<font color='#e9a8d1'>WEAK ERECTION</font>"
+			return "<font color='#e9a8d1'>UNAROUSED</font>"
 		if(SEX_MANUAL_AROUSAL_PARTIAL)
-			return "<font color='#f05ee1'>NORMAL ERECTION</font>"
+			return "<font color='#f05ee1'>PARTIALLY ERECT</font>"
 		if(SEX_MANUAL_AROUSAL_FULL)
-			return "<font color='#d146f5'>Strong ERECTION</font>"
+			return "<font color='#d146f5'>FULLY ERECT</font>"
 
 /datum/sex_session/proc/get_generic_force_adjective(is_stealth = FALSE)
 	if(is_stealth)
@@ -367,7 +367,7 @@
 /datum/sex_session/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "SexSession", "Satisfy Desires")
+		ui = new(user, src, "SexSession", "Sate Desires")
 		ui.open()
 
 /datum/sex_session/ui_state(mob/user)
@@ -391,8 +391,8 @@
 	data["actions"] = actions
 
 	// Static UI strings
-	data["speed_names"] = list("SLOW", "GRADUALLY", "FAST", "RELENTLESS")
-	data["force_names"] = list("GENTLE", "PERSISTENT", "ROUGH", "CRUEL")
+	data["speed_names"] = list("SLOW", "STEADY", "QUICK", "UNRELENTING")
+	data["force_names"] = list("GENTLE", "FIRM", "ROUGH", "BRUTAL")
 	data["has_penis"] = user.getorganslot(ORGAN_SLOT_PENIS) ? TRUE : FALSE
 
 	// Check if user has knotted penis
@@ -507,7 +507,7 @@
 		SStgui.update_uis(src)
 
 /datum/sex_session/proc/get_sex_session_header_text()
-	return "Coitus with [target?.name ||"Unknown"]..."
+	return "Interacting with [target?.name || "Unknown"]..."
 
 /datum/sex_session/proc/get_session_tab_content()
 	var/list/content = list()

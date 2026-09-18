@@ -11,9 +11,9 @@
 // ----------------------------------------------------------------------------------------------------------
 /datum/storyteller/gamemode/extended
 	name = "Extended"
-	vote_desc = "Perhaps the real antagonists all this time have been ourselves."
-	desc = "No major antagonists, no minor antagonists (Wretch/Gnoll/Assassin), no Dreamwalkers. Hag is present."
-	welcome_text = "A moderate wind sweeps through the quiet streets..."
+	vote_desc = "Maybe we were the true antagonists after all."
+	desc = "No hard antags, no soft antags (wretch/gnoll/assassin), no dreamwalker. Hag present."
+	welcome_text = "A temperate breeze rolls through the quiet streets.."
 	color_theme = "#80ced8"
 	preset_pool = GAMEMODE_POOL_EXTENDED
 	block_hard = TRUE
@@ -84,9 +84,9 @@
 // ----------------------------------------------------------------------------------------------------------
 /datum/storyteller/gamemode/guaranteed_antag
 	name = "High Intensity"
-	vote_desc = "A guaranteed major antagonist. Some minor antagonists remain."
-	desc = "Guaranteed roundstarting major antagonist. Up to 7 outcasts (Wretches). Up to 2 gnolls. Up to 5 bandits. Hag is present. A Dreamwalker may appear."
-	welcome_text = "A chilling horror is slowly descending on the city..."
+	vote_desc = "Guaranteed hard antagonist. Some soft antagonists remain."
+	desc = "Guaranteed roundstart hard antag. Wretches up to 8. Gnolls max 2. Hag present. Dreamwalker may roll."
+	welcome_text = "A cold dread settles over the town.."
 	color_theme = "#a43c3c"
 	preset_pool = GAMEMODE_POOL_GUARANTEED
 	guaranteed_hard = TRUE
@@ -99,8 +99,8 @@
 	wretch_slot_cap = 7 // TA EDIT
 /datum/storyteller/gamemode/guaranteed_antag/low_wretch
 	name = "Tempered Intensity"
-	vote_desc = "A guaranteed major antagonist of a random type. There are also several minor antagonists present."
-	desc = "Guaranteed roundstarting major antagonist with more aggressive scaling from online. Up to 4 Wretches. Up to 1 gnoll. Up to 9 bandits. Hag is present. A Dreamwalker may appear."
+	vote_desc = "Guaranteed hard antagonist of a random variety. A few soft antagonists too."
+	desc = "Guaranteed roundstart hard antag with more aggressive pop scaling. Wretches up to 4. Gnoll max 1. Hag present. No dreamwalker."
 	color_theme = "#7a1f1f"
 	hard_mult = 2
 	block_soft = FALSE
@@ -112,9 +112,9 @@
 // ----------------------------------------------------------------------------------------------------------
 /datum/storyteller/gamemode/no_antag	// DEFAULT (inconclusive-vote fallback)
 	name = "Medium Intensity"
-	vote_desc = "No major antagonists. Small antagonists scale moderately."
-	desc = "No major antagonists. Wretches scale normally: from 5 to 12. Up to 3 gnolls. Hag is present. A Dreamwalker may appear."
-	welcome_text = "Warm daylight awakens you from sleep..."
+	vote_desc = "No hard antagonists. Soft antagonists scale reasonably."
+	desc = "No hard antags. Wretches scale normally (5 -> 12). Gnolls max 3. Hag present. Dreamwalker may roll."
+	welcome_text = "The warmth of daelight rouses you from your slumber.."
 	color_theme = "#2b8c87"
 	preset_pool = GAMEMODE_POOL_NOANTAG
 	block_hard = TRUE
@@ -126,8 +126,8 @@
 	guarantees_roundstart_roleset = FALSE
 /datum/storyteller/gamemode/no_antag/standard
 	name = "Standard Intensity"
-	vote_desc = "No major antagonists. Moderate number of minor antagonists."
-	desc = "No major antagonists. Up to 6 outcasts (Wretches). Up to 2 gnolls. Hag is present. Dreamwalkers do not appear."
+	vote_desc = "No hard antagonists. A moderate spread of soft antagonists."
+	desc = "No hard antags. Wretches up to 6. Gnolls max 2. Hag present. No dreamwalker."
 	color_theme = "#37b3a6"
 	allow_dreamwalker = FALSE
 	preferred_gnoll_mode = GNOLL_SCALING_FLAT	// max 2
@@ -135,8 +135,8 @@
 // Low Intensity - votes in the PSYDON pool (see preset_pool) despite being a no_antag subtype.
 /datum/storyteller/gamemode/no_antag/small_wretch
 	name = "Low Intensity"
-	vote_desc = "No major antagonists. There are very few minor antagonists."
-	desc = "No major antagonists. Wretches are fixed at 4 slots. Gnolls don't appear. Hag is present. Dreamwalkers do not appear."
+	vote_desc = "No hard antagonists. Only a handful of soft antagonists are present.."
+	desc = "No hard antags. Wretches fixed at 4. No gnolls. Hag present. No dreamwalker."
 	welcome_text = "\"Love is in the air? No; This is the smell of freshly baked pies on the windowsills!\""
 	color_theme = "#1f6b67"
 	preset_pool = GAMEMODE_POOL_EXTENDED

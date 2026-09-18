@@ -187,7 +187,7 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_choke()
-	set name = "Choking"
+	set name = "Choke"
 	set category = "Emotes.Noises"
 
 	emote("choke", intentional = TRUE)
@@ -200,7 +200,7 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_crossarms()
-	set name = "Cross arms"
+	set name = "Cross Arms"
 	set category = "Emotes"
 
 	emote("crossarms", intentional = TRUE)
@@ -258,7 +258,7 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_clearthroat()
-	set name = "Clear your throat"
+	set name = "Clear Throat"
 	set category = "Emotes.Noises"
 
 
@@ -316,7 +316,7 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_faint()
-	set name = "Fall off your feet"
+	set name = "Faint"
 	set category = "Emotes"
 
 	emote("faint", intentional = TRUE)
@@ -352,7 +352,7 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_gag()
-	set name = "Choke"
+	set name = "Gag"
 	set category = "Emotes.Noises"
 
 
@@ -368,7 +368,7 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_gasp()
-	set name = "Ah!"
+	set name = "Gasp"
 	set category = "Emotes.Noises"
 
 
@@ -430,7 +430,7 @@ GLOBAL_LIST_INIT(zone_translations, list(
 				to_chat(H, span_info("The chuckling brings a smile to my face, and fortune to my steps!"))
 
 /mob/living/carbon/human/verb/emote_chuckle()
-	set name = "Grin"
+	set name = "Chuckle"
 	set category = "Emotes.Noises"
 
 
@@ -444,7 +444,7 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_glare()
-	set name = "Stare"
+	set name = "Glare"
 	set category = "Emotes"
 
 	emote("glare", intentional = TRUE)
@@ -480,7 +480,7 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_groan()
-	set name = "Sigh heavily"
+	set name = "Groan"
 	set category = "Emotes.Noises"
 
 
@@ -492,7 +492,7 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	message = "grimaces."
 	emote_type = EMOTE_VISIBLE
 /mob/living/carbon/human/verb/emote_grimace()
-	set name = "Wince"
+	set name = "Grimace"
 	set category = "Emotes"
 
 	emote("grimace", intentional = TRUE)
@@ -553,10 +553,10 @@ GLOBAL_LIST_INIT(zone_translations, list(
 					var/mob/living/carbon/human/E = target
 					if(iself(E) || ishalfelf(E) || isdarkelf(E) || issunelf(E))
 						if(!E.cmode)
-							to_chat(target, span_love("This is ticklish..."))
+							to_chat(target, span_love("It tickles..."))
 							E.emote("eflick", intentional = TRUE)
 			else if(H.zone_selected == BODY_ZONE_PRECISE_R_EYE || H.zone_selected == BODY_ZONE_PRECISE_L_EYE)
-				message_param = "kisses %t on the eyebrow."
+				message_param = "kisses %t on the brow."
 			else if(H.zone_selected == BODY_ZONE_PRECISE_SKULL)
 				message_param = "kisses %t on the forehead."
 			else if(H.zone_selected == BODY_ZONE_HEAD)
@@ -608,18 +608,18 @@ GLOBAL_LIST_INIT(zone_translations, list(
 				do_change = TRUE
 		if(do_change)
 			if(J.zone_selected == BODY_ZONE_PRECISE_MOUTH)
-				message_param = "licks the lips of %t."
+				message_param = "licks %t lips."
 			else if(J.zone_selected == BODY_ZONE_PRECISE_EARS)
-				message_param = "licks %t's ear."
+				message_param = "licks the ear of %t."
 				if(!HAS_TRAIT(target, TRAIT_DECEIVING_MEEKNESS) && !HAS_TRAIT(target, TRAIT_NOMOOD))
 					var/mob/living/carbon/human/O = target
 					if(iself(O) || ishalfelf(O) || isdarkelf(O) || issunelf(O))
 						if(!O.cmode)
-							to_chat(target, span_love("This is ticklish..."))
+							to_chat(target, span_love("It tickles..."))
 							O.emote("eflick", intentional = TRUE)
 			else if(J.zone_selected == BODY_ZONE_PRECISE_GROIN)
-				message_param = "licks %t between her legs."
-				to_chat(target, span_love("This is very nice..."))
+				message_param = "licks %t between the legs."
+				to_chat(target, span_love("That feels nice..."))
 			else if(J.zone_selected == BODY_ZONE_HEAD)
 				message_param = "licks %t on the cheek."
 			else
@@ -1113,7 +1113,7 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_attnwhistle()
-	set name = "Whistle"
+	set name = "Attnwhistle"
 	set category = "Emotes.Noises"
 
 
@@ -1140,7 +1140,7 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_shakehead()
-	set name = "Shake your head"
+	set name = "Shake Head"
 	set category = "Emotes"
 
 	emote("shakehead", intentional = TRUE)
@@ -1153,7 +1153,7 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_shiver()
-	set name = "Tremble"
+	set name = "Shiver"
 	set category = "Emotes"
 
 	emote("shiver", intentional = TRUE)
@@ -1203,7 +1203,7 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_hmm()
-	set name = "Grunt"
+	set name = "Hmm"
 	set category = "Emotes.Noises"
 
 
@@ -1218,7 +1218,7 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_huh()
-	set name = "What?"
+	set name = "Huh"
 	set category = "Emotes.Noises"
 
 
@@ -1283,7 +1283,7 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_shh()
-	set name = "Shush"
+	set name = "Shh"
 	set category = "Emotes.Noises"
 
 
@@ -1367,7 +1367,7 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_warcry()
-	set name = "Battle cry"
+	set name = "Warcry"
 	set category = "Emotes.Noises"
 
 
@@ -1395,7 +1395,7 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_whimper()
-	set name = "Whine"
+	set name = "Whimper"
 	set category = "Emotes.Noises"
 
 
@@ -1554,7 +1554,7 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	emote_type = EMOTE_VISIBLE
 
 /mob/living/carbon/human/verb/emote_shake()
-	set name = "Shake head"
+	set name = "Shake Head"
 	set category = "Emotes"
 
 	emote("shake", intentional = TRUE)
@@ -1579,7 +1579,7 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_snap()
-	set name = "Click 1"
+	set name = "Snap"
 	set category = "Emotes.Noises"
 
 
@@ -1621,7 +1621,7 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_snap2()
-	set name = "Click 2"
+	set name = "Snap2"
 	set category = "Emotes.Noises"
 
 
@@ -1635,7 +1635,7 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	show_runechat = FALSE
 
 /mob/living/carbon/human/verb/emote_snap3()
-	set name = "Click 3"
+	set name = "Snap3"
 	set category = "Emotes.Noises"
 
 
@@ -1654,7 +1654,7 @@ GLOBAL_LIST_INIT(zone_translations, list(
 		user.play_overhead_indicator('icons/mob/overhead_effects.dmi', "stress", 15, MUTATIONS_LAYER, private = user.patron.type, soundin = 'sound/magic/holyshield.ogg', y_offset = 32)
 
 /mob/living/carbon/human/verb/emote_fsalute()
-	set name = "Mark of Faith"
+	set name = "Faith Salute"
 	set category = "Emotes"
 
 	emote("fsalute", intentional =	TRUE)
@@ -1671,7 +1671,7 @@ GLOBAL_LIST_INIT(zone_translations, list(
 		. = ..()
 
 /mob/living/carbon/human/proc/emote_ffsalute()
-	set name = "False Mark of Faith"
+	set name = "Fake Faith Salute"
 	set category = "Emotes"
 
 	emote("ffsalute", intentional =	TRUE)
@@ -1740,7 +1740,7 @@ GLOBAL_LIST_INIT(zone_translations, list(
 		chance -= modifier_sum
 		chance *= chance_per_point
 
-		var/msg = success ? span_green("SUCCESS: [pick(success_message_list)]") : span_danger("FAILURE: [pick(failure_message_list)] [chance]%")
+		var/msg = success ? span_green("SUCCEEDS and [pick(success_message_list)]") : span_danger("FAILS and [pick(failure_message_list)] [chance]%")
 
 		msg = replace_pronoun(user, msg)
 
@@ -1791,25 +1791,25 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	)
 
 	attempt_message_list = list(
-		"tests his strength...",
-		"exerts force...",
-		"tenses his muscles...",
+		"tests their strength...",
+		"puts their back into it...",
+		"begins to flex...",
 	)
 
 	success_message_list = list(
-		"demonstrates his strength!",
-		"justifies having such muscles!",
-		"proves that he is strong!",
+		"is brimming with power!",
+		"is truly beefy!",
+		"shows off their muscle!",
 	)
 
 	failure_message_list = list(
-		"hands look like branches...",
-		"can't even lift a chair...",
-		"should have eaten more meat...",
+		"is a little wet noodle...",
+		"would lose in an arm wrestling match against a rous...",
+		"should eat more sausage...",
 	)
 
 /mob/living/carbon/human/verb/emote_strength_roll()
-	set name = "%Strength check"
+	set name = "Roll Strength"
 	set category = "Emotes"
 
 	emote("strength", intentional = TRUE)
@@ -1822,25 +1822,25 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	)
 
 	attempt_message_list = list(
-		"peers very carefully...",
-		"focuses his gaze...",
+		"takes a good, long look...",
+		"focuses in...",
 		"squints...",
 	)
 
 	success_message_list = list(
-		"boasts eagle vision!",
-		"sees what others don't see!",
-		"sees the smallest detail!",
+		"has eyes like a hawk!",
+		"sees what others don't!",
+		"has perfect 20/20 vision!",
 	)
 
 	failure_message_list = list(
-		"apparently suffers from myopia...",
-		"seems to have cataracts...",
+		"is totally oblivious...",
+		"has cataracts in their eyes...",
 		"is blind...",
 	)
 
 /mob/living/carbon/human/verb/emote_perception_roll()
-	set name = "%Perception Check"
+	set name = "Roll Perception"
 	set category = "Emotes"
 
 	emote("perception", intentional = TRUE)
@@ -1854,25 +1854,25 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	)
 
 	attempt_message_list = list(
-		"is thinking...",
-		"is drawing his eyebrows together...",
-		"is scratching his chin thoughtfully...",
+		"thinks hard...",
+		"furrows their brows...",
+		"rubs their chin...",
 	)
 
 	success_message_list = list(
-		"proves that he is among one of the the smartest!",
-		"proves the sharpness of his mind!",
-		"knows what he's doing!",
+		"is a genius!",
+		"has a mind sharp as a whip!",
+		"knows what they're doing!",
 	)
 
 	failure_message_list = list(
-		"doesn’t understand where he is at all...",
-		"has a head like a stalk...",
-		"how to add two plus two remains a mystery...",
+		"is as dumb as a rock...",
+		"has an empty head...",
+		"couldn't put 2 and 2 together...",
 	)
 
 /mob/living/carbon/human/verb/emote_intelligence_roll()
-	set name = "%Intelligence test"
+	set name = "Roll Intelligence"
 	set category = "Emotes"
 
 	emote("intelligence", intentional = TRUE)
@@ -1885,25 +1885,25 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	)
 
 	attempt_message_list = list(
-		"tests his strength...",
-		"is preparing to strike...",
-		"is preparing to endure...",
+		"tests their toughness...",
+		"braces for impact...",
+		"prepares to endure...",
 	)
 
 	success_message_list = list(
-		"didn't even flinch!",
-		"is strong as an oak!",
-		"didn’t even raise an eyebrow!",
+		"doesn't even flinch!",
+		"is solid as an oak!",
+		"is one tough nut to crack!",
 	)
 
 	failure_message_list = list(
-		"is all skin and bones...",
-		"sways like a blade of grass in the wind...",
-		"bones are as fragile as crystal...",
+		"has paper skin...",
+		"would be torn to shreds by a light breeze...",
+		"has a glass jaw...",
 	)
 
 /mob/living/carbon/human/verb/emote_constitution_roll()
-	set name = "%Physique check"
+	set name = "Roll Constitution"
 	set category = "Emotes"
 
 	emote("constitution", intentional = TRUE)
@@ -1916,25 +1916,25 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	)
 
 	attempt_message_list = list(
-		"tests his willpower...",
-		"gathers his thoughts...",
-		"prepares to prove his resolve...",
+		"tests their willpower...",
+		"gathers their courage...",
+		"prepares to use their determination...",
 	)
 
 	success_message_list = list(
-		"overcomes it!",
+		"proves mighty!",
 		"never gives up!",
-		"will pass through fire and water!",
+		"persists through anything!",
 	)
 
 	failure_message_list = list(
-		"is as cowardly as a chicken...",
-		"gives up...",
-		"will be scared even if no one shouts...",
+		"is a weak willed chicken...",
+		"gives up trying...",
+		"faints when they get a splinter...",
 	)
 
 /mob/living/carbon/human/verb/emote_willpower_roll()
-	set name = "%Will Test"
+	set name = "Roll Willpower"
 	set category = "Emotes"
 
 	emote("willpower", intentional = TRUE)
@@ -1949,25 +1949,25 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	)
 
 	attempt_message_list = list(
-		"prepares his best move...",
-		"demonstrates his flexibility...",
-		"tries to accelerate...",
+		"prepares their moves...",
+		"starts to get limber...",
+		"tries to get speedy...",
 	)
 
 	success_message_list = list(
-		"shows brilliant control of his body!",
-		"bends like a cat!",
-		"incredible flexibility!",
+		"is in perfect control!",
+		"is as agile as a cat!",
+		"is very flexible!",
 	)
 
 	failure_message_list = list(
-		"seems to have two left...",
-		"outplays himself...",
+		"has two left feet...",
+		"trips over themselves...",
 		"is slower than a snail...",
 	)
 
 /mob/living/carbon/human/verb/emote_speed_roll()
-	set name = "%Speed check"
+	set name = "Roll Speed"
 	set category = "Emotes"
 
 	emote("speed", intentional = TRUE)
@@ -1976,25 +1976,25 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	key = "fortune"
 	key_third_person = "for"
 	attempt_message_list = list(
-		"tries his luck...",
-		"seizes the moment...",
-		"weighs the bets...",
+		"tries their fortune...",
+		"takes a chance...",
+		"prepares to gamble...",
 	)
 
 	success_message_list = list(
-		"could find an ingot in a puddle!",
-		"It's like a rabbit's foot in your pocket!",
-		"glows with true luck!",
+		"could make an arrow turn around and climb back into the bow!",
+		"has a rabbit's paw in their pocket!",
+		"persists through pure luck!",
 	)
 
 	failure_message_list = list(
-		"understands that the game was a losing one from the very beginning...",
-		"luck is clearly not on your side...",
-		"all bets are against...",
+		"realizes the game was rigged from the start...",
+		"gets dealt a bad hand...",
+		"has the odds stacked against them...",
 	)
 
 /mob/living/carbon/human/verb/emote_fortune_roll()
-	set name = "%Checking your luck"
+	set name = "Roll Fortune"
 	set category = "Emotes"
 
 	emote("fortune", intentional = TRUE)
@@ -2010,25 +2010,25 @@ GLOBAL_LIST_INIT(zone_translations, list(
 	)
 
 	attempt_message_list = list(
-		"tries to maintain composure...",
-		"tries to impress...",
-		"ponders the next step...",
+		"tries to maintain their composure...",
+		"attempts to appear impressive...",
+		"starts contemplating their next move...",
 	)
 
 	success_message_list = list(
-		"is filled with unshakable confidence!",
-		"- a face like a stone mask!",
-		"...the face is like a god!",
+		"is brimming with self-confidence!",
+		"has a true poker face!",
+		"is the first crack in the sheer face of god, from them it will spread!",
 	)
 
 	failure_message_list = list(
-		"trembles with uncertainty...",
-		"is not very convincing...",
-		"composure hangs on one's word of honor...",
+		"is brimming with self-doubt...",
+		"can't quite sell it...",
+		"is holding it together with string and prayer...",
 	)
 
 /mob/living/carbon/human/verb/emote_charisma_roll()
-	set name = "%Charisma check"
+	set name = "Roll Charisma"
 	set category = "Emotes"
 
 	emote("charisma", intentional = TRUE)

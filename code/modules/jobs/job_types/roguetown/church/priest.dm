@@ -244,7 +244,7 @@ GLOBAL_LIST_EMPTY(heretical_players)
 		SSticker.set_ruler_mob(HU)
 		SSticker.regentmob = null
 		var/dispjob = mind.assigned_role
-		var/realm = SSticker.realm_name || "Azure Peak"
+		var/realm = get_realm_name()
 		var/ruler_title = SSticker.rulertype || "Count"
 		removeomen(OMEN_NOLORD)
 		say("By the authority of the gods, I pronounce you [ruler_title] of [realm]!")

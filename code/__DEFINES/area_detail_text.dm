@@ -44,16 +44,16 @@
 // North Coast
 #define DETAIL_TEXT_NORTH_COAST "Chilly winds blow from the palagic northways. This is the part of land where the trading ships hook 'round to return to land after months' voyages- and where they are plundered by ne'er-do-wells. \n\
 Abyssor rests offshore. Even his quietest exhale is enough to send waves from the hadal to crash onto sand."
-#define DETAIL_TEXT_NORTH_COAST_HAMLET "Until recently, life was in full swing in this small mining village - bells were ringing in the church, the ringing of hammer blows on an anvil did not subside day or night, and in the tavern adventurers from the south shared the latest rumors from the capital with locals. Now there is not a single living soul left here. The living dead that now fill the empty houses very clearly point to the culprits of what happened."
+#define DETAIL_TEXT_NORTH_COAST_HAMLET "Empty houses, and rotting fields. A half-hundred homesteaders broke ground here, before the touch of Zizo swept the north. Some of their bones still yet remain, clustered around their once-chapel in a twisted pantomime of lyfe. Above the altar, a promise has been scratched into stained glass: This too shall stand."
 #define DETAIL_TEXT_MAD_DUKE_COURT ""
 #define DETAIL_TEXT_FALLEN_MANOR "A once-grand attempt at nobility now reduced to no more than a crumbling mess of what was once overly optimistic expansion, destroyed by the fallen 'Duke's' greed and lust for more control than he could truly handle. Not happy with simply being a serf, he sought more, and fell to ruin because of it. Now known as the Fallen 'Duke', he rots in his decayed manor, surrounded by his undead minions."
 
 // Actual Azure Coast
 #define DETAIL_TEXT_ACTUAL_COAST ""
-#define DETAIL_TEXT_CITY_COAST "From here you can see the lights of the capital. From the port and business district on the bay to residential areas on high ground, the city is a strip of light stretching along the mountainside."
+#define DETAIL_TEXT_CITY_COAST "Close enough to the city that I can see its torchlight. It is easy to imagine why they say the Comet Syon landed here. The bay yawns like a giant concave lens; the hinted epicenter of ego-death. \n\\n\ The salted ocean air carries a bitter taste, here."
 
 // Mount Decap & Dungeons
-#define DETAIL_TEXT_DECAP "Headless Mountain, Hanging Mountain, Decapitation Mountain... In the early years of the Grand Duchy, mass executions of supporters of the dark forces that ruled over this valley before the arrival of forces under the flag of Astrata were carried out here. \n\ Nowadays, Headless Mountain remains one of the most dangerous places in the Duchy. Ominous rumors are circulating about this place - supposedly, this is where gangs of Matthiosites are hiding, terrorizing the northern roads of the country. The Asurian Watchers do not patrol this region, rightly believing that they will not return alive.\n\ However, not only danger awaits travelers and adventurers here. According to some rumors, this is where the ruins of Tarichea are located - the ancient city of the Divine Empire, destroyed to the ground during the War in Heaven. Countless riches lie hidden in its vaults, waiting for those brave enough to claim them."
+#define DETAIL_TEXT_DECAP "Mount Golgotha and its lava-flows stretches to the north. An impossibly-tall sinewave of earth, full of rage at its severed futures. It is still, after a thousand years, screaming upwards at the sky; acrid smoke tries to choke the firmament above and jagged cliffs try to pierce its nebulous hide. The ancient alps (old- too old for rage) have cracks in them that break the massif northwards and spill a river with cool, clear water. \n\ Tarichea, o, glowing monument!, once powered by the lava flows of Mount Golgotha, now lays drowned in them."
 #define DETAIL_TEXT_DECAP_TARICHEA ""
 #define DETAIL_TEXT_DECAP_GUNDU_ZIRAK ""
 #define DETAIL_TEXT_DECAP_DRAGONDEN ""
@@ -87,7 +87,7 @@ Rusted metals distantly grind in anoxic pus-condensate in-tune with the Signal. 
 #define DETAIL_TEXT_UNIVERSITY_OF_AZURIA ""
 #define DETAIL_TEXT_CHAPEL "Narthex of faith, roosting the Flock."
 #define DETAIL_TEXT_INQUISITION_HQ ""
-#define DETAIL_TEXT_AZUREAN_GUILD_OF_CRAFT "The legendary Asurian Guild of Craftsmen is based here, to whose products the Grand Duchy owes much of its wealth."
+#define DETAIL_TEXT_AZUREAN_GUILD_OF_CRAFT "\"We had a name fer it, eh? Called it the Dwarven Quarter. Forges an' 'ammers, underground an' wrapped in stone. Joos' like 'ome! Bu' then tha bloody bluebloods started complainin' aboot tha' dirt whenever they visited. Bloody brash-polishers! Well, we 'ad to move tha shop topside. \n\ \n\ Not as charmin, no moor.\""
 
 
 // Tomb of Alotheos

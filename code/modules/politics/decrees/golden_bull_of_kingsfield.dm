@@ -1,6 +1,6 @@
 /datum/decree/golden_bull
 	id = DECREE_GOLDEN_BULL
-	name = "Golden Bull of Kingsfield"
+	name = "The Golden Bull of Kingsfield"
 	category = DECREE_CATEGORY_ANCIENT
 	mechanical_text = "Burghers and residents are capped at 25% balance-rate on taxes/fines, with daily fine ceiling 50m and a poll-tax cap."
 	flavor_text = {"This Golden Bull of Kingsfield, sealed under Astrata's Sun and with Ravox as witness, witnesseth the ancient compact between the Crown of Azuria and the makers of her wealth.
@@ -12,8 +12,8 @@ In return, the citizens of the capital, Kingsfield, and other cities of Azuria u
 And should the Crown exceed these ratified bounds, or otherwise violate this Charter, the Burghers are absolved of their obligation, that the Realm may know the cost of breaking faith with its makers of wealth.
 
 Certified with the golden seal of the Crown, by the grace of Astrata and Abissor."}
-	revoke_text = "The ruler of these lands terminated the Golden Bull of Kingsfield. The townspeople are now subject to full taxation by the crown. Outraged by this decision, the merchants of Azuria will no longer pay contributions to the general defense of the Duchy."
-	restore_text = "The ruler of these lands has restored the Golden Bull of Kingsfield. The agreement again came into force, and the townspeople resumed paying contributions for the needs of the general defense."
+	revoke_text = "The %RULER% has suspended the Golden Bull of Kingsfield. The burghers stand exposed to the Crown's full levy, and the outraged merchants shall contribute no more to the common defense of the Realm."
+	restore_text = "The %RULER% has restored the Golden Bull of Kingsfield. The compact stands renewed, and the burghers resume their tribute to the common defense."
 
 /datum/decree/golden_bull/roll_initial_year()
 	return CALENDAR_EPOCH_YEAR - rand(40, 100)

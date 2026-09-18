@@ -58,7 +58,7 @@
 	)
 	choice_tooltips = list(
 		NOTABLE_SHREWD = "I've managed to secure a Meister account and a lump sum within it. Grants Secular Appraise -- a spell that allows you to tell how much wealth someone has on them, and in their Meister.",
-		NOTABLE_RESIDENCY = "I am a Resident of Azure Peak, with access to one of its buildings all to myself.",
+		NOTABLE_RESIDENCY = "I am a resident of the realm, with a building of my own.",
 	)
 
 /datum/virtue/utility/notable/apply_to_human(mob/living/carbon/human/recipient)
@@ -108,7 +108,7 @@
 						if(length(possible_chairs))
 							var/obj/structure/chair/chosen_chair = pick(possible_chairs)
 							recipient.forceMove(get_turf(chosen_chair))
-							to_chat(recipient, span_notice("As a resident of Azure Peak, you find yourself seated at a chair in the local tavern."))
+							to_chat(recipient, span_notice("As a resident of [get_realm_name()], you find yourself seated in the local tavern."))
 						else
 							for(var/area/A in world)
 								if(!istype(A, /area/rogue/indoors/town/tavern))
@@ -119,7 +119,7 @@
 							if(length(possible_spawns))
 								var/turf/spawn_loc = pick(possible_spawns)
 								recipient.forceMove(spawn_loc)
-								to_chat(recipient, span_notice("As a resident of Azure Peak, you find yourself in the local tavern."))
+								to_chat(recipient, span_notice("As a resident of [get_realm_name()], you find yourself in the local tavern."))
 
 #undef NOTABLE_RESIDENCY
 #undef NOTABLE_SHREWD

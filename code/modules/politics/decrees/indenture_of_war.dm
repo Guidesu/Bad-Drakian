@@ -1,8 +1,8 @@
 /datum/decree/indenture_of_war
 	id = DECREE_INDENTURE_OF_WAR
-	name = "Azuria Defenders Contract"
+	name = "The Indenture of War"
 	category = DECREE_CATEGORY_ANCIENT
-	mechanical_text = "Sets the minimum daily pay for soldiers: Marshal - 60 m, Knight/Sergeant - 40 m, Warrior/Overseer - 20 m, Squire - 10 m."
+	mechanical_text = "Sets minimum daily wages for soldiery: Marshal 60m, Knight/Sergeant 40m, Man-at-Arms/Warden 20m, Squire 10m."
 	/// Per-rank mandated daily wage. Steward cannot set below these amounts while the Indenture
 	/// stands, and any existing below-floor wage is bumped up at activation. Military ranks only -
 	/// courtiers, healers, scholars, and civilian staff are not covered by this charter.
@@ -32,8 +32,8 @@ In return, the servicemen of the Grand Duchy agree to faithfully serve the Grand
 In confirmation of which, the Crown of Azuria has affixed its seal on this Contract, and the lawful representative of the servicemen of the Grand Duchy has affixed his seal in the same manner.
 
 Certified by the seal of the Crown and the seal of the Marshal of the Grand Duchy."}
-	revoke_text = "The ruler of these lands has violated the Contract of the Defenders of Azuria. The oath of the warriors of the Duchy is annulled, and they are free to choose a lord - and let them remember whose seal was cut down first."
-	restore_text = "The ruler of these lands has renewed the Contract of the Defenders of Azuria. The soldier is promised a salary, and his oath remains in force - one obliges the other."
+	revoke_text = "The %RULER% has broken the Indenture of War. The soldier's oath is dissolved, and the Crown's armed men stand at liberty of service - let the garrison remember whose seal was cut first."
+	restore_text = "The %RULER% has renewed the Indenture of War. The soldier's wage is pledged, and the soldier's oath stands - each binds the other."
 
 /datum/decree/indenture_of_war/roll_initial_year()
 	return CALENDAR_EPOCH_YEAR - rand(40, 120)

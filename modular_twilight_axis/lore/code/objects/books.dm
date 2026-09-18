@@ -25,7 +25,7 @@
 	if(in_range(user, src) || isobserver(user))
 		user.changeNext_move(CLICK_CD_MELEE)
 		var/list/choices = list("LEVIT", "DEKANOMIKON", "NEW DAWN")
-		var/section_choice = tgui_input_list(user, "By the wisdom of which Covenant shall I share?", "DIVINE ENLIGHTENMENT", choices)
+		var/section_choice = tgui_input_list(user, "Which Covenant shall I read from?", "DIVINE ENLIGHTENMENT", choices)
 		var/chosentxt
 		switch(section_choice)
 			if("LEVIT")
@@ -46,7 +46,7 @@
 
 /obj/item/book/rogue/bibble/psy
 	desc = "<font color='3bb5d3'>'And He weeps. Not for you, not for Himself, but for all of us.'</font>\
-	</br>A leather-bound volume containing the teachings of the Church of the All-Father. The book is divided into four Covenants, reflecting the beliefs of the largest and most significant confessions of the Psydonite faith.\
+	</br>A leather-bound volume containing the teachings of the Church of the All-Father. Its four Covenants represent the principal traditions of the Psydonite faith.\
 	</br>COVENANT OF PSYDON - the teachings of the Old Faith, which guided the righteous in the times before the Arch-Betrayal.\
 	</br>LIFE OF PSYDON - the creation of Psydonia as we know it.\
 	</br>COVENANT OF OTAVIK - the truth of the new era, told to us by the Great Master of Otavan.\
@@ -70,14 +70,14 @@
 			if(m)
 				if(prob(1) && sect == "sect1")
 					user.playsound_local(user, 'sound/misc/psydong.ogg', 100, FALSE)
-					user.say("PSAI 66:6... +_The All-Father_+ said, \"I forgive you, for I love you as a father loves his daughter.\" And the blood ran down the blade and from the chest of e- Where is this here?!")
+					user.say("PSAI 66:6... +_The All-Father_+ said, \"I forgive you, for I love you as a father loves his daughter.\" And the blood ran down the blade and from the chest of e- Where did that come from?!")
 				else
 					user.say(m)
 			else
 				m = pick(verses)
 				if(prob(1) && sect == "sect1")
 					user.playsound_local(user, 'sound/misc/psydong.ogg', 100, FALSE)
-					user.say("PSAI 66:6... +_The All-Father_+ said, \"I forgive you, for I love you as a father loves his daughter.\" And the blood ran down the blade and from the chest of e- Where is this here?!")
+					user.say("PSAI 66:6... +_The All-Father_+ said, \"I forgive you, for I love you as a father loves his daughter.\" And the blood ran down the blade and from the chest of e- Where did that come from?!")
 				else
 					user.say(m)
 
@@ -98,7 +98,7 @@
 /obj/item/book/rogue/bibble/zizo
 	name = "Lexicon of Her Truth"
 	desc = "<font color='ff0000'>'By learning Her teachings, one day we will walk in Her footsteps.'</font> \
-	</br>A tome forbidden by the Holy See, containing an account of the mortal life and ascension of Zizo, Lady of Darkness - or, at least, the version of it adhered to by the cultists of Salvation. It suspiciously smells of dried blood.</br>"
+	</br>A tome forbidden by the Holy See, containing an account of the mortal life and ascension of Zizo, Lady of Darkness—or at least the version accepted by the cultists of Salvation. It smells suspiciously of dried blood.</br>"
 	icon_state = "zible_0"
 	base_icon_state = "zible"
 	title = "Lexicon of Her Truth"

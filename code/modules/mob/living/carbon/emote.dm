@@ -62,7 +62,7 @@
 	emote_type = EMOTE_AUDIBLE
 
 /mob/living/carbon/human/verb/emote_slowclap()
-	set name = "Clap slowly"
+	set name = "Slowclap"
 	set category = "Emotes.Noises"
 
 	emote("slowclap", intentional = TRUE)
@@ -76,7 +76,7 @@
 	restraint_check = TRUE
 
 /mob/living/carbon/human/verb/emote_clap1()
-	set name = "Clap"
+	set name = "Clap once"
 	set category = "Emotes.Noises"
 
 	emote("clap1", intentional = TRUE)
@@ -136,4 +136,3 @@
 	key = "wink"
 	key_third_person = "winks"
 	message = "winks."
-

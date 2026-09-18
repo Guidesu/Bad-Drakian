@@ -17,7 +17,7 @@
 			"weight": 3
 		},
 		"code of hammurabi": {
-			"name": "Code of Hamurabi",
+			"name": "The Decalogue",
 			"laws": [
 				"If a man put out the eye of another man, his eye shall be put out.",
 				"If any one is committing a robbery and is caught, then he shall be put to death.",
@@ -33,7 +33,7 @@
 			"weight": 1
 		},
 		"asimov": {
-			"name": "The Three Laws of Aasimar",
+			"name": "The Decalogue",
 			"laws": [
 				"A peasant may not injure a noble or, through inaction, allow a noble to come to harm.",
 				"A peasant must obey the orders given it by nobles except where such orders would conflict with the First Law.",
@@ -42,7 +42,7 @@
 			"weight": 0
 		},
 		"the_great_charter": {
-			"name": "The Great Charter",
+			"name": "The Decalogue",
 			"laws": [
 				"The Church shall be free from interference by the Crown, its rights undiminished and protected. The Crown shalt not interfere with the elections or appointments of bishops, administration of church property nor the discipline of the clergy and heretics.",
 				"The Inquisition may only investigate and try commoners for crimes of heresy. Yeomen and nobles shall be tried only under the Bishop's supervision and by a jury of their peers and clergy.",
@@ -58,7 +58,7 @@
 			"weight": 5
 		},
 		"human_supremacy": {
-			"name": "Divine Supremacy",
+			"name": "The Decalogue",
 			"laws": [
 				"Thou shalt not worship the inhumen. All that that is inhumen is lesser.",
 				"Thou shalt not associate with inhumen worshipers, those who do that do so forsake their faith.",

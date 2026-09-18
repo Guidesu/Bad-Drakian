@@ -310,7 +310,7 @@ export const QuestScroll = () => {
   const levyRate = data.levy_rate ?? 0;
   const levyExempt = !!data.levy_exempt;
   const guildCutRate = data.guild_cut_rate ?? 0;
-  const rulerTitle = data.ruler_title || 'Duke';
+  const rulerTitle = data.ruler_title || 'Count';
   const reward = data.reward ?? 0;
   const bearer = data.issued_to || undefined;
   const issuedBy = data.issued_by || undefined;

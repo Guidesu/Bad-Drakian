@@ -403,24 +403,9 @@ GLOBAL_VAR(PatreonsLoading)
 		C.add_patreon_verbs()
 
 /proc/load_patreons(force_reload = FALSE)
-	if(GLOB.PatreonsLoaded && !force_reload)
-		GLOB.PatreonsLoading = FALSE
-		return TRUE
-	GLOB.PatreonsLoading = TRUE
-
-	var/current_count = db_donators_count()
-	if(!isnull(current_count))
-		if(!current_count)
-			db_import_config_donators(TRUE, current_count)
-		if(db_load_patreons_to_cache())
-			GLOB.PatreonsLoaded = TRUE
-			GLOB.PatreonsLoading = FALSE
-			refresh_online_donator_cache()
-			return TRUE
-
-	log_world("Failed to load donators from database. Falling back to legacy patreon config files for current round.")
-	log_game("Failed to load donators from database. Falling back to legacy patreon config files for current round.")
-	patreon_load_legacy_cache()
+	// Paid entitlements are retired. Keep the legacy cache shape for old saves and
+	// internal callers, but never query donor tables or configuration files.
+	LAZYCLEARLIST(GLOB.allpatreons)
 	GLOB.PatreonsLoaded = TRUE
 	GLOB.PatreonsLoading = FALSE
 	refresh_online_donator_cache()
@@ -429,8 +414,7 @@ GLOBAL_VAR(PatreonsLoading)
 /proc/queue_load_patreons()
 	if(GLOB.PatreonsLoaded || GLOB.PatreonsLoading)
 		return
-	GLOB.PatreonsLoading = TRUE
-	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(load_patreons))
+	load_patreons()
 
 /proc/check_patreon_lvl(key)
 	key = ckey(key)
@@ -439,6 +423,11 @@ GLOBAL_VAR(PatreonsLoading)
 	// BAD DRAKIAN has no paid entitlement tiers. Every authenticated player receives
 	// the former tier-five feature set; the legacy proc remains as a save/API shim.
 	return 5
+
+/proc/is_donator(key)
+	// Compatibility proc for old loadout code. Access is universal and no longer
+	// tied to donation records.
+	return !!ckey(key)
 
 /proc/get_patreon_manual(key)
 	key = ckey(key)

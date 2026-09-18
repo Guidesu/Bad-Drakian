@@ -28,7 +28,7 @@
 	list_item_order = 1
 	name = "Nowhere"
 	origin_name = "Elsewhere"
-	desc = "I come from one of the many small settlements scattered across Psaidonia, often too modest or remote. Since I come from nowhere, I do not know any local language.<br>"
+	desc = "I come from one of Psaidonia's countless isolated villages and forgotten settlements. No great homeland claims me, and I speak no regional language.<br>"
 	origin_desc = "Not everyone can name a great kingdom as their homeland. Countless villages, estates, and vanished settlements survive only in the memories of those who left them behind. Peasants, refugees, orphans, and wanderers often carry such legacies without a nation to claim them."
 
 /datum/virtue/origin/azuria
@@ -43,7 +43,7 @@
 	map_origin_name = "The Grand Duchy of Azuria"
 	name = "Azurian"
 	origin_name = "Azuria"
-	desc = "I come from Azuria — a small, independent mountain enclave located in the north of the territories of the Grenzelhoft Empire. The high mountain ranges surrounding the valley from the south and west make Azuria virtually inaccessible for overland travel, which keeps it relatively safe from global upheavals and military invasions.<br>"
+	desc = "I come from Azuria, a small, independent mountain realm on Grenzelhoft's northern frontier. The high ranges enclosing its southern and western borders make overland travel difficult and have shielded the valley from many wars.<br>"
 	restricted = FALSE
 	added_languages = list(/datum/language/oldazurian)
 	origin_desc = "<br><br><b>Azuria</b> is a small, independent mountain realm on Grenzelhoft's northern frontier. High ridges close the valley to the south and west, while the Azure Basin opens onto the Black Ocean to the east. The difficult terrain has spared Azuria from many foreign invasions and made it a refuge for adventurers, exiles, and displaced people from across Grimoria.<br><br>A sovereign count, earl, jarl, or equivalent ruler governs the valley from its independent capital and owes allegiance to no outside crown. The ruling dynasty claims kinship with Grenzelhoft's imperial house, but that ancestry grants the Empire no jurisdiction here.<br><br>The Church of the Ten is Azuria's dominant faith. Its senior priest blesses each lawful succession, while an Otavan magister oversees the local Inquisition under an old compact with the Imperial Church of the Eleven. Political pressure and their common enemies hold this uneasy arrangement together; when the churches clash, the sovereign ruler is expected to mediate.<br><br>Azuria's early history remains disputed. Imperial chroniclers say Grenzelhoft conquered the valley and later granted it to the present dynasty. Other traditions describe the dynasty overthrowing ancient vampire clans, while elven accounts remember a homeland taken by a Grenzelhoft-backed army. Whatever the truth, modern Azuria is neutral, sovereign, and crowded with refugees from the Twilight War. Whether those many peoples can forge a lasting realm remains an open question.<br><br>"
@@ -77,7 +77,7 @@
 	name = "Grenzelhoftian"
 	origin_name = "Grenzelhoft"
 	added_languages = list(/datum/language/grenzelhoftian)
-	desc = "I come from the lands of Grenzelhoft, which stretch from the northern mountains of Hammerhold to the Crimson Lands and the hot deserts of Naledi. The culture of my homeland is based on militarism and national pride, which has made it the most powerful state in Grimoria.<br>"
+	desc = "I come from Grenzelhoft, whose dominions stretch from Hammerhold's northern mountains to the Crimson Lands and the deserts of Naledi. Militarism and fierce national pride have made it Grimoria's greatest power.<br>"
 	origin_desc = "<br><br><b>The Grenzelhoft Empire</b>, formally the Great Imperial Pact of the Grenzelhoft Dynasty and often called the Black Empire, dominates the western continent. Its banner unites many of the west's richest and most influential kingdoms.<br><br>Militarism and national pride define Grenzelhoftian culture. Centuries of war produced Grimoria's first professional army and a noble class in which battlefield service can matter as much as birth. Conquest spreads the Empire's customs by force, and Grenzelhoft was the first power to deploy firearms throughout its armies.<br><br>Alistair IV Grenzelhoft reigns as Kaiser of the Zenithar Pact and King of Zentarion. His authority is formidable, though it depends upon the Kaiserstag, an assembly that represents the imperial estates in legislation and high justice.<br><br>The Empire accommodates both the Church of the Ten and the All-Father's cathedrals within the Imperial Church of the Eleven. That uneasy settlement grew from the marriage of Supreme Magister Adrian VII and High Priestess Miranda II Bastonskaya—a union privately mocked as <i>sacred in name and forged in Tartarus</i>.<br><br>"
 
 /datum/virtue/origin/valorian
@@ -93,7 +93,7 @@
 	name = "Valorian"
 	origin_name = "Valoria"
 	added_languages = list(/datum/language/valorian)
-	desc = "I come from Valoria — the citadel of the Church of Ten and the home of five trading Republics, located on islands in the middle of the Black Ocean.<br>"
+	desc = "I come from Valoria, heartland of the Church of the Ten and home to five mercantile republics scattered across the Black Ocean.<br>"
 	origin_desc = "<br><br><b>Valoria</b>, formally the Most Serene Union of the Five Trade Republics and the Church of the Indivisible Ten, is a confederation of five semi-independent republics. Its wealth and influence follow its merchants, ports, and trading quarters across both land and sea.<br><br>Four republics stand as equal partners; the fifth serves as their administrative and legal center. There the Most Serene Doge is elected to settle disputes, direct foreign policy, regulate commerce, and levy common taxes and duties.<br><br>Valoria is also the heartland of the Church of the Ten, Grimoria's most widespread faith. The city of Eterna holds the oldest Holy Throne, from which the Patriarch guides temples devoted to the indivisible pantheon.<br><br>"
 
 /datum/virtue/origin/heartfelt
@@ -110,7 +110,7 @@
 	list_item_order = 1
 	name = "Heartfeltian"
 	origin_name = "Heartfelt"
-	desc = "I come from the islands of Hartfelt — once a majestic, beautiful kingdom, the pearl of the northern seas, and now — a land burning in the flames of civil war.<br>"
+	desc = "I come from the islands of Hartfelt, once the jewel of the northern seas and now a kingdom consumed by civil war.<br>"
 	origin_desc = "<br><br><b>The Kingdom of Hartfelt</b> was once the pearl of the northern seas. Nobles traveled from across the world to admire its landscapes, collect its art, and taste fruit grown nowhere else. Its scholars and craftspeople prospered beneath a stable crown.<br><br>That peace ended fourteen years ago. Civil war shattered the kingdom, and no claimant has restored its unity. Only the gods know what order, if any, will rise from the ruins.<br><br>"
 
 /datum/virtue/origin/etrusca
@@ -126,7 +126,7 @@
 	name = "Etruscan"
 	origin_name = "Etrusca"
 	added_languages = list(/datum/language/etruscan)
-	desc = "I belong to one of the countless cultures that developed in the Etruscan archipelago. Refined tastes, exquisite attire, and traditions of slavery are precisely the things that characterize the early years of my life.<br>"
+	desc = "I belong to one of the many cultures of the Etruscan archipelago. Refined tastes, elaborate dress, and the institution of slavery shaped my early life.<br>"
 	origin_desc = "<br><br><b>The Kingdom of Etrusca</b>, also called the Etruscan Islands or the Island Union of Zaragoza, lies in the middle of the Resting Ocean. Isolation and maritime trade produced one of Grimoria's wealthiest and most diverse cultures.<br><br>Its two principal islands, Navarno and Montecarina, differ enough to resemble separate countries. The crown of House Zaragoza nevertheless binds them into a single kingdom.<br><br>"
 
 /datum/virtue/origin/otava
@@ -142,7 +142,7 @@
 	name = "Otavan"
 	origin_name = "Otava"
 	added_languages = list(/datum/language/otavan)
-	desc = "I come from the island of Otava — the sacred stronghold of faith in Psaidon, the All-Creator of Being, founded by faithful followers of the wounded god.<br>"
+	desc = "I come from Otava, the island stronghold of those who worship Psydon, the wounded All-Creator.<br>"
 	origin_desc = "<br><br><b>The Otavan Theocracy</b> is the foremost stronghold of faith in Psydon, the wounded All-Creator. Founded after the fall of the holy comet Zion and united under a Supreme Magister, this small state commands religious learning and influence far beyond its shores. Steam and gunpowder have only strengthened its resolve to confront the forces of darkness.<br><br>Otava lies southwest of Giza in the southern ocean. Its ports make the island strategically important, while a network of overseas fortresses and port cities supplies it with food and raw materials. Those holdings belong to the Church of the All-Father in law but answer in practice to the Supreme Magister's chancery.<br><br>Supreme Magister Kastellos Neratta rules from the walled cathedral-fortress of Deilitis. The Marshal of the Inquisition—whose identity is carefully concealed—stands beside the Magister as the island's second great authority. Travelers, refugees, sailors, and religious orders have all shaped Otavan society, but faith in the All-Father binds them together. Otava is the birthplace of the Inquisition, the Order of Silver, and the Order of Black Gunpowder.<br><br>"
 
 /datum/virtue/origin/gronn
@@ -160,7 +160,7 @@
 	name = "Gronnic"
 	origin_name = "Gronn"
 	added_languages = list(/datum/language/gronnic)
-	desc = "I come from the cold, harsh lands of Gronn — either from the Northern Isles or from the Sister Lands, Fjalla.<br>"
+	desc = "I come from the cold, unforgiving lands of Gronn: either the Northern Isles or the neighboring Sister Lands of Fjalla.<br>"
 	origin_desc = "<br><br><b>Gronn</b> encompasses the Northern Islands and the neighboring Sister Lands of the Northern Wastes. Outsiders know its people as guarded traders and fearsome raiders. Those who survive the journey with useful goods, however, can find willing partners among them.<br><br>Gronn faith rejects both the Ten and the teachings of Psydon. Its people honor six great beasts, each embodying a principle by which life should be lived. Foreign theologians draw parallels with other pantheons, but the Gronn firmly deny those interpretations and preserve their own rites. They seldom wage war solely over religion; the northern climate itself has proved a stronger defense against conversion than any army.<br><br>"
 
 /datum/virtue/origin/racial/crimson_lands
@@ -182,7 +182,7 @@
 	added_languages = list(/datum/language/raneshi)
 	races = list(/datum/species/anthromorph,
 				/datum/species/anthromorphsmall)
-	desc = "My life is inextricably tied to the Crimson Lands — whether it is the homeland that fell victim to a magical catastrophe, or the battlefields where, during the years of the Twilight War, the blood of soldiers, mercenaries, and fortune seekers from all corners of Grimoria was shed. Whatever the reason, what I experienced among the scarlet wastelands changed me forever.<br>"
+	desc = "My life is bound to the Crimson Lands, whether as a native of that magically ruined country or as one of the soldiers, mercenaries, and fortune-seekers drawn there by the Twilight War. Whatever brought me to the scarlet wastes, I left them forever changed.<br>"
 	origin_desc = "<br><br><b>The Crimson Lands</b> stretch between the Black Empire's northern plains and the prefecture of Naledi. Dozens of tribes, petty kingdoms, and city-states once flourished there under rulers who drew power from an ancient magical source. During the Twilight War the region became Grenzelhoft's road south, then the stronghold of Wolf Shah Zukhim and his coalition against Dvergeil.<br><br>After Zukhim's defeat, Basileus Mansa-Padashi ordered the mages of the Tower of Nok to overload the source and end the northern threat. The resulting catastrophe incinerated powerful sorcerers, twisted others into maddened wild-kin, and killed or transformed much of the population.<br><br>Today the region is a barren scarlet waste saturated with unstable magic. Ruined towers and fortresses draw treasure-seekers despite their dangers, while scattered communities struggle to survive in a land almost stripped of ordinary plant and animal life."
 
 /datum/virtue/origin/raneshen
@@ -203,7 +203,7 @@
 	name = "Zybantu - Ranesheni"
 	origin_name = "Raneshan"
 	added_languages = list(/datum/language/raneshi)
-	desc = "I come from the lands of Raneshan — a prefecture of Zibantia, known as a land where the saber rules, not gold. Value in Raneshan is measured not by trade profits, but by battle glory, conquests, and the number of slaves captured in fights for honor.<br>"
+	desc = "I come from Raneshan, a Zibantian prefecture where the saber commands more respect than gold. Its people measure status through martial glory, conquest, and captives taken in battle rather than mercantile profit.<br>"
 	origin_desc = "<br><br><b>Raneshen</b> is Zibantia's second-largest prefecture and marks the eastern edge of the Western Kingdoms. A kephalos governs it with broad autonomy, much like neighboring Naledi.<br><br>Its position once gave Raneshen a near-monopoly over trade with the Far East. Rare goods from Gyozdai enriched its cities during the Golden Empire's height. That prosperity faded when the old empire fell and merchants opened new routes; eastern caravans now arrive only rarely.<br><br>"
 
 /datum/virtue/origin/naledi
@@ -224,7 +224,7 @@
 	name = "Zybantu - Naledian"
 	origin_name = "Naledi"
 	added_languages = list(/datum/language/raneshi)
-	desc = "I come from the lands of Naledi — the prefecture of Zibantia, known for its endless deserts and unique beliefs. My homeland was largely devastated by the Twilight War, and this could not help but affect me.<br>"
+	desc = "I come from Naledi, a Zibantian prefecture known for its endless deserts and distinctive faith. The Twilight War devastated my homeland and marked everyone who survived it.<br>"
 	origin_desc = "<br><br><b>Naledi</b> is one of Zibantia's two largest prefectures and is governed by a kephalos appointed by the Basileus. Despite its formal subordination to the central government, Naledi retains broad autonomy over local administration, culture, and religion. Its traditions and beliefs distinguish it sharply from the rest of Zibantia.<br><br>Unlike most Zibantians, the Naledian people follow the Psydonite faith rather than the Ten. Most Naledians believe the Almighty still lives, a conviction that shapes every part of their daily life and lends their culture unusual fervor and cohesion.<br><br>The Naledian confession, known as the Doctrine of Fate, teaches that Psydon foresaw his defeat at the hands of Zizo—called Iblis in Naledi—and willingly abandoned his heavenly throne when he understood what was to come. Since then, he has walked among mortals, observing them until humanity proves worthy of his return. Legend holds that Psydon taught the Naledians to wear golden masks: second faces that shield the soul and mind from demons and jinn."
 
 /datum/virtue/origin/zybantian
@@ -244,7 +244,7 @@
 	name = "Zybantian"
 	origin_name = "Zybantu"
 	added_languages = list(/datum/language/raneshi)
-	desc = "I come from the lands of the Ziggurat of Zibantu, now uniting the fragments of the fallen Golden Empire under a single flag. My homeland is known for its populous and diverse cities, a developed magical tradition, the trade of slaves, and a complex system of governance combining centralized power with regional autonomy.<br>"
+	desc = "I come from Zigurat Zibantu, which gathers the remnants of the fallen Golden Empire beneath one banner. Its crowded, diverse cities are known for arcane learning, the slave trade, and a government that balances imperial authority with regional autonomy.<br>"
 	origin_desc = "<br><br><b>The Zibantian Empire</b>, or Zigurat Zibantu, arose in the south from the ruins of the Golden Empire after its defeat by Grenzelhoft in the Twilight War. It preserves many ancient institutions while slowly rebuilding its power.<br><br>Basileus Manasa-Padashi rules the Zibantian heartland and the autonomous prefectures of Naledi and Raneshen. The Universal Patriarchate of Dvergeil provides spiritual authority, teaching a form of the Pantheon in which Nok, rather than Astrata, holds primacy.<br><br>Enslaved labor and the slave trade remain central to the imperial economy. The Golden Empire's Purple Fleet once taxed every merchant crossing the Black Sea, but that naval supremacy ended with the war. Naledi still suffers from the devastation of Grenzelhoftian raids, and communities of escaped slaves have turned to banditry or Mattiosism. Zibantian arcane traditions also endured: although Grenzelhoft destroyed great orders such as the New Moon, Naledian Psydonite sorcerers and other mages remain influential.<br><br>"
 
 /datum/virtue/origin/kazengun
@@ -264,7 +264,7 @@
 	name = "Kazengun - Mainlander"
 	origin_name = "Kazengun"
 	added_languages = list(/datum/language/kazengunese)
-	desc = "I come from the mist-covered lands of Kazengun. The traditions and culture I have been accustomed to since childhood still amaze and astonish Westerners I meet.<br>"
+	desc = "I come from the mist-shrouded lands of Kazengun. The customs I learned in childhood often surprise the Westerners I meet.<br>"
 	origin_desc = "<br><br><b>The Kazen Shogunate</b>, also called Kazengun, is a great feudal island state in the eastern ocean. The Shogun's military authority binds together the Au'ra peoples, the powerful northern and southern clans, and the recently conquered lands of Joseon on the eastern continent.<br><br>Rigid social rank, aristocratic privilege, and the Aisatai Order form the pillars of Kazengun society. Openly challenging a superior is scandalous and can border on heresy. Advancement is accepted only when success itself appears to prove that the Order intended it: an exceptionally wealthy merchant might, for example, rise to daimyo. Even then, official doctrine insists that change is unnatural to the Order."
 
 /datum/virtue/origin/lingyue
@@ -284,7 +284,7 @@
 	name = "Kazengun - Jeoseonese"
 	origin_name = "Kazengun"
 	added_languages = list(/datum/language/lingyuese)
-	desc = "I come from the lands of Joseon — a vassal kingdom of the Kazen Shogunate. Once my homeland declared independence from the Gozaian Kingdom, and, despite the fact that my people were forced to bow before the invaders, their freedom-loving spirit remains strong.<br>"
+	desc = "I come from Joseon, a vassal kingdom of the Kazen Shogunate. My homeland once won independence from Gyozdai; although conquest forced my people to bow again, their desire for freedom remains strong.<br>"
 	origin_desc = "<br><br>For most of recorded history, Joseon belonged to <b>the Gyozdai realm.</b> Gyozdai chronicles claim that Joseon was the first civilized state to swear loyalty after witnessing the countless legions of the Malachite Huangdi, decades before the Arch-Betrayal and the War in the Heavens.<br><br>The relationship was never equal. Gyozdai elites dismissed Joseon as barbaric, and their diplomats treated its people as a conquered nation. Joseon finally declared independence in the eleventh century of the New Order, when civil conflict and undead incursions weakened its former master. The freedom was brief: after the devastating Red Band uprising, the Kazen Shogunate conquered the exhausted country. Its people nevertheless remember independence, and their desire for it endures.<br><br>"
 
 /datum/virtue/origin/gyedzenese
@@ -302,7 +302,7 @@
 	name = "Gyedzenese"
 	origin_name = "Gyedzai"
 	added_languages = list(/datum/language/gyedzenese)
-	desc = "I come from the lands of Gyoza, once under the unified rule of Huangdi. Today my homeland is not a single state that survived the War in the Heavens, but merely a handful of disparate factions fighting for influence and resources.<br>"
+	desc = "I come from Gyozdai, once united beneath a Huangdi. Today it is no single state, but a collection of rival factions struggling for land, resources, and legitimacy.<br>"
 	origin_desc = "<br><br><b>Gyozdai</b>, sometimes called the Gyozdai Kingdom or Empire, is now a cultural name rather than a unified state. A Huangdi once ruled these lands through a succession of celebrated dynasties, but the empire fragmented more than four centuries ago. Shared language, religion, and custom still bind its peoples together. Gyozdai is renowned for silk cultivation and for tea ceremonies that serve equally as daily ritual, diplomatic language, and an expression of respect.<br><br>Ten rival dynasties, supported by shifting leagues and clans, now fight for the right to name a new Huangdi. Armies contest the borders while factions struggle within every court. No claimant has yet brought all Gyozdai beneath a single banner.<br><br>"
 
 /datum/virtue/origin/hammerhold
@@ -318,7 +318,7 @@
 	name = "Hammerholdian"
 	origin_name = "Hammerhold"
 	added_languages = list(/datum/language/elvish)
-	desc = "I come from the lands of Hammerhold — cold lands that became home to the elven people after the fall of the Divine Empire.<br>"
+	desc = "I come from Hammerhold, a cold northern kingdom that became a homeland for the elves after the Divine Empire fell.<br>"
 	origin_desc = "<br><br><b>The Kingdom of Hammerhold</b>, also called the Six Great Principalities, is small in territory but vital to the Western Continent's defense. It stands against three northern scourges: goblin tribes, marching dead, and cannibal clans. Warm summers and rich harvests are rare, but the harsh country raises people renowned for endurance.<br><br>The royal demesne and five princely marches divide Hammerhold between them. The ancient elven House of Khmelnitsky holds the crown and claims descent from witnesses to the All-Father's reign. By tradition, the women of that house wear the Monomakh Hat and rule for long, measured reigns. Their vassal principalities guard the frontier between the Wild North and the troubled south.<br><br>"
 
 /datum/virtue/origin/avar
@@ -334,7 +334,7 @@
 	name = "Aavnic"
 	origin_name = "Avar"
 	added_languages = list(/datum/language/aavnic)
-	desc = "I come from the Aavnur Plateau — a land of endless steppes, warriors, and nomads, which has only recently been able to breathe freely after centuries of Gödzai oppression.<br>"
+	desc = "I come from the Aavnr Highlands, a vast country of steppes, warriors, and nomads only recently freed from centuries of Gyozdai domination.<br>"
 	origin_desc = "<br><br><b>The Aavnr Highlands</b> are a vast expanse of mountains and steppe north of Gyozdai. Aavnr has no unified state. Many nomadic communities resist permanent settlement, even as a feudal society develops in the north.<br><br>A loose confederation centered on the city-state of Serendnizhina offers the nearest thing to common government. Tribal chiefs, urban rulers, and steppe khans gather there to exchange news, settle disputes, bargain over trade, or declare hostilities. Seven leading figures form a council for major decisions, but its authority is often ceremonial. In serious conflicts, each faction relies upon its own strength and alliances."
 
 /datum/virtue/origin/racial/lirvas
@@ -354,7 +354,7 @@
 				/datum/species/lizardfolk,
 				/datum/species/anthromorph,
 				/datum/species/dracon)
-	desc = "I come from the jungles of Lirvas, where on the ruins of dozens of fallen civilizations the descendants of majestic dragons built the Eternal Empire.<br>"
+	desc = "I come from the jungles of Lirvas, where the descendants of dragons built their Eternal Empire upon the ruins of countless fallen civilizations.<br>"
 	origin_desc = "<br><br><b>The One Hundred and Eleventh Empire of Lirvas</b> is, according to naga prophecy, destined to be the last empire—and an eternal one. Kobolds, lizardfolk, and draconoids return from across the world to fulfill that promise and settle their ancient struggle with Gyozdai.<br><br>"
 
 /datum/virtue/origin/racial/underdark
@@ -369,7 +369,7 @@
 	list_item_order = 1
 	name = "Underdweller"
 	origin_name = "the Underdark"
-	desc = "I come from the Underdark — a vast network of caves located deep beneath the surface of Grimoria and stretching almost beneath the entire territory of the Western Kingdoms.<br>"
+	desc = "I come from the Underdark, a vast network of caverns extending beneath much of the Western Kingdoms.<br>"
 	added_languages = list(/datum/language/undercommon)
 	races = list(/datum/species/elf/dark,
 				/datum/species/human/halfelf,
@@ -394,7 +394,7 @@
 	list_item_order = 2
 	name = "Underdweller - Drow Cities"
 	origin_name = "the Underdark"
-	desc = "I come from the gloomy city of dark elves, located in the Middle Underworld. My youth was spent in a web of intrigues, survival struggles, and prayers to the Lady of Darkness — whether they were sincere or pretended.<br>"
+	desc = "I come from one of the drow cities of the Middle Underdark. I grew up amid intrigue, desperate struggles for survival, and prayers to the Lady of Darkness—whether sincere or merely performed.<br>"
 	added_languages = list(/datum/language/undead)
 	races = list(/datum/species/elf/dark,
 				/datum/species/human/halfelf)
@@ -413,7 +413,7 @@
 	name = "Akhdruki"
 	added_languages = list(/datum/language/dwarvish)
 	origin_name = "Drud Akhdruk"
-	desc = "I come from Drud Akhdruk, a united kingdom of dwarves, bringing together dozens of fortresses across Grimoria.<br>"
+	desc = "I come from Drud Akhdruk, the dwarven kingdom that unites dozens of strongholds across Grimoria.<br>"
 	races = list(/datum/species/dwarf/mountain,
 				/datum/species/dwarf/gnome)
 	origin_desc = "<br><br>Dwarven standing rests on three measures: age, wealth, and mastery of a craft. Those who possess all three command the greatest respect, though boasting about one's lineage is considered poor form.<br><br>Dwarves honor their ancestors by preserving what they made. Craftspeople repair ancient works, reforge inherited weapons, and incorporate old relics into new creations. Their greatest arms are forged from blacksteel.<br><br>Oaths lie at the heart of dwarven honor. A broken promise does not die with the oathbreaker: descendants may inherit both the duty to fulfill an ancestor's pledge and the right to demand restitution from the betrayer's heirs.<br><br>Grave offenses against faith or law are entered into a Book of Grudges. Every respectable dwarf carries a personal volume in which to record wrongs that remain unsettled."
@@ -431,7 +431,7 @@
 	name = "Infernal"
 	added_languages = list(/datum/language/hellspeak)
 	origin_name = "the Inferno"
-	desc = "I come from Inferno — one of the outer Planes of reality, the homeland of demons. Having overcome this world of unscrupulous evil and institutional cruelty, I made my way to the foreign lands of Grimoria.<br>"
+	desc = "I come from Inferno, an outer plane and the homeland of demons. I escaped its calculated evil and institutional cruelty to seek a life in the unfamiliar lands of Grimoria.<br>"
 	races = list(/datum/species/tieberian,
 				/datum/species/dullahan,
 				/datum/species/demihuman)
@@ -450,7 +450,7 @@
 	name = "Ancient"
 	origin_name = "Age Long Gone"
 	added_languages = list(/datum/language/celestial)
-	desc = "My origins have been lost to the centuries. I come from a land where no trace of my culture remains, or perhaps divine intervention alone brought me into being.<br>"
+	desc = "My origins are lost to the centuries. Perhaps no trace of my culture survives, or perhaps divine intervention alone brought me into being.<br>"
 	races = list(/datum/species/elf/wood,
 				/datum/species/elf/dark,
 				/datum/species/elf/sun,

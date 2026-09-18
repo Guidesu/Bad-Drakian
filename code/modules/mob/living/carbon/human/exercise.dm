@@ -3,7 +3,7 @@ Exercise Verbs
 */
 
 /mob/living/carbon/human/verb/pushup()
-	set name = "Push-ups"
+	set name = "Do Pushup"
 	set desc = "Makes you do a pushup."
 	set category = "Emotes"
 

@@ -1,8 +1,8 @@
 /datum/decree/zenitstadt_concordat
 	id = DECREE_ZENITSTADT_CONCORDAT
-	name = "Twilight Concordat"
+	name = "The Zenitstadt Concordat"
 	category = DECREE_CATEGORY_ANCIENT
-	mechanical_text = "Clergy and benefactors of the Church are exempt from taxes."
+	mechanical_text = "Church clergy and declared Benefactors of the Faith pay no taxes."
 	flavor_text = {"This Twilight Concordat, concluded under the auspices of the Ten Indivisibles between the Crown of Azuria, the Holy See of Grenzelhoft and the Holy See of Valoria in memory of the great victory over the forces of darkness that dominated the Asurian Valley, decree:
 
 - The Valorian Church of the Indivisible Ten, illuminated by the light of Astrata, is endowed with the right and duty to preserve the peace of the gods on this land. In fulfillment of this noble purpose, the servants of the Church will pray for the safety and prosperity of the Duchy day and night, maintain the favor of the Ten through proper sacraments and ceremonies, collect tithes from their parishioners, and provide shelter to the poor and oppressed. The servants of the Church, including the crusaders of the Order of the Templars, called to protect the sanctity of the temples and shrines of the Ten, may freely and unobstructedly move through the lands of the Azurian Valley, and shall not be subjected to any persecution or oppression.
@@ -12,8 +12,8 @@
 Striving to maintain peace on the lands of Azuria, all parties who have assured this Concordat undertake to seek to uphold the letter and spirit of this agreement, henceforth and forever.
 
 Certified with the seal of the Crown, the seal of the Holy See of Grenzelhoft, and the seal of the Holy See of Valoria, by the grace of the Ten Indivisible."}
-	revoke_text = "Ruler of these lands annulled the Twilight Concordat. The wealth of the Church must serve the good of the Duchy - and may the Ten judge the justice of this decision."
-	restore_text = "The ruler of these lands has restored the Twilight Concordat. The Crown will no longer interfere with the disposition of the Church's temporal wealth."
+	revoke_text = "The %RULER% has rescinded the Zenitstadt Concordat. The Church's wealth shall serve the greater good of the Realm - let the Ten judge who betrayed whom."
+	restore_text = "The %RULER% has affirmed the Zenitstadt Concordat. The hand of the Crown shall meddle no more in the disposition of the Church's worldly wealth."
 
 /datum/decree/zenitstadt_concordat/roll_initial_year()
 	return CALENDAR_EPOCH_YEAR - rand(50, 120)

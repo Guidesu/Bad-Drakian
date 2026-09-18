@@ -93,7 +93,7 @@
 /datum/usurpation_rite/golden_accord/on_contesting_started()
 	priority_announce( \
 		"[invoker.real_name] has invoked the Rite of Golden Accord!\n\n" + \
-		"The people of [SSticker.realm_name] has spoken — a merchant republic shall be established, and [invoker.real_name] elected its first Chancellor!\n\n" + \
+		"The people of [get_realm_name()] have spoken — a merchant republic shall be established, and [invoker.real_name] elected its first Chancellor!\n\n" + \
 		"A Council of Burghers has affirmed this claim.\n\n" + \
 		"The Accord shall be sealed in [RITE_CONTEST_DURATION / (1 MINUTES)] minutes -- unless the claim is struck down.", \
 		"Rite of Golden Accord", \

@@ -35,9 +35,9 @@
 /datum/storyteller/psydon
 	name = "Psydon"
 	ru_name = "Psydon"
-	vote_desc = "Peace reigns. There will be no antagonists. His children can rest easy - they deserve a break."
-	desc = "Ordinary and moderate events happen 1.2 times more often. Without antagonists and divine intervention. Gnolls are disabled."
-	welcome_text = "A soft wind passes through the quiet streets..."
+	vote_desc = "Peace reigns. No villains will be present. His children can rest easy, for they have earned their respite"
+	desc = "Mundane and moderate events fire 1.2x more often. No antagonists, no divine intervention. Gnolls absent."
+	welcome_text = "A temperate breeze rolls through the quiet streets.."
 	weight = 6
 	always_votable = TRUE
 	color_theme = "#80ced8"
@@ -58,9 +58,9 @@
 /datum/storyteller/astrata
 	name = "Astrata"
 	ru_name = "Astrata"
-	vote_desc = "Order reigns. The great threats are not destined to appear, and the gnolls do not dare to set foot in Her daylight. Her mercy is addressed to the nobility and Her decrees."
-	desc = "Bandits, liches, werewolves and vampire lords do not drop. Masquerade is the only major antagonist at the start of the round and receives a weight of x1.5. Gnolls are disabled. Wretches scale normally."
-	welcome_text = "Warm daylight awakens you from sleep..."
+	vote_desc = "Order reigns. No great villains will rise, and gnolls do not stalk her daelight. Her favor shines upon nobility and their decrees."
+	desc = "Bandits, liches, werewolves, and vampire lords cannot roll. Masquerade is the only roundstart hard antag and gets a 1.5x weight bump. Gnolls absent. Wretches scale normally."
+	welcome_text = "The warmth of daelight rouses you from your slumber.."
 	weight = 6
 	always_votable = TRUE
 	follower_modifier = LOWER_FOLLOWER_MODIFIER
@@ -99,9 +99,9 @@
 /datum/storyteller/noc
 	name = "Noc"
 	ru_name = "Nok"
-	vote_desc = "Knowledge reigns. There are fewer events than usual, but lasso intervention is still possible. Her grace is directed to those who dream of more."
-	desc = "Magic events receive a weight of x1.2, events with ghosts - x1.1. The spread of event costs is higher. The pool of antagonists remains unchanged. One gnoll possible."
-	welcome_text = "The air crackles with arcane energy..."
+	vote_desc = "Knowledge reigns. Occurrences are tame, but remain suspectable to arcyne intervention. His favor shines upon those who dream for greater ambitions."
+	desc = "Magical events fire 1.2x more often, haunted 1.1x. Higher event cost variance. No antag pool changes. Single gnoll possible."
+	welcome_text = "The air crackles with arcyne energy.."
 	weight = 4
 	always_votable = TRUE
 	color_theme = "#F0F0F0"
@@ -134,9 +134,9 @@
 /datum/storyteller/ravox
 	name = "Ravox"
 	ru_name = "Ravox"
-	vote_desc = "Glory reigns. Raids and omens come more often. His mercy is heard in the clink of steel and war cries - the bandits answer His call, but the gnolls stay away."
-	desc = "The raid pool gains points 2 times faster, and raid events gain x1.3 weight. Bandits are guaranteed to become major antagonists at the start of the round. Ordinary and personal events are suppressed. Gnolls are disabled."
-	welcome_text = "\"The pipes of Zericho echo in the distance...\""
+	vote_desc = "Glory reigns. Raids and omens are more likely to occur. His favor shines upon clashing steel and the cries of war - though no villains nor gnolls answer His call."
+	desc = "Raids fire 2x more often (track gain) and raid events get a 1.3x weight bump. No antagonists at all. Mundane and personal events suppressed. Gnolls absent."
+	welcome_text = "\"The trumpets of Zericho are echoing in the distance..\""
 	weight = 4
 	always_votable = TRUE
 	color_theme = "#228822"
@@ -183,9 +183,9 @@
 /datum/storyteller/abyssor
 	name = "Abyssor"
 	ru_name = "Abyssor"
-	vote_desc = "Water reigns. Events are calm, but their course changes with the tide. His mercy is addressed to fishermen, leeches and drowned people - dreamwalkers walk the deep paths, and gnolls do not dare to go to His shores."
-	desc = "Water events receive a weight of x1.3, trade events - x1.2. Dreamwalker gains x1.5 weight in the antagonist pool. Gnolls are disabled."
-	welcome_text = "The horizon is darkening: the clouds are gathering for a nearby storm..."
+	vote_desc = "Water reigns. Occurrences are tame, though their temperance oft-sways with the tide's flow. His favor shines upon the fished, leeched, and drowned - dreamwalkers ride the deep, but no gnolls dare His shores."
+	desc = "Water events get a 1.3x weight bump, trade 1.2x. Dreamwalker gets a 1.5x weight bump in the antag pool. Gnolls absent."
+	welcome_text = "The horizon grows dark, as its clouds gather for a coming storm.."
 	weight = 4
 	always_votable = TRUE
 	color_theme = "#3366CC"
@@ -219,9 +219,9 @@
 /datum/storyteller/xylix
 	name = "Xylix"
 	ru_name = "Xylix"
-	vote_desc = "Unpredictability reigns. Nothing is set in stone, but everything is possible. His mercy is directed towards chance, whim and joke."
-	desc = "Some forced events ignore online requirements, and events that have already been triggered immediately receive a full replay penalty. Divine Intervention x1.75; character infiltration, bad omen and raids are suppressed to 0. All major antagonists available at the start of the round receive a weight of x1.5. Gnoll mode is randomly selected."
-	welcome_text = "\"...this is what happens from excess spices and wine!\""
+	vote_desc = "Unpredictability reigns. Nothing is set in stone, yet everything is possible. His favor shines upon acts of chance and whimsy."
+	desc = "Forced events bypass population prerequisites and any event that's already fired this round drops to its full repetition penalty immediately. Intervention 1.75x; character injection, omens and raids suppressed to 0. All roundstart hard antags get a 1.5x weight bump. Gnoll mode randomized."
+	welcome_text = "\"..well, that's what happens out of too much spice and wine!\""
 	weight = 4
 	always_votable = TRUE
 	event_repetition_multiplier = 0
@@ -258,9 +258,9 @@
 /datum/storyteller/necra
 	name = "Necra"
 	ru_name = "Nekra"
-	vote_desc = "Death reigns. Events happen less often, and antagonists appear more reluctantly. Her mercy is directed to those who return the rest to their graves."
-	desc = "Ghost events gain x1.3 weight. Antagonist and raid spawn points gain points at half the rate; personal events are also slowed down. Ordinary and moderate events happen 1.25 times more often. One gnoll possible."
-	welcome_text = "\"The smell of decay was wafted in the fief of Zenmark...\""
+	vote_desc = "Death reigns. Occurrences happen less often, and villains are less likely. Her favor shines upon those who put the deathless back into their graves."
+	desc = "Haunted events get a 1.3x weight bump. Antag track and raid track gain points half as fast; personal events also slowed. Mundane and moderate events fire 1.25x more often. Single gnoll possible."
+	welcome_text = "\"In the fief of Zenmarke, there was the odor of decay..\""
 	weight = 4
 	always_votable = TRUE
 	color_theme = "#888888"
@@ -304,9 +304,9 @@
 /datum/storyteller/pestra
 	name = "Pestra"
 	ru_name = "Motley"
-	vote_desc = "Healing reigns. Events are calm, but skillful hands can change their course. Her mercy is addressed to healers and alchemists."
-	desc = "Alchemical and medical events receive a weight of x1.2, natural ones - x1.1. All major antagonists drop at the same base weight - no preference between bandits, liches, werewolves and vampire lords. One gnoll possible."
-	welcome_text = "You can hear the clinking of instruments and the gurgling of alchemical miracles..."
+	vote_desc = "Health reigns. Occurrences are tame, yet swayable with practiced hands. Her favor shines upon stitches and alchemists"
+	desc = "Alchemy and medical events get a 1.2x weight bump, nature 1.1x. All hard antags roll at flat equal weight - no preference between bandits, liches, werewolves, or vampire lords. Single gnoll possible."
+	welcome_text = "The clattering of instruments, and the churning of alchemical wonders.."
 	color_theme = "#AADDAA"
 	preferred_gnoll_mode = GNOLL_SCALING_SINGLE
 
@@ -340,9 +340,9 @@
 /datum/storyteller/malum
 	name = "Malum"
 	ru_name = "Malum"
-	vote_desc = "Labor reigns. Divine intervention happens more often. His mercy is addressed to the masters who create masterpieces and to the miners."
-	desc = "Labor events receive a weight of x1.5. Divine intervention happens 2 times more often, personal events - 1.2 times more often. All major antagonists drop at the same base weight. One gnoll possible."
-	welcome_text = "The sound of hammers echoes throughout the area, and the heat of forges fills the streets..."
+	vote_desc = "Effort reigns. Divine intervention occurs more often. His favor shines upon masterworks and mineshafts."
+	desc = "Work-tagged events get a 1.5x weight bump. Divine intervention fires 2x more often, personal events 1.2x. All hard antags roll at flat equal weight. Single gnoll possible."
+	welcome_text = "The pounding of red-hot steel, and the laboring of a hundred calloused hands.."
 	color_theme = "#D4A56C"
 	preferred_gnoll_mode = GNOLL_SCALING_SINGLE
 
@@ -382,9 +382,9 @@
 /datum/storyteller/eora
 	name = "Eora"
 	ru_name = "Eora"
-	vote_desc = "Love reigns. Good events come more often, and She does not wish harm on anyone. Without antagonists and gnolls; only a handful of outcasts (Wretches) hide on the outskirts. Her grace turns to romance."
-	desc = "Mass events receive a weight of x1.5, blessings - x1.2. No antagonists or raids. Divine intervention happens 2 times more often, personal events - 1.4 times more often. Wretches are forced to be limited to 5 slots. Gnolls are disabled."
-	welcome_text = "\"Love is in the air? No; This is the smell of freshly baked pies on the windowsills!\""
+	vote_desc = " Love reigns. Positive affairs occur more often, and She wills for none to be ill. No villains, no gnolls; only a small handful of wretches lurk at the fringe. Her favor shines upon romance."
+	desc = "Widespread events get a 1.5x weight bump, boons 1.2x. No antagonists, no raids. Divine intervention fires 2x more often, personal events 1.4x. Wretches hard-capped at 5 slots. Gnolls absent."
+	welcome_text = "\"Love is in the air? Nay; tis the smell of freshly-baked pies upon the windowsills!\""
 	color_theme = "#9966CC"
 	preferred_gnoll_mode = GNOLL_SCALING_NONE
 	wretch_slot_cap = 5
@@ -437,9 +437,9 @@
 /datum/storyteller/dendor
 	name = "Dendor"
 	ru_name = "Dendor"
-	vote_desc = "Nature reigns. Thickets and werewolves come more often. His mercy goes to the harvest and the lycanthropes - the gnolls stay away from His wild lands."
-	desc = "Natural events receive a weight of x1.5. The werewolf is the only major antagonist at the start of the round and receives weight x1.5; Bandits, Liches and Vampire Lords do not drop. Divine intervention happens 2 times more often. Gnolls are disabled."
-	welcome_text = "The roll call of birds sitting on the branches and the shine of the morning dew..."
+	vote_desc = " Nature reigns. Overgrowth and Verevolves are more likely to occur. His favor shines upon harvests and lycanthropes - gnolls keep their distance from His wilds."
+	desc = "Nature events get a 1.5x weight bump. Werewolf is the only roundstart hard antag and gets a 1.5x weight bump - bandits, liches, and vampire lords cannot roll. Intervention fires 2x more often. Gnolls absent."
+	welcome_text = "The cackling of perched zads, and the glimmer of morning dew.."
 	weight = 4
 	always_votable = TRUE
 	color_theme = "#664422"
@@ -482,9 +482,9 @@
 /datum/storyteller/zizo
 	name = "Zizo"
 	ru_name = "Zizo"
-	vote_desc = "Chaos reigns. Liches awaken more readily than under the rule of any other God, the undead become much more ferocious, and the cultists of Ascension crawl out of their hiding places in order to make a worthy sacrifice to their Mistress. Her mercy is directed towards corpses - saints, nobles or rebels."
-	desc = "Magical, gambling, deceitful and sudden events receive increased weight (from x1.2 to x1.5). Lich or Cult of Ascension are guaranteed at the start of the round; bandits, werewolves and vampire lords do not drop. Great variation in the cost of events. Fixed gnoll spawn: 15% chance, maximum 2. Expanding the number of Wretches slots may work depending on the number of garrison slots."
-	welcome_text = "The dead wind carries the howl of the damned..."
+	vote_desc = "Chaos reigns. Liches stir more readily than under any other god, and Deadites are far more vicious. Her favor shines upon corpses; be they holy, noble, or reanimated."
+	desc = "Magical, gamble, trickery, and unexpected events get weight bumps (1.2x to 1.5x). Lich is guaranteed roundstart - bandits, werewolves, and vampire lords cannot roll. High event cost variance. Flat gnoll spawn (15% chance, 2 cap). Wretch T2 garrison expansion can fire."
+	welcome_text = "A breeze of morbid air, ferrying the howls of the damned.."
 	weight = 4
 	always_votable = TRUE
 	color_theme = "#CC4444"
@@ -535,9 +535,9 @@
 /datum/storyteller/baotha
 	name = "Baotha"
 	ru_name = "Baota"
-	vote_desc = "Datura reigns. Events become more chaotic and darker. Her mercy is addressed to drunkards and addicts."
-	desc = "Madness, Magic and Disaster events receive increased weight (from x1.1 to x1.4). Vampire Lord is guaranteed at the start of the round; bandits, liches and werewolves do not drop. All events accumulate points faster. Gnoll mode is randomly selected. Expanding the number of Wretches slots depending on the number of garrison slots may work."
-	welcome_text = "The air is filled with the sugary smell of hops and spices..."
+	vote_desc = "Spice reigns. Occurrences are more erratic and negative. Her favor shines upon drunkards and addicts."
+	desc = "Insanity, magic, and disaster events get weight bumps (1.1x to 1.4x). Vampire Lord is guaranteed roundstart - bandits, liches, and werewolves cannot roll. All event tracks accelerated. Gnoll mode randomized. Wretch T2 garrison expansion can fire."
+	welcome_text = "The sickly sweet aromas of liqour and spice fills the air.."
 	weight = 4
 	always_votable = TRUE
 	color_theme = "#9933FF"
@@ -589,9 +589,9 @@
 /datum/storyteller/graggar
 	name = "Graggar"
 	ru_name = "Graggar"
-	vote_desc = "Power reigns. Gnolls and assassins prowl harder than under any other God, and raids happen more often. His mercy turns to bloodshed and cannibalism."
-	desc = "Combat, bloody and military events receive increased weight (from x1.2 to x1.6). Gnolls and assassins are guaranteed at the start of the round. Raids gain points 2.5 times faster. Dynamic gnoll scaling: packs grow with population. Expanding the number of Wretches slots depending on the number of garrison slots may work."
-	welcome_text = "Smoke spreads through the streets, reeking of ash and blood..."
+	vote_desc = " Inhumenity reigns. Gnolls and assassins prowl more eagerly than under any other god, and raids occur far more often. His favor shines upon bloodshed and cannibalism."
+	desc = "Battle, blood, and war events get weight bumps (1.2x to 1.6x). Gnolls and Assassins are guaranteed roundstart. Raid track gains 2.5x faster. Dynamic gnoll scaling - packs grow with population. Wretch T2 garrison expansion can fire."
+	welcome_text = "Plumes of smoke are blown through the streets, reeking of ash and blood.."
 	weight = 4
 	always_votable = TRUE
 	color_theme = "#8B3A3A"
@@ -637,9 +637,9 @@
 /datum/storyteller/matthios
 	name = "Matthios"
 	ru_name = "Matthios"
-	vote_desc = "Freedom reigns. Bandit raids happen much more often than under other Gods. His mercy is directed towards thefts and offerings from one special sanctuary."
-	desc = "Trade, corruption and mining events are selected more often (x1.2 to x1.4). Bandits are guaranteed at the start of the round; Liches, werewolves and vampire lords do not appear. Antagonist spawn points accumulate 1.5 times faster. Gnoll mode is randomly selected. Expanding the number of Wretches slots depending on the number of garrison slots may work."
-	welcome_text = "Mammon is ringing, and freshly signed awards still smell of ink..."
+	vote_desc = "Thievery reigns. Bandit incursions are far more common than under other gods. His favor shines upon thefts and offerings to a certain shrine."
+	desc = "Trade, corruption, and loot events get weight bumps (1.2x to 1.4x). Bandits are guaranteed roundstart - liches, werewolves, and vampire lords cannot roll. Antag track gains 1.5x faster. Gnoll mode randomized. Wretch T2 garrison expansion can fire."
+	welcome_text = "The jingling of mammons, and the dripping of ink from freshly-signed bounties.."
 	weight = 4
 	always_votable = TRUE
 	color_theme = "#8B4513"

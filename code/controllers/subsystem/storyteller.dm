@@ -984,16 +984,16 @@ SUBSYSTEM_DEF(gamemode)
 	if(!preset)
 		return misc
 	if(preset.block_hard)
-		misc += "Major antagonists disabled"
+		misc += "Hard antags disabled"
 	else if(preset.guaranteed_hard)
-		misc += "Guaranteed major antagonist at the start of the round (requires online [HARD_ANTAG_MIN_POP]+)"
+		misc += "Guaranteed roundstart hard antag (needs pop >= [HARD_ANTAG_MIN_POP] for a major one)"
 		if(preset.hard_mult > 1)
-			misc += "Major antagonists scale online in [preset.hard_mult]x stronger"
+			misc += "Hard antag counts scale [preset.hard_mult]x harder with pop"
 	if(preset.block_soft)
-		misc += "Small antagonists disabled (Wretch/Gnoll/Assassin)"
+		misc += "No soft antags (wretch/gnoll/assassin)"
 	else
 		misc += "Wretch limit: [preset.wretch_slot_cap][preset.wretch_slot_cap > 5 ?" (scales)" : " (fixed)"]"
-	misc += "Slots Hag: [preset.hag_slots]"
+	misc += "Hag slots: [preset.hag_slots]"
 	misc += "Dreamwalker: [preset.allow_dreamwalker ? "may fall out" : "disabled"]"
 	return misc
 
@@ -1669,9 +1669,9 @@ SUBSYSTEM_DEF(gamemode)
 	for(var/datum/round_event_control/antagonist/solo/event as anything in guaranteed_roundstart_pool)
 		guaranteed_roundstart_names += event.name
 	var/guaranteed_pool_text = length(guaranteed_roundstart_names) ? story_ru_list(guaranteed_roundstart_names) : "No"
-	dat += "<BR>Guaranteed round start pool: [guaranteed_pool_text]"
+	dat += "<BR>Guaranteed Roundstart Hard-Antag Pool: [guaranteed_pool_text]"
 	if(current_roundstart_event)
-		dat += "<BR>Selected antagonist for the start of the round: [current_roundstart_event.name]"
+		dat += "<BR>Selected Roundstart Antag: [current_roundstart_event.name]"
 
 	// Job Scaling Info
 	dat += "<BR><b>--- Job Scaling ---</b>"
