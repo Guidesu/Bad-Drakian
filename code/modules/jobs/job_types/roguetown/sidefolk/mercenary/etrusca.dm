@@ -1,6 +1,6 @@
 /datum/advclass/mercenary/etrusca_condottiero
 	name = "Condottiero Ringleader"
-	tutorial = "Hailing from the Kingdom of Etrusca, you are a Condotierro - an upstart mercenary, dedicated to leading a group of trained soldiers of fortune oft found in the employ of powerful merchants and lords for your efficiency and grace. Without a war to fight back home, the Grand Duchy has become a much-needed source of contracts. Afterall, this land is rich in coin yet poor in manpower..."
+	tutorial = "Hailing from the Kingdom of Etrusca, you are a Condotierro: an ambitious mercenary who leads trained soldiers of fortune in the service of powerful merchants and rulers. With no war to fight at home, this independent realm has become a welcome source of contracts. After all, the land is rich in coin but poor in manpower..."
 	allowed_sexes = list(MALE, FEMALE)
 	
 	outfit = /datum/outfit/job/roguetown/mercenary/etrusca_condottiero

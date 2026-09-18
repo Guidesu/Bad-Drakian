@@ -514,7 +514,7 @@
 /datum/action/cooldown/spell/undivided/undivided_battlecry
 	name = "Ten United"
 	desc = "Rally the faithful to fight by your side, providing a buff (CONSTITUTION 2, WILLPOWER 2, FORTUNE 4) to Divine worshippers. Inhumen and Psydonites are left out, deadites suffer Daze (PERCEPTION -1, INTELLIGENCE -2, SPEED -1) within the radius."
-	fluff_desc = "From one whole they were created, molded by eachother into the beings they are now, alone they would wither away and die by enroaching darkness."
+	fluff_desc = "They were created from one whole and shaped by each other into the beings they are now. Alone, they would wither and die before the encroaching darkness."
 	button_icon_state = "united"
 	sound = 'sound/magic/battle_cry_undivided.ogg'
 	glow_intensity = GLOW_INTENSITY_VERY_HIGH

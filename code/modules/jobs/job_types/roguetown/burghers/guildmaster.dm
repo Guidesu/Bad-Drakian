@@ -9,8 +9,7 @@
 
 	forbidden_races = list(RACES_DESPISED)
 
-	tutorial = "You are the leader of the Guild of Crafts. You represents the interests of all of the craftsmen underneath you - including the Tailor\
-	the Blacksmiths, the Artificers and the Architects. Other townspeople may look to you for guidance, but they are not under your control. You are an experienced smith and artificer, and can do their work easily. Protect the craftsmen's interests."
+	tutorial = "You lead the Guild of Crafts and represent the craftspeople beneath its charter, including tailors, blacksmiths, artificers, and architects. Other townspeople may seek your guidance, but they are not under your command. You are an experienced smith and artificer, capable of performing their work with ease. Protect the interests of the realm's craftspeople."
 
 	outfit = /datum/outfit/job/roguetown/guildmaster
 	selection_color = JCOLOR_BURGHER
@@ -33,8 +32,7 @@
 
 /datum/advclass/guildmaster
 	name = "Guildmaster"
-	tutorial = "You are the leader of the Azure Peak Guild of Crafts. You represents the interests of all of the craftsmen underneath you - including the Tailor\
-	the Blacksmiths, the Artificers and the Architects. Other townspeople may look to you for guidance, but they are not under your control. You are an experienced smith and artificer, and can do their work easily. Protect the craftsmen's interests."
+	tutorial = "You lead the Guild of Crafts and represent the craftspeople beneath its charter, including tailors, blacksmiths, artificers, and architects. Other townspeople may seek your guidance, but they are not under your command. You are an experienced smith and artificer, capable of performing their work with ease. Protect the interests of the realm's craftspeople."
 	outfit = /datum/outfit/job/roguetown/guildmaster/basic
 	category_tags = list(CTAG_GUILDSMASTER)
 	subclass_stats = list(

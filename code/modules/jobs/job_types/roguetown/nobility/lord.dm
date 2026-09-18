@@ -70,7 +70,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 		<center><a href="?src=[REF(src)];subprefsexit=1">EXIT</a>\t\t<a href="?src=[REF(src)];subprefsreset=1">RESET</a></center>
 	"}
 	// the fact that the window width/height will be different each time is the main reason this isn't all done in a parent proc on /datum/job
-	var/datum/browser/popup = new(user, "[JOB_SUBPREFS_WINDOW_ID]", "<div align='center'>[title] Preferences</div>", 500, 400)
+	var/datum/browser/popup = new(user, "[JOB_SUBPREFS_WINDOW_ID]", "<div align='center'>Sovereign Preferences</div>", 500, 400)
 	popup.set_content(HTML)
 	popup.open(FALSE)
 	if(winexists(usr, "[JOB_SUBPREFS_WINDOW_ID]"))

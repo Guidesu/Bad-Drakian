@@ -25,7 +25,7 @@
 		<h3>Crown Authority</h3>
 		<p>The following titles share full Crown authority - they may petition the trade hall, draw emergency loans, commission defense and blockade writs, and stamp contracts levy-exempt with the signet:</p>
 		<ul>
-			<li>Steward, Clerk, Grand Duke, Hand, Marshal, Councillor, Prince/Princess.</li>
+			<li>Steward, Clerk, the sovereign ruler, Hand, Marshal, Councillor, Prince/Princess.</li>
 		</ul>
 		<p>The Steward is the primary officer; the rest substitute when the Steward is absent, dead, or otherwise occupied. A Regent crowned at the Throne inherits the same authority for the duration of their regency.</p>
 		</div>

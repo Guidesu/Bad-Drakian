@@ -11,8 +11,7 @@
 
 	forbidden_races = list(RACES_DESPISED)
 
-	tutorial = "You are a member of the Azure Peak Guild of Crafts, a massive guild formed to represent the interests of all craftsmen in the township of Azure Peak.\
-	As a Guildsman, you hail from the three most important constituent guilds: The Smith's Guild, the Artificer's Guild, and the Architect's Guild. The Guildsmaster has sway over you, but it is not absolute."
+	tutorial = "You belong to the realm's Guild of Crafts, an association formed to represent local craftspeople. As a Guildsman, you come from one of its three principal branches: the Smiths' Guild, the Artificers' Guild, or the Architects' Guild. The Guildmaster has authority over you, but that authority is not absolute."
 	job_traits = list(TRAIT_TRAINED_SMITH, TRAIT_SMITHING_EXPERT)
 
 	outfit = /datum/outfit/job/roguetown/guildsman

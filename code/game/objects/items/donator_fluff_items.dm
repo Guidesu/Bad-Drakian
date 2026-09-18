@@ -2109,7 +2109,7 @@ As Excaliber."
 
 /obj/item/clothing/head/roguetown/crown_hat
 	name = "crown hat"
-	desc = "Oft worn in place of a crown, this hat is the signature headwear of the Grand Duke. Its iconic feather stretches tall above its peers."
+	desc = "Often worn in place of a crown, this hat is the signature headwear of a sovereign ruler. Its iconic feather towers above its peers."
 	icon = 'icons/clothing/donor_clothes.dmi'
 	mob_overlay_icon = 'icons/clothing/onmob/donor_clothes.dmi'
 	icon_state = "shenara_hat"

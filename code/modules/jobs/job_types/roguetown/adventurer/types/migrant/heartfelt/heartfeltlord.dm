@@ -174,7 +174,7 @@
 
 /datum/advclass/heartfelt/lord/chief
 	name = "Chieftain of Heartfelt"
-	tutorial = "You are the Chieftain of Heartfelt, Chieftain of a once tribal lands over Azuria. Now, you rule it under the watchful gaze of the Grand Duchy. \
+	tutorial = "You are the Chieftain of Heartfelt, ruler of once-tribal lands overlooking Azuria. You govern them beneath the watchful gaze of the neighboring realm. \
 	However, with the increase in banditry, necromancy, deadite risings, and increasing sea raider raids, there are rumors abound that Heartfelt is not what it used to be. \
 	Travellers often warn of Heartfelt having fallen already, and words of secretive cultists isn't unheard of."
 	category_tags = list(CTAG_HFT_LORD)

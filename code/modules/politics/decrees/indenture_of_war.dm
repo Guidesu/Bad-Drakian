@@ -14,24 +14,24 @@
 		"Warden" = 20,
 		"Squire" = 10,
 	)
-	flavor_text = {"This Contract of the Defenders of Azuria, concluded between the Crown of Azuria, on the one hand, and the Armed Forces of the Grand Duchy, on the other hand, testifies to the following:
+	flavor_text = {"This Contract of the Defenders of %REALM%, concluded between the Crown and the realm's armed forces, records the following terms:
 
-The Crown undertakes to pay its soldiers fair salaries on a daily basis, without delays or postponements, according to the ranks specified in this document:
+The Crown shall pay its soldiers fair daily wages, without delay, according to the ranks set forth herein:
  
-- Marshal of the Grand Duchy — sixty mammon,
-- Knights of Azuria — forty mammon,
-- Guard Sergeants — also forty mammon,
-- Soldiers — twenty mammon.
+- Marshal of %REALM% — sixty mammon,
+- Knights — forty mammon,
+- Guard Sergeants — forty mammon,
+- Soldiers — twenty mammon,
 - Wardens — twenty mammon,
-- Squires of the Knights of Azuria — ten mammon.
+- Squires — ten mammon.
 
-No reward may be less than the specified amounts for the duration of this Contract.
+No wage may fall below these amounts while this Contract remains in force.
 
-In return, the servicemen of the Grand Duchy agree to faithfully serve the Grand Duke and obey his lieutenants and officers in all lawful and reasonable matters. And if the said servicemen breach or fail to fulfill this Contract, the Duke is endowed with the legal right to unilaterally determine their fate, no matter how severe it may be. And if the Crown violates this Contract — withholding the reward promised in it or setting it lower than specified here — the soldier is released from his oath, and the Crown will be accountable for the committed breach of the oath.
+In return, the soldiers of %REALM% shall faithfully serve the %RULER% and obey the Crown's officers in all lawful and reasonable matters. A soldier who breaks this Contract shall answer to the Crown. If the Crown withholds the promised wage or sets it below the amount written here, the soldier is released from the corresponding oath of service, and the Crown shall answer for its breach.
 
-In confirmation of which, the Crown of Azuria has affixed its seal on this Contract, and the lawful representative of the servicemen of the Grand Duchy has affixed his seal in the same manner.
+In witness thereof, the Crown of %REALM% and the lawful representative of its soldiers have affixed their seals to this Contract.
 
-Certified by the seal of the Crown and the seal of the Marshal of the Grand Duchy."}
+Certified by the seals of the Crown and the Marshal of %REALM%."}
 	revoke_text = "The %RULER% has broken the Indenture of War. The soldier's oath is dissolved, and the Crown's armed men stand at liberty of service - let the garrison remember whose seal was cut first."
 	restore_text = "The %RULER% has renewed the Indenture of War. The soldier's wage is pledged, and the soldier's oath stands - each binds the other."
 

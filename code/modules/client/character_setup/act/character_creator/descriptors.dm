@@ -391,7 +391,7 @@
 		if("NSFW Gallery")
 			to_chat(user, span_notice("Please use an explicit image [span_bold("of your character")] only when it fits the character and server rules."))
 			to_chat(user, span_notice("If the photo doesn't show up properly in-game, ensure that it's a direct image link that opens properly in a browser."))
-			to_chat(user, span_notice("Keep in mind that all three images are displayed next to eachother and justified to fill a horizontal rectangle. As such, vertical images work best."))
+			to_chat(user, span_notice("Keep in mind that all three images are displayed next to each other and justified to fill a horizontal rectangle. As such, vertical images work best."))
 			to_chat(user, span_notice("You can only have a maximum of [span_bold("THREE IMAGES")] in your NSFW gallery at a time."))
 		if("OOC Extra Image") // For OOC Extra
 			to_chat(user, span_notice("Add a link to an image/gif that will be displayed beneath your flavortext."))
@@ -406,7 +406,7 @@
 		else
 			to_chat(user, span_notice("Please use a relatively SFW image [span_bold("of your character")] to maintain immersion level. Lastly, [span_bold("do not use a real life photo or use any image that is less than serious.")]"))
 			to_chat(user, span_notice("If the photo doesn't show up properly in-game, ensure that it's a direct image link that opens properly in a browser."))
-			to_chat(user, span_notice("Keep in mind that all three images are displayed next to eachother and justified to fill a horizontal rectangle. As such, vertical images work best."))
+			to_chat(user, span_notice("Keep in mind that all three images are displayed next to each other and justified to fill a horizontal rectangle. As such, vertical images work best."))
 			to_chat(user, span_notice("You can only have a maximum of [span_bold("THREE IMAGES")] in your gallery at a time."))
 
 	// Get input

@@ -63,7 +63,7 @@ GLOBAL_LIST_INIT(economic_regions, init_economic_regions())
 	name = "Kingsfield"
 	subtitle = "The Royal Demesne, Heartland of Azuria"
 	blockade_replenish_eligible = FALSE
-	description = "The royal demesne of the Duke of Azuria, and their most valuable possession besides Azure Peak itself. A stretch of land some ten miles across the south bank of River Azur, home to dozens of agricultural settlements, hamlets, and smaller market towns. Its lands are rich, and its people aplenty. The agricultural heartland of Azuria, producing most of its grain, meat, and dairy, imported into Azure Peak daily and re-exported for profit. Many of Azure Peak's residents keep estates here. The Duke, owning most of the land directly, claims a tithe of ten percent of all produce from the region, and at least a quarter on any land directly owned by the Crown, as is their perogative, making this region vital to the Crown's coffers."
+	description = "The royal demesne of the ruler of Azuria, and their most valuable possession besides Azure Peak itself. A stretch of land some ten miles across the south bank of River Azur, it is home to dozens of agricultural settlements, hamlets, and market towns. Its lands are rich and its people plentiful. As Azuria's agricultural heartland, it produces most of the grain, meat, and dairy imported into Azure Peak and re-exported for profit. Many of Azure Peak's residents keep estates here. The ruler, who owns most of the land directly, claims a tithe of ten percent of the region's produce and at least a quarter from land held directly by the Crown. That prerogative makes the region vital to the Crown's coffers."
 	threat_region_id = THREAT_REGION_AZURE_GROVE
 	produces = list(
 		TRADE_GOOD_GRAIN = TG_SUPPLY_LOCAL_GRAIN,
@@ -215,7 +215,7 @@ GLOBAL_LIST_INIT(economic_regions, init_economic_regions())
 	region_id = TRADE_REGION_SALTWICK
 	name = "Saltwick"
 	subtitle = "The Coastal Town, Fisheries of the Realm"
-	description = "A settlement southeast of Azure Peak, around a day's ride away, located on the coast of Kingsfield. It was settled first by immigrants from Hammerhold and later by settlers from southern Gronn. The town is divided starkly into two parts: The curing houses and salt farms owned mostly by the town's dwarven and Hammerholdian settlers, while those of Gronnic descent makes up most of the fishermen and sailors. The two groups marry eachother rarely and argue often - but coexists somewhat harmoniously in the same town either way. Of course, Hammerholdian and Gronnmen are not the only inhabitants - many people down on their luck or seeking work also reside. Salt is imported from Daftsmarch, used to preserve the fish caught by local fishermen, and then exported throughout Azuria and Psydonia."
+	description = "A coastal settlement in Kingsfield, about a day's ride southeast of Azure Peak. Immigrants from Hammerhold settled it first, followed later by settlers from southern Gronn. The town is sharply divided: dwarven and Hammerholdian families own most of its curing houses and salt farms, while people of Gronnic descent make up most of its fishers and sailors. The two communities rarely intermarry and often quarrel, yet coexist in relative harmony. They are not the only inhabitants; many people seeking work or a new beginning also settle here. Salt imported from Daftsmarch preserves the local catch before it is exported throughout Azuria and Psydonia."
 	threat_region_id = THREAT_REGION_AZUREAN_COAST
 	produces = list(
 		TRADE_GOOD_FISH_FILET = TG_SUPPLY_FISH_BULK,
