@@ -37,9 +37,9 @@
 /datum/decree/proc/get_display_flavor_text()
 	if(!flavor_text)
 		return null
-	var/ruler_type = SSticker?.rulertype || "Lord"
+	var/ruler_type = SSticker?.rulertype || "Count"
 	var/mob/living/ruler_mob = SSticker?.rulermob
-	var/ruler_name = (ruler_mob && !QDELETED(ruler_mob)) ? ruler_mob.real_name : "the Lord"
+	var/ruler_name = (ruler_mob && !QDELETED(ruler_mob)) ? ruler_mob.real_name : "the ruler"
 	var/text = replacetext(flavor_text, "%RULER%", ruler_type)
 	text = replacetext(text, "%RULER_NAME%", ruler_name)
 	return text
@@ -96,9 +96,9 @@
 	var/template = active ? restore_text : revoke_text
 	if(!template)
 		return
-	var/ruler_type = SSticker?.rulertype || "Lord"
+	var/ruler_type = SSticker?.rulertype || "Count"
 	var/mob/living/ruler_mob = SSticker?.rulermob
-	var/ruler_name = (ruler_mob && !QDELETED(ruler_mob)) ? ruler_mob.real_name : "the Lord"
+	var/ruler_name = (ruler_mob && !QDELETED(ruler_mob)) ? ruler_mob.real_name : "the ruler"
 	var/body = replacetext(template, "%RULER%", ruler_type)
 	body = replacetext(body, "%RULER_NAME%", ruler_name)
 	var/title = active ? "BY LORDLY MERCY" : "BY LORDLY DECREE"

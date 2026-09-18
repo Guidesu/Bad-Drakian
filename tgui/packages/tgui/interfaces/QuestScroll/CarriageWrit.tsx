@@ -42,7 +42,7 @@ export const CarriageWrit = (props: {
       </p>
       <p style={writParagraph}>
         {what} awaits carriage from {pickup} to <b>{dest}</b>. The bearer of
-        this writ holds safe passage upon the Duke&apos;s Road for the duration
+        this writ grants safe passage upon the Crown Road for the duration
         of the carriage.
       </p>
       {circumstance && <p style={writParagraph}>{circumstance}</p>}

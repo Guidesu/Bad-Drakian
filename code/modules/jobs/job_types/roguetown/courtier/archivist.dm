@@ -1,6 +1,6 @@
 /datum/job/roguetown/archivist
 	title = "Archivist"
-	tutorial = "The Archivist meticulously preserves and organizes ancient scrolls and tomes, safeguarding the collective knowledge of the realm for generations to come. Nobles and Peasants alike often seek your expertise on matters of history and fact, and your keenly-kept records on the events of this week will likely stand a testament to your Duke's benevolence and their realm's prosperity...or not. After all, you hold the true power: The power to dictate how the future generations will look back on these coming days."
+	tutorial = "The Archivist meticulously preserves and organizes ancient scrolls and tomes, safeguarding the realm's knowledge for generations to come. Nobles and peasants alike seek your expertise on matters of history and fact, and your careful record of this week's events may stand as a testament to the ruler's benevolence and the realm's prosperity—or expose their failures. You hold the power to shape how future generations remember these days."
 	flag = ARCHIVIST
 	department_flag = COURTIERS
 	faction = "Station"
@@ -39,8 +39,7 @@
 
 /datum/advclass/archivist
 	name = "Archivist"
-	tutorial = "The Archivist meticulously preserves and organizes ancient scrolls and tomes, safeguarding the collective knowledge of the realm for generations to come. Nobles and Peasants alike often seek your expertise on matters of history and fact, and your keenly-kept records on the events of this week will likely stand a testament to your Duke's benevolence and their realm's prosperity...or not. After all, you hold the true power: \
-	The power to dictate how the future generations will look back on these coming days."
+	tutorial = "The Archivist meticulously preserves and organizes ancient scrolls and tomes, safeguarding the realm's knowledge for generations to come. Nobles and peasants alike seek your expertise on matters of history and fact, and your careful record of this week's events may stand as a testament to the ruler's benevolence and the realm's prosperity—or expose their failures. You hold the power to shape how future generations remember these days."
 	outfit = /datum/outfit/job/roguetown/archivist/basic
 	subclass_languages = list(
 		/datum/language/oldazurian,//YOU LIVE HERE

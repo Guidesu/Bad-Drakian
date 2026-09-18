@@ -196,7 +196,7 @@
 		if(L.state != LINK_STATE_ACTIVE)
 			continue
 		if(L.init_organ == src)
-			c++
+			c += max(1, L.action?.init_slot_cost || 1)
 	return c
 
 /// Returns total action slots for this organ.

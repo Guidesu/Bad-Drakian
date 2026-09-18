@@ -107,7 +107,7 @@
 		if(!ctx.other_access[tt])
 			return "The target is covered with clothing."
 
-	if(init.get_free_slots() <= 0)
+	if(init.get_free_slots() < max(1, A.init_slot_cost || 1))
 		return "Authority is busy."
 
 	if(islist(A.action_tags) && ("testicles" in A.action_tags))
@@ -117,6 +117,35 @@
 	if(islist(A.action_tags) && ("actor_testicles" in A.action_tags))
 		if(!controller.owner.has_testicles())
 			return "The initiator does not have testicles."
+
+	if(islist(A.action_tags) && ("double_penis" in A.action_tags))
+		if(!istype(init, /datum/erp_sex_organ/penis))
+			return "This action requires a penis."
+		var/datum/erp_sex_organ/penis/double_penis = init
+		if(double_penis.count_to_action < 2)
+			return "This action requires two cocks."
+
+	if(islist(A.action_tags) && ("target_slit" in A.action_tags))
+		if(!istype(target, /datum/erp_sex_organ/penis))
+			return "The target has no slit."
+		var/datum/erp_sex_organ/penis/slit_penis = target
+		if(slit_penis.source_organ?.sheath_type != SHEATH_TYPE_SLIT)
+			return "The target has no accessible slit."
+
+	if(islist(A.action_tags) && ("active_knot" in A.action_tags))
+		if(!istype(init, /datum/erp_sex_organ/penis))
+			return "This action requires an active knot."
+		var/datum/erp_sex_organ/penis/knot_penis = init
+		var/mob/living/knot_owner = knot_penis.get_owner()
+		var/datum/component/erp_knotting/knot_component = controller.knot_d?.get_knotting_component(knot_owner)
+		var/has_matching_knot = FALSE
+		if(knot_component)
+			for(var/datum/erp_knot_link/knot_link as anything in knot_component.active_links)
+				if(knot_link?.is_valid() && knot_link.penis_org == knot_penis && knot_link.receiving_org == target)
+					has_matching_knot = TRUE
+					break
+		if(!has_matching_knot)
+			return "This organ is not currently knotted."
 
 	if(A.inject_timing != INJECT_NONE && A.inject_target_mode == INJECT_CONTAINER)
 		if(!ctx.has_container)

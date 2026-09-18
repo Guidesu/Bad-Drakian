@@ -410,7 +410,7 @@
 
 
 /obj/structure/roguemachine/vaultbank/proc/get_authority_label()
-	return "the Steward, Clerk, Grand Duke, Sultan, Vizier, or Regent" //TA EDIT
+	return "the Steward, Clerk, sovereign ruler, Sultan, Vizier, or Regent" //TA EDIT
 
 /obj/structure/roguemachine/vaultbank/proc/announce_robbery(amount)
 	loud_message("A loud clattering of coins spilling onto stone echoes", hearing_distance = 14)

@@ -7,6 +7,9 @@
 	var/required_init_organ = null
 	var/required_target_organ = null
 	var/reserve_target_organ = FALSE
+	/// Number of initiating-organ capacity slots reserved by this action.
+	/// Ratwood double-penetration actions consume both units of a double penis.
+	var/init_slot_cost = 1
 
 	var/active_arousal_coeff  = 1.0
 	var/passive_arousal_coeff = 1.0

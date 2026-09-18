@@ -228,7 +228,7 @@
 /obj/item/clothing/ring/signet/get_mechanics_examine(mob/user)
 	. = ..()
 	. += span_info("Certain letters can be folded and stamped with the ring, which proves minor financial benefits.")
-	. += span_info("Pressed upon a quest scroll by a Steward, Clerk, or Grand Duke, the ring stamps it LEVY EXEMPT - waiving the Crown's Contract Levy on its reward.")
+	. += span_info("Pressed upon a quest scroll by a Steward, Clerk, or sovereign ruler, the ring stamps it LEVY EXEMPT, waiving the Crown's Contract Levy on its reward.")
 
 /obj/item/clothing/ring/signet/attack_right(mob/user)
 	. = ..()
