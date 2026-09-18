@@ -39,11 +39,24 @@
 		var/mob/living/U = user
 		var/mob/living/T = target
 
-		var/datum/status_effect/erp_coating/E = T.has_status_effect(/datum/status_effect/erp_coating)
+		var/datum/status_effect/erp_coating/E = T.has_status_effect(/datum/status_effect/erp_coating/face)
+		if(!E)
+			E = T.has_status_effect(/datum/status_effect/erp_coating/chest)
+		if(!E)
+			E = T.has_status_effect(/datum/status_effect/erp_coating/groin)
 		if(E)
 			var/taken = E.reagents.trans_to(U, 6)
 			if(taken > 0)
 				to_chat(U, span_love("You lick the wet marks off [T]."))
+			if(E.is_empty())
+				qdel(E)
+
+		var/mob/living/carbon/human/licker = user
+		var/mob/living/carbon/human/licked = target
+		if(istype(licker) && istype(licked) && licker.zone_selected == BODY_ZONE_PRECISE_GROIN)
+			var/datum/status_effect/erp_creampie_leak/leak = licked.has_status_effect(/datum/status_effect/erp_creampie_leak)
+			if(leak?.consume_drip(U))
+				U.visible_message(span_love("[U] laps up the fluids leaking from [T]!"), span_love("I lap up the fluids leaking from [T]!"))
 
 	playsound(target.loc, pick("sound/vo/lick.ogg"), 100, FALSE, -1)
 

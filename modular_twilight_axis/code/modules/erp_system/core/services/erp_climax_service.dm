@@ -601,6 +601,15 @@
 			orgasm_organ.route_reagents(Rin, INJECT_ORGAN, inside_target_organ)
 			qdel(Rin)
 
+			var/mob/living/carbon/human/internal_receiver = inside_target_organ.get_owner()
+			if(istype(internal_receiver) && inside_target_organ.erp_organ_type != SEX_ORGAN_MOUTH)
+				var/is_large_load = orgasm_organ.producing?.capacity > 18
+				var/datum/status_effect/erp_creampie_leak/leak = internal_receiver.has_status_effect(/datum/status_effect/erp_creampie_leak)
+				if(!leak)
+					leak = internal_receiver.apply_status_effect(/datum/status_effect/erp_creampie_leak, inside_target_organ, is_large_load)
+				else
+					leak.add_receiving_organ(inside_target_organ, is_large_load)
+
 			if(istype(inside_target_organ, /datum/erp_sex_organ/vagina))
 				var/datum/erp_sex_organ/vagina/Vin = inside_target_organ
 				var/mob/living/carbon/human/top = orgasm_organ.get_owner()

@@ -4052,6 +4052,7 @@
 #include "modular_twilight_axis\code\modules\erp_system\actions\masturbation\tail\penis.dm"
 #include "modular_twilight_axis\code\modules\erp_system\actions\masturbation\tail\vaginal.dm"
 #include "modular_twilight_axis\code\modules\erp_system\actions\ratwood_parity.dm"
+#include "modular_twilight_axis\code\modules\erp_system\actions\ratwood_chastity.dm"
 #include "modular_twilight_axis\code\modules\erp_system\actor\erp_actor.dm"
 #include "modular_twilight_axis\code\modules\erp_system\actor\erp_actor_custom_actions_service.dm"
 #include "modular_twilight_axis\code\modules\erp_system\actor\erp_actor_ui_helpers.dm"

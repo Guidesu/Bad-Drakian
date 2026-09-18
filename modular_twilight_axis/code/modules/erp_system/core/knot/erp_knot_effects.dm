@@ -77,6 +77,17 @@
 	if(remove_top_status)
 		top.remove_status_effect(/datum/status_effect/knotted)
 
+	// A knot holds the deposit in place. Once it is removed, the receiving
+	// organ begins the same reagent-backed leaking used by ordinary climax.
+	var/mob/living/carbon/human/human_btm = btm
+	if(istype(human_btm) && L.receiving_org?.erp_organ_type != SEX_ORGAN_MOUTH && L.receiving_org?.storage?.total_volume() > 0)
+		var/is_large_load = L.penis_org?.producing?.capacity > 18
+		var/datum/status_effect/erp_creampie_leak/leak = human_btm.has_status_effect(/datum/status_effect/erp_creampie_leak)
+		if(!leak)
+			human_btm.apply_status_effect(/datum/status_effect/erp_creampie_leak, L.receiving_org, is_large_load)
+		else
+			leak.add_receiving_organ(L.receiving_org, is_large_load)
+
 /// Sends feedback when pull-out fails.
 /datum/erp_knot_effects/proc/notify_pull_failed(datum/erp_knot_link/L, mob/living/actor)
 	if(!L || !L.is_valid() || !istype(actor))

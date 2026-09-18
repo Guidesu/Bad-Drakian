@@ -67,6 +67,7 @@
 				return
 
 		controller.play_tick_effects(active, best, dt)
+		best?.action?.play_chastity_tick_sound(best)
 		controller.send_message(best.spanify_sex(msg), best)
 
 /// Calculates average scene interval.

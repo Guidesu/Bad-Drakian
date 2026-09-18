@@ -149,6 +149,7 @@
 
 /datum/status_effect/erp_coating
 	status_type = STATUS_EFFECT_UNIQUE
+	alert_type = /atom/movable/screen/alert/status_effect/erp_coating
 	tick_interval = ERP_COATING_DRY_AFTER
 	duration = -1
 	var/coating_zone = "body"
@@ -238,6 +239,116 @@
 	desc = "Something is smeared over your body."
 	icon = 'modular_twilight_axis/icons/mob/screen_alert.dmi'
 	icon_state = "emberwine"
+
+/// A real-reagent version of Ratwood's creampie drip. The receiving organ
+/// remains the source of truth; ticks and licking remove liquid from it.
+/datum/status_effect/erp_creampie_leak
+	id = "erp_creampie_leak"
+	status_type = STATUS_EFFECT_UNIQUE
+	alert_type = null
+	tick_interval = 12 SECONDS
+	duration = 60 SECONDS
+	var/list/datum/weakref/receiving_organs = list()
+
+/datum/status_effect/erp_creampie_leak/on_creation(mob/living/new_owner, datum/erp_sex_organ/receiving_organ, long_duration = FALSE)
+	. = ..(new_owner)
+	add_receiving_organ(receiving_organ)
+	if(long_duration)
+		duration = world.time + 120 SECONDS
+
+/datum/status_effect/erp_creampie_leak/on_apply()
+	. = ..()
+	if(owner)
+		RegisterSignal(owner, COMSIG_COMPONENT_CLEAN_ACT, PROC_REF(clean_up))
+		to_chat(owner, span_love("I feel warmth beginning to leak out of me."))
+	return .
+
+/datum/status_effect/erp_creampie_leak/on_remove()
+	if(owner)
+		UnregisterSignal(owner, COMSIG_COMPONENT_CLEAN_ACT, PROC_REF(clean_up))
+	return ..()
+
+/datum/status_effect/erp_creampie_leak/proc/add_receiving_organ(datum/erp_sex_organ/receiving_organ, long_duration = FALSE)
+	if(!receiving_organ || QDELETED(receiving_organ))
+		return
+	for(var/datum/weakref/ref as anything in receiving_organs)
+		if(ref?.resolve() == receiving_organ)
+			if(long_duration)
+				duration = max(duration, world.time + 120 SECONDS)
+			else
+				duration = max(duration, world.time + 60 SECONDS)
+			return
+	receiving_organs += WEAKREF(receiving_organ)
+	if(long_duration)
+		duration = max(duration, world.time + 120 SECONDS)
+	else
+		duration = max(duration, world.time + 60 SECONDS)
+
+/datum/status_effect/erp_creampie_leak/proc/get_filled_organ()
+	for(var/i = receiving_organs.len; i >= 1; i--)
+		var/datum/weakref/ref = receiving_organs[i]
+		var/datum/erp_sex_organ/O = ref?.resolve()
+		if(!O || QDELETED(O))
+			receiving_organs.Cut(i, i + 1)
+			continue
+		if(O.storage?.total_volume() > 0)
+			return O
+	return null
+
+/datum/status_effect/erp_creampie_leak/proc/consume_drip(mob/living/consumer)
+	var/datum/erp_sex_organ/O = get_filled_organ()
+	if(!O || !consumer?.reagents)
+		return FALSE
+	var/datum/reagents/R = O.storage.inject(2)
+	if(!R || R.total_volume <= 0)
+		if(R)
+			qdel(R)
+		return FALSE
+
+	var/coat_amount = min(1, R.total_volume)
+	if(ishuman(consumer) && coat_amount > 0)
+		var/mob/living/carbon/human/H = consumer
+		var/datum/status_effect/erp_coating/face/coating = H.has_status_effect(/datum/status_effect/erp_coating/face)
+		if(!coating)
+			coating = H.apply_status_effect(/datum/status_effect/erp_coating/face, 30)
+		if(coating)
+			var/datum/reagents/on_face = new(coat_amount)
+			R.trans_to(on_face, coat_amount, 1, TRUE, TRUE)
+			coating.add_from(on_face, on_face.total_volume)
+			qdel(on_face)
+
+	if(R.total_volume > 0)
+		R.trans_to(consumer.reagents, R.total_volume, 1, TRUE, TRUE)
+	qdel(R)
+	if(!get_filled_organ())
+		qdel(src)
+	return TRUE
+
+/datum/status_effect/erp_creampie_leak/proc/clean_up(datum/source, strength)
+	SIGNAL_HANDLER
+	if(strength < CLEAN_WEAK || QDELETED(owner))
+		return FALSE
+	for(var/datum/weakref/ref as anything in receiving_organs)
+		var/datum/erp_sex_organ/O = ref?.resolve()
+		O?.storage?.clear()
+	qdel(src)
+	return TRUE
+
+/datum/status_effect/erp_creampie_leak/tick()
+	var/datum/erp_sex_organ/O = get_filled_organ()
+	if(!O)
+		qdel(src)
+		return
+	if(!get_location_accessible(owner, BODY_ZONE_PRECISE_GROIN, skipundies = TRUE))
+		return
+	var/datum/reagents/R = O.storage.inject(1)
+	if(!R || R.total_volume <= 0)
+		if(R)
+			qdel(R)
+		return
+	O.drop_to_ground(R)
+	qdel(R)
+	playsound(owner, pick('sound/misc/bleed (1).ogg', 'sound/misc/bleed (2).ogg', 'sound/misc/bleed (3).ogg'), 20, TRUE, -2, ignore_walls = FALSE)
 
 #undef ERP_COATING_ZONE_GROIN
 #undef ERP_COATING_ZONE_CHEST

@@ -97,15 +97,46 @@
 		if(!(it in ctx.self_access))
 			ctx.self_access[it] = controller.owner.is_organ_accessible_for(controller.owner, it, FALSE)
 
-		if(!ctx.self_access[it])
+		if(!ctx.self_access[it] && !A.has_action_tag("active_chastity"))
 			return "The initiating organ is covered with clothing."
 
 		var/tt = target.erp_organ_type
 		if(!(tt in ctx.other_access))
 			ctx.other_access[tt] = controller.active_partner.is_organ_accessible_for(controller.owner, tt, FALSE)
 
-		if(!ctx.other_access[tt])
+		var/self_chastity_target = (A.action_scope == ERP_SCOPE_SELF && A.has_action_tag("active_chastity"))
+		if(!ctx.other_access[tt] && !A.has_action_tag("target_chastity") && !self_chastity_target)
 			return "The target is covered with clothing."
+
+	var/mob/living/carbon/human/active_human = controller.owner?.get_effect_mob()
+	var/mob/living/carbon/human/target_human = controller.active_partner?.get_effect_mob()
+	if(A.action_scope == ERP_SCOPE_SELF)
+		target_human = active_human
+
+	if(A.has_action_tag("active_chastity") && (!istype(active_human) || !active_human.chastity_device))
+		return "The initiator is not wearing a chastity device."
+	if(A.has_action_tag("target_chastity") && (!istype(target_human) || !target_human.chastity_device))
+		return "The target is not wearing a chastity device."
+	if(A.has_action_tag("active_penis_chastity") && (!istype(active_human) || !(HAS_TRAIT(active_human, TRAIT_CHASTITY_CAGE) || HAS_TRAIT(active_human, TRAIT_CHASTITY_PENIS_BLOCKED) || HAS_TRAIT(active_human, TRAIT_CHASTITY_FULL))))
+		return "The initiator's penis is not secured by chastity."
+	if(A.has_action_tag("target_penis_chastity") && (!istype(target_human) || !(HAS_TRAIT(target_human, TRAIT_CHASTITY_CAGE) || HAS_TRAIT(target_human, TRAIT_CHASTITY_PENIS_BLOCKED) || HAS_TRAIT(target_human, TRAIT_CHASTITY_FULL))))
+		return "The target's penis is not secured by chastity."
+	if(A.has_action_tag("active_vagina_chastity") && (!istype(active_human) || !(HAS_TRAIT(active_human, TRAIT_CHASTITY_VAGINA_BLOCKED) || HAS_TRAIT(active_human, TRAIT_CHASTITY_FULL))))
+		return "The initiator's vagina is not secured by chastity."
+	if(A.has_action_tag("target_vagina_chastity") && (!istype(target_human) || !(HAS_TRAIT(target_human, TRAIT_CHASTITY_VAGINA_BLOCKED) || HAS_TRAIT(target_human, TRAIT_CHASTITY_FULL))))
+		return "The target's vagina is not secured by chastity."
+	if(A.has_action_tag("active_anal_shield") && (!istype(active_human) || !HAS_TRAIT(active_human, TRAIT_CHASTITY_ANAL)))
+		return "The initiator has no anal shield."
+	if(A.has_action_tag("target_anal_shield") && (!istype(target_human) || !HAS_TRAIT(target_human, TRAIT_CHASTITY_ANAL)))
+		return "The target has no anal shield."
+	if(A.has_action_tag("active_slit"))
+		var/obj/item/organ/penis/active_penis = active_human?.getorganslot(ORGAN_SLOT_PENIS)
+		if(!active_penis || active_penis.sheath_type != SHEATH_TYPE_SLIT)
+			return "The initiator has no genital slit."
+	if(A.has_action_tag("target_not_slit"))
+		var/obj/item/organ/penis/target_penis = target_human?.getorganslot(ORGAN_SLOT_PENIS)
+		if(!target_penis || target_penis.sheath_type == SHEATH_TYPE_SLIT)
+			return "This action needs an exposed urethral opening."
 
 	if(init.get_free_slots() < max(1, A.init_slot_cost || 1))
 		return "Authority is busy."

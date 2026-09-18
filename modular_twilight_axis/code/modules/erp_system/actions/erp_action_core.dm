@@ -62,7 +62,53 @@
 	)
 
 	apply_race_body_bonus(L, out)
+	apply_chastity_effects(L, out)
 	return out
+
+/// Applies Ratwood's reduced pleasure and increased pain when a spiked device
+/// is the part being worked. Only chastity actions opt into this behavior.
+/datum/erp_action/proc/apply_chastity_effects(datum/erp_sex_link/L, list/effects)
+	if(!L || !islist(effects) || !has_action_tag("chastity_action"))
+		return
+
+	var/mob/living/carbon/human/active = L.actor_active?.get_effect_mob()
+	var/mob/living/carbon/human/passive = L.actor_passive?.get_effect_mob()
+
+	if(has_action_tag("active_chastity") && istype(active) && HAS_TRAIT(active, TRAIT_CHASTITY_SPIKED))
+		effects[ERP_ACTION_ACTIVE_AROUSAL] *= 0.75
+		effects[ERP_ACTION_ACTIVE_PAIN] *= 1.25
+
+	if(has_action_tag("target_chastity") && istype(passive) && HAS_TRAIT(passive, TRAIT_CHASTITY_SPIKED))
+		effects[ERP_ACTION_PASSIVE_AROUSAL] *= 0.75
+		effects[ERP_ACTION_PASSIVE_PAIN] *= 1.25
+
+	var/a_ar = effects[ERP_ACTION_ACTIVE_AROUSAL] || 0
+	var/p_ar = effects[ERP_ACTION_PASSIVE_AROUSAL] || 0
+	var/a_pa = effects[ERP_ACTION_ACTIVE_PAIN] || 0
+	var/p_pa = effects[ERP_ACTION_PASSIVE_PAIN] || 0
+	effects[ERP_ACTION_LEGACY_AROUSAL] = (a_ar + p_ar) * 0.5
+	effects[ERP_ACTION_LEGACY_PAIN] = (a_pa + p_pa) * 0.5
+
+/// Gives chastity actions their Ratwood movement noise without teaching the
+/// generic VFX service about specific equipment types.
+/datum/erp_action/proc/play_chastity_tick_sound(datum/erp_sex_link/L)
+	if(!L || !has_action_tag("chastity_action"))
+		return
+	if(L.force < SEX_FORCE_MID || !prob(20 + (L.speed * 10)))
+		return
+
+	var/mob/living/carbon/human/sound_target = null
+	if(has_action_tag("target_chastity"))
+		sound_target = L.actor_passive?.get_effect_mob()
+	if(!sound_target?.chastity_device && has_action_tag("active_chastity"))
+		sound_target = L.actor_active?.get_effect_mob()
+	var/obj/item/chastity/device = sound_target?.chastity_device
+	if(!device)
+		return
+
+	var/volume = 25 + (max(0, L.force - SEX_FORCE_LOW) * 10)
+	var/move_sound = device.chastity_move_sound ? device.chastity_move_sound : SFX_JINGLE_BELLS
+	playsound(sound_target, move_sound, volume, TRUE, -2, ignore_walls = FALSE)
 
 /// Requests an injection through the link using the action's inject settings.
 /datum/erp_action/proc/handle_inject(datum/erp_sex_link/L, datum/erp_actor/who = null)
