@@ -1,10 +1,10 @@
 /datum/erp_action/other/anus/tail
 	abstract = FALSE
-	name = "Использовать хвост попкой"
+	name = "Use tail with butt"
 	required_target_organ = SEX_ORGAN_TAIL
-	message_start = "{actor}  хватает хвост {partner} и направляет к своей попке."
-	message_tick = "{actor} {force} и {speed} удерживая хвост {partner} в своем анусе скачет на нём.."
-	message_finish =  "{actor} вытаскитвает хвост {partner} из своей задницы."
-	message_climax_active = "{actor} кончает, сжимая попкой хвост {partner}."
-	message_climax_passive = "{partner} кончает под себя."
+	message_start = "{actor} grabs {partner}'s tail and points it towards his butt."
+	message_tick = "{actor} {force} and {speed} holding {partner}'s tail in his anus rides it.."
+	message_finish =  "{actor} pulls {partner}'s tail out of his ass."
+	message_climax_active = "{actor} cums, squeezing {partner}'s tail with her ass."
+	message_climax_passive = "{partner} cums under himself."
 	

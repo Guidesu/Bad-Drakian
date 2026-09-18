@@ -429,7 +429,7 @@
 /datum/config_entry/string/channel_announce_new_game_message
 	default = null
 
-/// ID роли дискорда для пингов о запуске сервера
+/// Discord role ID for pings about the launch of the server
 /datum/config_entry/string/game_alert_role_id
 	default = null
 

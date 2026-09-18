@@ -131,21 +131,21 @@ type EditorField = {
 type EditorTemplateEntry = {
   type: string;
   name: string;
-  // fields здесь больше не обязательны и UI их не читает
+  //fields here are no longer mandatory and the UI does not read them
   fields?: EditorField[] | any;
 };
 
 type EditorCustomAction = {
   id: string;
   name: string;
-  // fields здесь больше не обязательны и UI их не читает
+  //fields here are no longer mandatory and the UI does not read them
   fields?: EditorField[] | any;
 };
 
-// ВАЖНО: выбранное действие, которое backend возвращает полностью
+//IMPORTANT: the selected action, which the backend fully returns
 type EditorSelectedPayload = {
   mode: 'template' | 'custom';
-  key: string; // template.type или custom.id
+  key: string; //template.type or custom.id
   name?: string;
   fields?: EditorField[] | any;
 };
@@ -193,7 +193,7 @@ const BaseTuningPanel: React.FC<{
   const foIdx = fo - 1;
 
   return (
-    <Section title="Базовые настройки новых действий" style={{ paddingTop: 6, paddingBottom: 6 }}>
+    <Section title="Basic settings of new actions" style={{ paddingTop: 6, paddingBottom: 6 }}>
       <Stack align="center" justify="space-between">
         {/* LEFT SIDE: label -> control */}
         <Stack.Item grow>
@@ -203,7 +203,7 @@ const BaseTuningPanel: React.FC<{
                 color="label"
                 style={{ fontSize: 10, textTransform: 'uppercase', whiteSpace: 'nowrap' }}
               >
-                Скорость
+                Speed
               </Box>
             </Stack.Item>
 
@@ -303,7 +303,7 @@ const BaseTuningPanel: React.FC<{
                 color="label"
                 style={{ fontSize: 10, textTransform: 'uppercase', whiteSpace: 'nowrap' }}
               >
-                Сила
+                Strength
               </Box>
             </Stack.Item>
           </Stack>
@@ -480,7 +480,7 @@ const ControlRow: React.FC<{ act: (verb: string, args?: any) => void }> = ({ act
             onClick={() => act('change_direction')}
             style={{ padding: '2px 8px' }}
           >
-            ПЕРЕВЕРНУТЬСЯ
+            TURN OVER
           </Button>
         </Stack.Item>
         <Stack.Item style={{ margin: 1 }}>
@@ -490,7 +490,7 @@ const ControlRow: React.FC<{ act: (verb: string, args?: any) => void }> = ({ act
             onClick={() => act('full_stop')}
             style={{ padding: '2px 8px' }}
           >
-            ОСТАНОВИТЬСЯ
+            STOP
           </Button>
         </Stack.Item>
       </Stack>
@@ -500,10 +500,10 @@ const ControlRow: React.FC<{ act: (verb: string, args?: any) => void }> = ({ act
 
 const TabsRow: React.FC<{ active: string; onSet: (tab: string) => void }> = ({ active, onSet }) => {
   const tabs = [
-    { id: 'actions', name: 'ДЕЙСТВИЯ' },
-    { id: 'status', name: 'СТАТУС' },
-    { id: 'kinks', name: 'ФЕТИШИ' },
-    { id: 'editor', name: 'РЕДАКТОР' },
+    { id: 'actions', name: 'ACTIONS' },
+    { id: 'status', name: 'STATUS' },
+    { id: 'kinks', name: 'FETISHES' },
+    { id: 'editor', name: 'EDITOR' },
   ];
   return (
     <Box style={{ padding: 0, marginTop: 2 }}>
@@ -663,10 +663,10 @@ const ActionsListOldLike: React.FC<{
     );
   };
   return (
-    <Section title="Действия" fill scrollable>
+    <Section title="Actions" fill scrollable>
       {!actions.length ? (
         <Box color="label" textAlign="center" style={{ padding: 6 }}>
-          Нет доступных действий.
+          No available actions.
         </Box>
       ) : singleColumn ? (
         <Stack vertical>
@@ -696,8 +696,8 @@ const ActionsListOldLike: React.FC<{
   );
 };
 
-const speedNames = ['Медленно', 'Средне', 'Быстро', 'Неистово'];
-const forceNames = ['Нежно', 'Уверенно', 'Сильно', 'Жестко'];
+const speedNames = ['Slowly', 'Medium', 'Fast', 'Fervently'];
+const forceNames = ['Gently', 'Confidently', 'Strongly', 'Hard'];
 const speedColors = ['#a798a2ff', '#e67ec0ff', '#f05ee1', '#f54689ff'];
 const forceColors = ['#a798a2ff', '#e67ec0ff', '#f05ee1', '#f54689ff'];
 
@@ -717,7 +717,7 @@ const ActiveLinksPanel: React.FC<{
   };
 
   return (
-    <Section title="Активные связки">
+    <Section title="Active bundles">
       <Stack vertical>
         {links.map((l) => {
           const sp = clamp14(l.speed);
@@ -794,10 +794,10 @@ const ActiveLinksPanel: React.FC<{
                       color="transparent"
                       selected
                       onClick={() => onStop(l.id)}
-                      tooltip="Остановить связку"
+                      tooltip="Stop the bundle"
                       style={{ padding: '1px 10px', lineHeight: 1.1 }}
                     >
-                      {l.name || 'ДЕЙСТВИЕ'}
+                      {l.name || 'ACTION'}
                     </Button>
                   </Box>
                 </Stack.Item>
@@ -856,9 +856,9 @@ const ActiveLinksPanel: React.FC<{
                     <Box textAlign="center">
                       <Pill
                         onClick={() => onToggleFinish(l.id, !doUntilClimax)}
-                        tooltip="Переключить режим завершения"
+                        tooltip="Switch completion mode"
                       >
-                        {doUntilClimax ? 'ДО КЛИМАКСА' : 'ПОКА НЕ ОСТАНОВЛЮСЬ'}
+                        {doUntilClimax ? 'TO CLIMAX' : 'UNTIL I STOP'}
                       </Pill>
                     </Box>
                   </Stack.Item>
@@ -915,19 +915,19 @@ const PenisTuningPanel: React.FC<{
   if (!enabled) return null;
   const modes = climaxModes?.length
     ? climaxModes
-    : [{ id: 'outside', name: 'НАРУЖУ' }, { id: 'inside', name: 'ВНУТРЬ' }];
+    : [{ id: 'outside', name: 'OUTSIDE' }, { id: 'inside', name: 'INSIDE' }];
   return (
-    <Section title="Настройки члена" style={{ paddingTop: 6, paddingBottom: 6 }}>
+    <Section title="Member settings" style={{ paddingTop: 6, paddingBottom: 6 }}>
       <Stack justify="space-between" align="center" wrap>
         {showKnotToggle ? (
           <Stack.Item>
             <Box color="label" style={{ fontSize: 10, textTransform: 'uppercase' }} mb={0.25}>
-              Узел
+              Node
             </Box>
             <Stack>
               <Stack.Item>
                 <Pill disabled={!canKnot} selected={!!doKnotAction} onClick={canKnot ? onToggleKnot : undefined}>
-                  {doKnotAction ? 'ДО УЗЛА' : 'БЕЗ УЗЛА'}
+                  {doKnotAction ? 'TO NODE' : 'WITHOUT NODE'}
                 </Pill>
               </Stack.Item>
             </Stack>
@@ -938,7 +938,7 @@ const PenisTuningPanel: React.FC<{
         {showClimaxControls ? (
         <Stack.Item>
           <Box color="label" style={{ fontSize: 10, textTransform: 'uppercase' }} mb={0.25} textAlign="right">
-            Куда кончить
+            Where to finish
           </Box>
           <Stack justify="end" wrap>
             {modes.map((m) => (
@@ -963,10 +963,10 @@ const ActionsBottomSearch: React.FC<{
   onSearchChange: (value: string) => void;
 }> = ({ searchText, onSearchChange }) => {
   return (
-    <Section title="Фильтр" style={{ paddingTop: 6, paddingBottom: 6 }}>
+    <Section title="Filter" style={{ paddingTop: 6, paddingBottom: 6 }}>
       <Input
         fluid
-        placeholder="Поиск взаимодействия..."
+        placeholder="Interaction search..."
         value={searchText}
         onChange={(value) => onSearchChange(value)}
       />
@@ -1022,7 +1022,7 @@ const ActionsTab: React.FC<{
         <Stack fill align="stretch">
           <Stack.Item basis="18%" style={{ paddingRight: 4 }}>
             <NodeList
-              title="Я"
+              title="I"
               nodes={actorNodes}
               selectedId={selectedActorNode}
               onSelect={(id) =>
@@ -1050,7 +1050,7 @@ const ActionsTab: React.FC<{
           </Stack.Item>
           <Stack.Item basis="18%" style={{ paddingLeft: 4 }}>
             <NodeList
-              title="Партнёр"
+              title="Partner"
               nodes={partnerNodes}
               selectedId={selectedPartnerNode}
               onSelect={(id) =>
@@ -1095,9 +1095,9 @@ const ActionsTab: React.FC<{
 
 const prefText = (v?: number | null) => {
   if (v === undefined || v === null) return '—';
-  if (v <= -1) return 'Не нравится';
-  if (v >= 1) return 'Нравится';
-  return 'Нейтрально';
+  if (v <= -1) return 'Dislike';
+  if (v >= 1) return 'Like';
+  return 'Neutral';
 };
 
 const nextPref = (v: number) => {
@@ -1220,7 +1220,7 @@ const StatusOrganCard: React.FC<{
   onToggleOverflow: (organId: string) => void;
   onSetErectMode?: (organId: string, mode: 'auto' | 'none' | 'partial' | 'hard') => void;
 }> = ({ entry, onEditSensitivity, onToggleOverflow, onSetErectMode }) => {
-  const name = entry.name || entry.type || 'Орган';
+  const name = entry.name || entry.type || 'Organ';
   const sens = Number(entry.sensitivity ?? 0);
   const pain = Number(entry.pain ?? 0);
   const toggles = entry.toggles || {};
@@ -1251,7 +1251,7 @@ const StatusOrganCard: React.FC<{
         {entry.busy ? (
           <Stack.Item shrink>
             <Box color="bad" style={{ fontSize: 10 }}>
-              ● активен
+              ● active
             </Box>
           </Stack.Item>
         ) : null}
@@ -1265,7 +1265,7 @@ const StatusOrganCard: React.FC<{
             onClick={() => onEditSensitivity(entry.id, sens)}
             style={{ padding: '2px 6px' }}
           >
-            Чувств.:{' '}
+            Sensitivity:{' '}
             <Box as="span" color="good" bold>
               {fmt1(sens)}
             </Box>
@@ -1274,7 +1274,7 @@ const StatusOrganCard: React.FC<{
         <Stack.Item>
           <Box style={{ fontSize: 11 }}>
             <Box as="span" color="bad">
-              Боль:{' '}
+              Pain:{' '}
             </Box>
             <Box as="span" color="bad" bold>
               {fmt1(pain)}
@@ -1284,7 +1284,7 @@ const StatusOrganCard: React.FC<{
         {hasOverflow ? (
           <Stack.Item>
             <Pill selected={overflow} onClick={() => onToggleOverflow(entry.id)}>
-              ПЕРЕПОЛН.
+              OVERFLOW.
             </Pill>
           </Stack.Item>
         ) : null}
@@ -1292,27 +1292,27 @@ const StatusOrganCard: React.FC<{
       {hasErect && onSetErectMode && (
         <Box mt={0.5}>
           <Box color="label" style={{ fontSize: 10, textTransform: 'uppercase' }} mb={0.25}>
-            Возбуждение
+            Arousal
           </Box>
           <Stack wrap>
             <Stack.Item>
               <Pill selected={erectMode === 'auto'} onClick={() => onSetErectMode(entry.id, 'auto')}>
-                АВТО
+                AUTO
               </Pill>
             </Stack.Item>
             <Stack.Item>
               <Pill selected={erectMode === 'none'} onClick={() => onSetErectMode(entry.id, 'none')}>
-                МЯГКИЙ
+                SOFT
               </Pill>
             </Stack.Item>
             <Stack.Item>
               <Pill selected={erectMode === 'partial'} onClick={() => onSetErectMode(entry.id, 'partial')}>
-                ВОЗБУЖДЕН
+                EXCITED
               </Pill>
             </Stack.Item>
             <Stack.Item>
               <Pill selected={erectMode === 'hard'} onClick={() => onSetErectMode(entry.id, 'hard')}>
-                КРЕПКИЙ
+                STRONG
               </Pill>
             </Stack.Item>
           </Stack>
@@ -1321,7 +1321,7 @@ const StatusOrganCard: React.FC<{
       {fillTotal > 0 && (
         <Box mt={0.5} style={{ fontSize: 11 }}>
           <Box as="span" color="label">
-            Наполненность:{' '}
+            Fullness:{' '}
           </Box>
           <Box as="span" bold>
             {Math.round(fillTotal)}
@@ -1333,7 +1333,7 @@ const StatusOrganCard: React.FC<{
           {passive.length > 0 && (
             <Box>
               <Box color="label" style={{ fontSize: 10, textTransform: 'uppercase' }}>
-                Воздействия на орган
+                Effects on the organ
               </Box>
               {passive.map((l) => (
                 <Box key={l.id} mt={0.25}>
@@ -1351,7 +1351,7 @@ const StatusOrganCard: React.FC<{
           {active.length > 0 && (
             <Box mt={0.5}>
               <Box color="label" style={{ fontSize: 10, textTransform: 'uppercase' }}>
-                Орган воздействует
+                Organ acts
               </Box>
               {active.map((l) => (
                 <Box key={l.id} mt={0.25}>
@@ -1386,16 +1386,16 @@ const ArousalPanel: React.FC<{
     <Stack vertical>
       <Stack.Item>
         <Box style={{ fontSize: 11 }}>
-          Заряд: <Box as="span" bold>{charge}</Box>/{chargeMax} ({charge_for_climax} для оргазма)
+          Charge:<Box as="span" bold>{charge}</Box>/{chargeMax} ({charge_for_climax} to orgasm)
         </Box>
         <Box style={{ fontSize: 11 }}>
-          Самочувствие:{' '}
+          Well-being:{' '}
           <Box as="span" bold>
-            {spTierText || 'нормально'}
+            {spTierText || 'normal'}
           </Box>
           {overloadActive && (
             <Box color="bad" bold style={{ fontSize: 11 }}>
-              СВЕРХ-СТИМУЛЯЦИЯ
+              SUPER-STIMULATION
             </Box>
           )}
         </Box>
@@ -1412,15 +1412,15 @@ const StatusTab: React.FC<{
 }> = ({ entries, onEditSensitivity, onToggleOverflow, onSetErectMode }) => {
   if (!entries.length) {
     return (
-      <Section title="Статус">
+      <Section title="Status">
         <Box color="label" textAlign="center">
-          Пусто (entries не пришли)
+          Empty(entries did not arrive)
         </Box>
       </Section>
     );
   }
   return (
-    <Section title="Статус">
+    <Section title="Status">
       {entries.map((e) => (
         <StatusOrganCard
           key={e.id}
@@ -1466,7 +1466,7 @@ const normalizeFields = (fields: any): EditorField[] => {
             : typeof fields[k] === 'boolean'
               ? 'bool'
               : 'text',
-      section: 'Параметры',
+      section: 'Options',
       value: fields[k],
     }));
   }
@@ -1476,7 +1476,7 @@ const normalizeFields = (fields: any): EditorField[] => {
 const groupBySection = (fields: EditorField[]) => {
   const map: Record<string, EditorField[]> = {};
   for (const f of fields) {
-    const sec = f.section || 'Параметры';
+    const sec = f.section || 'Options';
     if (!map[sec]) map[sec] = [];
     map[sec].push(f);
   }
@@ -1514,7 +1514,7 @@ const ListEditor: React.FC<{
       </Stack>
       <Stack mt={0.5} align="center">
         <Stack.Item grow>
-          <Input fluid value={draft} placeholder={placeholder || 'добавить...'} onChange={(v) => setDraft(v)} onEnter={add} />
+          <Input fluid value={draft} placeholder={placeholder || 'add...'} onChange={(v) => setDraft(v)} onEnter={add} />
         </Stack.Item>
         <Stack.Item shrink>
           <Button compact onClick={add}>
@@ -1552,7 +1552,7 @@ const FieldControl: React.FC<{
         </Stack.Item>
         <Stack.Item shrink>
           <Pill selected={v} onClick={() => onChange(f.id, !v)}>
-            {v ? 'ВКЛ' : 'ВЫКЛ'}
+            {v ? 'ON' : 'OFF'}
           </Pill>
         </Stack.Item>
       </Stack>
@@ -1675,14 +1675,14 @@ const EditorTab: React.FC<{
   const [rawMode, setRawMode] = useState(false);
   const [rawText, setRawText] = useState('');
 
-  // Локальная форма — всегда гидрится из backend.selected,
-  // но только если пользователь не "грязный" (не редактит сейчас)
+  //Local form — always hydrated from backend.selected,
+  //but only if the user is not "dirty" (not editing now)
   const [formFields, setFormFields] = useState<EditorField[]>([]);
 
   const selectedMode = selected?.mode ?? null;
   const selectedKey = selected?.key ?? null;
 
-  // "источник" формы — строго selected (полный), не списки
+  //the form "source" — strictly selected (full), not lists
   const source = useMemo(() => {
     if (!selectedMode || !selectedKey) return null;
     return {
@@ -1723,9 +1723,9 @@ const EditorTab: React.FC<{
       : [
           {
             id: 'name',
-            label: 'Название',
+            label: 'Title',
             type: 'text',
-            section: 'ОСНОВНОЕ',
+            section: 'BASIC',
             value: nameFromSource,
           } as EditorField,
           ...nf,
@@ -1743,7 +1743,7 @@ const EditorTab: React.FC<{
     setRawText('');
   };
 
-  // При смене выбранного в backend — гидрим форму, но НЕ перетираем локальные правки.
+  //When changing the selected in backend — we hydrate the form, but do NOT overwrite local edits.
   useEffect(() => {
     if (selectionKey === lastSelectionKey.current) return;
     lastSelectionKey.current = selectionKey;
@@ -1752,11 +1752,11 @@ const EditorTab: React.FC<{
     hydrateFromSelected();
   }, [selectionKey]);
 
-  // Если backend прислал апдейт выбранного, а мы не dirty — тоже гидрим
+  //If backend sent an update of the selected, and we are not dirty — we also hydrate
   useEffect(() => {
     if (!source) return;
     if (isDirty) return;
-    // если не менялся selectionKey — но поля обновились, мы всё равно можем перезалить.
+    //if the selectionKey hasn't changed — but fields updated, we can still re-upload.
     hydrateFromSelected();
   }, [source?.name, (source as any)?.fields]);
 
@@ -1822,12 +1822,12 @@ const EditorTab: React.FC<{
   };
 
   return (
-    <Section title="Редактор действий" fill>
+    <Section title="" fill>
       <Stack fill>
         <Stack.Item basis="32%">
-          <Section title="Шаблоны">
+          <Section title="Action Editor">
             {!templates.length ? (
-              <Box color="label">Нет доступных шаблонов.</Box>
+              <Box color="label">No available templates.</Box>
             ) : (
               <Stack vertical>
                 {templates.map((t) => {
@@ -1840,7 +1840,7 @@ const EditorTab: React.FC<{
                         selected={isSelected}
                         onClick={() => {
                           setIsDirty(false);
-                          // ✅ просим backend выбрать и вернуть полный payload в selected
+                          //Templates ✅ we ask the backend to select and return the full payload in selected
                           act('editor_select_action', { mode: 'template', key: t.type });
                         }}
                       >
@@ -1853,9 +1853,9 @@ const EditorTab: React.FC<{
             )}
           </Section>
 
-          <Section title={`Мои кастомные (${customActions.length})`}>
+          <Section title={`My custom (${customActions.length})`}>
             {!customActions.length ? (
-              <Box color="label">Пока пусто.</Box>
+              <Box color="label">Still empty.</Box>
             ) : (
               <Stack vertical>
                 {customActions.map((c) => {
@@ -1868,7 +1868,7 @@ const EditorTab: React.FC<{
                         selected={isSelected}
                         onClick={() => {
                           setIsDirty(false);
-                          // ✅ просим backend выбрать и вернуть полный payload в selected
+                          //Templates ✅ we ask the backend to select and return the full payload in selected
                           act('editor_select_action', { mode: 'custom', key: c.id });
                         }}
                       >
@@ -1883,17 +1883,17 @@ const EditorTab: React.FC<{
         </Stack.Item>
 
         <Stack.Item grow basis="68%">
-          <Section title="Параметры" fill scrollable>
+          <Section title="Options" fill scrollable>
             {!source ? (
-              <Box color="label">Выбери слева шаблон или своё действие.</Box>
+              <Box color="label">Choose a template on the left or your action.</Box>
             ) : (
               <>
                 <Box mb={1}>
                   <Box color="label" style={{ fontSize: 10, textTransform: 'uppercase' }} mb={0.25}>
-                    Основное
+                    Main
                   </Box>
                   <Box mb={0.25} bold style={{ fontSize: 11 }}>
-                    Название
+                    Title
                   </Box>
                   <Input fluid value={nameValue} onChange={(v) => setFieldValue('name', v)} />
                 </Box>
@@ -1902,7 +1902,7 @@ const EditorTab: React.FC<{
                   <Stack justify="space-between" align="center">
                     <Stack.Item>
                       <Box color="label" style={{ fontSize: 10, textTransform: 'uppercase' }}>
-                        Поля
+                        Fields
                       </Box>
                     </Stack.Item>
                     <Stack.Item>
@@ -1934,7 +1934,7 @@ const EditorTab: React.FC<{
                       </Box>
                     ) : (
                       <Box mt={0.5} color="label">
-                        Поля не пришли (или backend ещё не отдал выбранное действие полностью).
+                        Fields did not arrive(orbackend have not fully delivered the selected action yet).
                       </Box>
                     )
                   ) : (
@@ -1948,7 +1948,7 @@ const EditorTab: React.FC<{
                         }}
                       />
                       <Box mt={0.25} color="label" style={{ fontSize: 10 }}>
-                        В RAW можно править payload полей. Если JSON сломан — уйдёт обычный вариант.
+                        InRAW you can editpayload fields. IfJSON is broken — the normal version will be used.
                       </Box>
                     </Box>
                   )}
@@ -1956,10 +1956,10 @@ const EditorTab: React.FC<{
 
                 <Box mt={1} textAlign="right">
                   <Button disabled={!canCreate} onClick={commitCreate}>
-                    СОЗДАТЬ КАСТОМ
+                    CREATE CUSTOM
                   </Button>{' '}
                   <Button disabled={!canSave} onClick={commitSave}>
-                    СОХРАНИТЬ
+                    SAVE
                   </Button>{' '}
                   <Button
                     disabled={!canDelete || !selectedKey}
@@ -1970,13 +1970,13 @@ const EditorTab: React.FC<{
                       onDelete(selectedKey);
                     }}
                   >
-                    УДАЛИТЬ
+                    DELETE
                   </Button>
                 </Box>
 
                 {isDirty && (
                   <Box mt={0.5} color="label" style={{ fontSize: 10 }}>
-                    Локальные правки не будут перезатираться обновлениями UI до сохранения или смены выбора.
+                    Local edits will not be overwritten by updatesUI until saving or changing selection.
                   </Box>
                 )}
               </>
@@ -2066,7 +2066,7 @@ export const EroticRolePlayPanel: React.FC = () => {
       });
   }, [kinkEntries, q, cat]);
   return (
-    <Window title="Утолить Желания" width={520} height={740}>
+    <Window title="Satisfy Desires" width={520} height={740}>
       <Window.Content scrollable>
         <Stack vertical fill>
           <Stack.Item>
@@ -2080,22 +2080,22 @@ export const EroticRolePlayPanel: React.FC = () => {
             <Stack justify="center" wrap>
               <Stack.Item style={{ margin: 0 }}>
                 <Pill selected={isArousing} onClick={() => act('freeze_arousal')}>
-                  ВОЗБУЖДАТЬСЯ
+                  EXCITE
                 </Pill>
               </Stack.Item>
               <Stack.Item style={{ margin: 0 }}>
                 <Pill selected={isYielding} onClick={() => act('yield')}>
-                  ПОДДАВАТЬСЯ
+                  SUBMIT
                 </Pill>
               </Stack.Item>
               <Stack.Item style={{ margin: 0 }}>
                 <Pill selected={isMoaning} onClick={() => act('set_moaning')}>
-                  СТОНАТЬ
+                  MOAN
                 </Pill>
               </Stack.Item>
               <Stack.Item style={{ margin: 0 }}>
                 <Pill selected={isHidden} onClick={() => act('toggle_hidden')}>
-                  СКРЫТНО
+                  SECRETLY
                 </Pill>
               </Stack.Item>
             </Stack>
@@ -2104,14 +2104,14 @@ export const EroticRolePlayPanel: React.FC = () => {
             {showPartner ? (
               <Stack>
                 <Stack.Item basis="50%" style={{ paddingRight: 2 }}>
-                  <BarRow label="Я" valuePercent={actorArousal} clickable onClick={openArousalEditor} />
+                  <BarRow label="I" valuePercent={actorArousal} clickable onClick={openArousalEditor} />
                 </Stack.Item>
                 <Stack.Item basis="50%" style={{ paddingLeft: 2 }}>
-                  <BarRow label="Партнёр" valuePercent={partnerArousal} />
+                  <BarRow label="Partner" valuePercent={partnerArousal} />
                 </Stack.Item>
               </Stack>
             ) : (
-              <BarRow label="Я" valuePercent={actorArousal} clickable onClick={openArousalEditor} />
+              <BarRow label="I" valuePercent={actorArousal} clickable onClick={openArousalEditor} />
             )}
           </Box>
           <Stack.Item>
@@ -2132,10 +2132,10 @@ export const EroticRolePlayPanel: React.FC = () => {
             ) : activeTab === 'kinks' ? (
               <Stack vertical>
                 <Stack.Item>
-                  <Section title="Фетиши">
+                  <Section title="Fetishes">
                     <Stack vertical>
                       <Stack.Item>
-                        <Input fluid placeholder="Поиск по кинкам..." value={q} onChange={(v) => setQ(v)} />
+                        <Input fluid placeholder="Search by links..." value={q} onChange={(v) => setQ(v)} />
                       </Stack.Item>
                       {categories.length > 1 && (
                         <Stack.Item mt={0.5}>
@@ -2154,14 +2154,14 @@ export const EroticRolePlayPanel: React.FC = () => {
                   </Section>
                 </Stack.Item>
                 <Stack.Item grow>
-                  <Section title={`Настройки (${filteredKinks.length}/${kinkEntries.length})`}>
+                  <Section title={`Settings (${filteredKinks.length}/${kinkEntries.length})`}>
                     {!kinkEntries.length ? (
                       <Box color="label" textAlign="center">
-                        Пусто (entries не пришли)
+                        Empty(entries did not arrive)
                       </Box>
                     ) : !filteredKinks.length ? (
                       <Box color="label" textAlign="center">
-                        Ничего не найдено по фильтрам.
+                        Nothing found with the filters.
                       </Box>
                     ) : (
                       filteredKinks.map((k) => {
@@ -2211,7 +2211,7 @@ export const EroticRolePlayPanel: React.FC = () => {
               />
             ) : (
               <Box color="label" style={{ padding: 6 }}>
-                Контент вкладки позже.
+                Tab content later.
               </Box>
             )}
           </Stack.Item>
@@ -2219,10 +2219,10 @@ export const EroticRolePlayPanel: React.FC = () => {
       </Window.Content>
       {editContext && (
         <Modal>
-          <Section title={editContext.kind === 'arousal' ? 'Установить возбуждение (0–100)' : 'Чувствительность (например 0–2)'}>
+          <Section title={editContext.kind === 'arousal' ? 'Set arousal (0–100)' : 'Sensitivity (for example 0–2)'}>
             <Input autoFocus value={editValue} onChange={(v) => setEditValue(v)} />
             <Box mt={1} textAlign="right">
-              <Button onClick={() => setEditContext(null)}>Отмена</Button>{' '}
+              <Button onClick={() => setEditContext(null)}>Cancel</Button>{' '}
               <Button onClick={confirmEdit}>OK</Button>
             </Box>
           </Section>

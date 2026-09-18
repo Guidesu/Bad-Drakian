@@ -1,10 +1,10 @@
 /datum/erp_action/other/penis/vaginal_sex
 	abstract = FALSE
 
-	name = "Вагинальный секс"
+	name = "Vaginal sex"
 	required_target_organ = SEX_ORGAN_VAGINA
-	message_start = "{actor} приставляет свой член к лону {partner}."
-	message_tick = "{actor} {force} и {speed} трахает {partner} в киску."
-	message_finish =  "{actor} вытаскивает член из влагалища {partner}."
-	message_climax_active = "{actor} кончает в лоно {partner}."
-	message_climax_passive = "{partner} кончает сжимая киску вокруг члена {actor}."
+	message_start = "{actor} puts his penis to {partner}'s womb."
+	message_tick = "{actor} {force} and {speed} fuck {partner} in the pussy."
+	message_finish =  "{actor} pulls his penis out of {partner}'s vagina."
+	message_climax_active = "{actor} cums into {partner}'s womb."
+	message_climax_passive = "{partner} cums squeezing her pussy around {actor}'s dick."

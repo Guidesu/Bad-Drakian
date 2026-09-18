@@ -278,8 +278,8 @@
 	result["tier2_extra"] = tier2_max
 	result["final_slots"] = max(0, min(slots, cap))
 
-	// TA EDIT BEGIN НЕРФ ЛОУПОП ВРЕТЧИКОВ)))
-	//как же ща сгорит у каких нибудь любителей заходить раз в 3 месяца, вретчей занерфили блин((9
+	//TA EDIT BEGIN NERF LOOPOP VRETCHIKOV)))
+	//how will it burn now for some people who like to come in once every 3 months, the Vretchiks have been nerfed damn it((9
 	if(SSticker.IsRoundInProgress() && player_count < 40)
 		result["combat_positions_alive"] = SSgamemode.combat_positions_alive
 		result["final_slots"] = max(0, min(result["final_slots"], SSgamemode.combat_positions_alive, cap))

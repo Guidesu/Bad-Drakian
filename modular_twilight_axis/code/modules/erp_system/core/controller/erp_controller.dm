@@ -415,7 +415,7 @@
 
 /// Returns action block reason string or null.
 /datum/erp_controller/proc/get_action_block_reason(datum/erp_action/A, datum/erp_sex_organ/init, datum/erp_sex_organ/target)
-	return actions_d ? actions_d.get_action_block_reason(A, init, target) : "Нет делегата."
+	return actions_d ? actions_d.get_action_block_reason(A, init, target) : "No delegate."
 
 /// Toggles hidden mode.
 /datum/erp_controller/proc/change_hidden_mode()
@@ -704,7 +704,7 @@
 			continue
 		if(!L.is_valid())
 			continue
-		// если у тебя есть state, можно ужесточить:
+		//if you have a state, you can tighten it:
 		if(L.state && L.state != LINK_STATE_ACTIVE)
 			continue
 		return TRUE

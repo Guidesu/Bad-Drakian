@@ -385,7 +385,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 			if(prob(10))
 				blur_eyes(5)
 			if(prob(4) && !stat && !IsKnockdown())
-				to_chat(src, span_warning("Я на мгновение теряю равновесие!"))
+				to_chat(src, span_warning("I lose my balance for a moment!"))
 				Knockdown(10)
 
 		if(drunkenness >= 81)

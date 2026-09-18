@@ -97,7 +97,7 @@ SUBSYSTEM_DEF(erp)
 
 		if(world.time >= K.next_decay_at)
 			K.process_decay()
-			if(K && !QDELETED(K) && K.next_decay_at) // если не stop_decay()
+			if(K && !QDELETED(K) && K.next_decay_at) //if not stop_decay()
 				K.next_decay_at = world.time + ERP_KNOT_DECAY_TICK
 
 /// Registers a controller into subsystem list.
@@ -199,7 +199,7 @@ SUBSYSTEM_DEF(erp)
 	if(!A || QDELETED(A))
 		return
 
-	var/atom/owner_atom = A.active_actor // у тебя get_controller_for() сравнивает с owner.active_actor
+	var/atom/owner_atom = A.active_actor //you get_controller_for() compares with owner.active_actor
 	if(!owner_atom)
 		qdel(A)
 		return

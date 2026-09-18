@@ -754,7 +754,7 @@
 	name = "oathkeeper's noble crest"
 	desc = "A decoration that takes the form of a golden winged shield; an unofficial coat-of-arms used to represent Azuria's many noble houses. To wear such garments is to command respect from those that've come after you; hopefully, not undue."
 	icon = 'modular_twilight_axis/icons/roguetown/clothing/onhelm.dmi' // TA EDIT START
-	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/onmob/32х48/onhelm.dmi'
+	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/onmob/32x48/onhelm.dmi'
 	item_state = "d_oathtaker"
 	icon_state = "d_oathtaker"
 	worn_offsets = list("x" = 0, "y" = 0) // TA EDIT END

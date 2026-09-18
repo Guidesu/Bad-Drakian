@@ -1,17 +1,8 @@
-/datum/job/roguetown/lord/after_spawn(mob/living/H, mob/M, latejoin = TRUE)
-	..()
+/datum/job/roguetown/lord/proc/apply_sovereign_name_title(mob/living/H)
 	if(ishuman(H))
 		var/prev_real_name = H.real_name
 		var/prev_name = H.name
-		var/nobility = "Duke"
-		if(SSmapping.config.map_name == "Rockhill")
-			nobility = "King"
-			if(H.titles_pref == TITLES_F)
-				nobility = "Queen"
-		else
-			nobility = "Duke"
-			if(H.titles_pref == TITLES_F)
-				nobility = "Duchess"
+		var/nobility = SSticker.rulertype || (H.titles_pref == TITLES_F ? "Countess" : "Count")
 		H.real_name = "[nobility] [prev_real_name]"
 		H.name = "[nobility] [prev_name]"
 

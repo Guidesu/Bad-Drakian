@@ -1,6 +1,6 @@
 /obj/effect/proc_holder/spell/invoked/projectile/snowball_toss
 	name = "Frost Sphere"
-	desc = "Запускает магический снежный шар. При попадании накладывает 2 стака обморожения и отбрасывает цель."
+	desc = "Launches a magical snowball. On hit, applies 2 stacks of frost and knocks back the target."
 	school = "evocation"
 	invocations = list("GLACIES PILLA!")
 	invocation_type = "shout"

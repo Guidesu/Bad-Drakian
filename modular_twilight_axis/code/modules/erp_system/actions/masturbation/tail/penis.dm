@@ -1,8 +1,8 @@
 /datum/erp_action/self/tail/penis_tail
 	abstract = FALSE
 
-	name = "Мастурбация пениса хвостом"
+	name = "Penis masturbation with tail"
 	required_target_organ = SEX_ORGAN_PENIS
-	message_start = "{actor} оборачивает хвост вокруг своего члена."
-	message_tick = "{actor} {force} и {speed} двигает хвостом по своему члену."
-	message_finish =  "{actor} ослабляет хватку хвостом."
+	message_start = "{actor} wraps his tail around his penis."
+	message_tick = "{actor} {force} and {speed} moves his tail on his dick."
+	message_finish =  "{actor} loosens its grip on its tail."

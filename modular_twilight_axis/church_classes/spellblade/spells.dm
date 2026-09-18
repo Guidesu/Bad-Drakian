@@ -1,6 +1,6 @@
 /obj/effect/proc_holder/spell/self/noctite_fortify
 	name = "Arcane Armor"
-	desc = "Неся свет Нок в себе, он вас защищает. Вы становитесь крепче под лунным светом, но Астрата мешает вам, поэтому под её светом вы не можете использовать это."
+	desc = "Carrying the light of Nok within itself, it protects you. You become stronger under the moonlight, but Astrata interferes with you, so under her light you cannot use it."
 	recharge_time = 10 MINUTES
 	action_icon_state = "summons"
 	action_icon = 'icons/mob/actions/roguespells.dmi'
@@ -8,7 +8,7 @@
 
 /obj/effect/proc_holder/spell/self/noctite_fortify/cast_check(skipcharge, mob/user = usr)
 	if(GLOB.tod == "day")
-		to_chat(usr, "Я не могу сделать это днем.")
+		to_chat(usr, "I can't do this during the day.")
 		return 
 	return ..()
 
@@ -36,8 +36,8 @@
 
 
 /atom/movable/screen/alert/status_effect/buff/noctite_fortify
-	name = "Укрепление света Нок"
-	desc = "Нок благославила вас, дав вам защиту"
+	name = "Strengthening the Light of Nok"
+	desc = "Nok has blessed you, giving you protection"
 	icon_state = "status"
 
 /datum/status_effect/noctite_fortify
@@ -62,7 +62,7 @@
 
 /obj/effect/proc_holder/spell/targeted/spellblade_select_weapon
 	name = "Chose moonlight weapon"
-	desc = "Вы на мгновение погружаетесь в мир снов, чтобы выбрать в нем подходящее для вас оружие."
+	desc = "You momentarily plunge into the world of dreams to choose the weapon suitable for you."
 	clothes_req = FALSE
 	range = -1
 	include_user = TRUE
@@ -80,14 +80,14 @@
 
 /obj/effect/proc_holder/spell/invoked/spellblade_summon_weapon
 	name = "Summon moonlight weapon"
-	desc = "Свет Нок прознает реальность приобретая твердую нестабильную форму образуя в нем выбранное оружие. Астрата противится этому, поэтому лучше сотворять под светом Нок."
+	desc = "Light Nok recognizes reality by acquiring a solid, unstable form, forming the chosen weapon in it. Astrata opposes this, so it is better to create Nok under the light."
 	clothes_req = FALSE
 	recharge_time = 2 SECONDS
 	chargedloop = /datum/looping_sound/invokegen
 	action_icon_state = "summon"
 	overlay_state = "moonlight_saber"
 	overlay_icon = 'modular_twilight_axis/church_classes/icons/prismatic_weapons64.dmi'
-	invocations = list("Нок, одари меня оружием", "Свет Нок, сотвори мне оружие")
+	invocations = list("Nok, give me a weapon", "Light Nok, create me a weapon")
 	invocation_type = "shout"
 	spell_tier = 2 
 	cost = 10 
@@ -106,16 +106,16 @@
 	sleep(0.75 SECONDS)
 	if(user.put_in_hands(spawned_weapon, del_on_fail = TRUE))
 		if(GLOB.tod == "day")
-			to_chat(usr, span_warningbig("Я сотворил оружие и Нок одарила меня знаниями к нему. Свет Астраты противится этому, поэтому оружие и мои навыки слабее"))
+			to_chat(usr, span_warningbig("I created a weapon and Nok gifted me with the knowledge to use it. The Light of Astrata resists this, so the weapon and my skills are weaker"))
 			user.adjust_skillrank(weapon_select.selected_weapon.associated_skill, SKILL_LEVEL_APPRENTICE, TRUE)
 			spawned_weapon.force /= 2
 		else 
-			to_chat(usr, span_warning("Я сотворил оружие и Нок одарила меня знаниями к нему."))
+			to_chat(usr, span_warning("I created a weapon and Nok gifted me with the knowledge to use it."))
 			user.adjust_skillrank(weapon_select.selected_weapon.associated_skill, SKILL_LEVEL_EXPERT, TRUE)
 		spawned_weapon.set_light(4, 2, 1.5, l_color ="#78a3c9")
 		QDEL_IN_CLIENT_TIME(spawned_weapon, 3 MINUTES)
 	else 
-		to_chat(usr, span_warningbig("Что-то мешает мне применить это."))
+		to_chat(usr, span_warningbig("Something is stopping me from using this."))
 
 /obj/effect/proc_holder/spell/targeted/spellblade_select_weapon/cast(list/targets, mob/user)
 	. = ..()
@@ -126,7 +126,7 @@
 		"Moonlight Hammer",
 		"Moonlight Shield",
 	)
-	var/chosed_weapon = tgui_input_list(user, "Немногое из того что хранится в мире снов.", "ВЫБОР ОРУЖИЯ", weapons_of_choice)
+	var/chosed_weapon = tgui_input_list(user, "Little of what is stored in the world of dreams.", "WEAPON SELECTION", weapons_of_choice)
 	if(chosed_weapon)
 		switch(chosed_weapon)
 			if("Moonlight Sabre")

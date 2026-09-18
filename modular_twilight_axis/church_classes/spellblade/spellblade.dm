@@ -1,11 +1,11 @@
 /datum/advclass/noctite_spellblade
 	name = "Newmoon Spellblade"
-	tutorial = "Заклинатели Новолунья известны в кругах радикальных Ноктитов как самые преданные Нок монахи, чаще всего происходящие из Зибантии. \
-		По какой-то причине вы покинули свой монастырь и прибыли сюда. Паломничество это или миссия по распространению слова Нок?... \
-		Кроме вас точно никто сказать не сможет. Хоть вы и довольно фанатичный Ноктит, но вы пришли сюда с миром и поэтому довольно терпимо относитесь к остальным богам и установленному Порядку,\
-		возможно, имея недоверие к Астрате согласно радикальному учению Нок... \
-		Несмотря на учения местных служителей церкви Десяти, вы знаете и крайне убеждены что Нок не требует поклонения, она одарила вас чем то более уникальным:\
-		за своё верное служение и познание в аркане вы получили доступ к арканному оружию. Вам недоступны чудеса, но взамен вы получили доступ к аркане, и не смотря на то какое оружие свет Нок не сотворил бы для вас, вы являетесь экспертом в нем."
+	tutorial = "Darkmoon Spellcasters are known in radical Noctite circles as the most devoted Nok monks, most often originating from Zybanthia. \
+		For some reason, you left your monastery and came here. Is it a pilgrimage or a mission to spread the word of Nok?...\
+		Only you can say for sure. Although you are quite a fanatical Noktit, you have come here in peace and therefore are fairly tolerant of other gods and the established Order,\
+		possibly holding distrust toward Astrate according to the radical teaching of Nok... \
+		Despite the teachings of the local ministers of the Church of the Ten, you know and are deeply convinced that Nok does not demand worship; she has bestowed upon you something more unique:\
+		for your faithful service and knowledge in the arcane, you have gained access to arcane weapons. Miracles are not available to you, but in return, you have gained access to the arcane, and regardless of what weapon the light of Nok would create for you, you are an expert in it."
 	outfit = /datum/outfit/job/roguetown/spellblade
 	category_tags = list(CTAG_TEMPLAR)
 	subclass_languages = list(/datum/language/raneshi)
@@ -25,7 +25,7 @@
 	)
 
 	subclass_stashed_items = list(
-		"Накидка Новолунья" = /obj/item/clothing/cloak/half/newmoon,
+		"Darkmoon Cape" = /obj/item/clothing/cloak/half/newmoon,
 	)
 
 	allowed_patrons = list(/datum/patron/divine/noc)

@@ -9,7 +9,7 @@ GLOBAL_PROTECT(admin_verbs_default)
 	/client/proc/check_pq,
 	/client/proc/adjust_pq,
 	/client/proc/hearallasghost,
-	//	/client/proc/hearglobalLOOC, Лоок вырезан. Не нужно.
+	///client/proc/hearglobalLOOC, Look is cut out. No need.
 	/client/proc/togglespawnmessages,
 	/client/proc/toggle_aghost_invis,
 	/client/proc/admin_ghost,
@@ -985,21 +985,21 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 
 /client/proc/adjusttriumph()
 	set category = "Admin.Special"
-	set name = "Adjust Triumphs"
+	set name = "Adjust Points"
 	set desc = "Adjust a player's Triumphs by ckey, including offline players."
 	if(!holder || !check_rights(R_ADMIN))
 		return
 
-	var/target_input = input(src, "Enter the player's ckey.", "Adjust Triumphs") as null|text
+	var/target_input = input(src, "Enter the player's ckey.", "Adjust Points") as null|text
 	var/target_ckey = ckey(target_input)
 	if(!target_ckey)
 		return
 	if(target_ckey == src.ckey)
-		to_chat(src, span_boldwarning("Самому себе триумфы выдавать нельзя."))
+		to_chat(src, span_boldwarning("You can’t give yourself triumphs."))
 		return
 
 	var/current_triumphs = SStriumphs.get_triumphs(target_ckey)
-	var/amt2change = input(src, "How much to modify [target_ckey]'s Triumphs by? (100 to -100)\nCurrent Triumphs: [current_triumphs]", "Adjust Triumphs") as null|num
+	var/amt2change = input(src, "How many points should be added to or removed from [target_ckey]? (100 to -100)\nCurrent points: [current_triumphs]", "Adjust Points") as null|num
 	if(isnull(amt2change))
 		return
 	amt2change = clamp(round(amt2change), -100, 100)
@@ -1027,7 +1027,6 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	var/client/target_client = GLOB.directory[target_ckey]
 	if(target_client)
 		if(amt2change > 0)
-			to_chat(target_client, "\n<font color='purple'>[amt2change] TRIUMPH(S) awarded.</font>")
+			to_chat(target_client, "\n<font color='purple'>[amt2change] POINT(S) awarded.</font>")
 		else
-			to_chat(target_client, "\n<font color='purple'>[amt2change * -1] TRIUMPH(S) lost.</font>")
-
+			to_chat(target_client, "\n<font color='purple'>[amt2change * -1] POINT(S) lost.</font>")

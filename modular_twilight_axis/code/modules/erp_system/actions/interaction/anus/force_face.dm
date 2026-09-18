@@ -1,9 +1,9 @@
 /datum/erp_action/other/anus/force_face
 	abstract = FALSE
-	name = "Сесть на лицо"
+	name = "Sitting on the face"
 	required_target_organ = SEX_ORGAN_MOUTH
-	message_start = "{actor} прижимает {dullahan?отделенную :}голову {partner} к своей заднице.."
-	message_tick = "{actor} {force} и {speed} водит {aggr?задницей:ягодицами} по {dullahan?отделенной :}голове {partner}."
-	message_finish =  "{actor} отводит попку от лица {dullahan?отделенной головы :}{partner}."
-	message_climax_active = "{actor} кончает под себя."
-	message_climax_passive = "{partner} кончает под себя."
+	message_start = "{actor} presses {dullahan?separated :}head of {partner} to his ass.."
+	message_tick = "{actor} {force} and {speed} drives {aggr?ass:buttocks} on {dullahan?separated :}head of {partner}."
+	message_finish =  "{actor} moves his ass away from the face of {dullahan?separated head :}{partner}."
+	message_climax_active = "{actor} cums under himself."
+	message_climax_passive = "{partner} cums under himself."

@@ -13,6 +13,7 @@
 	var/datum/click_intercept = null
 	///The game master panel this client currently has open
 	var/datum/game_master/game_master_menu
+	var/datum/content_consent_menu/content_consent_menu
 	///Used for admin AI interaction
 	var/AI_Interact = FALSE
 

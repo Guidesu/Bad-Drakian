@@ -67,8 +67,8 @@
 
 /obj/structure/artillery/mortar
 	name = "mortar"
-	desc = "Тяжелое оружие навесного боя, предназначенное для забрасывания врага снарядам за стены и укрепления.\
-		Стреляет крутым подъемом, полагаясь на силу пороха и руку артиллериста, а не на прямую наводку."
+	desc = "A heavy mounted weapon designed to throw enemy projectiles behind walls and fortifications.\
+		Shoots with a steep trajectory, relying on the power of gunpowder and the arm of the artilleryman, rather than direct sighting."
 
 	elevation = 45
 	elevation_min = 45
@@ -101,7 +101,7 @@
 
 /obj/item/mortar_used_barrel
 	name = "damaged mortar barrel"
-	desc = "Если обжечь в печи, можно частично восстановить ствол."
+	desc = "If fired in a kiln, the barrel can be partially restored."
 	icon = 'modular_twilight_axis/awful_artillery/icons/artillery.dmi'
 	icon_state = "barrel"
 	color = "#ecaf86"
@@ -115,7 +115,7 @@ GLOBAL_VAR_INIT(has_mortar_spawned, FALSE)
 		GLOB.has_mortar_spawned = TRUE
 		var/obj/structure/artillery/mortar/mortar = new /obj/structure/artillery/mortar(H.loc)
 		H.start_pulling(mortar)
-		to_chat(H, span_danger("Со мной моя трофейная мортира, замечательно."))
+		to_chat(H, span_danger("I have my captured mortar with me, great."))
 */
 #undef PROJECTILE_NUM 
 #undef PROJECTILE_DEGREES_DIV

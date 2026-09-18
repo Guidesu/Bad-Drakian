@@ -79,15 +79,15 @@
 /// Returns localized organ name by type.
 /datum/erp_controller_organs/proc/get_organ_ui_name(datum/erp_sex_organ/O)
 	switch(O.erp_organ_type)
-		if(SEX_ORGAN_PENIS) return "Член"
-		if(SEX_ORGAN_HANDS) return "Руки"
-		if(SEX_ORGAN_LEGS) return "Ноги"
-		if(SEX_ORGAN_TAIL) return "Хвост"
-		if(SEX_ORGAN_BODY) return "Тело"
-		if(SEX_ORGAN_MOUTH) return "Рот"
-		if(SEX_ORGAN_ANUS) return "Анус"
-		if(SEX_ORGAN_BREASTS) return "Грудь"
-		if(SEX_ORGAN_VAGINA) return "Вагина"
+		if(SEX_ORGAN_PENIS) return "Member"
+		if(SEX_ORGAN_HANDS) return "Arms"
+		if(SEX_ORGAN_LEGS) return "Legs"
+		if(SEX_ORGAN_TAIL) return "Tail"
+		if(SEX_ORGAN_BODY) return "Body"
+		if(SEX_ORGAN_MOUTH) return "Mouth"
+		if(SEX_ORGAN_ANUS) return "Anus"
+		if(SEX_ORGAN_BREASTS) return "Chest"
+		if(SEX_ORGAN_VAGINA) return "Vagina"
 	return "[O.erp_organ_type]"
 
 /// Returns penis erect mode string.
@@ -194,15 +194,15 @@
 /// Localized organ type name for filters.
 /datum/erp_controller_organs/proc/get_organ_type_ui_name(type)
 	switch(type)
-		if(SEX_ORGAN_PENIS) return "Член"
-		if(SEX_ORGAN_HANDS) return "Руки"
-		if(SEX_ORGAN_LEGS) return "Ноги"
-		if(SEX_ORGAN_TAIL) return "Хвост"
-		if(SEX_ORGAN_BODY) return "Тело"
-		if(SEX_ORGAN_MOUTH) return "Рот"
-		if(SEX_ORGAN_ANUS) return "Анус"
-		if(SEX_ORGAN_BREASTS) return "Грудь"
-		if(SEX_ORGAN_VAGINA) return "Вагина"
+		if(SEX_ORGAN_PENIS) return "Member"
+		if(SEX_ORGAN_HANDS) return "Arms"
+		if(SEX_ORGAN_LEGS) return "Legs"
+		if(SEX_ORGAN_TAIL) return "Tail"
+		if(SEX_ORGAN_BODY) return "Body"
+		if(SEX_ORGAN_MOUTH) return "Mouth"
+		if(SEX_ORGAN_ANUS) return "Anus"
+		if(SEX_ORGAN_BREASTS) return "Chest"
+		if(SEX_ORGAN_VAGINA) return "Vagina"
 	return "[type]"
 
 /// Returns actor type filters list with localized names.

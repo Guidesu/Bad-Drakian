@@ -1,9 +1,9 @@
 /datum/erp_action/other/hands/finger_anal
 	abstract = FALSE
-	name = "Фингеринг ануса"
+	name = "Anal fingering"
 	required_target_organ = SEX_ORGAN_ANUS
-	message_start = "{actor} касается пальцами анального кольца {partner}."
-	message_tick = "{actor} {force} и {speed} проникает пальцем в анус {partner}."
-	message_finish =  "{actor} убирает пальцы от ануса {partner}."
-	message_climax_passive = "{partner} кончает, сжимая попкой палец {actor}."
+	message_start = "{actor} touches {partner}'s anal ring with his fingers."
+	message_tick = "{actor} {force} and {speed} penetrates {partner}'s anus with his finger."
+	message_finish =  "{actor} removes his fingers from {partner}'s anus."
+	message_climax_passive = "{partner} cums, squeezing {actor}'s finger with her ass."
 	

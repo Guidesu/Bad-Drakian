@@ -141,6 +141,8 @@ GLOBAL_LIST_EMPTY(roundstart_races_paths)
 	var/list/bodypart_features
 
 	var/list/allowed_taur_types = list()
+	/// Species such as lamia and arachnids must select one of their taur bodies.
+	var/forced_taur = FALSE
 
 	/// List of descriptor choices this species gets in preferences customization
 	var/list/descriptor_choices = list(

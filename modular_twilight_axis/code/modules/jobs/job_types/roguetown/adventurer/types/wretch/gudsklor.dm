@@ -99,7 +99,7 @@
 			H.put_in_hands(new /obj/item/rogueweapon/handclaw/gronn)
 			H.put_in_hands(new /obj/item/rogueweapon/handclaw/gronn)
 		if("They fear me")
-			to_chat(H, span_red("Они ничтожны, как и их боги. Этими когтями я разорву их словно шавок!"))
+			to_chat(H, span_red("They are insignificant, like their gods. With these claws I will tear them apart like mongrels!"))
 			wretch_select_bounty(H)
 			H.put_in_hands(new /obj/item/rogueweapon/handclaw/steel)
 			H.put_in_hands(new /obj/item/rogueweapon/handclaw/steel)

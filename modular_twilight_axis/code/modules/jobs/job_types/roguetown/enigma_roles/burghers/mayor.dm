@@ -8,10 +8,10 @@
 	forbidden_races = list(RACES_DESPISED)
 	allowed_sexes = list(MALE, FEMALE)
 	display_order = JDO_MAYOR
-	tutorial = "Погрязший в коррупции или же великий благодетель, быть может, что-то между - вы мэр города Рокхилл и пользуетесь уважением и почётом среди его жителей. \
-	В эти тяжкие дни на вас легло бремя управления городом, именно к вам обращаются доверчивые горожане за помощью и советом. \
-	12 лет прошло с тех пор, как барон умер при загадочных обстоятельствах, а заместо него в замке поселился Король и его свита. Королевству Энигма с каждым годом становится всё хуже. \
-	Пусть Король и правит всеми вами, но может настало время что-то изменить?"
+	tutorial = "Mired in corruption or a great benefactor, perhaps something in between - you are the mayor of the city of Rockhill and enjoy respect and honor among its residents. \
+	In these hard days, the burden of managing the city has fallen upon you; it is to you that trusting townspeople turn for help and advice.\
+	12 years have passed since the Baron died under mysterious circumstances, and in his place, the King and his retinue settled in the castle. The Kingdom of Enigma is getting worse with each passing year.\
+	The King may rule over all of you, but perhaps it is time to change something?"
 	outfit = /datum/outfit/job/roguetown/mayor
 	whitelist_req = TRUE
 	advclass_cat_rolls = list(CTAG_MAYOR = 2)
@@ -30,10 +30,10 @@
 
 /datum/advclass/mayor
 	name = "Mayor"
-	tutorial = "Погрязший в коррупции или же великий благодетель, быть может, что-то между - вы мэр города Рокхилл и пользуетесь уважением и почётом среди его жителей. \
-	В эти тяжкие дни на вас легло бремя управления городом, именно к вам обращаются доверчивые горожане за помощью и советом. \
-	12 лет прошло с тех пор, как барон умер при загадочных обстоятельствах, а заместо него в замке поселился Король и его свита. Королевству Энигма с каждым годом становится всё хуже. \
-	Пусть Король и правит всеми вами, но может настало время что-то изменить?"
+	tutorial = "Mired in corruption or a great benefactor, perhaps something in between - you are the mayor of the city of Rockhill and enjoy respect and honor among its residents. \
+	In these hard days, the burden of managing the city has fallen upon you; it is to you that trusting townspeople turn for help and advice.\
+	12 years have passed since the Baron died under mysterious circumstances, and in his place, the King and his retinue settled in the castle. The Kingdom of Enigma is getting worse with each passing year.\
+	The King may rule over all of you, but perhaps it is time to change something?"
 	outfit = /datum/outfit/job/roguetown/mayor/basic
 	category_tags = list(CTAG_MAYOR)
 	subclass_stats = list(
@@ -129,7 +129,7 @@
 /obj/effect/proc_holder/spell/self/writeresidentscroll/cast(list/targets, mob/living/user = usr)
 	. = ..()
 	if(!resident_manuscripts_enabled())
-		to_chat(user, span_warning("Грамоты жительства на этой карте временно недоступны."))
+		to_chat(user, span_warning("Certificates of residence on this map are temporarily unavailable."))
 		revert_cast()
 		return
 	var/mob/living/carbon/human/H = user

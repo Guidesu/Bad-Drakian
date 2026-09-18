@@ -878,19 +878,19 @@ GLOBAL_LIST_INIT(familytree_title_prefixes, list(
 /proc/familytree_role_text_ru(role)
 	switch(role)
 		if("spouse")
-			return "супруг(а)"
+			return "spouse"
 		if("sibling")
-			return "брат/сестра"
+			return "brother/sister"
 		if("child")
-			return "ребёнок"
+			return "child"
 		if("parent")
-			return "родитель"
+			return "parent"
 		if("uncle_aunt")
-			return "дядя/тётя"
+			return "uncle/aunt"
 		if("nibling")
-			return "племянник(ца)"
+			return "nephew/niece"
 		if("relative")
-			return "родственник"
+			return "relative"
 	return null
 
 /proc/familytree_new_family_role_text_ru(relation, is_a)
@@ -969,31 +969,31 @@ GLOBAL_LIST_INIT(familytree_title_prefixes, list(
 /datum/controller/subsystem/familytree/proc/familytree_format_fate_reveal(mob/living/carbon/human/partner)
 	if(!partner)
 		return ""
-	var/species_name = partner.dna?.species?.name || "неизвестный вид"
+	var/species_name = partner.dna?.species?.name || "unknown type"
 	var/gender_text
 	switch(partner.gender)
 		if(MALE)
-			gender_text = "мужской"
+			gender_text = "male"
 		if(FEMALE)
-			gender_text = "женский"
+			gender_text = "female"
 		if(PLURAL)
-			gender_text = "множественный"
+			gender_text = "multiple"
 		if(NEUTER)
-			gender_text = "средний"
+			gender_text = "average"
 		else
-			gender_text = "неопределённый"
+			gender_text = "undefined"
 	var/has_penis = partner.getorganslot(ORGAN_SLOT_PENIS) != null
 	var/has_vagina = partner.getorganslot(ORGAN_SLOT_VAGINA) != null
 	var/anatomy_text
 	if(has_penis && has_vagina)
-		anatomy_text = "обоеполая"
+		anatomy_text = "hermaphrodite"
 	else if(has_penis)
-		anatomy_text = "мужская"
+		anatomy_text = "male"
 	else if(has_vagina)
-		anatomy_text = "женская"
+		anatomy_text = "female"
 	else
-		anatomy_text = "без половых признаков"
-	return "\nРаса: [species_name]\nПол: [gender_text]\nАнатомия: [anatomy_text]"
+		anatomy_text = "sexless"
+	return "\nRace: [species_name]\nSex: [gender_text]\nAnatomy: [anatomy_text]"
 
 /datum/controller/subsystem/familytree/proc/CanBeSiblings(age1, age2)
 	if(!age1 || !age2)

@@ -17,8 +17,8 @@
 	name = "ranesheni scalemail"
 	desc = "Armor used by the Empire's vanguard fighters. The plates are connected to each other with cord for mobility. The arms are protected by pauldrons, and the legs by a small chainmail skirt. The armor itself is decorated with bronze."
 	icon = 'modular_twilight_axis/icons/roguetown/clothing/armor.dmi'
-	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/onmob/32х48/armor.dmi'
-	sleeved = 'modular_twilight_axis/icons/roguetown/clothing/onmob/helpers/32х48/sleeves_armor.dmi'
+	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/onmob/32x48/armor.dmi'
+	sleeved = 'modular_twilight_axis/icons/roguetown/clothing/onmob/helpers/32x48/sleeves_armor.dmi'
 	icon_state = "medium_armour"
 	item_state = "medium_armour"
 	body_parts_covered = COVERAGE_ALL_BUT_HANDFEET
@@ -34,8 +34,8 @@
 	name = "ranesheni plate armor"
 	desc = "Full-fledged armor with scales, a light chainmail skirt protects the lower legs, has bronze decorations and strong protective shoulder pads."
 	icon = 'modular_twilight_axis/icons/roguetown/clothing/armor.dmi'
-	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/onmob/32х48/armor.dmi'
-	sleeved = 'modular_twilight_axis/icons/roguetown/clothing/onmob/helpers/32х48/sleeves_armor.dmi'
+	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/onmob/32x48/armor.dmi'
+	sleeved = 'modular_twilight_axis/icons/roguetown/clothing/onmob/helpers/32x48/sleeves_armor.dmi'
 	icon_state = "heavy_armour"
 	item_state = "heavy_armour"
 	body_parts_covered = COVERAGE_ALL_BUT_HANDFEET
@@ -49,7 +49,7 @@
 
 /obj/item/clothing/suit/roguetown/armor/plate/scale/townguard
 	name = "watchman's armor"
-	desc = "Тяжелая броня, что выдается городскому Дозору."
+	desc = "Heavy armor issued to the City Watch."
 	icon = 'modular_twilight_axis/icons/roguetown/clothing/special/citywatch_armor.dmi'
 	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/special/onmob/citywatch_armor.dmi'
 	sleeved = 'modular_twilight_axis/icons/roguetown/clothing/special/onmob/helpers/citywatch_sleeves_armor.dmi'
@@ -58,7 +58,7 @@
 
 /obj/item/clothing/suit/roguetown/armor/plate/scale/townguard/sheriff
 	name = "sheriff's armor"
-	desc = "Тяжелая броня, которая принадлежит Шерифу Дозора."
+	desc = "Heavy armor that belongs to the Sheriff of the Watch."
 	icon = 'modular_twilight_axis/icons/roguetown/clothing/special/citywatch_armor.dmi'
 	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/special/onmob/citywatch_armor.dmi'
 	sleeved = 'modular_twilight_axis/icons/roguetown/clothing/special/onmob/helpers/citywatch_sleeves_armor.dmi'
@@ -337,7 +337,7 @@
 
 /obj/item/clothing/suit/roguetown/armor/plate/scale/inqcoat/overseer
 	name = "confessor coat"
-	desc = "Тяжелое, укрепленное пальто с изысканным бордовым покрытием не оставит никого равнодушным."
+	desc = "Heavy, reinforced coat with a sophisticated burgundy finish will not leave anyone indifferent."
 	icon = 'modular_twilight_axis/icons/roguetown/clothing/inquisition_overseer/overseer.dmi'
 	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/inquisition_overseer/onmob/overseer_onmob.dmi'
 	sleeved = 'modular_twilight_axis/icons/roguetown/clothing/inquisition_overseer/onmob/overseer_onmob.dmi'

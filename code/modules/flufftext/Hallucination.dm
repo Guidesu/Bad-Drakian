@@ -582,7 +582,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 		if(istype(equipped_backpack))
 			for(var/i in 1 to 5) //increase the odds
 				message_pool.Add("<span class='notice'>[other] puts the [pick(\
-					"killersice","crimson fang","severed head","crown of Twilight Axis","master's rod",\
+					"killersice","crimson fang","severed head","crown of the realm","master's rod",\
 					"master key","vault key", "steward's key", "ritual dagger","spellbook",\
 					)] into [equipped_backpack].</span>")
 
@@ -839,7 +839,7 @@ GLOBAL_LIST_INIT(hallucination_list, list(
 				if(3) //crown
 					target.halitem.icon = 'icons/roguetown/clothing/head.dmi'
 					target.halitem.icon_state = "serpcrown"
-					target.halitem.name = "Crown of Twilight Axis"
+					target.halitem.name = "Crown of the Realm"
 				if(4) //clawl
 					target.halitem.icon = 'icons/roguetown/weapons/unarmed32.dmi'
 					target.halitem.icon_state = "claw_l"

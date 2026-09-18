@@ -231,8 +231,8 @@
 
 /datum/resident_manuscript_seal_rule/elder
 	key = "elder"
-	title = "Старейшина"
-	stamper = "Старейшина"
+	title = "Elder"
+	stamper = "Elder"
 	advclass_types = list(/datum/advclass/elder)
 	priority = RESIDENT_SEAL_PRIORITY_ELDER
 
@@ -253,124 +253,124 @@
 
 /datum/resident_manuscript_seal_rule/elder/get_title()
 	if(resident_manuscript_uses_rockhill_titles())
-		return "Мэр"
+		return "Mayor"
 	return ..()
 
 /datum/resident_manuscript_seal_rule/elder/get_stamper()
 	if(resident_manuscript_uses_rockhill_titles())
-		return "Мэр"
+		return "Mayor"
 	return ..()
 
 /datum/resident_manuscript_seal_rule/chancellor
 	key = "chancellor"
-	title = "Канцлер"
-	stamper = "Канцлер"
+	title = "Chancellor"
+	stamper = "Chancellor"
 	job_types = list(/datum/job/roguetown/councillor)
 	priority = RESIDENT_SEAL_PRIORITY_CHANCELLOR
 
 /datum/resident_manuscript_seal_rule/hand
 	key = "hand"
-	title = "Десница"
-	stamper = "Десница"
+	title = "Hand"
+	stamper = "Hand"
 	job_types = list(/datum/job/roguetown/hand)
 	priority = RESIDENT_SEAL_PRIORITY_HAND
 
 /datum/resident_manuscript_seal_rule/ruler
 	key = "ruler"
-	title = "Герцог"
-	stamper = "Герцог"
+	title = "Duke"
+	stamper = "Duke"
 	job_types = list(/datum/job/roguetown/lord)
 	priority = RESIDENT_SEAL_PRIORITY_RULER
 	allowed_statuses = list(RESIDENT_MANUSCRIPT_STATUS_NOBLE)
 
 /datum/resident_manuscript_seal_rule/ruler/get_title()
 	if(resident_manuscript_uses_rockhill_titles())
-		return "Король"
+		return "King"
 	return ..()
 
 /datum/resident_manuscript_seal_rule/ruler/get_stamper()
 	if(resident_manuscript_uses_rockhill_titles())
-		return "Король"
+		return "King"
 	return ..()
 
 /datum/resident_manuscript_seal_rule/sergeant
 	key = "sergeant"
-	title = "Сержант"
-	stamper = "Сержант стражи"
+	title = "Sergeant"
+	stamper = "Sergeant of the Guard"
 	job_types = list(/datum/job/roguetown/sergeant)
 	priority = RESIDENT_SEAL_PRIORITY_FACTION_LOW
 
 /datum/resident_manuscript_seal_rule/marshal
 	key = "marshal"
-	title = "Маршал"
-	stamper = "Маршал"
+	title = "Marshal"
+	stamper = "Marshal"
 	job_types = list(/datum/job/roguetown/marshal)
 	priority = RESIDENT_SEAL_PRIORITY_FACTION_MID
 
 /datum/resident_manuscript_seal_rule/bishop
 	key = "bishop"
-	title = "Епископ"
-	stamper = "Епископ"
+	title = "Bishop"
+	stamper = "Bishop"
 	job_types = list(/datum/job/roguetown/priest)
 	priority = RESIDENT_SEAL_PRIORITY_FACTION_MID
 
 /datum/resident_manuscript_seal_rule/guild_leader
 	key = "guild_leader"
-	title = "Глава гильдии"
-	stamper = "Глава гильдии"
+	title = "Guild Leader"
+	stamper = "Guild Leader"
 	advclass_types = list(/datum/advclass/guildmaster)
 	priority = RESIDENT_SEAL_PRIORITY_FACTION_MID
 
 /datum/resident_manuscript_seal_rule/inquisitor
 	key = "inquisitor"
-	title = "Инквизитор"
-	stamper = "Инквизитор"
+	title = "Inquisitor"
+	stamper = "Inquisitor"
 	job_types = list(/datum/job/roguetown/inquisitor)
 	priority = RESIDENT_SEAL_PRIORITY_FACTION_MID
 
 /datum/resident_manuscript_seal_rule/court_magician
 	key = "court_magician"
-	title = "Придворный маг"
-	stamper = "Придворный маг"
+	title = "Court Mage"
+	stamper = "Court Mage"
 	job_types = list(/datum/job/roguetown/magician)
 	priority = RESIDENT_SEAL_PRIORITY_FACTION_MID
 
 /datum/resident_manuscript_seal_rule/merchant_master
 	key = "merchant_master"
-	title = "Старший торговец"
-	stamper = "Старший торговец"
+	title = "Senior Trader"
+	stamper = "Senior Trader"
 	job_types = list(/datum/job/roguetown/merchant)
 	priority = RESIDENT_SEAL_PRIORITY_FACTION_MID
 
 /datum/resident_manuscript_seal_rule/kaiser
 	key = "kaiser"
-	title = "Имперская канцелярия"
-	stamper = "Канцелярия Грензельхофта"
+	title = "Imperial Chancellery"
+	stamper = "Grenzelhoft Chancellery"
 	priority = RESIDENT_SEAL_PRIORITY_KAISER
 
 /datum/resident_manuscript_seal_rule/valorian
 	key = "valorian"
-	title = "Валорийская торговая гильдия"
-	stamper = "Торговая гильдия Астинии-ди-Сала"
+	title = "Valorian Trade Guild"
+	stamper = "Astinia di Sala Trade Guild"
 	priority = RESIDENT_SEAL_PRIORITY_FACTION_HIGH
 
 /datum/resident_manuscript_seal_rule/valorian_holy_see
 	key = "valorian_holy_see"
-	title = "Валорийский Святой Престол"
-	stamper = "Святой Престол Валории"
+	title = "Valorian Holy See"
+	stamper = "Holy See of Valoria"
 	priority = RESIDENT_SEAL_PRIORITY_FACTION_HIGH
 
 /datum/resident_manuscript_seal_rule/royal_protection
 	key = "royal_protection"
-	title = "Королевская протекция"
-	stamper = "Король"
+	title = "Royal Patronage"
+	stamper = "King"
 	job_types = list(/datum/job/roguetown/lord)
 	priority = RESIDENT_SEAL_PRIORITY_RULER
 
 /datum/resident_manuscript_seal_rule/heartfelt_chancery
 	key = "heartfelt_chancery"
-	title = "Хартфельтская канцелярия"
-	stamper = "Канцелярия Хартфелта"
+	title = "Heartfelt Chancery"
+	stamper = "Heartfelt Chancery"
 	priority = RESIDENT_SEAL_PRIORITY_RULER
 
 /proc/get_resident_manuscript_seal_rules()
@@ -418,9 +418,9 @@
 
 /datum/resident_document_profile/resident
 	id = "resident"
-	display_name = "Грамота жителя"
-	subtitle = "Под рукой Короны"
-	description = "Да будет ведомо: предъявитель внесен в реестр жителей этих земель. Ему дозволено проживание, обращение к городскому праву и проход через городские ворота до истечения срока грамоты."
+	display_name = "Resident Certificate"
+	subtitle = "At Hand of the Crown"
+	description = "Be it known: the bearer is included in register of inhabitants of these lands. He is allowed to reside, apply to city law and pass through the city gates until the expiration of the charter."
 	allowed_seals = list("chancellor", "elder", "ruler", "hand")
 	default_commoner_seal_keys = list("chancellor")
 	default_noble_seal_keys = list("ruler")
@@ -428,41 +428,41 @@
 
 /datum/resident_document_profile/resident/get_description()
 	if(resident_manuscript_uses_rockhill_titles())
-		return "Да будет ведомо: предъявитель внесен в реестр жителей Королевства Энигмы на Рокхилле. Ему дозволено проживание, обращение к городскому праву и проход через городские ворота до истечения срока грамоты."
+		return "Let it be known that the bearer is included in the register of residents of the Enigma Kingdom on Rockhill. He is allowed to reside, apply to city law and pass through the city gates until the expiration of the charter."
 	return ..()
 
 /datum/resident_document_profile/imperial
 	id = "imperial"
-	display_name = "Имперская грамота покровительства"
-	subtitle = "Под имперской контрасигнацией"
-	description = "Да будет ведомо: предъявитель занимает должность, сан или службу, признанную имперской канцелярией Грензельхофта и властью Герцогства Азурия. Грамота удостоверяет его полномочия и не передается иным лицам."
+	display_name = "Imperial Letter of Patronage"
+	subtitle = "Under Imperial Countersignature"
+	description = "Let it be known that the bearer holds an office, dignity or service recognized by the Imperial Office of Grenzelhoft and the authority of the Duchy of Azuria. The certificate certifies his authority and is not transferred to other persons."
 	allowed_seals = list("kaiser", "ruler", "bishop", "inquisitor", "hand")
 	default_seal_keys = list("kaiser")
 	grants_residence_claim = TRUE
 
 /datum/resident_document_profile/enigma_crown
 	id = "enigma_crown"
-	display_name = "Коронная грамота Энигмы"
-	subtitle = "Под рукой Короля Рокхилла"
-	description = "Да будет ведомо: предъявитель признан коронной властью Королевства Энигмы на Рокхилле. Его распоряжения и достоинство признаются в пределах королевского закона и срока настоящей грамоты."
+	display_name = "Crown Letter of Enigma"
+	subtitle = "Under the Hand of the King of Rockhill"
+	description = "Be it known: the bearer is recognized by the crown authority of the Kingdom of Enigma on Rockhill. His orders and dignity are recognized within the limits of royal law and the term of this charter."
 	allowed_seals = list("ruler", "hand")
 	default_seal_keys = list("ruler")
 	grants_residence_claim = TRUE
 
 /datum/resident_document_profile/valorian_church
 	id = "valorian_church"
-	display_name = "Валорийская грамота Святого Престола"
-	subtitle = "Под церковью Неделимых Десяти"
-	description = "Да будет ведомо: предъявитель признан Святым Престолом Валории и вправе совершать церковную службу на Рокхилле. Его сан, печать и церковные распоряжения подлежат признанию в пределах настоящей грамоты."
+	display_name = "Valorian Charter of the Holy See"
+	subtitle = "Under the Church of the Indivisible Ten"
+	description = "Let it be known: the bearer is recognized by the Holy See of Valoria and has the right to perform church services on Rockhill. His dignity, seal and ecclesiastical orders are subject to recognition within the limits of this charter."
 	allowed_seals = list("valorian_holy_see", "bishop", "ruler")
 	default_seal_keys = list("valorian_holy_see")
 	grants_residence_claim = TRUE
 
 /datum/resident_document_profile/grenzelhoft_mission
 	id = "grenzelhoft_mission"
-	display_name = "Имперское командировочное удостоверение"
-	subtitle = "Печатью канцелярии Грензельхофта"
-	description = "Да будет ведомо: предъявитель включен в отряд, направленный имперской канцелярией Грензельхофта. Ему дозволено следовать с порученной миссией, сопровождать лорда-посланника и предъявлять настоящую бумагу властям."
+	display_name = "Imperial Travel Certificate"
+	subtitle = "Seal of the Grenzelhoft Chancellery"
+	description = "Let it be known that the bearer is included in the detachment sent by the Imperial Grenzelhoft Chancellery. He is allowed to go on the assigned mission, accompany the Lord Envoy and present the real paper to the authorities."
 	allowed_seals = list("kaiser", "hand", "chancellor")
 	default_seal_keys = list("kaiser")
 
@@ -472,62 +472,62 @@
 
 /datum/resident_document_profile/heartfelt/identity
 	id = "heartfelt_identity"
-	display_name = "Хартфельтское удостоверение личности"
-	subtitle = "Под печатью хартфельтской канцелярии"
-	description = "Да будет ведомо: предъявитель удостоверен как житель Хартфелта. Его имя, личность и право на предъявление этой бумаги признаются канцелярией Хартфелта."
+	display_name = "Hartfelt ID Card"
+	subtitle = "Under the seal of the Hartfelt Chancery"
+	description = "Let it be known that the bearer is certified as a resident of Hartfelt. His name, identity and right to produce this paper are recognized by Hartfelt's office."
 
 /datum/resident_document_profile/heartfelt/noble
 	id = "heartfelt_noble"
-	display_name = "Свидетельство о дворянстве"
-	subtitle = "Под печатью хартфельтской канцелярии"
-	description = "Да будет ведомо: предъявитель удостоверен как благородный житель Хартфелта. Его имя, достоинство и право следовать при хартфельтской свите признаются настоящей бумагой."
+	display_name = "Certificate of Nobility"
+	subtitle = "Under the seal of the Hartfelt Chancery"
+	description = "Let it be known that the bearer is certified as a noble resident of Hartfelt. His name, dignity and right to follow in the Hartfelt retinue are recognized by this paper."
 
 /datum/resident_document_profile/guards
 	id = "guards"
-	display_name = "Гарнизонная грамота"
-	subtitle = "От гарнизона и Короны"
-	description = "Да будет ведомо: предъявитель принят на службу городского гарнизона. Ему дозволено носить оружие при исполнении, требовать содействия в пределах приказа и отвечать перед своим начальством."
+	display_name = "Garrison Letter"
+	subtitle = "From the garrison and the Crown"
+	description = "Let it be known: the bearer has been accepted into the service of the city garrison. He is allowed to carry weapons while on duty, demand assistance within the limits of the order and answer to his superiors."
 	allowed_seals = list("sergeant", "marshal", "elder")
 
 /datum/resident_document_profile/guards/get_subtitle()
 	if(resident_manuscript_uses_rockhill_titles())
-		return "От королевской стражи и Рокхилла"
+		return "From the Royal Guard and Rockhill"
 	return ..()
 
 /datum/resident_document_profile/guards/get_description()
 	if(resident_manuscript_uses_rockhill_titles())
-		return "Да будет ведомо: предъявитель принят на службу королевской стражи Рокхилла. Ему дозволено носить оружие при исполнении, требовать содействия в пределах приказа и отвечать перед своим начальством."
+		return "Be it known that the bearer has been accepted into the service of the Royal Guard of Rockhill. He is allowed to carry weapons while on duty, demand assistance within the limits of the order and answer to his superiors."
 	return ..()
 
 /datum/resident_document_profile/church
 	id = "church"
-	display_name = "Церковная грамота веры"
-	subtitle = "Под Десятеричным Светом"
-	description = "Да будет ведомо: предъявитель состоит при церкви и допускается к храмовой службе в пределах своего сана или должности. Его церковное положение признается до отмены грамоты либо истечения срока."
+	display_name = "Church Letter of Faith"
+	subtitle = "Under the Tenfold Light"
+	description = "Let it be known: the bearer is a member of the church and is admitted to temple services within the limits of his rank or position. His ecclesiastical position is recognized until the charter is revoked or the term expires."
 	allowed_seals = list("bishop")
 
 /datum/resident_document_profile/church/get_subtitle()
 	if(resident_manuscript_uses_rockhill_titles())
-		return "Под валорийским Святым Престолом"
+		return "Under the Valorian Holy See"
 	return ..()
 
 /datum/resident_document_profile/church/get_description()
 	if(resident_manuscript_uses_rockhill_titles())
-		return "Да будет ведомо: предъявитель состоит при церкви Неделимых Десяти на Рокхилле и допускается к храмовой службе в пределах своего сана или должности. Его церковное положение признается до отмены грамоты либо истечения срока."
+		return "Be it known: the bearer is affiliated with the Church of the Indivisible Ten on Rockhill and is admitted to temple service within the limits of his rank or position. His ecclesiastical position is recognized until the charter is revoked or the term expires."
 	return ..()
 
 /datum/resident_document_profile/craftsmen
 	id = "craftsmen"
-	display_name = "Хартия ремесленной гильдии"
-	subtitle = "Честной рукой и бронзой"
-	description = "Да будет ведомо: предъявитель признан ремесленником или служащим ремесленной гильдии. Ему дозволено вести работу по своему ремеслу, заключать заказы и пользоваться защитой гильдейского порядка."
+	display_name = "Charter of the Craft Guild"
+	subtitle = "With an honest hand and bronze"
+	description = "Let it be known: the bearer is recognized as a craftsman or employee of the craft guild. He is allowed to work at his craft, enter into orders and enjoy the protection of the guild order."
 	allowed_seals = list("guild_leader", "chancellor", "elder")
 
 /datum/resident_document_profile/commoner
 	id = "commoner"
-	display_name = "Грамота горожанина"
-	subtitle = "Знаком городского старейшины"
-	description = "Да будет ведомо: предъявитель внесен в городской учет как простолюдин. Ему дозволено находиться среди законного люда города без дворянских прав и особых привилегий."
+	display_name = "Citizen's Certificate"
+	subtitle = "By the sign of the city elder"
+	description = "Let it be known: the bearer is entered into the city register as a commoner. He is allowed to be among the legitimate people of the city without noble rights and special privileges."
 	allowed_seals = list("elder", "chancellor", "hand")
 	default_commoner_seal_keys = list("elder", "chancellor")
 	default_noble_seal_keys = list("hand")
@@ -535,63 +535,63 @@
 
 /datum/resident_document_profile/commoner/get_subtitle()
 	if(resident_manuscript_uses_rockhill_titles())
-		return "Знаком городского мэра"
+		return "By the sign of the city mayor"
 	return ..()
 
 /datum/resident_document_profile/commoner/get_description()
 	if(resident_manuscript_uses_rockhill_titles())
-		return "Да будет ведомо: предъявитель внесен в городской учет Рокхилла как простолюдин. Ему дозволено находиться среди законного люда Королевства Энигмы без дворянских прав и особых привилегий."
+		return "Be it known: the bearer is entered into the city register of Rockhill as a commoner. He is allowed to be among the legitimate people of the Enigma Kingdom without noble rights and special privileges."
 	return ..()
 
 /datum/resident_document_profile/merchant
 	id = "merchant"
-	display_name = "Валорийское торговое разрешение"
-	subtitle = "Печатью Торговой гильдии Астинии-ди-Сала"
-	description = "Да будет ведомо: предъявитель действует по разрешению валорийской Торговой гильдии. Ему дозволено вести торговлю, принимать товары, заключать сделки и держать торговые книги под гильдейской печатью."
+	display_name = "Valorian Trade Authorization"
+	subtitle = "Seal of the Trade Guild of Astinia di Sala"
+	description = "Let it be known that the bearer is acting under the authority of the Valorian Trade Guild. He is allowed to conduct trade, accept goods, enter into transactions and keep trade books under the guild seal."
 	allowed_seals = list("valorian", "merchant_master", "chancellor")
 	default_seal_keys = list("valorian")
 
 /datum/resident_document_profile/merchant/get_description()
 	if(resident_manuscript_uses_rockhill_titles())
-		return "Да будет ведомо: предъявитель действует на Рокхилле по разрешению валорийской Торговой гильдии. Ему дозволено вести торговлю, принимать товары, заключать сделки и держать торговые книги под гильдейской печатью."
+		return "Let it be known that the bearer is acting on Rockhill under the authority of the Valorian Merchant Guild. He is allowed to conduct trade, accept goods, enter into transactions and keep trade books under the guild seal."
 	return ..()
 
 /datum/resident_document_profile/mages
 	id = "mages"
-	display_name = "Патент гильдии магов"
-	subtitle = "Светом Короны, звездой и сигилом"
-	description = "Да будет ведомо: предъявитель признан дозволенным практиком магического ремесла. Ему разрешено вести утвержденные работы, хранить необходимые инструменты и отвечать перед гильдией или двором."
+	display_name = "Mages Guild Patent"
+	subtitle = "By the Light of the Crown, Star and Sigil"
+	description = "Let it be known that the bearer is recognized as a permitted practitioner of the magical craft. He is allowed to carry out approved work, keep the necessary tools, and answer to the guild or court."
 	allowed_seals = list("court_magician")
 
 /datum/resident_document_profile/mercenary
 	id = "mercenary"
-	display_name = "Наемный контракт"
-	subtitle = "Монетой, сталью и словом"
-	description = "Да будет ведомо: предъявитель принят на наемную службу по договору. Ему дозволено носить оружие, исполнять оплаченный контракт и отвечать за свои действия перед нанимателем и законом."
+	display_name = "Hire contract"
+	subtitle = "Coin, steel and word"
+	description = "Let it be known: the bearer has been accepted into hired service under the contract. He is allowed to carry weapons, fulfill a paid contract and be responsible for his actions before the employer and the law."
 	allowed_seals = list("elder", "chancellor", "hand")
 	default_commoner_seal_keys = list("elder", "chancellor")
 	default_noble_seal_keys = list("hand")
 
 /datum/resident_document_profile/otava
 	id = "otava"
-	display_name = "Инквизиторский эдикт"
-	subtitle = "Истиной, дознанием и очищающим пламенем"
-	description = "Да будет ведомо: предъявитель состоит при Инквизиции Отавы. Ему дозволено проводить дознания, предъявлять требования по делам веры и действовать в пределах признанных полномочий."
+	display_name = "Inquisitorial Edict"
+	subtitle = "By truth, inquiry and purifying flame"
+	description = "Let it be known: the bearer is a member of the Inquisition of Otava. He is allowed to conduct inquiries, make demands in matters of faith and act within the limits of recognized authority."
 	allowed_seals = list("inquisitor", "royal_protection")
 
 /datum/resident_document_profile/otava/get_display_name()
 	if(resident_manuscript_uses_rockhill_titles())
-		return "Грамота королевской протекции"
+		return "Letter of Royal Protection"
 	return ..()
 
 /datum/resident_document_profile/otava/get_subtitle()
 	if(resident_manuscript_uses_rockhill_titles())
-		return "Отаванская миссия под рукой Короля"
+		return "Otavan Mission under the King's Hand"
 	return ..()
 
 /datum/resident_document_profile/otava/get_description()
 	if(resident_manuscript_uses_rockhill_titles())
-		return "Да будет ведомо: предъявитель состоит при отаванской миссии на Рокхилле и находится под личной протекцией Короля. Препятствовать ему дозволено только по законному основанию либо прямому распоряжению короны."
+		return "Let it be known that the bearer is attached to the Otavan Mission on Rockhill and is under the personal protection of the King. It is allowed to prevent it only on legal grounds or by direct order of the crown."
 	return ..()
 
 /datum/resident_document_profile/otava/get_default_seal_keys(status_key)
@@ -601,9 +601,9 @@
 
 /datum/resident_document_profile/retinue
 	id = "retinue"
-	display_name = "Грамота дворцовой службы"
-	subtitle = "Под герцогской рукой и присягой"
-	description = "Да будет ведомо: предъявитель состоит при дворе Герцогства Азурия и несет личную службу герцогу. Его место, обязанности и право находиться при дворе подтверждаются настоящей грамотой."
+	display_name = "Certificate of Palace Service"
+	subtitle = "Under the ducal hand and oath"
+	description = "Let it be known: the bearer is at the court of the Duchy of Azuria and performs personal service to the duke. His place, duties and right to be at court are confirmed by this charter."
 	allowed_seals = list("hand", "ruler", "marshal")
 	default_commoner_seal_keys = list("hand")
 	default_noble_seal_keys = list("hand")
@@ -611,12 +611,12 @@
 
 /datum/resident_document_profile/retinue/get_subtitle()
 	if(resident_manuscript_uses_rockhill_titles())
-		return "Под королевской рукой и присягой"
+		return "Under the royal hand and oath"
 	return ..()
 
 /datum/resident_document_profile/retinue/get_description()
 	if(resident_manuscript_uses_rockhill_titles())
-		return "Да будет ведомо: предъявитель состоит при дворе Королевства Энигмы на Рокхилле и несет личную службу Королю. Его место, обязанности и право находиться при дворе подтверждаются настоящей грамотой."
+		return "Be it known: the bearer is at the court of the Enigma Kingdom on Rockhill and is in personal service to the King. His place, duties and right to be at court are confirmed by this charter."
 	return ..()
 
 /proc/get_resident_document_profiles()

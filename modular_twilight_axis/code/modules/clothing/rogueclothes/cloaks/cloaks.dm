@@ -281,7 +281,7 @@
 
 /obj/item/clothing/cloak/sheriff
 	name = "sheriff's cloak"
-	desc = "Плащ-накидка с вышитой серебряной геральдикой дозора."
+	desc = "Cloak-cape with embroidered silver heraldry of the watch."
 	icon = 'modular_twilight_axis/icons/roguetown/clothing/special/citywatch_armor.dmi'
 	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/special/onmob/citywatch_armor.dmi'
 	sleeved = 'modular_twilight_axis/icons/roguetown/clothing/special/onmob/citywatch_armor.dmi'
@@ -314,7 +314,7 @@
 	color = null
 	allowed_race = NON_DWARVEN_RACE_TYPES
 
-// /obj/item/clothing/cloak/etrmantle до обновления спрайта
+///obj/item/clothing/cloak/etrmantle before sprite update
 //	name = "Etruscan mantle"
 //	desc = "A pleasant-looking and -feeling mantle and expensive fabric, a frequent decoration of the overall attire of the sun elves in Etrusca"
 //	color = null

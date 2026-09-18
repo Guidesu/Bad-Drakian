@@ -51,7 +51,7 @@
 
 	return TRUE
 
-/obj/effect/proc_holder/spell/self/magic_shield/charge_check(mob/user) //заглушка для оффкода
+/obj/effect/proc_holder/spell/self/magic_shield/charge_check(mob/user) //placeholder for offcode
 	if(active)
 		return TRUE
 

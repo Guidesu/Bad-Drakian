@@ -261,7 +261,7 @@
 	if(!T)
 		return null
 
-	// если таблица ещё не готова — не падаем
+	//if the table is not ready yet, we won’t fall
 	if(!length(SSmapping.multiz_levels))
 		return (T.z > 1) ? locate(T.x, T.y, T.z - 1) : null
 

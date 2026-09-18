@@ -9,10 +9,10 @@
 	allowed_sexes = list(MALE, FEMALE)
 	forbidden_races = list(RACES_CONSTRUCT RACES_DESPISED RACES_OOZE)
 	display_order = JDO_COUNCILLOR
-	tutorial = "Возможно, ты унаследовал этот чин, выкупил его за щедрые маммоны или был назначен самой султанской династией; \
-            независимо от происхождения, отныне ты служишь помощником, распорядителем и заседателем при Вазире. \
-            Ты помогаешь ему блюсти сбор налогов, надзирать за строительством и координировать новые султанские указы. \
-            Твоя главная забота - облегчать бремя Вазира, а держать ответ ты должен лишь перед ним и самим Султаном."
+	tutorial = "Perhaps you inherited this rank, bought it with generous mammon, or were appointed by the Sultan dynasty itself; \
+            Regardless of origin, from now on you serve as an assistant, steward, and adjudicator under the Wazir.\
+            You help him oversee tax collection, supervise construction, and coordinate new sultanic decrees.\
+            Your main concern is to ease the burden of the Wazir, and you are accountable only to him and the Sultan himself."
 	whitelist_req = FALSE
 	outfit = /datum/outfit/job/roguetown/sheikh
 	advclass_cat_rolls = list(CTAG_SHEIKH = 2)

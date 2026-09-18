@@ -4,6 +4,18 @@
 	var/mob/living/carbon/human/usurpation_rite_options_cache_user
 	var/usurpation_rite_options_cache_expires = 0
 
+/datum/ducal_court/New()
+	. = ..()
+	RegisterSignal(SSdcs, COMSIG_REALM_NAME_CHANGED, PROC_REF(on_realm_name_changed))
+
+/datum/ducal_court/Destroy()
+	UnregisterSignal(SSdcs, COMSIG_REALM_NAME_CHANGED)
+	return ..()
+
+/datum/ducal_court/proc/on_realm_name_changed(datum/source, old_name, new_name, mob/actor, reason)
+	SIGNAL_HANDLER
+	SStgui.update_uis(src)
+
 /datum/ducal_court/proc/get_throat()
 	if(QDELETED(throat))
 		throat = null
@@ -16,11 +28,9 @@
 
 /datum/ducal_court/proc/get_court_locale()
 	switch(SSmapping.config?.map_name)
-		if("Rockhill")
-			return "kingdom"
 		if("Desert Town")
 			return "sultanate"
-	return "duchy"
+	return "county"
 
 /datum/ducal_court/proc/user_has_crown(mob/living/carbon/human/user)
 	return istype(user?.head, /obj/item/clothing/head/roguetown/crown/serpcrown)
@@ -231,7 +241,7 @@
 			"id" = "crown_required",
 			"label" = "Crown Authority",
 			"value" = user_has_crown(user) ? "Crown Worn" : "Crown Missing",
-			"detail" = user_has_crown(user) ? "Ducal commands are unlocked by the crown." : "Most commands require the crown.",
+			"detail" = user_has_crown(user) ? "Sovereign commands are unlocked by the crown." : "Most commands require the crown.",
 			"tone" = user_has_crown(user) ? "good" : "bad",
 		),
 		list(
@@ -273,7 +283,7 @@
 		"main" = list(
 			court_action_data(user, "make_announcement", "Make Announcement", "Broadcast a realm-wide message.", list("Crown", "Broadcast Ready")),
 			court_action_data(user, "revise_charter", "Revise Charter", "Open the charter ledger.", list("Crown", "Ruler/Regent")),
-			court_action_data(user, "issue_decree", "Issue Decree", "Proclaim a ducal decree.", list("Crown", "Ruler/Regent", "Broadcast Ready")),
+			court_action_data(user, "issue_decree", "Issue Decree", "Proclaim a sovereign decree.", list("Crown", "Ruler/Regent", "Broadcast Ready")),
 			court_action_data(user, "set_laws", "Set Laws", "Rewrite the laws of the land.", list("Crown", "Ruler/Regent", "Broadcast Ready")),
 			court_action_data(user, "set_taxes", "Set Taxes", "Adjust levies and poll taxes.", list("Crown", "Ruler/Regent")),
 			court_action_data(user, "declare_outlaw", "Declare Outlaw", "Outlaw or pardon a named subject.", list("Crown", "Ruling Office", "Broadcast Ready")),
@@ -301,7 +311,7 @@
 /datum/ducal_court/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "DucalCourt", "Двор")
+		ui = new(user, src, "DucalCourt", "Courtyard")
 		ui.open()
 
 /datum/ducal_court/ui_data(mob/user)
@@ -309,7 +319,7 @@
 	var/list/rite_data = get_throne_rite_data()
 	data["court_locale"] = get_court_locale()
 	data["realm_type"] = SSticker.realm_type || "Realm"
-	data["realm_name"] = SSticker.realm_name || "Realm"
+	data["realm_name"] = get_realm_name()
 	var/mob/ruler = SSticker.rulermob
 	var/mob/regent = SSticker.regentmob
 	data["ruler"] = court_mob_name(ruler)
@@ -327,7 +337,7 @@
 		return data
 	var/mob/living/carbon/human/H = user
 	var/list/actions = get_court_actions(H)
-	data["viewer_status"] = user_has_ducal_authority(H) ? "Ducal Authority" : (user_has_crown(H) ? "Crown Bearer" : "Subject")
+	data["viewer_status"] = user_has_ducal_authority(H) ? "Sovereign Authority" : (user_has_crown(H) ? "Crown Bearer" : "Subject")
 	data["status_cards"] = get_court_status_cards(H, rite_data)
 	data["main_actions"] = actions["main"]
 	data["tool_actions"] = actions["tools"]

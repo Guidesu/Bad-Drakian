@@ -118,22 +118,22 @@ type Data = {
 };
 
 const stageText = {
-  lobby: 'Лобби',
-  playing: 'Игра',
-  finished: 'Завершено',
+  lobby: 'Lobby',
+  playing: 'Game',
+  finished: 'Completed',
 };
 
 const resultText: Record<string, string> = {
-  Bust: 'перебор',
-  Win: 'выиграл',
-  Lose: 'проигрыш',
-  Push: 'ничья',
-  Winner: 'выиграл',
-  Lost: 'проиграл',
-  Out: 'выиграл',
-  Fool: 'дурак',
-  Left: 'покинул стол',
-  Дилер: 'дилер',
+  Bust: 'overbid',
+  Win: 'won',
+  Lose: 'loss',
+  Push: 'draw',
+  Winner: 'won',
+  Lost: 'lost',
+  Out: 'won',
+  Fool: 'fool',
+  Left: 'left the table',
+  Dealer:'dealer',
 };
 
 const suitMap: Record<string, string> = {
@@ -402,22 +402,22 @@ const statusText = (player?: Player) => {
 
   const parts: string[] = [];
   if (player.standing) {
-    parts.push('стоит');
+    parts.push('stands');
   }
   if (player.busted) {
-    parts.push('перебор');
+    parts.push('overbid');
   }
   if (player.poker_folded) {
-    parts.push('пас');
+    parts.push('pass');
   }
   if (player.poker_all_in) {
-    parts.push('ва-банк');
+    parts.push('all-in');
   }
   if (player.ready) {
-    parts.push('готов');
+    parts.push('ready');
   }
   if (player.left) {
-    parts.push('покинул');
+    parts.push('left');
   }
   if (player.result) {
     parts.push(resultText[player.result] || player.result);
@@ -572,7 +572,7 @@ const CardFace = (props: {
 const CardRow = (props: { cards: Card[]; small?: boolean }) => {
   const { cards, small } = props;
   if (!cards?.length) {
-    return <span style={{ opacity: 0.65 }}>Нет карт</span>;
+    return <span style={{ opacity: 0.65 }}>No cards</span>;
   }
   return (
     <div style={rowStyle}>
@@ -639,14 +639,14 @@ const Seat = (props: {
     getCardHighlight,
     onCardClick,
   } = props;
-  const label = player ? player.name : `Место ${seatNumber}`;
+  const label = player ? player.name : `Seat ${seatNumber}`;
   const activeRole =
     player && !player.left && player.name === attacker
-      ? 'Активный ход'
+      ? 'Active move'
       : player && !player.left && player.name === defender
-        ? 'Защищается'
+        ? 'Defending'
         : player && !player.left && player.name === dealer
-          ? 'Дилер'
+          ? 'Dealer'
           : null;
   const hasVisibleHand = !!player?.hand?.some((card) => !card.hidden);
   const showCards = !!player?.hand?.length && (isMe || hasVisibleHand);
@@ -664,14 +664,14 @@ const Seat = (props: {
     >
       <div style={{ fontWeight: 700, marginBottom: '4px' }}>
         {label}
-        {isMe ? ' (вы)' : ''}
+        {isMe ? '(you)' : ''}
       </div>
       <div style={{ minHeight: '16px', color: '#f4cf5c', fontSize: '12px' }}>
         {activeRole || statusText(player)}
       </div>
       {gameType === 'poker' && player && (
         <div style={{ minHeight: '16px', opacity: 0.82, fontSize: '12px' }}>
-          Ставка: {player.poker_bet || 0} / всего: {player.poker_total_bet || 0}
+          Bet:{player.poker_bet || 0} / Total:{player.poker_total_bet || 0}
         </div>
       )}
       {player ? (
@@ -719,18 +719,18 @@ const Seat = (props: {
               />
             ))
           ) : (
-            <span style={{ opacity: 0.65 }}>Карт: {player.hand_count}</span>
+            <span style={{ opacity: 0.65 }}>Cards:{player.hand_count}</span>
           )}
           {showBlackjackValues &&
             player.hand_value !== null &&
             player.hand_value !== undefined && (
               <span style={{ opacity: 0.82, width: '100%', marginTop: '4px' }}>
-                Сумма: {player.hand_value}
+                Amount:{player.hand_value}
               </span>
             )}
         </div>
       ) : (
-        <div style={{ opacity: 0.55, marginTop: '16px' }}>Свободно</div>
+        <div style={{ opacity: 0.55, marginTop: '16px' }}>Free</div>
       )}
     </div>
   );
@@ -741,7 +741,7 @@ const RulesBlock = (props: { rules: string[] }) => {
     return null;
   }
   return (
-    <Section title="Правила">
+    <Section title="Rules">
       <div style={{ display: 'grid', gap: '6px' }}>
         {props.rules.map((rule, index) => (
           <div key={index} style={{ opacity: 0.86 }}>
@@ -763,10 +763,10 @@ const XylixBlock = (props: {
   }
 
   return (
-    <Section title="Ксаликс">
+    <Section title="Ksaliks">
       <div style={{ display: 'grid', gap: '8px' }}>
         <div style={{ opacity: 0.82 }}>
-          Тир: T{xylix.tier}. Шанс спалиться: {xylix.caught_chance}%.
+          Shooting range:T{xylix.tier}. Chance of getting caught:{xylix.caught_chance}%.
         </div>
         <div style={rowStyle}>
           {xylix.cards.map((card, index) => (
@@ -776,13 +776,13 @@ const XylixBlock = (props: {
             >
               <CardFace card={card} small />
               {xylix.can_choose && (
-                <Button onClick={() => onChoose(index + 1)}>Выбрать</Button>
+                <Button onClick={() => onChoose(index + 1)}>Select</Button>
               )}
             </div>
           ))}
         </div>
         {!xylix.can_choose && (
-          <div style={{ opacity: 0.72 }}>Можно только посмотреть.</div>
+          <div style={{ opacity: 0.72 }}>Can only be viewed.</div>
         )}
       </div>
     </Section>
@@ -850,7 +850,7 @@ const SolitaireBoard = (props: {
           <div style={{ textAlign: 'center' }}>
             <CardFace label={stockCount ? '??' : ''} onClick={onDraw} />
             <div style={{ marginTop: '4px', fontSize: '12px' }}>
-              Запас: {stockCount}
+              Stock: {stockCount}
             </div>
           </div>
           <div style={{ textAlign: 'center' }}>
@@ -861,7 +861,7 @@ const SolitaireBoard = (props: {
               onClick={waste ? onSelectWaste : undefined}
             />
             <div style={{ marginTop: '4px', fontSize: '12px' }}>
-              Сброс: {discardCount}
+              Reset:{discardCount}
             </div>
           </div>
         </div>
@@ -875,7 +875,7 @@ const SolitaireBoard = (props: {
 
         {isSpider ? (
           <div style={{ textAlign: 'right', minWidth: '160px' }}>
-            <div style={{ fontSize: '12px', opacity: 0.78 }}>Собрано</div>
+            <div style={{ fontSize: '12px', opacity: 0.78 }}>Collected</div>
             <div style={{ fontSize: '20px', fontWeight: 800 }}>
               {completedSets}/8
             </div>
@@ -967,7 +967,7 @@ const SolitaireBoard = (props: {
             opacity: 0.78,
           }}
         >
-          Запустите раунд, чтобы разложить пасьянс.
+          Start a round to lay out the solitaire.
         </div>
       )}
 
@@ -1192,7 +1192,7 @@ export const CardTable = () => {
     isFinished && playerResultText
       ? playerResultText
       : isFinished && game_type === 'blackjack'
-        ? `${dealer_name || 'Дилер'} - дилер`
+        ? `${dealer_name || 'Dealer'} - dealer`
         : '';
   const attackRank = getRankSuit(table_attack || '').rank;
   const attackSuit = getRankSuit(table_attack || '').suit;
@@ -1403,7 +1403,7 @@ export const CardTable = () => {
   };
 
   return (
-    <Window width={1020} height={840} title="Карточный стол">
+    <Window width={1020} height={840} title="Card table">
       <Window.Content scrollable>
         <style>
           {`
@@ -1546,11 +1546,11 @@ export const CardTable = () => {
                   {game_type === 'blackjack' && (
                     <div>
                       <div style={{ marginBottom: '6px', fontWeight: 700 }}>
-                        Дилер: {dealer_name || '-'}{' '}
+                        Dealer:{dealer_name || '-'}{' '}
                         {isFinished && dealer_value ? `(${dealer_value})` : ''}
                       </div>
                       <div style={{ opacity: 0.76 }}>
-                        Рука дилера показана на его месте.{' '}
+                        The dealer's hand is shown in its place.{' '}
                         {dealer_rotation_label}.
                       </div>
                     </div>
@@ -1559,9 +1559,9 @@ export const CardTable = () => {
                   {game_type === 'fool' && (
                     <div>
                       <div style={{ ...rowStyle, marginBottom: '8px' }}>
-                        <b>Козырь:</b> {suitMap[trump || ''] || trump || '-'}
-                        <b>Атака:</b> {table_attack || '-'}
-                        <b>Защита:</b> {table_defense || '-'}
+                        <b>Trump:</b> {suitMap[trump || ''] || trump || '-'}
+                        <b>Attack:</b> {table_attack || '-'}
+                        <b>Defense:</b> {table_defense || '-'}
                       </div>
                       <div style={{ ...rowStyle, justifyContent: 'center' }}>
                         {table_pairs.length ? (
@@ -1616,14 +1616,14 @@ export const CardTable = () => {
                             poker_variant === 'draw' ? 'none' : undefined,
                         }}
                       >
-                        Общие карты
+                        Common cards
                       </div>
                       <div style={{ marginBottom: '4px', opacity: 0.82 }}>
-                        Круг: {poker_betting_round || 1}
+                        Round:{poker_betting_round || 1}
                       </div>
                       <div style={{ marginBottom: '6px', opacity: 0.82 }}>
-                        Ход: {poker_turn || '-'} | Банк: {poker_pot} | Текущая
-                        ставка: {poker_current_bet}
+                        Turn:{poker_turn || '-'} | Bank:{poker_pot} | Current
+                        bet:{poker_current_bet}
                       </div>
                       {poker_variant !== 'draw' &&
                         (community_cards.length ? (
@@ -1634,7 +1634,7 @@ export const CardTable = () => {
 
                   {game_type === 'none' && (
                     <div style={{ textAlign: 'center', opacity: 0.82 }}>
-                      Займите место. Первый игрок выбирает игру.
+                      Take a seat. The first player chooses the game.
                     </div>
                   )}
 
@@ -1645,7 +1645,7 @@ export const CardTable = () => {
                   )}
                   {!!finalText && (
                     <div style={{ color: '#f4cf5c', fontWeight: 700 }}>
-                      Итог: {finalText}
+                      Total:{finalText}
                     </div>
                   )}
 
@@ -1655,13 +1655,13 @@ export const CardTable = () => {
                         disabled={!!myPlayer?.standing}
                         onClick={() => act('blackjack_hit')}
                       >
-                        Взять
+                        Take
                       </Button>
                       <Button
                         disabled={!!myPlayer?.standing}
                         onClick={() => act('blackjack_stand')}
                       >
-                        Оставить
+                        Leave
                       </Button>
                     </div>
                   )}
@@ -1698,19 +1698,19 @@ export const CardTable = () => {
                             : act('poker_check')
                         }
                       >
-                        Ставка
+                        Bet
                       </Button>
                       <Button
                         disabled={!canActInPoker}
                         onClick={() => act('poker_all_in')}
                       >
-                        Ва-банк
+                        All-in
                       </Button>
                       <Button
                         disabled={!canActInPoker}
                         onClick={() => act('poker_fold')}
                       >
-                        Отказаться
+                        Fold
                       </Button>
                     </div>
                   )}
@@ -1721,13 +1721,13 @@ export const CardTable = () => {
                         disabled={!table_attack}
                         onClick={() => act('fool_take')}
                       >
-                        Взять
+                        Take
                       </Button>
                       <Button
                         disabled={!table_attack || !table_defense}
                         onClick={() => act('fool_end_attack')}
                       >
-                        Бито
+                        Beaten
                       </Button>
                     </div>
                   )}
@@ -1738,35 +1738,35 @@ export const CardTable = () => {
 
           <Stack vertical>
             <Stack.Item>
-              <Section title="Игра">
+              <Section title="Game">
                 <div style={rowStyle}>
                   <Button
                     selected={game_type === 'fool'}
                     disabled={!isLobby || !is_host}
                     onClick={() => act('set_game', { game: 'fool' })}
                   >
-                    Дурень
+                    Fool
                   </Button>
                   <Button
                     selected={game_type === 'blackjack'}
                     disabled={!isLobby || !is_host}
                     onClick={() => act('set_game', { game: 'blackjack' })}
                   >
-                    Блекджек
+                    Blackjack
                   </Button>
                   <Button
                     selected={game_type === 'poker'}
                     disabled={!isLobby || !is_host}
                     onClick={() => act('set_game', { game: 'poker' })}
                   >
-                    Покер
+                    Poker
                   </Button>
                   <Button
                     selected={game_type === 'solitaire'}
                     disabled={!isLobby || !is_host}
                     onClick={() => act('set_game', { game: 'solitaire' })}
                   >
-                    Пасьянс
+                    Solitaire
                   </Button>
                 </div>
 
@@ -1779,7 +1779,7 @@ export const CardTable = () => {
                         act('set_fool_variant', { variant: 'classic' })
                       }
                     >
-                      Хаммерхолдский
+                      Hammerholdsky
                     </Button>
                     <Button
                       selected={fool_variant === 'throw_in'}
@@ -1788,7 +1788,7 @@ export const CardTable = () => {
                         act('set_fool_variant', { variant: 'throw_in' })
                       }
                     >
-                      Этруский
+                      Etruscan
                     </Button>
                     <Button
                       selected={fool_variant === 'transfer'}
@@ -1797,7 +1797,7 @@ export const CardTable = () => {
                         act('set_fool_variant', { variant: 'transfer' })
                       }
                     >
-                      Отаванский
+                      Otavanese
                     </Button>
                     <Button
                       selected={fool_variant === 'throw_transfer'}
@@ -1808,7 +1808,7 @@ export const CardTable = () => {
                         })
                       }
                     >
-                      Грензельхофтский
+                      Grenzelhoftsky
                     </Button>
                   </div>
                 )}
@@ -1822,7 +1822,7 @@ export const CardTable = () => {
                         act('set_solitaire_variant', { variant: 'klondike' })
                       }
                     >
-                      Солитер
+                      Solitaire
                     </Button>
                     <Button
                       selected={solitaire_variant === 'spider'}
@@ -1831,7 +1831,7 @@ export const CardTable = () => {
                         act('set_solitaire_variant', { variant: 'spider' })
                       }
                     >
-                      Паук
+                      Spider
                     </Button>
                   </div>
                 )}
@@ -1845,7 +1845,7 @@ export const CardTable = () => {
                         act('set_blackjack_variant', { variant: 'gron' })
                       }
                     >
-                      Гроннский
+                      Gronnsky
                     </Button>
                     <Button
                       selected={blackjack_variant === 'valoria'}
@@ -1854,7 +1854,7 @@ export const CardTable = () => {
                         act('set_blackjack_variant', { variant: 'valoria' })
                       }
                     >
-                      Валорийский
+                      Valorian
                     </Button>
                     <Button
                       selected={blackjack_variant === 'azure'}
@@ -1863,7 +1863,7 @@ export const CardTable = () => {
                         act('set_blackjack_variant', { variant: 'azure' })
                       }
                     >
-                      Азурийский
+                      Asurian
                     </Button>
                     <Button
                       selected={blackjack_variant === 'grenzel'}
@@ -1872,7 +1872,7 @@ export const CardTable = () => {
                         act('set_blackjack_variant', { variant: 'grenzel' })
                       }
                     >
-                      Грензельхофтский
+                      Grenzelhoftsky
                     </Button>
                     <Button
                       selected={blackjack_variant === 'kazengun'}
@@ -1881,7 +1881,7 @@ export const CardTable = () => {
                         act('set_blackjack_variant', { variant: 'kazengun' })
                       }
                     >
-                      Казенгунский
+                      Kazengunsky
                     </Button>
                   </div>
                 )}
@@ -1895,7 +1895,7 @@ export const CardTable = () => {
                         act('set_poker_variant', { variant: 'draw' })
                       }
                     >
-                      Азурийский
+                      Asurian
                     </Button>
                     <Button
                       selected={poker_variant === 'texas'}
@@ -1904,7 +1904,7 @@ export const CardTable = () => {
                         act('set_poker_variant', { variant: 'texas' })
                       }
                     >
-                      Ранешенский
+                      Raneshensky
                     </Button>
                     <Button
                       selected={poker_variant === 'omaha'}
@@ -1913,7 +1913,7 @@ export const CardTable = () => {
                         act('set_poker_variant', { variant: 'omaha' })
                       }
                     >
-                      Валорийский
+                      Valorian
                     </Button>
                     <Button
                       selected={poker_variant === 'stud'}
@@ -1922,7 +1922,7 @@ export const CardTable = () => {
                         act('set_poker_variant', { variant: 'stud' })
                       }
                     >
-                      Гиза
+                      Giza
                     </Button>
                   </div>
                 )}
@@ -1934,68 +1934,68 @@ export const CardTable = () => {
                       disabled={!is_host}
                       onClick={() => act('set_dealer_rotation', { rotates: 1 })}
                     >
-                      Дилер меняется
+                      Dealer changes
                     </Button>
                     <Button
                       selected={!dealer_rotates}
                       disabled={!is_host}
                       onClick={() => act('set_dealer_rotation', { rotates: 0 })}
                     >
-                      Дилер один
+                      Dealer alone
                     </Button>
                   </div>
                 )}
 
                 <div style={{ marginTop: '8px', opacity: 0.78 }}>
                   {game_type === 'none' ? (
-                    <>Места: {players.length}/6. Первый игрок выбирает игру.</>
+                    <>Seats:{players.length}/6. The first player chooses the game.</>
                   ) : (
                     <>
-                      Места: {players.length}/{max_players}. Нужно:{' '}
+                      Seats:{players.length}/{max_players}. Needed:{' '}
                       {min_players}-{max_players}.
-                      {dealer_name ? ` Дилер: ${dealer_name}.` : ''}
+                      {dealer_name ? `Dealer: ${dealer_name}.` : ''}
                     </>
                   )}
                 </div>
                 {game_type !== 'none' && !is_host && (
                   <div style={{ marginTop: '8px', opacity: 0.78 }}>
-                    Настройки меняет первый занявший место.
+                    Settings are changed by the first player to take a seat.
                   </div>
                 )}
               </Section>
             </Stack.Item>
 
             <Stack.Item>
-              <Section title="Место">
+              <Section title="Seat">
                 <div style={rowStyle}>
                   <Button
                     disabled={!isLobby}
                     onClick={() => act('join_player')}
                   >
-                    Сесть
+                    Sit
                   </Button>
-                  <Button onClick={() => act('join_observer')}>Смотреть</Button>
+                  <Button onClick={() => act('join_observer')}>To look</Button>
                   <Button
                     disabled={!is_player && !is_observer}
                     onClick={() => act('leave')}
                   >
-                    Выйти
+                    Exit
                   </Button>
                 </div>
               </Section>
             </Stack.Item>
 
             <Stack.Item>
-              <Section title="Раунд">
+              <Section title="Round">
                 <div style={rowStyle}>
                   <Button disabled={!can_start} onClick={() => act('start')}>
-                    Старт
+                    Start
                   </Button>
                   <Button
                     disabled={!isFinished && players.length > 0}
                     onClick={() => act('reset_lobby')}
                   >
-                    Сброс
+                    Reset
                   </Button>
                 </div>
               </Section>
@@ -2011,7 +2011,7 @@ export const CardTable = () => {
 
             {!!observers.length && (
               <Stack.Item>
-                <Section title={`Смотрящие (${observers.length})`}>
+                <Section title={`Spectators (${observers.length})`}>
                   {observers.join(', ')}
                 </Section>
               </Stack.Item>
@@ -2019,9 +2019,9 @@ export const CardTable = () => {
 
             {isFinished && (
               <Stack.Item>
-                <Section title="Игра завершена">
+                <Section title="Game over">
                   <Button onClick={() => act('reset_lobby')}>
-                    Вернуться в лобби
+                    Return to lobby
                   </Button>
                 </Section>
               </Stack.Item>

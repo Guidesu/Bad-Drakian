@@ -125,7 +125,7 @@
 
 /obj/item/gun/ballistic/twilight_firearm/barker/barker_light/dendor1
 	name = "hermit's barker"
-	desc = "Один из первых образцов огнестрельного оружия, созданный отаванскими мастерами в начале позапрошлого века. Этот оброс костями и кожей словно друидский посох, что дало ему чуть больше прочности"
+	desc = "One of the first firearms created by Otavan masters at the beginning of the previous century. It has grown bones and leather like a druid's staff, which gave it slightly more durability."
 	icon = 'modular_twilight_axis/firearms/icons/magic/dendor1.dmi'
 	icon_state = "dendor1"
 	item_state = "dendor1"
@@ -134,7 +134,7 @@
 
 /obj/item/gun/ballistic/twilight_firearm/barker/barker_light/dendor2
 	name = "guiding light"
-	desc = "Потрёпанное оружие, что явно повидало достаточно за свою жизнь, после всего став вместилищем частички безумного бога, чьё сияние теперь направляет владельца."
+	desc = "Worn weapon that has clearly seen enough in its life, eventually becoming a vessel for a fragment of a mad god, whose glow now guides the owner."
 	icon = 'modular_twilight_axis/firearms/icons/magic/dendor2.dmi'
 	icon_state = "dendor2"
 	item_state = "dendor2"
@@ -174,7 +174,7 @@
 
 /obj/item/gun/ballistic/twilight_firearm/barker/arti_barker1
 	name = "ignited barker"
-	desc = "Один из первых образцов огнестрельного оружия, созданный отаванскими мастерами в начале позапрошлого века. Данный образец оснащён поворотной ручкой с тлеющим углём, что за вас подожжёт фитиль."
+	desc = "One of the first firearms created by Otavan masters at the beginning of the previous century. This model is equipped with a rotating handle with a glowing ember, which will light the fuse for you."
 	icon = 'modular_twilight_axis/firearms/icons/magic/barti.dmi'
 	icon_state = "barti"
 	item_state = "barti"
@@ -182,7 +182,7 @@
 
 /obj/item/gun/ballistic/twilight_firearm/barker/arti_barker2
 	name = "hunter's barker"
-	desc = "Извращённый вариант одного из первых образцов огнестрельного оружия, предназначенный для охотников, что прыгают по высоким склонам."
+	desc = "A perverted version of one of the first samples of firearms, designed for hunters who jump across high slopes."
 	icon = 'modular_twilight_axis/firearms/icons/magic/barti1.dmi'
 	icon_state = "barti2"
 	item_state = "barti2"
@@ -200,7 +200,7 @@
 
 /obj/item/gun/ballistic/twilight_firearm/barker/arti_barker3
 	name = "shepherd's barker"
-	desc = "Старая палка, что может плеваться огнём в дичь и служить хорошим шестом дабы спускаться и подыматься на целые горы."
+	desc = "An old stick that can spit fire at game and serve as a good pole to descend and climb entire mountains."
 	icon = 'modular_twilight_axis/firearms/icons/magic/barti2.dmi'
 	icon_state = "barti3"
 	item_state = "barti3"

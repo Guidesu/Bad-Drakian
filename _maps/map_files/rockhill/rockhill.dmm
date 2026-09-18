@@ -7603,7 +7603,7 @@
 	},
 /obj/machinery/light/rogue/candle/weak/r,
 /obj/item/paper{
-	info = "Впервые за долгое время все пристани в порту заняты. Торговый корабль сумевший прорваться через шторм - настоящее чудо в эти непростые времена, королевство будет обеспечено всем необходимым... Однако стоит кого-нибудь нанять для тяжелой работы, сомневаюсь что клерк справится с грузом один.";
+	info = "For the first time in ages, every berth in the harbor is occupied. A merchant ship breaking through the storm is a true miracle in these difficult times; the realm will have everything it needs... Still, someone should be hired for the heavy work. I doubt the clerk can handle the cargo alone.";
 	icon_state = "paperwrite";
 	pixel_x = -8;
 	pixel_y = 6
@@ -29005,7 +29005,7 @@
 /area/rogue/under/underdark)
 "fKY" = (
 /obj/structure/table/vtable/v2{
-	name = "Стол для вскрытия"
+	name = "Autopsy table"
 	},
 /obj/item/storage/belt/rogue/surgery_bag/full{
 	pixel_y = 10
@@ -45379,7 +45379,7 @@
 /area/rogue/under/cave)
 "iYv" = (
 /obj/structure/table/vtable{
-	name = "Стол для вскрытия"
+	name = "Autopsy table"
 	},
 /obj/item/bedroll{
 	pixel_y = 6;
@@ -45925,7 +45925,7 @@
 	pixel_y = -32
 	},
 /obj/item/paper{
-	info = "Нужно проверить книжный шкаф в кладовке. Работницы говорили что он начал громко скрипеть и что оттуда идёт сквозняк. Не хватало чтобы об этом кто-то узнал...";
+	info = "The bookcase in the storeroom needs checking. The workers said it has begun creaking loudly and that a draft comes from behind it. The last thing we need is for someone to find out...";
 	icon_state = "paperwrite";
 	pixel_x = -8
 	},
@@ -61213,7 +61213,7 @@
 /obj/structure/mineral_door/bars{
 	locked = 1;
 	lockid = "walls";
-	name = "Изолятор"
+	name = "Isolation ward"
 	},
 /turf/open/floor/rogue/cobble,
 /area/rogue/indoors/town/garrison)
@@ -106709,7 +106709,7 @@
 /area/rogue/indoors/town/church)
 "vEM" = (
 /obj/item/natural/rock{
-	desc = "Почему-то козлы его часто облизывают."
+	desc = "For some reason, goats often lick it."
 	},
 /turf/open/floor/rogue/naturalstone,
 /area/rogue/under/cave)

@@ -20,7 +20,7 @@
 	ignore_los = FALSE
 	var/duration = 12 SECONDS
 
-//obj/effect/proc_holder/spell/self/mist_form/cast(list/targets, mob/living/user = usr) Эффект мист формы теперь необходимо выключать самостоятельно. Если хотите вернуть спелл в игру, то оформите отключение баффа.
+//obj/effect/proc_holder/spell/self/mist_form/cast(list/targets, mob/living/user = usr) The mist form effect now needs to be turned off manually. If you want to return the spell to the game, set up the buff deactivation.
 //	if(user.has_status_effect(/datum/status_effect/buff/mist_form))
 //		to_chat(user, span_warning("I am already in mist form!"))
 //		revert_cast()

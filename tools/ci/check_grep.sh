@@ -296,6 +296,12 @@ else
 	echo -e "if you want to run these checks install ripgrep with pcre2 support.${NC}"
 fi
 
+section "English translation and public branding"
+part "Cyrillic and retired server names"
+if ! python3 tools/ci/check_english.py; then
+	st=1
+fi
+
 if [ $st = 0 ]; then
     echo
     echo -e "${GREEN}No errors found using $grep!${NC}"

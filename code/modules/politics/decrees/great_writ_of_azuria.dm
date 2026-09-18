@@ -1,15 +1,15 @@
 /datum/decree/great_writ
 	id = DECREE_GREAT_WRIT
-	name = "Великий Декрет Азурии"
+	name = "Great Decree of Azuria"
 	category = DECREE_CATEGORY_ANCIENT
-	mechanical_text = "Дворяне не облагаются налогами и штарфами."
-	flavor_text = {"Настоящий Великий Декрет Азурии, провозглашенный под Светом Астраты и при свидетельстве Равокса, провозглашает, что дворяне этой земли, а также представители знатных родов чужеземных царств, пребывающие на ней, будучи потомками родов, благословленных милостью Астраты, не будут облагаться никакими налогами или сборами ни в отношении них самих, ни в отношении их владений.
+	mechanical_text = "Nobles are not subject to taxes and penalties."
+	flavor_text = {"This Great Decree of Azuria, promulgated under the Light of Astrata and under the witness of Ravox, declares that the nobles of this land, as well as the representatives of the noble families of foreign kingdoms residing therein, being descendants of families blessed by the grace of Astrata, will not be subject to any taxes or duties either on themselves or on their possessions.
 
-Взамен дворяне Азурии обязуются нести военную службу — защищать Герцогство собственными силами и силами своих вассалов, откликаться на призыв Короны к войне в любой час, когда оный прозвучит, и хранить верность трону, как того требуют кровь и клятва.
+In return, the nobles of Azuria undertake to perform military service — to defend the Duchy with their own forces and those of their vassals, to respond to the Crown's call to war at any hour when it is sounded, and to maintain loyalty to the throne, as demanded by blood and oath.
 
-Заверено печатью Короны, милостью Астраты и Равокса."}
-	revoke_text = "Правитель сиих земель отменил Великий Декрет. Дворяне Азурии должны служить Короне как кровью, так и золотом — пусть ни один род не считает себя слишком благословенным, чтобы платить."
-	restore_text = "Правитель сиих земель возобновил Великий Декрет. Голубая кровь Азурии вновь освобождена от налога, дабы дворяне могли служить Королевству оружием, а не монетами."
+Certified with the seal of the Crown, by the grace of Astrata and Ravox."}
+	revoke_text = "The ruler of these lands has canceled the Great Decree. The nobles of Asuria must serve the Crown with both blood and gold - let no line consider itself too blessed to pay."
+	restore_text = "The ruler of these lands renewed the Great Decree. Asuria's blue blood is once again exempt from taxation so that nobles can serve the Kingdom with weapons rather than coins."
 
 /datum/decree/great_writ/roll_initial_year()
 	return CALENDAR_EPOCH_YEAR - rand(100, 200)

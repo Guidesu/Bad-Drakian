@@ -52,7 +52,7 @@
 
 /obj/item/clothing/under/roguetown/heavy_leather_pants/otavan/overseer
 	name = "heavy trousers"
-	desc = "Пара застиранных тяжелых брюк серого цвета."
+	desc = "A pair of washed heavy gray trousers."
 	icon = 'modular_twilight_axis/icons/roguetown/clothing/inquisition_overseer/overseer.dmi'
 	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/inquisition_overseer/onmob/overseer_onmob.dmi'
 	sleeved = 'modular_twilight_axis/icons/roguetown/clothing/inquisition_overseer/onmob/overseer_onmob.dmi'

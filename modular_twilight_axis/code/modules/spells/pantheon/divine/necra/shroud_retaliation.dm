@@ -24,8 +24,8 @@
 	undead_source.adjust_fire_stacks(TRANQUILITY_SHROUD_RETALIATION_FIRE_STACKS, /datum/status_effect/fire_handler/fire_stacks/divine)
 	undead_source.ignite_mob()
 	if(owner && !QDELETED(owner))
-		to_chat(owner, span_notice("Оберег Некры вспыхивает белым светом, оглушая и поджигая напавшую нежить."))
-		owner.visible_message(span_warning("Бледный оберег вокруг [owner] взрывается белым пламенем, охватывая [undead_source]!"))
+		to_chat(owner, span_notice("The Nekra talisman flashes with white light, stunning and setting fire to the attacking undead."))
+		owner.visible_message(span_warning("The pale talisman around [owner] explodes with white flame, engulfing [undead_source]!"))
 	return TRUE
 
 #undef TRANQUILITY_SHROUD_DURATION

@@ -6,7 +6,7 @@
 	if(!C)
 		return list("entries" = list())
 
-	// Слева всегда "я" (владелец UI)
+	//On the left always "" (UI owner)
 	var/mob/living/self = ui.actor
 	return C.get_kinks_ui(self, C.active_partner)
 

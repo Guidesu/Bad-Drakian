@@ -1,6 +1,6 @@
 /obj/effect/proc_holder/spell/invoked/projectile/icicle_spear
 	name = "Icicle Spear"
-	desc = "Стреляет магической сосулькой, которая вонзается в плоть врага, нанося постоянный урон и замораживая его изнутри."
+	desc = "Shoots a magical icicle that pierces the enemy's flesh, dealing continuous damage and freezing them from the inside."
 	school = "evocation"
 	invocations = list("GLACIES CUSPIS!")
 	invocation_type = "shout"

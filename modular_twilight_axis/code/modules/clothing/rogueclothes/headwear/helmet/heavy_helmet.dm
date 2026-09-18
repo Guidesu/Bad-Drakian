@@ -74,10 +74,10 @@
 	name = "masked mamluk helmet"
 	desc = "Helmet of a heavy rider from Empire with a face-shaped visor."
 	icon = 'modular_twilight_axis/icons/roguetown/clothing/head.dmi'
-	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/onmob/32х48/helmets.dmi'
+	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/onmob/32x48/helmets.dmi'
 	icon_state = "face_helmet"
 	item_state = "face_helmet"
-	max_integrity = ARMOR_INT_HELMET_HEAVY_STEEL + 20 //В стандартном шлеме юзается ARMOR_INT_HELMET_HEAVY_STEEL, дающий 400 очков ХП, но поскольку тут крафт 2 стали 1 бронза, то 20 интегрити сверху вряд-ли сильно повлияют на баланс.
+	max_integrity = ARMOR_INT_HELMET_HEAVY_STEEL + 20 //The standard helmet uses ARMOR_INT_HELMET_HEAVY_STEEL, which gives 400 HP points, but since there is crafting 2 steel 1 bronze, then 20 Integrity from above is unlikely to greatly affect the balance.
 
 /obj/item/clothing/head/roguetown/helmet/heavy/knight/raneshi_hmamluk/ComponentInitialize()
 	AddComponent(/datum/component/adjustable_clothing, (HEAD|EARS|HAIR), (HIDEEARS|HIDEHAIR), null, 'sound/items/visor.ogg', null, UPD_HEAD)
@@ -165,7 +165,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/heavy/citywatch
 	name = "watchman's helmet"
-	desc = "Тяжелый шлем, невероятно устойчивый ко всем видам урона. Используется городским Дозором Рокхилла."
+	desc = "Heavy helmet, incredibly resistant to all types of damage. Used by the Rockhill City Watch."
 	icon_state = "citywatch_helmet"
 	item_state = "citywatch_helmet"
 	icon = 'modular_twilight_axis/icons/roguetown/clothing/special/citywatch_armor.dmi'
@@ -174,7 +174,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/heavy/citywatch/sheriff
 	name = "sheriff's helmet"
-	desc = "Тяжелый шлем, невероятно устойчивый ко всем видам урона. Окрашен в другой цвет, в отличии от других шлемов Дозора, чтобы выделить шерифа."
+	desc = "Heavy helmet, incredibly resistant to all types of damage. Painted a different color from other Marine helmets to make the Sheriff stand out."
 	icon_state = "sheriff_helm"
 	item_state = "sheriff_helm"
 

@@ -186,16 +186,16 @@ const NARDS_DICE_ROLL: Record<number, string> = {
 };
 
 const NARDS_MODE_FALLBACK: ModeOption[] = [
-  { key: 'chess', label: 'Шахматы' },
-  { key: 'checkers', label: 'Шашки' },
-  { key: 'nards', label: 'Нарды' },
+  { key: 'chess', label: 'Chess' },
+  { key: 'checkers', label: 'Checkers' },
+  { key: 'nards', label: 'Backgammon' },
 ];
 
 const PROMOTION_LABELS: Record<string, string> = {
-  queen: 'Ферзь',
-  rook: 'Ладья',
-  bishop: 'Слон',
-  knight: 'Конь',
+  queen: 'Queen',
+  rook: 'Rook',
+  bishop: 'Bishop',
+  knight: 'Knight',
 };
 
 const boardWrapStyle: CSSProperties = {
@@ -408,12 +408,12 @@ export const ChessBoard = () => {
     : ['8', '7', '6', '5', '4', '3', '2', '1'];
 
   const whiteSeatButtonLabel =
-    data.white_player_name === 'Свободно' ? 'Сесть за белых' : 'Освободить белых';
+    data.white_player_name === 'Free' ? 'Sit as white' : 'Free white';
   const blackSeatButtonLabel =
-    data.black_player_name === 'Свободно' ? 'Сесть за чёрных' : 'Освободить чёрных';
+    data.black_player_name === 'Free' ? 'Sit as black' : 'Free black';
 
   const handleWhiteSeatButton = () => {
-    if (data.white_player_name === 'Свободно') {
+    if (data.white_player_name === 'Free') {
       act('claim_side', { color: 'w' });
       return;
     }
@@ -421,14 +421,14 @@ export const ChessBoard = () => {
   };
 
   const handleBlackSeatButton = () => {
-    if (data.black_player_name === 'Свободно') {
+    if (data.black_player_name === 'Free') {
       act('claim_side', { color: 'b' });
       return;
     }
     act('release_side', { color: 'b' });
   };
 
-  const pauseResumeLabel = data.paused ? 'Продолжить' : 'Пауза';
+  const pauseResumeLabel = data.paused ? 'Continue' : 'Pause';
   const pauseResumeDisabled = !hasMode || (data.paused ? !data.can_resume : false);
 
   const handlePauseResume = () => {
@@ -631,21 +631,21 @@ export const ChessBoard = () => {
     }
 
     const chessLabel =
-      modeOptions.find((option) => option.key === 'chess')?.label || 'Шахматы';
+      modeOptions.find((option) => option.key === 'chess')?.label || 'Chess';
     const checkersLabel =
-      modeOptions.find((option) => option.key === 'checkers')?.label || 'Шашки';
+      modeOptions.find((option) => option.key === 'checkers')?.label || 'Checkers';
     const nardsLabel =
-      modeOptions.find((option) => option.key === 'nards')?.label || 'Нарды';
+      modeOptions.find((option) => option.key === 'nards')?.label || 'Backgammon';
 
-    let title = 'Выбор режима';
-    let description = 'Выберите режим для этой доски.';
+    let title = 'Mode selection';
+    let description = 'Select a mode for this board.';
 
     if (modePickerStep === 'checkers_rules') {
-      title = 'Правила шашек';
-      description = 'Выберите, как должна ходить дамка.';
+      title = 'Checkers rules';
+      description = 'Choose how the queen should move.';
     } else if (modePickerStep === 'nards_rules') {
-      title = 'Правила нард';
-      description = 'Выберите длинные или короткие нарды.';
+      title = 'Backgammon rules';
+      description = 'Choose long or short backgammon.';
     }
 
     return (
@@ -686,7 +686,7 @@ export const ChessBoard = () => {
               <Button onClick={() => setModePickerStep('nards_rules')}>
                 {nardsLabel}
               </Button>
-              <Button onClick={closeModePicker}>Закрыть</Button>
+              <Button onClick={closeModePicker}>Close</Button>
             </>
           )}
 
@@ -699,7 +699,7 @@ export const ChessBoard = () => {
                   requestModeSwitch('checkers', { checkersFlyingKings: false });
                 }}
               >
-                Обычная дамка
+                Regular king
               </Button>
               <Button
                 disabled={data.game_mode === 'checkers' && !!data.checkers_flying_kings}
@@ -708,9 +708,9 @@ export const ChessBoard = () => {
                   requestModeSwitch('checkers', { checkersFlyingKings: true });
                 }}
               >
-                Дальняя дамка
+                Distant king
               </Button>
-              <Button onClick={() => setModePickerStep('root')}>Назад</Button>
+              <Button onClick={() => setModePickerStep('root')}>Back</Button>
             </>
           )}
 
@@ -723,7 +723,7 @@ export const ChessBoard = () => {
                   requestModeSwitch('nards', { nardsLongRules: false });
                 }}
               >
-                Короткие нарды
+                Short backgammon
               </Button>
               <Button
                 disabled={data.game_mode === 'nards' && !!data.nards_long_rules}
@@ -732,9 +732,9 @@ export const ChessBoard = () => {
                   requestModeSwitch('nards', { nardsLongRules: true });
                 }}
               >
-                Длинные нарды
+                Long backgammon
               </Button>
-              <Button onClick={() => setModePickerStep('root')}>Назад</Button>
+              <Button onClick={() => setModePickerStep('root')}>Back</Button>
             </>
           )}
         </div>
@@ -869,7 +869,7 @@ export const ChessBoard = () => {
     const selectedBar = !!nards?.selected_bar;
     const nardsOverturned =
       !!nards?.overturned ||
-      (data.game_mode === 'nards' && !!data.result_text && data.result_text.includes('Доска опрокинута'));
+      (data.game_mode === 'nards' && !!data.result_text && data.result_text.includes('Board turned over'));
     const scatterPieces = nards?.scatter || [];
     const scatterDice = nards?.scatter_dice || [];
 
@@ -1133,7 +1133,7 @@ export const ChessBoard = () => {
               pointerEvents: 'none',
             }}
           >
-            {['Т', 'А', 'В', 'Е', 'Р', 'Н', 'А'].map((letter, index) => (
+            {['T', 'A', 'In', 'E', 'P', 'N', 'A'].map((letter, index) => (
               <div key={`tav-${index}`}>{letter}</div>
             ))}
           </div>
@@ -1178,7 +1178,7 @@ export const ChessBoard = () => {
           }}
         >
           <Button disabled={!nards?.can_roll} onClick={() => act('roll_nards_dice')}>
-            Бросить кости
+            Roll dice
           </Button>
           <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
             {diceFaces[0] ? (
@@ -1206,11 +1206,11 @@ export const ChessBoard = () => {
               />
             ) : null}
           </div>
-          <div style={{ fontSize: '12px', opacity: 0.8 }}>Доступные кости: {availableRollsText}</div>
-          <div style={{ fontSize: '12px', opacity: 0.8 }}>Белые выведены: {nards?.off_white || 0}</div>
-          <div style={{ fontSize: '12px', opacity: 0.8 }}>Чёрные выведены: {nards?.off_black || 0}</div>
+          <div style={{ fontSize: '12px', opacity: 0.8 }}>Available dice:{availableRollsText}</div>
+          <div style={{ fontSize: '12px', opacity: 0.8 }}>Whites borne off:{nards?.off_white || 0}</div>
+          <div style={{ fontSize: '12px', opacity: 0.8 }}>Blacks borne off:{nards?.off_black || 0}</div>
           <Button disabled={!nards?.legal_targets?.includes(0)} onClick={handleNardsBearOffClick}>
-            Снять в дом
+            Move to home
           </Button>
         </div>
       </div>
@@ -1218,32 +1218,32 @@ export const ChessBoard = () => {
   };
 
   return (
-    <Window width={920} height={780} title={data.board_title || 'Шахматная доска'}>
+    <Window width={920} height={780} title={data.board_title || 'Chessboard'}>
       <Window.Content scrollable>
         <div style={{ position: 'relative' }}>
           {renderModePicker()}
           <div style={panelStyle}>
             <div>
-              <Section title="Доска">
+              <Section title="Board">
                 <div style={{ marginBottom: '8px', fontSize: '13px', opacity: 0.9 }}>
-                  <div><b>Режим:</b> {data.game_mode_label}</div>
-                  {!!data.current_rules_text && <div><b>Правила:</b> {data.current_rules_text}</div>}
-                  <div><b>Белые:</b> {data.white_player_name}</div>
-                  <div><b>Чёрные:</b> {data.black_player_name}</div>
-                  <div><b>Вы:</b> {data.my_side}</div>
-                  <div><b>Ход:</b> {data.turn}</div>
+                  <div><b>Mode:</b> {data.game_mode_label}</div>
+                  {!!data.current_rules_text && <div><b>Rules:</b> {data.current_rules_text}</div>}
+                  <div><b>Whites:</b> {data.white_player_name}</div>
+                  <div><b>Blacks:</b> {data.black_player_name}</div>
+                  <div><b>You:</b> {data.my_side}</div>
+                  <div><b>Turn:</b> {data.turn}</div>
                 </div>
                 {data.game_mode === 'nards' ? renderNardsBoard() : renderClassicBoard()}
                 {!hasMode && (
                   <div style={{ marginTop: '8px', fontSize: '12px', opacity: 0.8 }}>
-                    Режим ещё не выбран. Используйте кнопку смены режима.
+                    Mode not yet selected. Use the mode change button.
                   </div>
                 )}
               </Section>
             </div>
 
             <div>
-              <Section title="Статус">
+              <Section title="Status">
                 <div style={{ marginBottom: '8px' }}>{data.status_text}</div>
                 {!!data.result_text && (
                   <div style={{ marginBottom: '8px', color: '#ff9f9f' }}>
@@ -1265,7 +1265,7 @@ export const ChessBoard = () => {
                 )}
               </Section>
 
-              <Section title="Места и управление">
+              <Section title="Seats and management">
                 <div style={buttonGroupStyle}>
                   <Button onClick={handleWhiteSeatButton}>{whiteSeatButtonLabel}</Button>
                   <Button onClick={handleBlackSeatButton}>{blackSeatButtonLabel}</Button>
@@ -1276,53 +1276,53 @@ export const ChessBoard = () => {
                     {pauseResumeLabel}
                   </Button>
                   <Button onClick={resetBoard}>
-                    {confirmReset ? 'Подтвердить сброс' : 'Сбросить доску'}
+                    {confirmReset ? 'Confirm reset' : 'Reset board'}
                   </Button>
                   {confirmReset && (
-                    <Button onClick={() => setConfirmReset(false)}>Отмена</Button>
+                    <Button onClick={() => setConfirmReset(false)}>Cancel</Button>
                   )}
                   {!!data.can_confirm_reset_request && (
                     <Button onClick={() => act('confirm_reset_board')}>
-                      Подтвердить сброс
+                      Confirm reset
                     </Button>
                   )}
                   {!!data.can_cancel_reset_request && (
                     <Button onClick={() => act('cancel_reset_board')}>
-                      Отменить запрос сброса
+                      Cancel reset request
                     </Button>
                   )}
                   <Button disabled={!data.can_pack} onClick={() => act('pack_board')}>
-                    Собрать доску
+                    Gather board
                   </Button>
                   <Button disabled={!data.can_flip_board} onClick={() => act('flip_board')}>
-                    Опрокинуть доску
+                    Tilt board
                   </Button>
                 </div>
 
                 <div style={{ ...buttonGroupStyle, marginTop: '8px' }}>
-                  <Button onClick={openModePicker}>Сменить режим</Button>
+                  <Button onClick={openModePicker}>Change mode</Button>
                   {!!data.can_confirm_mode_switch && (
                     <Button onClick={() => act('confirm_mode_switch')}>
-                      Подтвердить смену режима
+                      Confirm mode change
                     </Button>
                   )}
                   {!!data.can_cancel_mode_switch && (
                     <Button onClick={() => act('cancel_mode_switch')}>
-                      Отменить запрос
+                      Cancel request
                     </Button>
                   )}
                 </div>
 
                 <div style={{ marginTop: '8px', fontSize: '12px', opacity: 0.8 }}>
-                  Во время активной партии смена игроков выполняется через паузу. Для смены
-                  режима во время уже начавшейся партии требуется согласие обоих игроков.
+                  During an active game, player changes are done through a pause. Changing
+                  the mode during an already started game requires consent from both players.
                 </div>
               </Section>
 
               {!!pendingPromotion && data.game_mode === 'chess' && (
-                <Section title="Превращение пешки">
+                <Section title="Pawn promotion">
                   <div style={{ marginBottom: '8px' }}>
-                    Выберите фигуру для превращения пешки.
+                    Choose a piece to promote the pawn.
                   </div>
                   <div style={buttonGroupStyle}>
                     {promotionChoices.map((choice) => (
@@ -1330,20 +1330,20 @@ export const ChessBoard = () => {
                         {PROMOTION_LABELS[choice] || choice}
                       </Button>
                     ))}
-                    <Button onClick={() => setPendingPromotion(null)}>Отмена</Button>
+                    <Button onClick={() => setPendingPromotion(null)}>Cancel</Button>
                   </div>
                 </Section>
               )}
 
-              <Section title="История ходов">
-                {!history.length && <div>Ходов ещё не было.</div>}
+              <Section title="Move history">
+                {!history.length && <div>No moves have been made yet.</div>}
                 {!!history.length && (
                   <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '13px' }}>
                     <thead>
                       <tr>
                         <th style={{ textAlign: 'left', paddingBottom: '4px' }}>#</th>
-                        <th style={{ textAlign: 'left', paddingBottom: '4px' }}>Белые</th>
-                        <th style={{ textAlign: 'left', paddingBottom: '4px' }}>Чёрные</th>
+                        <th style={{ textAlign: 'left', paddingBottom: '4px' }}>White</th>
+                        <th style={{ textAlign: 'left', paddingBottom: '4px' }}>Black</th>
                       </tr>
                     </thead>
                     <tbody>

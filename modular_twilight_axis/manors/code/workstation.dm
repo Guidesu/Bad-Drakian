@@ -1,5 +1,5 @@
 /datum/workstation
-	var/workstation_name = "Угодье"
+	var/workstation_name = "Land"
 	var/list/produce = list()
 	var/workstation_size = 5
 	var/workers_employed = 0
@@ -15,7 +15,7 @@
 	return workstation_theme
 
 /datum/workstation/field
-	workstation_name = "Поля"
+	workstation_name = "Fields"
 	workstation_theme = "field"
 	produce = list(
 		/datum/roguestock/stockpile/grain,
@@ -38,7 +38,7 @@
 	workstation_size = 20
 
 /datum/workstation/fruit
-	workstation_name = "Сады"
+	workstation_name = "Gardens"
 	workstation_theme = "fruit"
 	produce = list(
 		/datum/roguestock/stockpile/apple,
@@ -60,7 +60,7 @@
 	workstation_size = 20
 
 /datum/workstation/hunt
-	workstation_name = "Охотничьи угодья"
+	workstation_name = "Hunting grounds"
 	workstation_theme = "hunt"
 	produce = list(
 		/datum/roguestock/stockpile/hide,
@@ -80,7 +80,7 @@
 	workstation_size = 20
 
 /datum/workstation/farm
-	workstation_name = "Фермы"
+	workstation_name = "Farms"
 	workstation_theme = "farm"
 	produce = list(
 		/datum/roguestock/stockpile/hide,
@@ -100,7 +100,7 @@
 	workstation_size = 20
 
 /datum/workstation/outpost
-	workstation_name = "Аванпост"
+	workstation_name = "Outpost"
 	workstation_theme = "outpost"
 	produce = list()
 	workstation_size = 6
@@ -108,7 +108,7 @@
 	type_of_produce = "Defense"
 
 /datum/workstation/trade
-	workstation_name = "Торговые ряды"
+	workstation_name = "Market rows"
 	workstation_theme = "trade"
 	produce = list(
 		/datum/roguestock/stockpile/tangerine,
@@ -128,7 +128,7 @@
 	workstation_size = 20
 
 /datum/workstation/fish
-	workstation_name = "Заводи"
+	workstation_name = "Factories"
 	workstation_theme = "fish"
 	produce = list(
 		/datum/roguestock/stockpile/fishmince,
@@ -153,7 +153,7 @@
 	workstation_size = 20
 
 /datum/workstation/mining
-	workstation_name = "Шахты"
+	workstation_name = "Mines"
 	workstation_theme = "mining"
 	produce = list(
 		/datum/roguestock/stockpile/iron,
@@ -174,7 +174,7 @@
 	workstation_size = 20
 
 /datum/workstation/forest
-	workstation_name = "Леса"
+	workstation_name = "Forests"
 	workstation_theme = "forest"
 	produce = list(
 		/datum/roguestock/stockpile/wood,
@@ -193,7 +193,7 @@
 
 //Special patron-related workstations
 /datum/workstation/mage_tower
-	workstation_name = "Башня магов"
+	workstation_name = "Mage tower"
 	workstation_theme = "mage_tower"
 	produce = list(
 		/datum/roguestock/stockpile/cinnabar,
@@ -203,7 +203,7 @@
 	)
 
 /datum/workstation/cathedral
-	workstation_name = "Церковь Всеотца"
+	workstation_name = "The Church of the All-Father"
 	workstation_theme = "cathedral"
 	produce = list()
 	production_increase_per_job = 0.05

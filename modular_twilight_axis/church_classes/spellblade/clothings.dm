@@ -4,7 +4,7 @@
 
 /obj/item/clothing/head/roguetown/roguehood/newmoon
 	name = "newmoon hood"
-	desc = "Сотканный из плотного материала капюшон Новолунья. Достаточно крепок на разрыв и ощущается теплым за счет подкладки. Секрет изготовления ткани остается загадкой даже для самих Новолунцев."
+	desc = "Darkmoon hood woven from dense material. It is strong enough to tear and feels warm due to the lining. The secret of making the fabric remains a mystery even to the New Moons themselves."
 	color = "#78a3c9"
 	slot_flags = ITEM_SLOT_HEAD
 	armor = ARMOR_NEWMOON_HOOD
@@ -15,7 +15,7 @@
 
 /obj/item/clothing/suit/roguetown/armor/leather/newmoon_jacket
 	name = "newmoon jacket"
-	desc = "Увесистое, нарядное, но при этом достаточно защищенное пальто из плотной и крепкой ткани. Является отличительным знаком Священного Ордена Новолуния с амулетом Нок в центре нагрудника. Кричащий символ радикального Ноктизма."
+	desc = "A weighty, elegant, but at the same time quite protected coat made of dense and strong fabric. It is the insignia of the Holy Order of the Darkmoon with the Nok amulet in the center of the breastplate. A screaming symbol of radical Noctism."
 	icon = 'modular_twilight_axis/church_classes/icons/spellblade_clothes.dmi'
 	mob_overlay_icon = 'modular_twilight_axis/church_classes/icons/spellblade_clothes.dmi'
 	icon_state = "newmoon_jacket"
@@ -29,7 +29,7 @@
 
 /obj/item/clothing/mask/rogue/ragmask/newmoon 
 	name = "newmoon mask"
-	desc = "Маска сотканная из шелковистого хорошодышащего материала."
+	desc = "Mask woven from silky, highly breathable material."
 	color = "#78a3c9"
 	armor = ARMOR_NEWMOON_MASK
 	body_parts_covered = FACE

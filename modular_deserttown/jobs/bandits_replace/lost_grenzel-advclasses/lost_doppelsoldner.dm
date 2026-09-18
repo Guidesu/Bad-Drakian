@@ -1,6 +1,6 @@
 /datum/advclass/lost_grenzel/lost_doppelsoldner
 	name = "Lost Doppelsoldner"
-	tutorial = "В пустынях Зибантии вы приобрели бессмертные навыки выживания. Ваша тактика сражения с двуручным мечом не раз спасла вашу и товарищей жизни."
+	tutorial = "In the deserts of Zybanthia, you have acquired immortal survival skills. Your tactics of fighting with a two-handed sword have saved your and your comrades’ lives more than once."
 	allowed_sexes = list(MALE, FEMALE)
 	
 	outfit = /datum/outfit/job/roguetown/lost_grenzel/lost_doppelsoldner

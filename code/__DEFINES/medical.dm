@@ -100,6 +100,26 @@
 #define BODYPART_FEATURE_CREST "crest"
 #define BODYPART_FEATURE_LEGWEAR "legwear"
 #define BODYPART_FEATURE_BRAND "brand"
+#define BODYPART_FEATURE_PUBES "pubes"
+#define BODYPART_FEATURE_PITS "pits"
+
+// Saved as stable numeric values in body-hair customizer entries.
+#define BODY_HAIR_MATERIAL_HAIR 1
+#define BODY_HAIR_MATERIAL_FUR 2
+#define BODY_HAIR_MATERIAL_FEATHERS 3
+#define BODY_HAIR_MATERIAL_FUZZ 4
+#define BODY_HAIR_MATERIAL_BRAIDS 5
+
+#define RATWOOD_TAUR_TYPES list( \
+	/obj/item/bodypart/taur/lamia, /obj/item/bodypart/taur/lamiastriped, /obj/item/bodypart/taur/fatlamia, \
+	/obj/item/bodypart/taur/mermaid, /obj/item/bodypart/taur/orca, /obj/item/bodypart/taur/tentacle, \
+	/obj/item/bodypart/taur/otie, /obj/item/bodypart/taur/canine, /obj/item/bodypart/taur/venard, \
+	/obj/item/bodypart/taur/drake, /obj/item/bodypart/taur/dragon, /obj/item/bodypart/taur/noodle, \
+	/obj/item/bodypart/taur/horse, /obj/item/bodypart/taur/deer, /obj/item/bodypart/taur/goat, \
+	/obj/item/bodypart/taur/redpanda, /obj/item/bodypart/taur/rat, /obj/item/bodypart/taur/skunk, \
+	/obj/item/bodypart/taur/kitsune, /obj/item/bodypart/taur/feline, /obj/item/bodypart/taur/snep, \
+	/obj/item/bodypart/taur/tiger, /obj/item/bodypart/taur/spider, /obj/item/bodypart/taur/centipede, \
+	/obj/item/bodypart/taur/sloog, /obj/item/bodypart/taur/ant, /obj/item/bodypart/taur/wasp, /obj/item/bodypart/taur/insect)
 
 //flags for requirements for a surgery step
 #define SURGERY_BLOODY (1<<0)

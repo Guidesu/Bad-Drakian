@@ -59,54 +59,54 @@ type FamilyTypeCard = {
 const FAMILY_TYPE_CARDS: FamilyTypeCard[] = [
   {
     value: 'none',
-    title: 'Без семьи',
-    desc: 'Одиночка',
+    title: 'No family',
+    desc: 'Lone wolf',
     icon: 'ban',
     tooltip:
-      'Персонаж не участвует в семейной системе. Никаких авто-матчей, родственников или уведомлений на этот раунд.',
+      'The character does not participate in the family system. No auto-matches, relatives, or notifications for this round.',
   },
   {
     value: 'member',
-    title: 'Участвовать в семье',
-    desc: 'Система сначала присоединит к существующему дому, иначе создаст новый',
+    title: 'Participate in the family',
+    desc: 'The system will first attach you to an existing household, otherwise it will create a new one',
     icon: 'house-chimney-user',
     tooltip:
-      'Система постарается мягко наполнить существующую семью — добавит вас как родственника или супруга по совместимости. Если подходящего дома нет, найдёт партнёра и поможет основать новый дом. Учитываются раса, пол, статус роли и ваше избранное имя.',
+      'The system will try to gently fill an existing family — it will add you as a relative or spouse according to compatibility. If a suitable household is not available, it will find a partner and help establish a new household. Race, gender, role status, and your chosen name are taken into account.',
   },
 ];
 
 const GENDER_OPTIONS: Option<GenderPref>[] = [
-  { value: 'any', label: 'Любой пол' },
-  { value: 'same', label: 'Тот же пол' },
-  { value: 'opposite', label: 'Противоположный' },
+  { value: 'any', label: 'Any gender' },
+  { value: 'same', label: 'Same gender' },
+  { value: 'opposite', label: 'Opposite' },
 ];
 
 const SPECIES_OPTIONS: Option<SpeciesMode>[] = [
-  { value: 'ANY', label: 'Любые виды' },
-  { value: 'SAME_TYPE', label: 'Тот же вид' },
-  { value: 'SPECIFIC_TYPE', label: 'Определённые виды' },
+  { value: 'ANY', label: 'Any species' },
+  { value: 'SAME_TYPE', label: 'Same species' },
+  { value: 'SPECIFIC_TYPE', label: 'Certain species' },
 ];
 
 const ANATOMY_OPTIONS: Option<AnatomyPref>[] = [
-  { value: 0, label: 'Любая' },
-  { value: 1, label: 'Мужская' },
-  { value: 2, label: 'Женская' },
+  { value: 0, label: 'Any' },
+  { value: 1, label: 'Male' },
+  { value: 2, label: 'Female' },
 ];
 
 const POLYGAMY_OPTIONS: Option<PolygamyMode>[] = [
-  { value: 0, label: 'Моногамия' },
-  { value: 1, label: 'Несколько супругов' },
-  { value: 2, label: 'Быть вторым супругом' },
-  { value: 3, label: 'Обе опции' },
+  { value: 0, label: 'Monogamy' },
+  { value: 1, label: 'Multiple spouses' },
+  { value: 2, label: 'Being the second spouse' },
+  { value: 3, label: 'Both options' },
 ];
 
 const RELATIVE_ROLE_OPTIONS: Option<RelativeRole>[] = [
-  { value: 0, label: 'Автоопределение' },
-  { value: 1, label: 'Брат / сестра' },
-  { value: 2, label: 'Родитель' },
-  { value: 3, label: 'Ребёнок' },
-  { value: 4, label: 'Дядя / тётя' },
-  { value: 5, label: 'Супруг' },
+  { value: 0, label: 'Auto-detection' },
+  { value: 1, label: 'Brother / sister' },
+  { value: 2, label: 'Parent' },
+  { value: 3, label: 'Child' },
+  { value: 4, label: 'Uncle / aunt' },
+  { value: 5, label: 'Spouse' },
 ];
 
 function findLabel<T extends string | number>(
@@ -236,7 +236,7 @@ type ParentSpeciesFieldProps = {
 function ParentSpeciesField(props: ParentSpeciesFieldProps) {
   const { label, value, onChange, availableSpecies, open, setOpen, pickerRef } =
     props;
-  const displayValue = value || 'Любая (как у потомка)';
+  const displayValue = value || 'Any (as a descendant)';
   const cls =
     'FamilySettingsPanel__select' +
     (open ? ' FamilySettingsPanel__select--open' : '');
@@ -271,7 +271,7 @@ function ParentSpeciesField(props: ParentSpeciesFieldProps) {
                 onChange('');
                 setOpen(false);
               }}>
-              Любая (как у потомка)
+              Any(like the descendant)
             </div>
             {availableSpecies.map((sp) => {
               const selected = sp === value;
@@ -342,8 +342,7 @@ function RelativeCounter(props: RelativeCounterProps) {
   );
 }
 
-type DonatorRelativesSectionProps = {
-  isDonator: boolean;
+type RandomRelativesSectionProps = {
   maxValue: number;
   siblings: number;
   setSiblings: Dispatch<SetStateAction<number>>;
@@ -351,9 +350,8 @@ type DonatorRelativesSectionProps = {
   setChildCount: Dispatch<SetStateAction<number>>;
 };
 
-function DonatorRelativesSection(props: DonatorRelativesSectionProps) {
+function RandomRelativesSection(props: RandomRelativesSectionProps) {
   const {
-    isDonator,
     maxValue,
     siblings,
     setSiblings,
@@ -369,39 +367,25 @@ function DonatorRelativesSection(props: DonatorRelativesSectionProps) {
           <Icon name="crown" />
         </span>
         <span className="FamilySettingsPanel__donator-title">
-          Случайные родственники (донат)
+            Random relatives
         </span>
-        {!isDonator && (
-          <span className="FamilySettingsPanel__donator-badge">
-            <Icon name="lock" />
-            <span>Доступно с 1-го уровня доната</span>
-          </span>
-        )}
       </div>
-      {!isDonator && (
-        <div
-          className="FamilySettingsPanel__hint"
-          style={{ gridColumn: 'unset' }}>
-          Эта опция доступна донатерам 1-го уровня и выше. Поддержите проект
-          через Boosty, чтобы открыть.
-        </div>
-      )}
       <div className="FamilySettingsPanel__donator-grid">
         <RelativeCounter
-          label="Случайных братьев / сестёр"
+          label="Random brothers / sisters"
           icon="people-group"
           value={siblings}
           setValue={setSiblings}
           max={maxValue}
-          disabled={!isDonator}
+          disabled={false}
         />
         <RelativeCounter
-          label="Случайных детей"
+          label="Random children"
           icon="baby"
           value={childCount}
           setValue={setChildCount}
           max={maxValue}
-          disabled={!isDonator}
+          disabled={false}
         />
       </div>
     </div>
@@ -696,7 +680,7 @@ export const FamilySettingsPanel = () => {
 
   return (
     <Window
-      title="Настройки семьи"
+      title="Family settings"
       width={FAMILY_WINDOW_WIDTH}
       height={FAMILY_WINDOW_HEIGHT}
     >
@@ -708,9 +692,9 @@ export const FamilySettingsPanel = () => {
                 <Icon name="house-chimney-user" />
               </div>
               <div className="FamilySettingsPanel__header-titles">
-                <h2 className="FamilySettingsPanel__title">Настройки семьи</h2>
+                <h2 className="FamilySettingsPanel__title">Family settings</h2>
                 <div className="FamilySettingsPanel__subtitle">
-                  Выберите тип семьи и настройки предпочтений
+                  Select family type and preference settings
                 </div>
               </div>
             </div>
@@ -718,7 +702,7 @@ export const FamilySettingsPanel = () => {
               className="FamilySettingsPanel__close"
               role="button"
               tabIndex={0}
-              title="Закрыть"
+              title="Close"
               onClick={closeFamilyWindow}>
               <Icon name="xmark" />
             </div>
@@ -727,7 +711,7 @@ export const FamilySettingsPanel = () => {
           <div className="FamilySettingsPanel__body">
             {/* TOP PANE — TYPE CARDS (full width) */}
             <div className="FamilySettingsPanel__pane FamilySettingsPanel__pane-top">
-              <h3 className="FamilySettingsPanel__pane-title">Тип семьи</h3>
+              <h3 className="FamilySettingsPanel__pane-title">Family type</h3>
               <div className="FamilySettingsPanel__type-grid">
                 {FAMILY_TYPE_CARDS.map((card) => {
                   const disabled = false;
@@ -760,7 +744,7 @@ export const FamilySettingsPanel = () => {
                   <span className="FamilySettingsPanel__pane-title-icon">
                     <Icon name="gear" />
                   </span>
-                  <span>Предпочтения</span>
+                  <span>Preferences</span>
                 </button>
                 <button
                   type="button"
@@ -771,11 +755,11 @@ export const FamilySettingsPanel = () => {
                       : '')
                   }
                   onClick={() => setActiveTab('parents')}
-                  title="NPC-родители появятся в семейном древе, если вы станете основателем нового дома.">
+                  title="NPC parents will appear in the family tree if you become the founder of a new house.">
                   <span className="FamilySettingsPanel__pane-title-icon">
                     <Icon name="user-group" />
                   </span>
-                  <span>Родители (NPC)</span>
+                  <span>Parents(NPC)</span>
                 </button>
               </div>
 
@@ -783,15 +767,15 @@ export const FamilySettingsPanel = () => {
                 <div
                   className="FamilySettingsPanel__hint"
                   style={{ gridColumn: 'unset' }}>
-                  Персонаж не участвует в семейной системе. Выберите другой тип
-                  семьи, чтобы открыть настройки.
+                  The character does not participate in the family system. Select another family type
+                  to unlock settings.
                 </div>
               )}
 
               {showPreferences && activeTab === 'preferences' && (
                 <div className="FamilySettingsPanel__form">
                   <SelectField
-                    label="Гендерные предпочтения"
+                    label="Gender preferences"
                     icon="venus-mars"
                     value={genderPreference}
                     options={GENDER_OPTIONS}
@@ -799,7 +783,7 @@ export const FamilySettingsPanel = () => {
                   />
 
                   <SelectField
-                    label="Режим вида/расы"
+                    label="View/race mode"
                     icon="paw"
                     value={speciesPreferenceMode}
                     options={SPECIES_OPTIONS}
@@ -812,7 +796,7 @@ export const FamilySettingsPanel = () => {
                       ref={speciesPickerRef}
                       className="FamilySettingsPanel__field FamilySettingsPanel__field--species">
                       <div className="FamilySettingsPanel__field-label">
-                        Предпочтительные типы видов
+                        Preferred species types
                       </div>
                       <div className="FamilySettingsPanel__field-input">
                         <span className="FamilySettingsPanel__field-icon">
@@ -823,7 +807,7 @@ export const FamilySettingsPanel = () => {
                           onClick={() => setSpeciesPickerOpen((v) => !v)}>
                           {preferredSpeciesTypes.length === 0 ? (
                             <span className="FamilySettingsPanel__chip-placeholder">
-                              Выберите виды...
+                              Select species...
                             </span>
                           ) : (
                             preferredSpeciesTypes.map((sp) => (
@@ -878,7 +862,7 @@ export const FamilySettingsPanel = () => {
                   ) : (
                     <div className="FamilySettingsPanel__field">
                       <div className="FamilySettingsPanel__field-label">
-                        Предпочтительные типы видов
+                        Preferred species types
                       </div>
                       <div
                         className="FamilySettingsPanel__field-input"
@@ -892,14 +876,14 @@ export const FamilySettingsPanel = () => {
                             color: '#5f6578',
                             fontSize: 13,
                           }}>
-                          Включите режим «Определённые виды»
+                          Enable mode«Certain species»
                         </div>
                       </div>
                     </div>
                   )}
 
                   <SelectField
-                    label="Предпочтительная анатомия"
+                    label="Preferred anatomy"
                     icon="person"
                     value={preferredSpeciesAnatomy}
                     options={ANATOMY_OPTIONS}
@@ -908,7 +892,7 @@ export const FamilySettingsPanel = () => {
 
                   <div className="FamilySettingsPanel__field">
                     <div className="FamilySettingsPanel__field-label">
-                      Любимое имя (цель семьи)
+                      Favorite name(family goal)
                     </div>
                     <div
                       className="FamilySettingsPanel__field-input"
@@ -918,7 +902,7 @@ export const FamilySettingsPanel = () => {
                       </span>
                       <input
                         type="text"
-                        placeholder="Введите имя..."
+                        placeholder="Enter name..."
                         value={favoriteName}
                         onChange={(e) => setFavoriteName(e.target.value)}
                       />
@@ -926,7 +910,7 @@ export const FamilySettingsPanel = () => {
                   </div>
 
                   <SelectField
-                    label="Режим полигамии"
+                    label="Polygamy mode"
                     icon="heart-crack"
                     value={polygamyMode}
                     options={POLYGAMY_OPTIONS}
@@ -935,7 +919,7 @@ export const FamilySettingsPanel = () => {
                   />
 
                   <SelectField
-                    label="Желаемая роль родственника"
+                    label="Desired relative role"
                     icon="user"
                     value={desiredRelativeRole}
                     options={relativeRoleOptions}
@@ -945,13 +929,13 @@ export const FamilySettingsPanel = () => {
 
                   <div className="FamilySettingsPanel__field">
                     <div className="FamilySettingsPanel__field-label">
-                      Дополнительные опции
+                      Additional options
                     </div>
                     <div className="FamilySettingsPanel__checkbox-group">
                       <CheckboxRow
                         icon="ring"
-                        label="Разрешить браки с низким статусом"
-                        tooltip="Низкий статус: бандиты, вретчи, банщики, бродяги, убийцы, лунатики, нищие и похожие роли."
+                        label="Allow low-status marriages"
+                        tooltip="Low status: bandits, liars, bathhouse attendants, vagabonds, murderers, lunatics, beggars, and similar roles."
                         checked={allowLowStatusMarriage === 1}
                         onToggle={() =>
                           setAllowLowStatusMarriage(
@@ -961,7 +945,7 @@ export const FamilySettingsPanel = () => {
                       />
                       <CheckboxRow
                         icon="people-roof"
-                        label="Разрешить родственников в семье"
+                        label="Allow relatives in the family"
                         checked={allowRelativesInFamily === 1}
                         onToggle={() =>
                           setAllowRelativesInFamily(
@@ -971,8 +955,8 @@ export const FamilySettingsPanel = () => {
                       />
                       <CheckboxRow
                         icon="eye"
-                        label="Знать свою судьбу"
-                        tooltip="Включено: при матче вы видите расу, пол и анатомию пары; нажав «Нет», вы лишь блокируете эту пару на раунд. Выключено: «Нет» автоматически выключит вас из семейной системы."
+                        label="Know your fate"
+                        tooltip="Enabled: on a match, you see the race, gender, and anatomy of the pair; by clicking 'No', you only block this pair for the round. Disabled: 'No' will automatically remove you from the family system."
                         checked={knowYourFate === 1}
                         onToggle={() =>
                           setKnowYourFate(knowYourFate === 1 ? 0 : 1)
@@ -988,14 +972,14 @@ export const FamilySettingsPanel = () => {
                   <div
                     className="FamilySettingsPanel__hint"
                     style={{ gridColumn: '1 / -1' }}>
-                    Эти NPC появятся в вашем семейном древе, если вы станете
-                    основателем нового дома. Если указаны оба родителя — будет
-                    случайно выбран только один. Если вы влились в чужой дом,
-                    ваши NPC-родители НЕ появятся в нём.
+                    TheseNPC will appear in your family tree if you become
+                    the founder of a new house. If both parents are specified —
+                    only one will be randomly selected. If you joined someone else's house,
+                    yourNPC-parents will NOT appear in it.
                   </div>
                   <div className="FamilySettingsPanel__field">
                     <div className="FamilySettingsPanel__field-label">
-                      Имя отца
+                      Father's name
                     </div>
                     <div
                       className="FamilySettingsPanel__field-input"
@@ -1005,14 +989,14 @@ export const FamilySettingsPanel = () => {
                       </span>
                       <input
                         type="text"
-                        placeholder="Оставьте пустым, если не нужен..."
+                        placeholder="Leave empty if not needed..."
                         value={fatherName}
                         onChange={(e) => setFatherName(e.target.value)}
                       />
                     </div>
                   </div>
                   <ParentSpeciesField
-                    label="Раса отца"
+                    label="Father's race"
                     value={fatherSpecies}
                     onChange={setFatherSpecies}
                     availableSpecies={availableSpecies}
@@ -1022,7 +1006,7 @@ export const FamilySettingsPanel = () => {
                   />
                   <div className="FamilySettingsPanel__field">
                     <div className="FamilySettingsPanel__field-label">
-                      Имя матери
+                      Mother's name
                     </div>
                     <div
                       className="FamilySettingsPanel__field-input"
@@ -1032,14 +1016,14 @@ export const FamilySettingsPanel = () => {
                       </span>
                       <input
                         type="text"
-                        placeholder="Оставьте пустым, если не нужна..."
+                        placeholder="Leave empty if not needed..."
                         value={motherName}
                         onChange={(e) => setMotherName(e.target.value)}
                       />
                     </div>
                   </div>
                   <ParentSpeciesField
-                    label="Раса матери"
+                    label="Mother's race"
                     value={motherSpecies}
                     onChange={setMotherSpecies}
                     availableSpecies={availableSpecies}
@@ -1048,8 +1032,7 @@ export const FamilySettingsPanel = () => {
                     pickerRef={motherSpeciesPickerRef}
                   />
 
-                  <DonatorRelativesSection
-                    isDonator={(settings?.isDonator ?? 0) === 1}
+                  <RandomRelativesSection
                     maxValue={settings?.maxRandomRelatives ?? 3}
                     siblings={randomSiblings}
                     setSiblings={setRandomSiblings}
@@ -1066,7 +1049,7 @@ export const FamilySettingsPanel = () => {
               <button
                 type="button"
                 className="FamilySettingsPanel__btn FamilySettingsPanel__btn--icon-only"
-                title="Сбросить к значениям по умолчанию"
+                title="Reset to default values"
                 onClick={handleResetToDefaults}>
                 <Icon name="arrows-rotate" />
               </button>
@@ -1077,14 +1060,14 @@ export const FamilySettingsPanel = () => {
                 className="FamilySettingsPanel__btn FamilySettingsPanel__btn--secondary"
                 onClick={handleCancel}>
                 <Icon name="xmark" />
-                <span>Отмена</span>
+                <span>Cancel</span>
               </button>
               <button
                 type="button"
                 className="FamilySettingsPanel__btn FamilySettingsPanel__btn--primary"
                 onClick={handleSave}>
                 <Icon name="floppy-disk" />
-                <span>Сохранить</span>
+                <span>Save</span>
               </button>
             </div>
           </div>

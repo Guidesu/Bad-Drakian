@@ -8,10 +8,10 @@
 	allowed_sexes = list(MALE, FEMALE)
 	forbidden_races = list(RACES_CONSTRUCT RACES_DESPISED RACES_OOZE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
-	tutorial = "Ты — один из самых опытных воинов Султанской гвардии, ведущий янычар в поддержании порядка и борьбе с угрозами, \
-        которые еще не достигли внимания Дворца. \
-        Следи за теми, кто находится под твоим командованием, и заполняй пробелы, которые оставляют после себя Фарисы. \
-        Повинуйся приказам своего Мушира и Султана."
+	tutorial = "You are one of the most experienced warriors of the Sultan's Guard, leading the Janissaries in maintaining order and fighting threats, \
+        who have not yet attracted the attention of the Palace.\
+        Keep an eye on those under your command and fill the gaps left by the Farises.\
+        Obey the orders of your Mushir and Sultan."
 	display_order = JDO_ROYALSERGEANT
 	round_contrib_points = 3
 

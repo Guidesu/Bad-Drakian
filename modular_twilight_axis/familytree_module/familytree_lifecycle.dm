@@ -68,15 +68,15 @@
 /datum/controller/subsystem/familytree/proc/do_ask_monarch_noble_permission(mob/living/carbon/human/monarch)
 	if(!monarch?.client)
 		return
-	var/result = tgui_alert(monarch, "Могут ли другие дворяне (рыцари, советники и прочие с благородной кровью) быть частью вашей семьи?", "Герцогская семья", list("Да", "Нет"))
+	var/result = tgui_alert(monarch, "Can other nobles (knights, advisors, and others with noble blood) be part of your family?", "Ducal family", list("Yes", "No"))
 
 	if(!monarch || QDELETED(monarch))
 		return
 
-	if(result == "Да")
+	if(result == "Yes")
 		allow_nobles_in_ruling_family = TRUE
 		ftlog("NOBLE DYNASTY: [monarch.real_name] allowed nobles in ruling family")
-		to_chat(monarch, span_notice("Дворяне с благородной кровью теперь могут стать частью вашей семьи."))
+		to_chat(monarch, span_notice("Nobles with noble blood can now become part of your family."))
 		if(monarch?.client?.prefs)
 			current_royal_partner_owner = null
 			current_royal_partner_snapshot = list()
@@ -132,7 +132,7 @@
 
 	ftlog("NOBLE DYNASTY: [H.real_name] added to ruling family")
 	familytree_admin_log_house_assignment(H, ruling_family, "joined ruling family through noble dynasty", monarch)
-	to_chat(H, span_love("Вы были приняты в герцогскую семью!"))
+	to_chat(H, span_love("You have been accepted into the ducal family!"))
 	stop_tracking_human(H, "assigned to ruling family as noble")
 
 /datum/controller/subsystem/familytree/proc/notify_family_head_departure(mob/living/carbon/human/departed)
@@ -153,9 +153,9 @@
 
 	var/relation = head.family_member_datum?.GetRelationshipTo(departed_member)
 	if(!relation)
-		relation = "родственник"
+		relation = "relative"
 
-	to_chat(head, span_warning("Ваш [relation] [departed.real_name] покинул эти земли. Вы чувствуете тревогу."))
+	to_chat(head, span_warning("Your [relation] [departed.real_name] has left these lands. You feel anxious."))
 	ftlog("NOTIFY: [head.real_name] notified about [departed.real_name] departure ([relation])")
 
 /datum/controller/subsystem/familytree/proc/offer_setspouse_reset(mob/living/carbon/human/H, status)
@@ -166,7 +166,7 @@
 	var/offered_target = familytree_get_target_name(H)
 	if(!offered_target || !length(offered_target))
 		return
-	var/result = tgui_alert(H, "Вы уже [DisplayTimeText(FAMILYTREE_SETSPOUSE_TIMEOUT)] ожидаете фаворита '[offered_target]', но он не найден.\n\nХотите сбросить предпочтение по нику и искать пару по текущим настройкам?", "Семейная система", list("Да, сбросить", "Нет, продолжить ждать"), 60 SECONDS)
+	var/result = tgui_alert(H, "You are already [DisplayTimeText(FAMILYTREE_SETSPOUSE_TIMEOUT)] waiting for the favorite '[offered_target]', but it was not found.\n\nDo you want to reset the preference by nickname and search for a pair with the current settings?", "Family system", list("Yes, reset", "No, continue waiting"), 60 SECONDS)
 
 	if(!H || QDELETED(H))
 		return
@@ -182,7 +182,7 @@
 			addtimer(CALLBACK(src, PROC_REF(run_local_assignment), H, H.familytree_pref), 1 SECONDS)
 		return
 
-	if(result == "Да, сбросить")
+	if(result == "Yes, reset")
 		ftlog("SETSPOUSE RESET: [H.real_name] cleared setspouse '[offered_target]'")
 		H.setspouse = ""
 		var/datum/familytree_prefs/round_prefs = familytree_get_round_prefs(H, FALSE)
@@ -219,7 +219,7 @@
 	var/confirm_type = "family"
 	var/relation_text
 	var/body = ""
-	var/button_text = "Система нашла для вас семейную связь!"
+	var/button_text = "The system has found a family connection for you!"
 	var/is_person_a = FALSE
 	var/is_mutual = FALSE
 	var/resolved = FALSE
@@ -275,7 +275,7 @@
 
 /datum/family_confirm_prompt/ui_data(mob/user)
 	return list(
-		"title" = "Семейная система",
+		"title" = "Family system",
 		"message" = body,
 		"mutual" = is_mutual,
 		"openCount" = open_count,
@@ -366,7 +366,7 @@
 		current_person.familytree_confirm_prompt = null
 	SSfamilytree.ftlog("CONFIRM TIMEOUT: [current_person.real_name] type=[confirm_type] no explicit answer")
 	if(current_person.client && !current_person.familytree_opted_out && !current_person.family_datum && !current_person.spouse_mob && familytree_pref_enabled(current_person.familytree_pref))
-		to_chat(current_person, span_warning("Предложение семьи истекло без ответа. Система продолжит поиск."))
+		to_chat(current_person, span_warning("The family proposal expired without a response. The system will continue searching."))
 		SSfamilytree.try_queue_assignment(current_person)
 	qdel(src)
 
@@ -480,11 +480,11 @@
 		SSfamilytree.pause_familytree_human(idler, "disconnected during confirmation")
 		return
 	if(other && SSfamilytree.familytree_pair_offer_limit_reached(idler, other))
-		to_chat(idler, span_warning("Вы не ответили на предложение, и оно истекло. Лимит предложений с этим персонажем исчерпан, эта пара больше не будет предлагаться в текущем раунде."))
+		to_chat(idler, span_warning("You did not respond to the proposal, and it expired. The limit of proposals with this character has been reached; this pair will no longer be offered in the current round."))
 	else if(other && SSfamilytree.familytree_record_timeout_block(idler, other))
-		to_chat(idler, span_warning("Вы не ответили на предложение, и оно истекло. Эта пара будет отложена на несколько попыток, но система продолжит поиск."))
+		to_chat(idler, span_warning("You did not respond to the offer, and it has expired. This pair will be postponed for several attempts, but the system will continue searching."))
 	else
-		to_chat(idler, span_warning("Вы не ответили на предложение, и оно истекло. Система продолжит поиск."))
+		to_chat(idler, span_warning("You did not respond to the offer, and it has expired. The system will continue searching."))
 	SSfamilytree.try_queue_assignment(idler)
 
 /datum/family_confirm_session/proc/force_timeout()
@@ -501,7 +501,7 @@
 		return
 	SSfamilytree.ftlog("MUTUAL CONFIRM: [person.real_name] cancelled (other side refused) type=[confirm_type]")
 	if(person.client)
-		to_chat(person, span_warning("Другая сторона отказалась от вступления в семью. Ваш запрос отменён. Система попробует найти вам новую пару."))
+		to_chat(person, span_warning("The other party declined to join the family. Your request has been canceled. The system will try to find you a new match."))
 	if(person.familytree_assignment_scheduled)
 		return
 	if(!person.familytree_opted_out && !person.family_datum && !person.spouse_mob && familytree_pref_enabled(person.familytree_pref))
@@ -541,27 +541,27 @@
 /datum/controller/subsystem/familytree/proc/familytree_confirmation_found_text(confirm_type, mob/living/carbon/human/person, mob/living/carbon/human/partner = null, mutual = FALSE, relation_text = null)
 	var/base_text
 	if(confirm_type == "targeted_spouse" && partner)
-		base_text = "Ваша судьба сошлась с [partner.real_name]!"
+		base_text = "Your destiny has matched with [partner.real_name]!"
 	else if(confirm_type == "spouse" || confirm_type == "targeted_spouse")
-		base_text = "Вам нашли пару!"
+		base_text = "You have been matched!"
 	else if(confirm_type == "sibling_house")
-		base_text = mutual ? "Вам предлагают основать сиблинговый дом!" : "Вам предлагают основать сиблинговый дом!"
+		base_text = mutual ? "You are invited to establish a sibling house!" : "You are invited to establish a sibling house!"
 	else if(confirm_type == "family")
-		base_text = mutual ? "Система нашла для вас семейную связь!" : "Система нашла для вас семью!"
+		base_text = mutual ? "The system has found a family connection for you!" : "The system has found a family for you!"
 	else if(confirm_type == "house")
-		base_text = "Система нашла для вас семью!"
+		base_text = "The system has found a family for you!"
 	else
-		base_text = "Система нашла для вас семью!"
+		base_text = "The system has found a family for you!"
 	if(relation_text)
-		base_text += "\nВаша роль: [relation_text]"
+		base_text += "\nYour role: [relation_text]"
 	if(person?.know_your_fate && partner)
 		base_text += familytree_format_fate_reveal(partner)
 	return base_text
 
 /datum/controller/subsystem/familytree/proc/familytree_confirmation_prompt_body(found_text, mob/living/carbon/human/person, mob/living/carbon/human/partner)
 	if(person?.know_your_fate && partner)
-		return "[found_text]\n\nХотите продолжить?\n\nЯвный отказ заблокирует эту пару на текущий раунд."
-	return "[found_text]\n\nХотите продолжить?\n\nТолько кнопка «Нет» считается отказом."
+		return "[found_text]\n\nDo you want to continue?\n\nA clear refusal will block this pair for the current round."
+	return "[found_text]\n\nDo you want to continue?\n\nOnly the 'No' button is considered a refusal."
 
 /datum/controller/subsystem/familytree/proc/familytree_record_blocked_pair(mob/living/carbon/human/refuser, mob/living/carbon/human/other)
 	if(!refuser || !other || !other.ckey)

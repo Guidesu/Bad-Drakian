@@ -113,8 +113,11 @@
 	#endif
 
 	if(!may_bang)
-		to_chat(user, "<span class='warning'>[src] dosn't wish to be touched.</span>")
+		to_chat(user, "<span class='warning'>[src] does not permit ERP interactions.</span>")
 		to_chat(src, "<span class='warning'>[user] failed to touch you.</span>")
+		return
+	if(!human_user.client?.prefs?.sexable)
+		to_chat(user, span_warning("Enable ERP interactions in Content & Consent Toggles first."))
 		return
 
 	var/datum/erp_controller/C = SSerp.get_or_create_controller(human_user)

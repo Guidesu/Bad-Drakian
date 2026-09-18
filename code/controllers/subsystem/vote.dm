@@ -62,7 +62,7 @@ SUBSYSTEM_DEF(vote)
 /datum/controller/subsystem/vote/proc/show_vote(client/C)
 	if(!C)
 		return
-	var/datum/browser/noclose/client_popup = new(C, "vote", "Голосование", nwidth = vote_width, nheight = vote_height)
+	var/datum/browser/noclose/client_popup = new(C, "vote", "Voting", nwidth = vote_width, nheight = vote_height)
 	client_popup.set_window_options("can_close=0")
 	client_popup.width = vote_width
 	client_popup.height = vote_height
@@ -205,11 +205,11 @@ SUBSYSTEM_DEF(vote)
 /datum/controller/subsystem/vote/proc/get_storyteller_vote_pool_display_name(pool_name)
 	switch(pool_name)
 		if("Psydon")
-			return "Псайдон"
+			return "Psydon"
 		if("Ascendants")
-			return "Презренные"
+			return "Despicable"
 		if("The Ten")
-			return "Десять"
+			return "Ten"
 	return pool_name
 
 /datum/controller/subsystem/vote/proc/get_storyteller_pool_totals()
@@ -307,7 +307,7 @@ SUBSYSTEM_DEF(vote)
 		var/choice_text = choices[option_index]
 		pool_votes += choices[choice_text] || 0
 	var/dat = "<div style='border:1px solid [theme["border"]];border-radius:8px;padding:7px 8px;background:[theme["background"]];min-height:100%;box-sizing:border-box;'>"
-	dat += "<div style='font-size:0.96rem;font-weight:bold;margin-bottom:6px;color:[theme["title"]];'>[pool_display_name] <span style='font-size:0.76rem;color:[theme["meta"]];font-weight:normal;'>(Вес: [format_vote_power(pool_votes)])</span></div>"
+	dat += "<div style='font-size:0.96rem;font-weight:bold;margin-bottom:6px;color:[theme["title"]];'>[pool_display_name] <span style='font-size:0.76rem;color:[theme["meta"]];font-weight:normal;'>(Weight: [format_vote_power(pool_votes)])</span></div>"
 	dat += "<div style='display:grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap:6px;'>"
 	for(var/index in choice_indices)
 		var/option_index = text2num(index)
@@ -316,14 +316,14 @@ SUBSYSTEM_DEF(vote)
 		var/votes = choices[choice_text] || 0
 		var/is_selected = (selected_option == choice_text)
 		var/selected_color = theme["selection_color"]
-		var/selected_text = is_selected ? " <span style='color:[selected_color];font-size:0.76rem;font-weight:bold;'>(выбрано)</span>" : ""
+		var/selected_text = is_selected ? "<span style='color:[selected_color];font-size:0.76rem;font-weight:bold;'>(selected)</span>" : ""
 		var/entry = "<div style='padding:5px 6px;border-radius:6px;background:[theme["entry"]];min-width:0;'>"
 		var/details_link = "<a href='?src=[REF(SSgamemode)];storyboy_details=[storyteller_type]' style='display:inline-block;margin-left:4px;color:[theme["meta"]];font-size:0.75rem;text-decoration:none;'>(?)</a>"
 		var/threat = SSgamemode.preset_threat_tags(storyteller_type, theme["border"])
 		if(can_vote)
-			entry += "<div><a href='?src=[REF(src)];vote=[option_index]' style='font-size:0.9rem;color:[theme["link"]];font-weight:bold;'>[choice_text]</a>[details_link][selected_text] <span style='color:[theme["meta"]];font-size:0.76rem;'>[format_vote_power(votes)] вес</span></div>[threat]"
+			entry += "<div><a href='?src=[REF(src)];vote=[option_index]' style='font-size:0.9rem;color:[theme["link"]];font-weight:bold;'>[choice_text]</a>[details_link][selected_text] <span style='color:[theme["meta"]];font-size:0.76rem;'>[format_vote_power(votes)] weight</span></div>[threat]"
 		else
-			entry += "<div><span style='font-size:0.9rem;font-weight:bold;'>[choice_text]</span>[details_link][selected_text] <span style='color:[theme["meta"]];font-size:0.76rem;'>[format_vote_power(votes)] вес</span></div>[threat]"
+			entry += "<div><span style='font-size:0.9rem;font-weight:bold;'>[choice_text]</span>[details_link][selected_text] <span style='color:[theme["meta"]];font-size:0.76rem;'>[format_vote_power(votes)] weight</span></div>[threat]"
 		entry += "</div>"
 		dat += entry
 	dat += "</div></div>"
@@ -418,7 +418,7 @@ SUBSYSTEM_DEF(vote)
 		if(question)
 			text += "<b>[question]</b>"
 		else if(mode == "storyteller")
-			text += "<b>Голосование: Рассказчик</b>"
+			text += "<b>Vote: Narrator</b>"
 		else
 			text += "<b>[capitalize(mode)] Vote</b>"
 		for(var/i=1,i<=choices.len,i++)
@@ -429,13 +429,13 @@ SUBSYSTEM_DEF(vote)
 		if(mode == "storyteller")
 			var/list/pool_totals = get_storyteller_pool_totals()
 			if(pool_totals.len)
-				text += "\n<hr><b>Итоги блоков:</b>"
+				text += "\n<hr><b>Block results:</b>"
 				for(var/pool_name in pool_totals)
 					text += "\n<b>[get_storyteller_vote_pool_display_name(pool_name)]:</b> [format_vote_power(pool_totals[pool_name])]"
 		if(mode != "custom")
 			if(winners.len > 1)
 				if(mode == "storyteller")
-					text += "\n<b>Ничья между:</b>"
+					text += "\n<b>Draw between:</b>"
 				else
 					text = "\n<b>Vote Tied Between:</b>"
 				for(var/option in winners)
@@ -444,7 +444,7 @@ SUBSYSTEM_DEF(vote)
 					winners = list("End Round")
 			. = pick(winners)
 			if(mode == "storyteller")
-				text += "\n<b>Итог голосования: [.]</b>"
+				text += "\n<b>Voting result: [.]</b>"
 			else
 				text += "\n<b>Vote Result: [.]</b>"
 		else
@@ -454,7 +454,7 @@ SUBSYSTEM_DEF(vote)
 			. = "End Round"
 			text += "\n<b>Vote Result: [.]</b>"
 		else if(mode == "storyteller")
-			text += "<b>Итог голосования: нет результата, голосов не было.</b>"
+			text += "<b>Voting result: no result, there were no votes.</b>"
 		else
 			text += "<b>Vote Result: Inconclusive - No Votes!</b>"
 	log_vote(text)
@@ -784,7 +784,7 @@ SUBSYSTEM_DEF(vote)
 				SEND_SOUND(M, vote_alert)
 		if(mode == "storyteller")
 			save_storyteller_vote_log(null, "active")
-			to_world("\n<font color='purple'><b>[text]</b>\nНажмите <a href='?src=[REF(src)]'>сюда</a>, чтобы проголосовать за рассказчика.\nНа голосование отведено [DisplayTimeText(vp)].</font>")
+			to_world("\n<font color='purple'><b>[text]</b>\nClick <a href='?src=[REF(src)]'>here</a> to vote for the narrator.\nVoting is reserved [DisplayTimeText(vp)].</font>")
 		else
 			to_world("\n<font color='purple'><b>[text]</b>\nClick <a href='?src=[REF(src)]'>here</a> to place your vote.\nYou have [DisplayTimeText(vp)] to vote.</font>")
 		for(var/client/C in GLOB.clients)
@@ -804,7 +804,7 @@ SUBSYSTEM_DEF(vote)
 		text += "\n[question]"
 	var/remaining_time = time_remaining * 10
 	if(mode == "storyteller")
-		to_chat(C, "\n<font color='purple'><b>[text]</b>\nНажмите <a href='?src=[REF(src)]'>сюда</a>, чтобы проголосовать за рассказчика.\nОсталось [DisplayTimeText(remaining_time)].</font>")
+		to_chat(C, "\n<font color='purple'><b>[text]</b>\nClick <a href='?src=[REF(src)]'>here</a> to vote for narrator.\nRemaining [DisplayTimeText(remaining_time)].</font>")
 	else
 		to_chat(C, "\n<font color='purple'><b>[text]</b>\nClick <a href='?src=[REF(src)]'>here</a> to place your vote.\nYou have [DisplayTimeText(remaining_time)] to vote.</font>")
 	if(!isliving(C.mob))
@@ -825,22 +825,22 @@ SUBSYSTEM_DEF(vote)
 		if(question)
 			. += "<h2>Vote: '[question]'</h2>"
 		else if(mode == "storyteller")
-			. += "<h2>Голосование: Рассказчик</h2>"
+			. += "<h2>Voting: Narrator</h2>"
 		else
 			. += "<h2>Vote: [capitalize(mode)]</h2>"
-		. += "[mode == "storyteller" ? "Осталось" : "Time Left"]: [time_remaining] s<hr>"
+		. += "[mode == "storyteller" ? "Remaining" : "Time Left"]: [time_remaining] s<hr>"
 		var/can_vote = can_client_vote(C)
 		if(!can_vote && istype(C.mob, /mob/dead/new_player))
 			. += "<div style='color:#e06b75;font-weight:bold;margin-bottom:6px;'>(READY UP TO VOTE)</div>"
 		if(mode == "storyteller")
 			if(!length(storyteller_vote_log))
 				load_storyteller_vote_log()
-			var/pool_text = "Нажмите на (?) для получения описания режима. Раундстартовые крупные антагонисты требуют минимум [HARD_ANTAG_MIN_POP] игроков. Победивший блок режимов будет исключён из голосования в следующем раунде."
+			var/pool_text = "Click on (?) for a description of the mode. Round start major antagonists require a minimum of [HARD_ANTAG_MIN_POP] players. The winning mode block will be eliminated from voting in the next round."
 			. += "<div style='color:#992414;font-size:0.9rem;margin-bottom:6px;'>[pool_text]</div>"
 			. += render_storyteller_choices(can_vote, C)
 		else
 			// if(mode == "map")
-			// 	. += "<div style='color:#5a9f54;font-size:0.95rem;margin-bottom:6px;'>Каждая карта копит свой бонус отдельно: первый проигрыш даёт +20% к весу голоса, второй +10%, третий и последующие +5%. Победившая карта сбрасывает только свой бонус до x1.</div>"
+			// 	. += "<div style='color:#5a9f54;font-size:0.95rem;margin-bottom:6px;'>Each card accumulates its bonus separately: the first loss gives +20% to the weight of the vote, the second +10%, third and subsequent +5%. The winning card only resets its bonus to x1.</div>"
 			. += "<ul>"
 			var/selected_option = vote_selections[C.ckey]
 			for(var/i=1,i<=choices.len,i++)
@@ -857,7 +857,7 @@ SUBSYSTEM_DEF(vote)
 			. += "</ul>"
 		. += "<hr>"
 		if(admin)
-			. += "(<a href='?src=[REF(src)];vote=cancel'>[mode == "storyteller" ? "Отменить голосование" : "Cancel Vote"]</a>) "
+			. += "(<a href='?src=[REF(src)];vote=cancel'>[mode == "storyteller" ? "Cancel vote" : "Cancel Vote"]</a>) "
 	else
 		. += "<h2>Start a vote:</h2><hr><ul><li>"
 		//restart
@@ -893,7 +893,7 @@ SUBSYSTEM_DEF(vote)
 		if(trialmin)
 			. += "<li><a href='?src=[REF(src)];vote=custom'>Custom</a></li>"
 		. += "</ul><hr>"
-	. += "<a href='?src=[REF(src)];vote=close' style='position:absolute;top:8px;right:18px;padding:3px 8px;border:1px solid #6e2b33;border-radius:999px;background:rgba(18,12,14,0.96);color:#e06b75;font-size:0.8rem;font-weight:bold;text-decoration:none;line-height:1.2;'>Закрыть</a>"
+	. += "<a href='?src=[REF(src)];vote=close' style='position:absolute;top:8px;right:18px;padding:3px 8px;border:1px solid #6e2b33;border-radius:999px;background:rgba(18,12,14,0.96);color:#e06b75;font-size:0.8rem;font-weight:bold;text-decoration:none;line-height:1.2;'>Close</a>"
 	return .
 
 /datum/controller/subsystem/vote/Topic(href,href_list[],hsrc)

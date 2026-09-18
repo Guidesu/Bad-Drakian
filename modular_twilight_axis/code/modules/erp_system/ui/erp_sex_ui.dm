@@ -124,7 +124,7 @@
 /datum/erp_sex_ui/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, ui_key(), "Утолить желания")
+		ui = new(user, src, ui_key(), "Satisfy desires")
 		ui.open()
 
 /datum/erp_sex_ui/ui_data(mob/user)

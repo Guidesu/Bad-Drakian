@@ -10,10 +10,10 @@
 	job_traits = list(TRAIT_STEELHEARTED, TRAIT_GUARDSMAN, TRAIT_MEDIUMARMOR, TRAIT_XENOPHOBIC, TRAIT_NOBLE)
 	advclass_cat_rolls = list(CTAG_SLAVEMASTER = 2)
 
-	tutorial = "Твоя рука карает кнутом, дабы держать чернь в узде, и лишь твоя воля заставляет ленивых рабов трудиться на благо Султана. \
-        В цитадели тебе отведены богатые покои, но твой истинный дом — это невольничий рынок и зиндан. \
-        Ты ловишь беглых абдов, принуждаешь к труду нерадивых и следишь, чтобы ни один прикованный не помышлял о свободе. \
-        Проверяй зинданы: там всегда найдутся те, кого стоит заставить отрабатывать свой долг."
+	tutorial = "Your hand punishes with a whip in order to keep the mob in line, and only your will forces lazy slaves to work for the benefit of the Sultan. \
+        In the citadel, you are given luxurious quarters, but your true home is the slave market and the zindan.\
+        You catch runaway abds, force the negligent to work, and ensure that no chained person even thinks of freedom.\
+        Check the zindans: there will always be those who need to be made to fulfill their duty."
 
 	announce_latejoin = FALSE
 	outfit = /datum/outfit/job/roguetown/slavemaster
@@ -63,10 +63,10 @@
 
 /datum/advclass/slavemaster
 	name = "Slavemaster"
-	tutorial = "Твоя рука карает кнутом, дабы держать чернь в узде, и лишь твоя воля заставляет ленивых рабов трудиться на благо Султана. \
-        В цитадели тебе отведены богатые покои, но твой истинный дом — это невольничий рынок и зиндан. \
-        Ты ловишь беглых абдов, принуждаешь к труду нерадивых и следишь, чтобы ни один прикованный не помышлял о свободе. \
-        Проверяй зинданы: там всегда найдутся те, кого стоит заставить отрабатывать свой долг."
+	tutorial = "Your hand punishes with a whip in order to keep the mob in line, and only your will forces lazy slaves to work for the benefit of the Sultan. \
+        In the citadel, you are given luxurious quarters, but your true home is the slave market and the zindan.\
+        You catch runaway abds, force the negligent to work, and ensure that no chained person even thinks of freedom.\
+        Check the zindans: there will always be those who need to be made to fulfill their duty."
 	outfit = /datum/outfit/job/roguetown/slavemaster/base
 
 	category_tags = list(CTAG_SLAVEMASTER)

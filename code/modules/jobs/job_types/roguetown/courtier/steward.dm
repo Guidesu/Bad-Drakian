@@ -9,7 +9,7 @@
 	forbidden_races = list(RACES_CONSTRUCT RACES_DESPISED RACES_OOZE)
 	allowed_sexes = list(MALE, FEMALE)
 	display_order = JDO_STEWARD
-	tutorial = "Coin, Coin, Coin! Oh beautiful coin: You're addicted to it, and you hold the position as the Grand Duke's personal treasurer of both coin and information. You know the power silver and gold has on a man's mortal soul, and you know just what lengths they'll go to in order to get even more. Keep your festering economy alive- for it is the only thing you can weigh any trust into anymore."
+	tutorial = "Coin, coin, coin. You serve as the sovereign ruler's treasurer, guarding both wealth and information. You understand the hold that silver and gold have upon mortal souls—and how far people will go to acquire more. Keep the realm's economy alive; it may be the only thing you still trust."
 	outfit = /datum/outfit/job/roguetown/steward
 	give_bank_account = TRUE
 	noble_income = 16
@@ -33,7 +33,7 @@
 
 /datum/advclass/steward
 	name = "Steward"
-	tutorial = "Coin, Coin, Coin! Oh beautiful coin: You're addicted to it, and you hold the position as the Grand Duke's personal treasurer of both coin and information. You know the power silver and gold has on a man's mortal soul, and you know just what lengths they'll go to in order to get even more. Keep your festering economy alive- for it is the only thing you can weigh any trust into anymore."
+	tutorial = "Coin, coin, coin. You serve as the sovereign ruler's treasurer, guarding both wealth and information. You understand the hold that silver and gold have upon mortal souls—and how far people will go to acquire more. Keep the realm's economy alive; it may be the only thing you still trust."
 	outfit = /datum/outfit/job/roguetown/steward/basic
 
 	category_tags = list(CTAG_STEWARD)

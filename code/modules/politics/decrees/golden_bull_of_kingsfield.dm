@@ -1,19 +1,19 @@
 /datum/decree/golden_bull
 	id = DECREE_GOLDEN_BULL
-	name = "Золотая булла Кингсфилда"
+	name = "Golden Bull of Kingsfield"
 	category = DECREE_CATEGORY_ANCIENT
 	mechanical_text = "Burghers and residents are capped at 25% balance-rate on taxes/fines, with daily fine ceiling 50m and a poll-tax cap."
 	flavor_text = {"This Golden Bull of Kingsfield, sealed under Astrata's Sun and with Ravox as witness, witnesseth the ancient compact between the Crown of Azuria and the makers of her wealth.
 
 It is attested, by name of the Grand Duke of Azuria, and by the Councils of the Notables and Burghers of Azure Peak duly assembled to set this seal, that the said Councils do hereby assent, in this yil and in perpetuity, that the Crown shall levy upon the Burghers no greater portion than one quarter part of their meister account, and shall exact in fine no more than fifty mammon by the day, nor poll-tax beyond twenty mammon by the day; such being the limits deemed meet in time of peace, of war, and of necessite alike. Beyond these bounds no Burgher shall be taxed, nor deprived of their wealth, save by the law of the land.
 
-Взамен горожане Сумеречной Оси, Кингсфилда и других городов Азурии обязуются выделять для общей защиты Королевства от пиратов, разбойников и других злоумышленников, угрожающих миру, ежегодный бюджет — сумму, собираемую среди их членов в соответствии с их достатком и распределяемую их собственным собранием.
+In return, the citizens of the capital, Kingsfield, and other cities of Azuria undertake to allocate an annual budget for the common defense of the Kingdom against pirates, brigands, and other wrongdoers threatening peace — a sum collected among their members according to their means and distributed by their own assembly.
 
 And should the Crown exceed these ratified bounds, or otherwise violate this Charter, the Burghers are absolved of their obligation, that the Realm may know the cost of breaking faith with its makers of wealth.
 
-Заверено золотой печатью Короны, милостью Астраты и Абиссора."}
-	revoke_text = "Правитель сиих земель прекратил действие Золотой буллы Кингсфилда. Горожане теперь подвергаются полному обложению со стороны короны. Возмущенные этим решением, купцы Азурии более не станут уплачивать взносы на нужды общей обороны Герцогства."
-	restore_text = "Правитель сиих земель восстановил Золотую буллу Кингсфилда. Соглашение вновь вступило в силу, и горожане возобновили уплату взносов на нужды общей обороны."
+Certified with the golden seal of the Crown, by the grace of Astrata and Abissor."}
+	revoke_text = "The ruler of these lands terminated the Golden Bull of Kingsfield. The townspeople are now subject to full taxation by the crown. Outraged by this decision, the merchants of Azuria will no longer pay contributions to the general defense of the Duchy."
+	restore_text = "The ruler of these lands has restored the Golden Bull of Kingsfield. The agreement again came into force, and the townspeople resumed paying contributions for the needs of the general defense."
 
 /datum/decree/golden_bull/roll_initial_year()
 	return CALENDAR_EPOCH_YEAR - rand(40, 100)

@@ -36,8 +36,8 @@
 	name = "ranesheni scale coat"
 	desc = "A lightweight armor made from the scales of the Ranesheni \"megarmach\", an armored reptilian creacher that ambushes prey by the riverside, and drags them deep into Abyssor's domain."
 	icon = 'modular_twilight_axis/icons/roguetown/clothing/armor.dmi'
-	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/onmob/32х48/armor.dmi'
-	sleeved = 'modular_twilight_axis/icons/roguetown/clothing/onmob/helpers/32х48/sleeves_armor.dmi'
+	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/onmob/32x48/armor.dmi'
+	sleeved = 'modular_twilight_axis/icons/roguetown/clothing/onmob/helpers/32x48/sleeves_armor.dmi'
 	icon_state = "light_armour"
 	item_state = "light_armour"
 	body_parts_covered = COVERAGE_ALL_BUT_HANDFEET
@@ -55,7 +55,7 @@
 
 /obj/item/clothing/suit/roguetown/armor/leather/heavy/coat/confessor/overseer
 	name = "confessor jacket"
-	desc = "Стеганая куртка, обеспечивающая достаточную защиту от безоружных невинных людей."
+	desc = "A quilted jacket that provides ample protection against unarmed innocents."
 	icon = 'modular_twilight_axis/icons/roguetown/clothing/inquisition_overseer/overseer.dmi'
 	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/inquisition_overseer/onmob/overseer_onmob.dmi'
 	sleeved = 'modular_twilight_axis/icons/roguetown/clothing/inquisition_overseer/onmob/overseer_onmob.dmi'

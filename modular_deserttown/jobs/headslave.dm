@@ -1,6 +1,6 @@
 /datum/job/roguetown/headslave
 	title = "Head Slave"
-	tutorial = "Вернейший раб, вернейший слуга, хранитель тайн и надёжный негласный советник - вы стоите безумно дорого, вы являетесь украшением своего Султана, вы являетесь украшением его дворца. В ваших руках находится ответственность за всех остальных рабов дворца, не посмейте подвести Султана."
+	tutorial = "The most faithful slave, the most faithful servant, the keeper of secrets and a reliable secret adviser - you are incredibly expensive, you are an adornment to your Sultan, you are an adornment to his palace. In your hands is the responsibility for all the other slaves of the palace, do not dare to let the Sultan down."
 	flag = HEADSLAVE
 	department_flag = COURTIERS
 	faction = "Station"
@@ -27,7 +27,7 @@
 	traits_applied = list(TRAIT_CICERONE, TRAIT_HOMESTEAD_EXPERT, TRAIT_SEWING_EXPERT, TRAIT_ROYALSERVANT, TRAIT_ROYAL_SUBSIDY) // They have Expert Sewing
 	category_tags = list(CTAG_HEADSLAVE)
 	name = "Head Slave"
-	tutorial = "Ваша преданность, послушание и незаурядный ум возвысили вас над остальными. Как главный раб, вы — доверенное лицо и невидимая опора дворца. Ваша задача — управлять прислугой и обеспечивать безупречный комфорт Господина, оставаясь при этом в тени."
+	tutorial = "Your devotion, obedience and extraordinary intelligence have elevated you above the rest. As the head slave, you are a trusted person and the invisible pillar of the palace. Your task is to manage the servants and provide impeccable comfort to the Master, while remaining in the shadows."
 	outfit = /datum/outfit/job/roguetown/headslave/headslave
 	subclass_stats = list(
 		STATKEY_INT = 2,
@@ -92,7 +92,7 @@
 
 /datum/advclass/headslave/headmaid
 	name = "Head Maid"
-	tutorial = "Ваша преданность, послушание и незаурядный ум возвысили вас над остальными. Как главный раб, вы — доверенное лицо и невидимая опора дворца. Ваша задача — управлять прислугой и обеспечивать безупречный комфорт Господина, оставаясь при этом в тени."
+	tutorial = "Your devotion, obedience and extraordinary intelligence have elevated you above the rest. As the head slave, you are a trusted person and the invisible pillar of the palace. Your task is to manage the servants and provide impeccable comfort to the Master, while remaining in the shadows."
 	outfit = /datum/outfit/job/roguetown/headslave/headmaid
 	category_tags = list(CTAG_HEADSLAVE)
 	traits_applied = list(TRAIT_CICERONE, TRAIT_HOMESTEAD_EXPERT, TRAIT_SEWING_EXPERT, TRAIT_ROYALSERVANT, TRAIT_ROYAL_SUBSIDY)
@@ -128,7 +128,7 @@
 
 /datum/advclass/headslave/chiefbutler
 	name = "Chief Butler"
-	tutorial = "Со временем вы всё больше и больше посвящали себе чему-то более возвышенному чем простое обслуживание Господина. Искусство быть дворецким, котором вы в совершенстве овладели, было встречено весьма отзывчиво со стороны вашего Господина."
+	tutorial = "Over time, you devoted yourself more and more to something more sublime than simple service to the Master. The art of being a butler, which you have mastered to perfection, was received very responsively by your Master."
 	outfit = /datum/outfit/job/roguetown/headslave/chiefbutler
 	category_tags = list(CTAG_HEADSLAVE)
 	traits_applied = list(TRAIT_CICERONE, TRAIT_HOMESTEAD_EXPERT, TRAIT_SEWING_EXPERT, TRAIT_ROYALSERVANT, TRAIT_ROYAL_SUBSIDY)

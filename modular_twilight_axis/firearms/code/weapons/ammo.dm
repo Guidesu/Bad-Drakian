@@ -28,7 +28,7 @@
  */
 /obj/projectile/bullet/twilight_lead
 	name = "lead sphere"
-	desc = "Небольшая свинцовая сфера. Хорошо сочетается с порохом."
+	desc = "A small lead sphere. Works well with gunpowder."
 	damage = 120
 	damage_type = BRUTE
 	icon = 'modular_twilight_axis/firearms/icons/ammo.dmi'
@@ -47,7 +47,7 @@
 
 /obj/projectile/bullet/twilight_lead/silver
 	name = "silver sphere"
-	desc = "Небольшая серебряная сфера. Мягче, чем свинцовая пуля, но крайне эффективна против нежити."
+	desc = "A small silver sphere. Softer than a lead bullet but extremely effective against undead."
 	ammo_type = /obj/item/ammo_casing/caseless/rogue/twilight_lead/silver
 	damage = 120
 	armor_penetration = PEN_NONE
@@ -57,7 +57,7 @@
 
 /obj/projectile/bullet/twilight_cannonball
 	name = "cannonball"
-	desc = "Крупная свинцовая сфера. Важен не размер ствола, а размер отверстия, что он делает в вашем противнике."
+	desc = "A large lead sphere. The size of the barrel does not matter, but the size of the hole it makes in your opponent does."
 	damage = 150
 	damage_type = BRUTE
 	icon = 'modular_twilight_axis/firearms/icons/ammo.dmi'
@@ -77,8 +77,8 @@
 
 /obj/projectile/bullet/twilight_grapeshot
 	name = "grapeshot"
-	desc = "Плотно упакованный в бумагу набор небольших металлических шариков. Хорошо сочетается с порохом."
-	damage = 30 // я уже не помню, как оно было до ввода эффективного ренжа, но мне ссыкотно от мысли в 240 базового урона до применения мода от персы. 180 выглядит баланснее.
+	desc = "A set of small metal balls tightly packed in paper. Works well with gunpowder."
+	damage = 30 //I don't remember how it was before the introduction of effective range, but the thought of 240 base damage before applying the character's mod makes me nervous. 180 looks more balanced.
 	damage_type = BRUTE
 	icon = 'modular_twilight_axis/firearms/icons/ammo.dmi'
 	icon_state = "musketball_proj"
@@ -102,7 +102,7 @@
 
 /obj/projectile/bullet/twilight_lead/twilight_runelock
 	name = "runed sphere"
-	desc = "Небольшой, идеально круглый металлический шар, покрытый псайдонитскими рунами. Смертоносен на высокой скорости."
+	desc = "A small, perfectly round metal ball covered with Psydonite runes. Deadly at high speed."
 	damage = 90
 	speed = 0.6
 	damage_type = BRUTE
@@ -121,7 +121,7 @@
 
 /obj/projectile/bullet/twilight_lead/twilight_runelock/blessed
 	name = "blessed sphere"
-	desc = "Небольшой, идеально круглый шар, изготовленный из чистого серебра. Такие боеприпасы создаются лучшими из отаванских кузнецов и освящяются лично Великим Магистром. Смертоностны против нежити, но весьма эффективны и против других еретиков."
+	desc = "A small, perfectly round ball made of pure silver. Such ammunition is made by the best Othavan blacksmiths and is personally consecrated by the Grand Master. Lethal against the undead, but also very effective against other heretics."
 	damage = 100
 	ammo_type = /obj/item/ammo_casing/caseless/rogue/twilight_lead/runelock/blessed
 	icon_state = "musketball_blessed"
@@ -437,7 +437,7 @@
 
 /obj/item/ammo_casing/caseless/rogue/twilight_lead
 	name = "lead sphere"
-	desc = "Небольшая свинцовая сфера. Хорошо сочетается с порохом."
+	desc = "A small lead sphere. Works well with gunpowder."
 	projectile_type = /obj/projectile/bullet/twilight_lead
 	caliber = "lead_sphere"
 	icon = 'modular_twilight_axis/firearms/icons/ammo.dmi'
@@ -448,7 +448,7 @@
 
 /obj/item/ammo_casing/caseless/rogue/twilight_lead/runelock
 	name = "runed sphere"
-	desc = "Небольшой, идеально круглый металлический шар, покрытый псайдонитскими рунами. Смертоносен на высокой скорости."
+	desc = "A small, perfectly round metal ball covered with Psydonite runes. Deadly at high speed."
 	projectile_type = /obj/projectile/bullet/twilight_lead/twilight_runelock
 	caliber = "runed_sphere"
 	icon = 'modular_twilight_axis/firearms/icons/ammo.dmi'
@@ -484,13 +484,13 @@
 
 /obj/item/ammo_casing/caseless/rogue/twilight_lead/silver
 	name = "silver sphere"
-	desc = "Небольшая серебряная сфера. Мягче, чем свинцовая пуля, но крайне эффективна против нежити."
+	desc = "A small silver sphere. Softer than a lead bullet but extremely effective against undead."
 	projectile_type = /obj/projectile/bullet/twilight_lead/silver
 	icon_state = "musketball_silver"
 
 /obj/item/ammo_casing/caseless/rogue/twilight_lead/runelock/blessed
 	name = "blessed runed sphere"
-	desc = "Небольшой, идеально круглый шар, изготовленный из чистого серебра. Такие боеприпасы создаются лучшими из отаванских кузнецов и освящяются лично Великим Магистром. Смертоностны против нежити, но весьма эффективны и против других еретиков."
+	desc = "A small, perfectly round ball made of pure silver. Such ammunition is made by the best Othavan blacksmiths and is personally consecrated by the Grand Master. Lethal against the undead, but also very effective against other heretics."
 	projectile_type = /obj/projectile/bullet/twilight_lead/twilight_runelock/blessed
 	icon_state = "musketball_blessed"
 	w_class = WEIGHT_CLASS_TINY
@@ -498,7 +498,7 @@
 
 /obj/item/ammo_casing/caseless/rogue/twilight_cannonball
 	name = "lead cannonball"
-	desc = "Крупная свинцовая сфера. Важен не размер ствола, а размер отверстия, что он делает в вашем противнике."
+	desc = "A large lead sphere. The size of the barrel does not matter, but the size of the hole it makes in your opponent does."
 	projectile_type = /obj/projectile/bullet/twilight_cannonball
 	caliber = "cannonball"
 	icon = 'modular_twilight_axis/firearms/icons/ammo.dmi'
@@ -511,7 +511,7 @@
 
 /obj/item/ammo_casing/caseless/rogue/twilight_cannonball/grapeshot
 	name = "lead grapeshot"
-	desc = "Плотно упакованный в бумагу набор небольших металлических шариков. Хорошо сочетается с порохом."
+	desc = "A set of small metal balls tightly packed in paper. Works well with gunpowder."
 	projectile_type = /obj/projectile/bullet/twilight_grapeshot
 	caliber = "cannonball"
 	icon = 'modular_twilight_axis/firearms/icons/ammo.dmi'
@@ -523,7 +523,7 @@
 
 /obj/item/ammo_casing/caseless/rogue/twilight_lead/paper
 	name = "paper cartridge"
-	desc = "Фундаментально, бумажный патрон мало чем отличается от обычного сочетания пороха и пули - но использовать его значительно удобнее."
+	desc = "Fundamentally, a paper cartridge is little different from the usual combination of gunpowder and bullet - but it is much more convenient to use."
 	projectile_type = /obj/projectile/bullet/twilight_lead
 	icon = 'modular_twilight_axis/firearms/icons/ammo.dmi'
 	icon_state = "paper_bullet"

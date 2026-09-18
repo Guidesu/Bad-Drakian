@@ -28,12 +28,12 @@
 
 
 ///////////////////////////////////////////////////////////////////////
-/// Говно артифишера
-/// Плацебо, проще купить у торговца, но игроки попросили
+/// Artificer's shit
+/// Placebo, easier to buy from a merchant, but players asked
 //////////////////////////////////////////////////////////////////////
 /obj/item/artillery_barrel_assembly
 	name = "artillery barrel blank"
-	desc = "Можно специализировать для конкретной артиллерии"
+	desc = "Can be specialized for specific artillery"
 	icon = 'modular_twilight_axis/awful_artillery/icons/artillery.dmi'
 	icon_state = "barrel"
 	color = "#5c524b"
@@ -41,7 +41,7 @@
 
 /obj/item/mortar_barrel_assembly
 	name = "mortar barrel blank"
-	desc = "Тщательная полировки и будет готово"
+	desc = "Careful polishing and it will be ready"
 	icon = 'modular_twilight_axis/awful_artillery/icons/artillery.dmi'
 	icon_state = "barrel"
 	color = "#96745e"

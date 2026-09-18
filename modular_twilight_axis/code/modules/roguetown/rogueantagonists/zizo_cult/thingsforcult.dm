@@ -1,12 +1,12 @@
-//хуйня для работоспособности культа, ктрл+с, ктрл+м, чтобы он хотя-бы работал, как в пре на оффах. Может потом сделаем норм, а может нет.
+//crap for the functionality of the cult, ctrl+s, ctrl+m, so that it at least works, like in pre on off servers. Maybe we'll make it proper later, maybe not.
 
-//хуйня из code/__DEFINES/_globals.dm
+//crap from code/__DEFINES/_globals.dm
 //All characters between < a > inclusive of the bracket
 GLOBAL_DATUM_INIT(html_tags, /regex, regex(@"<.*?>", "g"))
 
 
 // code/__DEFINES/dcs/signals/signals_mob.dm
-//бля крч там по списку с пра - https://github.com/Azure-Peak/Azure-Peak/pull/5092/files
+//damn in short there by the list with pra - https://github.com/Azure-Peak/Azure-Peak/pull/5092/files
 ///From mob/living/proc/wabbajack(): (randomize_type)
 #define COMSIG_LIVING_PRE_WABBAJACKED "living_mob_wabbajacked"
 	/// Return to stop the rest of the wabbajack from triggering.
@@ -40,7 +40,7 @@ GLOBAL_DATUM_INIT(html_tags, /regex, regex(@"<.*?>", "g"))
 #define RANDOMIZE_HAIR_FEATURES (RANDOMIZE_HAIRSTYLE | RANDOMIZE_FACIAL_HAIRSTYLE)
 #define RANDOMIZE_HAIR_COLORS (RANDOMIZE_HAIR_COLOR | RANDOMIZE_HAIR_COLORS)
 #define RANDOMIZE_HAIR_ALL (RANDOMIZE_HAIR_FEATURES | RANDOMIZE_HAIR_COLORS)
-//смотрящий глазюк
+//overseeing Glazyuk
 /obj/item/scrying/eye
 	name = "accursed eye"
 	desc = "It is pulsating."
@@ -99,7 +99,7 @@ GLOBAL_DATUM_INIT(html_tags, /regex, regex(@"<.*?>", "g"))
 	if(istype(user) && user?.wear_armor == src)
 		user.remove_status_effect(/datum/status_effect/buff/cultlight)
 
-//котелок, но культа
+//cauldron, but for the cult
 /obj/item/clothing/head/roguetown/helmet/skullcap/cult
 	name = "ascension's hood"
 	desc = "It echoes with ominous laughter. Worn over a skullcap"
@@ -118,7 +118,7 @@ GLOBAL_DATUM_INIT(html_tags, /regex, regex(@"<.*?>", "g"))
 
 /obj/item/clothing/head/roguetown/helmet/skullcap/cult/get_examine_highlight_status()
 	return list(EXAMINEHIGHLIGHT_HERESYSEVERITY_ALARMING, HERESYDESC_ZIZO_ARMOR)
-//коса культа.. дайте две
+//cult scythe.. give me two
 /obj/item/rogueweapon/zizo/neant
 	name = "ascend's neant"
 	desc = "A dark scythe with a long chain, used to cut the life essence from people, or whip them into shape. The blade is an ominous purple."
@@ -575,8 +575,8 @@ GLOBAL_DATUM_INIT(html_tags, /regex, regex(@"<.*?>", "g"))
 	effectedstats = list(STATKEY_STR = -2, STATKEY_SPD = -2, STATKEY_CON = -2)
 
 /atom/movable/screen/alert/status_effect/fleshmend_tax
-	name = "Истощение плоти"
-	desc = "Ваше тело было исцелено магией Зизо, но цена была высока. Сила, выносливость и скорость снижены."
+	name = "Flesh exhaustion"
+	desc = "Your body has been healed by Zizo's magic, but the cost was high. Strength, endurance, and speed are reduced."
 	icon_state = "debuff"
 
 
@@ -634,7 +634,7 @@ GLOBAL_DATUM_INIT(html_tags, /regex, regex(@"<.*?>", "g"))
 	. = ..()
 	REMOVE_TRAIT(user, TRAIT_ZIZOSIGHT, TRAIT_GENERIC)
 
-//статус эффекты
+//status effects
 
 /datum/status_effect/debuff/ritualdefiled/cult
 	id = "ritualdefiled"

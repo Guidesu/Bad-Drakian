@@ -8,7 +8,7 @@
 	allowed_sexes = list(MALE, FEMALE)
 	forbidden_races = list(RACES_DESPISED)
 	job_traits = list(TRAIT_SEEPRICES)
-	tutorial = "Вы - пристав, верный слуга мэра. Вы его глаза и уши, а если потребуется - крепкие руки и быстрые ноги."
+	tutorial = "You are a bailiff, a faithful servant of the mayor. You are his eyes and ears, and if necessary, strong arms and fast legs."
 	display_order = JDO_BAILIFF
 	whitelist_req = TRUE
 
@@ -30,8 +30,8 @@
 
 /datum/advclass/bailiff/bodyguard
 	name = "Bailiff Bodyguard"
-	tutorial = "Вы ни много ни мало - но телохранитель. Защищая мэра, которому вы верны, как на улицах так и на разбирательствах... \
-    Ваше прошлое, так или иначе, привело вас к этому положению: вы умеете обращаться с оружием, вы должны им обращаться, ведь власть Мэра порой обеспечивается силой, а не словом."
+	tutorial = "You are neither more nor less - but a bodyguard. Defending the mayor to whom you are loyal, both on the streets and in the proceedings... \
+    Your past, one way or another, has brought you to this position: you know how to handle weapons, and you must handle them, for the power of the Mayor is sometimes ensured by force, not words."
 	outfit = /datum/outfit/job/roguetown/bailiff/bodyguard
 
 	category_tags = list(CTAG_BAILIFF)
@@ -86,9 +86,9 @@
 
 /datum/advclass/bailiff/squealer
 	name = "Bailiff Squealer"
-	tutorial = "С детства Вы были странным ребёнком: Ваша внимательность часто приводила в замешательство окружающих Вас... \
-... И теперь вы развили это в достаточной мере: многочисленные доносы и кляузы, написанные Вами, \
-ясно свидетельствуют о ваших неслабых способностях видеть и слышать то, что обычный человек пропустит мимо ушей."
+	tutorial = "Since childhood, you have been a strange child: Your attentiveness has often confused those around you... \
+... And now you have developed this sufficiently: the numerous reports and denunciations written by you,\
+clearly testify to your considerable abilities to see and hear what an ordinary person would miss."
 	outfit = /datum/outfit/job/roguetown/bailiff/squealer
 	category_tags = list(CTAG_BAILIFF)
 	traits_applied = list(TRAIT_KEENEARS, TRAIT_DODGEEXPERT)

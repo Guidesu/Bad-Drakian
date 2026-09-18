@@ -106,7 +106,7 @@
 		return
 
 	if(!known_people || !known_people.len)
-		to_chat(user, span_warning("Я не знаю ни одной семьи."))
+		to_chat(user, span_warning("I don't know any family."))
 		return
 
 	var/list/house_entries = list()
@@ -168,7 +168,7 @@
 		))
 
 	if(!house_names.len)
-		to_chat(user, span_warning("Я не знаю ни одной семьи."))
+		to_chat(user, span_warning("I don't know any family."))
 		return
 
 	house_names = sortList(house_names)
@@ -190,7 +190,7 @@
 	set category = "IC"
 
 	if(!mind)
-		to_chat(src, span_warning("Я не знаю ни одной семьи."))
+		to_chat(src, span_warning("I don't know any family."))
 		return
 
 	mind.familytree_display_known_families(src)
@@ -292,12 +292,12 @@
 			if(!relation)
 				continue
 			seen[member.person] = TRUE
-			var/house_name = house.housename || "неизвестный дом"
+			var/house_name = house.housename || "unknown house"
 			var/is_dummy = istype(member.person, /mob/living/carbon/human/dummy)
 			entries += list(list(
 				"name" = member.person.real_name,
 				"label" = uppertext(relation),
-				"details" = list("Дом [house_name]"),
+				"details" = list("House [house_name]"),
 				"accentColor" = family_datum?.GetRelationColor(relation),
 				"personRef" = is_dummy ? null : REF(member.person),
 				"descriptor" = null,
@@ -320,7 +320,7 @@
 
 	var/list/distant_entries = familytree_build_distant_relation_entries()
 	if(distant_entries.len)
-		panel.add_section("Дальние родственники", distant_entries)
+		panel.add_section("Distant relatives", distant_entries)
 
 	if(family_datum)
 		panel.set_tree_data(SSfamilytree.get_display_tree_for(family_datum, src))

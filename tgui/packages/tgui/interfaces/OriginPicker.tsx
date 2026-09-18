@@ -115,7 +115,7 @@ const renderOriginButtonContent = (origin: Origin, label?: string) => (
     <div>{label || origin.display_name}</div>
     {!origin.available && origin.required_races_text && (
       <div style={{ fontSize: '0.74rem', opacity: 0.9, lineHeight: 1.25 }}>
-        Нужны расы: {origin.required_races_text}
+        Required races:{origin.required_races_text}
       </div>
     )}
   </div>
@@ -255,7 +255,7 @@ export const OriginPicker = () => {
         <Stack fill>
           <Stack.Item grow basis={0}>
             <Section
-              title="Карта происхождений"
+              title="Origins map"
               buttons={
                 <div
                   style={{
@@ -263,7 +263,7 @@ export const OriginPicker = () => {
                     alignItems: 'center',
                     gap: '0.5rem',
                   }}>
-                  <div style={{ opacity: 0.9 }}>Текущая раса: {current_species_name}</div>
+                  <div style={{ opacity: 0.9 }}>Current race:{current_species_name}</div>
                 </div>
               }
               fill>
@@ -288,7 +288,7 @@ export const OriginPicker = () => {
                   }}>
                   <img
                     src={resolveAsset('origin_picker_map.jpg')}
-                    alt="Карта происхождений"
+                    alt="Origins map"
                     style={{
                       width: '100%',
                       height: '100%',
@@ -332,7 +332,7 @@ export const OriginPicker = () => {
                   })}
                 </div>
 
-                <Section title="Лор выбранного происхождения" fill scrollable>
+                <Section title="Lore of the selected origin" fill scrollable>
                   {previewOrigin ? (
                     <div
                       style={{
@@ -378,12 +378,12 @@ export const OriginPicker = () => {
                             }}>
                             {previewOrigin.language_text && (
                               <div>
-                                <b>Язык:</b> {previewOrigin.language_text}
+                                <b>Language:</b> {previewOrigin.language_text}
                               </div>
                             )}
                             {previewOrigin.trait_text && (
                               <div>
-                                <b>Трейт:</b> {previewOrigin.trait_text}
+                                <b>Trait:</b> {previewOrigin.trait_text}
                               </div>
                             )}
                           </div>
@@ -399,9 +399,9 @@ export const OriginPicker = () => {
                             margin: 0,
                             padding: 0,
                           }}>
-                          Это происхождение недоступно для текущей расы.
+                          This origin is not available for the current race.
                           {previewOrigin.required_races_text
-                            ? ` Нужны расы: ${previewOrigin.required_races_text}.`
+                            ? `Needed races: ${previewOrigin.required_races_text}.`
                             : ''}
                         </div>
                       )}
@@ -419,7 +419,7 @@ export const OriginPicker = () => {
                       </div>
                     </div>
                   ) : (
-                    <div>Нет происхождений для отображения.</div>
+                    <div>No origins to display.</div>
                   )}
                 </Section>
               </div>
@@ -427,7 +427,7 @@ export const OriginPicker = () => {
           </Stack.Item>
 
           <Stack.Item basis="430px" grow={0}>
-            <Section title="Список государств" fill scrollable>
+            <Section title="List of states" fill scrollable>
               <div
                 style={{
                   display: 'flex',

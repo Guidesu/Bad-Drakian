@@ -49,7 +49,7 @@
 				"Valoria" = /datum/virtue/origin/valorian,
 				"Zybantu" = /datum/virtue/origin/zybantian)
 				var/new_origin
-				var/choice = input(player, "Your origins are not compatible with the Kingdom. Where do you hail from?", "ANCESTRY") as anything in new_origins
+				var/choice = input(player, "Your origins are not compatible with this sovereign realm. Where do you hail from?", "ANCESTRY") as anything in new_origins
 				if(choice)
 					new_origin = new_origins[choice]
 				else
@@ -62,7 +62,7 @@
 				"Grenzelhoft" = /datum/virtue/origin/grenzelhoft,
 				"Valoria" = /datum/virtue/origin/valorian)
 				var/new_origin
-				var/choice = input(player, "Your origins are not compatible with the Duchy. Where do you hail from?", "ANCESTRY") as anything in new_origins
+				var/choice = input(player, "Your origins are not compatible with this sovereign realm. Where do you hail from?", "ANCESTRY") as anything in new_origins
 				if(choice)
 					new_origin = new_origins[choice]
 				else

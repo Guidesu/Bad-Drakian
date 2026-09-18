@@ -10,10 +10,10 @@
 	outfit = /datum/outfit/job/roguetown/vizier
 	advclass_cat_rolls = list(CTAG_VIZIER = 20)
 	display_order = JDO_HAND
-	tutorial = "Вы - один из самых могущественных мужей во всём Султанате. \
-        Вы так долго правили тайной стражей и служил наперсником правящей династии, что превратились в живую сокровищницу интриг, и вы пользуетесь этим с пугающей хваткой. \
-        В ваших руках сходятся как чужие секреты, так и султанская казна - вы лично ведаете всеми расходами и маммонами государства. \
-        Пусть никто не забывает, в чье ухо вы шепчете. Этими губами вы погубили больше людей, чем любой мастер клинка за всю свою жизнь."
+	tutorial = "You are one of the most powerful men in the entire Sultanate. \
+        You have ruled the secret guard for so long and served as the confidant of the ruling dynasty that you have become a living treasury of intrigue, and you wield it with a frightening grip.\
+        In your hands converge both the secrets of others and the sultan's treasury - you personally oversee all expenditures and wealth of the state.\
+        Let no one forget whose ear you whisper into. With these lips, you have destroyed more people than any master of the blade in their entire lifetime."
 	whitelist_req = TRUE
 	give_bank_account = 44
 	noble_income = 22
@@ -96,10 +96,10 @@
 //Blademaster Hand start
 /datum/advclass/vizier/dtblademaster
 	name = "Blademaster"
-	tutorial = "Вы так долго служили мастером клинка и стратегом при Султанском дворе, \
-        что превратились в живое воплощение армии Султаната, и вы пользуетесь этим с пугающей хваткой. \
-        Пусть никто не забывает, в чье ухо вы шепчете, направляя гнев правящей династии. \
-        В ваших руках сталь превратилась в абсолютный закон - этими клинками вы погубили больше людей, чем любой мастер шпионажа уничтожил своими интригами за всю историю Султаната."
+	tutorial = "You served as a blademaster and strategist in the Sultan's court for so long, \
+        that you have become the living embodiment of the Sultanate's army, and you wield it with a frightening grip.\
+        Let no one forget whose ear you whisper into, directing the wrath of the ruling dynasty.\
+        In your hands, steel has become the absolute law - with these blades, you have destroyed more people than any master of espionage has eliminated with their intrigues throughout the history of the Sultanate."
 	outfit = /datum/outfit/job/roguetown/vizier/blademaster
 
 	category_tags = list(CTAG_VIZIER)
@@ -111,7 +111,7 @@
 		STATKEY_LCK = 1,
 		STATKEY_CON = 1,
 	)
-	subclass_mage_aspects = list("mastery" = FALSE, "major" = 0, "minor" = 2, "utilities" = 6, "ward" = FALSE) // Возможно, я сделаю его спеллблейдом несколько позже.
+	subclass_mage_aspects = list("mastery" = FALSE, "major" = 0, "minor" = 2, "utilities" = 6, "ward" = FALSE) //Perhaps I'll make it a spellblade a little later.
 	subclass_skills = list(
 		/datum/skill/combat/maces = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/combat/crossbows = SKILL_LEVEL_EXPERT,
@@ -153,11 +153,11 @@
 //Spymaster start
 /datum/advclass/vizier/dtspymaster
 	name = "Spymaster"
-	tutorial = "Вы - один из самых могущественных мужей во всём Султанате. \
-        Вы так долго правили тайной стражей и служил наперсником правящей династии, что превратились в живую сокровищницу интриг, и вы пользуетесь этим с пугающей хваткой. \
-        В ваших руках сходятся как чужие секреты, так и султанская казна - вы лично ведаете всеми расходами и маммонами государства. \
-        Пусть никто не забывает, в чье ухо вы шепчете. Этими губами вы погубили больше людей, чем любой мастер клинка за всю свою жизнь."
-	extra_context = "Персонаж получает трейты 'Perfect Tracker' и 'Keen Ears' если выбрать этот подкласс."
+	tutorial = "You are one of the most powerful men in the entire Sultanate. \
+        You have ruled the secret guard for so long and served as the confidant of the ruling dynasty that you have become a living treasury of intrigue, and you wield it with a frightening grip.\
+        In your hands converge both the secrets of others and the sultan's treasury - you personally oversee all expenditures and wealth of the state.\
+        Let no one forget whose ear you whisper into. With these lips, you have destroyed more people than any master of the blade in their entire lifetime."
+	extra_context = "The character gains the 'Perfect Tracker' and 'Keen Ears' traits if you choose this subclass."
 	outfit = /datum/outfit/job/roguetown/vizier/spymaster
 
 	category_tags = list(CTAG_VIZIER)
@@ -222,11 +222,11 @@
 //Advisor Start
 /datum/advclass/vizier/dtadvisor
 	name = "Advisor"
-	tutorial = "Вы так долго исполняли роль ученого и советника при Султанском дворе, \
-        что превратились в живую сокровищницу древних знаний и магии, и вы пользуетесь этим с пугающей хваткой. \
-        Пусть ни один человек во всем Султанате никогда не забывает, в чье ухо вы шепчете, направляя помыслы правящей династии. \
-        Ваши мудрые советы стали щитом для государства - этим тихим шепотом вы спасли больше жизней, чем могли бы уберечь \
-        приказы любого мушира или самые изощренные заговоры мастеров шпионажа за всю историю Султаната."
+	tutorial = "You played the role of a scientist and adviser at the Sultan's court for so long, \
+        that you have become a living treasury of ancient knowledge and magic, and you wield it with a frightening grip.\
+        Let no person in the entire Sultanate ever forget whose ear you whisper into when guiding the thoughts of the ruling dynasty.\
+        Your wise advice has become a shield for the state – with this quiet whisper, you have saved more lives than could be protected\
+        by the orders of any Mushiir or by the most intricate conspiracies of espionage masters throughout the history of the Sultanate."
 	outfit = /datum/outfit/job/roguetown/vizier/advisor
 
 	category_tags = list(CTAG_VIZIER)

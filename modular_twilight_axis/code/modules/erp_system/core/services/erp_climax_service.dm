@@ -257,9 +257,9 @@
 							already_knotted = TRUE
 							break
 
-					// Если уже есть активный кнот на этой паре,
-					// новый не создаём. На этом же оргазме доп. inject
-					// сработает ниже через knot_links.
+					//If there is already an active note on this pair,
+					//we do not create a new one. At the same orgasm additional. inject
+					//will work below via knot_links.
 					if(already_knotted)
 						continue
 

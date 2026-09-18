@@ -878,20 +878,20 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 	qdel(query_existing_note)
 
 	var/list/note_lines = list(
-		"Автоматическая проверка: возможный твинк.",
-		"Ключ при обнаружении: [key]",
-		"Ckey при обнаружении: [ckey]",
-		"IP при обнаружении: [address]",
-		"CID при обнаружении: [computer_id]",
-		"Аккаунты с таким же CID: [related_accounts_cid]",
-		"Раунд при обнаружении: [GLOB.round_id]"
+		"Automatic check: possible twink.",
+		"Key when detected: [key]",
+		"Ckey when detected: [ckey]",
+		"IP when detected: [address]",
+		"CID when detected: [computer_id]",
+		"Accounts with the same CID: [related_accounts_cid]",
+		"Detection round: [GLOB.round_id]"
 	)
 	if(address == "91.208.52.195")
-		note_lines += "Вход выполнен через серверный прокси 91.208.52.195; совпадения по IP не учитывались."
+		note_lines += "Login via server proxy 91.208.52.195; IP matches were not taken into account."
 	else if(length(related_accounts_ip))
-		note_lines += "Аккаунты с таким же IP: [related_accounts_ip]"
+		note_lines += "Accounts with the same IP: [related_accounts_ip]"
 	else
-		note_lines += "Другие аккаунты с таким же IP не найдены."
+		note_lines += "No other accounts with the same IP were found."
 
 	var/note_text = note_lines.Join("<br>")
 	var/server_name = CONFIG_GET(string/serversqlname)
@@ -912,7 +912,7 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 		return
 	qdel(query_create_note)
 
-	message_admins(span_adminnotice("<b>Возможный твинк:</b> [key_name_admin(src)] вошёл с CID [computer_id], который также использовали: [related_accounts_cid]. Автоматическая заметка добавлена."))
+	message_admins(span_adminnotice("<b>Possible twink:</b> [key_name_admin(src)] entered with CID [computer_id], which was also used: [related_accounts_cid]. Automatic note added."))
 	log_admin_private("Automatic multikey note created for [key_name(src)]. IP: [address]. CID: [computer_id]. Related CID accounts: [related_accounts_cid]. Related IP accounts: [related_accounts_ip].")
 	admin_ticket_log(ckey, "<font color='blue'>Automatic possible multikey note created</font>")
 	admin_ticket_log(ckey, note_text)

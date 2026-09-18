@@ -1,8 +1,8 @@
 /datum/erp_action/self/tail/suck_tail
 	abstract = FALSE
 
-	name = "Обсосать хвост"
+	name = "Suck the tail"
 	required_target_organ = SEX_ORGAN_MOUTH
-	message_start = "{actor} подводит хвост ближе к лицу."
-	message_tick = "{actor} {force} и {speed} обсасывает хвост в своем рту."
-	message_finish =  "{actor} уводит хвост от лица."
+	message_start = "{actor} brings the tail closer to his face."
+	message_tick = "{actor} {force} and {speed} suck the tail in his mouth."
+	message_finish =  "{actor} moves his tail away from his face."

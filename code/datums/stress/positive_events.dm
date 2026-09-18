@@ -576,7 +576,7 @@
 
 /atom/movable/screen/alert/status_effect/buff/noc_light_blessing
 	name = "Noc light blessing"
-	desc = "Свет Нок дает мне сил!"
+	desc = "The Light of Nok gives me strength!"
 	icon_state = "holybuff"
 
 /datum/status_effect/buff/noc_light_blessing
@@ -584,3 +584,17 @@
 	alert_type = /atom/movable/screen/alert/status_effect/buff/noc_light_blessing
 	effectedstats = list(STATKEY_INT = 1, STATKEY_SPD = 2, STATKEY_LCK = 3, STATKEY_WIL = 1)
 	duration = 40 MINUTES
+/datum/stressevent/chastity_devout
+	timer = INFINITY
+	stressadd = -1
+	desc = span_green("This restraint steadies my spirit.")
+
+/datum/stressevent/chastity_masochist
+	timer = INFINITY
+	stressadd = -1
+	desc = span_green("The spikes keep me pleasantly focused.")
+
+/datum/stressevent/chastity_church
+	timer = INFINITY
+	stressadd = -1
+	desc = span_green("My vows feel stronger in this restraint.")

@@ -1,6 +1,6 @@
 /datum/advclass/mujizat_musaid //Support Cleric, Heavy armor, unarmed, miracles.
 	name = "Mujizat-Musaid"
-	tutorial = "«... Среди них был пророк - тот, что предвещал Посланника, который освободит их народ от оков рабства ...»"
+	tutorial = "“... Among them was a prophet - the one who foretold the Messenger who would free their people from the shackles of slavery...”"
 	allowed_sexes = list(MALE, FEMALE)
 	forbidden_races = list(RACES_DESPISED)
 	outfit = /datum/outfit/job/roguetown/freeman/mujizat_musaid

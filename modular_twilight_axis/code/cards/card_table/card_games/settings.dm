@@ -7,7 +7,7 @@
 	if(new_game != CARD_TABLE_GAME_FOOL && new_game != CARD_TABLE_GAME_BLACKJACK && new_game != CARD_TABLE_GAME_POKER && new_game != CARD_TABLE_GAME_SOLITAIRE)
 		return FALSE
 	if(players.len > max_players_for_game(new_game))
-		to_chat(user, span_warning("За столом слишком много игроков для этой игры."))
+		to_chat(user, span_warning("There are too many players at the table for this game."))
 		return FALSE
 	game_type = new_game
 	if(game_type == CARD_TABLE_GAME_BLACKJACK || game_type == CARD_TABLE_GAME_POKER)
@@ -18,7 +18,7 @@
 	current_index = 1
 	defender_index = 2
 	dealer_rounds = 0
-	message = "[card_table_display_name(user)] выбирает игру: [game_label()]."
+	message = "[card_table_display_name(user)] selects the game: [game_label()]."
 	return TRUE
 
 /datum/card_table_session/proc/set_fool_variant(new_variant, mob/user)
@@ -30,7 +30,7 @@
 	if(new_variant != CARD_TABLE_FOOL_CLASSIC && new_variant != CARD_TABLE_FOOL_THROW_IN && new_variant != CARD_TABLE_FOOL_TRANSFER && new_variant != CARD_TABLE_FOOL_THROW_TRANSFER)
 		return FALSE
 	fool_variant = new_variant
-	message = "[card_table_display_name(user)] выбирает вариант: [fool_variant_label()]."
+	message = "[card_table_display_name(user)] selects the option: [fool_variant_label()]."
 	return TRUE
 
 /datum/card_table_session/proc/set_poker_variant(new_variant, mob/user)
@@ -42,7 +42,7 @@
 	if(new_variant != CARD_TABLE_POKER_DRAW && new_variant != CARD_TABLE_POKER_TEXAS && new_variant != CARD_TABLE_POKER_OMAHA && new_variant != CARD_TABLE_POKER_STUD)
 		return FALSE
 	poker_variant = new_variant
-	message = "[card_table_display_name(user)] выбирает вариант: [poker_variant_label()]."
+	message = "[card_table_display_name(user)] selects the option: [poker_variant_label()]."
 	return TRUE
 
 /datum/card_table_session/proc/set_blackjack_variant(new_variant, mob/user)
@@ -54,7 +54,7 @@
 	if(new_variant != CARD_TABLE_BLACKJACK_GRON && new_variant != CARD_TABLE_BLACKJACK_VALORIA && new_variant != CARD_TABLE_BLACKJACK_AZURE && new_variant != CARD_TABLE_BLACKJACK_GRENZELHOFT && new_variant != CARD_TABLE_BLACKJACK_KAZENGUN)
 		return FALSE
 	blackjack_variant = new_variant
-	message = "[card_table_display_name(user)] выбирает вариант: [blackjack_variant_label()]."
+	message = "[card_table_display_name(user)] selects the option: [blackjack_variant_label()]."
 	return TRUE
 
 /datum/card_table_session/proc/set_solitaire_variant(new_variant, mob/user)
@@ -66,7 +66,7 @@
 	if(new_variant != CARD_TABLE_SOLITAIRE_KLONDIKE && new_variant != CARD_TABLE_SOLITAIRE_SPIDER)
 		return FALSE
 	solitaire_variant = new_variant
-	message = "[card_table_display_name(user)] выбирает вариант: [solitaire_variant_label()]."
+	message = "[card_table_display_name(user)] selects the option: [solitaire_variant_label()]."
 	return TRUE
 
 /datum/card_table_session/proc/set_dealer_rotation(rotates, mob/user)
@@ -80,7 +80,7 @@
 		dealer_index = 1
 	else if(!dealer_index && players.len)
 		dealer_index = 1
-	message = "[card_table_display_name(user)] выбирает режим: [dealer_rotation_label()]."
+	message = "[card_table_display_name(user)] selects the mode: [dealer_rotation_label()]."
 	return TRUE
 
 /datum/card_table_session/proc/dealer_player() as /datum/card_table_player
@@ -95,7 +95,7 @@
 	if(player_for_user(user))
 		return FALSE
 	if(players.len >= max_players())
-		to_chat(user, span_warning("Нет свободных мест игрока."))
+		to_chat(user, span_warning("There are no available player slots."))
 		return FALSE
 	observers -= user.ckey
 	var/datum/card_table_player/player = new()
@@ -104,7 +104,7 @@
 	players += player
 	if(!dealer_index && (game_type == CARD_TABLE_GAME_BLACKJACK || game_type == CARD_TABLE_GAME_POKER))
 		dealer_index = players.len
-	message = "[player.name] занимает место игрока."
+	message = "[player.name] takes the player's place."
 	return TRUE
 
 /datum/card_table_session/proc/join_observer(mob/user)
@@ -138,15 +138,15 @@
 		changed = TRUE
 	if(changed)
 		if(!silent)
-			message = "[card_table_display_name(user)] покидает стол."
+			message = "[card_table_display_name(user)] leaves the table."
 		if(stage == CARD_TABLE_STAGE_PLAYING && game_type == CARD_TABLE_GAME_FOOL)
 			fool_normalize_turn_after_leave()
 		if(stage != CARD_TABLE_STAGE_LOBBY && has_spirit_opponent() && active_real_players_count() < 1)
 			stage = CARD_TABLE_STAGE_FINISHED
-			message = "Игра завершается: за столом не осталось живых игроков."
+			message = "The game ends: there are no living players left at the table."
 		if(stage != CARD_TABLE_STAGE_LOBBY && active_players_count() < min_players())
 			stage = CARD_TABLE_STAGE_FINISHED
-			message = "Игра завершается: не хватает активных игроков."
+			message = "Game ends: there are not enough active players."
 		clamp_turns()
 	return changed
 
@@ -174,15 +174,15 @@
 		changed = TRUE
 	if(changed)
 		var/reason_text = reason ? " ([reason])" : ""
-		message = "[name] покидает стол[reason_text]."
+		message = "[name] leaves the table [reason_text]."
 		if(stage == CARD_TABLE_STAGE_PLAYING && game_type == CARD_TABLE_GAME_FOOL)
 			fool_normalize_turn_after_leave()
 		if(stage != CARD_TABLE_STAGE_LOBBY && has_spirit_opponent() && active_real_players_count() < 1)
 			stage = CARD_TABLE_STAGE_FINISHED
-			message = "Игра завершается: за столом не осталось живых игроков."
+			message = "The game ends: there are no living players left at the table."
 		if(stage != CARD_TABLE_STAGE_LOBBY && active_players_count() < min_players())
 			stage = CARD_TABLE_STAGE_FINISHED
-			message = "Игра завершается: не хватает активных игроков."
+			message = "Game ends: there are not enough active players."
 		clamp_turns()
 	return changed
 

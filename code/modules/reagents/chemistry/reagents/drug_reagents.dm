@@ -673,7 +673,7 @@
 	description = "An odd form of narcotic found in abyssoric zigarettes. Perhaps the salt, or the fish, causes it to be so \
 	strange? Produces vivid hallucinations."
 	reagent_state = LIQUID
-	color = "#5С0120"
+	color = "#5C0120"
 	addiction_threshold = 999
 	taste_description = "brackish water"
 	trippy = FALSE

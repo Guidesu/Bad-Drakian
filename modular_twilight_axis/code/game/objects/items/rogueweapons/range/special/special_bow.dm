@@ -19,7 +19,7 @@
 	var/turf/T2 = get_turf(target)
 	if(!T1 || !T2) return FALSE
 	if(get_dist(T1, T2) > range)
-		to_chat(source, span_warning("Слишком далеко!"))
+		to_chat(source, span_warning("Too far!"))
 		return FALSE
 	return TRUE
 
@@ -95,8 +95,8 @@
 
 
 /datum/special_intent/range_special/bow_doubleshot
-	name = "Двойной выстрел"
-	desc = "Моментально выпускает вторую стрелу из колчана вслед за первой."
+	name = "Double shot"
+	desc = "Instantly releases a second arrow from the quiver after the first."
 	range = 14
 	use_doafter = 1 SECONDS
 	stamcost = 25
@@ -133,8 +133,8 @@
 	perform_archery_shot()
 
 /datum/special_intent/range_special/bow_longshot
-	name = "Дальнобойный выстрел"
-	desc = "Тщательное прицеливание. Чем дальше цель, тем больше урон."
+	name = "Long-range shot"
+	desc = "Careful aiming. The further away the target, the greater the damage."
 	range = 25 
 	use_doafter = 1.5 SECONDS
 	stamcost = 30
@@ -153,8 +153,8 @@
 	apply_cooldown(cooldown)
 
 /datum/special_intent/range_special/bow_backstep
-	name = "Выстрел с отскоком"
-	desc = "Выстрел с одновременным прыжком назад и кратковременным бонусом к скорости."
+	name = "Bounce Shot"
+	desc = "Shot with a simultaneous jump back and a short-term speed bonus."
 	range = 14
 	use_doafter = 0.5 SECONDS 
 	stamcost = 20
@@ -182,6 +182,6 @@
 	effectedstats = list(STATKEY_SPD = 10)
 
 /atom/movable/screen/alert/status_effect/archer_haste
-	name = "Легкость ветра"
-	desc = "Мои движения стали быстрее после ловкого отскока."
+	name = "Lightness of the wind"
+	desc = "My movements became faster after a deft rebound."
 	icon_state = "buff"

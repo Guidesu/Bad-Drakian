@@ -131,10 +131,10 @@ type MirrorData = {
 type ActFn = (action: string, params?: Record<string, unknown>) => void;
 type TabProps = { act: ActFn; data: MirrorData };
 
-// Sizes beyond index 4 have no sprite for breasts (reported: "Пышная"
+// Sizes beyond index 4 have no sprite for breasts (reported: "Busty"
 // and up just disappear) - capped here and in the DM-side clamp.
-const BREAST_SIZE_LABELS = ['Плоская', 'Едва заметная', 'Маленькая', 'Умеренная', 'Большая', 'Пышная'];
-const ORGAN_SIZE_LABELS = ['Маленький', 'Средний', 'Большой'];
+const BREAST_SIZE_LABELS = ['Flat', 'Barely noticeable', 'Small', 'Moderate', 'Large', 'Busty'];
+const ORGAN_SIZE_LABELS = ['Small', 'Medium', 'Large'];
 
 const CREATURE_ORGANS: {
   key: 'ears' | 'horns' | 'tail' | 'wings' | 'snout' | 'fluff';
@@ -142,12 +142,12 @@ const CREATURE_ORGANS: {
   action: string;
   optionsKey: keyof MirrorData;
 }[] = [
-  { key: 'ears', label: 'Уши', action: 'set_ears', optionsKey: 'ears_styles' },
-  { key: 'horns', label: 'Рога', action: 'set_horns', optionsKey: 'horns_styles' },
-  { key: 'tail', label: 'Хвост', action: 'set_tail', optionsKey: 'tail_styles' },
-  { key: 'wings', label: 'Крылья', action: 'set_wings', optionsKey: 'wings_styles' },
-  { key: 'snout', label: 'Морда', action: 'set_snout', optionsKey: 'snout_styles' },
-  { key: 'fluff', label: 'Мех', action: 'set_fluff', optionsKey: 'fluff_styles' },
+  { key: 'ears', label: 'Ears', action: 'set_ears', optionsKey: 'ears_styles' },
+  { key: 'horns', label: 'Horns', action: 'set_horns', optionsKey: 'horns_styles' },
+  { key: 'tail', label: 'Tail', action: 'set_tail', optionsKey: 'tail_styles' },
+  { key: 'wings', label: 'Wings', action: 'set_wings', optionsKey: 'wings_styles' },
+  { key: 'snout', label: 'Muzzle', action: 'set_snout', optionsKey: 'snout_styles' },
+  { key: 'fluff', label: 'Fur', action: 'set_fluff', optionsKey: 'fluff_styles' },
 ];
 
 // Descriptor category names come from the game's own data (species
@@ -156,18 +156,18 @@ const CREATURE_ORGANS: {
 // category labels are a small, known set - translated here with an
 // English fallback for anything not in the dictionary.
 const DESCRIPTOR_LABELS: Record<string, string> = {
-  'Physical Descriptor': 'Физическое описание',
-  'Stature': 'Телосложение',
-  'Height': 'Рост',
-  'Body': 'Тело',
-  'Face': 'Лицо',
-  'Resting Expression': 'Выражение лица',
-  'Skin': 'Кожа',
-  'Voice': 'Голос',
-  'Prominent #1': 'Особенность №1',
-  'Prominent #2': 'Особенность №2',
-  'Prominent #3': 'Особенность №3',
-  'Prominent #4': 'Особенность №4',
+  'Physical Descriptor': 'Physical description',
+  'Stature': 'Body type',
+  'Height': 'Height',
+  'Body': 'Body',
+  'Face': 'Face',
+  'Resting Expression': 'Facial expression',
+  'Skin': 'Skin',
+  'Voice': 'Voice',
+  'Prominent #1': 'Feature No.1',
+  'Prominent #2': 'Feature #2',
+  'Prominent #3': 'Feature #3',
+  'Prominent #4': 'Feature #4',
 };
 const trDescriptor = (name: string) => DESCRIPTOR_LABELS[name] || name;
 
@@ -176,8 +176,8 @@ const trDescriptor = (name: string) => DESCRIPTOR_LABELS[name] || name;
 // strings. Same approach as descriptor labels: translate the known
 // ones, fall back to the original for anything not in the dictionary.
 const COLOR_KEY_LABELS: Record<string, string> = {
-  'Member': 'Член',
-  'Skin': 'Кожа',
+  'Member': 'Member',
+  'Skin': 'Skin',
 };
 const trColorKey = (label: string) => COLOR_KEY_LABELS[label] || label;
 
@@ -187,7 +187,7 @@ const trColorKey = (label: string) => COLOR_KEY_LABELS[label] || label;
 // display-only, showing just the last path segment.
 const trGradientName = (raw: string) => {
   const last = raw.split('/').pop() || raw;
-  return last === 'none' ? 'Нет' : last;
+  return last === 'none' ? 'No' : last;
 };
 
 // ---------------------------------------------------------------------
@@ -251,7 +251,7 @@ const PathDropdown = (props: {
   onSelect: (path: string) => void;
 }) => {
   const { label, options = [], currentPath, onSelect } = props;
-  const currentName = options.find((o) => o.path === currentPath)?.name ?? 'Нет';
+  const currentName = options.find((o) => o.path === currentPath)?.name ?? 'No';
   return (
     <SelectField
       label={label}
@@ -275,7 +275,7 @@ const NameDropdown = (props: {
   return (
     <SelectField
       label={label}
-      value={currentName || 'Нет'}
+      value={currentName || 'No'}
       options={options.map((o) => o.name)}
       onChange={(name) => {
         const match = options.find((o) => o.name === name);
@@ -368,7 +368,7 @@ const ColorField = (props: {
       )}
       <button
         type="button"
-        title="Выбрать цвет"
+        title="Choose color"
         className="mirror-swatch"
         onClick={() => act(pickAction, pickParams)}
         style={{
@@ -389,7 +389,7 @@ const ColorField = (props: {
 // ---------------------------------------------------------------------
 // ---------------------------------------------------------------------
 // Style picker: searchable thumbnail grid, matching the in-game
-// "Волосы" picker's layout. Shared between hairstyles and facial hair.
+// "Hair" picker's layout. Shared between hairstyles and facial hair.
 // Thumbnails are cropped straight from each accessory's own icon_state
 // (cheap, generated once server-side in ui_static_data).
 // ---------------------------------------------------------------------
@@ -397,7 +397,7 @@ const StylePickerModal = ({
   options,
   onSelect,
   onClose,
-  searchPlaceholder = 'Поиск причёски...',
+  searchPlaceholder = 'Search hairstyle...',
 }: {
   options: StyleOption[];
   onSelect: (path: string) => void;
@@ -444,7 +444,7 @@ const StylePickerModal = ({
           />
           <button
             type="button"
-            title="Закрыть"
+            title="Close"
             onClick={onClose}
             style={{
               width: '22px',
@@ -544,7 +544,7 @@ const StylePicker = (props: {
             style={{ width: '18px', height: '18px', imageRendering: 'pixelated' }}
           />
         )}
-        {current?.name || 'Выбрать...'}
+        {current?.name || 'Choose...'}
       </button>
       {open && (
         <StylePickerModal options={options} onSelect={onSelect} onClose={() => setOpen(false)} />
@@ -577,7 +577,7 @@ const OrganColorPanel = (props: {
       <NameDropdown
         label={label}
         options={options}
-        currentName={present ? organData?.style : 'Нет'}
+        currentName={present ? organData?.style : 'No'}
         onSelect={(path) => act(action, { path })}
       />
       {present &&
@@ -614,31 +614,31 @@ const SectionHeader = ({ children }: { children: ReactNode }) => (
 // ---------------------------------------------------------------------
 
 const SkinEyesSection = ({ act, data }: TabProps) => (
-  <Panel title="Кожа и глаза">
-    <SectionHeader>Тон кожи</SectionHeader>
+  <Panel title="Skin and eyes">
+    <SectionHeader>Skin tone</SectionHeader>
     <ColorField
-      label="Основной"
+      label="Main"
       value={data.skin.color1}
       act={act}
       pickAction="pick_skin_color"
       pickParams={{ tier: 1 }}
     />
     <ColorField
-      label="Дополнительный"
+      label="Secondary"
       value={data.skin.color2}
       act={act}
       pickAction="pick_skin_color"
       pickParams={{ tier: 2 }}
     />
     <ColorField
-      label="Третичный"
+      label="Tertiary"
       value={data.skin.color3}
       act={act}
       pickAction="pick_skin_color"
       pickParams={{ tier: 3 }}
     />
-    <SectionHeader>Глаза</SectionHeader>
-    <ColorField label="Цвет глаз" value={data.eye_color} act={act} pickAction="pick_eye_color" pickParams={{}} />
+    <SectionHeader>Eyes</SectionHeader>
+    <ColorField label="Eye color" value={data.eye_color} act={act} pickAction="pick_eye_color" pickParams={{}} />
     <label style={{ ...rowStyle, cursor: 'pointer' }}>
       <input
         type="checkbox"
@@ -646,11 +646,11 @@ const SkinEyesSection = ({ act, data }: TabProps) => (
         onChange={() => act('toggle_heterochromia')}
         style={{ marginRight: '6px' }}
       />
-      <span style={{ fontSize: '12px', color: VAR_LABEL }}>Гетерохромия</span>
+      <span style={{ fontSize: '12px', color: VAR_LABEL }}>Heterochromia</span>
     </label>
     {!!data.heterochromia && (
       <ColorField
-        label="Цвет второго глаза"
+        label="Second eye color"
         value={data.second_eye_color}
         act={act}
         pickAction="pick_second_eye_color"
@@ -661,52 +661,52 @@ const SkinEyesSection = ({ act, data }: TabProps) => (
 );
 
 const TabHair = ({ act, data }: TabProps) => (
-  <Panel title="Волосы">
-    <SectionHeader>Причёска</SectionHeader>
+  <Panel title="Hair">
+    <SectionHeader>Hairstyle</SectionHeader>
     <StylePicker
-      label="Стиль"
+      label="Style"
       options={data.hairstyles}
       currentPath={data.hair.style}
       onSelect={(path) => act('set_hairstyle', { path })}
     />
-    <ColorField label="Основной цвет" value={data.hair.color} act={act} pickAction="pick_hair_color" pickParams={{}} />
+    <ColorField label="Primary color" value={data.hair.color} act={act} pickAction="pick_hair_color" pickParams={{}} />
     <SelectField
-      label="Основной градиент"
+      label="Main gradient"
       value={data.hair.secondary_gradient || data.hair_gradients[0]}
       options={data.hair_gradients}
       onChange={(style) => act('set_hair_gradient', { tier: 2, style })}
       renderOption={trGradientName}
     />
     <ColorField
-      label="Цвет основного градиента"
+      label="Main gradient color"
       value={data.hair.secondary_color}
       act={act}
       pickAction="pick_hair_gradient_color"
       pickParams={{ tier: 2 }}
     />
     <SelectField
-      label="Дополнительный градиент"
+      label="Secondary gradient"
       value={data.hair.third_gradient || data.hair_gradients[0]}
       options={data.hair_gradients}
       onChange={(style) => act('set_hair_gradient', { tier: 3, style })}
       renderOption={trGradientName}
     />
     <ColorField
-      label="Цвет дополнительного градиента"
+      label="Secondary gradient color"
       value={data.hair.third_color}
       act={act}
       pickAction="pick_hair_gradient_color"
       pickParams={{ tier: 3 }}
     />
-    <SectionHeader>Борода/усы</SectionHeader>
+    <SectionHeader>Beard/Mustache</SectionHeader>
     <StylePicker
-      label="Стиль"
+      label="Style"
       options={data.facial_hairstyles}
       currentPath={data.facial_hair.style}
       onSelect={(path) => act('set_facial_hairstyle', { path })}
     />
     <ColorField
-      label="Цвет"
+      label="Color"
       value={data.facial_hair.color}
       act={act}
       pickAction="pick_facial_hair_color"
@@ -716,9 +716,9 @@ const TabHair = ({ act, data }: TabProps) => (
 );
 
 const FaceSection = ({ act, data }: TabProps) => (
-  <Panel title="Лицо">
+  <Panel title="Face">
     <PathDropdown
-      label="Деталь лица"
+      label="Face detail"
       options={data.face_detail_styles}
       currentPath={data.face_detail_style}
       onSelect={(path) => act('set_face_detail', { path })}
@@ -735,7 +735,7 @@ const FaceSection = ({ act, data }: TabProps) => (
         />
       ))}
     <PathDropdown
-      label="Аксессуар"
+      label="Accessory"
       options={data.accessory_styles}
       currentPath={data.accessory_style}
       onSelect={(path) => act('set_accessory', { path })}
@@ -755,7 +755,7 @@ const FaceSection = ({ act, data }: TabProps) => (
 );
 
 const TabCreature = ({ act, data }: TabProps) => (
-  <Panel title="Черты">
+  <Panel title="Features">
     {CREATURE_ORGANS.map((organ) => (
       <OrganColorPanel
         key={organ.key}
@@ -775,22 +775,22 @@ const ChestSection = ({ act, data }: TabProps) => {
   const present = !!breasts.present;
   const skinColor = data.skin.color1;
   return (
-    <Panel title="Грудь">
+    <Panel title="Chest">
       <NameDropdown
-        label="Тип груди"
+        label="Breast type"
         options={data.breast_styles}
-        currentName={present ? breasts.style : 'Нет'}
+        currentName={present ? breasts.style : 'No'}
         onSelect={(path) => act('set_breast_style', { path })}
       />
       {present && (
         <>
           <SizeStepper
-            label="Размер"
+            label="Size"
             value={breasts.size}
             labels={BREAST_SIZE_LABELS}
             onChange={(size) => act('set_breast_size', { size })}
           />
-          <SectionHeader>Цвет груди</SectionHeader>
+          <SectionHeader>Chest color</SectionHeader>
           {breasts.colors?.map((c) => (
             <ColorField
               key={c.index}
@@ -799,7 +799,7 @@ const ChestSection = ({ act, data }: TabProps) => {
               act={act}
               pickAction="pick_organ_color"
               pickParams={{ organ: 'breasts', index: c.index }}
-              matchLabel="Как кожа"
+              matchLabel="Like skin"
               matchAction="set_organ_color"
               matchParams={{ organ: 'breasts', index: c.index, color: skinColor }}
             />
@@ -820,9 +820,9 @@ const GenitalsSection = ({ act, data }: TabProps) => {
   const skinColor = data.skin.color1;
   return (
     <>
-      <Panel title="Пенис">
+      <Panel title="Penis">
         <PathDropdown
-          label="Тип"
+          label="Type"
           options={data.penis_styles}
           currentPath={penis.style_path}
           onSelect={(path) => act('set_penis_style', { path })}
@@ -830,7 +830,7 @@ const GenitalsSection = ({ act, data }: TabProps) => {
         {penisPresent && (
           <>
             <SizeStepper
-              label="Размер"
+              label="Size"
               value={penis.size}
               min={1}
               labels={ORGAN_SIZE_LABELS}
@@ -844,7 +844,7 @@ const GenitalsSection = ({ act, data }: TabProps) => {
                 act={act}
                 pickAction="pick_organ_color"
                 pickParams={{ organ: 'penis', index: c.index }}
-                matchLabel="Как кожа"
+                matchLabel="Like skin"
                 matchAction="set_organ_color"
                 matchParams={{ organ: 'penis', index: c.index, color: skinColor }}
               />
@@ -852,17 +852,17 @@ const GenitalsSection = ({ act, data }: TabProps) => {
           </>
         )}
       </Panel>
-      <Panel title="Яички">
+      <Panel title="Testicles">
         <NameDropdown
-          label="Тип"
+          label="Type"
           options={data.testicle_styles}
-          currentName={testiclesPresent ? testicles.style : 'Нет'}
+          currentName={testiclesPresent ? testicles.style : 'No'}
           onSelect={(path) => act('set_testicles', { path })}
         />
         {testiclesPresent && (
           <>
             <SizeStepper
-              label="Размер"
+              label="Size"
               value={testicles.size}
               min={1}
               labels={ORGAN_SIZE_LABELS}
@@ -876,7 +876,7 @@ const GenitalsSection = ({ act, data }: TabProps) => {
                 act={act}
                 pickAction="pick_organ_color"
                 pickParams={{ organ: 'testicles', index: c.index }}
-                matchLabel="Как кожа"
+                matchLabel="Like skin"
                 matchAction="set_organ_color"
                 matchParams={{ organ: 'testicles', index: c.index, color: skinColor }}
               />
@@ -884,11 +884,11 @@ const GenitalsSection = ({ act, data }: TabProps) => {
           </>
         )}
       </Panel>
-      <Panel title="Вагина">
+      <Panel title="Vagina">
         <NameDropdown
-          label="Тип"
+          label="Type"
           options={data.vagina_styles}
-          currentName={vaginaPresent ? vagina.style : 'Нет'}
+          currentName={vaginaPresent ? vagina.style : 'No'}
           onSelect={(path) => act('set_vagina', { path })}
         />
         {vaginaPresent &&
@@ -900,7 +900,7 @@ const GenitalsSection = ({ act, data }: TabProps) => {
               act={act}
               pickAction="pick_organ_color"
               pickParams={{ organ: 'vagina', index: c.index }}
-              matchLabel="Как кожа"
+              matchLabel="Like skin"
               matchAction="set_organ_color"
               matchParams={{ organ: 'vagina', index: c.index, color: skinColor }}
             />
@@ -945,7 +945,7 @@ const MarkingZoneCard = ({
         {label}
       </div>
       {current.length === 0 && (
-        <div style={{ fontSize: '11px', color: VAR_LABEL, marginBottom: '4px' }}>Нет меток</div>
+        <div style={{ fontSize: '11px', color: VAR_LABEL, marginBottom: '4px' }}>No tags</div>
       )}
       {current.map((m) => (
         <div key={m.name} style={{ ...rowStyle, gap: '8px' }}>
@@ -961,15 +961,15 @@ const MarkingZoneCard = ({
           <div style={{ flex: 1, fontSize: '12px' }}>{m.name}</div>
           <button
             type="button"
-            title="Сбросить цвет"
+            title="Reset color"
             onClick={() => act('reset_marking_color', { zone, name: m.name })}
             className={btnClass(false)}
             style={{ padding: '2px 6px', fontSize: '10px' }}>
-            Сброс
+            Reset
           </button>
           <button
             type="button"
-            title="Выбрать цвет"
+            title="Choose color"
             className="mirror-swatch"
             onClick={() => act('pick_marking_color', { zone, name: m.name })}
             style={{
@@ -986,11 +986,11 @@ const MarkingZoneCard = ({
           />
           <button
             type="button"
-            title="Удалить"
+            title="Delete"
             onClick={() => act('remove_marking', { zone, name: m.name })}
             className={btnClass(false)}
             style={{ padding: '2px 6px', fontSize: '10px' }}>
-            Удалить
+            Delete
           </button>
         </div>
       ))}
@@ -1000,7 +1000,7 @@ const MarkingZoneCard = ({
           className={btnClass(false)}
           onClick={() => setPickerOpen(true)}
           style={{ marginTop: '4px' }}>
-          + Добавить метку
+          + Add tag
         </button>
       )}
       {pickerOpen && (
@@ -1008,7 +1008,7 @@ const MarkingZoneCard = ({
           options={candidates}
           onSelect={(name) => act('add_marking', { zone, name })}
           onClose={() => setPickerOpen(false)}
-          searchPlaceholder="Поиск метки..."
+          searchPlaceholder="Search tag..."
         />
       )}
     </div>
@@ -1018,7 +1018,7 @@ const MarkingZoneCard = ({
 const TabMarkings = ({ act, data }: TabProps) => {
   const zones = data.marking_zone_list || [];
   return (
-    <Panel title="Отметки">
+    <Panel title="Tags">
       {zones.map((z) => (
         <MarkingZoneCard
           key={z.zone}
@@ -1037,11 +1037,11 @@ const TabDescriptors = ({ act, data }: TabProps) => {
   const categories = data.descriptor_categories || [];
   if (!categories.length) {
     return (
-      <Panel title="Описания">У вашего вида нет стандартных описаний для изменения.</Panel>
+      <Panel title="Descriptions">Your species has no standard descriptions for modification.</Panel>
     );
   }
   return (
-    <Panel title="Описания">
+    <Panel title="Descriptions">
       {categories.map((cat) => (
         <PathDropdown
           key={cat.path}
@@ -1060,11 +1060,11 @@ const TabDescriptors = ({ act, data }: TabProps) => {
 // ---------------------------------------------------------------------
 
 const ALL_TABS: { id: string; label: string; component: (props: TabProps) => ReactNode }[] = [
-  { id: 'body', label: 'Тело', component: TabBody },
-  { id: 'hair', label: 'Волосы', component: TabHair },
-  { id: 'creature', label: 'Черты', component: TabCreature },
-  { id: 'markings', label: 'Отметки', component: TabMarkings },
-  { id: 'descriptors', label: 'Описания', component: TabDescriptors },
+  { id: 'body', label: 'Body', component: TabBody },
+  { id: 'hair', label: 'Hair', component: TabHair },
+  { id: 'creature', label: 'Features', component: TabCreature },
+  { id: 'markings', label: 'Tags', component: TabMarkings },
+  { id: 'descriptors', label: 'Descriptions', component: TabDescriptors },
 ];
 
 export const MirrorAppearance = () => {
@@ -1084,7 +1084,7 @@ export const MirrorAppearance = () => {
       <Window width={420} height={140}>
         <Window.Content>
           <div style={{ padding: '24px', textAlign: 'center', color: VAR_LABEL }}>
-            Зеркало гаснет...
+            Mirror goes out...
           </div>
         </Window.Content>
       </Window>
@@ -1137,7 +1137,7 @@ export const MirrorAppearance = () => {
             letterSpacing: '1px',
             color: VAR_ACCENT,
           }}>
-          ~ Зеркало мерцает ~
+          ~ The mirror shimmers~
         </div>
         <div
           style={{

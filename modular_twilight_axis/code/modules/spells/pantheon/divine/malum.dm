@@ -414,7 +414,7 @@
 	chargedloop = null
 	req_items = list(/obj/item/clothing/neck/roguetown/psicross)
 	sound = 'sound/magic/heal.ogg'
-	invocations = list("Да благословит тебя Малум работать день и ночь, и будет жар в твоих глазах, и магма в сердце!")
+	invocations = list("May Malum bless you to work day and night, and may there be heat in your eyes, and magma in your heart!")
 	invocation_type = INVOCATION_SHOUT
 	associated_skill = /datum/skill/magic/holy
 	antimagic_allowed = TRUE

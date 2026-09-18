@@ -16,7 +16,7 @@
 /datum/manor_panel/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "ManorPanel", "Владение")
+		ui = new(user, src, "ManorPanel", "Possession")
 		ui.open()
 
 /datum/asset/simple/manor
@@ -163,7 +163,7 @@
 		return ""
 	return "[uppertext(copytext(text_value, 1, 2))][copytext(text_value, 2)]"
 
-/datum/manor_panel/proc/get_readable_type_name(thing_path, fallback = "Неизвестно")
+/datum/manor_panel/proc/get_readable_type_name(thing_path, fallback = "Unknown")
 	var/as_text = "[thing_path]"
 	var/last_slash = findlasttext(as_text, "/")
 	if(last_slash)
@@ -187,7 +187,7 @@
 	var/list/already_added = list()
 
 	for(var/stock_type in workstation.produce)
-		var/stock_name = get_readable_type_name(stock_type, "Ресурс")
+		var/stock_name = get_readable_type_name(stock_type, "Resource")
 		if(stock_name in already_added)
 			continue
 		already_added += stock_name
@@ -208,10 +208,10 @@
 	var/datum/manor/manor = get_manor_for_user(user)
 	if(!manor)
 		return list(
-			"manor_name" = "Нет доступного владения",
+			"manor_name" = "No available possession",
 			"manor_type" = "manor",
 			"manor_patron_key" = "astrata",
-			"manor_origin" = "Неизвестно",
+			"manor_origin" = "Unknown",
 			"total_workers" = 0,
 			"workers_assigned" = 0,
 			"workers_free" = 0,

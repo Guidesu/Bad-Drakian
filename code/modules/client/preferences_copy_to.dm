@@ -118,8 +118,10 @@
 			for(var/X in L)
 				ADD_TRAIT(character, curse2trait(X), TRAIT_GENERIC)
 
+	if(pref_species.forced_taur && !taur_type && length(pref_species.get_taur_list()))
+		taur_type = pick(pref_species.get_taur_list())
 	if(taur_type)
-		character.Taurize(taur_type, taur_color)
+		character.Taurize(taur_type, taur_color, taur_markings, taur_tertiary)
 	else if(character_setup)
 		// This should only ever ~do~ anything for previews
 		character.ensure_not_taur()

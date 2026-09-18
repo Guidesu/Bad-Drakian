@@ -259,7 +259,7 @@
 	var/sacrifice_info = "the Crown"
 	var/target_role = "Crown"
 
-	// Приоритет 1: Герцог (SSticker.rulermob)
+	//Priority 1: Duke (SSticker.rulermob)
 	if(SSticker.rulermob && istype(SSticker.rulermob, /mob/living/carbon/human))
 		var/mob/living/carbon/human/ruler = SSticker.rulermob
 		if(ruler.stat != DEAD)
@@ -270,7 +270,7 @@
 				sacrifice_info = "[ruler.real_name] (Grand Duchess)"
 				target_role = "Grand Duchess"
 
-	// Приоритет 2: Епископ
+	//Priority 2: Bishop
 	if(target_role == "Crown")
 		for(var/mob/living/carbon/human/HL in GLOB.human_list)
 			if(HL.stat == DEAD)
@@ -290,7 +290,7 @@
 				target_role = "Bishop"
 				break
 
-	// Приоритет 3: Десница
+	//Priority 3: Right Hand
 	if(target_role == "Crown")
 		for(var/mob/living/carbon/human/HL in GLOB.human_list)
 			if(HL.stat == DEAD)
@@ -310,7 +310,7 @@
 				target_role = "Hand"
 				break
 
-	// Приоритет 4: Принц или Принцесса
+	//Priority 4: Prince or Princess
 	if(target_role == "Crown")
 		for(var/mob/living/carbon/human/HL in GLOB.human_list)
 			if(HL.stat == DEAD)
@@ -330,7 +330,7 @@
 				target_role = role_title
 				break
 
-	// Приоритет 5: Маршал
+	//Priority 5: Marshal
 	if(target_role == "Crown")
 		for(var/mob/living/carbon/human/HL in GLOB.human_list)
 			if(HL.stat == DEAD)
@@ -350,7 +350,7 @@
 				target_role = "Marshal"
 				break
 
-	// Приоритет 6: Придворный маг
+	//Priority 6: Court Mage
 	if(target_role == "Crown")
 		for(var/mob/living/carbon/human/HL in GLOB.human_list)
 			if(HL.stat == DEAD)
@@ -370,7 +370,7 @@
 				target_role = "Court Magician"
 				break
 
-	// Приоритет 7: Рыцарь-капитан
+	//Priority 7: Knight-Captain
 	if(target_role == "Crown")
 		for(var/mob/living/carbon/human/HL in GLOB.human_list)
 			if(HL.stat == DEAD)
@@ -390,7 +390,7 @@
 				target_role = "Knight Captain"
 				break
 
-	// Приоритет 8: Казначей
+	//Priority 8: Treasurer
 	if(target_role == "Crown")
 		for(var/mob/living/carbon/human/HL in GLOB.human_list)
 			if(HL.stat == DEAD)
@@ -578,9 +578,9 @@
 		if(V.special_role == "Zizoid Lackey")
 			possible |= V.current
 
-	var/mob/living/carbon/human/choice = input(src, "Whom do you no longer have use for?", "TWILIGHT AXIS") as null|anything in possible
+	var/mob/living/carbon/human/choice = input(src, "Whom do you no longer have use for?", "BAD DRAKIAN") as null|anything in possible
 	if(choice)
-		var/alert = alert(src, "Are you sure?", "TWILIGHT AXIS", "Yes", "Cancel")
+		var/alert = alert(src, "Are you sure?", "BAD DRAKIAN", "Yes", "Cancel")
 		if(alert == "Yes")
 			visible_message(span_danger("[src] reaches out, ripping up [choice]'s soul!</span>"))
 			to_chat(choice, span_danger("I HAVE FAILED MY LEADER! I HAVE FAILED ZIZO! NOTHING ELSE BUT DEATH REMAINS FOR ME NOW!"))

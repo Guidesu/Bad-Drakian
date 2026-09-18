@@ -53,7 +53,7 @@
 
 /obj/item/cannon_fuse
 	name = "fuse"
-	desc = "Фитиль для пушки."
+	desc = "Cannon fuse."
 	icon = 'modular_twilight_axis/icons/obj/structures/siege/cannon/cannon_fuse.dmi'
 	icon_state = "fiber_fuse"
 	w_class = WEIGHT_CLASS_SMALL
@@ -63,7 +63,7 @@
 
 /obj/item/cannon_fuse/fiber
 	name = "fiber fuse"
-	desc = "Стандартный плетеный фитиль обмазанный жиром. Горит относительно медленно, давая расчету время отойти на безопасное расстояние."
+	desc = "Standard braided fuse coated with grease. Burns relatively slowly, giving the crew time to move to a safe distance."
 	icon_state = "fiber_fuse"
 	icon_state_lit = "fiber_fuse_lit"
 	burn_time = 3 SECONDS
@@ -72,7 +72,7 @@
 
 /obj/item/cannon_fuse/parchment
 	name = "parchment fuse"
-	desc = "Пропитанный жиром бумажный фитиль. Сгорает почти мгновенно, обеспечивая быстрый выстрел."
+	desc = "Paper fuse soaked in grease. Burns almost instantly, providing a quick shot."
 	icon_state = "parchment_fuse"
 	icon_state_lit = "parchment_fuse_lit"
 	burn_time = 1 SECONDS
@@ -83,23 +83,23 @@
 
 /obj/item/cannon_shell
 	name = "cannon shell"
-	desc = "Снаряд для пушки."
+	desc = "Cannon projectile."
 	icon = 'modular_twilight_axis/icons/obj/structures/siege/cannon/cannon.dmi'
 	w_class = WEIGHT_CLASS_NORMAL
 
 /obj/item/cannon_shell/cannonball
 	name = "cannonball"
-	desc = "Тяжелое стальное ядро для пушки."
+	desc = "Heavy steel cannonball."
 	icon_state = "cannonball"
 
 /obj/item/cannon_shell/grapeshot
 	name = "grapeshot"
-	desc = "Снаряд, наполненный десятками мелких пуль."
+	desc = "A projectile filled with dozens of small bullets."
 	icon_state = "grapeshot"
 
 /obj/projectile/bullet/cannon_debris
 	name = "flying debris"
-	desc = "Куски земли и камня."
+	desc = "Pieces of earth and stone."
 	icon = 'icons/effects/debris.dmi'
 	icon_state = "shards"
 	color = "#5c544d"
@@ -118,7 +118,7 @@
 
 /obj/projectile/bullet/cannonball_straight
 	name = "cannonball"
-	desc = "Свинцовое ядро"
+	desc = "Lead core"
 	icon = 'modular_twilight_axis/icons/obj/structures/siege/cannon/cannonball.dmi'
 	icon_state = "ball"
 	damage = 110
@@ -177,7 +177,7 @@
 		return BULLET_ACT_FORCE_PIERCE
 
 	else
-		T.visible_message(span_danger("Пушечное ядро с грохотом разрывается!"))
+		T.visible_message(span_danger("The cannonball explodes with a crash!"))
 
 		for(var/mob/living/M in range(4, T))
 			if(!M.mind || istype(M, /mob/living/simple_animal))
@@ -198,7 +198,7 @@
 				M.Knockdown(60)
 				M.Paralyze(40)
 				M.adjustBruteLoss(rand(40, 80))
-				M.visible_message(span_warning("[M] сбивает с ног мощной ударной волной!"))
+				M.visible_message(span_warning("[M] knocks down with a powerful shockwave!"))
 
 		var/shrapnel_count = rand(6, 12)
 		var/list/all_dirs = list(NORTH, SOUTH, EAST, WEST, NORTHEAST, NORTHWEST, SOUTHEAST, SOUTHWEST)
@@ -255,7 +255,7 @@
 
 /obj/structure/cannon
 	name = "Cannon"
-	desc = "Тяжелое пороховое оружие на колесном лафете. Стреляет разрушительными снарядами."
+	desc = "Heavy gunpowder weapon on a wheeled carriage. Fires destructive projectiles."
 	icon = 'modular_twilight_axis/icons/obj/structures/siege/cannon/cannon.dmi'
 	icon_state = "cannon"
 	density = TRUE
@@ -303,24 +303,24 @@
 /obj/structure/cannon/examine(mob/user)
 	. = ..()
 	if((world.time - last_fired) < cooldown)
-		. += span_warning("Ствол пушки горячий от недавнего выстрела!")
+		. += span_warning("The gun barrel is hot from a recent shot!")
 	else
-		. += span_info("Ствол холодный, пушка готова к перезарядке.")
+		. += span_info("The barrel is cold, the cannon is ready to reload.")
 
 	if(fuse_burning)
-		. += span_bold("ФИТИЛЬ ГОРИТ И ИСКРИТ! СЕЙЧАС БУДЕТ ВЫСТРЕЛ!")
+		. += span_bold("THE FUSE IS BURNING AND SPARKING! THE SHOT IS ABOUT TO HAPPEN!")
 		return
 
 	if(!powder_loaded)
-		. += span_info("Дуло пустое. Нужно засыпать порох.")
+		. += span_info("The barrel is empty. You need to pour in the gunpowder.")
 	else if(!bullet_loaded)
-		. += span_info("Пороховой заряд засыпан, но снаряд отсутствует.")
+		. += span_info("The gunpowder charge has been poured, but the projectile is missing.")
 	else if(!rammed)
-		. += span_warning("Порох и снаряд внутри ствола, но заряд еще не уплотнен шомполом!")
+		. += span_warning("Gunpowder and the projectile are inside the barrel, but the charge has not yet been tamped with the ramrod!")
 	else if(!inserted_fuse)
-		. += span_notice("Орудие готово и уплотнено. В запальное отверстие нужно вставить фитиль.")
+		. += span_notice("The weapon is ready and tamped. A fuse needs to be inserted into the vent hole.")
 	else
-		. += span_bold("В запале установлен фитиль. Поджгите его, чтобы произвести выстрел!")
+		. += span_bold("The fuse is installed in the vent. Light it to fire!")
 
 /obj/structure/cannon/fire_act()
 	if(inserted_fuse && !fuse_burning)
@@ -335,33 +335,33 @@
 	if(.)
 		return
 	if(fuse_burning)
-		to_chat(user, span_warning("Фитиль горит! Не трогайте пушку!"))
+		to_chat(user, span_warning("The fuse is burning! Do not touch the cannon!"))
 		return
 
 	dir = turn(dir, -90)
-	user.visible_message(span_notice("[user] разворачивает [src.name]."), span_notice("Вы развернули пушку на [dir2text(dir)]."))
+	user.visible_message(span_notice("[user] rotates [src.name]."), span_notice("You have rotated the cannon to [dir2text(dir)]."))
 	playsound(src, 'modular_twilight_axis/awful_artillery/sound/anglecorrection.ogg', 100, TRUE)
 
 /obj/structure/cannon/attackby(obj/item/used_item, mob/user, params)
 	if(istype(used_item, /obj/item/twilight_powderflask))
 		var/obj/item/twilight_powderflask/P = used_item
 		if(powder_loaded)
-			to_chat(user, span_warning("В пушку уже засыпан порох!"))
+			to_chat(user, span_warning("Gunpowder is already poured in the cannon!"))
 			return
 		if(P.charges < CANNON_POWDER_COST)
-			to_chat(user, span_warning("В пороховнице слишком мало пороха для такой пушки! Нужно хотя бы 10 зарядов."))
+			to_chat(user, span_warning("There is too little gunpowder in the powder horn for such a cannon! At least 10 charges are needed."))
 			return
-		user.visible_message(span_notice("[user] начинает засыпать порох в дуло [src.name]..."))
+		user.visible_message(span_notice("[user] begins to pour gunpowder into the barrel [src.name]..."))
 		playsound(src, 'modular_twilight_axis/awful_artillery/sound/powder.ogg', 100, TRUE)
 		if(do_after(user, 3 SECONDS, src))
 			if(QDELETED(P) || QDELETED(src))
 				return
 			if(P.charges < CANNON_POWDER_COST)
-				to_chat(user, span_warning("В пороховнице уже недостаточно пороха!"))
+				to_chat(user, span_warning("There is not enough gunpowder in the powder flask!"))
 				return
 			P.charges -= CANNON_POWDER_COST
 			powder_loaded = TRUE
-			to_chat(user, span_notice("Вы засыпали порох в ствол."))
+			to_chat(user, span_notice("You have poured gunpowder into the barrel."))
 			if(P.charges <= 0)
 				qdel(P)
 				var/obj/item/twilight_powderflask_empty/E = new (user.loc)
@@ -370,38 +370,38 @@
 
 	if(istype(used_item, /obj/item/cannon_shell))
 		if(!powder_loaded)
-			to_chat(user, span_warning("Сначала нужно засыпать порох!"))
+			to_chat(user, span_warning("You need to pour gunpowder first!"))
 			return
 		if(bullet_loaded)
-			to_chat(user, span_warning("В стволе уже есть снаряд!"))
+			to_chat(user, span_warning("There is already a projectile in the barrel!"))
 			return
 
 		if(user.transferItemToLoc(used_item, src))
 			bullet_loaded = used_item
-			user.visible_message(span_notice("[user] помещает снаряд в дуло [src.name]."))
+			user.visible_message(span_notice("[user] places the projectile into the barrel [src.name]."))
 			playsound(src, 'modular_twilight_axis/awful_artillery/sound/loading.ogg', 100, TRUE)
 		return
 
 	if(istype(used_item, /obj/item/twilight_ramrod))
 		if(!powder_loaded || !bullet_loaded)
-			to_chat(user, span_warning("Вам нечего уплотнять! Зарядите сначала порох и снаряд."))
+			to_chat(user, span_warning("You have nothing to tamp! Load gunpowder and a projectile first."))
 			return
 		if(rammed)
-			to_chat(user, span_warning("Заряд в пушке уже уплотнен!"))
+			to_chat(user, span_warning("The charge in the cannon is already tamped!"))
 			return
-		user.visible_message(span_notice("[user] начинает уплотнять заряд в стволе [src.name] шомполом..."))
+		user.visible_message(span_notice("[user] starts packing the charge in the barrel of [src.name] with the ramrod..."))
 		playsound(src, 'modular_twilight_axis/firearms/sound/ramrod.ogg', 100, TRUE)
 		if(do_after(user, 4 SECONDS, src))
 			rammed = TRUE
-			user.visible_message(span_notice("[user] уплотнил заряд шомполом. Теперь пушка готова к выстрелу."))
+			user.visible_message(span_notice("[user] has packed the charge with the ramrod. Now the cannon is ready to fire."))
 		return
 
 	if(istype(used_item, /obj/item/cannon_fuse) || istype(used_item, /obj/item/natural/fibers) || istype(used_item, /obj/item/natural/bundle/fibers))
 		if(inserted_fuse)
-			to_chat(user, span_warning("В запальном отверстии пушки уже есть фитиль!"))
+			to_chat(user, span_warning("There is already a fuse in the cannon's touch hole!"))
 			return
 		if(!rammed)
-			to_chat(user, span_warning("Перед установкой фитиля уплотните порох и снаряд шомполом!"))
+			to_chat(user, span_warning("Before inserting the fuse, pack the gunpowder and projectile with the ramrod!"))
 			return
 
 		if(istype(used_item, /obj/item/natural/fibers) || istype(used_item, /obj/item/natural/bundle/fibers))
@@ -417,7 +417,7 @@
 			if(user.transferItemToLoc(used_item, src))
 				inserted_fuse = used_item
 
-		user.visible_message(span_notice("[user] вставляет фитиль в запальное отверстие [src.name]."))
+		user.visible_message(span_notice("[user] inserts the fuse into the touch hole of [src.name]."))
 		playsound(src, 'sound/foley/bandage.ogg', 100, FALSE)
 		update_icon()
 		return
@@ -441,9 +441,9 @@
 	update_icon()
 
 	if(user)
-		user.visible_message(span_danger("[user] поджигает фитиль у [src.name]! Она сейчас выстрелит!"))
+		user.visible_message(span_danger("[user] lights the fuse at [src.name]! It is about to fire!"))
 	else
-		visible_message(span_danger("Фитиль у [src.name] начинает угрожающе искрить! Она сейчас выстрелит!"))
+		visible_message(span_danger("The fuse at [src.name] starts sparking threateningly! It is about to fire!"))
 
 	playsound(src, 'modular_twilight_axis/firearms/sound/fuse.ogg', 100, FALSE)
 
@@ -505,8 +505,8 @@
 		P.fire()
 
 	var/user_name = user ? "[user]" : "Unknown (Auto-ignite)"
-	log_game("[user_name] выстрелил из пушки в направлении [dir2text(dir)] на ([x], [y], [z])")
-	message_admins("Пушка выстрелила, поджег был сделан игроком [user_name] на [ADMIN_VERBOSEJMP(src.loc)]")
+	log_game("[user_name] fired the cannon towards [dir2text(dir)] at ([x], [y], [z])")
+	message_admins("The cannon fired, the ignition was made by player [user_name] at [ADMIN_VERBOSEJMP(src.loc)]")
 	qdel(bullet_loaded)
 	bullet_loaded = null
 	powder_loaded = FALSE
@@ -523,7 +523,7 @@
 	var/misfire_chance = max(0, 25 - (skill * 5))
 
 	if(prob(misfire_chance))
-		src.visible_message(span_danger("[src] разрывается на части!"))
+		src.visible_message(span_danger("[src] is tearing apart!"))
 		explosion(get_turf(src), 1, 2, 4, 0, TRUE, FALSE, 2)
 		qdel(src)
 		return
@@ -535,7 +535,7 @@
 	last_fired = world.time
 
 	if(barrel_integrity <= 0)
-		src.visible_message(span_danger("[src] разрывается на части из-за критического износа ствола!"))
+		src.visible_message(span_danger("[src] is tearing apart due to critical barrel wear!"))
 		explosion(get_turf(src), 1, 2, 4, 0, TRUE, FALSE, 2)
 		qdel(src)
 #undef CANNON_POWDER_COST

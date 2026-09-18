@@ -17,7 +17,7 @@
 /obj/item/twilight_powderflask_empty
 	name = "powderflask"
 	icon = 'modular_twilight_axis/firearms/icons/arquebus_items.dmi'
-	desc = "Пороховница, предназначенная для удобной перезарядки огнестрельного оружия. Сейчас не содержит пороха."
+	desc = "A powder flask designed for convenient reloading of firearms. Currently contains no powder."
 	icon_state = "powderflask"
 	item_state = "powderflask"
 	slot_flags = ITEM_SLOT_HIP
@@ -28,7 +28,7 @@
 /obj/item/twilight_powderflask
 	name = "powderflask"
 	icon = 'modular_twilight_axis/firearms/icons/arquebus_items.dmi'
-	desc = "Пороховница, предназначенная для удобной перезарядки огнестрельного оружия. Содержит обычный чёрный порох."
+	desc = "A powder flask designed for convenient reloading of firearms. Contains regular black powder."
 	var/gunpowder = "black gunpowder"
 	var/charges = 30
 	var/spec_desc //Helps with powder's unique feature upon examine
@@ -52,12 +52,12 @@
 	. = ..()
 	if(spec_desc)
 		. += span_notice(spec_desc)
-	. += span_notice("Пороха осталось на [charges] перезарядок.")
+	. += span_notice("There is enough powder for [charges] reloads.")
 
 /obj/item/twilight_powderflask/fyre
 	name = "powderflask"
-	desc = "Пороховница, предназначенная для удобной перезарядки огнестрельного оружия. Содержит огненный порох, наделяющий пули зажигательным эффектом."
-	spec_desc = "Поджигает цель при попадании."
+	desc = "A powder flask designed for convenient reloading of firearms. Contains incendiary powder that gives bullets an incendiary effect."
+	spec_desc = "Ignites the target on impact."
 	icon_state = "powderflask_fyre"
 	smoke = /obj/effect/particle_effect/smoke/arquebus/fyre
 	gunpowder = "fyrepowder"
@@ -72,8 +72,8 @@
 
 /obj/item/twilight_powderflask/thunder
 	name = "powderflask"
-	desc = "Пороховница, предназначенная для удобной перезарядки огнестрельного оружия. Содержит громовой порох, наделяющий пули оглушающим эффектом."
-	spec_desc = "При попадании замедляет цель, а также оглушает её на короткий период."
+	desc = "Powder pouch designed for convenient reloading of firearms. Contains thunder powder, giving bullets a stunning effect."
+	spec_desc = "Slows down the target on impact, and also stuns it for a short period."
 	icon_state = "powderflask_thunder"
 	gunpowder = "thunderpowder"
 	smoke = /obj/effect/particle_effect/smoke/arquebus/thunder
@@ -89,8 +89,8 @@
 
 /obj/item/twilight_powderflask/terror
 	name = "powderflask"
-	desc = "Пороховница, предназначенная для удобной перезарядки огнестрельного оружия. Содержит порох кошмара, делающий пули более смертоностными против тех, чья воля слаба."
-	spec_desc = "Наносит удвоенный урон всем существам, не контролируемым игроком."
+	desc = "Powder pouch designed for convenient reloading of firearms. Contains nightmare powder, making bullets more deadly against those whose will is weak."
+	spec_desc = "Deals double damage to all non-player-controlled creatures."
 	icon_state = "powderflask_terror"
 	gunpowder = "terrorpowder"
 	smoke = /obj/effect/particle_effect/smoke/arquebus/terror
@@ -106,8 +106,8 @@
 
 /obj/item/twilight_powderflask/corrosive
 	name = "powderflask"
-	desc = "Пороховница, предназначенная для удобной перезарядки огнестрельного оружия. Содержит коррозийный порох, наделяющий пули способностью разъедать броню цели."
-	spec_desc = "Покрывает цель кислотой, наносящей периодический урон броне и здоровью."
+	desc = "Powder pouch designed for convenient reloading of firearms. Contains corrosive powder, giving bullets the ability to corrode the target's armor."
+	spec_desc = "Covers the target with acid, dealing periodic damage to armor and health."
 	icon_state = "powderflask_corrosive"
 	gunpowder = "corrosive gunpowder"
 	smoke = /obj/effect/particle_effect/smoke/arquebus/corrosive
@@ -123,8 +123,8 @@
 
 /obj/item/twilight_powderflask/arcyne
 	name = "powderflask"
-	desc = "Пороховница, предназначенная для удобной перезарядки огнестрельного оружия. Содержит арканный порох, делающий оружие существенно эффективнее против магов."
-	spec_desc = "Накладывает на цель онемение. Если у цели есть магический барьер, он будет мгновенно уничтожен."
+	desc = "Powder pouch designed for convenient reloading of firearms. Contains arcane powder, making weapons significantly more effective against mages."
+	spec_desc = "Inflicts numbness on the target. If the target has a magical barrier, it will be instantly destroyed."
 	icon_state = "powderflask_arcyne"
 	gunpowder = "arcyne gunpowder"
 	smoke = /obj/effect/particle_effect/smoke/arquebus/arcyne
@@ -140,8 +140,8 @@
 
 /obj/item/twilight_powderflask/holyfyre
 	name = "powderflask"
-	desc = "Пороховница, предназначенная для удобной перезарядки огнестрельного оружия. Содержит порох священного огня, благословленный осколком кометы Сион, чтобы беспощадно разить врагов Всеотца."
-	spec_desc = "Поджигает цель святым огнем при попадании. Эффект усилен против нежити."
+	desc = "Powder flask designed for convenient reloading of firearms. Contains sacred fire powder, blessed by a shard of the Sion comet, to mercilessly strike the enemies of the All-Father."
+	spec_desc = "Ignites the target with holy fire on impact. The effect is enhanced against the undead."
 	icon_state = "powderflask_holyfyre"
 	gunpowder = "holy fyrepowder"
 	smoke = /obj/effect/particle_effect/smoke/arquebus/fyre
@@ -157,8 +157,8 @@
 
 /obj/item/twilight_powderflask/volf
 	name = "powderflask"
-	desc = "Пороховница, предназначенная для удобной перезарядки огнестрельного оружия. Содержит порох смешанный с ядовитыми порошками, изготовленными специально для волков. В нём нет благословлений, его существование столь же омерзительно как и существование рунных волков."
-	spec_desc = "Ослабляет и ослепляет цель ядовитыми парами на несколько секунд."
+	desc = "Powder flask designed for convenient reloading of firearms. Contains powder mixed with poisonous powders specially made for wolves. It has no blessings; its existence is as repulsive as the existence of rune wolves."
+	spec_desc = "Weakens and blinds the target with poisonous fumes for several seconds."
 	icon_state = "powderflask_psy"
 	gunpowder = "psypowder"
 	pour_sound = 'modular_twilight_axis/firearms/sound/fyrepowder/pour_powder.ogg'
@@ -572,26 +572,26 @@
 	if(gunpowder)
 		if(chambered)
 			if(reloaded)
-				. += span_notice("Взведено и готово к стрельбе.")
+				. += span_notice("Cocked and ready to fire.")
 			else
-				. += span_notice("Внутри оружия видна пуля, но оно не взведено.")
+				. += span_notice("A bullet is visible inside the weapon, but it is not cocked.")
 		else
-			. += span_notice("Через запальное отверстие виден пороховой заряд, но пуля не установлена.")
+			. += span_notice("Gunpowder charge is visible through the vent, but the bullet is not set.")
 	else
-		. += span_notice("Не заряжено.")
+		. += span_notice("Not loaded.")
 
 /obj/item/gun/ballistic/twilight_firearm/get_mechanics_examine(mob/user)
 	. = ..()
-	. += span_info("Прицельная дальность стрельбы этого оружия [effective_range]0 метров.")
+	. += span_info("The aiming range of this weapon [effective_range]0 meters.")
 	switch(locktype)
 		if(LOCKTYPE_WHEELLOCK)
-			. += span_info("Колесцовые замки требуют пороховой заряд, пулю и уплотнение заряда шомполом перед стрельбой.")
+			. += span_info("Wheel locks require a gunpowder charge, a bullet, and ramming the charge with a ramrod before firing.")
 		if(LOCKTYPE_MATCHLOCK)
-			. += span_info("Фитильные замки требуют пороховой заряд, пулю и уплотнение заряда шомполом перед стрельбой.")
+			. += span_info("Firing locks require a gunpowder charge, a bullet, and ramming the charge with a ramrod before firing.")
 		if(LOCKTYPE_FUSE)
-			. += span_info("Запальные фитили требуют пороховой заряд, пулю и установленный фитиль перед стрельбой.")
+			. += span_info("Matchlocks require a gunpowder charge, a bullet, and a lit match installed before firing.")
 		if(LOCKTYPE_BREECH)
-			. += span_info("Казнозарядные замки требуют патрон, после чего казенник необходимо закрыть и взвести замок.")
+			. += span_info("Breech-loading locks require a cartridge, after which the breech must be closed and the lock cocked.")
 
 /obj/item/gun/ballistic/twilight_firearm/proc/spawn_muzzle_smoke(mob/living/user, atom/target)
 	if(silenced)
@@ -745,7 +745,7 @@
 
 /obj/item/gun/ballistic/twilight_firearm/arquebus
 	name = "arquebus rifle"
-	desc = "Пороховое оружие второго поколения, стреляющее бронебойными свинцовыми пулями."
+	desc = "Second-generation gunpowder weapons, firing armor-piercing lead bullets."
 	icon = 'modular_twilight_axis/firearms/icons/arquebus/arquebus.dmi'
 	icon_state = "arquebus"
 	item_state = "arquebus"
@@ -771,7 +771,7 @@
 
 /obj/item/gun/ballistic/twilight_firearm/arquebus/bayonet
 	name = "arquebus rifle"
-	desc = "Пороховое оружие второго поколения, стреляющее бронебойными свинцовыми пулями. Оснащена штыком для использования в ближнем бою."
+	desc = "Second-generation gunpowder weapons, firing armor-piercing lead bullets. Equipped with a bayonet for use in close combat."
 	icon = 'modular_twilight_axis/firearms/icons/arquebus/arquebusbaoynet.dmi'
 	advanced_icon = 'modular_twilight_axis/firearms/icons/arquebus/arquebusbaoynet.dmi'
 	advanced_icon_norod = 'modular_twilight_axis/firearms/icons/arquebus/arquebusbayonet_norod.dmi'
@@ -782,7 +782,7 @@
 
 /obj/item/gun/ballistic/twilight_firearm/arquebus/decorated
 	name = "decorated arquebus rifle"
-	desc = "Настоящее произведение искусства в обличии огнестрельного оружия. Приклад и цевье аркебузы украшены золотыми пластинами и инкрустированным рубином, а на стволе выбита надпись: «Взгляните на мои деянья и дрожите»."
+	desc = "A true work of art in the form of a firearm. The stock and fore-end of the arquebus are decorated with gold plates and an inlaid ruby, and on the barrel is engraved the inscription: 'Behold my deeds and tremble'."
 	icon = 'modular_twilight_axis/firearms/icons/arquebus/decorated_arquebus.dmi'
 	advanced_icon = 'modular_twilight_axis/firearms/icons/arquebus/decorated_arquebus.dmi'
 	advanced_icon_norod = 'modular_twilight_axis/firearms/icons/arquebus/decorated_arquebus_norod.dmi'
@@ -806,7 +806,7 @@
 
 /obj/item/gun/ballistic/twilight_firearm/arquebus/bayonet/decorated
 	name = "decorated arquebus rifle"
-	desc = "Настоящее произведение искусства в обличии огнестрельного оружия. Приклад и цевье аркебузы украшены золотыми пластинами и инкрустированным рубином, а на стволе выбита надпись: «Взгляните на мои деянья и дрожите». Оснащена штыком для использования в ближнем бою."
+	desc = "A true work of art in the form of a firearm. The stock and fore-end of the arquebus are adorned with gold plates and an inlaid ruby, and the barrel is engraved with the inscription: 'Behold my deeds and tremble.' Equipped with a bayonet for close combat use."
 	icon = 'modular_twilight_axis/firearms/icons/arquebus/decorated_arquebus_bayonet.dmi'
 	advanced_icon = 'modular_twilight_axis/firearms/icons/arquebus/decorated_arquebus_bayonet.dmi'
 	advanced_icon_norod = 'modular_twilight_axis/firearms/icons/arquebus/decorated_arquebus_bayonet_norod.dmi'
@@ -814,7 +814,7 @@
 
 /obj/item/gun/ballistic/twilight_firearm/arquebus/jagerrifle
 	name = "\"Jägerbüchse\""
-	desc = "Редкая разновидность колесцовой аркебузы, изготавливаемая мастерами Грензельхофта для егерей Фрейкорпс, отличившихся в ходе боевых действий. Легче и менее подвержена износу в сравнении с серийными образцами."
+	desc = "A rare type of wheellock arquebus, made by Grenzelhoft masters for the Freikorps rangers who distinguished themselves in combat. Lighter and less prone to wear compared to standard models."
 	icon = 'modular_twilight_axis/firearms/icons/arquebus/jagerrifle.dmi'
 	advanced_icon = 'modular_twilight_axis/firearms/icons/arquebus/jagerrifle.dmi'
 	advanced_icon_norod = 'modular_twilight_axis/firearms/icons/arquebus/jagerrifle_norod.dmi'
@@ -838,7 +838,7 @@
 
 /obj/item/gun/ballistic/twilight_firearm/arquebus/bayonet/jagerrifle
 	name =  "\"Jägerbüchse\""
-	desc = "Редкая разновидность колесцовой аркебузы, изготавливаемая мастерами Грензельхофта для егерей Фрейкорпс, отличившихся в ходе боевых действий. Легче и менее подвержена износу в сравнении с серийными образцами. Оснащена штыком для использования в ближнем бою."
+	desc = "A rare type of wheellock arquebus, made by Grenzelhoft masters for the Freikorps rangers who distinguished themselves in combat. Lighter and less prone to wear compared to standard models. Equipped with a bayonet for close combat use."
 	icon = 'modular_twilight_axis/firearms/icons/arquebus/jagerriflebayonet.dmi'
 	advanced_icon = 'modular_twilight_axis/firearms/icons/arquebus/jagerriflebayonet.dmi'
 	advanced_icon_norod = 'modular_twilight_axis/firearms/icons/arquebus/jagerrifle_bayonet_norod.dmi'
@@ -846,7 +846,7 @@
 
 /obj/item/gun/ballistic/twilight_firearm/arquebus_pistol
 	name = "arquebus pistol"
-	desc = "Небольшое пороховое оружие, стреляющее бронебойными свинцовыми пулями. Меньшая длина ствола негативно сказывается на огневой мощи, но дизайн пистоля более компактный, и его можно носить на бедре."
+	desc = "Small gunpowder weapon, firing armor-piercing lead bullets. The shorter barrel length negatively affects firepower, but the pistol design is more compact and can be worn on the hip."
 	icon = 'modular_twilight_axis/firearms/icons/pistol/pistol.dmi'
 	icon_state = "pistol"
 	item_state = "pistol"
@@ -882,7 +882,7 @@
 
 /obj/item/gun/ballistic/twilight_firearm/arquebus_pistol/umbra
 	name = "\"Umbra\""
-	desc = "Компактное огнестрельное оружие отаванского производства. Ствол изготовлен из вороненой стали, на которую нанесены несколько простых рун. Благодаря необычной конструкции и рунической магии, Умбра стреляет практически бесшумно, что делает её идеальным выбором для агентов Инквизиции."
+	desc = "Compact firearm of Otavan manufacture. The barrel is made of blued steel, on which several simple runes are engraved. Thanks to its unusual design and runic magic, Umbra fires almost silently, making it an ideal choice for Inquisition agents."
 	silenced = TRUE
 	critfactor = 1
 	icon = 'modular_twilight_axis/firearms/icons/umbra/pistol.dmi'
@@ -894,7 +894,7 @@
 
 /obj/item/gun/ballistic/twilight_firearm/handgonne
 	name = "culverin"
-	desc = "Тяжелое пороховое оружие, стреляющее крупными свинцовыми ядрами. Важен не размер ствола, а размер отверстия, что он делает в вашем противнике."
+	desc = "Heavy gunpowder weapon, firing large lead balls. The important factor is not the barrel size, but the size of the hole it makes in your opponent."
 	icon = 'modular_twilight_axis/firearms/icons/handgonne/handgonne.dmi'
 	icon_state = "handgonne"
 	item_state = "handgonne"
@@ -916,7 +916,7 @@
 
 /obj/item/gun/ballistic/twilight_firearm/flintgonne
 	name = "hakenbüchse"
-	desc = "Пороховое оружие первого поколения, массово изготавливаемое Грензельхофтом. Изготавливается из дешевых, быстро изнашивающихся материалов, что негативно сказывается на убойности."
+	desc = "First-generation gunpowder weapon, mass-produced by Grenzelhoft. Made from cheap, quickly wearing materials, which negatively affects its lethality."
 	icon = 'modular_twilight_axis/firearms/icons/flintgonne.dmi'
 	icon_state = "flintgonne"
 	item_state = "flintgonne"
@@ -927,7 +927,7 @@
 
 /obj/item/gun/ballistic/twilight_firearm/axtgonne
 	name = "axtbüchse"
-	desc = "Кустарный образец огнестрельного оружия первого поколения, который приобрел популярность среди егерей Грензельхофта во время Сумеречной войны. К стволу оружия приделано лезвие топора."
+	desc = "A handcrafted first-generation firearm that gained popularity among the rangers of Grenzelhoft during the Twilight War. An axe blade is attached to the weapon's barrel."
 	icon = 'modular_twilight_axis/firearms/icons/axtbuchse/axtbuchse.dmi'
 	advanced_icon = 'modular_twilight_axis/firearms/icons/axtbuchse/axtbuchse.dmi'
 	advanced_icon_norod	= 'modular_twilight_axis/firearms/icons/axtbuchse/axtbuchse_norod.dmi'
@@ -979,7 +979,7 @@
 
 /obj/item/gun/ballistic/twilight_firearm/barker
 	name = "barker"
-	desc = "Один из первых образцов огнестрельного оружия, созданный отаванскими мастерами в начале позапрошлого века. Ввиду низкой мощности и точности, ныне используется преимущественно охотниками."
+	desc = "One of the first firearms created by Otavan masters in the early 19th century. Due to its low power and accuracy, it is now primarily used by hunters."
 	icon = 'modular_twilight_axis/firearms/icons/barker.dmi'
 	icon_state = "barker"
 	item_state = "barker"
@@ -994,7 +994,7 @@
 
 /obj/item/gun/ballistic/twilight_firearm/handgonne/purgatory
 	name = "\"Purgatory\""
-	desc = "Передовое огнестрельное оружие отаванского ордена Чёрного Пороха, завоевашее зловещую славу на поле боя из-за своей разрушительной мощи. Эта ручная пушка вступает в игру, когда одиночного довода против ереси просто недостаточно."
+	desc = "Advanced firearm of the Otavan Order of Black Powder, which earned a sinister reputation on the battlefield due to its destructive power. This handheld cannon comes into play when a single measure against heresy is simply not enough."
 	icon = 'modular_twilight_axis/firearms/icons/purgatory/purgatory.dmi'
 	icon_state = "purgatory"
 	item_state = "purgatory"
@@ -1014,7 +1014,7 @@
 
 /obj/item/gun/ballistic/twilight_firearm/arquebus_pistol/mortar
 	name = "hand mortar"
-	desc = "Ручная мортирка со стволом из бронзы, дополнительно прижатым к лафету крепким ремнём из кожи. Стреляет картечью и ядрами на малые расстояния и с меньшей силой. Такие часто использовали каперы под флагами Грензельхофта"
+	desc = "A handheld mortar with a bronze barrel, additionally secured to the carriage with a sturdy leather strap. Fires shot and cannonballs at short distances and with less force. Such weapons were often used by privateers under the flags of Grenzelhoft."
 	pixel_y = 0
 	pixel_x = 0
 	damfactor = 0.8
@@ -1050,7 +1050,7 @@
 
 /obj/item/gun/ballistic/twilight_firearm/barker/barker_light
 	name = "barker with lamptern"
-	desc = "Один из первых образцов огнестрельного оружия, созданный отаванскими мастерами в начале позапрошлого века. Ввиду низкой мощности и точности, ныне используется преимущественно охотниками. Этот теперь с фонарём!"
+	desc = "One of the first samples of firearms, created by Otavan masters at the beginning of the 19th century. Due to low power and accuracy, it is now mainly used by hunters. This one now comes with a flashlight!"
 	icon = 'modular_twilight_axis/firearms/icons/barker_light.dmi'
 	icon_state = "barker_light"
 	item_state = "barker_light"
@@ -1072,7 +1072,7 @@
 
 /obj/item/gun/ballistic/twilight_firearm/hunt_arquebus
 	name = "hunting arquebus"
-	desc = "Довольно удобный вариант колесцовой аркебузы со штыком, довольно тонким и длинным дабы использовать его как копьё. Удлинённый ствол позволяет стрелять на большие расстояния, но забирает добротную часть убойной силы у пули. Частый выбор у знати."
+	desc = "A fairly convenient version of a wheel-lock arquebus with a bayonet, quite thin and long to be used as a spear. The extended barrel allows shooting at long distances, but takes away a good portion of the bullet's lethal power. A frequent choice among the nobility."
 	damfactor = 0.7
 	critfactor = 0.4
 	npcdamfactor = 4
@@ -1092,7 +1092,7 @@
 
 /obj/item/gun/ballistic/twilight_firearm/arquebus_pistol/puffer
 	name = "puffer"
-	desc = "Компактное огнестрельное оружие отаванского производства, предназначенное для стрельбы из седла. Выполнен по нестандартной казнозарядной схеме и может заряжаться бумажными патронами, что позволяет всаднику готовить его к стрельбе одной рукой."
+	desc = "Compact firearms of Otavan manufacture, designed for shooting from the saddle. Made with a non-standard breech-loading system and can be loaded with paper cartridges, allowing a rider to prepare it for firing with one hand."
 	icon = 'modular_twilight_axis/firearms/icons/puffer/pistol.dmi'
 	advanced_icon = 'modular_twilight_axis/firearms/icons/puffer/pistol.dmi'
 	advanced_icon_r = 'modular_twilight_axis/firearms/icons/puffer/pistol_r.dmi'

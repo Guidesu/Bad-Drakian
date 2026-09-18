@@ -1,4 +1,4 @@
 author: "Quinalion"
 delete-after: True
 changes:
-  - refactor: "Минорный рефактор кода огнестрела."
+  - refactor: "Minor refactor of the firearm code."

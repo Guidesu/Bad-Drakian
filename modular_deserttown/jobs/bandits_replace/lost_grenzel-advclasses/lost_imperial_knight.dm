@@ -1,6 +1,6 @@
 /datum/advclass/lost_grenzel/lost_imperial_knight
 	name = "Lost Imperial Knight"
-	tutorial = "В прежней армии вы были офицером, возглавшявшим небольшое подразделение. Но вас разбили... Ваша сила и ваши навыки позволили сплотить вокруг себя небольшую банду."
+	tutorial = "In the previous army, you were an officer who led a small unit. But you were defeated... Your strength and your skills allowed you to rally a small gang around you."
 	allowed_sexes = list(MALE, FEMALE)
 	outfit = /datum/outfit/job/roguetown/lost_grenzel/lost_imperial_knight
 	subclass_languages = list(/datum/language/grenzelhoftian)

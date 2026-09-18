@@ -1,8 +1,8 @@
 /obj/item/book/granter/residentcard
-	name = "Грамота жителя"
+	name = "Resident Certificate"
 	icon_state = "contractunsigned"
 	icon = 'icons/roguetown/items/misc.dmi'
-	desc = "Эта грамота дает подписавшему право жительства и возможность занять свободный дом в городе."
+	desc = "This deed gives the signer the right of residence and the opportunity to occupy a vacant house in the city."
 	oneuse = TRUE
 	drop_sound = 'sound/foley/dropsound/paper_drop.ogg'
 	pickup_sound = 'sound/blank.ogg'
@@ -16,13 +16,13 @@
 
 /obj/item/book/granter/residentcard/attack_self(mob/living/user)
 	if(!resident_manuscripts_enabled())
-		to_chat(user, span_warning("Грамоты жительства на этой карте временно недоступны."))
+		to_chat(user, span_warning("Certificates of residence on this map are temporarily unavailable."))
 		return FALSE
 	if(HAS_TRAIT(user, TRAIT_RESIDENT))
-		to_chat(user, span_danger("У меня уже есть жительство!"))
+		to_chat(user, span_danger("I already have a residence!"))
 		return FALSE
 	if(icon_state == "contractsigned")
-		to_chat(user, span_danger("Эта грамота уже подписана."))
+		to_chat(user, span_danger("This letter has already been signed."))
 		return FALSE
 	else
 		var/obj/item/writefeather
@@ -31,19 +31,19 @@
 				writefeather = I
 				break
 		if(!writefeather)
-			to_chat(user, span_warning("Мне нужно держать перо!"))
+			to_chat(user, span_warning("I need to hold the pen!"))
 			return FALSE
 
 		var/turf/T = get_step(user, user.dir)
 		if(!(locate(/obj/structure/table) in T))
-			to_chat(user, span_warning("Мне нужен стол, чтобы заполнить грамоту."))
+			to_chat(user, span_warning("I need a table to fill out the certificate."))
 			return FALSE
 
 		if(!do_after(user, 4 SECONDS, TRUE))
-			to_chat(user, span_warning("Я теряю сосредоточение и не могу подписать грамоту как следует."))
+			to_chat(user, span_warning("I'm losing concentration and can't sign the letter properly."))
 			return FALSE
 
-		to_chat(user, span_notice("Я подписываю грамоту и получаю право жительства в городе."))
+		to_chat(user, span_notice("I sign the document and receive the right to reside in the city."))
 		playsound(user, 'sound/items/write.ogg', 50, TRUE, -2)
 		ADD_TRAIT(user, TRAIT_RESIDENT, TRAIT_GENERIC)
 		onlearned(user)
@@ -51,47 +51,47 @@
 /obj/item/book/granter/residentcard/onlearned(mob/living/carbon/user)
 	..()
 	if(oneuse == TRUE)
-		name = "[user.real_name] - грамота жителя"
-		desc = "Грамота, подтверждающая жительство подписью владельца."
+		name = "[user.real_name] - certificate of resident"
+		desc = "Certificate confirming residence with the signature of the owner."
 		icon_state = "contractsigned"
 
 #ifdef COMPILE_LEGACY_RESIDENTCARDVIRTUE
-#define MANUSCRIPT_ITEM_DESCRIPTION "Этот эластичный свиток цвета слоновой кости идеально гладок, прохладен и на просвет лишен дефектов. Его золоченые края мерцают при разворачивании, издавая сухой хруст. Текст выведен въевшимися иссиня-черными чернилами с лазуритными инициалами, а снизу на шелково-золотом шнуре закреплена детальная сургучная печать. Документ пахнет воском, травами и дорогой кожей."
+#define MANUSCRIPT_ITEM_DESCRIPTION "This ivory-colored stretch scroll is perfectly smooth, cool, and free from imperfections. Its gilded edges shimmer as it unfolds, producing a dry crunch. The text is written in ingrained blue-black ink with lapis lazuli initials, and a detailed wax seal is attached to the bottom on a silk-gold cord. The document smells of wax, herbs and expensive leather."
 
-#define MANUSCRIPT_DESCRIPTION "Сим объявляется во всеуслышание: по воле Короны и надзором Совета, предъявитель сего документа признан законным обитателем земель сих и пребывает под сенью общего права. Всякому чину и званию вменяется в долг признавать в лице помянутом верного подданного, не чиня ему препятствий в делах и путях его. Всякий же, кто делом или умыслом нанесет вред носителю сей грамоты, ответит пред законом по всей строгости уложений, ибо посягает на порядок, престолом установленный"
+#define MANUSCRIPT_DESCRIPTION "This is announced publicly: by the will of the Crown and the supervision of the Council, the bearer of this document is recognized as a legal inhabitant of these lands and remains under the shadow of common law. Every rank and title is charged with the duty to recognize the person mentioned as a faithful subject, without creating obstacles for him in his affairs and paths. Anyone who, by deed or intent, causes harm to the bearer of this letter will answer before the law to the fullest extent of the regulations, for he is encroaching on the order established by the throne"
 
 #define MANUSCRIPT_DEFECT_NOTES list(\
-	"На бумаге видна едва заметная клякса в углу.",\
-	"Чернила на печати слегка смазаны.",\
-	"Одна из букв в имени выведена нетвёрдой рукой.",\
-	"Край пергамента обрезан неровно.",\
-	"Подпись поставлена не вполне уверенно.",\
-	"Пергамент отдаёт несвежим запахом.",\
-	"Лазуритный инициал выбивается из строки и подсох поверх основного текста.",\
-	"Разлиновочные проколы на нижнем поле идут свежим рядом и не совпадают с ходом строк.",\
-	"Золочёный кант местами лёг поверх свежего надреза.",\
-	"Шёлково-золотой шнур продет повторно: вокруг отверстий видны надломы волокон.",\
-	"Сургуч у одной печати теплее по цвету и блестит как недавно переплавленный.",\
-	"Чернила в середине строки дают синеватый ореол, будто разведены иной водой.",\
-	"В дате один штрих перечёркнут слишком ровно для канцелярской руки.",\
-	"Меж строк проступает чужая приписка: «Зизо хранит шёпот, Граггар ждёт крови, Маттиос взвесит долг».",\
+	"A barely noticeable blot in the corner is visible on the paper.",\
+	"The ink on the print is slightly smudged.",\
+	"One of the letters in the name was written with an unsteady hand.",\
+	"The edge of the parchment is cut unevenly.",\
+	"The signature was not quite confident.",\
+	"Parchment gives off a stale smell.",\
+	"The lapis lazuli initial is knocked out of the line and has dried on top of the main text.",\
+	"The line punctures on the bottom margin are fresh next to each other and do not coincide with the flow of the lines.",\
+	"The gilded edging in some places lay on top of the fresh cut.",\
+	"The silk-gold cord has been re-threaded: fiber breaks are visible around the holes.",\
+	"The sealing wax of one seal is warmer in color and shines as if recently melted.",\
+	"The ink in the middle of the line gives a bluish halo, as if diluted with another water.",\
+	"In the date, one stroke is crossed out too evenly for a clerical hand.",\
+	"Someone else’s postscript appears between the lines: “Zizo keeps a whisper, Graggar waits for blood, Matthios weighs his debt.”",\
 )
 
 #define MANUSCRIPT_MIN_FOUND_DEFECT_COUNT 3
 #define MANUSCRIPT_MAX_FOUND_DEFECT_COUNT 5
 
 #define MANUSCRIPT_VALIDATION_NOTES list(\
-	"Печати сидят ровно, чернила легли уверенно, а шнур не несёт следов повторного крепления.",\
-	"Разлиновка, проколы и ход строк сходятся между собой: перед вами грамота должного образца.",\
-	"Почерк, печати и золочёный край согласуются между собой. Повода сомневаться в грамоте не видно.",\
-	"Сургуч принял оттиск глубоко и без разрывов, а строки не выдают чужой руки.",\
-	"Документ выглядит составленным по всем правилам канцелярского обряда.",\
+	"The stamps sit smoothly, the ink lays down confidently, and the cord shows no signs of re-attachment.",\
+	"The ruling, punctures and the course of the lines converge with each other: before you is a letter of proper form.",\
+	"The handwriting, seals and gilded edges are consistent. There is no reason to doubt his literacy.",\
+	"The sealing wax accepted the print deeply and without breaks, and the lines do not give away someone else’s hand.",\
+	"The document appears to be compiled according to all the rules of clerical ritual.",\
 )
 
 #define FAKE_DEFECT_CHANCE 65
 
 /obj/item/book/granter/residentcardvirtue
-	name = "Подорожная грамота"
+	name = "Travel Certificate"
 	desc = MANUSCRIPT_ITEM_DESCRIPTION
 	icon_state = "contractsigned"
 	icon = 'icons/roguetown/items/misc.dmi'
@@ -141,10 +141,10 @@
 	var/raw = SSmapping.config?.map_name
 	switch(raw)
 		if("Dun World")
-			return "Герцогство Азурия"
+			return "Duchy of Azuria"
 		if("Rockhill")
-			return "Рокхилл"
-	return raw || "Азурный Пик"
+			return "Rockhill"
+	return raw || "Azur Peak"
 
 /obj/item/book/granter/residentcardvirtue/proc/compute_expiry_date()
 	var/round_id = text2num(GLOB.round_id) || 0
@@ -169,21 +169,19 @@
 	return "[new_day] [get_month_number_to_text(new_month)] [new_year]"
 
 /obj/item/book/granter/residentcardvirtue/proc/get_ruler_seal_title()
-	if(SSmapping.config?.map_name == "Rockhill")
-		return "Король"
-	return "Герцог"
+	return SSticker?.rulertype || "Count"
 
 /obj/item/book/granter/residentcardvirtue/proc/is_noble_manuscript_status()
-	return owner_status_label == "Под милостью Астраты"
+	return owner_status_label == "Under the Grace of Astrata"
 
 /obj/item/book/granter/residentcardvirtue/proc/should_initially_include_duke_seal()
 	return is_noble_manuscript_status()
 
 /obj/item/book/granter/residentcardvirtue/proc/stamp_all_seals(include_duke_seal = TRUE)
-	seals["chancellor"] = list("stamper" = "Канцлер", "time" = world.time)
-	seals["elder"] = list("stamper" = "Старейшина", "time" = world.time)
+	seals["chancellor"] = list("stamper" = "Chancellor", "time" = world.time)
+	seals["elder"] = list("stamper" = "Elder", "time" = world.time)
 	seals["duke"] = include_duke_seal ? list("stamper" = get_ruler_seal_title(), "time" = world.time) : null
-	seals["hand"] = list("stamper" = "Длань", "time" = world.time)
+	seals["hand"] = list("stamper" = "Hand", "time" = world.time)
 
 /obj/item/book/granter/residentcardvirtue/proc/has_any_seal()
 	if(!seals)
@@ -211,13 +209,13 @@
 /obj/item/book/granter/residentcardvirtue/proc/seal_title_for_key(key)
 	switch(key)
 		if("chancellor")
-			return "Канцлер"
+			return "Chancellor"
 		if("elder")
-			return "Старейшина"
+			return "Elder"
 		if("duke")
 			return get_ruler_seal_title()
 		if("hand")
-			return "Длань"
+			return "Hand"
 	return ""
 
 /obj/item/book/granter/residentcardvirtue/proc/get_detection_character_key(mob/living/carbon/human/user)
@@ -243,9 +241,9 @@
 /obj/item/book/granter/residentcardvirtue/examine(mob/user)
 	. = ..()
 	if(is_bound && owner_name)
-		. += span_info("Грамота выдана на имя: [owner_name].")
+		. += span_info("Certificate issued in the name: [owner_name].")
 	else
-		. += span_info("Грамота ещё не скреплена с владельцем.")
+		. += span_info("The certificate has not yet been sealed with the owner.")
 
 /obj/item/book/granter/residentcardvirtue/attack_self(mob/living/user)
 	ui_interact(user)
@@ -267,7 +265,7 @@
 	owner_name = target.real_name
 	owner_status_label = status_label_for(target)
 	is_bound = TRUE
-	name = "Подорожная грамота"
+	name = "Travel Certificate"
 	if(auto_stamp_seals)
 		stamp_all_seals(should_initially_include_duke_seal())
 
@@ -318,8 +316,8 @@
 
 /obj/item/book/granter/residentcardvirtue/proc/status_label_for(mob/living/carbon/human/target)
 	if(HAS_TRAIT(target, TRAIT_NOBLE))
-		return "Под милостью Астраты"
-	return "Безызвестное"
+		return "Under the Grace of Astrata"
+	return "Unknown"
 
 /obj/item/book/granter/residentcardvirtue/ui_state(mob/user)
 	return GLOB.hands_state
@@ -342,8 +340,8 @@
 		can_edit_fake = can_edit_fake_manuscript(human_user)
 		can_become_resident = can_claim_residence(human_user)
 		is_owner_viewing = is_owner_viewer(human_user)
-	data["owner_name"] = owner_name || (can_edit_fake ? "" : "Неизвестно")
-	data["owner_status"] = owner_status_label || (can_edit_fake ? "Безызвестное" : "—")
+	data["owner_name"] = owner_name || (can_edit_fake ? "" : "Unknown")
+	data["owner_status"] = owner_status_label || (can_edit_fake ? "Unknown" : "—")
 	data["expiry_date"] = expiry_date || "—"
 	data["issued_place"] = issued_place || "—"
 	data["description"] = description || ""
@@ -351,10 +349,10 @@
 	data["is_bound"] = is_bound
 	data["can_edit_fake"] = can_edit_fake
 	data["can_become_resident"] = can_become_resident
-	data["seal_chancellor"] = seal_entry("chancellor", "Канцлер")
-	data["seal_elder"] = seal_entry("elder", "Старейшина")
+	data["seal_chancellor"] = seal_entry("chancellor", "Chancellor")
+	data["seal_elder"] = seal_entry("elder", "Elder")
 	data["seal_duke"] = seal_entry("duke", get_ruler_seal_title(), FALSE)
-	data["seal_hand"] = seal_entry("hand", "Длань")
+	data["seal_hand"] = seal_entry("hand", "Hand")
 
 	data["can_detect"] = FALSE
 	data["detection_done"] = FALSE
@@ -451,9 +449,9 @@
 	if(!isnull(value))
 		text_value = "[value]"
 	switch(text_value)
-		if("Под милостью Астраты")
-			return "Под милостью Астраты"
-	return "Безызвестное"
+		if("Under the Grace of Astrata")
+			return "Under the Grace of Astrata"
+	return "Unknown"
 
 /obj/item/book/granter/residentcardvirtue/proc/save_fake_manuscript(mob/living/carbon/human/user, list/params)
 	if(!can_edit_fake_manuscript(user))
@@ -462,13 +460,13 @@
 		params = list()
 	var/perfect_forgery = can_make_undetectable_forgery(user)
 	owner_character_key = null
-	owner_name = sanitize_manuscript_field(params["owner_name"], MAX_NAME_LEN, "Неизвестно")
+	owner_name = sanitize_manuscript_field(params["owner_name"], MAX_NAME_LEN, "Unknown")
 	owner_status_label = normalize_manuscript_status(params["owner_status"])
 	expiry_date = expiry_date || compute_expiry_date()
 	issued_place = issued_place || get_map_display_name()
 	description = description || MANUSCRIPT_DESCRIPTION
 	is_bound = TRUE
-	name = "Подорожная грамота"
+	name = "Travel Certificate"
 	icon_state = "contractsigned"
 	stamp_all_seals(should_initially_include_duke_seal())
 	authority_validated = FALSE
@@ -482,9 +480,9 @@
 	detection_results = list()
 	detection_notes = list()
 	if(perfect_forgery)
-		to_chat(user, span_notice("Благодаря мастерству письма вы создаёте безупречную поддельную грамоту. Никто не сможет распознать в ней лжи! Почти..."))
+		to_chat(user, span_notice("Through mastery of writing, you create a flawless fake letter. No one will be able to recognize the lies in her! Almost..."))
 	else
-		to_chat(user, span_notice("Вы создаёте поддельную грамоту, придавая ей вид настоящей."))
+		to_chat(user, span_notice("You are creating a fake letter, giving it the appearance of a real one."))
 	playsound(user, 'sound/items/write.ogg', 40, TRUE, -2)
 	return TRUE
 
@@ -495,7 +493,7 @@
 	REMOVE_TRAIT(user, TRAIT_OUTLANDER, ADVENTURER_TRAIT)
 	REMOVE_TRAIT(user, TRAIT_OUTLANDER, JOB_TRAIT)
 	REMOVE_TRAIT(user, TRAIT_OUTLANDER, TRAIT_GENERIC)
-	to_chat(user, span_notice("Печати на грамоте признаны достаточным основанием: отныне вы считаетесь гражданином этих земель."))
+	to_chat(user, span_notice("The stamps on the charter are recognized as sufficient grounds: from now on you are considered a citizen of these lands."))
 	return TRUE
 
 /obj/item/book/granter/residentcardvirtue/proc/handle_detection(mob/living/carbon/human/user)
@@ -535,7 +533,7 @@
 			result = "real"
 	LAZYSET(detection_results, detection_key, result)
 	if(result == "fake")
-		to_chat(user, span_warning("Вы обнаруживаете, что грамота поддельная: [format_defect_notes()]"))
+		to_chat(user, span_warning("You discover that the document is fake: [format_defect_notes()]"))
 	if(result != "fake")
 		LAZYSET(detection_notes, detection_key, pick(MANUSCRIPT_VALIDATION_NOTES))
 
@@ -553,7 +551,7 @@
 			authority_validated = TRUE
 	LAZYSET(detection_results, detection_key, result)
 	if(result == "fake")
-		to_chat(user, span_warning("Вы обнаруживаете, что грамота поддельная: [format_defect_notes()]"))
+		to_chat(user, span_warning("You discover that the document is fake: [format_defect_notes()]"))
 	if(result != "fake")
 		LAZYSET(detection_notes, detection_key, pick(MANUSCRIPT_VALIDATION_NOTES))
 
@@ -567,23 +565,23 @@
 	if(!is_bound)
 		if(can_make_undetectable_forgery(user))
 			forge_undetectable_fake(user)
-			to_chat(user, span_notice("Благодаря мастерству письма вы создаёте безупречную поддельную грамоту. Никто не сможет распознать в ней лжи! Почти..."))
+			to_chat(user, span_notice("Through mastery of writing, you create a flawless fake letter. No one will be able to recognize the lies in her! Almost..."))
 		else
 			bind_to_holder(user)
-			to_chat(user, span_notice("Вы оформляете подорожную грамоту, вписывая своё имя и образ."))
+			to_chat(user, span_notice("You draw up a travel document, entering your name and image."))
 		icon_state = "contractsigned"
 		playsound(user, 'sound/items/write.ogg', 40, TRUE, -2)
 		return TRUE
 	var/seal_key = get_seal_key_for_user(user)
 	if(!seal_key)
-		to_chat(user, span_warning("Вы не имеете права ставить печать на этой грамоте."))
+		to_chat(user, span_warning("You do not have the right to put a stamp on this certificate."))
 		return TRUE
 	if(seals[seal_key])
-		to_chat(user, span_warning("Ваша печать уже поставлена."))
+		to_chat(user, span_warning("Your seal has already been set."))
 		return TRUE
 	var/title = seal_title_for_key(seal_key)
 	stamp_seal(seal_key, title)
-	to_chat(user, span_notice("Вы ставите печать [title] на грамоту."))
+	to_chat(user, span_notice("You put the stamp [title] on the certificate."))
 	playsound(user, 'sound/items/write.ogg', 50, TRUE, -2)
 	return TRUE
 
@@ -596,7 +594,7 @@
 	return TRUE
 
 /obj/item/book/granter/residentcardvirtue/fake
-	name = "Подорожная грамота"
+	name = "Travel Certificate"
 	desc = MANUSCRIPT_ITEM_DESCRIPTION
 	is_fake = TRUE
 	auto_stamp_seals = FALSE
@@ -615,18 +613,18 @@
 	expiry_year_bonus_max = 10
 
 /obj/item/book/granter/residentcardvirtue/base
-	name = "Бланк подорожной грамоты"
-	desc = "Пустой бланк подорожной грамоты. Возьмите перо и впишите своё имя, затем отправьте к уполномоченным лицам для скрепления печатями."
+	name = "Travel document form"
+	desc = "Travel document blank form. Take a pen and write your name, then send it to authorized persons for sealing."
 	icon_state = "contractunsigned"
 	auto_stamp_seals = FALSE
 
 /datum/supply_pack/rogue/drugs/fake_manuscript
-	name = "Подозрительный свиток"
+	name = "Suspicious Scroll"
 	cost = 100
 	contains = list(/obj/item/book/granter/residentcardvirtue/fake)
 
 /datum/supply_pack/rogue/luxury/manuscript_base
-	name = "Бланк подорожной грамоты"
+	name = "Travel document form"
 	cost = 50
 	contains = list(/obj/item/book/granter/residentcardvirtue/base)
 

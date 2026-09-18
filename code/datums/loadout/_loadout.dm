@@ -12,7 +12,7 @@ GLOBAL_LIST_EMPTY(loadout_items_by_category)
 	var/list/ckeywhitelist
 	var/donator_unlocked = FALSE
 	var/triumph_cost
-	var/category = "Разное"
+	var/category = "Miscellaneous"
 
 /datum/loadout_item/New()
 	if(isnull(donoritem))
@@ -21,9 +21,9 @@ GLOBAL_LIST_EMPTY(loadout_items_by_category)
 	var/obj/targetitem = path
 	desc = targetitem.desc
 	if (triumph_cost)
-		desc += "<b>Стоит [triumph_cost] ТРИУМФОВ.</b>"
+		desc += "<b>Worth [triumph_cost] TRIUMPHS.</b>"
 	if(donat_tier > 0)
-		desc += "<b>Доступно для меценатов уровня: [donat_tier]</b>"
+		desc += "<b>Available for patrons of level: [donat_tier]</b>"
 
 /datum/loadout_item/proc/donator_ckey_check(key, client/user)
 	if((donator_unlocked && (is_donator(key) || user?.holder)))

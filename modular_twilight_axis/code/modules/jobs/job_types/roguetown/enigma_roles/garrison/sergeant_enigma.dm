@@ -8,10 +8,10 @@
 	allowed_sexes = list(MALE, FEMALE)
 	forbidden_races = list(RACES_DESPISED)
 	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
-	tutorial = "Большую часть своей жизни ты прослужил в лейб-гвардии Его Величества и тебе была удостоина величайшая честь вести твоих товарищей в бой во славу Короны, \
-	хоть и первостепенной твоей целью является защита дворца, семьи монарха и его свиты на этом проклятом острове.  \
-	Местные глупцы считают Барона еще ЖИВЫМ, когда ты прекрасно знаешь, что он МЕРТВ, иначе быть и не может. \
-	Твой долг не дать Королевской династии пасть, во имя будущего Энигмы."
+	tutorial = "You have served in His Majesty's Life Guards for most of your life and have had the greatest honor of leading your comrades into battle for the glory of the Crown, \
+	Although your primary goal is the protection of the palace, the monarch's family, and his entourage on this cursed island.\
+	The local fools believe the Baron is still ALIVE, when you know perfectly well that he is DEAD, as it could not be otherwise.\
+	Your duty is not to let the Royal dynasty fall, for the sake of the future of Enigma."
 	display_order = JDO_ROYALSERGEANT
 	selection_color = JCOLOR_GARRISON
 	whitelist_req = TRUE

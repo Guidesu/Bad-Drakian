@@ -1,4 +1,4 @@
-/* Зыбучие пески - первый трай, пока что комментим /obj/structure/trap/quicksand
+/* Quicksands – first try, so far just commenting/obj/structure/trap/quicksand
 	name = "shifting sand"
 	desc = "The sand here looks loose and unnaturally unstable."
 	icon = 'modular_deserttown/icons/quicksand.dmi'

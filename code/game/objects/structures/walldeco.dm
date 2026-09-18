@@ -371,7 +371,7 @@
 	..()
 
 /obj/structure/fluff/walldeco/customflag
-	name = "Twilight Axis flag"
+	name = "realm flag"
 	desc = "A banner flutters in the breeze in the proud heraldic colors of the Duchy."
 	icon_state = "wallflag"
 
@@ -382,7 +382,7 @@
 	else if(SSmapping.config.map_name == "Desert Town")
 		name = "Al-Ashur flag"
 	else
-		name = "Twilight Axis flag"
+		name = "realm flag"
 	if(GLOB.lordprimary)
 		lordcolor(GLOB.lordprimary,GLOB.lordsecondary)
 	GLOB.lordcolor += src
@@ -763,4 +763,3 @@
 
 /obj/effect/decal/shadow_floor/corner
 	icon_state = "shad_floorcorn"
-

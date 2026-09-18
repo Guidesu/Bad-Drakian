@@ -1,10 +1,10 @@
 /datum/erp_action/other/legs/legsjob
 	abstract = FALSE
-	name = "Работа бедрами"
+	name = "Thigh work"
 	required_target_organ = SEX_ORGAN_PENIS
 	require_grab = TRUE
-	message_start = "{actor} зажимает член {partner} бедрами."
-	message_tick = "{actor} {force} и {speed} водит ножками по члену {partner}."
-	message_finish =  "{actor} выпускает из захвата бедрами член {partner}."
-	message_climax_passive = "{partner} кончает на бедра {actor}."
+	message_start = "{actor} clamps {partner}'s penis with his thighs."
+	message_tick = "{actor} {force} and {speed} move their feet on {partner}'s penis."
+	message_finish =  "{actor} releases {partner}'s member from the grip of his hips."
+	message_climax_passive = "{partner} cums on {actor}'s thighs."
 	

@@ -11,6 +11,8 @@
 	throwforce = 0
 	var/lockhash = 0
 	var/lockid = null
+	/// Keys generated for permanent-binding chastity cannot be destroyed normally.
+	var/hardmode_indestructible = FALSE
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_MOUTH|ITEM_SLOT_NECK
 	drop_sound = 'sound/items/gems (1).ogg'
 	anvilrepair = /datum/skill/craft/blacksmithing
@@ -126,7 +128,7 @@
 		SSroguemachine.key = src
 
 /obj/item/roguekey/lord/proc/anti_stall()
-	src.visible_message(span_danger("The Key of Twilight Axis crumbles to dust, the ashes spiriting away in the direction of the Keep."))
+	src.visible_message(span_danger("The key of [get_realm_name()] crumbles to dust, its ashes spiriting away toward the Keep."))
 	SSroguemachine.key = null //Do not harddel.
 	qdel(src) //Anti-stall
 

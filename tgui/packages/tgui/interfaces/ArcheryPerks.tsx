@@ -5,20 +5,20 @@ import { Button, Section, Stack, Box, NoticeBox } from 'tgui-core/components';
 const perks = [
   {
     id: 'doubleshot',
-    name: 'Двойной выстрел',
-    desc: 'Выпускает стрелу, а спустя 0.2 секунды автоматически достает вторую стрелу из колчана и запускает её вслед за первой.',
+    name: 'Double shot',
+    desc: 'Shoots an arrow, and after 0.2 seconds automatically pulls out a second arrow from the quiver and launches it after the first.',
     color: 'red',
   },
   {
     id: 'longshot',
-    name: 'Дальнобойный выстрел',
-    desc: 'Тщательное прицеливание. Урон выстрела значительно возрастает в зависимости от расстояния до цели.',
+    name: 'Long-range shot',
+    desc: 'Careful aiming. The shot damage significantly increases depending on the distance to the target.',
     color: 'purple',
   },
   {
     id: 'backstep',
-    name: 'Выстрел с отскоком',
-    desc: 'Выстреливает в цель, одновременно совершая прыжок назад. После приземления скорость передвижения ненадолго увеличивается.',
+    name: 'Bounce Shot',
+    desc: 'Shoots at the target while simultaneously making a backward jump. After landing, movement speed temporarily increases.',
     color: 'blue',
   },
 ];
@@ -33,14 +33,14 @@ export const ArcheryPerks = () => {
   const { has_perk, selected_perk } = data;
 
   return (
-    <Window title="Стиль стрельбы Эксперта" width={550} height={350}>
+    <Window title="Expert Shooting Style" width={550} height={350}>
       <Window.Content>
         {has_perk && (
           <NoticeBox info>
-            Вы уже выбрали свой путь мастерства. Изменить его нельзя.
+            You have already chosen your path of mastery. It cannot be changed.
           </NoticeBox>
         )}
-        <Section fill scrollable title="Доступные стили">
+        <Section fill scrollable title="Available Styles">
           <Stack vertical fill>
             {perks.map((perk) => {
               const isSelected = selected_perk === perk.id;
@@ -62,7 +62,7 @@ export const ArcheryPerks = () => {
                         disabled={has_perk}
                         onClick={() => act('select_perk', { perk_id: perk.id })}
                       >
-                        {isSelected ? 'Выбрано' : 'Выбрать'}
+                        {isSelected ? 'Selected' : 'Select'}
                       </Button>
                     </Stack.Item>
                   </Stack>

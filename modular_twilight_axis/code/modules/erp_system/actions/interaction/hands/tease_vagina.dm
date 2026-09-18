@@ -1,7 +1,7 @@
 /datum/erp_action/other/hands/tease_vagina
 	abstract = FALSE
-	name = "Ласкать клитор рукой"
+	name = "Caress the clitoris with your hand"
 	required_target_organ = SEX_ORGAN_VAGINA
-	message_start = "{actor} касается рукой киски {partner}."
-	message_tick = "{actor} {force} и {speed} водит рукой по клитору {partner}."
-	message_finish =  "{actor} убирает руку от лона {partner}."
+	message_start = "{actor} touches {partner}'s pussy with his hand."
+	message_tick = "{actor} {force} and {speed} runs his hand over {partner}'s clitoris."
+	message_finish =  "{actor} removes his hand from {partner}'s womb."

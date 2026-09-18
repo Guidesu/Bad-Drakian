@@ -1,6 +1,6 @@
 /datum/erp_action/other/mouth/breast_feed
 	abstract = FALSE
-	name = "Облизать грудь"
+	name = "Lick breasts"
 	required_target_organ = SEX_ORGAN_BREASTS
 	require_same_tile = FALSE
 	active_arousal_coeff  = 0.3
@@ -9,9 +9,9 @@
 	inject_source = INJECT_FROM_PASSIVE
 	inject_target_mode = INJECT_ORGAN
 
-	message_start  = "{actor} касается губами груди {partner} и облизывает их языком."
-	message_tick   = "{actor} {force} и {speed} облизывает соски {partner}."
-	message_finish = "{actor} убирает губы от груди {partner}."
+	message_start  = "{actor} touches {partner}'s breasts with his lips and licks them with his tongue."
+	message_tick   = "{actor} {force} and {speed} licks {partner}'s nipples."
+	message_finish = "{actor} removes his lips from {partner}'s chest."
 
-	message_climax_active  = "Грудь {partner} в руках {actor} пульсирует."
-	message_climax_passive = "{partner} чувствует, как грудь в руках {actor} пульсирует."
+	message_climax_active  = "{partner}'s chest in {actor}'s hands is pulsating."
+	message_climax_passive = "{partner} feels his chest pulsating in {actor}'s hands."

@@ -95,8 +95,8 @@
 "jC" = (
 /obj/effect/wisp/prestidigitation{
 	pixel_x = 0;
-	name = "Блуждающий огонёк";
-	desc = "Крошечный голубой огонёк, подпитываемый неизвестной энергией."
+	name = "Wandering wisp";
+	desc = "A tiny blue flame fueled by unknown energy."
 	},
 /turf/open/floor/rogue/cobble/mossy,
 /area/rogue/under/town/basement)
@@ -194,8 +194,8 @@
 /obj/structure/flora/roguegrass,
 /obj/effect/wisp/prestidigitation{
 	pixel_x = 0;
-	name = "Блуждающий огонёк";
-	desc = "Крошечный голубой огонёк, подпитываемый неизвестной энергией."
+	name = "Wandering wisp";
+	desc = "A tiny blue flame fueled by unknown energy."
 	},
 /turf/open/floor/rogue/grassred,
 /area/rogue/under/town/basement)
@@ -257,8 +257,8 @@
 "rA" = (
 /obj/effect/wisp/prestidigitation{
 	pixel_x = 0;
-	name = "Блуждающий огонёк";
-	desc = "Крошечный голубой огонёк, подпитываемый неизвестной энергией."
+	name = "Wandering wisp";
+	desc = "A tiny blue flame fueled by unknown energy."
 	},
 /turf/open/floor/rogue/dirt,
 /area/rogue/under/town/basement)
@@ -410,8 +410,8 @@
 "yr" = (
 /obj/effect/wisp/prestidigitation{
 	pixel_x = 0;
-	name = "Блуждающий огонёк";
-	desc = "Крошечный голубой огонёк, подпитываемый неизвестной энергией."
+	name = "Wandering wisp";
+	desc = "A tiny blue flame fueled by unknown energy."
 	},
 /turf/open/floor/rogue/grass,
 /area/rogue/under/town/basement)
@@ -610,8 +610,8 @@
 "HV" = (
 /obj/effect/wisp/prestidigitation{
 	pixel_x = 0;
-	name = "Блуждающий огонёк";
-	desc = "Крошечный голубой огонёк, подпитываемый неизвестной энергией."
+	name = "Wandering wisp";
+	desc = "A tiny blue flame fueled by unknown energy."
 	},
 /turf/open/floor/rogue/cobblerock,
 /area/rogue/under/town/basement)
@@ -698,8 +698,8 @@
 "Nf" = (
 /obj/effect/wisp/prestidigitation{
 	pixel_x = 0;
-	name = "Блуждающий огонёк";
-	desc = "Крошечный голубой огонёк, подпитываемый неизвестной энергией."
+	name = "Wandering wisp";
+	desc = "A tiny blue flame fueled by unknown energy."
 	},
 /turf/open/floor/rogue/grassred,
 /area/rogue/under/town/basement)
@@ -823,8 +823,8 @@
 "RQ" = (
 /obj/effect/wisp/prestidigitation{
 	pixel_x = 0;
-	name = "Блуждающий огонёк";
-	desc = "Крошечный голубой огонёк, подпитываемый неизвестной энергией."
+	name = "Wandering wisp";
+	desc = "A tiny blue flame fueled by unknown energy."
 	},
 /turf/open/water/swamp,
 /area/rogue/under/town/basement)
@@ -861,8 +861,8 @@
 "SZ" = (
 /obj/effect/wisp/prestidigitation{
 	pixel_x = 0;
-	name = "Блуждающий огонёк";
-	desc = "Крошечный голубой огонёк, подпитываемый неизвестной энергией."
+	name = "Wandering wisp";
+	desc = "A tiny blue flame fueled by unknown energy."
 	},
 /turf/open/floor/rogue/grassyel,
 /area/rogue/under/town/basement)
@@ -890,8 +890,8 @@
 "Up" = (
 /obj/effect/wisp/prestidigitation{
 	pixel_x = 0;
-	name = "Блуждающий огонёк";
-	desc = "Крошечный голубой огонёк, подпитываемый неизвестной энергией."
+	name = "Wandering wisp";
+	desc = "A tiny blue flame fueled by unknown energy."
 	},
 /turf/open/water/cleanshallow,
 /area/rogue/under/town/basement)

@@ -256,9 +256,9 @@
 						have_manor = !have_manor
 						verbose_pref_log_change(user, "notice", "Estate", old_have_manor ? "Enabled" : "Disabled", have_manor ? "Enabled" : "Disabled")
 						if(have_manor)
-							to_chat(user, span_notice("При наличии дворянства, вы сможете управлять имением, которое будет приносить вам доход и предоставлять различные бонусы. Для того, чтобы связаться с имением, используйте ГЕРМЕС."))
+							to_chat(user, span_notice("If you have nobility, you will be able to manage an estate that will bring you income and provide various bonuses. To contact the estate, use HERMES."))
 						else
-							to_chat(user, span_notice("При наличии дворянства ваш персонаж будет считаться безземельным дворянином, не получая доступ к имению."))
+							to_chat(user, span_notice("If you have nobility, your character will be considered a landless noble, without gaining access to the estate."))
 					if("Change Estate Name")
 						var/new_name = tgui_input_text(user, "Choose a name for your manor:", "MANOR NAME", manor_name, encode = FALSE)
 						if(new_name)

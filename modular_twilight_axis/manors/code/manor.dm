@@ -13,7 +13,7 @@
 	return owned_manor
 
 /datum/manor
-	var/manor_name = "Неизвестное имение"
+	var/manor_name = "Unknown estate"
 	var/manor_size = "small"
 	var/manor_type = "manor"
 	var/datum/virtue/origin/virtue_origin
@@ -28,7 +28,7 @@
 /datum/manor/proc/get_owner_display_name(mob/living/carbon/human/owner)
 	if(owner?.client?.prefs?.manor_name && length(owner.client.prefs.manor_name))
 		return owner.client.prefs.manor_name
-	return "Неизвестное имение"
+	return "Unknown estate"
 
 /datum/manor/proc/get_owner_manor_type(mob/living/carbon/human/owner)
 	if(owner?.client?.prefs?.manor_type && length(owner.client.prefs.manor_type))
@@ -305,25 +305,25 @@
 		return
 	if(!SSroguemachine.hermailermaster)
 		if(owner.client)
-			to_chat(owner, span_warning("Ваш иностранный доход не может быть доставлен - почтовый терминал HERMES недоступен."))
+			to_chat(owner, span_warning("Your foreign income cannot be delivered - the HERMES postal terminal is unavailable."))
 		return
 
 	var/obj/item/paper/P = new()
 	P.mailer = manor_name
 	P.mailedto = owner.real_name
-	var/title_greeting = (owner.titles_pref == TITLES_F) ? "Миледи" : "Милорд"
+	var/title_greeting = (owner.titles_pref == TITLES_F) ? "Milady" : "Milord"
 	if(patron == /datum/patron/inhumen/matthios)
-		title_greeting = "Лидер"
+		title_greeting = "Leader"
 	P.info = "[title_greeting],<BR>"
 	if(patron == /datum/patron/inhumen/matthios)
-		P.info += "Направляем Вам долю от выручки, полученной нами от реализации произведенных за прошедший дае товаров."
+		P.info += "We are sending you a share of the revenue we received from the sale of goods produced over the past period."
 	else
-		P.info += "Направляем Вам средства, полученные от реализации товаров, произведённых Вашими крестьянами и рабочими за прошедший дае."
-	P.info += "<BR>Чистая прибыль: [total_profit_money] маммон."
+		P.info += "We are sending you the funds received from the sale of goods produced by your peasants and workers over the past period."
+	P.info += "<BR>Net profit: [total_profit_money] mammon."
 	if(estate_levy)
-		P.info += "<BR>Крестьянский оброк: [estate_levy] маммон."
+		P.info += "<BR>Peasant tribute: [estate_levy] mammon."
 	if(import_tariff)
-		P.info += "<BR>Импортный тариф: [import_tariff] маммон."
+		P.info += "<BR>Import tariff: [import_tariff] mammon."
 	P.update_icon()
 	var/obj/item/manor_delivery/delivery = new()
 	delivery.manor_note = P
@@ -337,7 +337,7 @@
 	if(owner.client)
 		owner.apply_status_effect(/datum/status_effect/ugotmail)
 
-/datum/manor/proc/get_readable_good_name(good_path, fallback = "Ресурс")
+/datum/manor/proc/get_readable_good_name(good_path, fallback = "Resource")
 	if(!good_path)
 		return fallback
 	var/as_text = "[good_path]"
@@ -401,7 +401,7 @@
 				var/unsold_units = ceil(units * 0.3)
 				units = units - unsold_units
 				if(unsold_units > 0)
-					total_profit_money += max(process_goods_sold_to_market(stockpile_entry, unsold_units), 1)*/ //До времен когда я сделаю привязку к экономическим регионам
+					total_profit_money += max(process_goods_sold_to_market(stockpile_entry, unsold_units), 1)*/ //Until the time when I link to economic regions
 			if(patron == /datum/patron/inhumen/baotha)
 				var/resources_multiplier = pick(0.5, 1.0, 1.5)
 				units = ceil(units * resources_multiplier)
@@ -424,7 +424,7 @@
 		var/new_slaves = rand(2, 5)
 		total_workers = min(total_workers + new_slaves, workers_limit)
 		if(owner.client)
-			to_chat(owner, span_notice("Ваши рейдеры захватили [new_slaves] рабов. Всего рабочих: [total_workers]."))
+			to_chat(owner, span_notice("Your raiders captured [new_slaves] slaves. Total workers: [total_workers]."))
 
 	if(!total_units && !total_profit_money)
 		return null
@@ -458,31 +458,31 @@
 					total_profit_money = ceil(total_profit_money - estate_levy)
 				SStreasury.generate_money_account(total_profit_money, owner)
 
-	var/message = "За этот дае ваше имение поставило Короне: "
+	var/message = "For this day your estate delivered to the Crown:"
 	if(is_foreign)
-		message = "За этот дае ваше имение реализовало на рынке: "
+		message = "For this day your estate sold on the market:"
 	for(var/good in produced_summary)
 		message += "[produced_summary[good]]x [get_readable_good_name(good)]; "
 
 	if(total_profit_money)
 		if(patron == /datum/patron/inhumen/matthios)
-			message += "ваши товарищи добровольно выслали вам [total_profit_money] маммон"
+			message += "your comrades voluntarily sent you [total_profit_money] mammon"
 		else
-			message += "чистая прибыль составила [total_profit_money] маммон"
+			message += "net profit amounted to [total_profit_money] mammon"
 		if(estate_levy)
-			message += ", за вычетом крестьянского оброка в размере [estate_levy] маммон"
+			message += ", minus the peasant tribute of [estate_levy] mammon"
 		if(import_tariff)
-			message += (estate_levy ? " и " : ", за вычетом ") + "импортного тарифа в размере [import_tariff] маммон"
+			message += (estate_levy ? "and" : ", minus") + "import tariff of [import_tariff] mammon"
 		if(is_foreign)
-			message += ". Средства отправлены вам по почте HERMES"
+			message += ". Funds sent to you by HERMES mail"
 		message += "."
 	else
 		if(patron == /datum/patron/inhumen/baotha)
-			message += "ваш казначей, по-видимому, слишком увлечён праздным весельем, и прибыль от поместья не поступила."
+			message += "Your treasurer is apparently too carried away with idle revelry, and the profit from the estate has not been received."
 		else if(patron == /datum/patron/inhumen/matthios)
-			message += "ваши товарищи решили не высылать вам маммон в этот раз."
+			message += "Your comrades have decided not to send you mammon this time."
 		else
-			message += "чистая прибыль от поместья отсутствует."
+			message += "There is no net profit from the estate."
 	if(owner.client)
 		to_chat(owner, span_notice(message))
 
@@ -514,7 +514,7 @@
 	var/datum/manor/manor = panel.get_manor_for_user(H)
 	if(!manor)
 		qdel(panel)
-		to_chat(H, span_warning("У этого персонажа пока нет доступного поместья."))
+		to_chat(H, span_warning("This character does not currently have an available estate."))
 		return TRUE
 
 	H.changeNext_move(CLICK_CD_INTENTCAP)

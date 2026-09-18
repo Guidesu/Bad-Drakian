@@ -52,22 +52,22 @@ var/global/list/ERP_ACTION_PREF_FIELDS = list(
 )
 
 var/global/list/ERP_ACTION_EDITOR_FIELDS = list(
-	list("id"="name", "label"="Название", "type"="text", "section"="Основное"),
-	list("id"="action_scope", "label"="Цель действия", "type"="enum", "section"="Основное"),
-	list("id"="required_init_organ",   "label"="Орган инициатора", "type"="enum", "section"="Ограничения", "options"="organs"),
-	list("id"="required_target_organ", "label"="Орган цели",       "type"="enum", "section"="Ограничения", "options"="organs"),
-	list("id"="require_same_tile", "label"="Только с одного тайла", "type"="bool", "section"="Ограничения"),
-	list("id"="allow_when_restrained", "label"="Можно в стяжках", "type"="bool", "section"="Ограничения"),
-	list("id"="allow_sex_on_move", "label"="Можно на ходу", "type"="bool", "section"="Ограничения"),
-	list("id"="active_arousal_coeff",  "label"="Возбуждение актера",  "type"="number", "section"="Эффекты", "min"=0, "max"=5, "step"=0.1),
-	list("id"="passive_arousal_coeff", "label"="Возбуждение цели",    "type"="number", "section"="Эффекты", "min"=0, "max"=5, "step"=0.1),
-	list("id"="active_pain_coeff",     "label"="Боль актера",         "type"="number", "section"="Эффекты", "min"=0, "max"=5, "step"=0.1),
-	list("id"="passive_pain_coeff",    "label"="Боль цели",           "type"="number", "section"="Эффекты", "min"=0, "max"=5, "step"=0.1),
-	list("id"="message_start",          "label"="Сообщение: старт",    "type"="multiline", "section"="Сообщения"),
-	list("id"="message_tick",           "label"="Сообщение: тик",      "type"="multiline", "section"="Сообщения"),
-	list("id"="message_finish",         "label"="Сообщение: финиш",    "type"="multiline", "section"="Сообщения"),
-	list("id"="message_climax_active",  "label"="Оргазм: актер",       "type"="multiline", "section"="Сообщения"),
-	list("id"="message_climax_passive", "label"="Оргазм: цель",        "type"="multiline", "section"="Сообщения"),
+	list("id"="name", "label"="Title", "type"="text", "section"="Main"),
+	list("id"="action_scope", "label"="Purpose of action", "type"="enum", "section"="Main"),
+	list("id"="required_init_organ",   "label"="Initiator body", "type"="enum", "section"="Restrictions", "options"="organs"),
+	list("id"="required_target_organ", "label"="Target body",       "type"="enum", "section"="Restrictions", "options"="organs"),
+	list("id"="require_same_tile", "label"="Only from one tile", "type"="bool", "section"="Restrictions"),
+	list("id"="allow_when_restrained", "label"="Possible in ties", "type"="bool", "section"="Restrictions"),
+	list("id"="allow_sex_on_move", "label"="Can be done on the go", "type"="bool", "section"="Restrictions"),
+	list("id"="active_arousal_coeff",  "label"="Actor arousal",  "type"="number", "section"="Effects", "min"=0, "max"=5, "step"=0.1),
+	list("id"="passive_arousal_coeff", "label"="Target arousal",    "type"="number", "section"="Effects", "min"=0, "max"=5, "step"=0.1),
+	list("id"="active_pain_coeff",     "label"="Actor pain",         "type"="number", "section"="Effects", "min"=0, "max"=5, "step"=0.1),
+	list("id"="passive_pain_coeff",    "label"="Target pain",           "type"="number", "section"="Effects", "min"=0, "max"=5, "step"=0.1),
+	list("id"="message_start",          "label"="Message: start",    "type"="multiline", "section"="Messages"),
+	list("id"="message_tick",           "label"="Message: tick",      "type"="multiline", "section"="Messages"),
+	list("id"="message_finish",         "label"="Message: finish",    "type"="multiline", "section"="Messages"),
+	list("id"="message_climax_active",  "label"="Orgasm: actor",       "type"="multiline", "section"="Messages"),
+	list("id"="message_climax_passive", "label"="Orgasm: goal",        "type"="multiline", "section"="Messages"),
 )
 
 GLOBAL_LIST_INIT(erp_race_body_zone_bonus, list(

@@ -4,7 +4,7 @@
 	for(var/X in GLOB.character_list)
 		dat += "[GLOB.character_list[X]]"
 
-	var/datum/browser/popup = new(src, "actors", "<center>Inhabitants of Twilight Axis</center>", 500, 600)
+	var/datum/browser/popup = new(src, "actors", "<center>Inhabitants of [get_realm_name()]</center>", 500, 600)
 	popup.set_content(dat.Join(""))
 	popup.open(FALSE)
 

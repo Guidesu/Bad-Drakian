@@ -5,7 +5,7 @@
 	if(!requester || player_index(requester) != 1)
 		return FALSE
 	if(players.len < min_players())
-		to_chat(user, span_warning("Недостаточно игроков."))
+		to_chat(user, span_warning("Not enough players."))
 		return FALSE
 	if(game_type == CARD_TABLE_GAME_FOOL)
 		fool_ensure_spirit_opponent()
@@ -56,7 +56,7 @@
 				deal_to(bj_player, 2)
 			for(var/datum/card_table_player/bj_reveal_player in players)
 				xylix_try_reveal_for_turn_holder(bj_reveal_player)
-			message = "Блекджек начался. Вариант: [blackjack_variant_label()]. [dealer_rotation_label()]."
+			message = "Blackjack has started. Option: [blackjack_variant_label()]. [dealer_rotation_label()]."
 		if(CARD_TABLE_GAME_POKER)
 			for(var/datum/card_table_player/poker_player in players)
 				switch(poker_variant)
@@ -72,7 +72,7 @@
 			poker_reset_betting_round()
 			for(var/datum/card_table_player/poker_reveal_player in players)
 				xylix_try_reveal_for_turn_holder(poker_reveal_player)
-			message = "Покер начался. Вариант: [poker_variant_label()]. [dealer_rotation_label()]."
+			message = "Poker has begun. Option: [poker_variant_label()]. [dealer_rotation_label()]."
 		if(CARD_TABLE_GAME_SOLITAIRE)
 			if(solitaire_variant == CARD_TABLE_SOLITAIRE_SPIDER)
 				deck += card_table_make_deck()
@@ -103,7 +103,7 @@
 					solitaire_tableau += list(column)
 				solitaire_stock = deck.Copy()
 				deck = list()
-			message = "Пасьянс разложен. Вариант: [solitaire_variant_label()]."
+			message = "Solitaire is played. Option: [solitaire_variant_label()]."
 		if(CARD_TABLE_GAME_FOOL)
 			for(var/datum/card_table_player/fool_player in players)
 				deal_to(fool_player, 6)
@@ -118,7 +118,7 @@
 			fool_defender_start_hand = starting_defender ? starting_defender.hand.len : 0
 			fool_first_bout = TRUE
 			xylix_try_reveal_for_turn_holder(fool_current_attacker())
-			message = "Дурень начался. Вариант: [fool_variant_label()]. Козырь: [trump_suit]."
+			message = "The foolishness has begun. Option: [fool_variant_label()]. Trump: [trump_suit]."
 			fool_process_spirit_turn()
 	SStgui.update_uis(owner)
 	return TRUE

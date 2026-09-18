@@ -193,3 +193,87 @@
 		if(5)
 			adjective = "an enormous"
 	return "[adjective] pair of breasts"
+
+/datum/mob_descriptor/pubes
+	name = "pubic hair"
+	slot = MOB_DESCRIPTOR_SLOT_PUBES
+	verbage = "%HAVE%"
+	show_obscured = TRUE
+
+/datum/mob_descriptor/pubes/proc/get_feature(mob/living/carbon/human/human)
+	if(!human.get_bodypart(BODY_ZONE_CHEST))
+		return
+	return human.get_bodypart_feature_of_slot(BODYPART_FEATURE_PUBES)
+
+/datum/mob_descriptor/pubes/can_describe(mob/living/described)
+	if(!ishuman(described))
+		return FALSE
+	var/mob/living/carbon/human/human = described
+	var/datum/bodypart_feature/pubes/feature = get_feature(human)
+	if(!feature?.accessory_type)
+		return FALSE
+	if(human.underwear || !get_location_accessible(human, BODY_ZONE_PRECISE_GROIN))
+		return FALSE
+	return is_human_part_visible(human, HIDEJUMPSUIT|HIDECROTCH)
+
+/datum/mob_descriptor/pubes/can_user_see(mob/living/described, mob/user)
+	return !user?.client?.prefs || user.client.prefs.show_pubic_hair
+
+/datum/mob_descriptor/pubes/get_description(mob/living/described)
+	var/mob/living/carbon/human/human = described
+	var/datum/bodypart_feature/pubes/feature = get_feature(human)
+	var/material = feature?.get_description_name() || "pubic hair"
+	switch(feature?.accessory_type)
+		if(/datum/sprite_accessory/pubes/hairy)
+			return "a dense growth of [material]"
+		if(/datum/sprite_accessory/pubes/trim)
+			return "neatly trimmed [material]"
+		if(/datum/sprite_accessory/pubes/strip)
+			return "a narrow strip of [material]"
+		if(/datum/sprite_accessory/pubes/heart)
+			return "heart-shaped [material]"
+		if(/datum/sprite_accessory/pubes/extreme)
+			return "an untamed growth of [material]"
+		if(/datum/sprite_accessory/pubes/cross)
+			return "[material] shaped into a Psycross"
+	return material
+
+/datum/mob_descriptor/pits
+	name = "armpit hair"
+	slot = MOB_DESCRIPTOR_SLOT_PITS
+	verbage = "%HAVE%"
+	show_obscured = TRUE
+
+/datum/mob_descriptor/pits/proc/get_feature(mob/living/carbon/human/human)
+	if(!human.get_bodypart(BODY_ZONE_CHEST))
+		return
+	return human.get_bodypart_feature_of_slot(BODYPART_FEATURE_PITS)
+
+/datum/mob_descriptor/pits/can_describe(mob/living/described)
+	if(!ishuman(described))
+		return FALSE
+	var/mob/living/carbon/human/human = described
+	var/datum/bodypart_feature/pits/feature = get_feature(human)
+	if(!feature?.accessory_type)
+		return FALSE
+	if(human.underwear?.covers_breasts || !get_location_accessible(human, BODY_ZONE_CHEST))
+		return FALSE
+	return is_human_part_visible(human, HIDEBOOB|HIDEJUMPSUIT)
+
+/datum/mob_descriptor/pits/can_user_see(mob/living/described, mob/user)
+	return !user?.client?.prefs || user.client.prefs.show_armpit_hair
+
+/datum/mob_descriptor/pits/get_description(mob/living/described)
+	var/mob/living/carbon/human/human = described
+	var/datum/bodypart_feature/pits/feature = get_feature(human)
+	var/material = feature?.get_description_name() || "armpit hair"
+	switch(feature?.accessory_type)
+		if(/datum/sprite_accessory/pits/trim)
+			return "a short, trimmed growth of [material]"
+		if(/datum/sprite_accessory/pits/moderate)
+			return "a few wisps of [material]"
+		if(/datum/sprite_accessory/pits/hairy)
+			return "a dense growth of [material]"
+		if(/datum/sprite_accessory/pits/extreme)
+			return "an untamed growth of [material]"
+	return material

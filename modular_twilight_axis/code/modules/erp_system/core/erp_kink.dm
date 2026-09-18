@@ -2,15 +2,15 @@
 	abstract_type = /datum/kink
 	var/name = "Unknown Kink"
 	var/description = "No description available."
-	var/category = "Общее"
+	var/category = "General"
 
 /datum/kink/proc/is_active_for(datum/erp_actor/owner, datum/erp_actor/partner, datum/erp_sex_link/L)
 	return FALSE
 
 /datum/kink/bondage
-	name = "Связывание"
-	description = "Возбуждение от ограничения свободы партнёра или себя."
-	category = "Доминирование"
+	name = "Bondage"
+	description = "Excitement from restricting the freedom of a partner or oneself."
+	category = "Dominance"
 
 /datum/kink/bondage/is_active_for(datum/erp_actor/owner, datum/erp_actor/partner, datum/erp_sex_link/L)
 	if(!owner || !partner || !L)
@@ -25,9 +25,9 @@
 	return FALSE
 
 /datum/kink/domination
-	name = "Доминирование"
-	description = "Возбуждение от контроля и ведущей роли."
-	category = "Доминирование"
+	name = "Dominance"
+	description = "Excitement from control and leading role."
+	category = "Dominance"
 
 /datum/kink/domination/is_active_for(datum/erp_actor/owner, datum/erp_actor/partner, datum/erp_sex_link/L)
 	if(!owner || !partner || !L)
@@ -48,9 +48,9 @@
 	return FALSE
 
 /datum/kink/submissive
-	name = "Подчинение"
-	description = "Возбуждение от подчинённой роли."
-	category = "Подчинение"
+	name = "Submission"
+	description = "Excitement from a subordinate role."
+	category = "Submission"
 
 /datum/kink/submissive/is_active_for(datum/erp_actor/owner, datum/erp_actor/partner, datum/erp_sex_link/L)
 	if(!owner || !partner || !L)
@@ -74,17 +74,17 @@
 #define KINK_FORCE_ROUGH_MIN  SEX_FORCE_HIGH
 
 /datum/kink/gentle
-	name = "Нежность"
-	description = "Возбуждение от мягкого секса."
-	category = "Общее"
+	name = "Tenderness"
+	description = "Excitement from soft sex."
+	category = "General"
 
 /datum/kink/gentle/is_active_for(datum/erp_actor/owner, datum/erp_actor/partner, datum/erp_sex_link/L)
 	return (L.force <= KINK_FORCE_GENTLE_MAX && L.speed <= SEX_SPEED_LOW)
 
 /datum/kink/rough
-	name = "Грубость"
-	description = "Возбуждение от грубого и жесткого секса."
-	category = "Общее"
+	name = "Roughness"
+	description = "Excitement from rough and hard sex."
+	category = "General"
 
 /datum/kink/rough/is_active_for(datum/erp_actor/owner, datum/erp_actor/partner, datum/erp_sex_link/L)
 	return (L.force >= KINK_FORCE_ROUGH_MIN || L.speed >= SEX_SPEED_HIGH)
@@ -93,9 +93,9 @@
 #undef KINK_FORCE_ROUGH_MIN
 
 /datum/kink/public
-	name = "Публичность"
-	description = "Возбуждение от секса, когда вас видят те, кто не учавствует в текущей сессии."
-	category = "Фетиши"
+	name = "Publicity"
+	description = "Excitement from sex when you are seen by those who are not participating in the current session."
+	category = "Fetishes"
 
 /datum/kink/public/is_active_for(datum/erp_actor/owner, datum/erp_actor/partner, datum/erp_sex_link/L)
 	var/mob/M = owner?.physical

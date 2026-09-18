@@ -1,6 +1,6 @@
 /datum/advclass/lost_grenzel/lost_mage
 	name = "Lost Gefechtsgelehrter"
-	tutorial = "Когда-то вы гордо называли себя магом. Теперь же вы ещё более жалки чем местные пустынные крысы - единственное, что вас отличает от них - это язык и остатки гордости выпускника Имперской Академии."
+	tutorial = "Once upon a time you proudly called yourself a magician. Now you are even more pathetic than the local desert rats - the only thing that distinguishes you from them is your language and the remnants of pride as a graduate of the Imperial Academy."
 	allowed_sexes = list(MALE, FEMALE)
 	
 	outfit = /datum/outfit/job/roguetown/lost_grenzel/lost_mage

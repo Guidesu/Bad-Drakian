@@ -97,7 +97,7 @@ SUBSYSTEM_DEF(ta_rockhill_masquerade)
 
 
 /datum/antagonist/vampire/rockhill_masquerader
-	name = "Участник Маскарада"
+	name = "Participant in the Masquerade"
 	show_in_roundend = TRUE
 	show_in_antagpanel = FALSE
 	antag_flags = FLAG_ANTAG_CAP_IGNORE
@@ -157,7 +157,7 @@ SUBSYSTEM_DEF(ta_rockhill_masquerade)
 /datum/antagonist/vampire/rockhill_masquerader/proc/expire_clan_choice(mob/living/carbon/human/vampdude)
 	if(clan_selected)
 		return
-	to_chat(vampdude, span_userdanger("Я не смог(-ла) решиться вовремя. Маскарад отворачивается от меня, и проклятие покидает мою кровь..."))
+	to_chat(vampdude, span_userdanger("I could not bring myself to act in time. The Masquerade turns away from me, and the curse leaves my blood..."))
 	silent = TRUE
 	remove_verb(vampdude, /mob/living/carbon/human/proc/vampire_choose_clan_verb)
 	vampdude.vampire_clear_choose_clan_button()
@@ -182,7 +182,7 @@ SUBSYSTEM_DEF(ta_rockhill_masquerade)
 		if(ambition in synced_ambitions)
 			continue
 		ambition.update_explanation_text()
-		clan_leader.mind.store_memory("<b>Амбиция клана:</b> [ambition.explanation_text]")
+		clan_leader.mind.store_memory("<b>Clan Ambition:</b> [ambition.explanation_text]")
 		synced_ambitions += ambition
 
 /datum/antagonist/vampire/rockhill_masquerader/roundend_report()
@@ -197,7 +197,7 @@ SUBSYSTEM_DEF(ta_rockhill_masquerade)
 			triumphs_earned += ambition.triumph_count
 	if(triumphs_earned > 0)
 		owner?.adjust_triumphs(triumphs_earned)
-		to_chat(owner, span_greentext("Выполненная амбиция принесла мне [triumphs_earned] триумф."))
+		to_chat(owner, span_greentext("A fulfilled ambition brought me [triumphs_earned] point."))
 
 
 /proc/ta_reassign_rockhill_masquerader(datum/mind/excluded_mind)
@@ -305,8 +305,8 @@ SUBSYSTEM_DEF(ta_rockhill_masquerade)
 		return
 	masquerader.objectives += objective
 	masquerader.sync_ambitions_to_clan_leader_memory()
-	to_chat(masquerader_mind.current, span_userdanger("За Маскарадом скрываются мои тайные амбиции."))
-	to_chat(masquerader_mind.current, span_boldnotice("<b>Амбиция:</b> [objective.explanation_text]"))
+	to_chat(masquerader_mind.current, span_userdanger("Behind the Masquerade lie my secret ambitions."))
+	to_chat(masquerader_mind.current, span_boldnotice("<b>Ambition:</b> [objective.explanation_text]"))
 
 
 /proc/ta_find_living_methuselah()
@@ -411,32 +411,32 @@ SUBSYSTEM_DEF(ta_rockhill_masquerade)
 
 /proc/ta_rockhill_role_name_ru(datum/job/role)
 	if(istype(role, /datum/job/roguetown/inquisitor))
-		return "Инквизитор"
+		return "Inquisitor"
 	if(istype(role, /datum/job/roguetown/orthodoxist))
-		return "Ортодокс"
+		return "Orthodox"
 	if(istype(role, /datum/job/roguetown/absolver))
-		return "Абсолвер"
+		return "Absolver"
 	if(istype(role, /datum/job/roguetown/lord))
-		return "Король или королева"
+		return "King or Queen"
 	if(istype(role, /datum/job/roguetown/lady))
-		return "Консорт"
+		return "Consort"
 	if(istype(role, /datum/job/roguetown/exlady))
-		return "Вдовствующий консорт"
+		return "Dowager Consort"
 	if(istype(role, /datum/job/roguetown/prince))
-		return "Принц или принцесса"
+		return "Prince or Princess"
 	if(role?.title)
 		return role.title
-	return "неизвестная роль"
+	return "Unknown role"
 
 
 /datum/objective/rockhill_masquerade
-	name = "амбиции клана"
-	flavor = "Амбиция"
+	name = "Ambitions of clan"
+	flavor = "Ambition"
 	triumph_count = 1
 
 /datum/objective/rockhill_masquerade/rival_clans
-	name = "уничтожить лидеров соперничающих кланов"
-	explanation_text = "Уничтожить лидеров других кланов и сделать свой клан господствующей силой в городе."
+	name = "to destroy the leaders of rival clans"
+	explanation_text = "Destroy the leaders of other clans and make your clan the dominant force in the city."
 	var/list/datum/mind/rival_minds = list()
 
 /datum/objective/rockhill_masquerade/rival_clans/check_completion()
@@ -449,7 +449,7 @@ SUBSYSTEM_DEF(ta_rockhill_masquerade)
 
 
 /datum/objective/rockhill_masquerade/inquisition
-	name = "ослабить влияние Отавы"
+	name = "weaken Ottawa's influence"
 	var/list/datum/mind/target_minds = list()
 
 /datum/objective/rockhill_masquerade/inquisition/update_explanation_text()
@@ -457,7 +457,7 @@ SUBSYSTEM_DEF(ta_rockhill_masquerade)
 	for(var/datum/mind/target_mind as anything in target_minds)
 		var/datum/job/target_job = ta_get_assigned_job_datum(target_mind)
 		target_descriptions += "[target_mind.name] ([ta_rockhill_role_name_ru(target_job)])"
-	explanation_text = "Ослабить влияние Отавы в Рокхилле. Ликвидировать следующие цели: [jointext(target_descriptions, ", ")]."
+	explanation_text = "Weaken Ottawa's influence in Rockhill. Eliminate the following targets: [jointext(target_descriptions,", ")]."
 
 /datum/objective/rockhill_masquerade/inquisition/check_completion()
 	if(!length(target_minds))
@@ -469,14 +469,14 @@ SUBSYSTEM_DEF(ta_rockhill_masquerade)
 
 
 /datum/objective/rockhill_masquerade/royal_conversion
-	name = "обратить представителя королевской семьи"
+	name = "convert a member of the royal family"
 
 /datum/objective/rockhill_masquerade/royal_conversion/update_explanation_text()
 	if(target)
 		var/datum/job/target_job = ta_get_assigned_job_datum(target)
-		explanation_text = "Тайно обратить [target.name] ([ta_rockhill_role_name_ru(target_job)]) и принять эту особу в свой клан."
+		explanation_text = "Secretly convert [target.name] ([ta_rockhill_role_name_ru(target_job)]) and take this person into your clan."
 	else
-		explanation_text = "Тайно обратить представителя королевской семьи и принять эту особу в свой клан."
+		explanation_text = "Secretly convert a member of the royal family and take this person into your clan."
 
 /datum/objective/rockhill_masquerade/royal_conversion/check_completion()
 	var/mob/living/carbon/human/owner_body = owner?.current
@@ -489,24 +489,24 @@ SUBSYSTEM_DEF(ta_rockhill_masquerade)
 
 
 /datum/objective/rockhill_masquerade/royal_coronation
-	name = "короновать обращённого представителя власти"
+	name = "crown the converted representative of authority"
 
 /datum/objective/rockhill_masquerade/royal_coronation/update_explanation_text()
 	if(target)
-		explanation_text = "Сделать [target.name] настоящим правителем Рокхилла. Добиться коронации или передачи власти любым доступным способом."
+		explanation_text = "Make [target.name] the true ruler of Rockhill. Achieve coronation or transfer of power by any available means."
 	else
-		explanation_text = "Сделать обращённого представителя власти настоящим правителем Рокхилла."
+		explanation_text = "Make the turned representative of authority the true ruler of Rockhill."
 
 /datum/objective/rockhill_masquerade/royal_coronation/check_completion()
 	return target?.current && SSticker.rulermob == target.current
 
 
 /datum/objective/rockhill_masquerade/clan_growth
-	name = "расширить клан"
+	name = "expand the clan"
 	var/target_clan_size = ROCKHILL_MASQUERADE_CLAN_SIZE_HIGH
 
 /datum/objective/rockhill_masquerade/clan_growth/update_explanation_text()
-	explanation_text = "Расширить свой клан как минимум до [target_clan_size] живых вампиров."
+	explanation_text = "Expand your clan to at least [target_clan_size] living vampires."
 
 /datum/objective/rockhill_masquerade/clan_growth/check_completion()
 	var/mob/living/carbon/human/owner_body = owner?.current
@@ -520,21 +520,21 @@ SUBSYSTEM_DEF(ta_rockhill_masquerade)
 
 
 /datum/objective/rockhill_masquerade/methuselah
-	name = "решить судьбу Метсуфелата"
+	name = "decide the fate of Metsufelat"
 
 /datum/objective/rockhill_masquerade/methuselah/update_explanation_text()
 	return
 
 /datum/objective/rockhill_masquerade/methuselah/destroy
-	name = "уничтожить Метсуфелата"
-	explanation_text = "Явилось древнее зло — угроза всему вампирскому миру. Оно готово уничтожить наши кланы и низвергнуть весь мир в пучину войны. Мы должны объединиться против него и уничтожить Метсуфелата."
+	name = "destroy Metsufelat"
+	explanation_text = "An ancient evil has appeared — a threat to the entire vampire world. It is ready to destroy our clans and plunge the whole world into the abyss of war. We must unite against it and destroy Metsufelat."
 
 /datum/objective/rockhill_masquerade/methuselah/destroy/check_completion()
 	return target && !considered_alive(target)
 
 /datum/objective/rockhill_masquerade/methuselah/support
-	name = "поддержать Метсуфелата"
-	explanation_text = "Пробудилась древняя сила. Следует отвергнуть страх других кланов, поддержать возвращение Метсуфелата и обеспечить его выживание."
+	name = "support Metsufelat"
+	explanation_text = "An ancient power has awakened. One should reject the fear of other clans, support the return of Metsufelat, and ensure his survival."
 
 /datum/objective/rockhill_masquerade/methuselah/support/check_completion()
 	return target && considered_alive(target)

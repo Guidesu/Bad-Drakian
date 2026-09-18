@@ -108,7 +108,7 @@
 		return TRUE
 	return ..()
 
-// Распаковка через перетягивание (MouseDrop)
+//Unpacking by dragging (MouseDrop)
 /obj/structure/onager/MouseDrop(over_object, src_location, over_location)
 	if(over_object == usr && Adjacent(usr) && in_range(src, usr))
 		if(packed && ishuman(usr))

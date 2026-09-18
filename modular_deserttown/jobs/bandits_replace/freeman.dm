@@ -7,9 +7,9 @@
 	show_name_in_check_antagonists = TRUE
 	job_rank = ROLE_FREEMAN
 	confess_lines = list(
-		"ПЕСКИ АЛЬ-АШУРА БУДУТ СВОБОДНЫ!!",
-		"СМЕРТЬ СУЛТАНУ!! ДА ЗДРАВСТВУЕТ АЛЬ-МАТТИОС!!",
-		"НАШ ДЖИХАД ЗАКОНЧИТСЯ ВАШЕЙ СМЕРТЬЮ!!",
+		"THE SANDS OF AL-ASHUR WILL BE FREE!!",
+		"DEATH TO THE SULTAN!! LONG LIVE AL MATTIOS!!",
+		"OUR JIHAD WILL END WITH YOUR DEATH!!",
 	)
 	storyteller_antag_flags = STORYTELLER_ANTAG_VILLAIN | STORYTELLER_ANTAG_ROUNDSTART
 	override_candidatereq = TRUE
@@ -37,8 +37,8 @@
 	ADD_TRAIT(H, TRAIT_FREEMAN, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_OUTLANDER, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_OUTLAW, TRAIT_GENERIC)
-	to_chat(H, span_alertsyndie("Я - ФРИМЕН!"))
-	to_chat(H, span_boldwarning("Да будет проклят Султан Аль-Ашура песками и Иблис! Когда-то вы владели этими землями: поля специй, торговые пути - всё это было частью вашего таваифа. Султан забрал ваши права и земли несколько лет назад - и теперь вы боретесь за свои права и свои земли, беспощадно убивая азебов и наёмных убийц. С тех самых пор как вы стали изгоем для цивилизации - вы стали куда более радикальных взглядов и нашли себе новых товарищей по вкусу. Быть может, вместе с ними вы сможете вернуть свои земли?"))
+	to_chat(H, span_alertsyndie("I AM FREEMAN!"))
+	to_chat(H, span_boldwarning("May the Sultan of Al-Ashura be cursed by the sands and Iblis! Once upon a time you owned these lands: spice fields, trade routes - all this was part of your tawaif. The Sultan took your rights and lands several years ago - and now you are fighting for your rights and your lands, mercilessly killing Azebs and assassins. Ever since you became an outcast from civilization, you have become much more radical in your views and found new comrades to your liking. Perhaps, together with them, you can return your lands?"))
 
 /datum/job/roguetown/freeman
 	title = "Freeman"
@@ -49,7 +49,7 @@
 	spawn_positions = 0
 	antag_job = TRUE
 
-	tutorial = "Да будет проклят Султан Аль-Ашура песками и Иблис! Когда-то вы владели этими землями: поля специй, торговые пути - всё это было частью вашего таваифа. Султан забрал ваши права и земли несколько лет назад - и теперь вы боретесь за свои права и свои земли, беспощадно убивая азебов и наёмных убийц. С тех самых пор как вы стали изгоем для цивилизации - вы стали куда более радикальных взглядов и нашли себе новых товарищей по вкусу. Быть может, вместе с ними вы сможете вернуть свои земли?"
+	tutorial = "May the Sultan of Al-Ashura be cursed by the sands and Iblis! Once upon a time you owned these lands: spice fields, trade routes - all this was part of your tawaif. The Sultan took your rights and lands several years ago - and now you are fighting for your rights and your lands, mercilessly killing Azebs and assassins. Ever since you became an outcast from civilization, you have become much more radical in your views and found new comrades to your liking. Perhaps, together with them, you can return your lands?"
 
 	outfit = null
 	outfit_female = null
@@ -113,7 +113,7 @@
 
 /datum/migrant_role/freeman
 	name = "Freeman"
-	greet_text = "Да будет проклят Султан Аль-Ашура песками и Иблис! Вы - один из фрименов, лишённых земель и прав. Настало время вернуть своё кровью."
+	greet_text = "May the Sultan of Al-Ashura be cursed by the sands and Iblis! You are one of the Fremen, deprived of lands and rights. It's time to give back what you have in blood."
 	outfit = /datum/outfit/job/roguetown/freeman
 	antag_datum = /datum/antagonist/bandit/freeman
 	advclass_cat_rolls = list(CTAG_FREEMAN = 20)
@@ -132,7 +132,7 @@
 	)
 	min_pop = 80
 	spawn_landmark = "Bandit"
-	greet_text = "Фримены выходят из-за дюн. Враги Султана собрались, чтобы вернуть то, что у них отняли."
+	greet_text = "The Freemen emerge from behind the dunes. The Sultan's enemies gathered to return what was taken from them."
 
 /datum/round_event_control/antagonist/migrant_wave/freeman/valid_for_map()
 	return deserttown_antag_wave_is_desert_town()
@@ -248,7 +248,7 @@
 		for(var/mob/dead/new_player/player as anything in GLOB.new_player_list)
 			if(!player.client)
 				continue
-			to_chat(player, span_danger("Аль-Маттиос зовёт к джихаду! Неверные, отнявшие наши земли, будут убиты самым жестоким образом! Открыто шесть слотов фрименов."))
+			to_chat(player, span_danger("Al-Matthios calls for jihad! The infidels who took our lands will be killed in the most cruel way! Six Fremen slots are open."))
 
 	..()
 

@@ -3,25 +3,25 @@
 /// Human-readable force text for templates/UI.
 /datum/erp_link_presenter/proc/get_force_text(force)
 	switch(force)
-		if(SEX_FORCE_LOW)     return pick(list("нежно", "заботливо", "ласково", "мягко", "осторожно"))
-		if(SEX_FORCE_MID)     return pick(list("решительно", "энергично", "страстно", "уверенно", "увлеченно"))
-		if(SEX_FORCE_HIGH)    return pick(list("грубо", "небрежно", "жестко", "пылко", "свирепо"))
-		if(SEX_FORCE_EXTREME) return pick(list("жестоко", "неистово", "неумолимо", "свирепо", "безжалостно"))
-	return "уверенно"
+		if(SEX_FORCE_LOW)     return pick(list("gently", "caringly", "affectionately", "softly", "carefully"))
+		if(SEX_FORCE_MID)     return pick(list("decisively", "energetically", "passionately", "confidently", "enthusiastically"))
+		if(SEX_FORCE_HIGH)    return pick(list("roughly", "casually", "harshly", "passionately", "fiercely"))
+		if(SEX_FORCE_EXTREME) return pick(list("cruelly", "violently", "inexorably", "fiercely", "mercilessly"))
+	return "confidently"
 
 /// Human-readable speed text for templates/UI.
 /datum/erp_link_presenter/proc/get_speed_text(speed)
 	switch(speed)
-		if(SEX_SPEED_LOW)     return pick(list("медленно", "неторопливо", "бережно", "тягуче", "размеренно"))
-		if(SEX_SPEED_MID)     return pick(list("ритмично", "уверенно", "плавно", "напористо", "спокойно"))
-		if(SEX_SPEED_HIGH)    return pick(list("быстро", "часто", "торопливо", "резко", "интенсивно"))
-		if(SEX_SPEED_EXTREME) return pick(list("агрессивно", "стремительно", "бурно", "яростно", "взахлеб"))
+		if(SEX_SPEED_LOW)     return pick(list("slowly", "leisurely", "carefully", "viscous", "measured"))
+		if(SEX_SPEED_MID)     return pick(list("rhythmically", "confidently", "smoothly", "assertively", "calm"))
+		if(SEX_SPEED_HIGH)    return pick(list("quickly", "often", "hastily", "sharply", "intensely"))
+		if(SEX_SPEED_EXTREME) return pick(list("aggressively", "swiftly", "violently", "violently", "excitedly"))
 
-	return "ритмично"
+	return "rhythmically"
 
 /// Zone text routed via actor API (single source of truth for zone normalization).
 /datum/erp_link_presenter/proc/get_target_zone_text(datum/erp_sex_link/L)
-	return L?.actor_active?.get_target_zone_text_for(L?.actor_passive) || "тело"
+	return L?.actor_active?.get_target_zone_text_for(L?.actor_passive) || "body"
 
 /// Minimal UI snapshot (kept fields match existing UI expectations).
 /datum/erp_link_presenter/proc/get_ui_state(datum/erp_sex_link/L)

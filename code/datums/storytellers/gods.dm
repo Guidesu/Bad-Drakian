@@ -34,10 +34,10 @@
 
 /datum/storyteller/psydon
 	name = "Psydon"
-	ru_name = "Псайдон"
-	vote_desc = "Воцаряется покой. Антагонистов не будет. Его дети могут спать спокойно - они заслужили передышку."
-	desc = "Обыденные и умеренные события случаются в 1.2 раза чаще. Без антагонистов и божественного вмешательства. Гноллы отключены."
-	welcome_text = "Мягкий ветер проходит по тихим улицам..."
+	ru_name = "Psydon"
+	vote_desc = "Peace reigns. There will be no antagonists. His children can rest easy - they deserve a break."
+	desc = "Ordinary and moderate events happen 1.2 times more often. Without antagonists and divine intervention. Gnolls are disabled."
+	welcome_text = "A soft wind passes through the quiet streets..."
 	weight = 6
 	always_votable = TRUE
 	color_theme = "#80ced8"
@@ -57,10 +57,10 @@
 
 /datum/storyteller/astrata
 	name = "Astrata"
-	ru_name = "Астрата"
-	vote_desc = "Воцаряется порядок. Великим угрозам не суждено явиться, а гноллы не смеют ступать под Её дневной свет. Её милость обращена к дворянству и Её указам."
-	desc = "Бандиты, личи, оборотни и вампирские лорды не выпадают. Маскарад - единственный крупный антагонист на старте раунда и получает вес x1.5. Гноллы отключены. Изгои (Wretches) масштабируются обычным образом."
-	welcome_text = "Тёплый дневной свет пробуждает вас ото сна..."
+	ru_name = "Astrata"
+	vote_desc = "Order reigns. The great threats are not destined to appear, and the gnolls do not dare to set foot in Her daylight. Her mercy is addressed to the nobility and Her decrees."
+	desc = "Bandits, liches, werewolves and vampire lords do not drop. Masquerade is the only major antagonist at the start of the round and receives a weight of x1.5. Gnolls are disabled. Wretches scale normally."
+	welcome_text = "Warm daylight awakens you from sleep..."
 	weight = 6
 	always_votable = TRUE
 	follower_modifier = LOWER_FOLLOWER_MODIFIER
@@ -98,10 +98,10 @@
 
 /datum/storyteller/noc
 	name = "Noc"
-	ru_name = "Нок"
-	vote_desc = "Воцаряется знание. Событий меньше чем обычно, но арканное вмешательство всё ещё возможно. Её милость обращена к тем, кто мечтает о большем."
-	desc = "Магические события получают вес x1.2, события с призраками - x1.1. Разброс стоимости событий выше. Пул антагонистов без изменений. Возможен один гнолл."
-	welcome_text = "Воздух потрескивает от арканной энергии..."
+	ru_name = "Nok"
+	vote_desc = "Knowledge reigns. There are fewer events than usual, but lasso intervention is still possible. Her grace is directed to those who dream of more."
+	desc = "Magic events receive a weight of x1.2, events with ghosts - x1.1. The spread of event costs is higher. The pool of antagonists remains unchanged. One gnoll possible."
+	welcome_text = "The air crackles with arcane energy..."
 	weight = 4
 	always_votable = TRUE
 	color_theme = "#F0F0F0"
@@ -133,10 +133,10 @@
 
 /datum/storyteller/ravox
 	name = "Ravox"
-	ru_name = "Равокс"
-	vote_desc = "Воцаряется слава. Набеги и знамения приходят чаще. Его милость слышна в звоне стали и военных кличах - бандиты отвечают на Его зов, но гноллы держатся в стороне."
-	desc = "Пул рейдов набирает очки в 2 раза быстрее, а события-рейды получают вес x1.3. Бандиты гарантированно становятся крупными антагонистами на старте раунда. Обыденные и личные события подавлены. Гноллы отключены."
-	welcome_text = "\"Вдалеке эхом гремят трубы Зерихо...\""
+	ru_name = "Ravox"
+	vote_desc = "Glory reigns. Raids and omens come more often. His mercy is heard in the clink of steel and war cries - the bandits answer His call, but the gnolls stay away."
+	desc = "The raid pool gains points 2 times faster, and raid events gain x1.3 weight. Bandits are guaranteed to become major antagonists at the start of the round. Ordinary and personal events are suppressed. Gnolls are disabled."
+	welcome_text = "\"The pipes of Zericho echo in the distance...\""
 	weight = 4
 	always_votable = TRUE
 	color_theme = "#228822"
@@ -182,10 +182,10 @@
 
 /datum/storyteller/abyssor
 	name = "Abyssor"
-	ru_name = "Абиссор"
-	vote_desc = "Воцаряется вода. События спокойны, но их течение меняется вместе с приливом. Его милость обращена к рыбакам, пиявкам и утопленникам - сноходцы (dreamwalkers) идут глубинными путями, а гноллы не смеют выходить к Его берегам."
-	desc = "Водные события получают вес x1.3, торговые - x1.2. Сноходец (Dreamwalker) получает вес x1.5 в пуле антагонистов. Гноллы отключены."
-	welcome_text = "Горизонт темнеет: тучи собираются к близкой буре..."
+	ru_name = "Abyssor"
+	vote_desc = "Water reigns. Events are calm, but their course changes with the tide. His mercy is addressed to fishermen, leeches and drowned people - dreamwalkers walk the deep paths, and gnolls do not dare to go to His shores."
+	desc = "Water events receive a weight of x1.3, trade events - x1.2. Dreamwalker gains x1.5 weight in the antagonist pool. Gnolls are disabled."
+	welcome_text = "The horizon is darkening: the clouds are gathering for a nearby storm..."
 	weight = 4
 	always_votable = TRUE
 	color_theme = "#3366CC"
@@ -218,10 +218,10 @@
 
 /datum/storyteller/xylix
 	name = "Xylix"
-	ru_name = "Ксайликс"
-	vote_desc = "Воцаряется непредсказуемость. Ничто не высечено в камне, зато возможно всё. Его милость обращена к случайности, прихоти и шутке."
-	desc = "Некоторые принудительные события игнорируют требования к онлайну, а уже сработавшие события сразу получают полный штраф за повтор. Божественное вмешательство x1.75; внедрение персонажей, знамения (bad omen) и набеги подавлены до 0. Все крупные антагонисты, доступные на старте раунда, получают вес x1.5. Режим гноллов выбирается случайно."
-	welcome_text = "\"...вот что бывает от лишних пряностей и вина!\""
+	ru_name = "Xylix"
+	vote_desc = "Unpredictability reigns. Nothing is set in stone, but everything is possible. His mercy is directed towards chance, whim and joke."
+	desc = "Some forced events ignore online requirements, and events that have already been triggered immediately receive a full replay penalty. Divine Intervention x1.75; character infiltration, bad omen and raids are suppressed to 0. All major antagonists available at the start of the round receive a weight of x1.5. Gnoll mode is randomly selected."
+	welcome_text = "\"...this is what happens from excess spices and wine!\""
 	weight = 4
 	always_votable = TRUE
 	event_repetition_multiplier = 0
@@ -257,10 +257,10 @@
 
 /datum/storyteller/necra
 	name = "Necra"
-	ru_name = "Некра"
-	vote_desc = "Воцаряется смерть. События случаются реже, а антагонисты выпадают неохотнее. Её милость обращена к тем, кто возвращает неупокоенных обратно в могилы."
-	desc = "События с призраками получают вес x1.3. Очки появления антагонистов и рейдов набирают очки вдвое медленнее; личные события тоже замедлены. Обыденные и умеренные события случаются в 1.25 раза чаще. Возможен один гнолл."
-	welcome_text = "\"В феоде Зенмарка повеяло запахом тления...\""
+	ru_name = "Nekra"
+	vote_desc = "Death reigns. Events happen less often, and antagonists appear more reluctantly. Her mercy is directed to those who return the rest to their graves."
+	desc = "Ghost events gain x1.3 weight. Antagonist and raid spawn points gain points at half the rate; personal events are also slowed down. Ordinary and moderate events happen 1.25 times more often. One gnoll possible."
+	welcome_text = "\"The smell of decay was wafted in the fief of Zenmark...\""
 	weight = 4
 	always_votable = TRUE
 	color_theme = "#888888"
@@ -303,10 +303,10 @@
 
 /datum/storyteller/pestra
 	name = "Pestra"
-	ru_name = "Пестра"
-	vote_desc = "Воцаряется исцеление. События спокойны, но умелые руки могут склонить их ход. Её милость обращена к лекарям и алхимикам."
-	desc = "Алхимические и медицинские события получают вес x1.2, природные - x1.1. Все крупные антагонисты выпадают с одинаковым базовым весом - без предпочтения между бандитами, личами, вервольфами и вампирскими лордами. Возможен один гнолл."
-	welcome_text = "Слышится звон инструментов и бульканье алхимических чудес..."
+	ru_name = "Motley"
+	vote_desc = "Healing reigns. Events are calm, but skillful hands can change their course. Her mercy is addressed to healers and alchemists."
+	desc = "Alchemical and medical events receive a weight of x1.2, natural ones - x1.1. All major antagonists drop at the same base weight - no preference between bandits, liches, werewolves and vampire lords. One gnoll possible."
+	welcome_text = "You can hear the clinking of instruments and the gurgling of alchemical miracles..."
 	color_theme = "#AADDAA"
 	preferred_gnoll_mode = GNOLL_SCALING_SINGLE
 
@@ -339,10 +339,10 @@
 
 /datum/storyteller/malum
 	name = "Malum"
-	ru_name = "Малум"
-	vote_desc = "Воцаряется труд. Божественное вмешательство случается чаще. Его милость обращена к мастерам, творящим шедевры, и шахтёрам."
-	desc = "События труда получают вес x1.5. Божественное вмешательство случается в 2 раза чаще, личные события - в 1.2 раза чаще. Все крупные антагонисты выпадают с одинаковым базовым весом. Возможен один гнолл."
-	welcome_text = "Звон молотов разносится по округе, а жар горнов наполняют улицы..."
+	ru_name = "Malum"
+	vote_desc = "Labor reigns. Divine intervention happens more often. His mercy is addressed to the masters who create masterpieces and to the miners."
+	desc = "Labor events receive a weight of x1.5. Divine intervention happens 2 times more often, personal events - 1.2 times more often. All major antagonists drop at the same base weight. One gnoll possible."
+	welcome_text = "The sound of hammers echoes throughout the area, and the heat of forges fills the streets..."
 	color_theme = "#D4A56C"
 	preferred_gnoll_mode = GNOLL_SCALING_SINGLE
 
@@ -381,10 +381,10 @@
 
 /datum/storyteller/eora
 	name = "Eora"
-	ru_name = "Эора"
-	vote_desc = "Воцаряется любовь. Добрые события приходят чаще, и Она не желает никому зла. Без антагонистов и гноллов; лишь горстка изгоев (Wretches) прячется на окраинах. Её милость обращена к романтике."
-	desc = "Массовые события получают вес x1.5, благословения - x1.2. Без антагонистов и рейдов. Божественное вмешательство случается в 2 раза чаще, личные события - в 1.4 раза чаще. Изгои (Wretches) принудительно ограничены 5-ю слотами. Гноллы отключены."
-	welcome_text = "\"Любовь витает в воздухе? Нет же; это пахнут свежеиспечённые пироги на подоконниках!\""
+	ru_name = "Eora"
+	vote_desc = "Love reigns. Good events come more often, and She does not wish harm on anyone. Without antagonists and gnolls; only a handful of outcasts (Wretches) hide on the outskirts. Her grace turns to romance."
+	desc = "Mass events receive a weight of x1.5, blessings - x1.2. No antagonists or raids. Divine intervention happens 2 times more often, personal events - 1.4 times more often. Wretches are forced to be limited to 5 slots. Gnolls are disabled."
+	welcome_text = "\"Love is in the air? No; This is the smell of freshly baked pies on the windowsills!\""
 	color_theme = "#9966CC"
 	preferred_gnoll_mode = GNOLL_SCALING_NONE
 	wretch_slot_cap = 5
@@ -436,10 +436,10 @@
 
 /datum/storyteller/dendor
 	name = "Dendor"
-	ru_name = "Дендор"
-	vote_desc = "Воцаряется природа. Заросли и оборотни приходят чаще. Его милость обращена к урожаю и ликантропам - гноллы держатся подальше от Его диких земель."
-	desc = "Природные события получают вес x1.5. Оборотень - единственный крупный антагонист на старте раунда и получает вес x1.5; бандиты, личи и вампирские лорды не выпадают. Божественное вмешательство случается в 2 раза чаще. Гноллы отключены."
-	welcome_text = "Перекличка сидящих на ветвях птиц и блеск утренней росы..."
+	ru_name = "Dendor"
+	vote_desc = "Nature reigns. Thickets and werewolves come more often. His mercy goes to the harvest and the lycanthropes - the gnolls stay away from His wild lands."
+	desc = "Natural events receive a weight of x1.5. The werewolf is the only major antagonist at the start of the round and receives weight x1.5; Bandits, Liches and Vampire Lords do not drop. Divine intervention happens 2 times more often. Gnolls are disabled."
+	welcome_text = "The roll call of birds sitting on the branches and the shine of the morning dew..."
 	weight = 4
 	always_votable = TRUE
 	color_theme = "#664422"
@@ -481,10 +481,10 @@
 
 /datum/storyteller/zizo
 	name = "Zizo"
-	ru_name = "Зизо"
-	vote_desc = "Воцаряется хаос. Личи пробуждаются охотнее, чем под властью любого другого Бога, нежить становится куда свирепее, а культисты Вознесения вылезают из своих укрытий наружу, дабы принести своей Госпоже достойную жертву. Её милость обращена к трупам - святым, знатным или восставшим."
-	desc = "Магические, азартные, лживые и внезапные события получают повышенный вес (от x1.2 до x1.5). Лич или Культ Вознесения гарантированы на старте раунда; бандиты, оборотни и вампирские лорды не выпадают. Сильный разброс стоимости событий. Фиксированный спавн гноллов: шанс 15%, максимум 2. Может сработать расширение количества слотов изгоев (Wretches) в зависимости от количества слотов гарнизона."
-	welcome_text = "Мертвенный ветер несёт вой проклятых..."
+	ru_name = "Zizo"
+	vote_desc = "Chaos reigns. Liches awaken more readily than under the rule of any other God, the undead become much more ferocious, and the cultists of Ascension crawl out of their hiding places in order to make a worthy sacrifice to their Mistress. Her mercy is directed towards corpses - saints, nobles or rebels."
+	desc = "Magical, gambling, deceitful and sudden events receive increased weight (from x1.2 to x1.5). Lich or Cult of Ascension are guaranteed at the start of the round; bandits, werewolves and vampire lords do not drop. Great variation in the cost of events. Fixed gnoll spawn: 15% chance, maximum 2. Expanding the number of Wretches slots may work depending on the number of garrison slots."
+	welcome_text = "The dead wind carries the howl of the damned..."
 	weight = 4
 	always_votable = TRUE
 	color_theme = "#CC4444"
@@ -534,10 +534,10 @@
 
 /datum/storyteller/baotha
 	name = "Baotha"
-	ru_name = "Баота"
-	vote_desc = "Воцаряется дурман. События становятся хаотичнее и мрачнее. Её милость обращена к пьяницам и зависимым."
-	desc = "События безумия, магии и бедствий получают повышенный вес (от x1.1 до x1.4). Вампирский лорд гарантирован на старте раунда; бандиты, личи и оборотни не выпадают. Все события накапливают очки быстрее. Режим гноллов выбирается случайно. Может сработать расширение количества слотов изгоев (Wretches) в зависимости от количества слотов гарнизона."
-	welcome_text = "Воздух наполняет приторный запах хмеля и пряностей..."
+	ru_name = "Baota"
+	vote_desc = "Datura reigns. Events become more chaotic and darker. Her mercy is addressed to drunkards and addicts."
+	desc = "Madness, Magic and Disaster events receive increased weight (from x1.1 to x1.4). Vampire Lord is guaranteed at the start of the round; bandits, liches and werewolves do not drop. All events accumulate points faster. Gnoll mode is randomly selected. Expanding the number of Wretches slots depending on the number of garrison slots may work."
+	welcome_text = "The air is filled with the sugary smell of hops and spices..."
 	weight = 4
 	always_votable = TRUE
 	color_theme = "#9933FF"
@@ -588,10 +588,10 @@
 
 /datum/storyteller/graggar
 	name = "Graggar"
-	ru_name = "Граггар"
-	vote_desc = "Воцаряется сила. Гноллы и ассасины рыщут усерднее, чем при любом другом Боге, а набеги случаются куда чаще. Его милость обращена к кровопролитию и каннибализму."
-	desc = "Боевые, кровавые и военные события получают повышенный вес (от x1.2 до x1.6). Гноллы и ассасины гарантированы на старте раунда. Набеги набирает очки в 2.5 раза быстрее. Динамическое масштабирование гноллов: стаи растут вместе с населением. Может сработать расширение количества слотов изгоев (Wretches) в зависимости от количества слотов гарнизона."
-	welcome_text = "По улицам стелется дым, отдающий пеплом и кровью..."
+	ru_name = "Graggar"
+	vote_desc = "Power reigns. Gnolls and assassins prowl harder than under any other God, and raids happen more often. His mercy turns to bloodshed and cannibalism."
+	desc = "Combat, bloody and military events receive increased weight (from x1.2 to x1.6). Gnolls and assassins are guaranteed at the start of the round. Raids gain points 2.5 times faster. Dynamic gnoll scaling: packs grow with population. Expanding the number of Wretches slots depending on the number of garrison slots may work."
+	welcome_text = "Smoke spreads through the streets, reeking of ash and blood..."
 	weight = 4
 	always_votable = TRUE
 	color_theme = "#8B3A3A"
@@ -636,10 +636,10 @@
 
 /datum/storyteller/matthios
 	name = "Matthios"
-	ru_name = "Маттиос"
-	vote_desc = "Воцаряется свобода. Бандитские набеги случаются куда чаще, чем при других Богах. Его милость обращена к кражам и подношениям у одного особого святилища."
-	desc = "Торговые, коррупционные и связанные с добычей события выбираются чаще (от x1.2 до x1.4). Бандиты гарантированы на старте раунда; личи, оборотни и вампирские лорды не появляются. Очки появления антагонистов копятся в 1.5 раза быстрее. Режим гноллов выбирается случайно. Может сработать расширение количества слотов изгоев (Wretches) в зависимости от количества слотов гарнизона."
-	welcome_text = "Звенят маммоны, а свежеподписанные награды ещё пахнут чернилами..."
+	ru_name = "Matthios"
+	vote_desc = "Freedom reigns. Bandit raids happen much more often than under other Gods. His mercy is directed towards thefts and offerings from one special sanctuary."
+	desc = "Trade, corruption and mining events are selected more often (x1.2 to x1.4). Bandits are guaranteed at the start of the round; Liches, werewolves and vampire lords do not appear. Antagonist spawn points accumulate 1.5 times faster. Gnoll mode is randomly selected. Expanding the number of Wretches slots depending on the number of garrison slots may work."
+	welcome_text = "Mammon is ringing, and freshly signed awards still smell of ink..."
 	weight = 4
 	always_votable = TRUE
 	color_theme = "#8B4513"

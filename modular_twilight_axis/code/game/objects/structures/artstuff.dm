@@ -31,8 +31,8 @@
 
 /obj/item/canvas/attackby(obj/item/I, mob/living/user, params)
 	if(istype(I, /obj/item/natural/feather))
-		var/new_author = input(user, "Кто автор этой картины?", "Подпись", user.real_name)
-		var/new_title = input(user, "Как называется эта картина?", "Название", "Без названия")
+		var/new_author = input(user, "Who is the author of this picture?", "Signature", user.real_name)
+		var/new_title = input(user, "What is the name of this painting?", "Title", "Untitled")
 
 		if(new_author && new_title)
 			author = new_author
@@ -41,11 +41,11 @@
 			name = title
 			ic_date = get_ic_date_short_as_string()
 			round_id = GLOB.rogue_round_id
-			desc = "Автор: [author]. Дата: [ic_date]."
+			desc = "Author: [author]. Date: [ic_date]."
 
-			to_chat(user, span_notice("Вы наносите последние штрихи и подписываете холст..."))
+			to_chat(user, span_notice("You apply the finishing touches and sign the canvas..."))
 			if(save_to_disk())
-				to_chat(user, span_notice("Картина '[title]' подписана."))
+				to_chat(user, span_notice("The painting '[title]' is signed."))
 		return
 
 	if(istype(I, /obj/item/paint_brush))
@@ -57,7 +57,7 @@
 /obj/item/canvas/ui_interact(mob/user, datum/tgui/ui)
 	var/obj/item/paint_brush/B = user.get_active_held_item()
 	if(!istype(B))
-		to_chat(user, span_warning("Мне нужна кисть в руке, чтобы начать рисовать!"))
+		to_chat(user, span_warning("I need a brush in my hand to start painting!"))
 		return
 
 	ui = SStgui.try_update_ui(user, src, ui)
@@ -100,7 +100,7 @@
 				new_art.DrawBox(color_hex, px, py, px, py)
 
 			src.icon = new_art
-			to_chat(usr, span_notice("Вы закончили рисовать."))
+			to_chat(usr, span_notice("You have finished drawing."))
 
 			SStgui.close_uis(src)
 			return TRUE
@@ -132,7 +132,7 @@
 	src.title = data["title"]
 	src.ic_date = data["ic_date"]
 	src.name = src.title
-	src.desc = "Painted by: [src.author]. Написана: [src.ic_date]."
+	src.desc = "Painted by: [src.author]. Written by: [src.ic_date]."
 	src.round_id = data["round_id"]
 	return TRUE
 
@@ -155,7 +155,7 @@
 		var/obj/item/canvas/C = new(get_turf(src))
 		var/chosen_id = pick(valid_paintings)
 		if(!C.load_from_disk(chosen_id))
-			C.name = "отбракованный холст"
+			C.name = "rejected canvas"
 		C.anchored = FALSE
 		C.pixel_x = rand(-4, 4); C.pixel_y = rand(-4, 4)
 
@@ -191,7 +191,7 @@
 
 	var/chosen_id = pick(valid_paintings)
 	if(!C.load_from_disk(chosen_id))
-		C.name = "отбракованный холст"
+		C.name = "rejected canvas"
 		return
 
 

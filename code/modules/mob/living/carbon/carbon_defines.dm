@@ -1,5 +1,7 @@
 /mob/living/carbon
 	blood_volume = BLOOD_VOLUME_NORMAL
+	/// Chastity device worn outside the normal clothing inventory.
+	var/obj/item/chastity/chastity_device = null
 	gender = MALE
 	base_intents = list(INTENT_HELP, INTENT_HARM)
 	hud_possible = list(ANTAG_HUD)

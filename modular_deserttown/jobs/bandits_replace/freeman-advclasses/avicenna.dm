@@ -1,12 +1,12 @@
 /datum/advclass/avicenna
 	name = "Avicenna"
-	tutorial = "«... Авиценна, древний врачеватель и мученик, учил их предков свободе и верховенству разума над традицией; такими были и его потомки, называемые в его честь - те, что продолжают его дело сквозь столетия ...»"
+	tutorial = "“... Avicenna, the ancient healer and martyr, taught their ancestors freedom and the supremacy of reason over tradition; so were his descendants, named after him - those who continue his work through the centuries...”"
 	
 	outfit = /datum/outfit/job/roguetown/freeman/avicenna
 	category_tags = list(CTAG_FREEMAN)
 	traits_applied = list(TRAIT_CICERONE, TRAIT_NOSTINK, TRAIT_MEDICINE_EXPERT, TRAIT_ALCHEMY_EXPERT)
 	maximum_possible_slots = 1
-	extra_context = "Класс получает набор отравляемых кинжалов и отравленные стрелы, вместе с этим он имеет кое-какие... Особенные вещи."
+	extra_context = "The class receives a set of poisoned daggers and poisoned arrows, along with this he has some... Special things."
 	subclass_stats = list(
 		STATKEY_INT = 2,
 		STATKEY_PER = 3,
@@ -29,13 +29,13 @@
 		/datum/skill/labor/farming = SKILL_LEVEL_JOURNEYMAN,
 	)
 	subclass_stashed_items = list(
-        "Набор для ремонта одежды" =  /obj/item/repair_kit,
-		"Колчан отравленных стрел" = /obj/item/quiver/poisonarrows,
-        "Вино с пряностью" = /obj/item/reagent_containers/glass/bottle/rogue/spicedwine,
-        "Пряность" = /obj/item/reagent_containers/powder/spice,
-        "Сильный яд" = /obj/item/reagent_containers/glass/bottle/rogue/strongpoison,
-        "Сильный утомляющий яд" = /obj/item/reagent_containers/glass/bottle/rogue/strongstampoison,
-        "Отравленный пирог с ягодами (по рецепту любимой бабушки)" = /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/poison,
+        "Clothes Repair Kit" =  /obj/item/repair_kit,
+		"Quiver of Poisoned Arrows" = /obj/item/quiver/poisonarrows,
+        "Spice Wine" = /obj/item/reagent_containers/glass/bottle/rogue/spicedwine,
+        "Spice" = /obj/item/reagent_containers/powder/spice,
+        "Strong Poison" = /obj/item/reagent_containers/glass/bottle/rogue/strongpoison,
+        "Strong Tiring Poison" = /obj/item/reagent_containers/glass/bottle/rogue/strongstampoison,
+        "Poisoned berry pie (according to the recipe of a beloved grandmother)" = /obj/item/reagent_containers/food/snacks/rogue/pie/cooked/poison,
     )
 
 /datum/outfit/job/roguetown/freeman/avicenna

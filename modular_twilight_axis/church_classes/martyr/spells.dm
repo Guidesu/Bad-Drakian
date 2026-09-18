@@ -8,7 +8,7 @@
 
 /obj/effect/proc_holder/spell/targeted/martyr_select_weapon
 	name = "Choose divine weapon"
-	desc = "Выбери оружие, которое тебе ниспошлют с небес Десять, когда ты вознесешь молитву."
+	desc = "Choose the weapon that the Ten will send down to you from heaven when you offer your prayer."
 	clothes_req = FALSE
 	range = -1
 	include_user = TRUE
@@ -23,7 +23,7 @@
 	cost = 1
 
 	var/selected_weapon = /obj/item/rogueweapon/sword/long/martyr
-	var/list/selected_invocations = list("Астрата, вложи в мою руку меч твоего суда!")
+	var/list/selected_invocations = list("Astrata, place the sword of your judgment in my hand!")
 	var/obj/effect/proc_holder/spell/invoked/martyr_summon_weapon/summon_weapon
 
 /obj/effect/proc_holder/spell/targeted/martyr_select_weapon/proc/apply_manifest_sprite(obj/effect/martyr_weapon_manifest/manifest)
@@ -59,37 +59,37 @@
 	. = ..()
 
 	var/list/weapons_of_choice = list(
-		"Божественный меч",
-		"Божественный топор",
-		"Божественная булава",
-		"Божественный трезубец",
-		"Божественная коса",
+		"Divine Sword",
+		"Divine Ax",
+		"Divine Mace",
+		"Divine Trident",
+		"Divine Scythe",
 	)
 
-	var/chosen_weapon = tgui_input_list(user, "Какая реликвия ответит на твою клятву?", "ОРУЖИЕ МУЧЕНИКА", weapons_of_choice)
+	var/chosen_weapon = tgui_input_list(user, "Which relic will answer your oath?", "WEAPON OF THE MARTYR", weapons_of_choice)
 	if(!chosen_weapon)
 		return FALSE
 
 	switch(chosen_weapon)
-		if("Божественный меч")
+		if("Divine Sword")
 			selected_weapon = /obj/item/rogueweapon/sword/long/martyr
-			selected_invocations = list("Астрата, вложи в мою руку меч твоего суда!")
+			selected_invocations = list("Astrata, place the sword of your judgment in my hand!")
 
-		if("Божественный топор")
+		if("Divine Ax")
 			selected_weapon = /obj/item/rogueweapon/greataxe/steel/doublehead/martyr
-			selected_invocations = list("Равокс, благослови меня оружием силы!")
+			selected_invocations = list("Ravox, bless me with the weapon of power!")
 
-		if("Божественная булава")
+		if("Divine Mace")
 			selected_weapon = /obj/item/rogueweapon/mace/goden/martyr
-			selected_invocations = list("Малум, скуй для меня булаву неугасимой воли!")
+			selected_invocations = list("Malum, forge for me the mace of unquenchable will!")
 
-		if("Божественный трезубец")
+		if("Divine Trident")
 			selected_weapon = /obj/item/rogueweapon/spear/partizan/martyr
-			selected_invocations = list("Абиссор, даруй мне трезубец с глубин бездны!")
+			selected_invocations = list("Abyssor, grant me a trident from the depths of the abyss!")
 
-		if("Божественная коса")
+		if("Divine Scythe")
 			selected_weapon = /obj/item/rogueweapon/halberd/bardiche/scythe/martyr
-			selected_invocations = list("Из корней и лозы, Дендор, сотки мне оружие!")
+			selected_invocations = list("From roots and vines, Dendor, weave weapons for me!")
 
 	if(summon_weapon)
 		summon_weapon.invocations = selected_invocations
@@ -114,7 +114,7 @@
 
 /obj/effect/proc_holder/spell/invoked/martyr_summon_weapon
 	name = "Summon divine weapon"
-	desc = "Призывает с небес в руки выбранное оружие"
+	desc = "Summons the chosen weapon from heaven into the hands of"
 	clothes_req = FALSE
 	recharge_time = 30 SECONDS
 	chargedloop = /datum/looping_sound/invokegen
@@ -127,7 +127,7 @@
 	overlay_state = "martyrsword"
 	overlay_alpha = 255
 
-	invocations = list("Астрата, вложи в мою руку меч твоего суда!")
+	invocations = list("Astrata, place the sword of your judgment in my hand!")
 	invocation_type = "shout"
 	spell_tier = 2
 	cost = 10
@@ -175,15 +175,15 @@
 		return
 
 	if(user.real_name in GLOB.excommunicated_players)
-		to_chat(user, span_warning("Десять отвернулись от меня. Реликвия не ответит мне."))
+		to_chat(user, span_warning("Ten turned away from me. The relic will not answer me."))
 		return
 
 	if(!weapon_select || !weapon_select.selected_weapon)
-		to_chat(user, span_warning("Я не могу сосредоточиться на реликвии."))
+		to_chat(user, span_warning("I can't focus on the relic."))
 		return
 
 	if(martyr_ult_active(user))
-		to_chat(user, span_warningbig("Я не могу сейчас призывать другую реликвию!"))
+		to_chat(user, span_warningbig("I can't summon another relic now!"))
 		return
 
 	var/datum/component/martyrweapon/current_component = get_martyr_component_for(user)
@@ -194,7 +194,7 @@
 	if(current_relic)
 		var/datum/component/martyrweapon/old_component = current_relic.GetComponent(/datum/component/martyrweapon)
 		if(old_component && old_component.is_active)
-			to_chat(user, span_warning("Текущая реликвия всё еще активна и не может быть отозвана."))
+			to_chat(user, span_warning("The current relic is still active and cannot be recalled."))
 			return
 		if(hascall(current_relic, "anti_stall"))
 			call(current_relic, "anti_stall")()
@@ -202,8 +202,8 @@
 	. = ..()
 
 	user.visible_message(
-		span_warning("[user] поднимает руку к небесам, и в него ударяет молния!"),
-		span_warning("Я поднимаю руку к небесам и взываю к реликвии Десяти!")
+		span_warning("[user] raises his hand to the heavens and is struck by lightning!"),
+		span_warning("I raise my hand to the heavens and call upon the relic of the Ten!")
 	)
 
 	lightning_summon_fx(user)
@@ -229,9 +229,9 @@
 	var/obj/item/rogueweapon/spawned_weapon = new weapon_select.selected_weapon(user.loc)
 
 	if(user.put_in_hands(spawned_weapon, del_on_fail = TRUE))
-		to_chat(user, span_notice("Реликвия с грохотом нисходит в мою руку."))
+		to_chat(user, span_notice("The relic crashes into my hand."))
 	else
-		to_chat(user, span_warning("Мои руки заняты! Реликвия ударяется о землю."))
+		to_chat(user, span_warning("My hands are full! The relic hits the ground."))
 
 /obj/effect/proc_holder/spell/invoked/martyr_summon_weapon/proc/refresh_one_weapon_button(atom/movable/screen/movable/action_button/B)
 	if(!B)

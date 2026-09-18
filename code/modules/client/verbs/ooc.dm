@@ -3,13 +3,8 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 
 
 /proc/ta_is_donor_visual_ckey(key) // TA EDIT START
-	key = ckey(key)
-	if(!key)
-		return FALSE
-	if(is_donator(key))
-		return TRUE
-	var/tier = check_patreon_lvl(key)
-	return round(tier ? tier : 0) > 0
+	// Donation badges and colors were retired when entitlements became universal.
+	return FALSE
 
 /proc/ta_should_show_donor_examine_icon(mob/M)
 	if(!M?.ckey)

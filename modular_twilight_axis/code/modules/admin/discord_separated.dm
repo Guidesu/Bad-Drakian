@@ -300,7 +300,7 @@
 /datum/world_topic/pqckeck/Run(list/input)
 	var/ckey = input["ckey"]
 	. = list()
-	.["pq"] = get_playerquality(ckey, FALSE) // Что это за ебанина, почему аргумент называется text, а везде где это используется передается вообще три переменных нахуй.......
+	.["pq"] = get_playerquality(ckey, FALSE) //What the fuck is this, why is the argument called text, and everywhere where it is used, three fucking variables are passed......
 	.["commends"] = get_commends(ckey)
 	.["rcp"] = get_roundpoints(ckey)
 	.["played"] = get_roundsplayed(ckey)

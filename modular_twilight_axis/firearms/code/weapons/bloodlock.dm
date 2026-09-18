@@ -5,7 +5,7 @@
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/twilight_runelock/rifle/twilight_bloodlock
 	name = "bloodlock rifle"
-	desc = "Оружие скованное тёмными эльфами, глубоко во тьме Подземий. Выглядит..</br><font color='FF0000'>..живым?</font>"
+	desc = "A weapon forged by dark elves, deep in the darkness of the Underdark. Looks..</br><font color='FF0000'>..alive?</font>"
 	icon = 'modular_twilight_axis/firearms/icons/bloodlock.dmi'
 	icon_state = "bloodlock"
 	icon_state_ready = "bloodlock_r"
@@ -51,13 +51,13 @@
 		if(HAS_TRAIT(u, TRAIT_ARCYNE) || HAS_TRAIT(u, TRAIT_VAMPBITE))
 			if(cocked)
 				if(chambered)
-					. += span_notice("Напитано кровью и готово к стрельбе.")
+					. += span_notice("Infused with blood and ready to fire.")
 				else
-					. += span_notice("Замок напитан кровью, но пуля не установлена.")
+					. += span_notice("The lock is infused with blood, but the bullet is not loaded.")
 			else
-				. += span_notice("Требует крови для зарядки.")
+				. += span_notice("Requires blood to charge.")
 		else
-			. += span_notice("Конструкция этого странного, словно живого замка вам совершенно незнакома.")
+			. += span_notice("The design of this strange, seemingly living lock is completely unfamiliar to you.")
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/twilight_runelock/rifle/twilight_bloodlock/attack_self(mob/living/user)
 	if(twohands_required)
@@ -70,13 +70,13 @@
 			var/mob/living/carbon/human/H = user
 			if(HAS_TRAIT(H, TRAIT_ARCYNE) && HAS_TRAIT(H, TRAIT_VAMPBITE))
 				if(H.bloodpool < vitae_cost)
-					to_chat(H, span_warning("Оружию требуется больше крови!"))
+					to_chat(H, span_warning("The weapon needs more blood!"))
 					if(prob(5))
-						to_chat(H, "<span style='color:#5E2129'>The bloodlock</span> slurs, " + span_cult(pick("<i>\"Мне не хватает твоей крови. Найди кого-нибудь!\"</i>", "<i>\"Мне нужно больше крови.\"</i>", "<i>\"Ну же, забери чью-нибудь кровь для меня!\"</i>", "<i>\"Мне нечем запитаться...\"</i>")))
+						to_chat(H, "<span style='color:#5E2129'>The bloodlock</span> slurs, " + span_cult(pick("<i>\"I lack your blood. Find someone!\"</i>", "<i>\"I need more blood.\"</i>", "<i>\"Come on, take someone's blood for me!\"</i>", "<i>\"I have nothing to feed on...\"</i>")))
 					return
-				to_chat(H, span_info("Оружие начинает вибрировать и запитываться..."))
+				to_chat(H, span_info("The weapon begins to vibrate and feed..."))
 				if(prob(5))
-					to_chat(H, "<span style='color:#5E2129'>The bloodlock</span> slurs, " + span_cult(pick("<i>\"Да, да, ДА! Какое же блаженство...\"</i>", "<i>\"Этот прилив сил... Пристрели шавку!\"</i>", "<i>\"Они поплатятся за то, что подняли на тебя клинок!\"</i>")))
+					to_chat(H, "<span style='color:#5E2129'>The bloodlock</span> slurs, " + span_cult(pick("<i>\"Yes, yes, YES! What bliss...\"</i>", "<i>\"This rush of power... Shoot the mutt!\"</i>", "<i>\"They will pay for raising a blade against you!\"</i>")))
 				playsound(src,'modular_twilight_axis/firearms/sound/bloodlock_reload.ogg', 100, FALSE)
 				var/adj_reload_time = reload_time
 				if(H.mind)
@@ -89,9 +89,9 @@
 					playsound(H, 'modular_twilight_axis/firearms/sound/musketcock.ogg', 100, FALSE)
 					cocked = TRUE
 			else
-				to_chat(H, span_warning("Я совершенно не понимаю, как этим пользоваться!"))
+				to_chat(H, span_warning("I absolutely do not understand how to use this!"))
 		else
-			to_chat(user, span_warning("Я совершенно не понимаю, как этим пользоваться!"))
+			to_chat(user, span_warning("I absolutely do not understand how to use this!"))
 	else
 		if(alt_grips)
 			altgrip(user)
@@ -101,7 +101,7 @@
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/twilight_runelock/rifle/twilight_bloodlock/get_mechanics_examine(mob/user)
 	. = ..()
-	. += span_info("Арканные замки требуют собственной крови и арканного потенциала для зарядки, после чего замок необходимо взвести перед стрельбой.")
+	. += span_info("Arcane locks require your own blood and arcane potential to charge, after which the lock must be cocked before shooting.")
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/twilight_runelock/rifle/twilight_bloodlock/process_fire/(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(chambered && HAS_TRAIT(user, TRAIT_PACIFISM))
@@ -192,18 +192,18 @@
 
 	if(is_blood_raider(H))
 		if(prob(10))
-			to_chat(H, "<span style='color:#5E2129'>The bloodlock</span> slurs, " + span_cult(pick("<i>\"Здравствуй...\"</i>", "<i>\"Приветствую!\"</i>", "<i>\"Я скучал...\"</i>", "<i>\"Направь меня. Дай выстрелить!\"</i>")))
+			to_chat(H, "<span style='color:#5E2129'>The bloodlock</span> slurs, " + span_cult(pick("<i>\"Hello...\"</i>", "<i>\"Greetings!\"</i>", "<i>\"I missed you...\"</i>", "<i>\"Guide me. Let me shoot!\"</i>")))
 		return
 
 	if(bloodlock_awakened)
 		if(H == bloodlock_owner)
 			reset_loss_timer()
 			if(prob(10))
-				to_chat(H, "<span style='color:#5E2129'>The bloodlock rifle</span> slurs, " + span_cult(pick("<i>\"Здравствуй...\"</i>", "<i>\"Приветствую!\"</i>", "<i>\"Я скучал...\"</i>", "<i>\"Направь меня. Дай выстрелить!\"</i>")))
+				to_chat(H, "<span style='color:#5E2129'>The bloodlock rifle</span> slurs, " + span_cult(pick("<i>\"Hello...\"</i>", "<i>\"Greetings!\"</i>", "<i>\"I missed you...\"</i>", "<i>\"Guide me. Let me shoot!\"</i>")))
 		return
 
 	if(!can_awaken(H))
-		to_chat(H, span_warning(pick("Оружие молчит.", "Похоже, вам показалось.", "Вы ничего не чувствуете, держа оружие в руках.")))
+		to_chat(H, span_warning(pick("The weapon is silent.", "It seems you imagined it.", "You feel nothing while holding the weapon.")))
 		return
 
 	if(bloodlock_awaken_timer)
@@ -211,7 +211,7 @@
 
 	bloodlock_owner = H
 
-	to_chat(H, span_info(pick("Вы чувствуете дискомфорт. Оружие будто пытается с вами связаться...", "Оружие едва заметно пульсирует под вашими пальцами.", "Что-то внутри оружия откликается на ваше присутствие.", "На мгновение кажется, будто оружие смотрит прямо на вас.", "Чужая воля касается вашего разума.", "Вы ощущаете слабый зов, исходящий от оружия.")))
+	to_chat(H, span_info(pick("You feel discomfort. The weapon seems to be trying to communicate with you...", "The weapon pulses faintly under your fingers.", "Something inside the weapon responds to your presence.", "For a moment, it seems as if the weapon is looking straight at you.", "A foreign will touches your mind.", "You feel a faint call emanating from the weapon.")))
 
 	bloodlock_awaken_timer = addtimer(CALLBACK(src, PROC_REF(finish_bloodlock_awaken)), BLOODLOCK_AWAKEN_TIME, TIMER_STOPPABLE)
 	reset_loss_timer()
@@ -224,7 +224,7 @@
 		bloodlock_owner = null
 		return
 	if(src.loc != bloodlock_owner)
-		to_chat(bloodlock_owner, span_warning("Оружие затихает. Связь прервана."))
+		to_chat(bloodlock_owner, span_warning("The weapon falls silent. The connection is broken."))
 		bloodlock_owner = null
 		return
 	bloodlock_awakened = TRUE
@@ -254,14 +254,14 @@
 
 	reset_loss_timer()
 
-	to_chat(H, "<span style='color:#5E2129'>The bloodlock rifle</span> slurs, " + span_cult(pick("<i>\"Приветствую нового владельца...\"</i>", "<i>\"Ощущаешь меня?\"</i>", "<i>\"Почувствуй мой дар!\"</i>", "<i>\"Моё имя — С'анг. Запомни его.\"</i>", "<i>\"Прошлый владелец был противен мне... Но ты..!\"</i>")))
+	to_chat(H, "<span style='color:#5E2129'>The bloodlock rifle</span> slurs, " + span_cult(pick("<i>\"Greetings to the new owner...\"</i>", "<i>\"Do you feel me?\"</i>", "<i>\"Feel my gift!\"</i>", "<i>\"My name is S'ang. Remember it.\"</i>", "<i>\"The previous owner was repulsive to me... But you..!\"</i>")))
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/twilight_runelock/rifle/twilight_bloodlock/proc/bloodlock_random_phrase()
 	if(ishuman(src.loc))
 		var/mob/living/carbon/human/H = src.loc
-		to_chat(H, span_warning("Оружие пытается что-то вам рассказать..."))
+		to_chat(H, span_warning("The weapon is trying to tell you something..."))
 		if(prob(40))
-			to_chat(H, "<span style='color:#5E2129'>The bloodlock rifle</span> whispers, " + span_cult(pick("<i>\"Ещё когда меня держали в каком-то закоулке Мензоберразана, в лавку пришла группа Антракса. Помню лишь... тьму.\"</i>", "<i>\"Ходили слухи, что те, кто заточил меня и создал одну из первых оболочек, заключили какую-то сделку с тварями Инферно... А что думаешь ты?\"</i>", "<i>\"Кажется, запах железа застал тебя врасплох. Ты точно мне подходишь?!\"</i>", "<i>\"Дом Бэнр — властители Мензоберранзана. Младшая дочь заняла трон, назначив старших сестру и брата советниками... Ах, маги тесно связаны с призывами демонов. Как думаешь, тот огромный паук был его рук делом?\"</i>", "<i>\"Ох, вспоминаю прекрасные моменты в доме Грейвс. Как же часто меня тогда заводили, как же часто мы стреляли. Нет-нет, ты не подумай ничего плохого! Но ты и впрямь не дотягиваешь!\"</i>", "<i>\"Вон, посмотри на того урода. Может, выстрелим?\"</i>", "<i>\"Нихрена не вижу... Может, поднимешь ствол?\"</i>", "<i>\"Я думал, ты намного хуже, когда впервые меня подобрал. Приятно ошибаться.\"</i>", "<i>\"Когда мы уже что-нибудь сделаем?!\"</i>", "<i>\"Таким красавцем я стал не так уж давно. Может... пару йолей назад. Раньше меня так и водили по сосудам.\"</i>", "<i>\"Они назвали меня С'анг. Был ещё один... Или даже близнецы. Но их имён я совсем не помню.\"</i>", "<i>\"Пум-пурум-пурум-пум...\"</i>", "<i>\"А какой сейчас йол? Наверное, уже наступил тысячный, да?\"</i>", "<i>\"А... А?! Мьерда, ты тут...\"</i>")))
+			to_chat(H, "<span style='color:#5E2129'>The bloodlock rifle</span> whispers, " + span_cult(pick("<i>\"Back when I was held in some alley of Menzoberranzan, a group of Anthrax came into the shop. I only remember... darkness.\"</i>", "<i>\"Rumor has it that those who imprisoned me and created one of the first shells made some kind of deal with the Inferno creatures... What do you think?\"</i>", "<i>\"It seems the smell of iron caught you off guard. Are you really suitable for me?!\"</i>", "<i>\"The House of Baenre — the rulers of Menzoberranzan. The youngest daughter took the throne, appointing her older sister and brother as advisors... Ah, the mages are closely linked with demon summoning. Do you think that huge spider was his doing?\"</i>", "<i>\"Oh, I remember the wonderful moments in the House of Graves. How often I used to get excited back then, how often we used to shoot. No-no, don't get any wrong ideas! But really, you aren't quite up to it!\"</i>", "<i>\"Look, see that freak. Should we shoot?\"</i>", "<i>\"I can't see a thing... Maybe lift the gun?\"</i>", "<i>\"I thought you were much worse when you picked me up the first time. Pleasantly surprised.\"</i>", "<i>\"When are we going to do something already?!\"</i>", "<i>\"I haven't become such a handsome guy until quite recently. Maybe... a couple of yols ago. Before, they used to carry me around in vessels.\"</i>", "<i>\"They called me S'ang. There was another one... Or even twins. But I don't remember their names at all.\"</i>", "<i>\"Pum-purum-purum-pum...\"</i>", "<i>\"And what yol is it now? Probably, the thousandth one has already come, right?\"</i>", "<i>\"Ah... Huh?! Mierda, you're here...\"</i>")))
 
 	addtimer(CALLBACK(src, PROC_REF(bloodlock_random_phrase)), BLOODLOCK_PHRASE_TIME)
 
@@ -271,7 +271,7 @@
 	if(bloodlock_awaken_timer && bloodlock_owner == user)
 		deltimer(bloodlock_awaken_timer)
 		bloodlock_awaken_timer = null
-		to_chat(user, span_warning("Оружие затихает. Пробуждение прервано."))
+		to_chat(user, span_warning("The weapon quiets down. The awakening is interrupted."))
 		bloodlock_owner = null
 		return
 
@@ -318,7 +318,7 @@
 	bloodlock_awakened = FALSE
 	bloodlock_owner = null
 
-	to_chat(H, "<span style='color:#5E2129'>The bloodlock rifle</span> slurs, " + span_cult(pick("<i>\"Как ты посмел меня бросить?!\"</i>", "<i>\"Прошлый владелец всё же был лучше.\"</i>", "<i>\"Н'вах!\"</i>", "<i>\"Прогресс явно не для такого остолопа, как ты!\"</i>")))
+	to_chat(H, "<span style='color:#5E2129'>The bloodlock rifle</span> slurs, " + span_cult(pick("<i>\"How dare you abandon me?!\"</i>", "<i>\"The previous owner was still better.\"</i>", "<i>\"N'wah!\"</i>", "<i>\"Progress is clearly not for a fool like you!\"</i>")))
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/twilight_runelock/rifle/twilight_bloodlock/Destroy()
 	if(bloodlock_awaken_timer)
@@ -378,10 +378,10 @@
 	if(bloodlock_owner != H && !is_blood_raider(H))
 		return
 
-	to_chat(H, span_warning("Оружие начинает тревожно вибрировать при виде близнеца."))
+	to_chat(H, span_warning("The weapon begins to vibrate anxiously at the sight of the twin."))
 	if(prob(50))
 		if(prob(50))
-			to_chat(H, "<span style='color:#5E2129'>The bloodlock</span> whispers, " + span_cult(pick("<i>\"Какого Зизо?! Фальшивка!\"</i>", "<i>\"Нон... нон... НОН! УБЕЙ ВЛАДЕЛЬЦА ЭТОЙ ФАЛЬШИВКИ И УНИЧТОЖЬ ЕЁ!\"</i>", "<i>\"Пристрели владельца и уничтожь фальшивку, пока они нас не заметили!\"</i>", "<i>\"УБЕЙ, УБЕЙ, УБЕЙ!!\"</i>", "<i>\"Уничтожь самозванцев!\"</i>", "<i>\"Ха... Нам стоит покончить с фальшивкой, пока она не сделала это первой!\"</i>")))
+			to_chat(H, "<span style='color:#5E2129'>The bloodlock</span> whispers, " + span_cult(pick("<i>\"What Zizo?! Fake!\"</i>", "<i>\"Non... non... NON! KILL THE OWNER OF THIS FAKE AND DESTROY IT!\"</i>", "<i>\"Shoot the owner and destroy the fake before they notice us!\"</i>", "<i>\"KILL, KILL, KILL!!\"</i>", "<i>\"Destroy the impostors!\"</i>", "<i>\"Ha... We should finish off the fake before it does it first!\"</i>")))
 
 #undef BLOODLOCK_AWAKEN_TIME
 #undef BLOODLOCK_LOSS_TIME

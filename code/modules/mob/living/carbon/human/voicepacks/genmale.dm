@@ -197,7 +197,7 @@
 				used = list('sound/vo/LizardSqueal.ogg')
 			if("thump")
 				used = list('sound/vo/LizardThump.ogg')
-			//MODULAR TWILIGHT AXIS
+			// MODULAR BAD DRAKIAN
 			if("softmoan")
 				used = list('sound/misc/mat/sex_moans/fem_man/SWFMoan213.ogg')
 			if("moan")

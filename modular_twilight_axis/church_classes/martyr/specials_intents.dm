@@ -149,8 +149,8 @@
 		L.Slowdown(slow_tick)
 
 /atom/movable/screen/alert/status_effect/debuff/necra_harvested
-	name = "Жатва Некры"
-	desc = "Под вуалью Некры твои силы увядают."
+	name = "Nekra's Harvest"
+	desc = "Under Nekra's veil, your strength fades."
 	icon_state = "debuff"
 
 /datum/status_effect/debuff/necra_harvested
@@ -171,7 +171,7 @@
 
 /datum/special_intent/martyr_necra_harvest
 	name = "Necra's Harvest"
-	desc = "Ты проводишь косой мрачную жатву, отмечая живых для сбора. Спустя миг Некра забирает часть их сил и восстанавливает при помощи них твое тело."
+	desc = "You spend the grim harvest with a scythe, marking the living for gathering. A moment later, Nekra takes part of their powers and uses them to restore your body."
 	tile_coordinates = list(
 		list(-1,0), list(0,0), list(1,0),
 		list(-2,1), list(-1,1), list(0,1), list(1,1), list(2,1)
@@ -202,10 +202,10 @@
 	var/self_commit = 0.7 SECONDS
 
 	var/list/necra_cries = list(
-		"Некра, Дама в Вуали, прими их души.",
-		"Час их настал — Некра, пожни их.",
-		"Некра, укрой их во мраке своей вуали.",
-		"Да исполнится жатва Некры."
+		"Nekra, Veiled Lady, accept their souls.",
+		"Their hour has come - Nekra, reap them.",
+		"Nekra, cover them in the darkness of your veil.",
+		"May the harvest of Nekra be fulfilled."
 	)
 
 /datum/special_intent/martyr_necra_harvest/_reset()
@@ -280,8 +280,8 @@
 			apply_generic_weapon_damage(L, harvest_dam, "slash", BODY_ZONE_CHEST, bclass = BCLASS_CHOP)
 
 		L.visible_message(
-			span_danger("[L] теряет силу под жатвой Некры!"),
-			span_userdanger("Моя сила утекает прочь!")
+			span_danger("[L] is losing power under the Nekra harvest!"),
+			span_userdanger("My strength is flowing away!")
 		)
 
 		heal_total += heal_per_target
@@ -301,15 +301,15 @@
 			playsound(H, 'sound/magic/necra_sight.ogg', 70, TRUE)
 
 		howner.visible_message(
-			span_warning("[howner] черпает силу из собранных душ!"),
-			span_notice("Некра возвращает мне силы.")
+			span_warning("[howner] draws power from the collected souls!"),
+			span_notice("Nekra gives me back my strength.")
 		)
 
 
 
 /datum/special_intent/martyr_astrata_verdict
 	name = "Astrata's Verdict"
-	desc = "Ты клеймишь всех грешников перед собой священным огнем. После краткой задержки на каждого из них обрушивается суд Астраты."
+	desc = "You brand all sinners before you with sacred fire. After a short delay, Astrata's judgment falls on each of them."
 	tile_coordinates = list(
 		list(-1,0), list(0,0), list(1,0),
 		list(-1,1), list(0,1), list(1,1),
@@ -336,10 +336,10 @@
 	var/verdict_token = 0
 
 	var/list/astrata_cries = list(
-		"Астрата, узри виновных!",
-		"Да свершится суд Астраты!",
-		"Астрата, низвергни свой приговор!",
-		"Пусть свет Астраты рассудит вас!"
+		"Astrata, behold the culprits!",
+		"May the judgment of Astrata be completed!",
+		"Astrata, overthrow your sentence!",
+		"Let the light of Astrata judge you!"
 	)
 
 /datum/special_intent/martyr_astrata_verdict/_reset()
@@ -385,8 +385,8 @@
 			new /obj/effect/temp_visual/astrata_mark(mark_turf)
 
 		L.visible_message(
-			span_warning("[L] отмечен судом Астраты!"),
-			span_warning("Священное пламя выжигает на мне клеймо суда!")
+			span_warning("[L] marked by the Astrata court!"),
+			span_warning("The sacred flame burns the mark of judgment on me!")
 		)
 
 		var/current_token = verdict_token
@@ -442,15 +442,15 @@
 		apply_generic_weapon_damage(target, final_dam, "fire", BODY_ZONE_CHEST, bclass = BCLASS_CUT)
 
 	target.visible_message(
-		span_warning("Суд Астраты обрушивается на [target]!"),
-		span_warning("Божественный приговор низвергается на меня!")
+		span_warning("The judgment of Astrata falls on [target]!"),
+		span_warning("Divine judgment is falling upon me!")
 	)
 
 
 
 /datum/special_intent/martyr_ravox_charge
 	name = "Ravox's Charge"
-	desc = "Ты взываешь к Равоксу и несешься к выбранной точке. Когда ты достигаешь ее, все враги вокруг валятся с ног. Если ты никого не заденешь, то рухнешь сам."
+	desc = "You call on Ravox and rush to the chosen point. When you reach it, all the enemies around you will fall to the ground. If you don't hit anyone, you'll collapse yourself."
 	tile_coordinates = list(
 		list(-1,0), list(0,0), list(1,0),
 		list(-1,1), list(0,1), list(1,1),
@@ -476,10 +476,10 @@
 	var/hit_someone = FALSE
 	var/charge_running = FALSE
 	var/list/ravox_cries = list(
-		"Во славу Равокса!",
-		"Равокс, веди меня в битву!",
-		"Равокс, узри мою доблесть!",
-		"Во имя Равокса, сразись со мной!"
+		"For the glory of Ravox!",
+		"Ravox, lead me into battle!",
+		"Ravox, behold my valor!",
+		"In the name of Ravox, fight me!"
 	)
 
 /datum/special_intent/martyr_ravox_charge/_reset()
@@ -494,7 +494,7 @@
 	if(!howner)
 		return
 	if(!(howner.mobility_flags & MOBILITY_STAND))
-		to_chat(howner, span_warning("Мне нужно стоять на ногах, чтобы совершить рывок!"))
+		to_chat(howner, span_warning("I need to be on my feet to make the dash!"))
 		return
 	if(!click_loc)
 		return
@@ -616,8 +616,8 @@
 
 	if(!hit_someone)
 		howner.visible_message(
-			span_warning("[howner] с грохотом падает на землю после неудачного рывка!"),
-			span_warning("Я никого не сшибаю, падаю наземь и на миг теряю всякую боеспособность!")
+			span_warning("[howner] crashes to the ground after a failed dash!"),
+			span_warning("I don’t knock anyone over, I fall to the ground and momentarily lose all combat capability!")
 		)
 		howner.Knockdown(self_knockdown_dur)
 		howner.Stun(self_stun_dur)
@@ -663,7 +663,7 @@
 
 /datum/special_intent/martyr_malum_hammerfall
 	name = "Malum's Hammerfall"
-	desc = "Сокрушающий удар по земле перед собой. Спустя миг с небес падает молот Малума, повторно поражая ту же область и сильно повреждая какие-либо стены и укрепления."
+	desc = "Crushing blow to the ground in front of you. A moment later, Malum's hammer falls from the sky, hitting the same area again and heavily damaging any walls or fortifications."
 	tile_coordinates = list(
 		list(-1,0), list(0,0), list(1,0),
 		list(-1,1), list(0,1), list(1,1),
@@ -701,10 +701,10 @@
 	var/scorched_duration = 15 SECONDS
 
 	var/list/malum_cries = list(
-		"Малум, сокруши их в горне войны!",
-		"Пусть пламя и молот Малума падут на вас!",
-		"Малум, яви свою кузницу на поле брани!",
-		"В горниле Малума вы будете перекованы в прах!"
+		"Malum, crush them in the furnace of war!",
+		"Let the flames and hammer of Malum fall on you!",
+		"Malum, bring your forge to the battlefield!",
+		"In the crucible of Malum you will be reforged into dust!"
 	)
 
 /datum/special_intent/martyr_malum_hammerfall/_reset()
@@ -839,7 +839,7 @@
 
 /datum/special_intent/martyr_abyssor_harpoon
 	name = "Abyssor's Harpoon"
-	desc = "Ты бросаешь трезубец в сторону курсора. Первый задетый враг оказывается пронзен и притягивается к тебе. Если трезубец никого не находит, то возвращается обратно."
+	desc = "You throw the trident towards the cursor. The first enemy hit is pierced and pulled towards you. If the trident does not find anyone, it returns back."
 	use_clickloc = TRUE
 	respect_adjacency = FALSE
 	respect_dir = FALSE
@@ -869,8 +869,8 @@
 	var/final_wave_length = 4
 
 	var/list/abyssor_cries = list(
-		"Поймай мне добычу, трезубец!",
-		"Абиссор требует свое!"
+		"Catch my prey, trident!",
+		"The Abyssor demands his due!"
 	)
 
 /datum/special_intent/martyr_abyssor_harpoon/_reset()
@@ -900,7 +900,7 @@
 		return
 
 	if(!(howner.mobility_flags & MOBILITY_STAND))
-		to_chat(howner, span_warning("Мне нужно стоять на ногах, чтобы метнуть трезубец!"))
+		to_chat(howner, span_warning("I need to be on my feet to throw the trident!"))
 		return
 
 	if(!click_loc)
@@ -1086,8 +1086,8 @@
 	new /obj/effect/temp_visual/abyssor_trident_hit(target_turf)
 
 	hooked_target.visible_message(
-		span_warning("[hooked_target] оказывается пронзен трезубцем, который начинает его тянуть к мученику!"),
-		span_userdanger("Трезубец впивается в меня и тянет к мученику!")
+		span_warning("[hooked_target] finds himself pierced by a trident, which begins to pull him towards the martyr!"),
+		span_userdanger("The trident digs into me and pulls me towards the martyr!")
 	)
 
 	if(hooked_target.mobility_flags & MOBILITY_STAND)
@@ -1214,8 +1214,8 @@
 			apply_generic_weapon_damage(L, final_damage, "stab", BODY_ZONE_CHEST, bclass = BCLASS_PICK)
 
 		L.visible_message(
-			span_danger("[L] пронзен трезубцем!"),
-			span_userdanger("Меня пронзают трезубцем!")
+			span_danger("[L] is pierced by a trident!"),
+			span_userdanger("I'm being pierced with a trident!")
 		)
 
 	..()
@@ -1317,7 +1317,7 @@
 
 /datum/special_intent/martyr_dendor_vine_reap
 	name = "Dendor's Vine Reap"
-	desc = "Ты проводишь косой перед собой, и из земли вырываются лианы Дендора. Они хватают своих жертв за ноги и не дают им некоторое время двигаться. "
+	desc = "You sweep your scythe in front of you, and the vines of Dendor burst out of the ground. They grab their victims by the legs and prevent them from moving for some time."
 	tile_coordinates = list(
 		list(-1,0), list(0,0), list(1,0),
 		list(-2,1), list(-1,1), list(0,1), list(1,1), list(2,1)
@@ -1354,10 +1354,10 @@
 	var/vulnerable_dur = 5 SECONDS
 
 	var/list/dendor_cries = list(
-		"Дендор, оплети их корнями и лозой!",
-		"Да восстанет чаща Дендора против вас!",
-		"Дендор, свяжи их волей леса!",
-		"Пусть лианы Дендора сомкнутся на вас!"
+		"Dendor, entwine them with roots and vines!",
+		"May the thicket of Dendor rise against you!",
+		"Dendor, bind them with the will of the forest!",
+		"Let the vines of Dendor close on you!"
 	)
 
 /datum/special_intent/martyr_dendor_vine_reap/_reset()
@@ -1399,8 +1399,8 @@
 			new /obj/effect/temp_visual/dendor_vines_begin(mark_turf)
 
 		L.visible_message(
-			span_warning("Под [L] начинают стремительно прорастать лианы Дендора!"),
-			span_userdanger("Подо мной прорастают лианы!")
+			span_warning("Under [L] the vines of Dendor begin to rapidly sprout!"),
+			span_userdanger("Lianas are sprouting under me!")
 		)
 
 		addtimer(CALLBACK(src, PROC_REF(begin_entangle), L), vine_begin_delay)
@@ -1427,8 +1427,8 @@
 		apply_generic_weapon_damage(L, constrict_dam, "slash", BODY_ZONE_CHEST, bclass = BCLASS_CHOP)
 
 	L.visible_message(
-		span_danger("Лианы Дендора резко смыкаются вокруг [L]!"),
-		span_userdanger("Лианы резко стягиваются на мне и сковывают меня!")
+		span_danger("The vines of Dendor suddenly close around [L]!"),
+		span_userdanger("The vines suddenly tighten on me and bind me!")
 	)
 
 	if(T)

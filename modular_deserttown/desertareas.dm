@@ -1,4 +1,4 @@
-#define DETAIL_TEXT_BIZZARE_BAZAARE "Известный в узкий кругах подземный рынок-порт контрабандистов, разместившийся в древней гробнице. Товары и рабы, в основном, доставляются с помощью секретной сети подземных рек. Местным рейдерам всё равно, кого выставлять на продажу, что часто приводит к бедам."
+#define DETAIL_TEXT_BIZZARE_BAZAARE "Well-known in narrow circles, the underground market is a port of smugglers, located in an ancient tomb. Goods and slaves are mainly transported via a secret network of underground rivers. Local raiders don't care who they put up for sale, which often leads to trouble."
 //desert areas
 
 /area/rogue/outdoors/desert

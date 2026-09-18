@@ -473,7 +473,7 @@ const LoadoutDisplay = () => {
                       {item.cost}pt
                       {item.triumph_cost ? (
                         <Box color="gold" bold fontSize={0.85}>
-                          {item.triumph_cost} tri
+                          {item.triumph_cost} points
                         </Box>
                       ) : null}
                     </Table.Cell>
@@ -522,7 +522,7 @@ const LoadoutDisplay = () => {
                 }
                 mr={1.5}
               >
-                Triumphs:{' '}
+                Points:{' '}
                 {is_donator &&
                 triumph_discount > 0 &&
                 total_triumph_cost > 0 ? (
@@ -545,11 +545,11 @@ const LoadoutDisplay = () => {
                   <Box inline mr={0.5}>
                     &#9733;
                   </Box>
-                  Donator - +{donator_bonus} budget, {triumph_discount} TRI free
+                  Universal access - +{donator_bonus} budget, {triumph_discount} points free
                 </Box>
               )}
               <Box inline color="label" fontSize={0.85}>
-                Free loadout items cannot be sold, smelted, or salvaged. Triumph
+                Free loadout items cannot be sold, smelted, or salvaged. Point
                 items are exempt.
               </Box>
             </Stack.Item>

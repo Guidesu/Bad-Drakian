@@ -53,7 +53,7 @@
 		var/obj/structure/chair/chosen_chair = pick(possible_chairs)
 		recipient.forceMove(get_turf(chosen_chair))
 		chosen_chair.buckle_mob(recipient)
-		to_chat(recipient, span_notice("Как житель города, вы оказываетесь на стуле в местной таверне."))
+		to_chat(recipient, span_notice("As a resident of the city, you find yourself on a chair in the local tavern."))
 		return
 	var/list/possible_spawns = list()
 	for(var/turf/T in spawn_area)
@@ -62,4 +62,4 @@
 	if(length(possible_spawns))
 		var/turf/spawn_loc = pick(possible_spawns)
 		recipient.forceMove(spawn_loc)
-		to_chat(recipient, span_notice("Как житель города, вы оказываетесь в местной таверне."))
+		to_chat(recipient, span_notice("As a city resident, you find yourself in a local tavern."))

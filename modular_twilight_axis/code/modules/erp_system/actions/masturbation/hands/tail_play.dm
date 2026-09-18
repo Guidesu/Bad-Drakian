@@ -1,8 +1,8 @@
 /datum/erp_action/self/hands/tail_pet
 	abstract = FALSE
 
-	name = "Ласкать хвост"
+	name = "Caress the tail"
 	required_target_organ = SEX_ORGAN_TAIL
-	message_start = "{actor} проводит рукой по хвосту."
-	message_tick = "{actor} {force} и {speed} ласкает свой хвост."
-	message_finish =  "{actor} отпускает хвост."
+	message_start = "{actor} runs his hand along his tail."
+	message_tick = "{actor} {force} and {speed} caress its tail."
+	message_finish =  "{actor} lets go of his tail."

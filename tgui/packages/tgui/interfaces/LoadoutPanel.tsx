@@ -84,12 +84,12 @@ export const LoadoutPanel = () => {
 
   return (
     <Window
-      title="Лодаут"
+      title="Loadout"
       buttons={
         <Button
-          tooltip={`Выберите предметы для вашего персонажа.
-Вы их сможете забрать, когда нажмете правой кнопкой мыши по статуе или дереву.
-Рескины на оружие (Donator kit) являются просто рескинами, чтобы его получить используйте зелье на соответствующем предмете.`}
+          tooltip={`Select items for your character.
+You will be able to take them when you right-click on the statue or tree.
+Weapon reskin kits are cosmetic; use a kit on the corresponding item to apply it.`}
           tooltipPosition="bottom"
           style={{
             position: 'fixed',
@@ -122,11 +122,6 @@ export const LoadoutPanel = () => {
         <Stack fill>
           <Stack.Item width="300px">
             <Stack vertical textAlign="justify">
-              <Stack.Item style={{ textAlign: 'center' }}>
-                <Button onClick={() => act('boosty')}>
-                  <h3>Поддержать сервер</h3>
-                </Button>
-              </Stack.Item>
               <Stack.Item>
                 <Box
                   mt={1}
@@ -137,113 +132,8 @@ export const LoadoutPanel = () => {
                     color: '#d7b6b6',
                   }}
                 >
-                  Для меценатов в зависимости от уровня подписки(
-                  <Button
-                    tooltip="Т1 - дает 7 слотов вещей, 3 скидочных триумфа, 40 слотов персонажей и вещи своего тира."
-                    tooltipPosition="bottom"
-                    style={{
-                      minWidth: '0',
-                      width: 'auto',
-                      height: 'auto',
-                      padding: '0',
-                      border: 'none',
-                      boxShadow: 'none',
-                      background: 'none',
-                      lineHeight: 'inherit',
-                      verticalAlign: 'baseline',
-                      color: '#facc15',
-                      fontWeight: 'bold',
-                      cursor: 'help',
-                    }}
-                  >
-                    1
-                  </Button>
-                  ,{' '}
-                  <Button
-                    tooltip="Т2 - дает 11 слотов вещей, 5 скидочных триумфа, 60 слотов персонажей, возможность поменять цвет в дискорде, кастомную боевую музыку и вещи своего тира."
-                    tooltipPosition="bottom"
-                    style={{
-                      minWidth: '0',
-                      width: 'auto',
-                      height: 'auto',
-                      padding: '0',
-                      border: 'none',
-                      boxShadow: 'none',
-                      background: 'none',
-                      lineHeight: 'inherit',
-                      verticalAlign: 'baseline',
-                      color: '#facc15',
-                      fontWeight: 'bold',
-                      cursor: 'help',
-                    }}
-                  >
-                    2
-                  </Button>
-                  ,{' '}
-                  <Button
-                    tooltip="Т3 - дает 17 слотов вещей, 7 скидочных триумфа, 80 слотов персонажей, возможность поменять цвет в дискорде, кастомную боевую музыку и вещи своего тира. Также дается возможность раз в 2 раунда с повышенным приоритетом зайти за роль, имеющую более 2 слотов."
-                    tooltipPosition="bottom"
-                    style={{
-                      minWidth: '0',
-                      width: 'auto',
-                      height: 'auto',
-                      padding: '0',
-                      border: 'none',
-                      boxShadow: 'none',
-                      background: 'none',
-                      lineHeight: 'inherit',
-                      verticalAlign: 'baseline',
-                      color: '#facc15',
-                      fontWeight: 'bold',
-                      cursor: 'help',
-                    }}
-                  >
-                    3
-                  </Button>
-                  ,{' '}
-                  <Button
-                    tooltip="Т4 - дает 21 слотов вещей, 10 скидочных триумфа, 100 слотов персонажей, возможность поменять цвет в дискорде, кастомную боевую музыку и вещи своего тира. Также дается возможность с повышенным приоритетом зайти за роль, имеющую более 2 слотов, в отличии от Т3 без КД в 2 раунда."
-                    tooltipPosition="bottom"
-                    style={{
-                      minWidth: '0',
-                      width: 'auto',
-                      height: 'auto',
-                      padding: '0',
-                      border: 'none',
-                      boxShadow: 'none',
-                      background: 'none',
-                      lineHeight: 'inherit',
-                      verticalAlign: 'baseline',
-                      color: '#facc15',
-                      fontWeight: 'bold',
-                      cursor: 'help',
-                    }}
-                  >
-                    4
-                  </Button>
-                  ,{' '}
-                  <Button
-                    tooltip="Т5 - дает 27 слотов вещей, 15 скидочных триумфа, 120 слотов персонажей, возможность поменять цвет в дискорде, кастомную боевую музыку и вещи своего тира. Также дается возможность зайти за любую роль с повышенным приоритетом, в отличии от Т3 и Т4 каких-либо ограничений нет."
-                    tooltipPosition="bottom"
-                    style={{
-                      minWidth: '0',
-                      width: 'auto',
-                      height: 'auto',
-                      padding: '0',
-                      border: 'none',
-                      boxShadow: 'none',
-                      background: 'none',
-                      lineHeight: 'inherit',
-                      verticalAlign: 'baseline',
-                      color: '#facc15',
-                      fontWeight: 'bold',
-                      cursor: 'help',
-                    }}
-                  >
-                    5
-                  </Button>
-                  ) открываются различные бонусы в лодауте и не только. Лишь за
-                  счет поддержки сервер существует.
+                  Every player receives the full loadout allowance and all legacy
+                  cosmetic unlocks. Paid entitlement tiers are not used.
                 </Box>
               </Stack.Item>
               <br />
@@ -276,7 +166,7 @@ export const LoadoutPanel = () => {
                       textShadow: '1px 1px 3px rgba(0,0,0,0.75)',
                     }}
                   >
-                    ★ Скидочные триумфы: занято {data.triumphDiscountUsed} из{' '}
+                    ★ Free point allowance: {data.triumphDiscountUsed} of{' '}
                     {data.triumphDiscount}
                   </Box>
                 </Stack.Item>
@@ -304,7 +194,7 @@ export const LoadoutPanel = () => {
                       textShadow: '1px 1px 3px rgba(0,0,0,0.8)',
                     }}
                   >
-                    Выбранные предметы:
+                    Selected items:
                   </Box>
 
                   {selectedDetails.length ? (
@@ -347,7 +237,7 @@ export const LoadoutPanel = () => {
                                 <Button
                                   key={`${item.name}-${channel}`}
                                   icon="palette"
-                                  tooltip={`${label}: ${colorLabel || color || 'исходный цвет'}`}
+                                  tooltip={`${label}: ${colorLabel || color || 'original color'}`}
                                   onClick={() =>
                                     act('pick_color', {
                                       item: item.name,
@@ -369,7 +259,7 @@ export const LoadoutPanel = () => {
                           {Object.keys(item.colorLabels ?? {}).length ? (
                             <Button
                               icon="undo"
-                              tooltip="Сбросить цвета"
+                              tooltip="Reset colors"
                               onClick={() =>
                                 act('clear_colors', { item: item.name })
                               }
@@ -379,14 +269,14 @@ export const LoadoutPanel = () => {
                             color="danger"
                             onClick={() => act('remove', { item: item.name })}
                           >
-                            Удалить
+                            Delete
                           </Button>
                         </Box>
                       </Box>
                     ))
                   ) : (
                     <Box color="label" textAlign="center">
-                      Пока ничего не выбрано.
+                      Nothing selected yet.
                     </Box>
                   )}
                 </Box>
@@ -423,7 +313,7 @@ export const LoadoutPanel = () => {
                 }}
               >
                 <Input
-                  placeholder="Поиск предметов..."
+                  placeholder="Searching for items..."
                   value={searchQuery}
                   onChange={setSearchQuery}
                   width="300px"
@@ -434,7 +324,7 @@ export const LoadoutPanel = () => {
                   color={confirmReset ? 'good' : 'danger'}
                 >
                   <span style={{ color: 'white' }}>
-                    {confirmReset ? 'Точно?' : 'Сбросить все'}
+                    {confirmReset ? 'Are you sure?' : 'Reset all'}
                   </span>
                 </Button>
               </Stack.Item>
@@ -484,15 +374,15 @@ export const LoadoutPanel = () => {
                           tooltip={
                             item?.unavailable ? (
                               <Box>
-                                <Box>{item?.name || 'Без названия'}</Box>
+                                <Box>{item?.name || 'Untitled'}</Box>
                                 <Box mt={0.5}>
                                   {item?.requiredTier
-                                    ? `Требуется уровень мецената: ${item.requiredTier}.`
-                                    : item?.unavailableReason || 'Недоступно.'}
+                                    ? `Patron level required: ${item.requiredTier}.`
+                                    : item?.unavailableReason || 'Not available.'}
                                 </Box>
                               </Box>
                             ) : (
-                              item?.name || 'Без названия'
+                              item?.name || 'Untitled'
                             )
                           }
                           onClick={() => {
@@ -525,27 +415,10 @@ export const LoadoutPanel = () => {
                                   lineHeight: 1.2,
                                 }}
                               >
-                                {item.triumphCost} триумфов
+                                {item.triumphCost} points
                               </Box>
                             ) : null}
 
-                            {item?.isDonatorItem ? (
-                              <Box
-                                style={{
-                                  width: '100%',
-                                  marginTop: '96px',
-                                  fontSize: '20px',
-                                  fontWeight: 'bold',
-                                  color: '#c084fc',
-                                  outlineColor: 'black',
-                                  textAlign: 'center',
-                                  textShadow: '1px 1px 3px rgba(0,0,0,0.75)',
-                                  lineHeight: 1.2,
-                                }}
-                              >
-                                Донат тир {item.requiredTier && item.requiredTier > 0 ? item.requiredTier : 1}
-                              </Box>
-                            ) : null}
                           </Box>
                         </Button>
                       </Box>

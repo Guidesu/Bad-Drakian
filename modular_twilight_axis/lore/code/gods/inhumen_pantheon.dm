@@ -19,63 +19,63 @@
 
 /datum/faith/inhumen
 	name = "Ascendents"
-	translated_name = "Вознесенные"
-	desc = "<b>Святая Экклезиархия</b>, также известая среди последователей Десяти как <b>пантеон Презренных</b> — совокупность из трёх религиозных течений, сосредоточенных вокруг идеологий тех, кого называют <b>Вознесёнными</b>. Некогда бывшие смертными, Вознесённые овладели божественными силами, выкрав осколки падшего <b>Всеотца</b> в неразберихе <b>Войны в Небесах</b>.\n\
-		Идеологии Презренных различны и противоречивы, и хотя при смертной жизни они были товарищами, последователи Трёх могут как действовать сообща, так и против друг друга — их объединяет лишь ненависть к мировому порядку, поддерживаемому Десятью."
-	worshippers = "Отвергнутые церковью Десяти, радикалы, нонкомформисты."
+	translated_name = "Ascended"
+	desc = "<b> The Holy Ecclesiarchy</b>, also known among the followers of the Ten as <b> Pantheon of the Despicable</b> is a collection of three religious movements centered around the ideologies of those called <b> The Ascended</b>. Once mortal, the Ascended Ones have mastered divine powers by stealing the shards of the fallen <b>eotfather</b> in the confusion <b>Voyns in Heaven</b>.\n\
+		The ideologies of the Despicable are diverse and contradictory, and although in mortal life they were comrades, the followers of the Three can act both together and against each other — they are united only by hatred for the world order maintained by the Ten."
+	worshippers = "Rejected by the Church of Ten, radicals, nonconformists."
 	godhead = /datum/patron/inhumen/baotha
 
 /datum/patron/inhumen
 	profane_words = list(
-		"хуй", "хуя", "хую", "хуем", "хуе",
-		"хер", "хера", "херу", "хером", "хере",
-		"хрен", "хрена", "хрену", "хреном", "хрене",
-		"бля", "бляди", "бляде", "бляду", "блядью", "бляде",
-		"пизда", "пизды", "пизде", "пизду", "пиздой", "пизде",
-		"жопа", "жопы", "жопе", "жопу", "жопой",
-		"сучка", "сучки", "сучке", "сучку", "сучкой", "сучке",
-		"мудило", "мудила", "мудиле", "мудилу", "мудилом", "мудиле",
-		"пидор", "пидора", "пидору", "пидором", "пидоре",
-		"блядь", "бляди", "бляди", "блядь", "блядью", "бляде",
-		"хуила", "хуила", "хуиле", "хуилу", "хуилой", "хуиле",
-		"уебище", "уебище", "уебище", "уебище", "уебищем", "уебище",
-		"мудак", "мудака", "мудаку", "мудака", "мудаком", "мудаке",
-		"хуесос", "хуесоса", "хуесосу", "хуесоса", "хуесосом", "хуесосе",
-		"шлюха", "шлюхи", "шлюхе", "шлюху", "шлюхой", "шлюхе",
-		"сука", "суки", "суке", "суку", "сукой", "суке",
-		"ебать", "ебаный", "ебать", "ебать", "ебаным", "ебать",
-		"залупа", "залупы", "залупе", "залупу", "залупой", "залупе",
-		"залупенец", "залупенца", "залупенцу", "залупенца", "залупенцем", "залупенце"
+		"fuck", "dick", "dick", "with dick", "dick",
+		"penis", "penis", "dick", "dick", "dick",
+		"horseradish", "horseradish", "horseradish", "horseradish", "horseradish",
+		"fuck", "whores", "slut", "slut", "slut", "slut",
+		"pussy", "pussy", "pussy", "pussy", "pussy", "pussy",
+		"ass", "ass", "ass", "ass", "ass",
+		"bitch", "bitch", "bitch", "bitch", "with the bitch", "bitch",
+		"asshole", "asshole", "to the asshole", "asshole", "with the asshole", "to the asshole",
+		"fag", "fag", "to the fag", "with the fag", "on the fag",
+		"whore", "whores", "whores", "whore", "slut", "slut",
+		"dickhead", "dickhead", "to the dickhead", "dickhead", "with the dickhead", "to the dickhead",
+		"freak", "freak", "freak", "freak", "with the freak", "freak",
+		"jerk", "jerk", "to the jerk", "jerk", "with the jerk", "on the jerk",
+		"dick sucker", "of the dick sucker", "to the dick sucker", "of the dick sucker", "with the dick sucker", "about the dick sucker",
+		"whore", "whore's", "to the whore", "whore", "with the whore", "to the whore",
+		"bitch", "bitches", "to the bitch", "bitch", "with the bitch", "to the bitch",
+		"to fuck", "fucking", "to fuck", "to fuck", "with the fucking", "to fuck",
+		"foreskin", "foreskins", "to the foreskin", "foreskin", "with the foreskin", "to the foreskin",
+		"foreskin guy", "of the foreskin guy", "to the glans", "of the foreskin guy", "by the glans", "in the glans"
 	)
 
 /datum/patron/inhumen/zizo
 	name = "Zizo"
-	translated_name = "Зизо"
+	translated_name = "Zizo"
 	rusgodnames = list(
-		"Зизо", "Зизо", "Зизо", "Зизо", "Зизо", "Зизо",
-		"Несущая Спасение", "Несущей Спасения", "Несущей Спасению", "Несущую Спасение",
-		"Несущей Спасением", "Несущей Спасении",
-		"Госпожа Тьмы", "Госпожи Тьмы", "Госпоже Тьмы", "Госпожу Тьмы",
-		"Госпожой Тьмы", "Госпоже Тьмы",
-		"Дева Ночи", "Девы Ночи", "Деве Ночи", "Деву Ночи",
-		"Девой Ночи", "Деве Ночи",
-		"Дама Прогресса", "Дамы Прогресса", "Даме Прогресса", "Даму Прогресса",
-		"Дамой Прогресса", "Даме Прогресса",
-		"Паучья Леди", "Паучьей Леди", "Паучьей Леди", "Паучью Леди",
-		"Паучьей Леди", "Паучьей Леди",
-		"Плетущая", "Плетущей", "Плетущей", "Плетущую",
-		"Плетущей", "Плетущей",
-		"Ткачиха", "Ткачихи", "Ткачихе", "Ткачиху",
-		"Ткачихой", "Ткачихе"
+		"Zizo", "Zizo", "Zizo", "Zizo", "Zizo", "Zizo",
+		"Bearer of Salvation", "Bearer of Salvation", "Bearer to Salvation", "Bearing Salvation",
+		"Bearer with Salvation", "Bearer in Salvation",
+		"Lady of Darkness", "Ladies of Darkness", "Lady of Darkness", "Lady of Darkness",
+		"Lady with Darkness", "Lady of Darkness",
+		"Maiden of the Night", "Maidens of the Night", "Maiden of the Night", "Maiden of the Night",
+		"Maiden with the Night", "Maiden of the Night",
+		"Lady of Progress", "Ladies of Progress", "Lady of Progress", "Lady of Progress",
+		"Lady with Progress", "Lady of Progress",
+		"Spider Lady", "Spider Lady", "Spider Lady", "Spider Lady",
+		"Spider Lady", "Spider Lady",
+		"Weaving", "Weaver", "Weaver", "Weaver",
+		"Weaver", "Weaver",
+		"Weaver woman", "Weaver women", "To the weaver woman", "The weaver woman",
+		"By the weaver woman", "To the weaver woman"
 )
-	domain = "Бессмертие, прогресс, кровь, тьма, запретные знания, амбиции."
-	desc = "Богиня нежизни, возмездия, метаморфозы и тьмы. Убийца Псайдона, Архивраг пантеона Десяти, презираемая всеми, кроме своих последователей, сама Зизо не видит в смертных объект своей ненависти. Это прекрасно демонстрируется ее главной заповедью, что часто звучит в молитвенных песнопениях её культистов: «Последний же враг истребится — смерть»."
+	domain = "Immortality, progress, blood, darkness, forbidden knowledge, ambitions."
+	desc = "Goddess of unliving, vengeance, metamorphosis, and darkness. Slayer of Psyidon, Archwing of the Pantheon of Ten, despised by all except her followers, Zizo herself does not see mortals as the object of her hatred. This is wonderfully demonstrated by her main commandment, which is often sung in the prayers of her cultists: 'The last enemy shall be destroyed — death.'"
 	associated_faith = /datum/faith/cult_of_salvation
-	worshippers = "Дроу-лоялисты, некроманты, чародеи, исследователи и практиканты тёмных аспектов магии, некоторые кланы высших вампиров, нежить."
+	worshippers = "Drow loyalists, necromancers, sorcerers, researchers and practitioners of the dark aspects of magic, some clans of elder vampires, undead."
 	confess_lines = list(
-		"ХВАЛА ЗИЗО!",
-		"ДА ЗДРАВСТВУЕТ ЗИЗО!",
-		"ЗИЗО СПАСЕТ НАС ОТ СТРАДАНИЙ!",
+		"PRAISE ZIZO!",
+		"LONG LIVE ZIZO!",
+		"ZIZO WILL SAVE US FROM SUFFERING!",
 	)
 
 /datum/patron/inhumen/zizo/post_equip(mob/living/pious)
@@ -88,24 +88,24 @@
 
 /datum/patron/inhumen/graggar
 	name = "Graggar"
-	translated_name = "Граггар"
+	translated_name = "Graggar"
 	rusgodnames = list(
-		"Граггар", "Граггара", "Граггару", "Граггара", "Граггаром", "Граггаре",
-		"Кровавый Бог", "Кровавого Бога", "Кровавому Богу", "Кровавого Бога",
-		"Кровавым Богом", "Кровавом Боге",
-		"Зверь", "Зверя", "Зверю", "Зверя", "Зверем", "Звере",
-		"Черное Солнце", "Черного Солнца", "Черному Солнцу", "Черное Солнце",
-		"Черным Солнцем", "Черном Солнце",
-		"Проклятая Звезда", "Проклятой Звезды", "Проклятой Звезде", "Проклятую Звезду",
-		"Проклятой Звездой", "Проклятой Звезде",
-		"Черное Колесо", "Черного Колеса", "Черному Колесу", "Черное Колесо",
-		"Черным Колесом", "Черном Колесе"
+		"Graggar", "Graggar", "Graggar", "Graggar", "Graggar", "Graggar",
+		"Blood God", "Blood God", "Blood God", "Blood God",
+		"Blood God", "Blood God",
+		"Beast", "Beast", "Beast", "Beast", "Beast", "Beast",
+		"Black Sun", "of the Black Sun", "to the Black Sun", "Black Sun",
+		"with the Black Sun", "in the Black Sun",
+		"Cursed Star", "of the Cursed Star", "to the Cursed Star", "the Cursed Star",
+		"with the Cursed Star", "to the Cursed Star",
+		"Black Wheel", "Black Wheel", "To the Black Wheel", "Black Wheel",
+		"With the Black Wheel", "In the Black Wheel"
 	)
 
-	domain = "Власть, сила, превосходство, завоевание."
-	desc = "Бог силы и власти, которая приходит с нею. Пока другие божества обрекают свою паству на жалкое существование в мире, где власть приходит через их благословение и по праву рождения, Граггар провозглашает, что править может каждый, кто достаточно силен, чтобы забрать желаемое. «Слабые унаследуют лишь грязь», предупреждает он, напоминая о судьбе тех, кто не стремится стать сильнее."
+	domain = "Power, strength, superiority, conquest."
+	desc = "The god of strength and power that comes with it. While other deities condemn their flock to a miserable existence in a world where power comes through their blessing and by right of birth, Graggar proclaims that anyone strong enough to take what they desire can rule. \"The weak will inherit only dirt,\" he warns, reminding of the fate of those who do not strive to become stronger."
 	undead_hater = TRUE
-	worshippers = "Племенные народы, безумцы, маньяки, жестокий люд."
+	worshippers = "Tribal peoples, madmen, maniacs, cruel people."
 	miracles = list(/datum/action/cooldown/spell/touch/orison					        = CLERIC_ORI,
 					/datum/action/cooldown/spell/graggar/rush							= CLERIC_T0,
 					/obj/effect/proc_holder/spell/self/heavy_stomp 		       			= CLERIC_T1,
@@ -121,38 +121,38 @@
 					/obj/effect/proc_holder/spell/invoked/resurrect/graggar				= CLERIC_T4,
 	)
 	confess_lines = list(
-		"ГРАГГАР - ЗВЕРЬ, КОТОРОМУ Я ПОКЛОНЯЮСЬ!",
-		"ЧЕРЕЗ ПРЕВОСХОДСТВО - К БОЖЕСТВЕННОСТИ!",
-		"ЧЁРНОЕ СОЛНЦЕ ТРЕБУЕТ КРОВИ!",
+		"GRAGGAR - THE BEAST I WORSHIP!",
+		"THROUGH SUPERIORITY - TO DIVINITY!",
+		"THE BLACK SUN DEMANDS BLOOD!",
 	)
 
 /datum/patron/inhumen/matthios
 	name = "Matthios"
-	translated_name = "Маттиос"
+	translated_name = "Matthios"
 	rusgodnames = list(
-		"Маттиос", "Маттиоса", "Маттиосу", "Маттиоса", "Маттиосом", "Маттиосе",
-		"Свободный", "Свободного", "Свободному", "Свободного",
-		"Свободным", "Свободном",
-		"Разбивающий Оковы", "Разбивающего Оковы", "Разбивающему Оковы",
-		"Разбивающего Оковы", "Разбивающим Оковами", "Разбивающем Оковах",
-		"Отец Свободы", "Отца Свободы", "Отцу Свободы", "Отца Свободы",
-		"Отцом Свободы", "Отце Свободы",
-		"Отец", "Отца", "Отцу", "Отца", "Отцом", "Отце",
-		"Батюшка", "Батюшки", "Батюшке", "Батюшку", "Батюшкой", "Батюшке",
-		"Господин Ничего", "Господина Ничего", "Господину Ничего",
-		"Господина Ничего", "Господином Ничего", "Господине Ничего",
-		"Ведущий", "Ведущего", "Ведущему", "Ведущего", "Ведущим", "Ведущем",
-		"Факел", "Факела", "Факелу", "Факел", "Факелом", "Факеле",
-		"Несущий Свет", "Несущего Света", "Несущему Свету", "Несущего Света",
-		"Несущим Светом", "Несущем Свете",
-		"Разрушитель Оков", "Разрушителя Оков", "Разрушителю Оков",
-		"Разрушителя Оков", "Разрушителем Оков", "Разрушителе Оков"
+		"Matthios", "Mattiosa", "To Mattiosa", "Mattiosa", "With Mattiosa", "In Mattiosa",
+		"Free", "Free", "To the free", "Free",
+		"With the free", "In the free",
+		"Shackles-Breaker", "Of the Shackles-Breaker", "To the Shackles-Breaker",
+		"Of the Shackles-Breaker", "With the Shackles-Breaker", "In the Shackles-Breaker",
+		"Father of Freedom", "Of the Father of Freedom", "To the Father of Freedom", "Of the Father of Freedom",
+		"With the Father of Freedom", "In the Father of Freedom",
+		"Father", "Of the Father", "To the Father", "Of the Father", "With the Father", "In the Father",
+		"Daddy", "Of Daddy", "To Daddy", "Daddy", "With Daddy", "To Daddy",
+		"Mr. Nothing", "Mr. Nothing", "To Mr. Nothing",
+		"Mr. Nothing", "With Mr. Nothing", "About Mr. Nothing",
+		"Leader", "Leader", "To Leader", "Leader", "With Leader", "About Leader",
+		"Torch", "Torch", "To Torch", "Torch", "With Torch", "About Torch",
+		"Light Bearer", "Light Bearer", "To Light Bearer", "Light Bearer",
+		"With Light Bearer", "About Light Bearer",
+		"Shackles Breaker", "Shackles Breaker", "To Shackles Breaker",
+		"Shackles Breaker", "With Shackles Breaker", "About Shackles Breaker"
 	)
 
-	domain = "Анархия, свобода, революция, равенство и братство."
-	desc = "Бог абсолютной свободы, анархии и восстания. «Через раздор к процветанию», обещает его главная заповедь, и его последователи пойдут на всё, чтобы претворить её в реальность, разрушив мировой порядок, каким мы его знаем."
+	domain = "Anarchy, freedom, revolution, equality, and brotherhood."
+	desc = "God of absolute freedom, anarchy, and rebellion. \"Through discord to prosperity,\" promises his chief commandment, and his followers will do anything to make it a reality, destroying the world order as we know it."
 	undead_hater = TRUE
-	worshippers = "Разбойники, наёмники, революционеры, свободолюбивый люд."
+	worshippers = "Robbers, mercenaries, revolutionaries, freedom-loving people."
 	miracles = list(/datum/action/cooldown/spell/touch/orison									        = CLERIC_ORI,
 					/obj/effect/proc_holder/spell/self/twilight_shacklebreaker							= CLERIC_T0,
 					/datum/action/cooldown/spell/matthios/freemans_tools								= CLERIC_T0,
@@ -170,9 +170,9 @@
 					/obj/effect/proc_holder/spell/self/wildshape_twilight_wingsoffreedom				= CLERIC_T4,
 	)
 	confess_lines = list(
-		"ВСЕ ТИРАНЫ УМРУТ В ОДИНОЧЕСТВЕ!",
-		"ПУТЬ К ПРОЦВЕТАНИЮ ЛЕЖИТ ЧЕРЕЗ РАЗДОР!",
-		"МЫ СРАВНЯЕМ ЦЕРКВИ И ТЮРЬМЫ С ЗЕМЛЕЙ!",
+		"ALL TYRANTS WILL DIE IN SOLITUDE!",
+		"THE PATH TO PROSPERITY LIES THROUGH DISCORD!",
+		"WE LEVEL CHURCHES AND PRISONS WITH THE GROUND!",
 	)
 
 /datum/objective/hoard_mammons/update_explanation_text()
@@ -180,22 +180,22 @@
 
 /datum/patron/inhumen/baotha
 	name = "Baotha"
-	translated_name = "Баота"
+	translated_name = "Baota"
 	rusgodnames = list(
-		"Баота", "Баоты", "Баоте", "Баоту", "Баотой", "Баоте",
-		"Наслаждающаяся", "Наслаждающейся", "Наслаждающейся", "Наслаждающуюся",
-		"Наслаждающейся", "Наслаждающейся",
-		"Дарующая Удовольствие", "Дарующей Удовольствие", "Дарующей Удовольствию",
-		"Дарующую Удовольствие", "Дарующей Удовольствием", "Дарующей Удовольствии",
-		"Страждущая", "Страждущей", "Страждущей", "Страждущую",
-		"Страждущей", "Страждущей",
-		"Утешительница", "Утешительницы", "Утешительнице", "Утешительницу",
-		"Утешительницей", "Утешительнице"
+		"Baota", "Baoty", "Baote", "Baotu", "Baotoy", "Baote",
+		"Enjoying", "Enjoying", "Enjoying", "Enjoying",
+		"Enjoying", "Enjoying",
+		"Giver of Pleasure", "Giving Pleasure", "Giving Pleasure (dative/ to)",
+		"Giving Pleasure (accusative)", "Giving Pleasure (instrumental)", "Giving Pleasure (prepositional)",
+		"Suffering", "Suffering (genitive/dative)", "Suffering (genitive/dative)", "Suffering (accusative)",
+		"Suffering (genitive/dative)", "Suffering (genitive/dative)",
+		"Comforter", "Comforter (genitive)", "Comforter (dative)", "Comforter",
+		"Comforter", "Comforter (dative)"
 	)
 
-	domain = "Гедонизм, мирские удовольствия, индивидуализм."
-	desc = "Баота — богиня гедонизма, мирских наслаждений и страстей. «Живи, люби, смейся!» — говорила она, глядя на суету вокруг себя и усилия окружающих, стремящихся двигать куда-то мир."
-	worshippers = "Избалованные богачи, маргиналы, эскаписты."
+	domain = "Hedonism, worldly pleasures, individualism."
+	desc = "Baota is the goddess of hedonism, worldly pleasures, and passions. \"Live, love, laugh!\" she said, watching the hustle around her and the efforts of those trying to move the world somewhere."
+	worshippers = "Spoiled rich people, marginals, escapists."
 	undead_hater = TRUE
 	miracles = list(/datum/action/cooldown/spell/touch/orison					        = CLERIC_ORI,
 					/obj/effect/proc_holder/spell/invoked/TAbaothavice					= CLERIC_T0,
@@ -215,9 +215,9 @@
 					/obj/effect/proc_holder/spell/invoked/resurrect/baotha				= CLERIC_T4,
 	)
 	confess_lines = list(
-		"БАОТА ТРЕБУЕТ УДОВОЛЬСТВИЯ!",
-		"ЖИВИ, СМЕЙСЯ, ЛЮБИ!",
-		"БАОТА - МОЯ РАДОСТЬ!",
+		"BAOTA DEMANDS PLEASURE!",
+		"LIVE, LAUGH, LOVE!",
+		"BAOTA - MY JOY!",
 	)
 
 /////////////////////////////////

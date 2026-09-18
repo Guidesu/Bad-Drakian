@@ -195,7 +195,7 @@ const ExplainerKey = () => {
                 color="transparent"
                 name="High+"
               />
-                <Stack.Item>- High+ (Donator)</Stack.Item>
+                <Stack.Item>- High+ (universal priority)</Stack.Item>
               </Stack>
             </Stack.Item>
           ) : null}

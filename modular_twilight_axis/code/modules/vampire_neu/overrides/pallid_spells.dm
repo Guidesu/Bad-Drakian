@@ -36,15 +36,15 @@
 
 /// VAMPIRE SPELL: Track all pallid victims (those who refused conversion and got TRAIT_PALLID from this vampire)
 /obj/effect/proc_holder/spell/self/pallid_track
-	name = "Резонанс Крови"
-	desc = "Почувствовать направление к тем, кто несёт вашу проклятую метку."
+	name = "Blood Resonance"
+	desc = "Feel the direction to those who bear your cursed mark."
 	recharge_time = 30 SECONDS
 	overlay_icon = 'icons/mob/actions/vampspells.dmi'
 	action_icon = 'icons/mob/actions/vampspells.dmi'
 	overlay_state = "yourbloodismine"
 	action_icon_state = "yourbloodismine"
 	invocation_type = "emote"
-	invocation_emote_self = span_notice("Я закрываю глаза и тянусь к отмеченным...")
+	invocation_emote_self = span_notice("I close my eyes and reach for the marked...")
 	human_req = TRUE
 	clothes_req = FALSE
 
@@ -59,50 +59,50 @@
 			targets[H.real_name] = H
 
 	if(!length(targets))
-		to_chat(user, span_warning("Я не чувствую отмеченных душ в этом мире."))
+		to_chat(user, span_warning("I do not feel the marked souls in this world."))
 		return
 
-	var/selection = input(user, "К чьей крови мне потянуться?", "Резонанс Крови") as null|anything in sort_list(targets)
+	var/selection = input(user, "Whose blood should I reach for?", "Blood Resonance") as null|anything in sort_list(targets)
 	if(!selection)
 		return
 
 	var/mob/living/carbon/human/victim = targets[selection]
 	if(!victim || QDELETED(victim) || victim.stat == DEAD)
-		to_chat(user, span_warning("Метка угасла..."))
+		to_chat(user, span_warning("The mark has faded..."))
 		return
 
 	var/turf/user_turf = get_turf(user)
 	var/turf/victim_turf = get_turf(victim)
 
 	if(!are_z_levels_same_map(user_turf.z, victim_turf.z))
-		to_chat(user, span_warning("Цель слишком далеко..."))
+		to_chat(user, span_warning("The target is too far..."))
 		return
 
 	if(user_turf.z != victim_turf.z)
-		to_chat(user, span_notice("Скверна [victim.real_name] пульсирует [user_turf.z > victim_turf.z ? "снизу" : "сверху"]."))
+		to_chat(user, span_notice("The taint [victim.real_name] pulses [user_turf.z > victim_turf.z ?"from below" : "from top"]."))
 		return
 
 	var/dist = get_dist(user, victim)
 	var/dir_text = dir2text(get_dir(user, victim))
 
 	if(dist <= 1)
-		to_chat(user, span_boldnotice("[victim.real_name] прямо здесь!"))
+		to_chat(user, span_boldnotice("[victim.real_name] right here!"))
 	else if(dist < 15)
-		to_chat(user, span_notice("Кровь [victim.real_name] зовёт на [dir_text]. Совсем близко."))
+		to_chat(user, span_notice("The blood of [victim.real_name] calls to [dir_text]. Very close."))
 	else
-		to_chat(user, span_notice("Слабый пульс от [victim.real_name] на [dir_text]."))
+		to_chat(user, span_notice("A weak pulse from [victim.real_name] on [dir_text]."))
 
 /// VICTIM SPELL: Sense the direction of the vampire who marked you (10 min cooldown)
 /obj/effect/proc_holder/spell/self/pallid_sense
-	name = "Проклятая Интуиция"
-	desc = "Скверна в крови шепчет направление к тому, кто вас отметил."
+	name = "Cursed Intuition"
+	desc = "The blight in the blood whispers the direction to the one who marked you."
 	recharge_time = 3 MINUTES
 	overlay_icon = 'icons/mob/actions/vampspells.dmi'
 	action_icon = 'icons/mob/actions/vampspells.dmi'
 	overlay_state = "yourbloodismine"
 	action_icon_state = "yourbloodismine"
 	invocation_type = "emote"
-	invocation_emote_self = span_notice("Я чувствую, как проклятие шевелится внутри меня...")
+	invocation_emote_self = span_notice("I feel the curse stirring within me...")
 	human_req = TRUE
 	clothes_req = FALSE
 	var/mob/living/carbon/human/sire = null
@@ -113,24 +113,24 @@
 
 /obj/effect/proc_holder/spell/self/pallid_sense/cast(mob/living/carbon/human/user)
 	if(!sire || QDELETED(sire) || sire.stat == DEAD)
-		to_chat(user, span_warning("Присутствие, отметившее меня, исчезло из этого мира..."))
+		to_chat(user, span_warning("The presence that marked me has vanished from this world..."))
 		return
 
 	var/turf/user_turf = get_turf(user)
 	var/turf/sire_turf = get_turf(sire)
 
 	if(!are_z_levels_same_map(user_turf.z, sire_turf.z))
-		to_chat(user, span_warning("Цель слишком далеко..."))
+		to_chat(user, span_warning("The target is too far..."))
 		return
 
 	var/dist = get_dist(user, sire)
 	var/dir_text = dir2text(get_dir(user, sire))
 
 	if(user_turf.z != sire_turf.z)
-		to_chat(user, span_warning("Леденящий страх тянет меня [user_turf.z > sire_turf.z ? "вниз" : "вверх"]... Тварь СЛИШКОМ далеко."))
+		to_chat(user, span_warning("Icy dread pulls me [user_turf.z > sire_turf.z ?"to bottom" : "up"]... The creature is TOO far."))
 	else if(dist <= 1)
-		to_chat(user, span_userdanger("Чудовище прямо здесь!"))
+		to_chat(user, span_userdanger("The monster is right here!"))
 	else if(dist < 15)
-		to_chat(user, span_warning("Леденящий страх тянет меня на [dir_text]. Тварь рядом."))
+		to_chat(user, span_warning("Icy dread pulls me to [dir_text]. The creature is nearby."))
 	else
-		to_chat(user, span_notice("Слабая тревога тянет меня на [dir_text]."))
+		to_chat(user, span_notice("Weak unease pulls me to [dir_text]."))

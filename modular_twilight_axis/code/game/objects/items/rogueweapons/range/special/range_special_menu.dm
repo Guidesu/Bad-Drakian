@@ -11,7 +11,7 @@
 /datum/archery_perk_menu/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "ArcheryPerks", "Стиль Стрельбы (Эксперт)")
+		ui = new(user, src, "ArcheryPerks", "Shooting Style (Expert)")
 		ui.open()
 
 
@@ -44,7 +44,7 @@
 	if(action == "select_perk")
 
 		if(HAS_TRAIT(owner, TRAIT_BOW_DOUBLESHOT) || HAS_TRAIT(owner, TRAIT_BOW_LONGSHOT) || HAS_TRAIT(owner, TRAIT_BOW_BACKSTEP))
-			to_chat(owner, span_warning("Я уже выбрал свой стиль!"))
+			to_chat(owner, span_warning("I have already chosen my style!"))
 			return TRUE
 			
 		var/selected = params["perk_id"]
@@ -52,18 +52,18 @@
 		
 		if(selected == "doubleshot")
 			ADD_TRAIT(owner, TRAIT_BOW_DOUBLESHOT, TRAIT_GENERIC)
-			to_chat(owner, span_greentext("Я освоил Двойной выстрел!"))
+			to_chat(owner, span_greentext("I mastered the Double Shot!"))
 			if(istype(B))
 				B.special = new /datum/special_intent/range_special/bow_doubleshot()
 				
 		else if(selected == "longshot")
 			ADD_TRAIT(owner, TRAIT_BOW_LONGSHOT, TRAIT_GENERIC)
-			to_chat(owner, span_greentext("Я освоил Дальнобойный выстрел!"))
+			to_chat(owner, span_greentext("I have mastered the Long Shot!"))
 			if(istype(B))
 				B.special = new /datum/special_intent/range_special/bow_longshot()
 		else if(selected == "backstep")
 			ADD_TRAIT(owner, TRAIT_BOW_BACKSTEP, TRAIT_GENERIC)
-			to_chat(owner, span_greentext("Я освоил Выстрел с отскоком!"))
+			to_chat(owner, span_greentext("I have mastered the Bounce Shot!"))
 			if(istype(B))
 				B.special = new /datum/special_intent/range_special/bow_backstep()
 		

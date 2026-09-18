@@ -7,10 +7,10 @@
 	spawn_positions = 1
 	allowed_sexes = list(MALE, FEMALE)
 	forbidden_races = list(RACES_CONSTRUCT RACES_DESPISED RACES_OOZE)
-	tutorial = "Как опытный воин султанского корпуса азебов, ты получил приказ принять командование над нововозведенным фронтиром. \
-                Ты держишь ответ перед султанской династией и их благородными шейхами, \
-                а твоя задача - держать в узде молодых азебов и обеспечивать безопасность караванных путей к сердцу града. \
-                Граница не должна пасть."
+	tutorial = "As an experienced warrior of the Sultan's Azeb corps, you received the order to take command of the newly built frontier. \
+                You hold accountability before the sultanic dynasty and their noble sheikhs,\
+                and your task is to keep young Azeibs in check and ensure the security of the caravan routes to the heart of the city.\
+                The border must not fall."
 	display_order = JDO_SERGEANT
 	round_contrib_points = 3
 

@@ -15,10 +15,10 @@
 
 		if(do_change)
 			if(J.zone_selected == BODY_ZONE_PRECISE_MOUTH)
-				message_param = "лижет губы %t."
+				message_param = "licks the lips of %t."
 
 			else if(J.zone_selected == BODY_ZONE_PRECISE_EARS)
-				message_param = "лижет ушко %t."
+				message_param = "licks %t's ear."
 				var/mob/living/carbon/human/O = target
 				if(iself(O) || ishalfelf(O) || isdarkelf(O))
 					if(!O.cmode)
@@ -26,14 +26,14 @@
 					SEND_SIGNAL(O, COMSIG_SEX_RECEIVE_ACTION, 1, 0, FALSE, SEX_FORCE_LOW, SEX_SPEED_LOW, null)
 
 			else if(J.zone_selected == BODY_ZONE_PRECISE_GROIN)
-				message_param = "лижет %t между ног."
+				message_param = "licks %t between her legs."
 				to_chat(target, span_love("That feels nice..."))
 				SEND_SIGNAL(target, COMSIG_SEX_RECEIVE_ACTION, 2, 0, FALSE, SEX_FORCE_LOW, SEX_SPEED_LOW, null)
 
 			else if(J.zone_selected == BODY_ZONE_HEAD)
-				message_param = "лижет щечку %t"
+				message_param = "licks the cheek of %t"
 			else
-				message_param = "облизывает %t [parse_zone(J.zone_selected)]."
+				message_param = "licks %t [parse_zone(J.zone_selected)]."
 
 	if(user != target)
 		var/mob/living/U = user
@@ -43,7 +43,7 @@
 		if(E)
 			var/taken = E.reagents.trans_to(U, 6)
 			if(taken > 0)
-				to_chat(U, span_love("Ты слизываешь с [T] влажные следы."))
+				to_chat(U, span_love("You lick the wet marks off [T]."))
 
 	playsound(target.loc, pick("sound/vo/lick.ogg"), 100, FALSE, -1)
 

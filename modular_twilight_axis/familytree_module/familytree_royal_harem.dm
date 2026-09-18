@@ -71,7 +71,7 @@
 /datum/controller/subsystem/familytree/proc/do_ask_sultan_harem_permission(mob/living/carbon/human/sultan)
 	if(!sultan?.client)
 		return
-	var/result = tgui_alert(sultan, "Желаете открыть гарем при дворе Аль-Ашура?\n\nБудет открыто до трёх мест Harem Favorite. Кандидаты будут ограничены вашими семейными предпочтениями: пол, раса и анатомия.", "Гарем султана", list("Да", "Нет"), 60 SECONDS)
+	var/result = tgui_alert(sultan, "Do you wish to open a harem at the court of Al-Ashur? \n\n Up to three Harem Favorite slots will be opened. Candidates will be limited by your family preferences: gender, race, and anatomy.", "Sultan's harem", list("Yes", "No"), 60 SECONDS)
 
 	if(!sultan || QDELETED(sultan))
 		return
@@ -81,11 +81,11 @@
 		return
 	load_familytree_runtime_preferences(sultan, P)
 
-	if(result != "Да")
+	if(result != "Yes")
 		apply_royal_partner_job_state("harem", FALSE)
 		set_sultan_harem_snapshot(sultan, P, "closed")
 		ftlog("SULTAN HAREM: [sultan.real_name] kept harem closed result=[result || "timeout"]")
-		to_chat(sultan, span_notice("Вы не открыли гарем. Места фаворитов останутся закрытыми."))
+		to_chat(sultan, span_notice("You did not open a harem. Favorite slots will remain closed."))
 		return
 
 	var/list/harem_baseline = royal_partner_job_baselines["harem"]
@@ -103,6 +103,6 @@
 	apply_royal_partner_job_state("harem", TRUE, SULTAN_HAREM_POSITIONS, allowed_races, harem_allowed_sexes)
 	set_sultan_harem_snapshot(sultan, P, "harem")
 	ftlog("SULTAN HAREM: [sultan.real_name] opened harem slots=[SULTAN_HAREM_POSITIONS]")
-	to_chat(sultan, span_notice("Вы открыли гарем. До трёх фаворитов, подходящих вашим семейным предпочтениям, смогут прибыть ко двору."))
+	to_chat(sultan, span_notice("You have opened a harem. Up to three favorites matching your family preferences may arrive at the court."))
 
 #undef SULTAN_HAREM_POSITIONS

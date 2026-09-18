@@ -148,12 +148,12 @@
 	var/list/channels = list()
 	if(!can_color_loadout_item())
 		return channels
-	channels["primary"] = "Основной цвет"
+	channels["primary"] = "Primary color"
 	var/obj/item/item_type = path
 	if(item_type::detail_tag)
-		channels["detail"] = "Дополнительный цвет"
+		channels["detail"] = "Secondary color"
 	if(item_type::altdetail_tag)
-		channels["altdetail"] = "Третий цвет"
+		channels["altdetail"] = "Third color"
 	return channels
 
 /datum/loadout_item/proc/can_color_loadout_channel(channel)
@@ -161,10 +161,10 @@
 	return !!channels[channel]
 
 /datum/preferences
-	var/current_loadout_category = "Всё"
+	var/current_loadout_category = "All"
 
-// Обрабатывает вещи в списке лодаута игрока и удаляет те, название которых было изменено или они были удалены.
-// Иначе лодаут будет ломаться. Мб это как то адекватнее можно починить, но я хз.
+//Processes items in the player's loadout list and removes those whose name has been changed or they have been deleted.
+//Otherwise the lockout will break. Maybe this can be fixed somehow more adequately, but I don’t know.
 /datum/preferences/proc/clean_loadout(mob/user)
 	var/list/valid_items = list()
 	var/has_invalid_items = FALSE
@@ -183,16 +183,16 @@
 
 	if(has_invalid_items)
 		gear_list = valid_items
-		to_chat(user, "Твой лодаут был очищен из-за изменений в предметах.")
+		to_chat(user, "Your lockout has been cleared due to changes to items.")
 
-/// Обрабатывает размер лодаута и сбрасывает его, если превышает лимит
+/// Processes the lockout size and resets it if it exceeds the limit
 /datum/preferences/proc/handle_loadout_size(mob/user)
 	if(gear_list.len <= get_loadout_size(user))
 		return
 	gear_list = list()
-	to_chat(user, "Размер твоего лодаута был изменён и его пришлось сбросить!")
+	to_chat(user, "Your lockout size was changed and had to be reset!")
 
-/// Возвращает размер лодаута для указанного ника игрока
+/// Returns the lockout size for the specified player nickname
 /datum/preferences/proc/get_loadout_size(mob/user)
 	var/loadout_size = 3
 	var/modifiers = 0
@@ -212,12 +212,12 @@
 
 	return modifiers ? max(loadout_size + modifiers, 1) : loadout_size
 
-/// Добавляет предмет лодаута
+/// Adds a lockout item
 /datum/preferences/proc/add_loadout_item(item_name)
 	if(!(item_name in gear_list))
 		gear_list[item_name] = list()
 
-/// Убирает предмет лодаута
+/// Removes a lockout item
 /datum/preferences/proc/remove_loadout_item(item_name)
 	gear_list -= item_name
 
@@ -284,19 +284,19 @@
 	if(!channel_name)
 		return FALSE
 	var/current_color = resolve_loadout_color_setting(get_loadout_item_color(item_name, channel))
-	var/pick_method = alert(user, "Выберите способ выбора цвета.", channel_name, "Палитра", "Готовые цвета", "Отмена")
+	var/pick_method = alert(user, "Select a color selection method.", channel_name, "Palette", "Ready colors", "Cancel")
 	var/new_color
 	switch(pick_method)
-		if("Палитра")
-			new_color = color_pick_sanitized(user, "Выберите [lowertext(channel_name)].", "Цвет предмета", current_color ? current_color : "#FFFFFF")
-		if("Готовые цвета")
+		if("Palette")
+			new_color = color_pick_sanitized(user, "Select [lowertext(channel_name)].", "Item Color", current_color ? current_color : "#FFFFFF")
+		if("Ready colors")
 			var/list/colors_to_pick = list(
 				"Primary Keep Color" = LOADOUT_COLOR_DUCHY_PRIMARY,
 				"Secondary Keep Color" = LOADOUT_COLOR_DUCHY_SECONDARY,
 			)
 			colors_to_pick += COLOR_MAP
 			colors_to_pick += GLOB.pridelist
-			var/picked_color = input(user, "Выберите цвет.", channel_name, null) as null|anything in colors_to_pick
+			var/picked_color = input(user, "Select a color.", channel_name, null) as null|anything in colors_to_pick
 			if(!picked_color)
 				return FALSE
 			new_color = colors_to_pick[picked_color]
@@ -305,22 +305,6 @@
 	if(isnull(new_color))
 		return FALSE
 	return set_loadout_item_color(item_name, channel, new_color)
-
-/client/verb/boosty()
-	set name = "boosty"
-	set desc = ""
-	set category = "OOC"
-	var/boostyurl = CONFIG_GET(string/boostyurl)
-	if(boostyurl)
-		if(alert("This will open the boosty in your browser. Are you sure?",, "Yes", "No") != "Yes")
-			return
-		src << link(boostyurl)
-	else
-		to_chat(src, span_danger("The forum URL is not set in the server configuration."))
-	return
-
-/datum/config_entry/string/boostyurl
-	config_entry_value = ""
 
 /datum/loadout_panel
 	/// Mob that the examine panel belongs to.
@@ -446,7 +430,7 @@
 				return TRUE
 
 			if(user_prefs.gear_list.len >= user_prefs.get_loadout_size(user))
-				to_chat(user, "Лимит исчерпан!")
+				to_chat(user, "Limit reached!")
 				return TRUE
 
 			var/lock_reason = item.get_loadout_lock_reason(user)
@@ -463,7 +447,7 @@
 
 		if("clear")
 			user_prefs.gear_list = list()
-			to_chat(user, "Лодаут очищен!")
+			to_chat(user, "Lodout cleared!")
 			return TRUE
 
 		if("pick_color")
@@ -472,10 +456,6 @@
 
 		if("clear_colors")
 			user_prefs.clear_loadout_item_colors(params["item"])
-			return TRUE
-
-		if("boosty")
-			user << link(CONFIG_GET(string/boostyurl))
 			return TRUE
 
 /datum/loadout_panel/ui_assets(mob/user)

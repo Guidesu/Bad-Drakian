@@ -6,9 +6,9 @@
 
 /datum/map_adjustment/template/rockhill
 	map_file_name = "rockhill.dmm"
-	realm_name = "Enigma"
-	realm_type = "Kingdom"
-	realm_type_short = "Kingdom"
+	realm_name = "the realm"
+	realm_type = "Sovereign County"
+	realm_type_short = "County"
 	blacklist = list(
 		/datum/job/roguetown/manorguard, 
 		/datum/job/roguetown/warden, 
@@ -32,7 +32,7 @@
 	/datum/job/roguetown/wapprentice = 3,
 	)
 	title_adjust = list(
-		/datum/job/roguetown/lord = list(display_title = "King", f_title = "Queen")
+		/datum/job/roguetown/lord = list(display_title = "Count", f_title = "Countess")
 	)
 	
 	threat_regions = list(

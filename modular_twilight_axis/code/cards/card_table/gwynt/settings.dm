@@ -562,9 +562,9 @@ GLOBAL_LIST_EMPTY(ccg_round_trade_loss_progress_awarded)
 		return FALSE
 	user.put_in_hands(booster)
 	if(premium)
-		to_chat(user, span_notice("Ксалликс рад вашим удачам и даровал вам чудо: набор карт для новых вершин."))
+		to_chat(user, span_notice("Xallix is ​​pleased with your success and has given you a miracle: a set of cards for new heights."))
 	else
-		to_chat(user, span_notice("Ксалликс рад вашим неудачам и даровал вам чудо: набор карт для новых насмешек."))
+		to_chat(user, span_notice("Xallix is ​​happy about your failures and has given you a miracle: a set of cards for new taunts."))
 	return TRUE
 
 /datum/preferences/proc/ccg_award_progress(mob/living/user, progress_type)

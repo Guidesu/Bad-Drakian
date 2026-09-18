@@ -28,7 +28,7 @@
 
 /obj/item/ball
 	name = "leather ball"
-	desc = "Сшитый кожаный мяч. Его можно бросать руками или пинать ногой."
+	desc = "Stitched leather ball. It can be thrown with your hands or kicked."
 	icon = 'modular_twilight_axis/icons/obj/ball.dmi'
 	icon_state = "ball"
 
@@ -50,12 +50,12 @@
 
 /obj/item/ball/get_mechanics_examine(mob/user)
 	. = ..()
-	. += span_info("При включении разных интентов мяч может вести себя по разному. Будет отличаться дальность полета, скорость и время восстановления после пинка.")
-	. += span_info("Пинок по мячу с включенными интентами Aimed и Swift делает обычный пинок на 3 тайла с восстановлением в 1.5 секунды.")
-	. += span_info("Strong Kick бьет мяч сильнее всего: он летит на 5 тайлов и дает 3 секунды восстановления.")
-	. += span_info("Weak Kick делает короткий слабый пинок на 2 тайла и дает 1 секунду восстановления.")
-	. += span_info("Feint Kick пинает мяч по диагонали вперед в сторону выбранной руки на 3 тайла и дает 1.5 секунды восстановления.")
-	. += span_info("Defend Kick переводит мяч по кругу вокруг персонажа в сторону выбранной руки и дает 0.5 секунды восстановления.")
+	. += span_info("When different intents are enabled, the ball may behave differently. The range, speed and recovery time after the kick will differ.")
+	. += span_info("Kicking the ball with Aimed and Swift intents enabled does a normal kick of 3 tiles with a 1.5 second cooldown.")
+	. += span_info("Strong Kick hits the ball the hardest: it flies 5 tiles and has a 3 second cooldown.")
+	. += span_info("Weak Kick does a short weak kick for 2 tiles and gives 1 second cooldown.")
+	. += span_info("Feint Kick kicks the ball diagonally forward towards the chosen hand for 3 tiles and has a 1.5 second cooldown.")
+	. += span_info("Defend Kick moves the ball in a circle around the character towards the chosen hand and has a 0.5 second cooldown.")
 
 /obj/item/ball/onkick(mob/user)
 	if(!isliving(user))

@@ -1,7 +1,7 @@
 #define TRIUMPH_LEADERBOARD_FILE "data/triumph_leaderboards/triumphs_leaderboard.json"
 
 SUBSYSTEM_DEF(triumphs)
-	name = "Triumphs"
+	name = "Points"
 	flags = SS_NO_FIRE
 	init_order = INIT_ORDER_TRIUMPHS
 
@@ -108,7 +108,7 @@ SUBSYSTEM_DEF(triumphs)
 						triumph_adjust(refund_amount, ckey_cur_owna, "conflict refund: [active_datum.type]")
 
 						if(GLOB.directory[ckey_cur_owna]) // If they are still logged into the game, inform them they got refunded
-							to_chat(GLOB.directory[ckey_cur_owna], span_redtext("You were refunded [refund_amount] triumphs due to CONFLICTS."))
+							to_chat(GLOB.directory[ckey_cur_owna], span_redtext("You were refunded [refund_amount] points due to CONFLICTS."))
 
 						// Cleanup Time
 						active_datum.on_removal()
@@ -131,7 +131,7 @@ SUBSYSTEM_DEF(triumphs)
 		triumph_adjust(refund_amount, ckey_prev_owna, "unbuy refund: [pull_it_out.type]")
 
 		if(GLOB.directory[ckey_prev_owna]) // If they are still logged into the game, inform them they got refunded
-			to_chat(GLOB.directory[ckey_prev_owna], span_redtext("You were refunded [refund_amount] triumphs due to a UNBUY."))
+			to_chat(GLOB.directory[ckey_prev_owna], span_redtext("You were refunded [refund_amount] points due to a UNBUY."))
 
 		pull_it_out.on_removal()
 
@@ -306,7 +306,7 @@ SUBSYSTEM_DEF(triumphs)
 			if(position_number >= triumph_leaderboard_positions_tracked)
 				break
 	else
-		webpagu += "The hall of triumphs is quite empty, Yes?"
+		webpagu += "The points ledger is quite empty, Yes?"
 
 	C << browse(webpagu, "window=triumph_leaderboard;size=300x500")
 

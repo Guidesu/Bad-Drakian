@@ -67,30 +67,30 @@
 
 /datum/erp_controller_actions/proc/validate_action(datum/erp_action/A, datum/erp_sex_organ/init, datum/erp_sex_organ/target, datum/erp_action_context/ctx)
 	if(!A)
-		return "Нет действия."
+		return "No action."
 	if(!init)
-		return "Нет органа-инициатора."
+		return "There is no initiating authority."
 	if(!target)
-		return "Нет цели."
+		return "No goal."
 	if(!controller.active_partner)
-		return "Нет партнёра."
+		return "No partner."
 
 	var/in_shared_closet = is_shared_closet_context()
 	
 	if(!in_shared_closet && ctx.distance > 1)
-		return "Слишком далеко."
+		return "Too far."
 
 	if(!in_shared_closet && A.require_same_tile && !(ctx.same_tile || ctx.has_passive_grab))
-		return "Нужно быть на одном тайле или держать партнёра."
+		return "You need to be on the same tile or hold a partner."
 
 	if(!in_shared_closet && A.require_grab && !ctx.has_aggressive_grab)
-		return "Нужен более сильный захват."
+		return "Need a stronger grip."
 
 	if(A.required_init_organ && init.erp_organ_type != A.required_init_organ)
-		return "Нужен другой орган-инициатор."
+		return "Another initiating body is needed."
 
 	if(A.required_target_organ && target.erp_organ_type != A.required_target_organ)
-		return "Нужна другая цель."
+		return "Need another target."
 
 	if(!ctx.has_passive_grab && !in_shared_closet)
 		var/it = init.erp_organ_type
@@ -98,33 +98,33 @@
 			ctx.self_access[it] = controller.owner.is_organ_accessible_for(controller.owner, it, FALSE)
 
 		if(!ctx.self_access[it])
-			return "Орган-инициатор закрыт одеждой."
+			return "The initiating organ is covered with clothing."
 
 		var/tt = target.erp_organ_type
 		if(!(tt in ctx.other_access))
 			ctx.other_access[tt] = controller.active_partner.is_organ_accessible_for(controller.owner, tt, FALSE)
 
 		if(!ctx.other_access[tt])
-			return "Цель закрыта одеждой."
+			return "The target is covered with clothing."
 
 	if(init.get_free_slots() <= 0)
-		return "Орган занят."
+		return "Authority is busy."
 
 	if(islist(A.action_tags) && ("testicles" in A.action_tags))
 		if(!controller.active_partner.has_testicles())
-			return "У цели нет тестикул."
+			return "The target has no testicles."
 
 	if(islist(A.action_tags) && ("actor_testicles" in A.action_tags))
 		if(!controller.owner.has_testicles())
-			return "У инициатора нет тестикул."
+			return "The initiator does not have testicles."
 
 	if(A.inject_timing != INJECT_NONE && A.inject_target_mode == INJECT_CONTAINER)
 		if(!ctx.has_container)
-			return "Нужен контейнер с реагентами рядом."
+			return "We need a container with reagents nearby."
 
 	if(islist(A.required_item_tags) && A.required_item_tags.len)
 		if(!has_required_item_tags(controller.owner, A.required_item_tags))
-			return "Нужен определенный предмет."
+			return "A specific item is needed."
 
 	if(istype(init, /datum/erp_sex_organ/penis))
 		var/datum/erp_sex_organ/penis/P = init
@@ -142,7 +142,7 @@
 						break
 
 				if(!can_use_any)
-					return "Все узлы зафиксированы."
+					return "All nodes are fixed."
 
 	return null
 
@@ -237,7 +237,7 @@
 /// Returns string reason why action cannot start (or null).
 /datum/erp_controller_actions/proc/get_action_block_reason(datum/erp_action/A, datum/erp_sex_organ/init, datum/erp_sex_organ/target)
 	if(!controller)
-		return "Нет контроллера."
+		return "No controller."
 
 	var/datum/erp_action_context/ctx = build_action_context()
 

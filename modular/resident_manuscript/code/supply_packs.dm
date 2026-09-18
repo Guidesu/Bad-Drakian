@@ -1,5 +1,5 @@
 /datum/supply_pack/rogue/blackmarket_diplomacy/fake_resident_manuscript
-	name = "Подозрительная грамота жителя"
+	name = "Suspicious letter from a resident"
 	cost = 100
 	contains = list(/obj/item/book/granter/resident_manuscript/fake)
 
@@ -9,7 +9,7 @@
 		contains = null
 
 /datum/supply_pack/rogue/luxury/resident_manuscript_blank
-	name = "Чистая грамота жителя"
+	name = "Clean certificate of a resident"
 	cost = 35
 	contains = list(/obj/item/book/granter/resident_manuscript/blank)
 

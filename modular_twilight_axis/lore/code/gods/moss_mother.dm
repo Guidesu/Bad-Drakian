@@ -1,13 +1,13 @@
 /datum/patron/mossmother
 	name = "The Mossmother"
-	translated_name = "Матерь Мха"
-	domain = "Болота."
-	desc = "Существо, обитающее в глубинах болот Гримории, по природе своей занимающее неопределённое место между смертными, духами и богами. Формально она не признана частью ни одного пантеона, отвергнута Церковью Десяти как самозванка и еретическая аномалия, и всё же обладает подлинной – пусть и ущербной – крупицей божественности. Сама же Матерь Мха считает это признание незаслуженно ограниченным: боги, занимающие троны Порядка, отказываются признать её равной. Это не останется безнаказанным."
-	worshippers = "Болотные ведьмы."
+	translated_name = "Mother of Moss"
+	domain = "of the Swamps."
+	desc = "A creature dwelling in the depths of the Grimore Swamps, by its nature occupying an undefined space between mortals, spirits, and gods. Formally, it is not recognized as part of any pantheon, rejected by the Church of Ten as an impostor and heretical anomaly, and yet possesses genuine – though flawed – traces of divinity. The Mother of Moss herself considers this recognition undeservedly limited: the gods on the Thrones of Order refuse to acknowledge her as equal. This will not go unpunished."
+	worshippers = "Swamp witches."
 	confess_lines = list(
-		"МАТЕРЬ МХА ВИДИТ ТЕБЯ!",
-		"ТЫ ЗАПЛАТИШЬ СПОЛНА, ДОРОГУША!",
-		"Ты настолько глубоко залез в задницу Псайдона, что не видишь оттуда истины, что перед глазами. Ты жалок.",
-		"ВОЗМЕЗДИЕ ГРЯДЕТ.",
-		"Я ЕСТЬ САМА ЗЕМЛЯ. ТЫ ДОЛЖЕН БЛАГОДАРИТЬ МЕНЯ ЗА ДОЗВОЛЕНИЕ СТУПАТЬ ПО НЕЙ.",
+		"THE MOTHER OF MOSS SEES YOU!",
+		"YOU'LL PAY THE PRICE, DEAR!",
+		"You've got so deep into Psydon's ass that you can't see the truth in front of your eyes. You're pathetic.",
+		"RETRIBUTION IS COMING.",
+		"I AM THE EARTH ITSELF. YOU SHOULD THANK ME FOR ALLOWING ME TO WALK ON IT.",
 	)

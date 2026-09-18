@@ -7,9 +7,9 @@
 	spawn_positions = 6
 	allowed_sexes = list(MALE, FEMALE)
 	forbidden_races = list(RACES_DESPISED)
-	tutorial = "Будучи живой собственностью правящей династии, ты с младенчества воспитывался как воин-невольник. \
-        Тебя отправили охранять рубежи и беречь покой града, пока высокородная хасса купается в роскоши за неприступными \
-        городскими стенами. Твой долг неблагодарен, но эта священная ноша должна быть пронесена до конца."
+	tutorial = "Being a living property of the ruling dynasty, you were raised from infancy as a slave warrior. \
+        You were sent to guard the borders and preserve the peace of the city while the high-born Hassa bathes in luxury behind impregnable\
+        city walls. Your duty is thankless, but this sacred burden must be carried to the end."
 	display_order = JDO_GUARD
 
 	outfit = /datum/outfit/job/roguetown/azeb
@@ -48,7 +48,7 @@
 
 /datum/advclass/azeb/ranger
 	name = "Azeb Ranger"
-	tutorial = "Сколько Вы себя помните, Вы всегда были кем-то подвижным, слабым и хилым, поэтому в корпусе Азебов вас определили как стрелка. Вас научили управляться с дальнобойным оружием и скрываться во тьме."
+	tutorial = "For as long as you can remember, you have always been someone mobile, weak and frail, so in the Azebov corps you were identified as a shooter. You were taught to handle long-range weapons and hide in the darkness."
 	outfit = /datum/outfit/job/roguetown/azeb/ranger
 	category_tags = list(CTAG_AZEB)
 	traits_applied = list(TRAIT_DODGEEXPERT)
@@ -109,7 +109,7 @@
 
 /datum/advclass/azeb/footman
 	name = "Azeb Footman"
-	tutorial = "Сколько Вы себя помните - Вы всегда управлялись с оружием ближнего боя. Конкретно в корпусе Азебов Вам вручили глефу, эффективное и простое оружие. Помимо этого, вас научили ездить верхом - и вручили личного скакуна. В долг, конечно же."
+	tutorial = "For as long as you can remember, you have always handled melee weapons. It was in the Azebov corps that you were given a glaive, an effective and simple weapon. In addition, you were taught how to ride a horse - and were given a personal steed. In debt, of course."
 	outfit = /datum/outfit/job/roguetown/azeb/footman
 	category_tags = list(CTAG_AZEB)
 	traits_applied = list(TRAIT_MEDIUMARMOR)

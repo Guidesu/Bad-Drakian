@@ -3090,7 +3090,7 @@
 "mY" = (
 /mob/living/simple_animal/hostile/retaliate/rogue/swine/hog/tame{
 	name = "Ruby";
-	desc = "Жирная, откормленная свинья. Её толстая шкура лоснится от сала. В её крошечных, отливающих алым глазах читается бесконечная жадность. На неё можно накинуть седло."
+	desc = "A fat, well-fed pig. Its thick hide gleams with grease, and boundless greed shines in its tiny scarlet eyes. It can be fitted with a saddle."
 	},
 /turf/open/floor/rogue/grasscold,
 /area/rogue/outdoors/banditcamp)

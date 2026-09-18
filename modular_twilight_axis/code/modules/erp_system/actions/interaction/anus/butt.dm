@@ -1,11 +1,11 @@
 /datum/erp_action/other/anus/butt
 	abstract = FALSE
-	name = "Работать попкой"
+	name = "Working with the ass"
 
 	required_target_organ = SEX_ORGAN_PENIS
-	message_start = "{actor} прижимается попкой к члену {partner}."
-	message_tick = "{actor} {force} и {speed} водит {aggr?задницей:ягодицами} {dullahan?отделенной головы :}{partner}."
-	message_finish =  "{actor} отводит круп от члена {partner}."
-	message_climax_active = "{actor} кончает под себя."
-	message_climax_passive = "{partner} кончает на ягодицы {actor}."
+	message_start = "{actor} presses his ass against {partner}’s penis."
+	message_tick = "{actor} {force} and {speed} drives {aggr?buttocks} {dullahan?separated head :}{partner}."
+	message_finish =  "{actor} moves his rump away from {partner}'s member."
+	message_climax_active = "{actor} cums under himself."
+	message_climax_passive = "{partner} cums on {actor}'s buttocks."
 	

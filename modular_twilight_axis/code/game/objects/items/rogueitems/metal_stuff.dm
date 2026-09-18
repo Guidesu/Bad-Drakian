@@ -141,7 +141,7 @@
 	/obj/item/ingot/steel
 	)
 
-/obj/item/ingot/attackby(obj/item/I, mob/user, params) //переопределяет аттакбай слитков, для возможности их разлома колышками
+/obj/item/ingot/attackby(obj/item/I, mob/user, params) //redefines the attakbay of ingots, so that they can be broken by pegs
 	. = ..()
 	if(istype(I, /obj/item/metal_stake) || istype(I, /obj/item/grown/log/tree/stake))
 		if(!do_after(user, 4 SECONDS, target = src))

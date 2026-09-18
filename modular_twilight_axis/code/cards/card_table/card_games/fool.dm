@@ -36,7 +36,7 @@
 		for(var/datum/card_table_player/player in players)
 			if(player_is_active(player))
 				player.result = "Out"
-		message = "Игра в дурня завершена: не хватает активных игроков."
+		message = "The game of fool is over: there are not enough active players."
 		return
 	if(!fool_current_attacker())
 		current_index = fool_next_active_index(current_index + 1)
@@ -224,11 +224,11 @@
 				if(throw_index)
 					var/list/throw_card = remove_hand_card(attacker, throw_index)
 					fool_add_pair(throw_card)
-					message = "[attacker.name] подкидывает [card_table_card_label(throw_card)]."
+					message = "[attacker.name] throws up [card_table_card_label(throw_card)]."
 					fool_mark_action("attack", attacker, defender)
 					return
 				fool_set_player_passed(attacker)
-				message = "[attacker.name] говорит: Бито."
+				message = "[attacker.name] says: Bito."
 				if(fool_all_attackers_passed())
 					fool_next_turn(FALSE)
 					continue
@@ -240,7 +240,7 @@
 				return
 			var/list/attack_card = remove_hand_card(attacker, attack_index)
 			fool_add_pair(attack_card)
-			message = "[attacker.name] ходит [card_table_card_label(attack_card)]."
+			message = "[attacker.name] goes [card_table_card_label(attack_card)]."
 			fool_mark_action("attack", attacker, defender)
 			return
 		if(defender && defender.is_spirit && table_attack && !table_defense)
@@ -248,12 +248,12 @@
 			if(defense_index)
 				var/list/defense_card = remove_hand_card(defender, defense_index)
 				fool_set_current_defense(defense_card)
-				message = "[defender.name] отбивается [card_table_card_label(defense_card)]."
+				message = "[defender.name] fights off [card_table_card_label(defense_card)]."
 				fool_mark_action("defend", defender)
 				if(table_attack && !table_defense)
 					continue
 				return
-			message = "[defender.name] забирает карты со стола."
+			message = "[defender.name] takes the cards from the table."
 			fool_next_turn(TRUE)
 			continue
 		return
@@ -308,9 +308,9 @@
 		for(var/datum/card_table_player/last in players)
 			if(player_is_active(last))
 				last.result = "Fool"
-				message = "[last.name] - дурак."
+				message = "[last.name] is a fool."
 				return
-		message = "Игра в дурака завершена."
+		message = "The game of fooling is over."
 		return
 	if(!fool_current_attacker())
 		current_index = fool_next_active_index(current_index + 1)
@@ -333,7 +333,7 @@
 		player.hand += list(card)
 		return FALSE
 	fool_add_pair(card)
-	message = "[player.name] ходит [card_table_card_label(table_attack)]."
+	message = "[player.name] goes [card_table_card_label(table_attack)]."
 	fool_mark_action("attack", player, fool_current_defender())
 	fool_process_spirit_turn()
 	return TRUE
@@ -350,7 +350,7 @@
 		return FALSE
 	var/list/defense_card = remove_hand_card(player, defense_index)
 	fool_set_current_defense(defense_card)
-	message = "[player.name] отбивается [card_table_card_label(defense_card)]."
+	message = "[player.name] fights off [card_table_card_label(defense_card)]."
 	fool_mark_action("defend", player)
 	fool_process_spirit_turn()
 	return TRUE
@@ -374,7 +374,7 @@
 	var/datum/card_table_player/new_defender = fool_current_defender()
 	fool_defender_start_hand = new_defender ? new_defender.hand.len : 0
 	fool_refresh_table_focus()
-	message = "[player.name] переводит ход картой [card_table_card_label(transfer_card)]."
+	message = "[player.name] moves the move with the card [card_table_card_label(transfer_card)]."
 	fool_mark_action("attack", player, new_defender)
 	fool_process_spirit_turn()
 	return TRUE
@@ -383,7 +383,7 @@
 	var/datum/card_table_player/player = player_for_user(user)
 	if(stage != CARD_TABLE_STAGE_PLAYING || game_type != CARD_TABLE_GAME_FOOL || player != fool_current_defender() || !table_attack)
 		return FALSE
-	message = "[player.name] забирает карты со стола."
+	message = "[player.name] takes the cards from the table."
 	fool_mark_action("take", player)
 	fool_next_turn(TRUE)
 	fool_process_spirit_turn()
@@ -396,7 +396,7 @@
 	if(fool_player_passed(player))
 		return FALSE
 	fool_set_player_passed(player)
-	message = "[player.name] говорит: Бито."
+	message = "[player.name] says: Bito."
 	if(fool_all_attackers_passed())
 		fool_next_turn(FALSE)
 	else

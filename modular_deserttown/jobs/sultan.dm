@@ -22,7 +22,7 @@
 	visuals_only_outfit = /datum/outfit/job/roguetown/sultan/visuals
 
 	display_order = JDO_LORD
-	tutorial = "Рождённый в пустынях Зибантии вы всегда знали, что ваши родственники - а следовательно и вы - связаны с родом Базилевса Манса-Падеши. Вы не знали ни голода ни нужды, пока сотни рабов обхаживали и удовлетворяли любые ваши нужды. Теперь же вы волею судьбы взошли на престол Аль-Ашура, так что даже дальше? Утонуть в гедонизме и пороке или повести своих подданных и рабов в светлое будущее?"
+	tutorial = "Born in the deserts of Zibantia, you always knew that your relatives - and therefore you - were connected with the family of Basileus Mansa-Padesha. You knew neither hunger nor want while hundreds of slaves tended and satisfied your every need. Now, by the will of fate, you have ascended to the throne of Al-Ashur, so what even further? Drown in hedonism and vice or lead your subjects and slaves into a bright future?"
 	whitelist_req = FALSE
 	min_pq = 10
 	max_pq = null
@@ -152,7 +152,7 @@
 */
 /datum/advclass/sultan/dtwarrior
 	name = "Sultan Warrior"
-	tutorial = "С детства вы росли среди катафрактов Базилевса, с детства вы видели эти сияющие доспехи и стальное оружие, тяжёлая кавалерия воспитала в вас непоколебимый дух. Вы можете - и вы готовы - дать отпор любому, кто покусится на ваши права занимать престол Аль-Ашура."
+	tutorial = "From childhood you grew up among the cataphracts of Basileus, from childhood you saw these shining armor and steel weapons, heavy cavalry brought up an unshakable spirit in you. You can - and you are ready - to repel anyone who encroaches on your rights to occupy the throne of Al-Ashur."
 	outfit = /datum/outfit/job/roguetown/sultan/warrior
 	category_tags = list(CTAG_SULTAN)
 	traits_applied = list(TRAIT_NOBLE, TRAIT_HEAVYARMOR)
@@ -193,7 +193,7 @@
 */
 /datum/advclass/sultan/dtmerchant
 	name = "Wise Dealer"
-	tutorial = "С детства вы росли в среде великих базаров и великих торговцев Зибантии. С детства вы знаете запахи всех сортов специй, умеете отличать качественный шёлк от некачественного, умеете обхитрить своей харизмой любого сомневающегося, способны продавать камни по цене золотых самородков. Вы выстроили вокруг своего престола многочисленные схемы и деловые операции, ваша торговая хватка позволила увеличить поступающие в казну богатства."
+	tutorial = "From childhood, you grew up surrounded by the great bazaars and great merchants of Zibantia. Since childhood, you have known the smells of all types of spices, you know how to distinguish high-quality silk from low-quality silk, you know how to outwit anyone who doubts with your charisma, you are able to sell stones for the price of gold nuggets. You have built numerous schemes and business operations around your throne, and your trading acumen has allowed you to increase the wealth flowing into the treasury."
 	outfit = /datum/outfit/job/roguetown/sultan/merchant
 	category_tags = list(CTAG_SULTAN)
 	noble_income = 400 // Let's go crazy. This is +400 per day for a total of 2400 per round at the end of a day. This is probably equal to doubling passive incomes of the keep.
@@ -231,7 +231,7 @@
 */
 /datum/advclass/sultan/dtwizard
 	name = "Sorcerous Sultan"
-	tutorial = "С детства вы росли в среде волшебников двора Базилевса. Быть может, вы были учеником у кого-то из выживших членов ордена Новолуния - или были удостоены чести учиться в Башне Нок? Так или иначе вы отточили своё мастерство арканной магии до весьма выдающихся успехов... К Вашему сожалению, глубокая связь с арканным мастерством ослабило ваш люкс - и теперь всякая смерть будет необратимой."
+	tutorial = "Since childhood, you grew up among the wizards of Basileus's court. Perhaps you were a student of one of the surviving members of the Order of the Dark Moon - or were honored to study at the Nok Tower? One way or another, you have honed your mastery of arcane magic to very remarkable success... To your regret, the deep connection with arcane mastery has weakened your luxury - and now every death will be irreversible."
 	outfit = /datum/outfit/job/roguetown/sultan/wizard
 	category_tags = list(CTAG_SULTAN)
 	traits_applied = list(TRAIT_NOBLE, TRAIT_ARCYNE, TRAIT_MAGEARMOR, TRAIT_INTELLECTUAL, TRAIT_DNR)
@@ -269,7 +269,7 @@
 */
 /datum/advclass/sultan/dtinbred
 	name = "Inbred Sultan"
-	tutorial = "О горе, горе вам! Вы - дегенерат! Должно быть, сама Иблис прокляла вашу душу, или это лишь результат каких-то куда менее прозаичных событий?.. Так или иначе вы жалки, едва ли ваших сил хватит чтобы сражаться, однако само по себе выживание в вашем положении - признак расположения богов или удачи."
+	tutorial = "Oh woe, woe to you! You are a degenerate! Iblis herself must have cursed your soul, or is this just the result of some much less prosaic events?.. One way or another, you are pitiful, your strength is unlikely to be enough to fight, but survival in itself in your position is a sign of the favor of the gods or good luck."
 	outfit = /datum/outfit/job/roguetown/sultan/inbred
 	category_tags = list(CTAG_SULTAN)
 	traits_applied = list(TRAIT_NOBLE, TRAIT_CRITICAL_WEAKNESS, TRAIT_NORUN, TRAIT_HEAVYARMOR, TRAIT_GOODLOVER)

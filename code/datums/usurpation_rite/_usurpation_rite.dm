@@ -19,10 +19,10 @@
 	var/list/assenters
 	var/phase_timer_id
 	var/started_at = 0
-	var/new_ruler_title = "Grand Duke"
-	var/new_ruler_title_f = "Grand Duchess"
-	var/new_realm_type = "Grand Duchy"
-	var/new_realm_type_short = "Duchy"
+	var/new_ruler_title = "Count"
+	var/new_ruler_title_f = "Countess"
+	var/new_realm_type = "Sovereign County"
+	var/new_realm_type_short = "County"
 	var/mob/living/carbon/human/contester
 	var/contester_timer_id
 	var/contest_time_remaining = 0
@@ -172,7 +172,7 @@
 
 /// Follows the same pattern as coronate_lord() in priest.dm.
 /datum/usurpation_rite/proc/transfer_power()
-	var/old_rulertype = SSticker.rulertype || "Duke"
+	var/old_rulertype = SSticker.rulertype || "Count"
 
 	// Spells that belong to the Grand Duke role — strip from old holders, grant to new one
 	var/static/list/lord_spells = list(
@@ -226,7 +226,7 @@
 			to_chat(invoker, span_notice("The crown materializes at your feet."))
 		crown.forceMove(get_turf(invoker))
 
-	var/realm = SSticker.realm_name || "Azure Peak"
+	var/realm = get_realm_name()
 	// Imitate the text whenever a new Duke joins the game
 	to_world("<b><span class='notice'><span class='big'>[invoker.real_name] is [SSticker.rulertype] of [realm].</span></span></b>")
 

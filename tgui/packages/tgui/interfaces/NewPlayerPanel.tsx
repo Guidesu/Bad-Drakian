@@ -34,7 +34,7 @@ const bonusTooltip =
   'Ready up bonus:\n' +
   '20 mammons in a stashed pouch\n' +
   'Full Hydration & Great Meal bonus\n' +
-  '+1 Triumph';
+  '+1 Point';
 
 export const NewPlayerPanel = () => {
   const { act, data } = useBackend<Data>();
@@ -62,7 +62,7 @@ export const NewPlayerPanel = () => {
             time={{ mode: 'uncontrolled', speed: 10, loop: false }}
             style={{ fontSize: 30, textAlign: 'center' }}
           >
-            Welcome To Twilight Axis
+            Welcome to BAD DRAKIAN
           </TegakiAnimation>
         </Box>
 

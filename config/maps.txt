@@ -27,10 +27,10 @@ map dun_world
 endmap
 
 map rockhill
+	default
 	votable
 endmap
 
 map deserttown
-	default
 	votable
 endmap

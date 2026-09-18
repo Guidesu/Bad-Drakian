@@ -1,5 +1,5 @@
 /*
-	Twilight Axis vampire module include aggregator.
+	BAD DRAKIAN vampire module include aggregator.
 
 	Usage:
 	- Include this file below upstream vampire includes.

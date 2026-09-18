@@ -35,8 +35,8 @@
 
 /datum/objective/vampire
 	name = "conquer"
-	explanation_text = "Put an end to the werewolf menace in Twilight Axis, or unite with them against the forces of the Nine."
-	team_explanation_text = "The feud between werewolves and vampires reaches back to the dawn of time. Will the two factions destroy each other, or find a way to coexist and face the mortals of Twilight Axis together?"
+	explanation_text = "Put an end to the werewolf menace in the realm, or unite with them against the forces of the Nine."
+	team_explanation_text = "The feud between werewolves and vampires reaches back to the dawn of time. Will the two factions destroy each other, or find a way to coexist and face the realm's mortals together?"
 	triumph_count = 5
 
 /datum/objective/vampire/check_completion()

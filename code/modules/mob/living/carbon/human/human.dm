@@ -37,6 +37,7 @@
 		if(user.zone_selected == BODY_ZONE_PRECISE_GROIN)
 			if(get_location_accessible(src, BODY_ZONE_PRECISE_GROIN, skipundies = TRUE))
 				if(!underwear)
+					modular_handle_chastity_middleclick_strip(user)
 					return
 				src.visible_message(span_notice("[src] begins to take off [underwear]..."))
 				if(do_after(user, 30, needhand = 1, target = src))
@@ -336,6 +337,9 @@
 		dat += "<tr><td><hr></td></tr>"
 		dat += "<tr><td><B>Underwear:</B> <A href='?src=[REF(src)];undiesthing=1'>[!underwear ? "Nothing" : "Remove"]</A></td></tr>"
 		dat += "<tr><td><B>Legwear:</B> <A href='?src=[REF(src)];legwearsthing=1'>[!legwear_socks ? "Nothing" : "Remove"]</A></td></tr>"
+		var/chastity_row = modular_strippanel_chastity_row()
+		if(chastity_row)
+			dat += chastity_row
 #endif
 
 	dat += {"</table>"}
@@ -1156,7 +1160,7 @@
 			grant_language(language_type)
 		language_holder.selected_default_language = selected_default_language
 
-	return TRUEи
+	return TRUEin
 
 /mob/living/carbon/human/proc/refresh_live_vocal_preferences()
 	if(!client?.prefs)

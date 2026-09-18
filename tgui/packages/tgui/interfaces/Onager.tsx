@@ -35,26 +35,26 @@ export const Onager = () => {
     max_distance,
   } = data;
 
-  // Стили для квадратных кнопок
+  //Styles for square buttons
   const squareBtnStyle: CSSProperties = {
     width: '32px',
     height: '32px',
     padding: '0',
     textAlign: 'center',
-    lineHeight: '30px', // Центровка иконки по вертикали
+    lineHeight: '30px', //Center icon vertically
   };
 
   return (
     <Window
       title="Onager"
       width={400}
-      height={380} // Чуть уменьшил высоту, так как убрали ХП
+      height={380} //Slightly reduced height since HP was removed
       theme="necro"
     >
       <Window.Content>
         <Stack vertical fill>
           
-          {/* СТАТУС */}
+          {/* STATUS*/}
           <Section title="Status">
             <Stack fill justify="space-around">
               <Box textAlign="center">
@@ -73,11 +73,11 @@ export const Onager = () => {
             </Stack>
           </Section>
 
-          {/* НАВЕДЕНИЕ */}
+          {/* AIM*/}
           <Section title="Targeting">
             <Stack fill>
               
-              {/* Левая часть: Кнопки направления */}
+              {/* Left side: Directional buttons*/}
               <Stack.Item width="40%">
                 <Box textAlign="center" mb={1} color="label" fontSize="0.9em">
                   Direction
@@ -113,7 +113,7 @@ export const Onager = () => {
                 </Stack>
               </Stack.Item>
 
-              {/* Правая часть: Дистанция */}
+              {/* Right side: Distance*/}
               <Stack.Item grow={1} ml={2}>
                 <Stack vertical height="100%" justify="center">
                   <Box mb={1} textAlign="center">
@@ -135,12 +135,12 @@ export const Onager = () => {
             </Stack>
           </Section>
 
-          {/* ДЕЙСТВИЯ */}
+          {/* ACTIONS*/}
           <Section>
             <Stack justify="space-between">
               
               <Box width="65%">
-                {/* Если не готов - показываем кнопку взвода */}
+                {/* If not ready - show the cocking button*/}
                 {!ready ? (
                   <Button
                     icon="cog"
@@ -151,7 +151,7 @@ export const Onager = () => {
                     onClick={() => act('crank')}
                   />
                 ) : (
-                  // Если готов - показываем огонь
+                  //If ready - show fire
                   <Button
                     icon="bomb"
                     content="FIRE!"

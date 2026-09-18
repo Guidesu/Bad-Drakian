@@ -11,7 +11,7 @@
 	outfit = /datum/outfit/job/roguetown/harem
 	display_order = JDO_LADY
 	advclass_cat_rolls = list(CTAG_HAREM = 20)
-	tutorial = "Вы — один из трёх фаворитов султанского гарема. Ваше место при дворе держится не на крови и гербах, а на близости к трону, умении слышать желания правителя, хранить тайны и выживать среди интриг. Вряд ли вы выбирали себе эту жизнь, но она может подарить вам роскошь и власть, о которых другие могут только мечтать. С другой стороны, она же может обернуться для вас тюрьмой, в которой вы будете заперты, пока султан не решит иначе."
+	tutorial = "You are one of the three favorites of the Sultan's harem. Your place at court rests not on blood and coats of arms, but on proximity to the throne, the ability to hear the desires of the ruler, keep secrets and survive amid intrigue. It's unlikely you chose this life, but it can give you luxury and power that others can only dream of. On the other hand, it can turn into a prison for you, in which you will be locked until the Sultan decides otherwise."
 	give_bank_account = TRUE
 	min_pq = 3
 	max_pq = null
@@ -28,7 +28,7 @@
 
 /datum/advclass/harem/courtier
 	name = "Silken Courtier"
-	tutorial = "Вы — самая приближённая фигура султанского двора, возвышенная после рождения признанного наследника престола. Вы должны быть рядом, слышать то, что нельзя доверить советникам, и внимательно следить, чтобы ваше чадо было готово к унаследованию трона, ведь, скорее всего, других фаворитов мучает зависть из-за вашего положения и всегда может случится так, что наследник не доживет до получения власти."
+	tutorial = "You are the closest figure of the Sultan’s court, elevated after the birth of the recognized heir to the throne. You must be nearby, hear what cannot be entrusted to advisers, and carefully monitor that your child is ready to inherit the throne, because, most likely, other favorites are tormented by envy because of your position and it can always happen that the heir does not live to receive power."
 	outfit = /datum/outfit/job/roguetown/harem/courtier
 	traits_applied = list(TRAIT_SEEPRICES, TRAIT_NOBLE)
 	category_tags = list(CTAG_HAREM)
@@ -80,7 +80,7 @@
 
 /datum/advclass/harem/diplomat
 	name = "Diplomatic Concubine"
-	tutorial = "Вы — дворянин из чужого государства, отправленный в султанский гарем как живой договор, залог мира или изысканный политический дар. Ваши одежды, манеры и акцент напоминают всем, что за вами стоит другая земля, чужой двор и интересы тех, кто рассчитывает на вашу близость к султану."
+	tutorial = "You are a nobleman from a foreign state, sent to the Sultan’s harem as a living treaty, a pledge of peace or an exquisite political gift. Your clothes, manners and accent remind everyone that behind you stands another land, a foreign court and the interests of those who count on your closeness to the Sultan."
 	outfit = /datum/outfit/job/roguetown/harem/diplomat
 	traits_applied = list(TRAIT_SEEPRICES, TRAIT_NOBLE, TRAIT_CICERONE)
 	category_tags = list(CTAG_HAREM)
@@ -118,7 +118,7 @@
 /datum/outfit/job/roguetown/harem/diplomat/pre_equip(mob/living/carbon/human/H)
 	. = ..()
 	var/origin_style = get_harem_origin_style(H)
-	switch(origin_style) // Надо будет дать более разнообразную одежду в зависимости от происхождения, но у меня уже сил не хватает
+	switch(origin_style) //It will be necessary to give more varied clothes depending on the origin, but I already don’t have enough strength
 		if("desert")
 
 			if(should_wear_femme_clothes(H))
@@ -219,7 +219,7 @@
 
 /datum/advclass/harem/schemer
 	name = "Perfumed Favorite"
-	tutorial = "Вас держат близко к покоям султана ради ласки, утешения, музыки и тихих ночных разговоров. Может быть, в один из таких «ночных разговоров», вы сможете зачать ребёнка, что удостоится заполучить свое место в династии султана, а может и вовсе, стать наследником, возвысив вас."
+	tutorial = "You are kept close to the Sultan’s chambers for the sake of affection, consolation, music and quiet night conversations. Maybe in one of these “night conversations” you will be able to conceive a child who will be honored to get your place in the sultan’s dynasty, and maybe even become an heir, elevating you."
 	outfit = /datum/outfit/job/roguetown/harem/schemer
 	traits_applied = list(TRAIT_BEAUTIFUL, TRAIT_GOODLOVER, TRAIT_NUTCRACKER)
 	category_tags = list(CTAG_HAREM)
@@ -296,7 +296,7 @@
 
 /datum/advclass/harem/keeper
 	name = "Harem Keeper"
-	tutorial = "Вы знаете, какое вино подать султану после тяжёлого совета, какую мазь держать рядом с ложем и как успокоить султанский гнев. Вы не просто обслуживаете султана, вы заботитесь о нём, и от вас зависит его здоровье и настроение. Также вам стоит следить и за состоянием других фаворитов, ведь от этого зависит атмосфера в гареме и расположение султана к вам."
+	tutorial = "You know what wine to serve to the Sultan after difficult advice, what ointment to keep next to the bed and how to calm the Sultan’s anger. You don’t just serve the Sultan, you take care of him, and his health and mood depend on you. You should also monitor the condition of other favorites, because the atmosphere in the harem and the Sultan’s disposition towards you depend on this."
 	outfit = /datum/outfit/job/roguetown/harem/keeper
 	traits_applied = list(TRAIT_CICERONE, TRAIT_HOMESTEAD_EXPERT, TRAIT_KEENEARS)
 	category_tags = list(CTAG_HAREM)
@@ -347,7 +347,7 @@
 
 /datum/advclass/harem/augur
 	name = "Bone Augur"
-	tutorial = "Вы попали в султанский гарем не из-за красоты или покладистого нрава. Вы умеете читать судьбу по костям, игральным кубикам и кофейной гуще, видите дурные знаки раньше других и знаете, какие слова сказать султану, когда ночь становится слишком тихой."
+	tutorial = "You did not end up in the Sultan's harem because of your beauty or easy-going disposition. You know how to read fate by dice, dice and coffee grounds, you see bad signs before others and you know what words to say to the Sultan when the night gets too quiet."
 	outfit = /datum/outfit/job/roguetown/harem/augur
 	traits_applied = list(TRAIT_KEENEARS, TRAIT_CICERONE)
 	category_tags = list(CTAG_HAREM)

@@ -1,6 +1,6 @@
 /datum/advclass/lost_grenzel/lost_halberdier
 	name = "Lost Halberdier"
-	tutorial = "С детства вы отличались немалой силой и немалой выносливостью, быть может именно поэтому вы выжили в песках Зибантии? В Аль-Ашур вы прибываете как опытный владелец копья и алебарды. У вас почти нет снабжения - и единственное на что приходится рассчитывать, так это на грабёж местного населения."
+	tutorial = "Since childhood, you have been distinguished by considerable strength and considerable endurance, perhaps that is why you survived in the sands of Zybanthia? You arrive in Al Ashur as an experienced spear and halberd wielder. You have almost no supplies - and the only thing you can count on is robbing the local population."
 	allowed_sexes = list(MALE, FEMALE)
 	
 	outfit = /datum/outfit/job/roguetown/lost_grenzel/lost_halberdier

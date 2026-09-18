@@ -7,14 +7,14 @@
 	max_integrity = ARMOR_INT_CHEST_LIGHT_MASTER
 
 /datum/advclass/rih_al_sahra
-	name = "Rih-Al-Sahra" // Что означает "Ветер Пустыни"
-	tutorial = "«... Они, что были сломлены однажды, сломились вновь под ударами судьбы. Вернейшие из воинов Султана - стали его злейшими врагами ...»"
+	name = "Rih-Al-Sahra" //What does "Desert Wind" mean
+	tutorial = "“...They, who were once broken, broke again under the blows of fate. The most faithful of the Sultan’s warriors became his worst enemies...”"
 	allowed_sexes = list(MALE, FEMALE)
 	outfit = /datum/outfit/job/roguetown/freeman/rih_al_sahra
 	category_tags = list(CTAG_FREEMAN)
 	maximum_possible_slots = 3
 	traits_applied = list(TRAIT_FIREARMS_MARKSMAN, TRAIT_STEELHEARTED)
-	classes = list("Jannisary Deserter" = "Вы предали своего собственного Султана ради свободы своего народа. Вы были стрелком - и стрелком отличным.", "Desert Raider" = "Вы грабили караваны Султана ещё задолго до восстания шейхов, однако теперь у вас есть удачная возможность пограбить ещё - и за праведное дело, кто-же от такого отказывается?")
+	classes = list("Jannisary Deserter" = "You betrayed your own Sultan for the sake of the freedom of your people. You were a shooter - and an excellent shooter.", "Desert Raider" = "You robbed the Sultan's caravans long before the uprising of the sheikhs, but now you have a good opportunity to rob more - and for a righteous cause, who refuses that?")
 	subclass_stats = list(
 		STATKEY_STR = 1,
 		STATKEY_WIL = 2,
@@ -49,7 +49,7 @@
 /datum/outfit/job/roguetown/freeman/rih_al_sahra/pre_equip(mob/living/carbon/human/H)
 	..()
 	if (!istype(H.patron, /datum/patron/inhumen/matthios))
-		to_chat(H, span_warning("Борясь за свободу народа - или грабя богачей - я неминуемо стал исповедовать Аль-Маттиоса."))
+		to_chat(H, span_warning("Fighting for the freedom of the people - or robbing the rich - I inevitably began to profess Al-Matthios."))
 		H.set_patron(/datum/patron/inhumen/matthios)
 	neck = /obj/item/clothing/neck/roguetown/coif
 	shoes = /obj/item/clothing/shoes/roguetown/boots/leather/reinforced

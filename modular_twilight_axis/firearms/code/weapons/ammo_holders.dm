@@ -1,6 +1,6 @@
 /obj/item/quiver/twilight_bullet
 	name = "ammo bag"
-	desc = "Небольшой мешочек, в котором можно хранить пули для огнестрельного оружия."
+	desc = "A small pouch in which you can store bullets for firearms."
 	icon = 'modular_twilight_axis/firearms/icons/ammo.dmi'
 	icon_state = "pouch1"
 	item_state = "pouch1"
@@ -108,7 +108,7 @@
 
 /obj/item/quiver/twilight_bullet/cannonball
 	name = "cannonball bag"
-	desc = "Небольшой мешочек, в котором можно хранить ядра и картечь."
+	desc = "A small pouch in which you can store cannonballs and buckshot."
 	icon_state = "cpouch1"
 	item_state = "cpouch1"
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_CLOAK|ITEM_SLOT_BELT
@@ -147,7 +147,7 @@
 
 /obj/item/quiver/twilight_bullet/runicbag
 	name = "pharetra"
-	desc = "Кожаный подсумок, предназначенный для хранения рунических пуль. Нанесенная на металл замка руна привязывается к хранящимся внутри боеприпасам, и при активации возвращает уже отстреленные рунические пули в хранилище для повторного использования."
+	desc = "A leather pouch designed for storing rune bullets. The rune applied to the metal of the lock binds to the ammunition stored inside, and upon activation returns already fired rune bullets to the storage for reuse."
 	icon_state = "runebag"
 	item_state = "runebag"
 	max_storage = 6
@@ -208,7 +208,7 @@
 
 /obj/item/quiver/twilight_bullet/paper
 	name = "cartridge bag"
-	desc = "Поясная сумка для хранения бумажных патронов. Благодаря легко открывающемуся клапану и широкой горловине, весьма удобна для перезарядки одной рукой."
+	desc = "A belt pouch for storing paper cartridges. Thanks to the easily opening flap and wide mouth, it is very convenient for reloading with one hand."
 	icon_state = "merc_pouch1"
 	item_state = "merc_pouch1"
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_CLOAK|ITEM_SLOT_BELT

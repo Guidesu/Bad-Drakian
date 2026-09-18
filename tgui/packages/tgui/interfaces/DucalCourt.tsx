@@ -20,7 +20,7 @@ import { Window } from '../layouts';
 
 type StatusTone = 'good' | 'warning' | 'bad' | 'neutral';
 type ViewId = 'overview' | 'commands' | 'succession' | 'laws';
-type CourtLocale = 'duchy' | 'kingdom' | 'sultanate';
+type CourtLocale = 'county' | 'duchy' | 'kingdom' | 'sultanate';
 
 type StatusCard = {
   id: string;
@@ -147,82 +147,81 @@ type Data = {
 };
 
 const REALM_TYPES_RU: Record<string, string> = {
-  'Grand Duchy': 'Великое Герцогство',
-  Duchy: 'Герцогство',
-  Kingdom: 'Королевство',
-  Sultanate: 'Султанат',
-  Republic: 'Республика',
-  Magocracy: 'Магократия',
-  'Sovereign Order': 'Суверенный Орден',
-  Dominion: 'Доминион',
-  Ordinate: 'Ординат',
-  'Prince-Bishopric': 'Князь-Епископство',
-  Realm: 'Держава',
+  'Grand Duchy': 'Grand Duchy',
+  Duchy: 'Duchy',
+  Kingdom: 'Kingdom',
+  Sultanate: 'Sultanate',
+  Republic: 'Republic',
+  Magocracy: 'Magocracy',
+  'Sovereign Order': 'Sovereign Order',
+  Dominion: 'Dominion',
+  Ordinate: 'Ordinat',
+  'Prince-Bishopric': 'Prince-Bishopric',
+  Realm: 'State',
 };
 
 const REALM_NAMES_RU: Record<string, string> = {
-  'Twilight Axis': 'Сумеречная Ось',
-  Enigma: 'Энигма',
-  'Al-Ashur': 'Аль-Ашур',
-  'Azure Peak': 'Лазурный Пик',
+  Enigma: 'Enigma',
+  'Al-Ashur': 'Al-Ashur',
+  'Azure Peak': 'Azure Peak',
 };
 
 const RITE_NAMES_RU: Record<string, string> = {
-  None: 'Нет',
-  'Usurpation Rite': 'Ритуал узурпации',
-  'Rite of Solar Succession': 'Ритуал Солнечного Наследования',
-  'Rite of Lunar Ascension': 'Ритуал Лунного Восхождения',
-  'Rite of Martial Supercession': 'Ритуал Воинского Превосходства',
-  'Rite of Golden Accord': 'Ритуал Золотого Согласия',
-  'Rite of Sacred Supercession': 'Ритуал Святого Превосходства',
-  'Rite of Progressive Dominion': 'Ритуал Прогрессивного Владычества',
-  'Rite of Popular Acclaim': 'Ритуал Народного Признания',
-  'Rite of Psydonian Tribunal': 'Ритуал Псайдонитского Трибунала',
+  None: 'No',
+  'Usurpation Rite': 'Usurpation Ritual',
+  'Rite of Solar Succession': 'Solar Inheritance Ritual',
+  'Rite of Lunar Ascension': 'Lunar Ascension Ritual',
+  'Rite of Martial Supercession': 'Martial Supremacy Ritual',
+  'Rite of Golden Accord': 'Golden Concord Ritual',
+  'Rite of Sacred Supercession': 'Holy Supremacy Ritual',
+  'Rite of Progressive Dominion': 'Progressive Dominion Ritual',
+  'Rite of Popular Acclaim': 'Popular Recognition Ritual',
+  'Rite of Psydonian Tribunal': 'Psidonite Tribunal Ritual',
 };
 
 const RITE_STATUS_BASE_RU: Record<string, string> = {
-  'No active succession.': 'Наследование не идёт.',
-  'A claim is active.': 'Притязание на трон активно.',
+  'No active succession.': 'Inheritance does not proceed.',
+  'A claim is active.': 'Claim to the throne is active.',
 };
 
 const RITE_STATUS_NAMES_RU: Record<string, string> = {
-  'Rite of Solar Succession': 'Ритуал Солнечного Наследования',
-  'Rite of Lunar Ascension': 'Ритуал Лунного Восхождения',
-  'Rite of Martial Supercession': 'Ритуал Воинского Превосходства',
-  'Golden Accord': 'Золотое Согласие',
-  'Rite of Sacred Supercession': 'Ритуал Святого Превосходства',
-  'Rite of Progressive Dominion': 'Ритуал Прогрессивного Владычества',
-  'Rite of Popular Acclaim': 'Ритуал Народного Признания',
-  'Psydonian Tribunal': 'Псайдонитский Трибунал',
+  'Rite of Solar Succession': 'Solar Inheritance Ritual',
+  'Rite of Lunar Ascension': 'Lunar Ascension Ritual',
+  'Rite of Martial Supercession': 'Martial Supremacy Ritual',
+  'Golden Accord': 'Golden Concord',
+  'Rite of Sacred Supercession': 'Holy Supremacy Ritual',
+  'Rite of Progressive Dominion': 'Progressive Dominion Ritual',
+  'Rite of Popular Acclaim': 'Popular Recognition Ritual',
+  'Psydonian Tribunal': 'Psidonite Tribunal',
 };
 
 const RITE_STATUS_GROUPS_RU: Record<string, string> = {
-  nobles: 'дворян',
-  warriors: 'воинов',
-  burghers: 'бюргеров',
-  mages: 'магов',
-  voices: 'голосов',
+  nobles: 'nobles',
+  warriors: 'warriors',
+  burghers: 'burghers',
+  mages: 'of mages',
+  voices: 'votes',
 };
 
 const RITE_STATUS_COUNCILS_RU: Record<string, string> = {
-  'The Council of Lords': 'Совет Лордов подтвердил',
-  'The Council of Magos': 'Совет Магов подтвердил',
-  'The Council of Arms': 'Совет Воинов подтвердил',
-  'The Council of Burghers': 'Совет Бюргеров подтвердил',
-  'The Council of the Enlightened': 'Совет Просвещённых подтвердил',
-  'The faithful': 'Верующие подтвердили',
-  'The people': 'Народ подтвердил',
-  'The Inquisition': 'Инквизиция подтвердила',
+  'The Council of Lords': 'The Council of Lords confirmed',
+  'The Council of Magos': 'The Council of Mages confirmed',
+  'The Council of Arms': 'The Council of Warriors confirmed',
+  'The Council of Burghers': 'The Council of Burghers confirmed',
+  'The Council of the Enlightened': 'The Council of the Enlightened confirmed',
+  'The faithful': 'The Faithful confirmed',
+  'The people': 'The People confirmed',
+  'The Inquisition': 'The Inquisition confirmed',
 };
 
 const RITE_STATUS_TAILS_RU: Record<string, string> = {
-  "The Sun's judgment approaches.": 'Грядёт суд Солнца.',
-  "The moon's judgment approaches.": 'Грядёт суд луны.',
-  "Ravox's judgment approaches.": 'Грядёт суд Равокса.',
-  'The Accord approaches.': 'Грядёт Согласие.',
-  'The future approaches.': 'Грядёт будущее.',
-  'The will of the people approaches.': 'Грядёт воля народа.',
-  "The Tribunal's verdict approaches.": 'Грядёт вердикт Трибунала.',
+  "The Sun's judgment approaches.": 'The judgment of the Sun is coming.',
+  "The moon's judgment approaches.": 'The judgment of the Moon is coming.',
+  "Ravox's judgment approaches.": 'The judgment of Ravox is coming.',
+  'The Accord approaches.': 'Consent is coming.',
+  'The future approaches.': 'The future is coming.',
+  'The will of the people approaches.': 'The will of the people is coming.',
+  "The Tribunal's verdict approaches.": "The Tribunal's verdict is coming.",
 };
 
 const GATHERING_STATUS_RE =
@@ -240,14 +239,14 @@ const translateRiteStatus = (status?: string | null) => {
   if (gathering) {
     const riteName = RITE_STATUS_NAMES_RU[gathering[1]] || gathering[1];
     const group = RITE_STATUS_GROUPS_RU[gathering[4]] || gathering[4];
-    return `Идёт ${riteName}. Согласие выразили ${gathering[2]} из ${gathering[3]} ${group}.`;
+    return `${riteName} is in progress. Consent was expressed by ${gathering[2]} from ${gathering[3]} ${group}.`;
   }
   const contesting = status.match(CONTESTING_STATUS_RE);
   if (contesting) {
     const council = RITE_STATUS_COUNCILS_RU[contesting[1]];
     const tail = RITE_STATUS_TAILS_RU[contesting[3]];
     if (council && tail) {
-      return `${council} притязание ${contesting[2]}. ${tail}`;
+      return `${council}'s claim ${contesting[2]}. ${tail}`;
     }
   }
   return status;
@@ -267,280 +266,291 @@ const makeCourtTexts = (flavor: {
   window_title: flavor.court,
   subtitle: flavor.subtitle,
   sections: {
-    status: 'Положение двора',
-    main: 'Дела двора',
-    tools: 'Инструменты правителя',
-    succession: 'Наследование и узурпация',
-    desk: 'Стол писаря',
-    overview: 'Обзор двора',
+    status: 'Court position',
+    main: 'Court affairs',
+    tools: "Ruler's tools",
+    succession: 'Inheritance and usurpation',
+    desk: "Scribe's desk",
+    overview: 'Court overview',
     commands: flavor.commands,
-    public_writs: 'Публичные грамоты',
-    governance: 'Управление',
-    law_tools: 'Законы',
-    decree_tools: 'Указы',
-    law_decree_tools: 'Законы и указы',
-    quick_tools: 'Быстрые действия',
-    voice_commands: 'Голосовые команды',
+    public_writs: 'Public charters',
+    governance: 'Administration',
+    law_tools: 'Laws',
+    decree_tools: 'Decrees',
+    law_decree_tools: 'Laws and decrees',
+    quick_tools: 'Quick actions',
+    voice_commands: 'Voice commands',
   },
   composer: {
-    placeholder: 'Составьте объявление, указ или новый закон...',
-    publish_announcement: 'Огласить объявление',
-    publish_decree: 'Издать указ',
-    publish_law: 'Принять закон',
-    law_number: 'Закон №',
-    remove_law: 'Убрать закон',
-    clear_laws: 'Отменить все законы',
-    clear_decrees: 'Отменить все указы',
-    empty_text: 'Сначала напишите текст.',
+    placeholder: 'Draft an announcement, decree, or new law...',
+    publish_announcement: 'Proclaim the announcement',
+    publish_decree: 'Issue decree',
+    publish_law: 'Adopt law',
+    law_number: 'Law No.',
+    remove_law: 'Remove law',
+    clear_laws: 'Revoke all laws',
+    clear_decrees: 'Revoke all decrees',
+    empty_text: 'First write the text.',
   },
   labels: {
-    ruler: 'Правитель',
-    regent: 'Регент',
-    claimant: 'Претендент',
-    contester: 'Оспаривающий',
-    supporters: 'Сторонники',
-    time_remaining: 'Осталось времени',
-    rite_status: 'Состояние ритуала',
-    no_regent: 'Нет',
-    none: 'Нет',
-    viewer: 'Ваше положение',
-    requirements: 'Требования',
-    charter_ledger: 'Реестр грамот',
+    ruler: 'Ruler',
+    regent: 'Regent',
+    claimant: 'Claimant',
+    contester: 'Challenger',
+    supporters: 'Supporters',
+    time_remaining: 'Time remaining',
+    rite_status: 'Ritual status',
+    no_regent: 'No',
+    none: 'No',
+    viewer: 'Your status',
+    requirements: 'Requirements',
+    charter_ledger: 'Register of charters',
   },
   compact: {
-    collapse_tooltip: 'Свернуть в компактную сводку двора.',
-    restore_tooltip: 'Развернуть полный вид двора с панелями команд.',
-    restore_button: 'Развернуть двор',
-    fullscreen_tooltip: 'Развернуть двор на весь экран.',
-    windowed_tooltip: 'Вернуть оконный режим.',
+    collapse_tooltip: 'Collapse into a compact court summary.',
+    restore_tooltip: 'Expand full court view with command panels.',
+    restore_button: 'Expand the court',
+    fullscreen_tooltip: 'Expand the court to full screen.',
+    windowed_tooltip: 'Return to windowed mode.',
   },
   viewer_statuses: {
-    'Ducal Authority': flavor.authority,
-    'Crown Bearer': 'Носитель короны',
-    Subject: 'Подданный',
-    Observer: 'Наблюдатель',
+    'Sovereign Authority': flavor.authority,
+    'Crown Bearer': 'Crown bearer',
+    Subject: 'Subject',
+    Observer: 'Observer',
   },
   views: {
     overview: {
-      label: 'Обзор двора',
-      desc: 'Показать текущее состояние двора без команд.',
+      label: 'Court overview',
+      desc: 'Show current court status without commands.',
     },
     commands: {
-      label: 'Команды',
-      desc: 'Открыть грамоты, управление и инструменты законов и указов.',
+      label: 'Commands',
+      desc: 'Open charters, management, and tools for laws and decrees.',
     },
     succession: {
-      label: 'Наследование',
-      desc: 'Действующий ритуал, претенденты, сторонники и действия наследования.',
+      label: 'Succession',
+      desc: 'Current ritual, claimants, supporters, and succession actions.',
     },
     laws: {
-      label: 'Законы',
-      desc: 'Открыть меню законов напрямую.',
+      label: 'Laws',
+      desc: 'Open the laws menu directly.',
     },
   },
   actions: {
     make_announcement: {
-      label: 'Объявление',
-      desc: 'Огласить весть всем землям.',
+      label: 'Announcement',
+      desc: 'Announce the news to all lands.',
     },
     revise_charter: {
-      label: 'Пересмотреть грамоты',
-      desc: 'Открыть реестр грамот.',
+      label: 'Review charters',
+      desc: 'Open the charter registry.',
     },
     issue_decree: {
-      label: 'Издать указ',
+      label: 'Issue decree',
       desc: flavor.decreeDesc,
     },
     set_laws: {
-      label: 'Установить законы',
-      desc: 'Переписать законы земель.',
+      label: 'Set laws',
+      desc: 'Rewrite the laws of the lands.',
     },
     set_taxes: {
-      label: 'Установить налоги',
-      desc: 'Изменить подати и подушные сборы.',
+      label: 'Set taxes',
+      desc: 'Change levies and poll taxes.',
     },
     declare_outlaw: {
-      label: 'Объявить вне закона',
-      desc: 'Объявить подданного вне закона или помиловать.',
+      label: 'Declare',
+      desc: 'an outlaw Declare a subject an outlaw or pardon.',
     },
     change_colors: {
-      label: 'Сменить цвета',
+      label: 'Change colors',
       desc: flavor.colorsDesc,
     },
     summon_crown: {
-      label: 'Призвать корону',
-      desc: 'Вернуть корону, если законы позволяют.',
+      label: 'Summon the crown',
+      desc: 'Return the crown if the laws allow.',
     },
     summon_key: {
-      label: 'Призвать ключ',
+      label: 'Summon the key',
       desc: flavor.keyDesc,
     },
     restore_charter: {
-      label: 'Восстановить грамоты',
-      desc: 'Открыть грамоты и восстановить приостановленные.',
+      label: 'Restore charters',
+      desc: 'Open charters and restore suspended ones.',
     },
     purge_laws: {
-      label: 'Отменить законы',
-      desc: 'Удалить все действующие законы.',
+      label: 'Revoke laws',
+      desc: 'Delete all active laws.',
     },
     purge_decrees: {
-      label: 'Отменить указы',
-      desc: 'Удалить все указы.',
+      label: 'Revoke decrees',
+      desc: 'Delete all decrees.',
     },
     become_regent: {
-      label: 'Стать регентом',
-      desc: 'Принять регентство в отсутствие правителя.',
+      label: 'Become regent',
+      desc: 'Assume the regency in the absence of the ruler.',
     },
     ascend: {
-      label: 'Я восхожу',
-      desc: 'Начать ритуал наследования.',
+      label: 'I ascend',
+      desc: 'Begin the inheritance ritual.',
     },
     assent: {
-      label: 'Я согласен',
-      desc: 'Поддержать притязание, стоя у трона.',
+      label: 'I agree',
+      desc: 'Support the claim while standing at the throne.',
     },
     abdicate: {
-      label: 'Я отрекаюсь',
-      desc: 'Уступить трон и перейти сразу к оспариванию.',
+      label: 'I abdicate',
+      desc: 'Give up the throne and proceed immediately to contesting.',
     },
     stop_ascent: {
-      label: 'Остановить восхождение',
-      desc: 'Сесть на трон и прервать наследование.',
+      label: 'Stop the ascension',
+      desc: 'Sit on the throne and interrupt the inheritance.',
     },
   },
   requirements: {
-    Crown: 'Корона',
-    'Broadcast Ready': 'Магия готова',
-    'Ruler/Regent': 'Правитель/Регент',
-    'Ruling Office': 'Правящий сан',
-    Throat: 'Глотка',
-    'Noble Blood': 'Благородная кровь',
-    'Regency Office': 'Сан регента',
-    'Eligible Rite': 'Доступный ритуал',
-    'Active Gathering': 'Идёт сбор',
-    'Near Throne': 'У трона',
-    Contesting: 'Оспаривание',
-    Seated: 'На троне',
+    Crown: 'Crown',
+    'Broadcast Ready': 'Magic is ready',
+    'Ruler/Regent': 'Ruler/Regent',
+    'Ruling Office': 'Reigning office',
+    Throat: 'Throat',
+    'Noble Blood': 'Noble blood',
+    'Regency Office': 'Regency rank',
+    'Eligible Rite': 'Available ritual',
+    'Active Gathering': 'Collection in progress',
+    'Near Throne': 'At the throne',
+    Contesting: 'Contesting',
+    Seated: 'On the throne',
   },
   status_cards: {
     throne_status: {
-      label: 'Трон',
+      label: 'Throne',
       values: {
-        Occupied: 'Занят',
-        Empty: 'Пуст',
+        Occupied: 'Occupied',
+        Empty: 'Empty',
       },
       details: {
-        'No one is seated.': 'Никто не восседает.',
-        'Unknown occupant': 'Неизвестный',
+        'No one is seated.': 'No one is seated.',
+        'Unknown occupant': 'Unknown',
       },
     },
     crown_required: {
-      label: 'Власть короны',
+      label: 'Crown power',
       values: {
-        'Crown Worn': 'Корона надета',
-        'Crown Missing': 'Короны нет',
+        'Crown Worn': 'Crown worn',
+        'Crown Missing': 'No crown',
       },
       details: {
-        'Ducal commands are unlocked by the crown.': flavor.crownDetail,
+        'Sovereign commands are unlocked by the crown.': flavor.crownDetail,
         'Most commands require the crown.':
-          'Большинство команд требуют корону.',
+          'Most commands require a crown.',
       },
     },
     active_rite: {
-      label: 'Действующий ритуал',
+      label: 'Active ritual',
       values: {
-        None: 'Нет',
-        Gathering: 'Сбор голосов',
-        Contesting: 'Оспаривание',
-        'Contesting - Paused': 'Оспаривание — пауза',
-        Resolution: 'Разрешение',
+        None: 'No',
+        Gathering: 'Gathering votes',
+        Contesting: 'Contesting',
+        'Contesting - Paused': 'Dispute — pause',
+        Resolution: 'Resolution',
       },
       details: {
-        None: 'Нет',
+        None: 'No',
       },
     },
     realm_stability: {
-      label: 'Стабильность земель',
+      label: 'Land stability',
       values: {
-        Stable: 'Спокойствие',
-        'Claim Gathering': 'Сбор притязания',
-        Contested: 'Оспаривается',
-        'Rebel Victory': 'Победа бунтарей',
-        'Open Rebellion': 'Открытый бунт',
+        Stable: 'Calm',
+        'Claim Gathering': 'Gathering claims',
+        Contested: 'Contested',
+    'Rebel Victory': "Rebels' victory",
+        'Open Rebellion': 'Open rebellion',
       },
       details: {
-        'No open revolt in the realm.': 'Открытого бунта в землях нет.',
+        'No open revolt in the realm.': 'No open rebellion in the lands.',
         'The commonfolk are in open revolt.':
-          'Простолюдины подняли открытый бунт.',
-        'The people have seized the throne.': 'Народ захватил трон.',
+          'Commoners have raised an open rebellion.',
+        'The people have seized the throne.': 'The people have seized the throne.',
       },
     },
     current_ruler: {
-      label: 'Правитель',
+      label: 'Ruler',
       values: {
-        None: 'Нет',
+        None: 'No',
       },
       details: {
-        'No active regent.': 'Регента нет.',
-        'Regent: {name}': 'Регент: {name}',
+        'No active regent.': 'No regent.',
+        'Regent: {name}': 'Regent: {name}',
       },
     },
   },
-  rite_steps: ['Сбор голосов', 'Оспаривание', 'Разрешение'],
+  rite_steps: ['Gathering votes', 'Contesting', 'Resolution'],
   voice_command_descriptions: {
-    'Make Announcement': 'Огласить весть всем землям.',
-    'Revise Charter': 'Открыть реестр грамот.',
+    'Make Announcement': 'Announce the news to all lands.',
+    'Revise Charter': 'Open the charter registry.',
     'Make Decree': flavor.decreeDesc,
-    'Purge Decrees': 'Удалить все указы.',
-    'Set Laws': 'Открыть полное меню законов.',
-    'Make Law': 'Принять один закон голосом.',
-    'Remove Law (number)': 'Убрать закон с указанным номером.',
-    'Purge Laws': 'Удалить все действующие законы.',
-    'Declare Outlaw': 'Объявить подданного вне закона или помиловать.',
-    'Set Taxes': 'Изменить подати и подушные сборы.',
+    'Purge Decrees': 'Delete all decrees.',
+    'Set Laws': 'Open full law menu.',
+    'Make Law': 'Pass one law by vote.',
+    'Remove Law (number)': 'Remove the law with the specified number.',
+    'Purge Laws': 'Delete all active laws.',
+    'Declare Outlaw': 'an outlaw Declare a subject an outlaw or pardon.',
+    'Set Taxes': 'Change levies and poll taxes.',
     'Change Colors': flavor.colorsDesc,
-    'Become Regent': 'Принять регентство в отсутствие правителя.',
+    'Become Regent': 'Assume the regency in the absence of the ruler.',
     'Summon Crown / Summon Key': flavor.itemsDesc,
-    'I Ascend': 'Начать ритуал наследования.',
-    'I Assent': 'Поддержать притязание, стоя у трона.',
-    'I Abdicate': 'Уступить трон и перейти сразу к оспариванию.',
-    'Stop Ascent': 'Сесть на трон и прервать наследование.',
+    'I Ascend': 'Begin the inheritance ritual.',
+    'I Assent': 'Support the claim while standing at the throne.',
+    'I Abdicate': 'Give up the throne and proceed immediately to contesting.',
+    'Stop Ascent': 'Sit on the throne and interrupt the inheritance.',
   },
 });
 
 const COURT_TEXT_PACKS: Record<CourtLocale, CourtTexts> = {
+  county: makeCourtTexts({
+    court: 'Sovereign court',
+    subtitle: 'Rule an independent realm from its throne',
+    authority: 'Sovereign power',
+    commands: "The ruler's commands",
+    decreeDesc: 'Proclaim a sovereign decree.',
+    keyDesc: "Summon the ruler's key.",
+    colorsDesc: "Change the realm's colors.",
+    crownDetail: "The crown opens the ruler's commands.",
+    itemsDesc: 'Return the sovereign relics.',
+  }),
   duchy: makeCourtTexts({
-    court: 'Герцогский двор',
-    subtitle: 'Правьте землями с трона Сумеречной Оси',
-    authority: 'Герцогская власть',
-    commands: 'Команды герцога',
-    decreeDesc: 'Провозгласить герцогский указ.',
-    keyDesc: 'Призвать герцогский ключ.',
-    colorsDesc: 'Сменить цвета герцогства.',
-    crownDetail: 'Корона открывает команды герцога.',
-    itemsDesc: 'Вернуть герцогские реликвии.',
+    court: 'Sovereign court',
+    subtitle: 'Rule the lands from the realm throne',
+    authority: 'Sovereign power',
+    commands: "The ruler's commands",
+    decreeDesc: 'Proclaim the sovereign decree.',
+    keyDesc: "Summon the ruler's key.",
+    colorsDesc: "Change the realm's colors.",
+    crownDetail: "The crown opens the ruler's commands.",
+    itemsDesc: 'Return the sovereign relics.',
   }),
   kingdom: makeCourtTexts({
-    court: 'Королевский двор',
-    subtitle: 'Правьте землями с трона Энигмы',
-    authority: 'Королевская власть',
-    commands: 'Команды короля',
-    decreeDesc: 'Провозгласить королевский указ.',
-    keyDesc: 'Призвать королевский ключ.',
-    colorsDesc: 'Сменить цвета королевства.',
-    crownDetail: 'Корона открывает команды короля.',
-    itemsDesc: 'Вернуть королевские реликвии.',
+    court: 'Royal court',
+    subtitle: 'Rule the lands from the throne of Enigma',
+    authority: 'Royal power',
+    commands: "King's commands",
+    decreeDesc: 'Proclaim the royal decree.',
+    keyDesc: 'Summon the royal key.',
+    colorsDesc: 'Change the colors of the kingdom.',
+    crownDetail: "The crown opens the king's commands.",
+    itemsDesc: 'Return the royal relics.',
   }),
   sultanate: makeCourtTexts({
-    court: 'Двор Султана',
-    subtitle: 'Правьте землями с трона Аль-Ашура',
-    authority: 'Власть Султана',
-    commands: 'Команды Султана',
-    decreeDesc: 'Провозгласить указ Султана.',
-    keyDesc: 'Призвать ключ Султана.',
-    colorsDesc: 'Сменить цвета Султаната.',
-    crownDetail: 'Корона открывает команды Султана.',
-    itemsDesc: 'Вернуть реликвии Султана.',
+    court: "Sultan's court",
+    subtitle: 'Rule the lands from the throne of Al-Ashur',
+    authority: "Sultan's power",
+    commands: "Sultan's commands",
+    decreeDesc: "Proclaim the Sultan's decree.",
+    keyDesc: "Summon the Sultan's key.",
+    colorsDesc: 'Change the colors of the Sultanate.',
+    crownDetail: "The crown opens the Sultan's commands.",
+    itemsDesc: "Return the Sultan's relics.",
   }),
 };
 
@@ -1194,8 +1204,8 @@ const OverviewPanel = (props: {
         <div className="DucalCourt__overviewFact">
           <b>{texts.labels.charter_ledger}</b>
           <span>
-            {lawCount} {ruPlural(lawCount, ['закон', 'закона', 'законов'])} /{' '}
-            {decreeCount} {ruPlural(decreeCount, ['указ', 'указа', 'указов'])}
+            {lawCount} {ruPlural(lawCount, ['law', 'law', 'laws'])} /{' '}
+            {decreeCount} {ruPlural(decreeCount, ['decree', 'of the decree', 'decrees'])}
           </span>
         </div>
       </div>
@@ -1556,6 +1566,6 @@ export const DucalCourtView = (props: DucalCourtViewProps) => {
 export const DucalCourt = () => {
   const { data } = useBackend<Data>();
   const texts =
-    COURT_TEXT_PACKS[data.court_locale || 'duchy'] || COURT_TEXT_PACKS.duchy;
+    COURT_TEXT_PACKS[data.court_locale || 'county'] || COURT_TEXT_PACKS.county;
   return <DucalCourtView texts={texts} />;
 };

@@ -232,7 +232,7 @@ const Sidebar = () => {
             )}
             <Stack.Item>
               <Button fluid icon="trophy" onClick={() => act('triumphs')}>
-                Triumphs: {triumphs}
+                Points: {triumphs}
               </Button>
             </Stack.Item>
             <Stack.Item grow />

@@ -1,7 +1,7 @@
 /datum/faith/cult_of_salvation
 	name = "The Cult of Salvation"
-	translated_name = "Культ Спасения"
-	desc = "Культисты Несущей Спасение отвергают мироустройство, каким мы его знаем, и следуют за тёмным, кровавым светом Зизо.\n\
-		Идеи учения, которому следуют зизоиды, уходят корнями глубоко в историю этого мира, окутаны тëмной завесой тайн и загадок. Но сходятся они в одном. Этот мир - твой. Здесь нет оков, правил, морали и рамок. Ты волен создать вокруг себя то, чего желаешь сам, тебе нужна лишь смелость, желание и знания, как это достичь."
-	worshippers = "Те, кто ищет запретные знания; те, кто отвернут другими; те, кто отчаянно боится смерти."
+	translated_name = "Cult of Salvation"
+	desc = "Cultists of the Savior reject the world order as we know it and follow the dark, bloody light of Zizo. \n\
+		The ideas of the doctrine followed by the zizoids have deep roots in the history of this world, shrouded in tëby me with a veil of secrets and mysteries. But they converge in one thing. This world is yours. There are no shackles, rules, morality, or boundaries here. You are free to create around yourself whatever you wish; you only need courage, desire, and the knowledge of how to achieve it."
+	worshippers = "Those who seek forbidden knowledge; those who are turned away by others; those who desperately fear death."
 	godhead = /datum/patron/inhumen/zizo

@@ -822,7 +822,7 @@
 	if(prefs.chat_toggles & CHAT_ADMINLOOC)
 		to_chat(src, span_notice("I will now hear all LOOC chatter."))
 	else
-		to_chat(src, span_info("I will now only hear LOOC chatter around me."))*/ // Лоок вырезан. Не нужно.
+		to_chat(src, span_info("I will now only hear LOOC chatter around me."))*/ //Look is cut out. No need.
 
 ///Moves a mob upwards in z level
 

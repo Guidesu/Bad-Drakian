@@ -1,9 +1,9 @@
 /datum/erp_action/other/vagina/force_face
 	abstract = FALSE
-	name = "Заставить отлизать"
+	name = "Force licking"
 	required_target_organ = SEX_ORGAN_MOUTH
 	require_grab = TRUE
-	message_start = "{actor} {force} и {speed} хватает {dullahan?отделенную голову :}{partner}, прижимая к своей промежности."
-	message_tick = "{actor} {force} и {speed} впечатывает лицо {dullahan?отделенной головы :}{partner} в свою промежность."
-	message_finish =  "{actor} убирает руки от {dullahan?отделенной головы:головы} {partner}."
-	message_climax_active = "{actor} кончает на лицо {dullahan?отделенной головы :}{partner}."
+	message_start = "{actor} {force} and {speed} grabs {dullahan?separated head :}{partner}, pressing it to his crotch."
+	message_tick = "{actor} {force} and {speed} slams the face of {dullahan?severed head :}{partner} into his crotch."
+	message_finish =  "{actor} removes his hands from {dullahan?separated head:head} {partner}."
+	message_climax_active = "{actor} cums on the face of {dullahan?separated head :}{partner}."

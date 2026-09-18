@@ -1,5 +1,5 @@
 /datum/advclass/mercenary/twilight_conquistador
-	name = "Сonquistador Adelantado"
+	name = "Conquistador Adelantado"
 	tutorial = "A fallen etruscan grandee and a hardened veteran of the Lirvas colonization. Tempered by the deadly wilds and terrors of the eastern jungles, he reclaims his lost glory through rapier and pistol, forging a path for the crown amidst gunpowder and cold steel."
 	allowed_sexes = list(MALE, FEMALE)
 	var/list/allowed_races = list(\
@@ -17,15 +17,15 @@
 )
 	outfit = /datum/outfit/job/roguetown/mercenary/twilight_conquistador
 	maximum_possible_slots = 2
-	min_pq = 25 // Все мерки в данный момент с 25 открываются
+	min_pq = 25 //All measurements currently open at 25
 	cmode_music = 'modular_twilight_axis/firearms/sound/music/combat_conquistador.ogg'
 	class_select_category = CLASS_CAT_ETRUSCA
 	subclass_languages = list(/datum/language/etruscan)
 	category_tags = list(CTAG_MERCENARY, CTAG_MERCPARTY_VANGUARD)
 	traits_applied = list(TRAIT_NOBLE)
-	classes = list("Tercio" = "Волею судьбы ваш путь лежал в авангарде, вместе с вашей верной алебардой.",
-					"Hidalgo" = "Волею судьбы ваш путь связан с порохом и дестрезой.")
-	extra_context = "Класс не имеет изначальных характеристик поскольку все его характеристики выдаются после выбора сабкласса. Сабкласс Tercio - это сабкласс имеющий Medium Armor и алебарду; Сабкласс Hidalgo - это класс имеющий Dodge Expert и пистоль с рапирой."
+	classes = list("Tercio" = "By the will of fate, your path lay at the forefront, together with your faithful halberd.",
+					"Hidalgo" = "By the will of fate, your path is connected with gunpowder and dexterity.")
+	extra_context = "The class has no initial characteristics since all its characteristics are assigned after choosing a subclass. The Tercio subclass is a subclass having Medium Armor and a halberd; the Hidalgo subclass is a class having Dodge Expert and a pistol with a rapier."
 	subclass_skills = list(
 		/datum/skill/combat/swords = SKILL_LEVEL_JOURNEYMAN,
 		/datum/skill/combat/knives = SKILL_LEVEL_APPRENTICE,
@@ -56,7 +56,7 @@
 	switch(classchoice)
 		if("Tercio (Medium Armor & Halberd)")
 			H.set_blindness(0)
-			to_chat(H, span_warning("Волею судьбы ваш путь лежал в авангарде, вместе с вашей верной алебардой."))
+			to_chat(H, span_warning("By the will of fate, your path lay at the forefront, together with your faithful halberd."))
 			H.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
 			H.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
 			H.change_stat(STATKEY_STR, 2)
@@ -82,7 +82,7 @@
 			backpack_contents = list(/obj/item/roguekey/mercenary = 1, /obj/item/rogueweapon/huntingknife/idagger/navaja = 1, /obj/item/storage/belt/rogue/pouch/coins/poor = 1, /obj/item/clothing/head/roguetown/duelhat/etrusca = 1, /obj/item/lockpickring/mundane = 1)
 			H.set_blindness(0)
 		if("Hidalgo (Light Armor & Rapier + Pistol)")
-			to_chat(H, span_warning("Волею судьбы ваш путь связан с порохом и дестрезой."))
+			to_chat(H, span_warning("By the will of fate, your path is connected with gunpowder and dexterity."))
 			H.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
 			H.adjust_skillrank(/datum/skill/combat/twilight_firearms, 5, TRUE)
 			H.change_stat(STATKEY_SPD, 3)

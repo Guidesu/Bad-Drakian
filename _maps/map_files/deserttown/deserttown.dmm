@@ -13717,7 +13717,7 @@
 /area/rogue/outdoors/desert)
 "dyI" = (
 /obj/item/paper{
-	info = "Я лез десять часов по этой стене, будь проклят тот, кто это построил";
+	info = "I climbed this wall for ten hours. Curse whoever built it";
 	icon_state = "paperwrite"
 	},
 /obj/effect/decal/cleanable/blood{
@@ -20793,7 +20793,7 @@
 /area/rogue/outdoors/desertdeep)
 "fpp" = (
 /obj/item/paper{
-	info = "Я полз по стене десять часов, а здесь, здесь НИЧЕГО нет";
+	info = "I crawled along the wall for ten hours, and here—there is NOTHING here";
 	icon_state = "paperwrite"
 	},
 /turf/open/floor/rogue/twig{
@@ -25457,7 +25457,7 @@
 /obj/item/paper{
 	pixel_x = 13;
 	pixel_y = 6;
-	info = "Он действительно спустился туда. Аль-Псила мне свидетель, Я отгховаривал егхо. ОТ-ГО-ВА-Ри-и... Аль-Нок я всё ещё слышу - как они скребут своими костями по полу... НЕ СПУСКХАЙТЕСЬ ТУДА! ТУТ НЕТ ЗЛАТА, ЛИШЬ ГОЛОДНАЯ НЕЖИТЬ!";
+	info = "He truly went down there. Al-Psyla is my witness, I tried to stop him. I TRIED... Al-Noc, I can still hear them scraping their bones across the floor... DO NOT GO DOWN THERE! THERE IS NO GOLD, ONLY HUNGRY UNDEAD!";
 	desc = "Animal skin dried under tension to create a robust medium for writing. This parchment appears to be having some scuffs and marks from something wet... Could be tears or some dried blood."
 	},
 /obj/effect/decal/duneedge{
@@ -35079,7 +35079,7 @@
 /area/rogue/indoors/town/desert)
 "jdU" = (
 /obj/item/carvedgem/onyxa/tablet{
-	desc = "Старая табличка из оникса, на которой когда-то давно что-то было написано. Буквы не поддаются ни прочтению, ни пониманию, различимо лишь количество строчек - пять штук."
+	desc = "An old onyx tablet that once bore an inscription. The letters cannot be read or understood; only five separate lines can be distinguished."
 	},
 /turf/open/floor/rogue/desert_grass/nospawn,
 /area/rogue/outdoors/desertdeep/above)
@@ -41063,7 +41063,7 @@
 /area/rogue/under/desertdark)
 "kCR" = (
 /obj/item/carvedgem/shell/tablet{
-	desc = "Табличка из хрупкого материала, чудом дожившая до наших дней. Текст в количестве пяти строчек написан на давно забытом языке, который вряд ли сможет распознать даже Древний. Что-то подсказывает, что написанное представляет мало ценности для этого мира, как и сама табличка."
+	desc = "A tablet of fragile material that has miraculously survived to the present day. Its five lines are written in a long-forgotten language that even an Ancient would struggle to recognize. Something suggests that the writing has as little value to this world as the tablet itself."
 	},
 /turf/open/floor/rogue/lightpath,
 /area/rogue/outdoors/desertdeep/above)
@@ -80712,7 +80712,7 @@
 /obj/item/paper{
 	pixel_x = 13;
 	pixel_y = 6;
-	info = "СКОМ не работает, пишите письма. Всех благ, да оберегают вас пески."
+	info = "SCOM is not working; write letters. All the best, and may the sands protect you."
 	},
 /turf/open/floor/rogue/herringbone{
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'
@@ -88179,7 +88179,7 @@
 /obj/item/paper{
 	pixel_x = -9;
 	pixel_y = 4;
-	info = "СКОМ не работает, пишите письма. Всех благ, да оберегают вас пески."
+	info = "SCOM is not working; write letters. All the best, and may the sands protect you."
 	},
 /turf/open/floor/rogue/herringbone{
 	icon = 'modular_deserttown/icons/alt/roguefloor.dmi'

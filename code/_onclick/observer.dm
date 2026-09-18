@@ -30,8 +30,8 @@
 		CtrlShiftClickOn(A)
 		return
 
-	// В AzurePeak observer имеет свой ClickOn override и без этого alt+right
-	// съедается общей alt-веткой ниже, так и не доходя до AltRightClickOn().
+	//In AzurePeak observer has its own ClickOn override and without it alt+right
+	//is eaten by the common alt-branch below, never reaching AltRightClickOn().
 	if(modifiers["alt"] && modifiers["left"])
 		if(client?.holder)
 			face_atom(A)
@@ -40,8 +40,8 @@
 			AltClickNoInteract(src, A)
 		return
 
-	// Если хочешь, чтобы aghost-админ и обычный RMB-маршрут тоже видел,
-	// а не только alt+right, оставляем отдельную ветку и для plain right.
+	//If you want the aghost admin to also see the regular RMB route,
+	//and not just alt+right, leave a separate branch for plain right.
 	if(modifiers["right"])
 		if(client?.holder)
 			RightClickOn(A, params)

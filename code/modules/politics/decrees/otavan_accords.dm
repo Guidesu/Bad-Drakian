@@ -1,15 +1,15 @@
 /datum/decree/otavan_accords
 	id = DECREE_OTAVAN_ACCORDS
-	name = "Отаванские соглашения"
+	name = "Otavan Treaties"
 	category = DECREE_CATEGORY_NEW
-	mechanical_text = "Инквизиция освобождается от налогов."
-	flavor_text = {"Настоящие Отаванские соглашения, заключенные во имя Десяти Неделимых и под покровительством Всемогущего Всеотца, свидетельствуют о том, что Святая Отаванская Инквизиция, верные слуги Псайдона и посланники Отавики, наделяется правом и обязанностью охранять эту землю от ереси. Во исполнение сией миссии, Инквизиция обязуется преследовать слуг Архиврага и ложных богов, не поднимать руку на подданных Азурии, не запятнанных ересью, судить лишь простолюдинов и никогда не подвергать гонениям ни горожан, ни дворян, кроме как в случаях официальной санкции Короны.
+	mechanical_text = "The Inquisition is exempt from taxes."
+	flavor_text = {"These Treaties of Otavan, concluded in the name of the Ten Indivisibles and under the auspices of the Almighty All-Father, testify that the Holy Otavan Inquisition, the faithful servants of Psydon and the envoys of Otavika, are endowed with the right and duty to protect this land from heresy. In fulfillment of this mission, the Inquisition undertakes to persecute the servants of the Archenemy and false gods, not to raise a hand against subjects of Azuria who are not tainted by heresy, to judge only commoners and never to persecute either citizens or nobles, except in cases of official sanction of the Crown.
 
-Взамен, будучи признанными духовенством Отаванской Церкви Всеотца, Инквизиция освобождается от обложения налогами и сборами в отношении своих членов и инструментов их служения; и Корона не будет препятствовать их святому долгу, за исключением случая предъявления законных претензий перед Церковью Десяти.
+In return, being recognized by the clergy of the Otavan Church of the All-Father, the Inquisition is exempt from taxes and levies regarding its members and instruments of their service; and the Crown shall not hinder their holy duty, except in the case of lawful claims presented before the Church of the Ten.
 
-Заверено печатью Короны, в присутствии Псайдона и его Десяти."}
-	revoke_text = "Правитель сиих земель нарушил Отаванские соглашения. Инквизиция лишается защиты, предусмотренной договором — и Отава не оставит такое оскорбление без ответа."
-	restore_text = "Правитель сиих земель возобновил Отаванские соглашения. Святая Отаванская Инквизиция возобновляет свою миссию по очищению земель от еретиков без какого-либо вмешательства Короны."
+Certified by the Seal of the Crown, in the presence of Psaidon and his Ten."}
+	revoke_text = "The ruler of these lands violated the Otavan agreements. The Inquisition is deprived of the protection provided for by the treaty - and Otava will not leave such an insult unanswered."
+	restore_text = "The ruler of these lands renewed the Otavan agreements. The Holy Otavan Inquisition resumes its mission to cleanse the lands of heretics without any interference from the Crown."
 
 /datum/decree/otavan_accords/roll_initial_year()
 	return 1492 // Canonical year

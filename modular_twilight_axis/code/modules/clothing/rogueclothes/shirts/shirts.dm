@@ -158,7 +158,7 @@
 
 /obj/item/clothing/suit/roguetown/shirt/twilight_hammerhold/coat
 	name = "boyar coat"
-	desc = "Боярский плащ вдохновленный эльфийской культурой, который носят знатные представители Хаммерхолда"
+	desc = "Boyar's cloak inspired by elven culture, worn by nobles of Hammerhold"
 	icon_state = "coat_a"
 	item_state = "coat_a"
 	slot_flags = ITEM_SLOT_SHIRT|ITEM_SLOT_ARMOR

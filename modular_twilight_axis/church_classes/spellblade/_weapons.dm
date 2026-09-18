@@ -1,6 +1,6 @@
 /obj/item/rogueweapon/sword/sabre/moonlight_sabre
 	name = "moonlight sabre"
-	desc = "Сабля сотканная из света Нок, кажется хрупкой, но с хорошей заточкой. Идеальное рубящее оружие."
+	desc = "A saber woven from Nok light, it seems fragile, but with a good sharpening. The ideal slashing weapon."
 	force = 25
 	wdefense = 6
 	icon_state = "moonlight_saber"
@@ -22,7 +22,7 @@
 
 /obj/item/rogueweapon/sword/rapier/moonlight_rapier
 	name = "moonlight rapier"
-	desc = "Рапира сотканная из света Нок, кажется хрупкой, но с хорошей заточкой. Идеальное орудие фехтования."
+	desc = "Rapier woven from Nok light, seems fragile, but with good sharpening. The ideal fencing weapon."
 	icon_state = "moonlight_rapier"
 	icon = 'modular_twilight_axis/church_classes/icons/prismatic_weapons64.dmi'
 	sheathe_icon = "rapier"
@@ -42,7 +42,7 @@
 
 /obj/item/rogueweapon/spear/partizan/moonlight_spear
 	name = "moonlight spear"
-	desc = "Копье сотканное из света Нок, кажется хрупким, но с хорошей заточкой. Идеальное орудие в узких пространствах."
+	desc = "A spear woven from the light of Nok, it seems fragile, but with good sharpening. An ideal tool in narrow spaces."
 	force = 25
 	force_wielded = 35
 	max_blade_int = 250
@@ -65,7 +65,7 @@
 
 /obj/item/rogueweapon/mace/maul/grand/moonlight_hammer
 	name = "moonlight hammer"
-	desc = "Молот сотканный из света Нок, кажется тяжелым, но в руке ощущается легко. Идеальное орудие грубой силы."
+	desc = "A hammer woven from light, Nok, seems heavy, but feels light in the hand. The perfect weapon of brute force."
 	icon_state = "moonlight_hammer"
 	icon = 'modular_twilight_axis/church_classes/icons/prismatic_weapons64.dmi'
 	force_wielded = 28
@@ -80,7 +80,7 @@
 
 /obj/item/rogueweapon/shield/bronze/great/moonlight_shield
 	name = "moonlight shield"
-	desc = "Щит сотканный из света Нок, кажется тяжелым, но в руке ощущается легко, структура напоминает кристаллическую и вероятно хрупкое."
+	desc = "A shield woven from Nok light seems heavy, but feels light in the hand, the structure resembles crystalline and is probably fragile."
 	icon_state = "moonlight_shield"
 	icon = 'modular_twilight_axis/church_classes/icons/prismatic_weapons64.dmi'
 	max_integrity = 100
@@ -122,31 +122,31 @@
 
 
 /obj/item/rogueweapon/shield/bronze/great/moonlight_shield/Destroy()
-	to_chat(owner, "[src] растворяется в воздухе. Нок забирает знания вместе с ним.")
+	to_chat(owner, "[src] dissolves in air. Nok takes the knowledge with him.")
 	owner.adjust_skillrank_down_to(associated_skill, 0, TRUE)
 	playsound(get_turf(owner), 'modular_twilight_axis/church_classes/sound/despell_sfx.ogg', 100, FALSE)
 	return ..()
 
 /obj/item/rogueweapon/mace/maul/grand/moonlight_hammer/Destroy()
-	to_chat(owner, "[src] растворяется в воздухе. Нок забирает знания вместе с ним.")
+	to_chat(owner, "[src] dissolves in air. Nok takes the knowledge with him.")
 	owner.adjust_skillrank_down_to(associated_skill, 0, TRUE)
 	playsound(get_turf(owner), 'modular_twilight_axis/church_classes/sound/despell_sfx.ogg', 100, FALSE)
 	return ..()
 
 /obj/item/rogueweapon/spear/partizan/moonlight_spear/Destroy()
-	to_chat(owner, "[src] растворяется в воздухе. Нок забирает знания вместе с ним.")
+	to_chat(owner, "[src] dissolves in air. Nok takes the knowledge with him.")
 	owner.adjust_skillrank_down_to(associated_skill, 0, TRUE)
 	playsound(get_turf(owner), 'modular_twilight_axis/church_classes/sound/despell_sfx.ogg', 100, FALSE)
 	return ..()
 
 /obj/item/rogueweapon/sword/rapier/moonlight_rapier/Destroy()
-	to_chat(owner, "[src] растворяется в воздухе. Нок забирает знания вместе с ним.")
+	to_chat(owner, "[src] dissolves in air. Nok takes the knowledge with him.")
 	owner.adjust_skillrank_down_to(associated_skill, 0, TRUE)
 	playsound(get_turf(owner), 'modular_twilight_axis/church_classes/sound/despell_sfx.ogg', 100, FALSE)
 	return ..()
 
 /obj/item/rogueweapon/sword/sabre/moonlight_sabre/Destroy()
-	to_chat(owner, "[src] растворяется в воздухе. Нок забирает знания вместе с ним.")
+	to_chat(owner, "[src] dissolves in air. Nok takes the knowledge with him.")
 	owner.adjust_skillrank_down_to(associated_skill, 0, TRUE)
 	playsound(get_turf(owner), 'modular_twilight_axis/church_classes/sound/despell_sfx.ogg', 100, FALSE)
 	return ..()

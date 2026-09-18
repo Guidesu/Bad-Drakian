@@ -1,15 +1,13 @@
 <p align="center">
- <img width="450px" src="https://github.com/user-attachments/assets/6b803f1d-3262-4373-8531-8f8415a3d05f" align="center" alt="Twilight Fortress" />
- <h1 align="center">Twilight Axis</h1>
+ <h1 align="center">BAD DRAKIAN</h1>
  <h2 align="center">Roleplay Medieval High-Fantasy | D&D-like Server</h2>
 </p>
 
 <div align="center">
 
-| Website                   | Link                                           |
-|---------------------------|------------------------------------------------|
-| Discord          | [https://discord.gg/6Sga5Uvdn6](https://discord.gg/6Sga5Uvdn6) |
-| Wiki Twilight Axis                     | [Wiki](https://wiki.twilight-fortress-axis.ru/index.php?title=%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0) |
+| Community | Link |
+|-----------|------|
+| Discord | [https://discord.gg/xWFc2MwJdG](https://discord.gg/xWFc2MwJdG) |
 
   ## LICENSE
 Original Fork Originates from [commit c28b351807bad950d2b323ada048190844bbda32](https://github.com/tgstation/tgstation/commit/c28b351807bad950d2b323ada048190844bbda32).
@@ -29,4 +27,4 @@ All assets including icons and sound are under a [Creative Commons 3.0 BY-SA lic
 
 </div>
 
-This is fork of Azure Peak. There's a discord link [Azure Peak](https://discord.gg/NCFXUAgCPT)
+BAD DRAKIAN is derived from Azure Peak and incorporates selected work from Ratwood 2.0 commit `dc62fab13f6faf317637569f9025dc4245b1b408` under the repository's existing licenses.

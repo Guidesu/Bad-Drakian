@@ -1,6 +1,6 @@
 /obj/machinery/auto_sawmill
 	name = "sawmill"
-	desc = "Простая конструкция с неизвестной внутренней частью и острым лезвием."
+	desc = "Simple construction with an unknown internal part and a sharp blade."
 	icon = 'icons/roguetown/misc/auto.dmi'
 	icon_state = "autosawoff"
 	density = TRUE

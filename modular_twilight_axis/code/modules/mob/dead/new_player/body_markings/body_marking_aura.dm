@@ -5,17 +5,17 @@
 	gendered = TRUE
 
 /datum/body_marking/aura/z
-	name = "Покой"
+	name = "Rest"
 	icon_state = "z"
 
 /datum/body_marking/aura/x
-	name = "Слово"
+	name = "Word"
 	icon_state = "x"
 
 /datum/body_marking/aura/c
-	name = "Сила"
+	name = "Strength"
 	icon_state = "c"
 
 /datum/body_marking/aura/v
-	name = "Равновесие"
+	name = "Balance"
 	icon_state = "v"

@@ -1,6 +1,6 @@
 /obj/item/gun/ballistic/revolver/grenadelauncher/twilight_runelock
 	name = "runelock pistol"
-	desc = "Крайне смертоностное оружие. Использует руническую магию вместо пороха."
+	desc = "Extremely deadly weapon. Uses runic magic instead of gunpowder."
 	icon = 'modular_twilight_axis/firearms/icons/32.dmi'
 	icon_state = "pistol2"
 	var/icon_state_ready = "pistol2-1"
@@ -71,9 +71,9 @@
 					playsound(H, 'modular_twilight_axis/firearms/sound/musketcock.ogg', 100, FALSE)
 					cocked = TRUE
 			else
-				to_chat(H, span_warning("Я совершенно не понимаю, как этим пользоваться!"))
+				to_chat(H, span_warning("I absolutely do not understand how to use this!"))
 		else
-			to_chat(user, span_warning("Я совершенно не понимаю, как этим пользоваться!"))
+			to_chat(user, span_warning("I absolutely do not understand how to use this!"))
 	else
 		if(alt_grips)
 			altgrip(user)
@@ -110,17 +110,17 @@
 		if(HAS_TRAIT(u, TRAIT_INQUISITION) || (u.STAINT >= 15) || (u.merctype == 10))
 			if(cocked)
 				if(chambered)
-					. += span_notice("Взведено и готово к стрельбе.")
+					. += span_notice("Cocked and ready to fire.")
 				else
-					. += span_notice("Руны напитаны энергией, но пуля не установлена.")
+					. += span_notice("The runes are infused with energy, but the bullet is not installed.")
 			else
-				. += span_notice("Не заряжено.")
+				. += span_notice("Not loaded.")
 		else
-			. += span_notice("Конструкция замка, установленного на этом оружии, вам незнакома.")
+			. += span_notice("The mechanism of the lock installed on this weapon is unfamiliar to you.")
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/twilight_runelock/get_mechanics_examine(mob/user)
 	. = ..()
-	. += span_info("Рунные замки требуют специальную рунную пулю, после чего замок необходимо взвести перед стрельбой.")
+	. += span_info("Runic locks require a special runic bullet, after which the lock must be cocked before firing.")
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/twilight_runelock/process_fire/(atom/target, mob/living/user, message = TRUE, params = null, zone_override = "", bonus_spread = 0)
 	if(chambered && HAS_TRAIT(user, TRAIT_PACIFISM))
@@ -201,7 +201,7 @@
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/twilight_runelock/rifle
 	name = "\"Doomsdae\""
-	desc = "Реликвия новой эпохи, созданная для войны, что положит конец истории мироздания, какой мы её знаем. Изготовленная отаванскими мастерами артефакторики, и зачарованная рунными магами Отавы, эта руническая винтовка - оружие, что сокрушит легионы тьмы в Конце Времен. Руны нанесены на ствол оружия кровью еретиков, поплатившихся за свое предательство истинной веры своими жизнями."
+	desc = "A relic of the new era, created for war, which will put an end to the history of the universe as we know it. Made by Otavan masters of artifact craft and enchanted by Otava runic mages, this runic rifle is a weapon that will crush the legions of darkness at the End of Times. The runes are inscribed on the weapon's barrel with the blood of heretics who paid with their lives for their betrayal of the true faith."
 	icon = 'modular_twilight_axis/firearms/icons/runelock_rifle.dmi'
 	icon_state = "runelock"
 	icon_state_ready = "runelock_loaded"

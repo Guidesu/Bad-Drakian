@@ -3,7 +3,7 @@
 #define OVERHEAT_ERROR 50
 
 /obj/item/artillery_shell
-	name = "Дружок, если ты это увидел то админы/маппер дурачки"
+	name = "Friend, if you saw this, then the admins/mappers are fools"
 	icon = 'modular_twilight_axis/awful_artillery/icons/artillery.dmi'
 	icon_state = "cannonball"
 	
@@ -11,8 +11,8 @@
 /obj/item/artillery_shell/proc/shell_action()
 
 /obj/structure/artillery 
-	name = "Дружок, если ты это увидел то админы сервера долбаебы"
-	desc = "Смайли не воруй"
+	name = "Friend, if you saw this, then the server admins are idiots"
+	desc = "Smiley don't steal"
 
 	icon = 'modular_twilight_axis/awful_artillery/icons/artillery.dmi'
 	icon_state = "mortar"
@@ -53,40 +53,40 @@
 /obj/structure/artillery/examine(mob/user)
 	. = ..()
 	if((world.time - last_fired) < cooldown)
-		. += span_info("Ствол ощущается горячим, возможно не стоит делать выстрел именно сейчас.")
+		. += span_info("The barrel feels hot, it may not be worth taking a shot right now.")
 	else 
-		. += span_info("Ствол ощущается холодным, можно произвести выстрел без рисков.")
+		. += span_info("The barrel feels cold, you can fire a shot without any risks.")
 
 	if(istype(user, /mob/living/carbon/human))
 		var/mob/living/carbon/human/C = user
 		var/perception = C.get_stat(STAT_PERCEPTION) - 10
 		if(perception > 0 || HAS_TRAIT(user, TRAIT_ARTILLERY_EXPERT))
 			if(((barrel_integrity - perception) < 1) || HAS_TRAIT(user, TRAIT_ARTILLERY_EXPERT))
-				. += span_danger("Моя внимательность позволяет узнать что ствол будет уничтожен через [barrel_integrity] выстрелов")
+				. += span_danger("My attentiveness allows me to find out that the barrel will be destroyed through [barrel_integrity] shots")
 			else 
-				. += span_green("Орудие кажется надежным. Оно выстоит как минимум еще несколько выстрелов")
+				. += span_green("The gun seems reliable. It will last at least a few more shots")
 		else 
-			. += span_green("Орудие кажется надежным. Оно выстоит как минимум еще несколько выстрелов")
+			. += span_green("The gun seems reliable. It will last at least a few more shots")
 
 /obj/structure/artillery/attackby(obj/item/used_item, mob/user)
 	if(istype(used_item, ammo_type))
 		if(ammo)
-			to_chat(usr, span_info("В стволе уже есть заряд"))
+			to_chat(usr, span_info("There is already a charge in the barrel"))
 		else
 			if(do_after(user, 20, target = src))
 				used_item.forceMove(src)
 				ammo = used_item
-				to_chat(usr, span_info("Я зарядил снаряд в [src.name]"))
+				to_chat(usr, span_info("I loaded the shell in [src.name]"))
 				playsound(src, 'modular_twilight_axis/awful_artillery/sound/loading.ogg', 100, 0, 1, 1, null, null, FALSE, TRUE)
 				log_game("[user] loaded artillery shell into [src]")
 
 	if(istype(used_item, /obj/item/twilight_powderflask))
 		if(ammo)
-			to_chat(usr, span_info("Внутри есть снаряд, нужно его вытащить прежде чем насыпать порох"))
+			to_chat(usr, span_info("There is a shell inside, I need to pull it out before adding gunpowder"))
 		else
 			playsound(src, 'modular_twilight_axis/awful_artillery/sound/powder.ogg', 100, 0, 1, 1, null, null, FALSE, TRUE)
 			if(do_after(user, 20, target = src))
-				to_chat(usr, span_info("Я заправил [src.name] порохом"))
+				to_chat(usr, span_info("I loaded [src.name] with gunpowder"))
 				charge_level = min(charge_level + 1, charge_max)
 				log_game("[user] added gun powder into [src]")
 
@@ -132,11 +132,11 @@
 /obj/structure/artillery/proc/fire_artillery(mob/user)
 	var/mob/living/carbon/human/H = user
 	if(charge_level == 0)
-		to_chat(user, span_warning("В стволе нету заряда"))
+		to_chat(user, span_warning("There is no charge in the barrel"))
 		return
 
 	if(!ammo)
-		to_chat(user, span_warning("В стволе нету снаряда"))
+		to_chat(user, span_warning("There is no projectile in the barrel"))
 		return
 
 	if(!HAS_TRAIT(user, TRAIT_ARTILLERY_EXPERT))
@@ -146,18 +146,18 @@
 		var/rand_roll = rand(1, 20)
 
 		if((rand_roll + overall_artillery_skill) < 12)
-			user.visible_message(span_danger("[user] совершил критическую ошибку при выстреле! [src] уничтожен"))
+			user.visible_message(span_danger("[user] made a critical error when firing! [src] destroyed"))
 			explosion(src, 1, 2, 4, flame_range = 2)
 			H.adjustBruteLoss(150)
 			return
 
 	var/vector/hit_coordinates = calculate_coordinates(user)
 	if(!hit_coordinates)
-		to_chat(user, span_warning("Что-то не дает мне выстрелить туда"))
+		to_chat(user, span_warning("Something prevents me from shooting there"))
 		return
 	var/turf/target = locate(hit_coordinates.x, hit_coordinates.y, src.z)
 	if(!target)
-		to_chat(user, span_warning("Что-то не дает мне выстрелить туда"))
+		to_chat(user, span_warning("Something prevents me from shooting there"))
 		return
 
 	for(var/turf/AT in get_adjacent_turfs(src.loc))
@@ -190,45 +190,45 @@
 		barrel_integrity--
 	last_fired = world.time
 	
-	user.visible_message(span_danger("[user] производит выстрел из [src]!"))
+	user.visible_message(span_danger("[user] fires a shot from [src]!"))
 	log_game("[user] fired artillery([src]) at [target.loc.name]([target.x] [target.y] [target.z])")
 	message_admins("Artillery fired at [ADMIN_VERBOSEJMP(src.loc)] by [user] to [ADMIN_VERBOSEJMP(target)]")
 
 	for(var/mob/M in GLOB.player_list)
 		if(istype(M, /mob/living))
-			var/message = "Слышно звук выстрела артиллерии"
+			var/message = "The sound of an artillery shot is heard"
 			var/dist = get_dist(get_turf(src), M)
 			if(dist > 15)
-				message += " на расстоянии около [floor(dist/15)*15] метров"
+				message += "at a distance of about [floor(dist/15)*15] meters"
 			if(M.z < src.z)
-				message += " откуда то сверху"
+				message += "from somewhere above"
 			if(M.z > src.z)
-				message += " откуда то снизу"
+				message += "from somewhere below"
 
 			var/dir = get_dir(M, src)
 			switch(dir)
 				if(NORTH)
-					message += " с севера"
+					message += "from the north"
 				if(SOUTH) 
-					message += " с юга"
+					message += "from the south"
 				if(EAST) 
-					message += " с востока"
+					message += "from the east"
 				if(WEST)
-					message += " с запада"
+					message += "from the west"
 				if(NORTHEAST) 
-					message += " с северо-востока"
+					message += "from the northeast"
 				if(NORTHWEST) 
-					message += " с северо-запада"
+					message += "from the northwest"
 				if(SOUTHEAST)  
-					message += " с юго-востока"
+					message += "from the southeast"
 				if(SOUTHWEST)
-					message += " с юго-запада"
+					message += "from the southwest"
 			
 			message += "."
 			to_chat(M, message)
 
 	if(barrel_integrity <= 0)
-		src.visible_message(span_danger("[src] взрывается из-за износа ствола!"))
+		src.visible_message(span_danger("[src] explodes due to barrel wear!"))
 		explosion(src, 1, 2, 10, flame_range = 3)
 
 /obj/structure/artillery/proc/get_parts()
@@ -262,11 +262,11 @@
 
 			data["area_name"] = target_turf.loc.name
 		else 
-			data["range"] = "НЕИЗВЕСТНО"
-			data["area_name"] = "НЕИЗВЕСТНО"
+			data["range"] = "UNKNOWN"
+			data["area_name"] = "UNKNOWN"
 	else
-		data["range"] = "НЕИЗВЕСТНО"
-		data["area_name"] = "НЕИЗВЕСТНО"
+		data["range"] = "UNKNOWN"
+		data["area_name"] = "UNKNOWN"
 
 
 	return data
@@ -279,37 +279,37 @@
 	switch(action)
 		if("fire")
 			if(charge_level == 0)
-				to_chat(ui.user, span_warning("В стволе нету заряда."))
+				to_chat(ui.user, span_warning("There is no charge in the barrel."))
 				return
 			if(!ammo)
-				to_chat(ui.user, span_warning("В стволе нету снаряда."))
+				to_chat(ui.user, span_warning("There is no projectile in the barrel."))
 				return
 			if(HAS_TRAIT(ui.user, TRAIT_ARTILLERY_EXPERT))
 				if(do_after(ui.user, 15, target = src))
 					fire_artillery(ui.user)
 			else
-				if(tgui_alert(ui.user, "Вы не умеете пользоваться этой установкой. В данный момент вы полагаетесь исключительно на свои догадки и интеллект, при неправильном использовании вас могут ждать очень плохие последствия.", "Мортира", list("Я не буду стрелять", "ОГОНЬ!")) == "ОГОНЬ!")
+				if(tgui_alert(ui.user, "You do not know how to use this installation. At the moment you are relying solely on your guesses and intellect; if used incorrectly, very bad consequences can await you.", "Mortar", list("I will not shoot", "FIRE!")) == "FIRE!")
 					if(do_after(ui.user, 15, target = src))
 						fire_artillery(ui.user)
 		if("decrease_charge")
 			if(do_after(ui.user, 10, target = src))
 				charge_level = max(charge_level - 1, charge_min)
 				playsound(src, 'modular_twilight_axis/awful_artillery/sound/removepowder.ogg', 100, 1, 1, 1, null, null, FALSE, FALSE)
-				ui.user.visible_message(span_info("[ui.user] извлекает лишний порох из [src]."))
+				ui.user.visible_message(span_info("[ui.user] extracts excess gunpowder from [src]."))
 		if("set_elevation")
 			elevation = params["value"]
 			playsound(src, 'modular_twilight_axis/awful_artillery/sound/anglecorrection.ogg', 100, 1, 1, 1, null, null, FALSE, FALSE)
-			ui.user.visible_message(span_info("[ui.user] правит возвышение."))
+			ui.user.visible_message(span_info("[ui.user] rules the eminence."))
 		if("set_azimuth")
 			azimuth = params["value"]
 			playsound(src, 'modular_twilight_axis/awful_artillery/sound/anglecorrection.ogg', 100, 1, 1, 1, null, null, FALSE, FALSE)
-			ui.user.visible_message(span_info("[ui.user] правит азимут."))
+			ui.user.visible_message(span_info("[ui.user] corrects azimuth."))
 		if("eject_ammo")
 			if(do_after(ui.user, 20, target = src))
 				playsound(src, 'modular_twilight_axis/awful_artillery/sound/anglecorrection.ogg', 100, 1, 1, 1, null, null, FALSE, FALSE)
 				ammo.forceMove(loc)
 				ammo = null
-				ui.user.visible_message(span_info("[ui.user] извлекает боеприпас из [src]."))
+				ui.user.visible_message(span_info("[ui.user] removes ammunition from [src]."))
 		if("disasseble")
 			if(do_after(ui.user, 20, target = src))
 				playsound(src, 'modular_twilight_axis/awful_artillery/sound/anglecorrection.ogg', 100, 1, 1, 1, null, null, FALSE, FALSE)
@@ -318,12 +318,12 @@
 					new path(loc)
 				ui.close()
 				qdel(src)
-				ui.user.visible_message(span_info("[ui.user] разобрал [src]."))
+				ui.user.visible_message(span_info("[ui.user] disassembled [src]."))
 
 	SStgui.try_update_ui(ui.user, src)
 
 /obj/item/artillery_assembly
-	name = "Лафет"
+	name = "Carriage"
 	w_class = WEIGHT_CLASS_HUGE
 
 

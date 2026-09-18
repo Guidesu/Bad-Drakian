@@ -280,7 +280,7 @@
 
 /obj/item/clothing/head/roguetown/roguehood/burgerhood
 	name = "noble hood"
-	desc = "Шёлковый капюшон, показывающий высокий статус владельца. По крайней мере выглядит сносно."
+	desc = "Silk hood showing the high status of the owner. At least it looks decent."
 	color = null
 	icon_state = "burgerhood"
 	item_state = "burgerhood"
@@ -318,7 +318,7 @@
 	color = null
 
 /obj/item/clothing/head/roguetown/hscarf
-	desc = "Шёлковая повязка, что часто находится на голове чаще всего или моряка, или пирата!"
+	desc = "Silk headband, which is often found on the head of either a sailor or a pirate!"
 	name = "head scarf"
 	icon_state = "headscarf"
 	item_state = "headscarf"
@@ -345,7 +345,7 @@
 
 /obj/item/clothing/head/roguetown/roguehood/psydon/confessor/overseer
 	name = "closed hood"
-	desc = "Вы бы не скрывали свое лицо, если бы на то не было причины."
+	desc = "You wouldn't hide your face unless there was a reason for it."
 	icon = 'modular_twilight_axis/icons/roguetown/clothing/inquisition_overseer/overseer.dmi'
 	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/inquisition_overseer/onmob/overseer_onmob.dmi'
 	icon_state = "overseerhood"

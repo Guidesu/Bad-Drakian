@@ -80,7 +80,7 @@
 		text = SSerp.action_message_renderer.build_message(L.action.message_start, L, allow_knot_suffix = FALSE)
 
 	if(!text)
-		text = "Начинается: [L.action.name]."
+		text = "Begins: [L.action.name]."
 
 	send_message(spanify_scene_start_end(text), L)
 
@@ -94,6 +94,6 @@
 		text = SSerp.action_message_renderer.build_message(L.action.message_finish, L, allow_knot_suffix = FALSE)
 
 	if(!text)
-		text = "Заканчивается: [L.action.name]."
+		text = "Ends: [L.action.name]."
 
 	send_message(spanify_scene_start_end(text), L)

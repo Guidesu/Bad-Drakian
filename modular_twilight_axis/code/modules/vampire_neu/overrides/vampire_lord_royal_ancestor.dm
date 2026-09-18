@@ -5,7 +5,7 @@
 	var/mob/living/carbon/human/ta_pending_royal_ancestor
 
 /mob/living/carbon/human/proc/ta_claim_royal_ancestry()
-	set name = "Стать частью семьи правителя"
+	set name = "Become part of the ruler's family"
 	set category = "Vampire"
 	set src = usr
 
@@ -14,11 +14,11 @@
 		return
 
 	if(lord_antag.ta_royal_ancestor_claimed)
-		to_chat(src, span_warning("Моя кровь уже вплетена в корни правящего дома."))
+		to_chat(src, span_warning("My blood is already woven into the roots of the ruling house."))
 		return
 
 	if(SSfamilytree.ta_pending_royal_ancestor && SSfamilytree.ta_pending_royal_ancestor != src)
-		to_chat(src, span_warning("Иной древний уже вписал себя в эту династию."))
+		to_chat(src, span_warning("Another ancient has already inscribed himself into this dynasty."))
 		return
 
 	lord_antag.ta_royal_ancestor_claimed = TRUE
@@ -27,7 +27,7 @@
 		return
 
 	SSfamilytree.ta_pending_royal_ancestor = src
-	to_chat(src, span_notice("Правящей династии ещё нет. Когда она явится, моё имя уже будет лежать в её основании."))
+	to_chat(src, span_notice("The ruling dynasty does not yet exist. When it appears, my name will already lie in its foundation."))
 
 /datum/controller/subsystem/familytree/proc/ta_apply_pending_royal_ancestor()
 	var/mob/living/carbon/human/claimant = ta_pending_royal_ancestor
@@ -79,5 +79,5 @@
 	ruling_family.RemovePersonFromFamily(displaced)
 
 	ftlog("ROYAL_ANCESTOR: [claimant.real_name] spliced into '[ruling_family.housename]' at generation [claim_member.generation], [generations_back] back from the monarch", "INFO")
-	to_chat(claimant, span_notice("Правящая кровь помнит меня. Я стою у истоков этой династии, [generations_back] поколений назад."))
+	to_chat(claimant, span_notice("The ruling blood remembers me. I stand at the origins of this dynasty, [generations_back] generations ago."))
 	return TRUE

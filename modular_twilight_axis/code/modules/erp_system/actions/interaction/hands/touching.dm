@@ -1,8 +1,8 @@
 /datum/erp_action/other/hands/touching
 	abstract = FALSE
-	name = "Ласкать"
+	name = "Caress"
 	required_target_organ = SEX_ORGAN_BODY
 	action_tags = list("race_body")
-	message_start = "{actor} касается руками {partner}."
-	message_tick = "{actor} {force} и {speed} ласкает {zone} {partner}."
-	message_finish =  "{actor} убирает руки от {partner}."
+	message_start = "{actor} touches {partner} with hands."
+	message_tick = "{actor} {force} and {speed} caresses {zone} {partner}."
+	message_finish =  "{actor} removes his hands from {partner}."

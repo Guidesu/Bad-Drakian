@@ -21,7 +21,7 @@ export const Artillery = () => {
   const arrowLength = 60;
 
   return (
-    <Window title="Мортира" width={500} height={650}>
+    <Window title="Mortar" width={500} height={650}>
       <Window.Content>
         <Stack vertical fill>
 
@@ -83,7 +83,7 @@ export const Artillery = () => {
           <Stack justify="space-around" mt={2}>
               <Stack vertical width="45%">
                 <Box textAlign="center">
-                  Возвышение: {data.elevation}°
+                  Elevation:{data.elevation}°
                 </Box>
                 <Slider
                   minValue={data.elevation_min}
@@ -99,7 +99,7 @@ export const Artillery = () => {
 
               <Stack vertical width="45%">
                 <Box textAlign="center">
-                  Азимут: {data.azimuth}°
+                  Azimuth:{data.azimuth}°
                 </Box>
                 <Slider
                   minValue={0}
@@ -116,7 +116,7 @@ export const Artillery = () => {
 
           <Stack vertical justify="space-around" mt={2}>
             <Box textAlign="center">
-                Заряд: {data.charge_level}/{data.charge_max}
+                Charge:{data.charge_level}/{data.charge_max}
             </Box>
             
             <ProgressBar
@@ -131,31 +131,31 @@ export const Artillery = () => {
 
           <Stack justify="space-around" mt={2}>
             <Box textAlign="center">
-              Я попаду примерно в: {data.area_name}
+              I will approximately hit:{data.area_name}
             </Box>
           </Stack>
 
           <Stack justify="space-around" mt={2}>
             <Box textAlign="center">
-              Расстояние: {data.range}
+              Distance:{data.range}
             </Box>
           </Stack>
 
 
           <Button fluid style={{ marginTop: '10px' }} onClick={() => act('fire')}>
-            Огонь!
+            Fire!
           </Button>
 
           <Button fluid style={{ marginTop: '10px' }} onClick={() => act('disasseble')}>
-            Разобрать пушку(ВНИМАНИЕ СТВОЛ БУДЕТ ИСПОРЧЕН)
+            Disassemble the gun(WARNING THE BARREL WILL BE DAMAGED)
           </Button>
 
           <Button fluid style={{ marginTop: '10px' }} onClick={() => act('decrease_charge')}>
-            Убавить пороха
+            Reduce the powder
           </Button>
 
           <Button fluid style={{ marginTop: '10px' }} onClick={() => act('eject_ammo')}>
-            Вытащить снаряд
+            Remove the projectile
           </Button>
         </Stack>
       </Window.Content>

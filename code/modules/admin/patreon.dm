@@ -436,12 +436,9 @@ GLOBAL_VAR(PatreonsLoading)
 	key = ckey(key)
 	if(!key)
 		return 0
-	for(var/X in GLOB.temporary_donators)
-		if(X == key)
-			return GLOB.temporary_donators[X]
-	if(!GLOB.PatreonsLoaded)
-		queue_load_patreons()
-	return patreon_level_from_cache(key)
+	// BAD DRAKIAN has no paid entitlement tiers. Every authenticated player receives
+	// the former tier-five feature set; the legacy proc remains as a save/API shim.
+	return 5
 
 /proc/get_patreon_manual(key)
 	key = ckey(key)
@@ -574,12 +571,12 @@ GLOBAL_LIST_EMPTY(temporary_donators)
 	if(!email)
 		return
 	if(!patreon_lookup(name) || !patreon_lookup(email) || !findtext(email, "@"))
-		to_chat(src, span_warning("We couldn't find that name/email combo.</span> <span class='info'>Donator status is updated weekly before every playtest. If you have waited a week, seek help in our DISCORD SERVER (https://discord.gg/9uYTPsRMKa)"))
+		to_chat(src, span_warning("We couldn't find that name/email combination. Please ask for help in the BAD DRAKIAN Discord: https://discord.gg/xWFc2MwJdG"))
 		return
 //	var/saniemail = sanitize_simple(email,list("@"="AT","."="DOT"))
 	var/fug = patemail2ckey(email)
 	if(fug && (fug != ckey))
-		to_chat(src, span_warning("That Patreon is already registered to a different player.</span> <span class='info'>Donator status is updated weekly before every playtest. If you have waited a week, seek help in our DISCORD SERVER (https://discord.gg/9uYTPsRMKa)"))
+		to_chat(src, span_warning("That account is already registered to a different player. Please ask for help in the BAD DRAKIAN Discord: https://discord.gg/xWFc2MwJdG"))
 		return
 	add_patreon(ckey,email)
 	client.patreonlevel = -1

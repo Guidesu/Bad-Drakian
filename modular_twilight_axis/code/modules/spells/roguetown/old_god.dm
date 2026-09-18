@@ -1,7 +1,7 @@
 /obj/effect/proc_holder/spell/invoked/psydonvicariate
 	name = "VICARIATE"
 	action_icon = 'modular_twilight_axis/icons/mob/actions/roguespells.dmi'
-	overlay_icon = 'modular_twilight_axis/icons/mob/actions/roguespells.dmi' // ДОБАВЛЕНО: не хватало для корректной работы overlay_state
+	overlay_icon = 'modular_twilight_axis/icons/mob/actions/roguespells.dmi' //ADDED: missing for the correct operation of overlay_state
 	overlay_state = "VICARIATE"
 	desc = "A lesser form of the mighty art of ABSOLUTION. You take upon yourself the wounds, sickness, and frailty of another. Use carefully."
 	releasedrain = 25

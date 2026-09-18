@@ -410,11 +410,11 @@
 		fallback_royal_hand_to_local(H, "no monarch for royal hand family")
 		return
 
-	var/result = tgui_alert(H, "Герцог [monarch.person.real_name] уже в раунде. Хотите стать частью его семьи как родственник?\n\nЕсли отказаться, семейная система продолжит работать по вашим обычным настройкам.", "Герцогская семья", list("Да", "Нет"), 60 SECONDS)
+	var/result = tgui_alert(H, "Duke [monarch.person.real_name] is already in the round. Do you want to become part of his family as a relative? \n\n If you refuse, the family system will continue to operate according to your usual settings.", "Ducal family", list("Yes", "No"), 60 SECONDS)
 
 	if(!H || QDELETED(H) || H.family_datum)
 		return
-	if(result == "Да")
+	if(result == "Yes")
 		ftlog("ROYAL HAND OFFER: [H.real_name] accepted ruling family")
 		AddRoyal(H, FAMILY_OMMER)
 	else

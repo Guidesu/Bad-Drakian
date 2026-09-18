@@ -9,10 +9,10 @@
 	forbidden_races = list(RACES_DESPISED)
 	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
 	display_order = JDO_OVERSEER
-	tutorial = "Вам, как опытному солдату из свиты Его Величества, поручено наблюдать за недавно построенным Бастионом. \
-				Вы подчиняетесь маршалу и его советникам, \
-				и ваша задача - держать авангард в строю и следить за тем, чтобы пути в город оставались безопасными. \
-				Бастион не должен пасть."
+	tutorial = "You, as an experienced soldier from His Majesty's retinue, are tasked with overseeing the recently built Bastion.\
+				You are subordinate to the marshal and his advisors,\
+				and your task is to keep the vanguard in formation and ensure that the paths to the city remain safe.\
+				The bastion must not fall."
 	whitelist_req = TRUE
 	outfit = /datum/outfit/job/roguetown/overseer
 	advclass_cat_rolls = list(CTAG_OVERSEER = 2)
@@ -42,10 +42,10 @@
 
 /datum/advclass/overseer
 	name = "Overseer"
-	tutorial = "Вам, как опытному солдату из свиты Его Величества, поручено наблюдать за недавно построенным Бастионом. \
-				Вы подчиняетесь маршалу и его советникам, \
-				и ваша задача - держать авангард в строю и следить за тем, чтобы пути в город оставались безопасными. \
-				Бастион не должен пасть."
+	tutorial = "You, as an experienced soldier from His Majesty's retinue, are tasked with overseeing the recently built Bastion.\
+				You are subordinate to the marshal and his advisors,\
+				and your task is to keep the vanguard in formation and ensure that the paths to the city remain safe.\
+				The bastion must not fall."
 
 	category_tags = list(CTAG_OVERSEER)
 	traits_applied = list(TRAIT_MEDIUMARMOR, TRAIT_WOODSMAN, TRAIT_STEELHEARTED)
@@ -106,6 +106,6 @@
 
 /obj/item/clothing/suit/roguetown/armor/plate/cuirass/overseer
 	name = "overseer's brigandine"
-	desc = "Легкий доспех надзирателя Авангарда, выкрашенный в характерные чёрные цвета. «О, Король сиих земель, те, кто сегодня падут, чествуют тебя»."
+	desc = "Lightweight armor of the Vanguard overseer, painted in characteristic black colors. \"O King of these lands, those who fall today honor you.\""
 	icon_state = "light_brigandine"
 	item_state = "light_brigandine"

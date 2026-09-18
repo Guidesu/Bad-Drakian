@@ -74,20 +74,11 @@
 		if("no_storyteller_events")
 			no_storyteller_events = !no_storyteller_events
 			return TRUE
-		if("donor_ooc_color")
-			if(!check_patreon_lvl(user.ckey) && !is_donator(user.ckey))
-				return TRUE
-			donor_ooc_color = !donor_ooc_color
+		if("show_pubic_hair")
+			show_pubic_hair = !show_pubic_hair
 			return TRUE
-		if("donor_ooc_icon")
-			if(!check_patreon_lvl(user.ckey) && !is_donator(user.ckey))
-				return TRUE
-			donor_ooc_icon = !donor_ooc_icon
-			return TRUE
-		if("donor_examine_icon")
-			if(!check_patreon_lvl(user.ckey) && !is_donator(user.ckey))
-				return TRUE
-			donor_examine_icon = !donor_examine_icon
+		if("show_armpit_hair")
+			show_armpit_hair = !show_armpit_hair
 			return TRUE
 		if("verbose_character_creator")
 			verbose_character_creator = !verbose_character_creator

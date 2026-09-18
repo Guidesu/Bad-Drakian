@@ -1,17 +1,17 @@
 /datum/body_marking_set/aura
 
 /datum/body_marking_set/aura/z
-	name = "Покой"
+	name = "Rest"
 	body_marking_list = list(/datum/body_marking/aura/z)
 
 /datum/body_marking_set/aura/x
-	name = "Слово"
+	name = "Word"
 	body_marking_list = list(/datum/body_marking/aura/x)
 
 /datum/body_marking_set/aura/c
-	name = "Сила"
+	name = "Strength"
 	body_marking_list = list(/datum/body_marking/aura/c)
 
 /datum/body_marking_set/aura/v
-	name = "Равновесие"
+	name = "Balance"
 	body_marking_list = list(/datum/body_marking/aura/v)

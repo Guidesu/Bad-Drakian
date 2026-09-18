@@ -93,7 +93,7 @@
 
 /client/proc/cmd_admin_mod_triumphs(mob/M in GLOB.mob_list, operation)
 	set category = "Admin.Special"
-	set name = "Adjust Triumphs..."
+	set name = "Adjust Points..."
 
 	if(!check_rights(R_ADMIN))
 		return
@@ -102,19 +102,19 @@
 	var/log_text = ""
 	var/old_triumphs = M.get_triumphs()
 
-	var/prompt = "Please enter the amount of triumphs to add/remove:"
+	var/prompt = "Please enter the amount of points to add/remove:"
 
 	msg = input(usr, "Message:", prompt) as num|null
 
 	if (!msg)
 		return
 
-	M.adjust_triumphs(msg, TRUE, "Adjust Triumphs (admin verb) by [usr.ckey]")
+	M.adjust_triumphs(msg, TRUE, "Adjust Points (admin verb) by [usr.ckey]")
 	log_text = "by [msg], from [old_triumphs] to [old_triumphs + msg]"
 
-	log_admin("[key_name(usr)]: Modified [M.ckey]'s Triumphs [log_text]")
-	message_admins(span_adminnotice("[key_name_admin(usr)]: Modified [M.ckey]'s Triumphs ([log_text])"))
-	SSblackbox.record_feedback("tally", "admin_verb", 1, "Modify Triumphs") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+	log_admin("[key_name(usr)]: Modified [M.ckey]'s Points [log_text]")
+	message_admins(span_adminnotice("[key_name_admin(usr)]: Modified [M.ckey]'s Points ([log_text])"))
+	SSblackbox.record_feedback("tally", "admin_verb", 1, "Modify Points") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_admin_mod_pq(mob/M in GLOB.mob_list, operation)
 	set name = "Adjust PQ"
@@ -466,7 +466,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	if(!check_rights(R_ADMIN))
 		return
 
-	var/title = input(usr, "Заголовок объявления?", "Announcement Title", "") as text|null
+	var/title = input(usr, "Title of the ad?", "Announcement Title", "") as text|null
 	if(!title)
 		return
 
@@ -475,7 +475,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 		return
 
 	var/list/sound_options = list("Bell(Base)", "Alert", "HorrorWhispers", "TerribleHorn", "EvilLaugh", "NecromancerLaugh", "Monsters", "OtavaComing", "Custom(file)")
-	var/sound_choice = input(src, "Какой звук?", "Announcement Sound", "Bell(Base)") as null|anything in sound_options
+	var/sound_choice = input(src, "What sound?", "Announcement Sound", "Bell(Base)") as null|anything in sound_options
 	if(!sound_choice)
 		return
 
@@ -496,7 +496,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 		if("OtavaComing")
 			announce_sound = 'sound/misc/otavanlament.ogg'
 		if("Custom(file)")
-			announce_sound = input(src, "Выберите звуковой файл", "Custom Announcement Sound") as sound|null
+			announce_sound = input(src, "Select sound file", "Custom Announcement Sound") as sound|null
 			if(!announce_sound)
 				return
 
@@ -889,7 +889,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 			humie.add_stress(/datum/stressevent/maniac_woke_up)
 			to_chat(humie, span_deadsay("<span class='reallybig'>... WHERE AM I? ...</span>"))
 			var/static/list/slop_lore = list(
-				span_deadsay("... Twilight Axis? No ... It doesn't exist ..."),
+				span_deadsay("... BAD DRAKIAN? No ... It doesn't exist ..."),
 				span_deadsay("... My name is Trey. Trey Liam, Liamtific Troverseer ..."),
 				span_deadsay("... I'm on NT Liam, a self Treystaining ship, used to Treyserve what Liamains of roguemanity ..."),
 				span_deadsay("... Launched into the Grim Darkness, War and Grim Darkness preserves their grimness ... Their edge ..."),

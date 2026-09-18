@@ -1,19 +1,19 @@
 /datum/decree/zenitstadt_concordat
 	id = DECREE_ZENITSTADT_CONCORDAT
-	name = "Сумеречный Конкордат"
+	name = "Twilight Concordat"
 	category = DECREE_CATEGORY_ANCIENT
-	mechanical_text = "Духовенство и благодетели Церкви освобождаются от налогов."
-	flavor_text = {"Настоящий Сумеречный Конкордат, заключённый под покровительством Десяти Неделимых между Короной Азурии, Святым Престолом Грензельхофта и Валорийским Святым Престолом в память о великой победе над силами тьмы, что властвовали в Азурийской Долине, постановляет:
+	mechanical_text = "Clergy and benefactors of the Church are exempt from taxes."
+	flavor_text = {"This Twilight Concordat, concluded under the auspices of the Ten Indivisibles between the Crown of Azuria, the Holy See of Grenzelhoft and the Holy See of Valoria in memory of the great victory over the forces of darkness that dominated the Asurian Valley, decree:
 
-- Валорийская Церковь Неделимых Десяти, озаренная светом Астраты, наделяется правом и обязанностью хранить мир богов на этой земле. Во исполнение сией благой цели, служители Церкви будут молиться о безопасности и процветании Герцогства днем и ночью, поддерживать благосклонность Десяти посредством надлежащих таинств и церемоний, взимать десятину со своих прихожан, давать приют бедным и угнетенным. Служители Церкви, в том числе крестоносцы Ордена Тамплиеров, призванные оберегать покой храмов и святынь Десяти, могут свободно и беспрепятственно передвигаться по землям Азурийской долины, и не подвергнутся каким-либо гонениям и притеснениям.
-- Церковь Десяти Грензельхофта, при поручительстве и с благословения Имперской Церкви Одиннадцати, наделяется равным правом проповедовать и возносить молитвы Десяти и Одному на землях Азурии, не подвергаясь каким-либо гонениям и притеснениям ни в отношении своих служителей, ни в отношении своих последователей. В свою очередь, Церковь Десяти Грензельхофта отказывается от любых притязаний на храмы и святыни Валорийской Церкви Неделимых Десяти на землях Азурийской долины.
-- Корона Великого Герцогства Азурийского, признавая волю Астраты как источник законной власти над сией землей, обязуется освободить духовенство, имущество и благодетелей Церкви от налогов и податей, и отказывается от права на вмешательство во внутренние дела Церкви, окромя как путем переговоров с высшим представителем Валорийского Святого Престола на этой земле. В свою очередь, Церковь отказывается от права на вмешательство в дела светского правосудия и закона, покуда они не относятся к вопросам поддержания Божественного Порядка, ереси и преступлений против Церкви.
+- The Valorian Church of the Indivisible Ten, illuminated by the light of Astrata, is endowed with the right and duty to preserve the peace of the gods on this land. In fulfillment of this noble purpose, the servants of the Church will pray for the safety and prosperity of the Duchy day and night, maintain the favor of the Ten through proper sacraments and ceremonies, collect tithes from their parishioners, and provide shelter to the poor and oppressed. The servants of the Church, including the crusaders of the Order of the Templars, called to protect the sanctity of the temples and shrines of the Ten, may freely and unobstructedly move through the lands of the Azurian Valley, and shall not be subjected to any persecution or oppression.
+- The Church of the Ten Grenzelhofts, with the sponsorship and blessing of the Imperial Church of the Eleven, is granted equal rights to preach and offer prayers to the Ten and the One on the lands of Azuria, without being subjected to any persecution or oppression regarding its clergy or its followers. In turn, the Church of the Ten Grenzelhofts renounces any claims to the temples and shrines of the Valorian Church of the Indivisible Ten on the lands of the Azurian Valley.
+- The Crown of the Grand Duchy of Azurium, recognizing the will of Astrata as the source of lawful authority over this land, undertakes to exempt the clergy, property, and benefactors of the Church from taxes and levies, and renounces the right to interfere in the internal affairs of the Church, except through negotiations with the highest representative of the Valorian Holy See in this land. In turn, the Church renounces the right to interfere in matters of secular justice and law, as long as they do not pertain to issues of maintaining Divine Order, heresy, and crimes against the Church.
 	
-Стремясь к поддержанию мира на землях Азурии, все стороны, заверившие настоящий Конкордат, обязуются стремиться к поддержанию буквы и духа сего соглашения, отныне и вовеки.
+Striving to maintain peace on the lands of Azuria, all parties who have assured this Concordat undertake to seek to uphold the letter and spirit of this agreement, henceforth and forever.
 
-Заверено печатью Короны, печатью Святого Престола Грензельхофта и печатью Святого Престола Валории, милостью Десяти Неделимых."}
-	revoke_text = "Правитель сиих земель аннулировал Сумеречный Конкордат. Богатства Церкви должны служить благу Герцогства — и да рассудят Десять справедливость сего решения."
-	restore_text = "Правитель сиих земель восстановил действие Сумеречного Конкордата. Корона больше не будет вмешиваться в распоряжение мирскими богатствами Церкви."
+Certified with the seal of the Crown, the seal of the Holy See of Grenzelhoft, and the seal of the Holy See of Valoria, by the grace of the Ten Indivisible."}
+	revoke_text = "Ruler of these lands annulled the Twilight Concordat. The wealth of the Church must serve the good of the Duchy - and may the Ten judge the justice of this decision."
+	restore_text = "The ruler of these lands has restored the Twilight Concordat. The Crown will no longer interfere with the disposition of the Church's temporal wealth."
 
 /datum/decree/zenitstadt_concordat/roll_initial_year()
 	return CALENDAR_EPOCH_YEAR - rand(50, 120)

@@ -552,7 +552,7 @@ SUBSYSTEM_DEF(familytree)
 	if(!SSfamilytree)
 		return
 	if(SSfamilytree.round_disabled)
-		to_chat(mob, span_warning("FamilyTree уже отключён до конца текущего раунда."))
+		to_chat(mob, span_warning("FamilyTree is already disabled until the end of the current round."))
 		return
 	var/stopped = SSfamilytree.disable_for_round()
-	to_chat(mob, span_notice("FamilyTree отключён до конца текущего раунда. Остановлено персонажей: [stopped]."))
+	to_chat(mob, span_notice("FamilyTree is disabled until the end of the current round. Characters stopped: [stopped]."))

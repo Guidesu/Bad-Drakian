@@ -795,7 +795,7 @@ GLOBAL_LIST_INIT(averse_factions, list(
 		if(91 to 9999 MINUTES)
 			refund = 0
 	if(refund)
-		to_chat(user, span_info("Refunding Triumphs due to vice."))
+		to_chat(user, span_info("Refunding points due to vice."))
 		user.adjust_triumphs(refund)
 	paid_triumphs = FALSE
 

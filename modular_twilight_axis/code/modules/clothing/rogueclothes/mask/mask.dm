@@ -199,7 +199,7 @@
 
 /obj/item/clothing/mask/rogue/overseer_gold
 	name = "golden confessor mask"
-	desc = "Знаменитая металлическая маска цвета латуни, изображающая лик Плачущего Бога. Слишком громоздкая, чтобы носить со шлемами."
+	desc = "Famous brass-colored metal mask depicting the face of the Weeping God. Too bulky to wear with helmets."
 	icon = 'modular_twilight_axis/icons/roguetown/clothing/inquisition_overseer/overseer.dmi'
 	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/inquisition_overseer/onmob/overseer_onmob.dmi'
 	icon_state = "overseermask"
@@ -208,7 +208,7 @@
 
 /obj/item/clothing/mask/rogue/overseer_silver
 	name = "silver confessor mask"
-	desc = "Серебряная металлическая маска, покрытая защитными рунами, изображающими лик Плачущего Бога. Слишком громоздкая, чтобы носить со шлемами."
+	desc = "Silver metal mask covered with protective runes depicting the face of the Weeping God. Too bulky to wear with helmets."
 	icon = 'modular_twilight_axis/icons/roguetown/clothing/inquisition_overseer/overseer.dmi'
 	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/inquisition_overseer/onmob/overseer_onmob.dmi'
 	icon_state = "viceseermask"

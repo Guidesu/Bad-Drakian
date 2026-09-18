@@ -99,7 +99,7 @@
 				player.standing = TRUE
 			if(mark_actions)
 				blackjack_mark_action(player, player.busted)
-		message = "[player.name] играет руку дилера."
+		message = "[player.name] plays the dealer's hand."
 
 /datum/card_table_session/proc/blackjack_finish()
 	var/datum/card_table_player/table_dealer = dealer_player()
@@ -113,7 +113,7 @@
 			continue
 		var/value = hand_value(player.hand)
 		if(player == table_dealer)
-			player.result = (value > 21) ? "Bust" : "Дилер"
+			player.result = (value > 21) ? "Bust" : "Dealer"
 		else if(value > 21)
 			player.result = "Bust"
 		else if(dealer_value > 21 || value > dealer_value)
@@ -123,7 +123,7 @@
 		else
 			player.result = "Lose"
 	stage = CARD_TABLE_STAGE_FINISHED
-	message = "Блекджек завершен."
+	message = "Blackjack is complete."
 
 /datum/card_table_session/proc/blackjack_hit(mob/user)
 	var/datum/card_table_player/player = player_for_user(user)
@@ -136,9 +136,9 @@
 	if(hand_value(player.hand) > 21)
 		player.busted = TRUE
 		player.standing = TRUE
-		message = "[player.name] перебирает."
+		message = "[player.name] is searching."
 	else
-		message = "[player.name] берет карту."
+		message = "[player.name] takes the card."
 	blackjack_mark_action(player, player.busted)
 	blackjack_process_spirit_turn(FALSE)
 	if(blackjack_all_done())
@@ -150,7 +150,7 @@
 	if(stage != CARD_TABLE_STAGE_PLAYING || game_type != CARD_TABLE_GAME_BLACKJACK || !player)
 		return FALSE
 	player.standing = TRUE
-	message = "[player.name] остается."
+	message = "[player.name] remains."
 	blackjack_process_spirit_turn()
 	if(blackjack_all_done())
 		blackjack_finish()
@@ -178,7 +178,7 @@
 		blackjack_mark_action(player, player.busted)
 	xylix_cheat_used += user.ckey
 	xylix_check_exposure(user)
-	to_chat(user, span_notice("Ксаликс подталкивает [card_table_card_label(card)] в нужное место."))
+	to_chat(user, span_notice("Xalix pushes [card_table_card_label(card)] to the right place."))
 	if(game_type == CARD_TABLE_GAME_BLACKJACK)
 		blackjack_process_spirit_turn(FALSE)
 	if(game_type == CARD_TABLE_GAME_BLACKJACK && blackjack_all_done())

@@ -30,22 +30,22 @@ const GOD_ICONS: Record<string, string> = {
 };
 
 const GOD_TOOLTIPS: Record<string, string> = {
-  'abyssor': 'Абиссор благословляет водоемы поблизости от вашего имения, наполняя их косяками рыб.',
-  'astrata': 'Для поддержания Её закона, на ваших землях возведён аванпост, который периодически отправляет войска для борьбы с бандитизмом.',
-  'baotha': 'Следуя учениям Баоты, ваши крестьяне ведут гедонический образ жизни. В определенные дни недели они отводят время для отдыха и развлечений, что повышает их продуктивность в другие периоды.',
-  'dendor': 'Дендор благословляет леса поблизости от вашего имения, привлекая дичь на ваши угодья. Ваши охотники не забывают соблюдать все необходимые обряды и возносить Ему хвалу.',
+  'abyssor': 'Abyssor blesses the bodies of water near your estate, filling them with schools of fish.',
+  'astrata': 'To uphold Her law, an outpost has been erected on your lands, which periodically sends troops to combat banditry.',
+  'baotha': 'Following the teachings of Baota, your peasants lead a hedonistic lifestyle. On certain days of the week, they set aside time for rest and entertainment, which increases their productivity at other times.',
+  'dendor': 'Dendor blesses the forests near your estate, attracting game to your lands. Your hunters make sure to observe all necessary rituals and offer Him praise.',
   'eora': '',
-  'graggar': 'Ваши солдаты регулярно выходят в рейды, чтобы захватить новых рабов для вашего имения.',
-  'malum': 'Малум благословляет холмы и горы поблизости от вашего имения. Шахты изобилуют рудами и драгоценностями.',
-  'matthios': 'Жители вашего имения - не слуги, но товарищи в борьбе за свободу. Они не платят налога ни казне, ни вам, вместо этого добровольно поддерживая вас финансами. Часть сырья и товаров укрывается от казны и продается на рынке, благодаря чему вы избегаете налогообложения.',
+  'graggar': 'Your soldiers regularly go on raids to capture new slaves for your estate.',
+  'malum': 'Malum blesses the hills and mountains near your estate. The mines abound with ores and gems.',
+  'matthios': 'The inhabitants of your estate are not servants, but comrades in the struggle for freedom. They do not pay taxes to the treasury or to you; instead, they voluntarily support you financially. Some raw materials and goods are hidden from the treasury and sold on the market, allowing you to avoid taxation.',
   'necra': '',
-  'noc': 'Рабочие вашего имения бодрствуют ночью и спят денем, поставляя плоды своего труда на рассвете. Ночная охота обильнее дневной, но уход за полями и садами становится сложнее.',
+  'noc': 'The workers of your estate are awake at night and sleep during the day, delivering the fruits of their labor at dawn. Night hunting is more abundant than daytime hunting, but caring for the fields and gardens becomes more difficult.',
   'pestra': '',
-  'old_god': 'Каждый Дае Солнца, ваши крестьяне возносят хвалу Всеотцу в церквушке, возведенной на ваших землях. Вдохновленные на свершения Его примером, они трудятся с высочайшей самоотдачей.',
-  'ravox': 'Для поддержания Его порядка, на ваших землях возведён аванпост, который периодически отправляет войска для борьбы с бандитизмом.',
+  'old_god': 'Every Sun Day, your peasants offer praise to the All-Father in a small church built on your lands. Inspired by His example to achieve great deeds, they work with the greatest dedication.',
+  'ravox': 'To maintain His order, a garrison has been established on your lands, which periodically sends troops to combat banditry.',
   'undivided': '',
-  'xylix': 'Торговцы часто прибывают к вашему имению, и прибыль от сделок течет рекой. Возможно, в этом замешана благосклонность Ксайликса.',
-  'zizo': 'Благодаря Её благословению, рабочие вашего имения не знают усталости, поставляя плоды своего труда дважды в день, на закате и на рассвете. Торговля со смертными требует маскировки, что значительно снижает её эффективность.',
+  'xylix': 'Merchants often arrive at your estate, and profits from deals flow like a river. Perhaps the favor of Xsailix is involved in this.',
+  'zizo': 'Thanks to Her blessing, the workers of your estate do not know fatigue, delivering the fruits of their labor twice a day, at sunset and at sunrise. Trade with mortals requires disguise, which significantly reduces its efficiency.',
 };
 
 
@@ -100,7 +100,7 @@ const getKindTheme = (kind: string) => {
         card: 'transparent',
         overlay: 'transparent',
         chip: 'rgba(24, 14, 8, 0.33)',
-        subtitle: 'Злаки и овощи',
+        subtitle: 'Grains and vegetables',
       };
     case 'orchard':
       return {
@@ -109,7 +109,7 @@ const getKindTheme = (kind: string) => {
         card: 'transparent',
         overlay: 'transparent',
         chip: 'rgba(24, 14, 8, 0.33)',
-        subtitle: 'Фрукты и ягоды',
+        subtitle: 'Fruits and berries',
       };
     case 'hunt':
       return {
@@ -118,7 +118,7 @@ const getKindTheme = (kind: string) => {
         card: 'transparent',
         overlay: 'transparent',
         chip: 'rgba(24, 14, 8, 0.33)',
-        subtitle: 'Мех, шкуры и дичь',
+        subtitle: 'Fur, hides, and game',
       };
     case 'farm':
       return {
@@ -127,7 +127,7 @@ const getKindTheme = (kind: string) => {
         card: 'transparent',
         overlay: 'transparent',
         chip: 'rgba(24, 14, 8, 0.33)',
-        subtitle: 'Скот и припасы',
+        subtitle: 'Livestock and supplies',
       };
     case 'trade':
       return {
@@ -136,7 +136,7 @@ const getKindTheme = (kind: string) => {
         card: 'transparent',
         overlay: 'transparent',
         chip: 'rgba(24, 14, 8, 0.33)',
-        subtitle: 'Товары и прибыль',
+        subtitle: 'Goods and profit',
       };
     case 'fish':
       return {
@@ -145,7 +145,7 @@ const getKindTheme = (kind: string) => {
         card: 'transparent',
         overlay: 'transparent',
         chip: 'rgba(24, 14, 8, 0.33)',
-        subtitle: 'Рыба и морские сокровища',
+        subtitle: 'Fish and sea treasures',
       };
     case 'mining':
       return {
@@ -154,7 +154,7 @@ const getKindTheme = (kind: string) => {
         card: 'transparent',
         overlay: 'transparent',
         chip: 'rgba(24, 14, 8, 0.33)',
-        subtitle: 'Руды и ископаемые',
+        subtitle: 'Ores and minerals',
       };
     case 'forest':
       return {
@@ -163,7 +163,7 @@ const getKindTheme = (kind: string) => {
         card: 'transparent',
         overlay: 'transparent',
         chip: 'rgba(24, 14, 8, 0.33)',
-        subtitle: 'Древисина и уголь',
+        subtitle: 'Wood and coal',
       };
     case 'mage_tower':
       return {
@@ -172,7 +172,7 @@ const getKindTheme = (kind: string) => {
         card: 'transparent',
         overlay: 'transparent',
         chip: 'rgba(24, 14, 8, 0.33)',
-        subtitle: 'Магические реагенты',
+        subtitle: 'Magical reagents',
       };
     case 'cathedral':
       return {
@@ -181,7 +181,7 @@ const getKindTheme = (kind: string) => {
         card: 'transparent',
         overlay: 'transparent',
         chip: 'rgba(24, 14, 8, 0.33)',
-        subtitle: 'Вознесем хвалу Ему',
+        subtitle: 'Let us praise Him',
       };
     case 'outpost':
       return {
@@ -190,7 +190,7 @@ const getKindTheme = (kind: string) => {
         card: 'transparent',
         overlay: 'transparent',
         chip: 'rgba(24, 14, 8, 0.33)',
-        subtitle: 'На страже мира и порядка',
+        subtitle: 'Guarding peace and order',
       };
     default:
       return {
@@ -199,7 +199,7 @@ const getKindTheme = (kind: string) => {
         card: 'linear-gradient(180deg, rgba(97,70,43,0.96), rgba(47,32,18,0.98))',
         overlay: 'linear-gradient(135deg, rgba(240,210,160,0.12), rgba(0,0,0,0.08) 70%)',
         chip: 'rgba(24, 14, 8, 0.33)',
-        subtitle: 'Хозяйственное угодье',
+        subtitle: 'Agricultural estate',
       };
   }
 };
@@ -207,32 +207,32 @@ const getKindTheme = (kind: string) => {
 const getManorType = (type: string) => {
   switch (type) {
     case 'manor':
-      return 'Поместье';
+      return 'Manor';
     case 'hunter_mansion':
-      return 'Охотничья усадьба';
+      return 'Hunting lodge';
     case 'fisher_hamlet':
-      return 'Рыбацкий хутор';
+      return 'Fishing hamlet';
     case 'mining_settlement':
-      return 'Шахтерский поселок';
+      return 'Mining settlement';
     case 'village':
-      return 'Деревня';
+      return 'Village';
     default:
-      return 'Имение';
+      return 'Estate';
   }
 };
 
 const getProduceType = (type: string) => {
   switch (type) {
     case 'Goods':
-      return 'Производит сырьё';
+      return 'Produces raw materials';
     case 'Profit':
-      return 'Приносит прибыль';
+      return 'Brings profit';
     case 'Boost':
-      return 'Повышает продуктивность';
+      return 'Increases productivity';
     case 'Defense':
-      return 'Противостоит бандитам';
+      return 'Resists bandits';
     default:
-      return 'Производит сырье';
+      return 'Produces raw materials';
   }
 };
 
@@ -351,67 +351,67 @@ const Scene = ({ kind }: { kind: string }) => {
 
   if (kind === 'field') {
     return (
-      <div style={{ ...common, left: '0', right: '0', bottom: '0', width: '100%', height: '100%' }}><img src={resolveAsset('field_icon.png')} alt="Поля" style={{width: '100%', height: '100%', objectFit: 'fill', display: 'block', userSelect: 'none'}} /></div>
+      <div style={{ ...common, left: '0', right: '0', bottom: '0', width: '100%', height: '100%' }}><img src={resolveAsset('field_icon.png')} alt="Fields" style={{width: '100%', height: '100%', objectFit: 'fill', display: 'block', userSelect: 'none'}} /></div>
     );
   }
 
   if (kind === 'orchard') {
     return (
-      <div style={{ ...common, left: '0', right: '0', bottom: '0', width: '100%', height: '100%' }}><img src={resolveAsset('fruit_icon.png')} alt="Сады" style={{width: '100%', height: '100%', objectFit: 'fill', display: 'block', userSelect: 'none'}} /></div>
+      <div style={{ ...common, left: '0', right: '0', bottom: '0', width: '100%', height: '100%' }}><img src={resolveAsset('fruit_icon.png')} alt="Gardens" style={{width: '100%', height: '100%', objectFit: 'fill', display: 'block', userSelect: 'none'}} /></div>
     );
   }
 
   if (kind === 'hunt') {
     return (
-      <div style={{ ...common, left: '0', right: '0', bottom: '0', width: '100%', height: '100%' }}><img src={resolveAsset('hunting_icon.png')} alt="Охотничьи угодья" style={{width: '100%', height: '100%', objectFit: 'fill', display: 'block', userSelect: 'none'}} /></div>
+      <div style={{ ...common, left: '0', right: '0', bottom: '0', width: '100%', height: '100%' }}><img src={resolveAsset('hunting_icon.png')} alt="Hunting grounds" style={{width: '100%', height: '100%', objectFit: 'fill', display: 'block', userSelect: 'none'}} /></div>
     );
   }
 
   if (kind === 'farm') {
     return (
-      <div style={{ ...common, left: '0', right: '0', bottom: '0', width: '100%', height: '100%' }}><img src={resolveAsset('ranch_icon.png')} alt="Фермы" style={{width: '100%', height: '100%', objectFit: 'fill', display: 'block', userSelect: 'none'}} /></div>
+      <div style={{ ...common, left: '0', right: '0', bottom: '0', width: '100%', height: '100%' }}><img src={resolveAsset('ranch_icon.png')} alt="Farms" style={{width: '100%', height: '100%', objectFit: 'fill', display: 'block', userSelect: 'none'}} /></div>
     );
   }
 
   if (kind === 'trade') {
     return (
-      <div style={{ ...common, left: '0', right: '0', bottom: '0', width: '100%', height: '100%' }}><img src={resolveAsset('trade_icon.png')} alt="Торговые ряды" style={{width: '100%', height: '100%', objectFit: 'fill', display: 'block', userSelect: 'none'}} /></div>
+      <div style={{ ...common, left: '0', right: '0', bottom: '0', width: '100%', height: '100%' }}><img src={resolveAsset('trade_icon.png')} alt="Market rows" style={{width: '100%', height: '100%', objectFit: 'fill', display: 'block', userSelect: 'none'}} /></div>
     );
   }
 
   if (kind === 'fish') {
     return (
-      <div style={{ ...common, left: '0', right: '0', bottom: '0', width: '100%', height: '100%' }}><img src={resolveAsset('fishing_icon.png')} alt="Заводи" style={{width: '100%', height: '100%', objectFit: 'fill', display: 'block', userSelect: 'none'}} /></div>
+      <div style={{ ...common, left: '0', right: '0', bottom: '0', width: '100%', height: '100%' }}><img src={resolveAsset('fishing_icon.png')} alt="Factories" style={{width: '100%', height: '100%', objectFit: 'fill', display: 'block', userSelect: 'none'}} /></div>
     );
   }
 
   if (kind === 'mining') {
     return (
-      <div style={{ ...common, left: '0', right: '0', bottom: '0', width: '100%', height: '100%' }}><img src={resolveAsset('mine_icon.png')} alt="Шахты" style={{width: '100%', height: '100%', objectFit: 'fill', display: 'block', userSelect: 'none'}} /></div>
+      <div style={{ ...common, left: '0', right: '0', bottom: '0', width: '100%', height: '100%' }}><img src={resolveAsset('mine_icon.png')} alt="Mines" style={{width: '100%', height: '100%', objectFit: 'fill', display: 'block', userSelect: 'none'}} /></div>
     );
   }
 
   if (kind === 'forest') {
     return (
-      <div style={{ ...common, left: '0', right: '0', bottom: '0', width: '100%', height: '100%' }}><img src={resolveAsset('forest_icon.png')} alt="Леса" style={{width: '100%', height: '100%', objectFit: 'fill', display: 'block', userSelect: 'none'}} /></div>
+      <div style={{ ...common, left: '0', right: '0', bottom: '0', width: '100%', height: '100%' }}><img src={resolveAsset('forest_icon.png')} alt="Forests" style={{width: '100%', height: '100%', objectFit: 'fill', display: 'block', userSelect: 'none'}} /></div>
     );
   }
 
   if (kind === 'mage_tower') {
     return (
-      <div style={{ ...common, left: '0', right: '0', bottom: '0', width: '100%', height: '100%' }}><img src={resolveAsset('mage_tower_icon.png')} alt="Леса" style={{width: '100%', height: '100%', objectFit: 'fill', display: 'block', userSelect: 'none'}} /></div>
+      <div style={{ ...common, left: '0', right: '0', bottom: '0', width: '100%', height: '100%' }}><img src={resolveAsset('mage_tower_icon.png')} alt="Forests" style={{width: '100%', height: '100%', objectFit: 'fill', display: 'block', userSelect: 'none'}} /></div>
     );
   }
 
   if (kind === 'cathedral') {
     return (
-      <div style={{ ...common, left: '0', right: '0', bottom: '0', width: '100%', height: '100%' }}><img src={resolveAsset('cathedral_icon.png')} alt="Леса" style={{width: '100%', height: '100%', objectFit: 'fill', display: 'block', userSelect: 'none'}} /></div>
+      <div style={{ ...common, left: '0', right: '0', bottom: '0', width: '100%', height: '100%' }}><img src={resolveAsset('cathedral_icon.png')} alt="Forests" style={{width: '100%', height: '100%', objectFit: 'fill', display: 'block', userSelect: 'none'}} /></div>
     );
   }
 
   if (kind === 'outpost') {
     return (
-      <div style={{ ...common, left: '0', right: '0', bottom: '0', width: '100%', height: '100%' }}><img src={resolveAsset('outpost_icon.png')} alt="Аванпост" style={{width: '100%', height: '100%', objectFit: 'fill', display: 'block', userSelect: 'none'}} /></div>
+      <div style={{ ...common, left: '0', right: '0', bottom: '0', width: '100%', height: '100%' }}><img src={resolveAsset('outpost_icon.png')} alt="Outpost" style={{width: '100%', height: '100%', objectFit: 'fill', display: 'block', userSelect: 'none'}} /></div>
     );
   }
 
@@ -444,7 +444,7 @@ const WorkstationCard = ({ ws, act }: { ws: WorkstationData; act: (action: strin
           </div>
           <div style={{ textAlign: 'right' }}>
             <div style={{ fontSize: '23px', fontWeight: 800, color: theme.accent, textShadow: '-1px -1px 2px black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black' }}>{ws.workers_employed}/{ws.workers_max}</div>
-            <div style={{ fontSize: '15px' }}>рабочих</div>
+            <div style={{ fontSize: '15px' }}>workers</div>
           </div>
         </div>
 
@@ -464,7 +464,7 @@ const WorkstationCard = ({ ws, act }: { ws: WorkstationData; act: (action: strin
             }} />
           </div>
           <div style={{ marginTop: '6px', fontSize: '15px', display: 'flex', justifyContent: 'space-between' }}>
-            <span>Заполненность угодья</span>
+            <span>Estate occupancy</span>
             <span>{Math.round(percent)}%</span>
           </div>
         </div>
@@ -481,7 +481,7 @@ const WorkstationCard = ({ ws, act }: { ws: WorkstationData; act: (action: strin
             <Button style={workerButton} onClick={() => act('inc_workers', { id: ws.id })}>+</Button>
           </div>
           <div style={{ textAlign: 'right', fontSize: '15px' }}>
-            <div>Продуктивность: {Math.round(ws.production_bonus * 100)}%</div>
+            <div>Productivity:{Math.round(ws.production_bonus * 100)}%</div>
             <div>{getProduceType(ws.type_of_produce)}</div>
           </div>
         </div>
@@ -508,7 +508,7 @@ export const ManorPanel = () => {
   const loadPercent = total_workers ? clamp((workers_assigned / total_workers) * 100) : 0;
 
   return (
-    <Window title={manor_name || 'Владение'} width={860} height={595}>
+    <Window title={manor_name || 'Possession'} width={860} height={595}>
       <Window.Content scrollable style={panelBackground}>
         <div style={{ padding: '12px' }}>
           <div style={{ ...frameStyle, padding: '14px 16px 12px' }}>
@@ -531,10 +531,10 @@ export const ManorPanel = () => {
                 </div>
 
                 <div style={{ marginTop: '12px', display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-                  {statBox('Всего', total_workers)}
-                  {statBox('Занято', workers_assigned)}
-                  {statBox('Свободно', workers_free)}
-                  {statBox('За цикл', productivity_last_cycle)}
+                  {statBox('Total', total_workers)}
+                  {statBox('Occupied', workers_assigned)}
+                  {statBox('Free', workers_free)}
+                  {statBox('For cycle', productivity_last_cycle)}
                 </div>
 
                 <div style={{
@@ -546,7 +546,7 @@ export const ManorPanel = () => {
                   boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.04)',
                 }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', opacity: 0.8 }}>
-                    <span>Занятость людей</span>
+                    <span>People employment</span>
                     <span>{Math.round(loadPercent)}%</span>
                   </div>
                   <div style={{
@@ -580,9 +580,9 @@ export const ManorPanel = () => {
               gap: '8px',
               flexWrap: 'wrap',
             }}>
-              <div style={{ fontSize: '21px', fontWeight: 900, letterSpacing: '0.08em', textTransform: 'uppercase' }}>Угодья</div>
+              <div style={{ fontSize: '21px', fontWeight: 900, letterSpacing: '0.08em', textTransform: 'uppercase' }}>Estate</div>
               <div style={{ fontSize: '11px', opacity: 0.72, letterSpacing: '0.12em', textTransform: 'uppercase' }}>
-                Управление рабочими местами
+                Workplace management
               </div>
             </div>
           </div>
@@ -607,7 +607,7 @@ export const ManorPanel = () => {
               fontSize: '14px',
               opacity: 0.85,
             }}>
-              У этого персонажа пока нет доступного поместья или в нём ещё не создано ни одного угодья.
+              This character does not yet have an available estate or no holdings have been created in it.
             </div>
           )}
         </div>

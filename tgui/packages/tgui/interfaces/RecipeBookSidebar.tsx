@@ -41,7 +41,7 @@ export const RecipeBookSidebar = memo((props: Props) => {
     const query = search.toLowerCase();
     const seen = new Set<string>();
     // TA EDIT
-    const isAllCategory = category === 'All' || category === 'Всё';
+    const isAllCategory = category === 'All' || category === 'All';
     return recipes.filter((r) => {
       // TA EDIT
       const matchCat = isAllCategory || r.category === category;
@@ -66,7 +66,7 @@ export const RecipeBookSidebar = memo((props: Props) => {
         <Stack.Item style={{ overflow: 'auto', minWidth: '140px' }}>
           <Stack vertical fill>
             <Stack.Item grow basis={0} style={{ overflow: 'auto' }}>
-              <Section fill scrollable title="Фильтр">
+              <Section fill scrollable title="Filter">
                 {categories.map((cat) => {
                   const active = category === cat;
                   return (

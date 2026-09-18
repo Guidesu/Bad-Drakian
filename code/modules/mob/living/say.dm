@@ -227,7 +227,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(client)
 		last_words = message
 		record_featured_stat(FEATURED_STATS_SPEAKERS, src)	//Yappin'
-	var/regex/abyssor_regex = regex("Абиссор", "i")
+	var/regex/abyssor_regex = regex("Abyssor", "i")
 	if(abyssor_regex.Find(message))
 		record_round_statistic(STATS_ABYSSOR_REMEMBERED)
 

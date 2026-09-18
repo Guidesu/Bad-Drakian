@@ -91,6 +91,42 @@
 	equip_sound = 'sound/foley/equip/equip_armor_chain.ogg'
 	drop_sound = 'sound/foley/dropsound/chain_drop.ogg'
 
+/obj/item/leash/Destroy()
+	clear_leash_binding()
+	return ..()
+
+/obj/item/leash/proc/register_leash_participant(mob/living/participant)
+	if(!participant)
+		return
+	RegisterSignal(participant, list(COMSIG_MOB_LOGOUT, COMSIG_MOB_DEATH, COMSIG_QDELETING), PROC_REF(on_leash_participant_lost))
+
+/obj/item/leash/proc/unregister_leash_participant(mob/living/participant)
+	if(!participant)
+		return
+	UnregisterSignal(participant, list(COMSIG_MOVABLE_MOVED, COMSIG_MOB_LOGOUT, COMSIG_MOB_DEATH, COMSIG_QDELETING))
+
+/obj/item/leash/proc/on_leash_participant_lost(datum/source)
+	SIGNAL_HANDLER
+	clear_leash_binding()
+
+/obj/item/leash/proc/clear_leash_binding()
+	var/mob/living/old_pet = leash_pet
+	var/mob/living/old_master = leash_master
+	var/mob/living/old_freepet = leash_freepet
+	unregister_leash_participant(old_pet)
+	if(old_master != old_pet)
+		unregister_leash_participant(old_master)
+	if(old_freepet != old_pet && old_freepet != old_master)
+		unregister_leash_participant(old_freepet)
+	old_pet?.remove_status_effect(/datum/status_effect/leash_pet)
+	old_pet?.remove_status_effect(/datum/status_effect/leash_freepet)
+	old_master?.remove_status_effect(/datum/status_effect/leash_owner)
+	leash_pet = null
+	leash_master = null
+	leash_freepet = null
+	w_class = WEIGHT_CLASS_SMALL
+	STOP_PROCESSING(SSfastprocess, src)
+
 /obj/item/leash/process(delta_time)
 	// anti-teleport desync safety
 	if(leash_pet && leash_master)
@@ -113,16 +149,7 @@
 		w_class = WEIGHT_CLASS_SMALL
 
 	if(!leash_pet.has_status_effect(/datum/status_effect/leash_pet)) //If there is no pet, there is no dom. Loop breaks.
-		if(leash_master) UnregisterSignal(leash_master, COMSIG_MOVABLE_MOVED)
-		if(leash_pet) UnregisterSignal(leash_pet, COMSIG_MOVABLE_MOVED)
-		if(leash_freepet) UnregisterSignal(leash_freepet, COMSIG_MOVABLE_MOVED)
-		leash_pet?.remove_status_effect(/datum/status_effect/leash_freepet)
-//		leash_pet.remove_movespeed_modifier(/datum/movespeed_modifier/leash)
-		leash_master?.remove_status_effect(/datum/status_effect/leash_owner)
-		leash_freepet = null
-		leash_master = null
-		leash_pet = null
-		w_class = WEIGHT_CLASS_SMALL
+		clear_leash_binding()
 		return PROCESS_KILL
 
 //Called when someone is clicked with the leash
@@ -157,9 +184,11 @@
 			log_combat(user, C, "leashed", addition="playfully")
 			C.apply_status_effect(/datum/status_effect/leash_pet)//Has now been leashed
 			leash_pet = C //Save pet reference for later
+			register_leash_participant(leash_pet)
 			w_class = WEIGHT_CLASS_BULKY //This plus ITEM_SLOT_POCKET prevents putting into backpacks and other storage while still fitting on belt. When process kills, weightclass is returned to smol and backpackable.
 			if(!(user == leash_pet)) //Pet leashed themself. They are not the dom
 				leash_master = user //Save dom reference for later
+				register_leash_participant(leash_master)
 				user.apply_status_effect(/datum/status_effect/leash_owner) //Is the leasher
 				RegisterSignal(leash_master, COMSIG_MOVABLE_MOVED, PROC_REF(on_master_move))
 				RegisterSignal(leash_pet, COMSIG_MOVABLE_MOVED, PROC_REF(on_pet_move))
@@ -372,7 +401,7 @@
 		leash_pet.apply_status_effect(/datum/status_effect/leash_freepet)
 		RegisterSignal(leash_freepet, COMSIG_MOVABLE_MOVED, PROC_REF(on_freepet_move))
 		leash_master?.remove_status_effect(/datum/status_effect/leash_owner) //No dom with no leash. We will get a new dom if the leash is picked back up.
-		UnregisterSignal(leash_master, COMSIG_MOVABLE_MOVED)
+		unregister_leash_participant(leash_master)
 		leash_master = null
 
 /obj/item/leash/equipped(mob/user, slot, initial = FALSE, silent = FALSE)
@@ -392,6 +421,7 @@
 		leash_freepet = null
 		return
 	leash_master = user
+	register_leash_participant(leash_master)
 	leash_master.apply_status_effect(/datum/status_effect/leash_owner)
 	UnregisterSignal(leash_freepet, COMSIG_MOVABLE_MOVED)
 	RegisterSignal(leash_master, COMSIG_MOVABLE_MOVED, PROC_REF(on_master_move))

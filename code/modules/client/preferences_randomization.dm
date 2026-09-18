@@ -55,6 +55,8 @@
 	// Pick a new taur type!
 	taur_type = pick(pref_species.get_taur_list() + list(null))
 	taur_color = "#[random_color()]"
+	taur_markings = "#[random_color()]"
+	taur_tertiary = "#[random_color()]"
 	// Random gameplay stuff!
 	extra_language = pick(list("None") + GLOB.languages_character_selection)
 	selected_patron = pick_assoc(GLOB.preference_patrons)

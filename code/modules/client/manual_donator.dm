@@ -5,13 +5,8 @@ GLOBAL_VAR_INIT(donatorLoaded, 0)
 
 /proc/is_donator(key)
 	key = ckey(key)
-	if(!key)
-		return FALSE
-	if(check_patreon_lvl(key) > 0)
-		return TRUE
-	if(!GLOB.donatorLoaded)
-		load_donators()
-	return LAZYISIN(GLOB.donatorCkeys, key)
+	// Compatibility name: access is universal and is no longer tied to donations.
+	return !!key
 
 /proc/donator_addkey(key)
 	var/keyAsCkey = ckey(key)

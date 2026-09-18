@@ -96,9 +96,9 @@
 	if(!istype(partner))
 		return
 
-	to_chat(me, span_warning("Я чувствую, как моя грудь выплескивает молоко."))
+	to_chat(me, span_warning("I feel my breasts spewing milk."))
 	if(me != partner)
-		to_chat(partner, span_warning("Я чувствую, как грудь [me] выпускает молоко."))
+		to_chat(partner, span_warning("I feel my breasts [me] releasing milk."))
 
 #undef BREAST_BASE_PROD_PER_SIZE
 #undef BREAST_STORAGE_PER_SIZE

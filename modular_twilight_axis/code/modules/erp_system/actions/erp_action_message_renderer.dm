@@ -59,7 +59,7 @@
 
 	var/last = copytext(text, length(text), length(text) + 1)
 	if(last == "." || last == "!" || last == "?")
-		return "[copytext(text, 1, length(text))] по самый узел[last]"
+		return "[copytext(text, 1, length(text))] up to the very knot [last]"
 
-	return "[text] по самый узел"
+	return "[text] up to the very knot"
 

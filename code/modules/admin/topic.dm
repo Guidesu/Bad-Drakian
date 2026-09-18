@@ -1687,7 +1687,7 @@
 		if((!isnull(amt2change) && amt2change != 0) && !raisin)
 			return
 		if(mob_client.ckey == usr.ckey)
-			to_chat(src, span_boldwarning("Самому себе PQ менять нельзя."))
+			to_chat(src, span_boldwarning("You cannot change your own PQ."))
 			return
 		adjust_playerquality(amt2change, mob_client.ckey, usr.ckey, raisin)
 		for(var/client/C in GLOB.clients) // I hate this, but I'm not refactoring the cancer above this point.
@@ -1711,18 +1711,18 @@
 			alert(usr, "[M] does not have a key.")
 			return
 
-		var/amt2change = input(usr, "How much to modify the Triumphs by? (100 to -100)") as null|num
+		var/amt2change = input(usr, "How much to modify the Points by? (100 to -100)") as null|num
 		amt2change = clamp(amt2change, -100, 100)
 		var/raisin = stripped_input(usr, "State a short reason for this change", "Game Master", null, null)
 		if(!amt2change || !raisin)
 			return
 		if(M.ckey == usr.ckey)
-			to_chat(src, span_boldwarning("Самому себе триумфы выдавать нельзя."))
+			to_chat(src, span_boldwarning("You can’t give yourself points."))
 			return
-		M.adjust_triumphs(amt2change, FALSE, "Edit Triumphs (Game Master panel) by [usr.key]: [raisin]")
+		M.adjust_triumphs(amt2change, FALSE, "Edit Points (Game Master panel) by [usr.key]: [raisin]")
 		world.TgsAnnounceTriumphChanges(amt2change, M.ckey, usr.ckey, raisin)
-		message_admins("[usr.key] adjusted [M.key]'s triumphs by [amt2change] with [!raisin ? "no reason given" : "reason: [raisin]"].")
-		log_admin("[usr.key] adjusted [M.key]'s triumphs by [amt2change] with [!raisin ? "no reason given" : "reason: [raisin]"].")
+		message_admins("[usr.key] adjusted [M.key]'s points by [amt2change] with [!raisin ? "no reason given" : "reason: [raisin]"].")
+		log_admin("[usr.key] adjusted [M.key]'s points by [amt2change] with [!raisin ? "no reason given" : "reason: [raisin]"].")
 
 	else if(href_list["newbankey"])
 		var/player_key = href_list["newbankey"]

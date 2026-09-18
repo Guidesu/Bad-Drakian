@@ -8,33 +8,33 @@
 /proc/bond_type_display(bond_type)
 	switch(bond_type)
 		if(BOND_SPOUSE_M)
-			return "Супруг"
+			return "Spouse"
 		if(BOND_SPOUSE_F)
-			return "Супруга"
+			return "Wife"
 		if(BOND_ADOPTED_SON)
-			return "Приёмный сын"
+			return "Adopted son"
 		if(BOND_ADOPTED_DAUGHTER)
-			return "Приёмная дочь"
+			return "Adopted daughter"
 		if(BOND_BROTHER)
-			return "Брат"
+			return "Brother"
 		if(BOND_SISTER)
-			return "Сестра"
+			return "Sister"
 	return bond_type
 
 /proc/bond_type_instrumental(bond_type)
 	switch(bond_type)
 		if(BOND_SPOUSE_M)
-			return "супругом"
+			return "with husband"
 		if(BOND_SPOUSE_F)
-			return "супругой"
+			return "with wife"
 		if(BOND_ADOPTED_SON)
-			return "приёмным сыном"
+			return "adopted son"
 		if(BOND_ADOPTED_DAUGHTER)
-			return "приёмной дочерью"
+			return "adopted daughter"
 		if(BOND_BROTHER)
-			return "братом"
+			return "with brother"
 		if(BOND_SISTER)
-			return "сестрой"
+			return "with sister"
 	return bond_type
 
 /proc/bond_type_is_marriage(bond_type)
@@ -62,18 +62,18 @@
 /mob/living/carbon/human/proc/familytree_establish_bond()
 	set name = "Establish Bond"
 	set category = "Cleric"
-	set desc = "Засвидетельствовать перед богами семейные узы двух присутствующих."
+	set desc = "To witness the family bonds of two present before the gods."
 
 	var/mob/living/carbon/human/priest = src
 	if(!priest.mind || !priest.client)
 		return
 
 	if(!familytree_priest_can_perform_bond(priest))
-		to_chat(priest, span_warning("Лишь последователи Эоры или высшие служители Астраты и Зизо могут провести такой обряд."))
+		to_chat(priest, span_warning("Only followers of Eora or high servants of Astra and Zizo can perform such a ritual."))
 		return
 
 	if(priest.stat != CONSCIOUS)
-		to_chat(priest, span_warning("Вы не в состоянии провести обряд."))
+		to_chat(priest, span_warning("You are not able to perform the ritual."))
 		return
 
 	SSfamilytree.ftlog("ESTABLISH_BOND cast by [priest.real_name] ([priest.ckey])")
@@ -88,10 +88,10 @@
 		candidates += H
 
 	if(candidates.len < 2)
-		to_chat(priest, span_warning("Недостаточно людей рядом для проведения обряда."))
+		to_chat(priest, span_warning("Not enough people nearby to perform the ritual."))
 		return
 
-	var/mob/living/carbon/human/person1 = tgui_input_list(priest, "Кто готов засвидетельствовать свои отношения перед богами?", "Establish Bond", candidates)
+	var/mob/living/carbon/human/person1 = tgui_input_list(priest, "Who is ready to testify their relationship before the gods?", "Establish Bond", candidates)
 	if(!person1 || QDELETED(person1) || !(person1 in view(FAMILYTREE_BOND_RANGE, priest)))
 		return
 
@@ -104,7 +104,7 @@
 		BOND_SISTER,
 	)
 
-	var/bond_type = tgui_input_list(priest, "[person1.real_name] становится:", "Bond Type", bond_options)
+	var/bond_type = tgui_input_list(priest, "[person1.real_name] becomes:", "Bond Type", bond_options)
 	if(!bond_type)
 		return
 
@@ -131,43 +131,43 @@
 		valid_second += candidate
 
 	if(!valid_second.len)
-		to_chat(priest, span_warning("Нет подходящего кандидата."))
+		to_chat(priest, span_warning("No suitable candidate."))
 		return
 
-	var/mob/living/carbon/human/person2 = tgui_input_list(priest, "По отношению к кому?", "Establish Bond", valid_second)
+	var/mob/living/carbon/human/person2 = tgui_input_list(priest, "With respect to whom?", "Establish Bond", valid_second)
 	if(!person2 || QDELETED(person2) || !(person2 in view(FAMILYTREE_BOND_RANGE, priest)) || !(person1 in view(FAMILYTREE_BOND_RANGE, priest)))
 		return
 
 	if(bond_type_is_marriage(bond_type) && person1.spouse_mob == person2)
-		to_chat(priest, span_warning("Они уже состоят в браке."))
+		to_chat(priest, span_warning("They are already married."))
 		return
 
 	if(!can_bypass && bond_type_is_marriage(bond_type) && !familytree_polygamy_compatible(person1, person2))
-		to_chat(priest, span_warning("РЈС‡Р°СЃС‚РЅРёРєРё РЅРµ РіРѕС‚РѕРІС‹ Рє С‚Р°РєРѕРјСѓ Р±СЂР°РєСѓ."))
+		to_chat(priest, span_warning("The participants are not ready for such a marriage."))
 		return
 
 	var/instr = bond_type_instrumental(bond_type)
 
-	var/priest_confirm = tgui_alert(priest, "[person1.real_name] становится [instr] [person2.real_name]. Провести обряд?", "Establish Bond", list("Да", "Нет"))
-	if(priest_confirm != "Да")
+	var/priest_confirm = tgui_alert(priest, "[person1.real_name] becomes [instr] [person2.real_name]. Perform the ritual?", "Establish Bond", list("Yes", "No"))
+	if(priest_confirm != "Yes")
 		return
 
 	if(!(person1 in view(FAMILYTREE_BOND_RANGE, priest)) || !(person2 in view(FAMILYTREE_BOND_RANGE, priest)))
-		to_chat(priest, span_warning("Участники разошлись."))
+		to_chat(priest, span_warning("The participants have dispersed."))
 		return
 
-	var/offer1 = tgui_alert(person1, "Вы становитесь [instr] [person2.real_name]. Согласны?", "Священный обряд", list("Да", "Нет"))
-	if(offer1 != "Да")
-		to_chat(priest, span_warning("[person1.real_name] отказался(ась)."))
+	var/offer1 = tgui_alert(person1, "You become [instr] [person2.real_name]. Do you agree?", "Sacred ritual", list("Yes", "No"))
+	if(offer1 != "Yes")
+		to_chat(priest, span_warning("[person1.real_name] refused."))
 		return
 
-	var/offer2 = tgui_alert(person2, "[person1.real_name] становится вашим(ей) [instr]. Согласны?", "Священный обряд", list("Да", "Нет"))
-	if(offer2 != "Да")
-		to_chat(priest, span_warning("[person2.real_name] отказался(ась)."))
+	var/offer2 = tgui_alert(person2, "[person1.real_name] becomes your [instr]. Do you agree?", "Sacred ritual", list("Yes", "No"))
+	if(offer2 != "Yes")
+		to_chat(priest, span_warning("[person2.real_name] refused."))
 		return
 
 	if(!(person1 in view(FAMILYTREE_BOND_RANGE, priest)) || !(person2 in view(FAMILYTREE_BOND_RANGE, priest)))
-		to_chat(priest, span_warning("Участники разошлись."))
+		to_chat(priest, span_warning("The participants have dispersed."))
 		return
 
 	var/success = FALSE
@@ -185,10 +185,10 @@
 		success = familytree_holy_sibling(person1, person2)
 
 	if(!success)
-		to_chat(priest, span_warning("Не удалось провести обряд."))
+		to_chat(priest, span_warning("The ritual could not be performed."))
 		return
 
-	var/announcement = "[priest.real_name] провёл(а) обряд: [person1.real_name] теперь [instr] [person2.real_name]."
+	var/announcement = "[priest.real_name] performed the ritual: [person1.real_name] is now [instr] [person2.real_name]."
 	for(var/mob/living/carbon/human/M in view(FAMILYTREE_BOND_RANGE, priest))
 		to_chat(M, span_love(announcement))
 
@@ -197,18 +197,18 @@
 /mob/living/carbon/human/proc/familytree_dissolve_marriage()
 	set name = "Dissolve Marriage"
 	set category = "Cleric"
-	set desc = "Расторгнуть брак двух присутствующих."
+	set desc = "Dissolve the marriage of two present people."
 
 	var/mob/living/carbon/human/priest = src
 	if(!priest.mind || !priest.client)
 		return
 
 	if(!familytree_priest_can_perform_bond(priest))
-		to_chat(priest, span_warning("Лишь последователи Эоры или высшие служители Астраты и Зизо могут провести такой обряд."))
+		to_chat(priest, span_warning("Only followers of Eora or high servants of Astra and Zizo can perform such a ritual."))
 		return
 
 	if(priest.stat != CONSCIOUS)
-		to_chat(priest, span_warning("Вы не в состоянии провести обряд."))
+		to_chat(priest, span_warning("You are not able to perform the ritual."))
 		return
 
 	SSfamilytree.ftlog("DISSOLVE_MARRIAGE cast by [priest.real_name] ([priest.ckey])")
@@ -221,30 +221,30 @@
 			married_people += H
 
 	if(!married_people.len)
-		to_chat(priest, span_warning("Рядом нет людей, состоящих в браке."))
+		to_chat(priest, span_warning("There are no people present who are married."))
 		return
 
-	var/mob/living/carbon/human/person1 = tgui_input_list(priest, "Чей брак расторгнуть?", "Dissolve Marriage", married_people)
+	var/mob/living/carbon/human/person1 = tgui_input_list(priest, "Whose marriage should be dissolved?", "Dissolve Marriage", married_people)
 	if(!person1 || QDELETED(person1) || !(person1 in view(FAMILYTREE_DIVORCE_RANGE, priest)))
 		return
 
 	var/mob/living/carbon/human/person2 = person1.spouse_mob
 	if(!person2 || QDELETED(person2) || !(person2 in view(FAMILYTREE_DIVORCE_RANGE, priest)))
-		to_chat(priest, span_warning("Супруг(а) должен(а) быть рядом."))
+		to_chat(priest, span_warning("The spouse must be nearby."))
 		return
 
-	var/confirm1 = tgui_alert(person1, "Согласны на расторжение брака с [person2.real_name]?", "Dissolve Marriage", list("Да", "Нет"))
-	if(confirm1 != "Да")
-		to_chat(priest, span_warning("[person1.real_name] не дал(а) согласие."))
+	var/confirm1 = tgui_alert(person1, "Do you agree to dissolve the marriage with [person2.real_name]?", "Dissolve Marriage", list("Yes", "No"))
+	if(confirm1 != "Yes")
+		to_chat(priest, span_warning("[person1.real_name] did not give consent."))
 		return
 
-	var/confirm2 = tgui_alert(person2, "Согласны на расторжение брака с [person1.real_name]?", "Dissolve Marriage", list("Да", "Нет"))
-	if(confirm2 != "Да")
-		to_chat(priest, span_warning("[person2.real_name] не дал(а) согласие."))
+	var/confirm2 = tgui_alert(person2, "Do you agree to dissolve the marriage with [person1.real_name]?", "Dissolve Marriage", list("Yes", "No"))
+	if(confirm2 != "Yes")
+		to_chat(priest, span_warning("[person2.real_name] did not give consent."))
 		return
 
 	if(!(person1 in view(FAMILYTREE_DIVORCE_RANGE, priest)) || !(person2 in view(FAMILYTREE_DIVORCE_RANGE, priest)))
-		to_chat(priest, span_warning("Участники разошлись."))
+		to_chat(priest, span_warning("The participants have dispersed."))
 		return
 
 	var/datum/family_member/member1 = person1.family_member_datum
@@ -256,7 +256,7 @@
 	person1.spouse_mob = null
 	person2.spouse_mob = null
 
-	var/announcement = "[priest.real_name] расторг(ла) брак между [person1.real_name] и [person2.real_name]."
+	var/announcement = "[priest.real_name] has dissolved the marriage between [person1.real_name] and [person2.real_name]."
 	for(var/mob/living/carbon/human/M in view(FAMILYTREE_DIVORCE_RANGE, priest))
 		to_chat(M, span_warning(announcement))
 

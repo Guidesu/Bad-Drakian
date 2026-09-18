@@ -158,7 +158,7 @@
 
 	var/datum/erp_sex_organ/penis/P = C.get_owner_penis_organ()
 	D["climax_mode"] = P ? (P.climax_mode || "outside") : "outside"
-	D["climax_modes"] = list(list("id"="outside","name"="НАРУЖУ"),list("id"="inside","name"="ВНУТРЬ"))
+	D["climax_modes"] = list(list("id"="outside","name"="OUTSIDE"),list("id"="inside","name"="INSIDE"))
 	D["show_climax_controls"] = P ? TRUE : FALSE
 	D["actor_nodes"] = cached_action_payload["actor_nodes"] || list()
 	D["partner_nodes"] = cached_action_payload["partner_nodes"] || list()

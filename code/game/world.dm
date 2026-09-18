@@ -482,13 +482,13 @@ GLOBAL_VAR(restart_counter)
 	if(!announce_channel)
 		return
 
-	var/map_name = "Неизвестно"
+	var/map_name = "Unknown"
 	if(SSmapping)
 		map_name = SSmapping.config?.map_name
 
 	var/datum/tgs_chat_embed/structure/embed = new()
-	embed.title = "Сервер запущен!"
-	embed.description = "История вот-вот начнется на **[map_name]**..."
+	embed.title = "The server is running!"
+	embed.description = "The story is about to begin on **[map_name]**..."
 	embed.colour = "#B9B28A"
 
 	var/ping_role_id = CONFIG_GET(string/game_alert_role_id)
@@ -510,7 +510,7 @@ GLOBAL_VAR(restart_counter)
 		return
 
 	var/datum/tgs_chat_embed/structure/embed = new()
-	embed.title = "История началась!"
+	embed.title = "The story has begun!"
 	embed.description = GLOB.rogue_round_id
 	embed.colour = "#79ac78"
 
@@ -532,8 +532,8 @@ GLOBAL_VAR(restart_counter)
 		return
 
 	var/datum/tgs_chat_embed/structure/embed = new()
-	embed.title = "Приближается конец истории!"
-	embed.description = "Игроки проголосовали за конец раунда. До конца: [ROUND_END_TIME_VERBAL]"
+	embed.title = "The end of the story is approaching!"
+	embed.description = "Players have voted to end the round. To the end: [ROUND_END_TIME_VERBAL]"
 	embed.colour = "#ac87c5"
 	embed.footer = new(GLOB.rogue_round_id)
 
@@ -555,8 +555,8 @@ GLOBAL_VAR(restart_counter)
 		return
 
 	var/datum/tgs_chat_embed/structure/embed = new()
-	embed.title = "История продолжается!"
-	embed.description = "Игроки проголосовали за продолжение раунда. История продлена на [DisplayTimeText(ROUND_EXTENSION_TIME)]."
+	embed.title = "The story continues!"
+	embed.description = "Players voted to continue the round. The story has been extended to [DisplayTimeText(ROUND_EXTENSION_TIME)]."
 	embed.colour = "#79ac78"
 	embed.footer = new(GLOB.rogue_round_id)
 
@@ -579,14 +579,14 @@ GLOBAL_VAR(restart_counter)
 
 	var/round_duration_timestamp = gameTimestamp("hh:mm:ss", world.time - SSticker.round_start_time)
 	
-	var/map_name = "Неизвестно"
+	var/map_name = "Unknown"
 	if(SSmapping)
 		map_name = SSmapping.config?.map_name
 
 	var/datum/tgs_chat_embed/structure/embed = new()
-	embed.title = "Конец!"
+	embed.title = "The end!"
 
-	embed.description = "Карта: **[map_name]**\n\nИстория длилась [round_duration_timestamp]."
+	embed.description = "Map: **[map_name]**\n\nThe story lasted [round_duration_timestamp]."
 	
 	embed.colour = "#9f5255"
 	embed.footer = new(GLOB.rogue_round_id)

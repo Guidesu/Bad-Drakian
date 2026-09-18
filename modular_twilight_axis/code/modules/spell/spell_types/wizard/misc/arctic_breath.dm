@@ -1,6 +1,6 @@
 /obj/effect/proc_holder/spell/invoked/arctic_breath
 	name = "Arctic Breath"
-	desc = "Выдыхает поток морозного воздуха, отталкивая врагов и создавая густой ледяной туман."
+	desc = "Breathes a stream of frosty air, pushing back enemies and creating a dense icy fog."
 	school = "evocation"
 	invocations = list("SPIRITUS HIEMIS!")
 	invocation_type = "shout"

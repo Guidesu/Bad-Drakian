@@ -82,7 +82,7 @@
 	optional_roles = list(
 		/datum/migrant_role/pilgrim = 3,
 	)
-	greet_text = "Fleeing from misfortune and hardship, you and a handful of survivors get closer to Twilight Axis, looking for refuge and work, finally almost being there, almost..."
+	greet_text = "Fleeing misfortune and hardship, you and a handful of survivors draw close to the realm in search of refuge and work. You are almost there... almost..."
 
 /datum/migrant_wave/adventurer
 	name = "Adventure Party"
@@ -95,7 +95,7 @@
 	optional_roles = list(
 		/datum/migrant_role/adventurer = 3,
 	)
-	greet_text = "Together with a party of trusted friends we decided to venture out, seeking thrills, glory and treasure, ending up in the misty and damp bog underneath Twilight Axis, perhaps getting ourselves into more than what we bargained for."
+	greet_text = "Together with trusted friends, you ventured out seeking thrills, glory, and treasure, only to end up in the misty bog beneath the capital—perhaps in deeper trouble than you bargained for."
 */
 
 /datum/migrant_wave/bandit

@@ -133,19 +133,19 @@
 		var/datum/antagonist/vampire/target_vamp = examined_datum
 
 		if(examined != examiner && (examined in GLOB.coven_breakers_list) && !istype(target_vamp, /datum/antagonist/vampire/lord))
-			return span_userdanger("Нарушитель Маскарада. ПОЗОР!!!")
+			return span_userdanger("Masquerade Breaker. DISGRACE!!!")
 
 		switch(target_vamp.generation)
 			if(GENERATION_METHUSELAH)
-				return span_boldnotice("Первенец Каина!")
+				return span_boldnotice("Firstborn of Cain!")
 			if(GENERATION_ANCILLAE)
-				return span_boldnotice("Древнее дитя Каина.")
+				return span_boldnotice("Ancient child of Cain.")
 			if(GENERATION_NEONATE)
-				return span_boldnotice("Дитя Каина.")
+				return span_boldnotice("Child of Cain.")
 			if(GENERATION_THINBLOOD)
-				return span_boldnotice("Слабокровное дитя Каина.")
+				return span_boldnotice("Weak-blooded child of Cain.")
 			if(GENERATION_THINNERBLOOD)
-				return span_boldnotice("Едва затронутое кровью дитя Каина.")
+				return span_boldnotice("Barely touched by the blood of Cain.")
 
 	if(istype(examined_datum, /datum/antagonist/zombie) || istype(examined_datum, /datum/antagonist/skeleton))
-		return span_boldnotice("Ещё один неживой.")
+		return span_boldnotice("Another undead.")

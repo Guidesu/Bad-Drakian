@@ -4,11 +4,11 @@
 /datum/species/aura
 	name = "Au Ra"
 	id = "aura"
-	desc_title = "Ау Ра"
-	desc = "Изогнутые рога и красиво узорчатая чешуя Ау Ра часто заставляют предполагать, что они произошли от драконов. \
-	Это давно оспаривается, и ученые приводят в качестве доказательств против этого явные различия между двумя видами. Улучшенный слух и \
-	способность распознавать пространство, которыми обладают их рога, не встречаются у драконов,а крайний половой диморфизм, характерный для этой расы, \
-	также не встречается у драконов. Представители этой расы крепки и выносливы из-за чешуи, которая защищает их."
+	desc_title = "Au Ra"
+	desc = "The curved horns and beautifully patterned scales of the Au Ra often lead one to assume that they descended from dragons. \
+	This has long been disputed, and scientists cite as evidence against it the clear differences between the two species. Enhanced hearing and\
+	the ability to recognize space, which their horns possess, is not found in dragons, and the extreme sexual dimorphism characteristic of this race,\
+	, is also not found in dragons. Members of this race are strong and resilient due to their armor-like scales that protect them."
 	skin_tone_wording = "Skin Colors"
 	skin_tone_wording = "Ancestry"
 	default_color = "FFFFFF"
@@ -118,6 +118,6 @@
 
 /datum/species/aura/get_skin_list()
 	return list(
-		"Азри" = SKIN_COLOR_GRENZELHOFT,
-		"Наиире" = SKIN_COLOR_TAFRAVMA,
+		"Azri" = SKIN_COLOR_GRENZELHOFT,
+		"Naiire" = SKIN_COLOR_TAFRAVMA,
 	)

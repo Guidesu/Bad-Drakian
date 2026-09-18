@@ -1,6 +1,6 @@
 /obj/effect/proc_holder/spell/targeted/TA_transfix_neu
-	name = "Заворожить"
-	desc = "Опутывает разум смертного произнесённой вслух фразой, вгоняя его в дремоту. Сама по себе ворожба слаба, но Эмпатическая Связь с целью ворожбы усиливает ее на порядок\n"
+	name = "Enchant"
+	desc = "Wraps the mind of a mortal with a spoken phrase, driving them into slumber. The enchantment itself is weak, but an Empathic Link with the target of the enchantment enhances it tenfold\n"
 	overlay_state = "transfix"
 	associated_skill = /datum/skill/magic/blood
 	range = 7
@@ -25,7 +25,7 @@
 
 /atom/movable/screen/alert/status_effect/debuff/transfix_paste_int
 	name = "Sorcerous Overreach"
-	desc = "Я превысил пределы своей магии. Мой разум наказан за неестественно быструю речь."
+	desc = "I have exceeded the limits of my magic. My mind is punished for unnaturally fast speech."
 	icon_state = "debuff"
 
 /obj/effect/proc_holder/spell/targeted/TA_transfix_neu/choose_targets(mob/user = usr)
@@ -47,7 +47,7 @@
 
 /obj/effect/proc_holder/spell/targeted/TA_transfix_neu/cast(list/targets, mob/user = usr)
 	if(!length(targets))
-		to_chat(user, span_warning("Рядом нет смертных..."))
+		to_chat(user, span_warning("There are no mortals nearby..."))
 		revert_cast(user)
 		return
 
@@ -56,11 +56,11 @@
 
 
 	if(!user.can_speak())
-		to_chat(user, span_warning("Вы не можете говорить!"))
+		to_chat(user, span_warning("You cannot speak!"))
 		revert_cast(user)
 		return
 	var/transfix_input_started_at = world.time
-	transfix_msg = tgui_input_text(user, "Произнесите фразу вслух. Нужно минимум [TA_TRANSFIX_MIN_MSG_LENGTH] символов; счетчик снизу.", "Заворожить", max_length = MAX_MESSAGE_LEN, encode = FALSE)
+	transfix_msg = tgui_input_text(user, "Speak the phrase aloud. At least [TA_TRANSFIX_MIN_MSG_LENGTH] characters are required; counter below.", "Enchant", max_length = MAX_MESSAGE_LEN, encode = FALSE)
 
 	if(QDELETED(user))
 		return
@@ -70,7 +70,7 @@
 		return
 
 	if(!user.can_speak())
-		to_chat(user, span_warning("Вы не можете говорить!"))
+		to_chat(user, span_warning("You cannot speak!"))
 		revert_cast(user)
 		return
 
@@ -82,12 +82,12 @@
 		return
 
 	if(transfix_msg_length < TA_TRANSFIX_MIN_MSG_LENGTH)
-		to_chat(user, span_userdanger("Слишком короткая фраза ([transfix_msg_length]/[TA_TRANSFIX_MIN_MSG_LENGTH]) — разум жертвы не поддастся!"))
+		to_chat(user, span_userdanger("Too short a phrase ([transfix_msg_length]/[TA_TRANSFIX_MIN_MSG_LENGTH]) — the victim's mind will not yield!"))
 		revert_cast(user)
 		return
 
 	if(!powerful)
-		var/mob/selected = input(user, "Выберите цель для ворожбы.", "Заворожить") as null|anything in targets
+		var/mob/selected = input(user, "Choose a target for the spell.", "Enchant") as null|anything in targets
 		if(QDELETED(src) || QDELETED(user) || QDELETED(selected))
 			if(!QDELETED(user))
 				revert_cast(user)
@@ -98,7 +98,7 @@
 	var/bloodroll = roll(bloodskill, blood_dice)
 	user.say(transfix_msg, forced = "spell ([name])")
 	if(powerful)
-		user.visible_message(span_danger("Глаза [user] вспыхивают жутким красным светом!"))
+		user.visible_message(span_danger("[user]'s eyes flare with a terrible red light!"))
 
 	for(var/mob/living/carbon/human/target as anything in targets)
 		if(QDELETED(target) || target.stat != CONSCIOUS)
@@ -121,26 +121,26 @@
 				if(istype(H.wear_neck, /obj/item/clothing/neck/roguetown/psicross/silver) || istype(H.wear_wrists, /obj/item/clothing/neck/roguetown/psicross/silver) || istype(H.wear_ring, /obj/item/clothing/neck/roguetown/psicross/silver))
 					var/extra = "!"
 					if(knowledgable)
-						extra = ", кажется, это был [user]!"
-					to_chat(target, span_notice("Серебряный крест сияет и защищает меня от нечестивой магии[extra]"))
-					to_chat(user, span_userdanger("У [target] моя ПОГИБЕЛЬ! Я не могу опутать разум!"))
+						extra = ", it seems, that was [user]!"
+					to_chat(target, span_notice("The silver cross shines and protects me from unholy magic[extra]"))
+					to_chat(user, span_userdanger("[target] has my DOOM! I cannot ensnare the mind!"))
 					continue
 
 		if(target_bloodroll >= willroll)
 			target.drowsyness = min(target.drowsyness + get_drowsyness_gain(target, user), 150)
 			switch(target.drowsyness)
 				if(0 to 50)
-					to_chat(target, span_warning("Мой разум словно застилает пелена..."))
-					to_chat(user, span_notice("Разум [target] слегка поддаётся."))
+					to_chat(target, span_warning("My mind seems to be veiled..."))
+					to_chat(user, span_notice("[target]'s mind slightly yields."))
 					target.Slowdown(20)
 				if(51 to 90)
-					to_chat(target, span_warning("Веки смыкаются, тело наполняет свинцовая усталость."))
-					to_chat(user, span_notice("[target] долго не продержится."))
+					to_chat(target, span_warning("Eyelids are closing, my body is filled with leaden fatigue."))
+					to_chat(user, span_notice("[target] won’t hold much longer."))
 					force_close_eyes(target)
 					target.Slowdown(50)
 				if(91 to INFINITY)
-					to_chat(target, span_userdanger("Больше не могу... Ноги подкашиваются, мир уплывает."))
-					to_chat(user, span_boldnotice("[target] теперь мой."))
+					to_chat(target, span_userdanger("I can’t anymore... My legs are giving way, the world is slipping away."))
+					to_chat(user, span_boldnotice("[target] is mine now."))
 					force_close_eyes(target)
 					target.Slowdown(50)
 					addtimer(CALLBACK(target, TYPE_PROC_REF(/mob/living, Sleeping), 1 MINUTES), 5 SECONDS)
@@ -151,10 +151,10 @@
 			var/magicpower = round(target.get_skill_level(/datum/skill/magic/arcane) * 0.6, 1)
 			var/counterroll = roll(1 + holypower + magicpower, 5)
 			if(counterroll > target_bloodroll)
-				to_chat(target, span_warning("Нечестивая магия... Кажется, она исходит от [user]."))
+				to_chat(target, span_warning("Unholy magic... It seems to be coming from [user]."))
 
-		to_chat(user, span_userdanger("Мне не удалось опутать разум [target]!"))
-		to_chat(target, span_userdanger("Что-то не так в этом месте. Я чувствую, что моя жизнь под угрозой!"))
+		to_chat(user, span_userdanger("I failed to ensnare [target]'s mind!"))
+		to_chat(target, span_userdanger("Something is wrong in this place. I feel that my life is in danger!"))
 
 /obj/effect/proc_holder/spell/targeted/TA_transfix_neu/proc/force_close_eyes(mob/living/carbon/human/target)
 	target.eyesclosed = TRUE
@@ -193,19 +193,19 @@
 
 	var/mob/living/carbon/human/H = user
 	var/elapsed_seconds = max(round(transfix_input_elapsed / (1 SECONDS), 0.1), 0.1)
-	message_admins("[ADMIN_LOOKUPFLW(H)] triggered transfix speed guard: [transfix_msg_length] chars in [elapsed_seconds]s. СКОРЕЕ ВСЕГО - копипаста.")
-	log_admin("[key_name(H)] triggered transfix speed guard: [transfix_msg_length] chars in [elapsed_seconds]s. СКОРЕЕ ВСЕГО - копипаста.")
+	message_admins("[ADMIN_LOOKUPFLW(H)] triggered transfix speed guard: [transfix_msg_length] chars in [elapsed_seconds]s. MOST LIKELY - copy-paste.")
+	log_admin("[key_name(H)] triggered transfix speed guard: [transfix_msg_length] chars in [elapsed_seconds]s. MOST LIKELY - copy-paste.")
 
 	H.apply_status_effect(/datum/status_effect/debuff/transfix_paste_int)
 	H.apply_status_effect(/datum/status_effect/incapacitating/stun, TA_TRANSFIX_PASTE_STUN_TIME)
 	H.apply_status_effect(/datum/status_effect/incapacitating/knockdown, TA_TRANSFIX_PASTE_STUN_TIME)
 	break_transfix_disguise(H)
-	H.visible_message(span_danger("[H] превысил пределы своей могучей магии!"), span_userdanger("Я превысил пределы своей могучей магии!"))
+	H.visible_message(span_danger("[H] has exceeded the limits of his mighty magic!"), span_userdanger("I have exceeded the limits of my mighty magic!"))
 
 	if(H.STAINT >= TA_TRANSFIX_PASTE_DEATH_INT)
 		return
 
-	H.visible_message(span_danger("[H] превысил свои пределы, разрываясь на куски от темной силы!"), span_userdanger("Превысил свои пределы, разрываясь на куски от темной силы!"))
+	H.visible_message(span_danger("[H] has surpassed his limits, tearing apart from dark power!"), span_userdanger("Has surpassed his limits, tearing apart from dark power!"))
 	ADD_TRAIT(H, TRAIT_DUSTABLE, "transfix_paste")
 	if(!QDELETED(H) && H.stat != DEAD)
 		H.death()
@@ -229,7 +229,7 @@
 		return FALSE
 
 	AddSpell(new /obj/effect/proc_holder/spell/targeted/TA_transfix_neu)
-	to_chat(src, span_notice("Объятия Эоры становятся все крепче, и я учусь завораживать умы смертных."))
+	to_chat(src, span_notice("The embrace of Eora grows stronger, and I am learning to mesmerize the minds of mortals."))
 	return TRUE
 
 /datum/coven_power/eora/beautys_restoration/post_gain()

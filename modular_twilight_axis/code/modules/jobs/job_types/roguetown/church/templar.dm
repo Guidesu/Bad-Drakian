@@ -180,7 +180,7 @@
 	pants = /obj/item/clothing/under/roguetown/heavy_leather_pants
 	belt = /obj/item/storage/belt/rogue/leather/knifebelt/black/steel
 	beltr = /obj/item/storage/belt/rogue/pouch/coins/mid
-	neck = /obj/item/clothing/neck/roguetown/chaincoif/full // пока у них не будет нормальных шлемов
+	neck = /obj/item/clothing/neck/roguetown/chaincoif/full //until they have normal helmets
 	gloves = /obj/item/clothing/gloves/roguetown/angle
 	shoes = /obj/item/clothing/shoes/roguetown/boots/armor/iron
 	// -- End of section for god specific bonuses --
@@ -413,7 +413,7 @@
 		H.adjust_skillrank(/datum/skill/misc/sneaking, SKILL_LEVEL_NOVICE, TRUE)
 		H.adjust_skillrank(/datum/skill/misc/music, SKILL_LEVEL_APPRENTICE, TRUE)
 
-//Кусок с зибантийской хней для темпларов
+//A piece of Zybanthian henna for templars
 /datum/outfit/job/roguetown/templar/monk/pre_equip(mob/living/carbon/human/H)
 	. = ..()
 	if(istype(H.patron, /datum/patron/divine/noc))

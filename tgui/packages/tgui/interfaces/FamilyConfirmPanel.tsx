@@ -12,7 +12,7 @@ type Data = {
 export const FamilyConfirmPanel = () => {
   const { act, data } = useBackend<Data>();
   const {
-    title = 'Семейная система',
+    title = 'Family system',
     message = '',
   } = data;
 
@@ -21,7 +21,7 @@ export const FamilyConfirmPanel = () => {
       <Window.Content>
         <Stack fill vertical>
           <Stack.Item grow>
-            <Section fill scrollable title="Семейное предложение">
+            <Section fill scrollable title="Family offer">
               <Box style={{ whiteSpace: 'pre-line' }}>{message}</Box>
             </Section>
           </Stack.Item>
@@ -38,7 +38,7 @@ export const FamilyConfirmPanel = () => {
                   py={1}
                   textAlign="center"
                 >
-                  Да, принять
+                  Yes, accept
                 </Button>
               </Stack.Item>
               <Stack.Item grow>
@@ -50,7 +50,7 @@ export const FamilyConfirmPanel = () => {
                   py={1}
                   textAlign="center"
                 >
-                  Нет, отказаться
+                  No, refuse
                 </Button>
               </Stack.Item>
             </Stack>

@@ -8,13 +8,13 @@
 	forbidden_races = list(RACES_DESPISED)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
 	display_order = JDO_TOWNWATCH
-	tutorial = "Отвечая за безопасность города и соблюдение закона, вы ходите среди угнетенных, неся справедливость и боль. \
-	Возможно, вы даже застали ПРОПАЖУ Барона и поспешное прибытие Короля с его свитой, что пришли на готовое и сразу же прибрали власть в городе. \
-	Или же, вы слышали от ваших старых сослуживцев не самые лестные слова про Короля, ведь власть и авторитет Дозора заметно\
-	уменьшились с Его прибытием.\
-	Так или иначе, ваша верность принадлежит пропавшему Барону, ИСТИННОМУ владыке этого города, горожанам \
-	а уже после Королю и его свите, что все еще не хочет выбираться со своей временной ставки. \
-	Да и как защитит эта хваленная Королевская Гвардия жителей Рокхилла, сидя в замке, если не вы?"
+	tutorial = "Responsible for the safety of the city and the enforcement of the law, you walk among the oppressed, bringing justice and pain.\
+	Perhaps you even witnessed the DISAPPEARANCE of the Baron and the hasty arrival of the King with his retinue, who came to things already prepared and immediately took control of the city.\
+	Or, you heard from your old colleagues not the most flattering words about the King, since the power and authority of the Watch have noticeably\
+	diminished with His arrival.\
+	One way or another, your loyalty belongs to the missing Baron, the TRUE ruler of this city, to the townspeople\
+	and only afterwards to the King and his retinue, who still do not want to leave their temporary post.\
+	And how will this so-praised Royal Guard protect the inhabitants of Rockhill while sitting in the castle, if not you?"
 	whitelist_req = TRUE
 	advclass_cat_rolls = list(CTAG_TOWN_WATCH = 2)
 	give_bank_account = TRUE
@@ -43,13 +43,13 @@
 
 /datum/advclass/town_watch
 	name = "Town Watch"
-	tutorial = "Отвечая за безопасность города и соблюдение закона, вы ходите среди угнетенных, неся справедливость и боль. \
-	Возможно, вы даже застали ПРОПАЖУ Барона и поспешное прибытие Короля с его свитой, что пришли на готовое и сразу же прибрали власть в городе. \
-	Или же, вы слышали от ваших старых сослуживцев не самые лестные слова про Короля, ведь власть и авторитет Дозора заметно\
-	уменьшились с Его прибытием.\
-	Так или иначе, ваша верность принадлежит пропавшему Барону, ИСТИННОМУ владыке этого города, горожанам \
-	а уже после Королю и его свите, что все еще не хочет выбираться со своей временной ставки. \
-	Да и как защитит эта хваленная Королевская Гвардия жителей Рокхилла, сидя в замке, если не вы?"
+	tutorial = "Responsible for the safety of the city and the enforcement of the law, you walk among the oppressed, bringing justice and pain.\
+	Perhaps you even witnessed the DISAPPEARANCE of the Baron and the hasty arrival of the King with his retinue, who came to things already prepared and immediately took control of the city.\
+	Or, you heard from your old colleagues not the most flattering words about the King, since the power and authority of the Watch have noticeably\
+	diminished with His arrival.\
+	One way or another, your loyalty belongs to the missing Baron, the TRUE ruler of this city, to the townspeople\
+	and only afterwards to the King and his retinue, who still do not want to leave their temporary post.\
+	And how will this so-praised Royal Guard protect the inhabitants of Rockhill while sitting in the castle, if not you?"
 	outfit = /datum/outfit/job/roguetown/town_watch
 	category_tags = list(CTAG_TOWN_WATCH)
 	traits_applied = list(TRAIT_MEDIUMARMOR, TRAIT_GUARDSMAN)
@@ -111,8 +111,8 @@
 
 /datum/advclass/town_watch/dungeoneer
 	name = "Dungeoneer"
-	tutorial = "Покаяние, мерзкая склонность к садизму или извращённое понимание правосудия — что-то из этого привело вас к тому, чтобы надеть презренный капюшон палача.\
-	\ Прихоти шерифа и знати — ваш закон; вы ведь не привыкли терзаться вопросами морали."
+	tutorial = "Repentance, a nasty inclination toward sadism, or a perverted understanding of justice — something among these led you to don the despicable hood of the executioner.\
+	\ The whims of the sheriff and the nobility are your law; you are not used to being tormented by questions of morality."
 	outfit = /datum/outfit/job/roguetown/town_watch/dungeoneer
 	maximum_possible_slots = 1
 	category_tags = list(CTAG_TOWN_WATCH)

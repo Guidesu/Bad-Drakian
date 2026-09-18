@@ -188,7 +188,7 @@ const TriumphLever = (props: { favor: FavorData }) => {
           marginBottom: '4px',
         }}
       >
-        <span style={labelStyle}>Triumph Bonus</span>
+        <span style={labelStyle}>Point Bonus</span>
         <span style={{ ...valueStyle, fontWeight: 'bold' }}>
           +{triumph_bonus}
           <span style={{ color: INK_SOFT, fontWeight: 'normal' }}>
@@ -217,7 +217,7 @@ const TriumphLever = (props: { favor: FavorData }) => {
           return (
             <div
               key={idx}
-              title={`+${idx + 1} Triumph at ${threshold}m volume`}
+              title={`+${idx + 1} Point at ${threshold}m volume`}
               style={{
                 position: 'relative',
                 height: '12px',
@@ -394,7 +394,7 @@ const FavorCard = (props: {
         Earned by sending ships off satisfied or passive trades through
         Silverface, Goldface and Navigator (At 0.5x value). Spent on Company
         favors. Volume hit also determines the Merchant and Shopshands end of
-        round triumph bonus - spending favor does not subtract from it.
+        round point bonus - spending favor does not subtract from it.
       </div>
       <div
         style={{

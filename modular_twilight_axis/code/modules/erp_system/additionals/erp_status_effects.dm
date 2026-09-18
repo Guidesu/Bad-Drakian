@@ -97,15 +97,15 @@
 	var/mob/living/H = owner
 	var/mob/living/T = get_target()
 	if(T)
-		to_chat(H, span_love("Вы чувствуете непреодолимую тягу к [T]."))
+		to_chat(H, span_love("You feel an irresistible craving for [T]."))
 		update_alert()
 	else
-		to_chat(H, span_love("Ваше сердце странно дрожит..."))
+		to_chat(H, span_love("Your heart is trembling strangely..."))
 
 /datum/status_effect/love_potion/on_remove()
 	_sync_relationship(FALSE)
 	if(owner)
-		to_chat(owner, span_notice("Чары любви спадают."))
+		to_chat(owner, span_notice("The spell of love is subsiding."))
 	return ..()
 
 /datum/status_effect/love_potion/proc/set_target(mob/living/new_target)
@@ -125,7 +125,7 @@
 	_sync_relationship(TRUE)
 
 	var/mob/living/H = owner
-	to_chat(H, span_love("Ваше сердце тянется к [new_target]."))
+	to_chat(H, span_love("Your heart reaches out to [new_target]."))
 	update_alert()
 
 /datum/status_effect/love_potion/proc/update_alert()
@@ -134,11 +134,11 @@
 		return
 	var/atom/movable/screen/alert/status_effect/love_potion/A = linked_alert
 	if(A)
-		A.desc = "Вы чувствуете непреодолимую тягу к [T]."
+		A.desc = "You feel an irresistible craving for [T]."
 
 /atom/movable/screen/alert/status_effect/love_potion
 	name = "love sickness"
-	desc = "Непреодолимая тяга к тому, кого вы любите."
+	desc = "An irresistible attraction to the one you love."
 	icon = 'modular_twilight_axis/icons/mob/screen_alert.dmi'
 	icon_state = "emberwine"
 

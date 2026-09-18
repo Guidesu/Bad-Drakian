@@ -38,7 +38,7 @@
 	name = "raneshi jar helmet"
 	desc = "a jar-shaped helmet used by Empire light warriors."
 	icon = 'modular_twilight_axis/icons/roguetown/clothing/head.dmi'
-	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/onmob/32х48/helmets.dmi'
+	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/onmob/32x48/helmets.dmi'
 	icon_state = "jar_helmet"
 	item_state = "jar_helmet"
 	adjustable = CAN_CADJUST
@@ -49,7 +49,7 @@
 	armor = ARMOR_PLATE
 	stack_fovs = TRUE
 	smeltresult = /obj/item/ingot/steel
-	max_integrity = ARMOR_INT_HELMET_STEEL + 20 //В стандартном шлеме юзается ARMOR_INT_HELMET_STEEL, дающий 300 очков ХП, но поскольку тут крафт 1 сталь 1 бронза, то 20 интегрити сверху так же вряд-ли сильно повлияют на баланс.
+	max_integrity = ARMOR_INT_HELMET_STEEL + 20 //The standard helmet uses ARMOR_INT_HELMET_STEEL, which gives 300 HP points, but since the craft here is 1 steel 1 bronze, 20 integrities on top are also unlikely to greatly affect the balance.
 
 /obj/item/clothing/head/roguetown/helmet/raneshi_jarhelmet/ComponentInitialize()
 	AddComponent(/datum/component/adjustable_clothing, (HEAD|EARS|HAIR), (HIDEEARS|HIDEHAIR), null, 'sound/items/visor.ogg', null, UPD_HEAD)

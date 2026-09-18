@@ -496,8 +496,8 @@
 
 /datum/antagonist/vampire/lord/proc/ta_announce_demonic_ascension()
 	priority_announce(
-		"Кровавая тьма вступила в эти земли. Теперь владыка Зла правит не только ликом Астраты, но и душами жителей. Берегитесь, ибо теперь вы властны только над своей жизнью!",
-		"Багровая Тьма",
+		"Bloody darkness has entered these lands. Now the Lord of Evil rules not only over the face of Astrata, but also over the souls of its inhabitants. Beware, for now you are only in control of your own life!",
+		"Crimson Darkness",
 		'sound/villain/dreamer_warning.ogg'
 	)
 
@@ -650,7 +650,7 @@
 	return pick(candidates)
 
 /mob/living/carbon/human/proc/ta_banish_to_wretch_lair()
-	visible_message(span_boldwarning("[src] окутывается проклятой магией, а его презренная суть растворяется в портале. Эти земли больше не дают вернуть павших."))
+	visible_message(span_boldwarning("[src] is enveloped in cursed magic, and its vile essence dissolves in the portal. These lands no longer allow the fallen to be returned."))
 
 	var/turf/destination = ta_find_wretch_lair_turf()
 	if(!destination)
@@ -660,7 +660,7 @@
 	forceMove(destination)
 
 	var/area/lair_area = get_area(destination)
-	to_chat(src, span_userdanger("Кровь Владыки шепчет мне дорогу: логово вретчей лежит в [lair_area?.name || "неведомых землях"]."))
+	to_chat(src, span_userdanger("The Blood of the Lord whispers to me the way: the lair of the wretches lies in [lair_area?.name ||"in unknown lands"]."))
 	return TRUE
 
 /mob/living/carbon/human/proc/ta_make_demonic_vampire(mob/living/carbon/human/lord_body)
@@ -864,7 +864,7 @@
 	return ..()
 
 /datum/coven_power/potence/ascended_omnipotence/do_caster_notification(target)
-	to_chat(owner, span_userdanger("Я подготовил божественный удар."))
+	to_chat(owner, span_userdanger("I have prepared a divine strike."))
 
 /datum/coven_power/potence/ascended_omnipotence/proc/on_unarmed_attack(mob/living/carbon/human/source, mob/living/carbon/human/attacker, mob/living/carbon/human/target, datum/martial_art/attacker_style)
 	SIGNAL_HANDLER
@@ -873,7 +873,7 @@
 	if(!istype(owner.used_intent, INTENT_HARM))
 		return
 	if(!spend_resources())
-		to_chat(owner, span_warning("Мне не хватает [vitae_cost] витэ, чтобы выпустить божественный удар."))
+		to_chat(owner, span_warning("I lack [vitae_cost] vitae to unleash the divine strike."))
 		ta_cancel_prepared_strike(show_message = FALSE)
 		return
 	INVOKE_ASYNC(src, PROC_REF(ta_omnipotence_impact), target)
@@ -883,7 +883,7 @@
 	if(!active)
 		return
 	if(show_message)
-		to_chat(owner, span_notice("Я больше не готов использовать божественный удар."))
+		to_chat(owner, span_notice("I am no longer ready to use the divine strike."))
 	deactivate(null, TRUE)
 	discipline?.ta_ascended_action?.build_all_button_icons(force = TRUE)
 

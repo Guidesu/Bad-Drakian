@@ -9,21 +9,21 @@
 	name = "Watchman of Rockhill"
 	desc = ""
 	shortname = "Watchman"
-	credits = "Какое то жесткое стучание по батареям с распиливанием досок на фоне. Я не помню от куда я это выдрал год назад."
+	credits = "Some kind of hard knocking on batteries with sawing boards in the background. I don’t remember where I tore it from a year ago."
 	musicpath = list('modular_twilight_axis/sound/music/combat/combat_watchman.ogg')
 
 /datum/combat_music/man_at_arms_enigma
 	name = "Man At Arms of Rockhill"
 	desc = ""
 	shortname = "Man At Arms"
-	credits = "Я не помню от куда я это выдрал год назад."
+	credits = "I don’t remember where I tore this from a year ago."
 	musicpath = list('modular_twilight_axis/sound/music/combat/combat_retinue.ogg')
 
 /datum/combat_music/vanguard_enigma
 	name = "Vanguard of Rockhill"
 	desc = ""
 	shortname = "Vanguard"
-	credits = "Я не помню от куда я это выдрал год назад."
+	credits = "I don’t remember where I tore this from a year ago."
 	musicpath = list('modular_twilight_axis/sound/music/combat/combat_vanguard.ogg')
 
 

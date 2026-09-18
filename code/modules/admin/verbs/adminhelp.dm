@@ -768,7 +768,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	if(state != AHELP_ACTIVE)
 		return
 	var/msg = "<font color='red' size='4'><b>- AdminHelp marked as ingame mechanics issue! -</b></font><br>"
-	msg += "<font color='red'>My issue has been determined by an administrator to be related to ingame mechanics, For further resolution please use mentor help, the wiki, or Discord Twilight Axis if nobody is responding to a meditation..</font>"
+	msg += "<font color='red'>My issue has been determined by an administrator to be related to in-game mechanics. For further help, please use mentor help or the BAD DRAKIAN Discord if nobody responds to a meditation.</font>"
 	if(initiator)
 		to_chat(initiator, msg)
 	SSblackbox.record_feedback("tally", "ahelp_stats", 1, "")

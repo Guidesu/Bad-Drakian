@@ -22,17 +22,14 @@
 	map_x = 50.0
 	map_y = 50.0
 	map_state_id = "unknown"
-	map_state_name = "Ниоткуда"
-	map_origin_name = "Ниоткуда"
+	map_state_name = "From nowhere"
+	map_origin_name = "From nowhere"
 	list_group_order = 100
 	list_item_order = 1
 	name = "Nowhere"
 	origin_name = "Elsewhere"
-	desc = "Я родом из одного из множества небольших поселений, разбросанных по Псайдонии, часто слишком скромных или отдаленных. Поскольку я родом из ниоткуда, я не знаю ни одного местного языка.<br>"
-	origin_desc = "Для каждого величественного королевства, находящегося в Псайдонии, существует множество меньших поселений — деревень и вотчин, \
-	обречённых нести наследие, которое сохранят лишь немногие, кто отправляется в путешествия за пределы родины. Ещё более тревожно то, \
-	что подобная судьба тесно связана с множеством душ, оставленных блуждать в этом ушедшей эпохе мире, \
-	лишенных собственной идентичности — крестьян, беженцев, сирот, странников и других."
+	desc = "I come from one of the many small settlements scattered across Psaidonia, often too modest or remote. Since I come from nowhere, I do not know any local language.<br>"
+	origin_desc = "Not everyone can name a great kingdom as their homeland. Countless villages, estates, and vanished settlements survive only in the memories of those who left them behind. Peasants, refugees, orphans, and wanderers often carry such legacies without a nation to claim them."
 
 /datum/virtue/origin/azuria
 	map_group_order = 1
@@ -42,14 +39,14 @@
 	map_x = 18.4
 	map_y = 38.8
 	map_state_id = "azuria"
-	map_state_name = "Великое Герцогство Азурия"
-	map_origin_name = "Великое Герцогство Азурия"
+	map_state_name = "The Grand Duchy of Azuria"
+	map_origin_name = "The Grand Duchy of Azuria"
 	name = "Azurian"
 	origin_name = "Azuria"
-	desc = "Я происхожду из Азурии — небольшого, независимого горного анклава, расположенного на севере территорий Империи Грензельхофт. Высокие горные хребты, окружающие долину с юга и запада, делают Азурию практически недоступной для путешествий по суше, за счет чего она находится в относительной безопасности от мировых потрясений и военных вторжений.<br>"
+	desc = "I come from Azuria — a small, independent mountain enclave located in the north of the territories of the Grenzelhoft Empire. The high mountain ranges surrounding the valley from the south and west make Azuria virtually inaccessible for overland travel, which keeps it relatively safe from global upheavals and military invasions.<br>"
 	restricted = FALSE
 	added_languages = list(/datum/language/oldazurian)
-	origin_desc = "<br><br><b><a href='https://wiki.twilight-fortress-axis.ru/index.php?title=%D0%92%D0%B5%D0%BB%D0%B8%D0%BA%D0%BE%D0%B5_%D0%93%D0%B5%D1%80%D1%86%D0%BE%D0%B3%D1%81%D1%82%D0%B2%D0%BE_%D0%90%D0%B7%D1%83%D1%80%D0%B8%D1%8F'>Азурия</a></b> — это небольшой, независимый горный анклав, расположенный на севере территорий Империи Грензельхофт. Высокие горные хребты, окружающие долину с юга и запада, делают Азурию практически недоступной для путешествий по суше, за счет чего она находится в относительной безопасности от мировых потрясений и военных вторжений. За счет этой особенности рельефа Азурия стала пристанищем для страждущих, приключенцев и беженцев, стекающихся сюда со всей Гримории.<br><br>Под властью престола Великого Герцогства находятся сравнительно небольшие земли Азурийской долины, с юга и запада огороженные практически непроходимой горной грядой, а с востока и севера — заливом, известным как Лазурный бассейн, впадающим в Чёрный океан. Вся полнота светской власти в Азурии принадлежит Великому Герцогу (или Герцогине), правящему из своей резиденции в городе Сумеречной Оси. Хоть родословная Великого Герцога и связана с династией Грензельхофт, он не является вассалом Империи, сохраняя независимость и суверенитет.<br><br>Основной религией Азурии считается церковь Десяти. Жрец, направленный Святым Престолом, несет службу в церкви Сумеречной Оси; коронация наследника прежнего Великого Герцога не может быть проведена без его благословения. Тем не менее, хоть власть Пантеона и сильна в Герцогстве, здесь также присутствует магистр Инквизиции церкви Всеотца, направляемый из Отавы и отчитывающийся перед маршалом своего Ордена, крепости которых присутствуют на соседних землях Грензельхофта. Соглашение, на основании которого инквизиция имеет право действовать в Великом Герцогстве, было заключено под давлением со стороны Имперской Церкви Одиннадцати, обеспокоенной возможным притеснением последователей Всеотца в границах Азурии. <br><br>Союз между церквями Пантеона и Всеотца в Азурии шаток, но подкрепляется, помимо политического давления со стороны Грензельхофта, ещё и наличием общего врага в лице культистов пантеона Презренных и Культа Спасения, в изобилии действующих на землях Герцогства. Хоть их взаимоотношения и подпадают исключительно под юрисдикцию духовной власти, в случае межконфессиональных конфликтов жрец Десяти и магистр Инквизиции традиционно обращаются за помощью в урегулировании к Великому Герцогу, как нейтральной третьей стороне.<br><br>Прошлое Великого Герцогства документировано сравнительно плохо. Широко известно, что династия нынешнего правителя Азурии берет свое начало от линии Грензельхофт, что ныне правит колоссальной Империей к югу от земель Герцогства. Одни говорят, что Азурия была сначала покорена Чёрной Империей, а затем дарована предкам нынешнего Великого Герцога за их заслуги перед Имперской Короной; другие утверждают, что в незапамятные времена династия Великого Герцога пришла на эти земли, разбив властвовавшие над ней вампирские кланы и построив на руинах их тёмного царства новый порядок под сенью Десяти; среди представителей эльфийских диаспор же бытует мнение, что до вторжения сюда армии Великого Герцога, спонсируемой Грензельхофтом, долина принадлежала эльфийскому народу.<br><br>Независимо от того, какая из теорий правдива, ныне Великое Герцогство Азурия представляет из себя суверенное, независимое государство, придерживающееся политики нейтралитета в мировых делах. Великий Герцог оказался единственным правителем на западном континенте, что не стал принимать какое-либо участие в Сумеречной Войне, благодаря чему в подвластные ему города хлынули беженцы, желающие спастись от конфликта. Только время покажет, сможет ли котел культур и народов, которым стала Азурия в наши дни, уцелеть в качестве единого и независимого Герцогства.<br><br>"
+	origin_desc = "<br><br><b>Azuria</b> is a small, independent mountain realm on Grenzelhoft's northern frontier. High ridges close the valley to the south and west, while the Azure Basin opens onto the Black Ocean to the east. The difficult terrain has spared Azuria from many foreign invasions and made it a refuge for adventurers, exiles, and displaced people from across Grimoria.<br><br>A sovereign count, earl, jarl, or equivalent ruler governs the valley from its independent capital and owes allegiance to no outside crown. The ruling dynasty claims kinship with Grenzelhoft's imperial house, but that ancestry grants the Empire no jurisdiction here.<br><br>The Church of the Ten is Azuria's dominant faith. Its senior priest blesses each lawful succession, while an Otavan magister oversees the local Inquisition under an old compact with the Imperial Church of the Eleven. Political pressure and their common enemies hold this uneasy arrangement together; when the churches clash, the sovereign ruler is expected to mediate.<br><br>Azuria's early history remains disputed. Imperial chroniclers say Grenzelhoft conquered the valley and later granted it to the present dynasty. Other traditions describe the dynasty overthrowing ancient vampire clans, while elven accounts remember a homeland taken by a Grenzelhoft-backed army. Whatever the truth, modern Azuria is neutral, sovereign, and crowded with refugees from the Twilight War. Whether those many peoples can forge a lasting realm remains an open question.<br><br>"
 
 /datum/virtue/origin/enigma
 	map_group_order = 3
@@ -59,13 +56,13 @@
 	map_x = 64.2
 	map_y = 75.0
 	map_state_id = "enigma"
-	map_state_name = "Королевство Энигма"
-	map_origin_name = "Королевство Энигма"
+	map_state_name = "Kingdom of Enigma"
+	map_origin_name = "Kingdom of Enigma"
 	name = "Enigmian"
 	origin_name = "Enigma"
-	desc = "Я происхожду с островов Энигмы — некогда величественного королевства, знаменитого своей гостеприимностью и многообразием проживающих под его стягами народов. Ныне же древний пакт, что оберегал мой дом, разорван, и над Энигмой нависла угроза вампиров, обошедшая стороной лишь остров Рокхилл.<br>"
+	desc = "I come from the Enigma Islands, once a powerful and diverse kingdom. The ancient pact that protected my homeland has broken, and Rockhill is now among the last islands still resisting the vampire threat.<br>"
 	restricted = FALSE
-	origin_desc = "<br><br><b><a href='https://wiki.twilight-fortress-axis.ru/index.php?title=%D0%AD%D0%BD%D0%B8%D0%B3%D0%BC%D0%B0'>Королевство Энигма</a></b> — это государство, расположенное на крупных островах посреди Моря Путешественников. Его фундамент выстроен на костях рабов и каторжников, жестокость и дисциплина ради общей цели возводились в почёт, в то время как слабость, нежность и в первую очередь непокорность были чужды и угнетаемы. 'Скала и Камень, Дисциплина и Смерть' — гласит древний девиз, хорошо описывающий как была устроена философия жизни в этих краях. Однако... в нынешнее времена девиз утрачивает свою силу. Настали по-настоящему тяжелые для королевства времена.<br><br>Сегодня же, Энигма представляет из себя крайне удручающее зрелище: основная часть острова, самая большая и некогда богатая словно самые зажиточные города Валории, теперь борется за своё выживание едва ли не в полном одиночестве: нашествие упырей разрушило всякие устойчивые и стабильные коммуникации между городами и крепостями, деревнями и сёлами.<br><br>Многие замки, ремесленные города и селения постигло несчастье разорения и скоропостижной гибели, в то время как самые крупные города королевства продолжают свою борьбу за выживание: взять эти могучие крепости без длительной осады попросту невозможно, а разрозненные орды упырей, как известно, осады вести не умеют. Пока не умеют.<br><br>Лишь в окрестностях города Рокхилл сохранилась сколь-либо стабильная сельская жизнь — пусть крестьяне и претерпевают бесчисленные лишения, по крайней мере местное население защищено от вампиров широким проливом. Здесь же была размещена новая Королевская ставка, из которой планируется реконкиста порабощенных земель. Церковь Десяти и Инквизиция должны в плане короля сыграть ключевую роль.<br><br>"
+	origin_desc = "<br><br><b>Enigma</b> is an island realm in the Sea of Travelers. Convicts and enslaved laborers laid its foundations, and generations of harsh discipline shaped its culture. Its old maxim—'Rock and Stone, Discipline and Death'—once expressed the certainty of a powerful kingdom. It sounds more desperate now.<br><br>Ghoul incursions have severed roads and sea lanes across the largest islands, leaving cities, castles, and villages to survive in isolation. Great fortresses remain difficult to storm, but the countryside between them has been devastated.<br><br>Rockhill retains a measure of ordinary life because a broad strait separates it from the worst of the invasion. From this refuge, an independent sovereign and the surviving court plan the recovery of the lost islands with the aid of the Church of the Ten and the Inquisition.<br><br>"
 
 /datum/virtue/origin/grenzelhoft
 	map_group_order = 1
@@ -75,13 +72,13 @@
 	map_x = 18.3
 	map_y = 47.4
 	map_state_id = "grenzelhoft"
-	map_state_name = "Империя Грензельхофт"
-	map_origin_name = "Империя Грензельхофт"
+	map_state_name = "The Empire of Grenzelhoft"
+	map_origin_name = "The Empire of Grenzelhoft"
 	name = "Grenzelhoftian"
 	origin_name = "Grenzelhoft"
 	added_languages = list(/datum/language/grenzelhoftian)
-	desc = "Я происхожу из земель Грензельхофта, что раскинулись от северных гор Хаммерхолда до Багровых Земель и жарких пустынь Наледи. Культура моей родины основана на милитаризме и национальной гордости, что сделали её самым могущественным государством Гримории.<br>"
-	origin_desc = "<br><br><b><a href='https://wiki.twilight-fortress-axis.ru/index.php?title=%D0%93%D1%80%D0%B5%D0%BD%D0%B7%D0%B5%D0%BB%D1%8C%D1%85%D0%BE%D1%84%D1%82,_%D0%A7%D1%91%D1%80%D0%BD%D0%B0%D1%8F_%D0%98%D0%BC%D0%BF%D0%B5%D1%80%D0%B8%D1%8F'>Империя Грензельхофт,</a></b> также известная как Великий Имперский Пакт Династии Грензельхофт, Пакт Зенитара и Чёрная Империя — крупное феодальное государство, территориально расположенное в сердце западного континента и занимающее значительную долю земель оного. Объединяя под своим флагом наиболее влиятельные и богатые королевства запада, Грензельхофт по праву считается самой могущественной империей Гримории.<br><br>Культура Грензельхофта основана на милитаризме и национальной гордости. Постоянные военные конфликты Империи привели к формированию первой в Гримории профессиональной армии, а также появлению прослойки дворянства, получившего свой статус за военные заслуги, а не по праву крови. Грензельхофт насаждает свою культуру огнем и мечом, тем самым ассимилируя в свой состав целые народы. Кроме того, именно Грензельхофт стал первым государством, массово внедрившим огнестрельное вооружение в рядах своих вооруженных сил.<br><br>Действующим правителем Империи, носящим титул Его Императорского Величества, Милостью Всеотца и Десяти Кайзера Пакта Зенитара и Короля Зентариона, является Алистер IV Грензельхофт. Его власть на территории Пакта практически непререкаема, однако во многом она опирается на поддержку Кайзерстага — высшего законосовещательного органа Империи Грензельхофт, призванного представлять интересы имперских сословий в вопросах издания законодательных актов и вынесения судебных решений.<br><br>В вопросе религиии Грензельхофт представляет из себя неоднозначную картиру. На землях Империи распространены как церкви Десяти, так и соборы Всеотца, объединённые Имперской Церковью Одиннадцати. Этот огромный компромисс между интересами старой и новой веры, сформированный в результате бракосочетания Верховного магистра Имперской Церкви Всеотца Адриана VII и Верховной жрицы Десяти Миранды II Бастонской, за глаза называют <i>священным союзом, выкованным в Тартаре</i>.<br><br>"
+	desc = "I come from the lands of Grenzelhoft, which stretch from the northern mountains of Hammerhold to the Crimson Lands and the hot deserts of Naledi. The culture of my homeland is based on militarism and national pride, which has made it the most powerful state in Grimoria.<br>"
+	origin_desc = "<br><br><b>The Grenzelhoft Empire</b>, formally the Great Imperial Pact of the Grenzelhoft Dynasty and often called the Black Empire, dominates the western continent. Its banner unites many of the west's richest and most influential kingdoms.<br><br>Militarism and national pride define Grenzelhoftian culture. Centuries of war produced Grimoria's first professional army and a noble class in which battlefield service can matter as much as birth. Conquest spreads the Empire's customs by force, and Grenzelhoft was the first power to deploy firearms throughout its armies.<br><br>Alistair IV Grenzelhoft reigns as Kaiser of the Zenithar Pact and King of Zentarion. His authority is formidable, though it depends upon the Kaiserstag, an assembly that represents the imperial estates in legislation and high justice.<br><br>The Empire accommodates both the Church of the Ten and the All-Father's cathedrals within the Imperial Church of the Eleven. That uneasy settlement grew from the marriage of Supreme Magister Adrian VII and High Priestess Miranda II Bastonskaya—a union privately mocked as <i>sacred in name and forged in Tartarus</i>.<br><br>"
 
 /datum/virtue/origin/valorian
 	map_group_order = 1
@@ -91,13 +88,13 @@
 	map_x = 26.4
 	map_y = 36.1
 	map_state_id = "valoria"
-	map_state_name = "Валорийский торговый союз"
-	map_origin_name = "Валорийский торговый союз"
+	map_state_name = "Valorian Trade Union"
+	map_origin_name = "Valorian Trade Union"
 	name = "Valorian"
 	origin_name = "Valoria"
 	added_languages = list(/datum/language/valorian)
-	desc = "Я происхожу из Валории — цитадели Церкви Десяти и дома пяти торговых Республик, расположенной на островах посреди Чёрного океана.<br>"
-	origin_desc = "<br><br><b><a href='https://wiki.twilight-fortress-axis.ru/index.php?title=%D0%92%D0%B0%D0%BB%D0%BE%D1%80%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B9_%D1%82%D0%BE%D1%80%D0%B3%D0%BE%D0%B2%D1%8B%D0%B9_%D1%81%D0%BE%D1%8E%D0%B7'>Валория,</a></b> она же — Валорийский торговый союз, она же — Светлейший Союз Пяти Торговых Республик Валории и Церкви Неделимых Десяти, является объединением пяти полу-независимых друг от друга государств, скреплённых единой властью Светлейшего дожа. Как исходит из названия, это торговое государство, влияние которого распространяется и диктуется торговыми факториями, торговыми кварталами и огромным количеством странствующих по морю и суше торговцев.<br><br>Валорийский Союз — как его порой именуют, является конфедеративным государством, где сосуществуют четыре республики как равнозначные союзники и партнёры и пятая республика - как номинальный административно-юридический центр, где избирается Светлейший Дож, призванный решать вопросы и споры между республиками и вести единую внешнюю политику, руководить торговыми политиками и решениями, вводить новые акцизы, сборы, налоги, пошлины. Валорийская Церковь Неделимых Десяти - она же Церковь Десяти - является самой распространённой религией во всей Гримории. Именно здесь, в городе Этерна, располагается древнейший из Святых Престолов Десяти, и именно отсюда диктуется воля Патриарха многочисленным церквям и храмам, где исповедуют весь неделимый пантеон."
+	desc = "I come from Valoria — the citadel of the Church of Ten and the home of five trading Republics, located on islands in the middle of the Black Ocean.<br>"
+	origin_desc = "<br><br><b>Valoria</b>, formally the Most Serene Union of the Five Trade Republics and the Church of the Indivisible Ten, is a confederation of five semi-independent republics. Its wealth and influence follow its merchants, ports, and trading quarters across both land and sea.<br><br>Four republics stand as equal partners; the fifth serves as their administrative and legal center. There the Most Serene Doge is elected to settle disputes, direct foreign policy, regulate commerce, and levy common taxes and duties.<br><br>Valoria is also the heartland of the Church of the Ten, Grimoria's most widespread faith. The city of Eterna holds the oldest Holy Throne, from which the Patriarch guides temples devoted to the indivisible pantheon.<br><br>"
 
 /datum/virtue/origin/heartfelt
 	map_group_order = 3
@@ -107,14 +104,14 @@
 	map_x = 33.0
 	map_y = 33.0
 	map_state_id = "heartfelt"
-	map_state_name = "Свободные Острова Хартфелт"
-	map_origin_name = "Свободные Острова Хартфелт"
+	map_state_name = "Free Islands of Hartfelt"
+	map_origin_name = "Free Islands of Hartfelt"
 	list_group_order = 6
 	list_item_order = 1
 	name = "Heartfeltian"
 	origin_name = "Heartfelt"
-	desc = "Я происхожу с островов Хартфелта — некогда величественного, прекрасного королевства, жемчужины северных морей, а ныне — земли, сгорающей в пламени гражданской войны.<br>"
-	origin_desc = "<br><br>Когда-то <b><a href='https://wiki.twilight-fortress-axis.ru/index.php?title=%D0%A5%D0%B0%D1%80%D1%82%D1%84%D0%B5%D0%BB%D1%82'>Королевство Хартфелт</a></b> было жемчужиной северных морей, маленьким раем, куда стягивались дворяне со всего мира, чтобы полюбоваться его ослепительно прекрасной природой, увидеть шедевры искусства, созданные там, отведать самые сладкие фрукты на свете. Мудрецы и ремесленники этих земель трудились вместе во имя света и порядка. Но четырнадцать лет назад, этой идиллии пришел конец, и сегодня Хартфелт - земля, разорванная гражданской войной. Единого Королевства больше нет, и лишь одним богам известно, какой порядок воцарится на его руинах."
+	desc = "I come from the islands of Hartfelt — once a majestic, beautiful kingdom, the pearl of the northern seas, and now — a land burning in the flames of civil war.<br>"
+	origin_desc = "<br><br><b>The Kingdom of Hartfelt</b> was once the pearl of the northern seas. Nobles traveled from across the world to admire its landscapes, collect its art, and taste fruit grown nowhere else. Its scholars and craftspeople prospered beneath a stable crown.<br><br>That peace ended fourteen years ago. Civil war shattered the kingdom, and no claimant has restored its unity. Only the gods know what order, if any, will rise from the ruins.<br><br>"
 
 /datum/virtue/origin/etrusca
 	map_group_order = 3
@@ -124,13 +121,13 @@
 	map_x = 43.9
 	map_y = 40.2
 	map_state_id = "etrusca"
-	map_state_name = "Королевство Этруска"
-	map_origin_name = "Королевство Этруска"
+	map_state_name = "Kingdom of Etrusca"
+	map_origin_name = "Kingdom of Etrusca"
 	name = "Etruscan"
 	origin_name = "Etrusca"
 	added_languages = list(/datum/language/etruscan)
-	desc = "Я отношусь к одной из бесчисленных культур, сформировавшихся на Этруском архипелаге. Утонченные вкусы, изысканные наряды и традиции рабовладельчества — именно эти вещи характеризуют ранние годы моей жизни.<br>"
-	origin_desc = "<br><br><b><a href='https://wiki.twilight-fortress-axis.ru/index.php?title=%D0%9A%D0%BE%D1%80%D0%BE%D0%BB%D0%B5%D0%B2%D1%81%D1%82%D0%B2%D0%BE_%D0%AD%D1%82%D1%80%D1%83%D1%81%D0%BA%D0%B0'>Королевство Этруска</a></b>, также известное как Острова Этруски, Островной Союз Сарагоса — королевство, расположенное посреди Покоящегося океана. Благодаря изолированному положению и торговой направленности, здесь сформировалась одна из самых богатых и разнообразных культур во всей Гримории. Два главных острова, Наварно и Монтекарина, настолько отличаются друг от друга, что могли бы считаться отдельными государствами, но монархическая власть дома Сарагоса объединила их в единое целое."
+	desc = "I belong to one of the countless cultures that developed in the Etruscan archipelago. Refined tastes, exquisite attire, and traditions of slavery are precisely the things that characterize the early years of my life.<br>"
+	origin_desc = "<br><br><b>The Kingdom of Etrusca</b>, also called the Etruscan Islands or the Island Union of Zaragoza, lies in the middle of the Resting Ocean. Isolation and maritime trade produced one of Grimoria's wealthiest and most diverse cultures.<br><br>Its two principal islands, Navarno and Montecarina, differ enough to resemble separate countries. The crown of House Zaragoza nevertheless binds them into a single kingdom.<br><br>"
 
 /datum/virtue/origin/otava
 	map_group_order = 3
@@ -140,13 +137,13 @@
 	map_x = 18.1
 	map_y = 90.2
 	map_state_id = "otava"
-	map_state_name = "Отаванская Теократия"
-	map_origin_name = "Отаванская Теократия"
+	map_state_name = "The Otavan Theocracy"
+	map_origin_name = "The Otavan Theocracy"
 	name = "Otavan"
 	origin_name = "Otava"
 	added_languages = list(/datum/language/otavan)
-	desc = "Я происхожу с острова Отава — священного оплота веры в Псайдона, Всетворца Сущего, основанного верными последователями раненого бога.<br>"
-	origin_desc = "<br><br><b><a href='https://wiki.twilight-fortress-axis.ru/index.php?title=%D0%9E%D1%82%D0%B0%D0%B2%D0%B0,_%D0%9E%D1%81%D1%82%D1%80%D0%BE%D0%B2_%D0%A1%D0%B5%D1%80%D0%B5%D0%B1%D1%80%D0%B0_%D0%B8_%D0%9F%D0%BE%D1%80%D0%BE%D1%85%D0%B0'>Отаванская Теократия</a></b> — это священный оплот веры в Псайдона, Всетворца Сущего, основанный верными последователями раненого бога. Рожденная из падения святой кометы Сион и объединенная под правлением верховного магистра, эта малая по размерам, но влиятельная теократия обладает духовными богатствами и знаниями, которые вызывают зависть во всем мире. В новую эпоху пара и пороха Отава утверждает свое место как в духовном, так и в политическом ландшафте Псайдонии, готовясь повести борьбу против сил тьмы с невиданной дотоле мощью.<br><br>Отава представляет собой остров, расположенный к юго-западу от Гизы, среди южного океана. Несмотря на малый размер, территория теократии обладает стратегическим значением благодаря своему расположению и наличию важных портов. Помимо самого острова, Отава контролирует множество подвластных крепостей и портовых городов, находящихся за пределами основной территории и номинально принадлежащих Церкви Всеотца, хотя фактически отвечают они перед верховным магистром и его канцелярией. Это позволяет малому острову обеспечивать себя продовольствием и ресурсами благодаря развитому флоту. <br><br>Территория Отавы находится под абсолютным правлением верховного магистра, которому подчиняются управленцы на местах. Нынешним верховным магистром является Кастеллос Нератта. Правительство располагается в соборе-крепости в Дейлитисе, отделенного стенами и рвом от остального города. Именно там верховенство церкви, а также высшее руководство Инквизиции, собирается для решения жизненно важных вопросов. Ключевая особенность структуры власти заключается в особом статусе Маршала Инквизиции, который выступает чуть ли не соправителем верховного магистра, являясь вторым по важности человеком на острове и в церкви. Имя Маршала Инквизиции окутано тайной.<br><br>Отава является государством, сформированным в результате слияния различных культур, среди которых были путешественники, беженцы, моряки и религиозные ордена. Главным объединяющим элементом для жителей острова стала вера во Всеотца. Именно здесь сформировалась печально знаменитая Инквизиция, а также такие организации, как Орден Серебра и Орден Чёрного Пороха.<br><br>"
+	desc = "I come from the island of Otava — the sacred stronghold of faith in Psaidon, the All-Creator of Being, founded by faithful followers of the wounded god.<br>"
+	origin_desc = "<br><br><b>The Otavan Theocracy</b> is the foremost stronghold of faith in Psydon, the wounded All-Creator. Founded after the fall of the holy comet Zion and united under a Supreme Magister, this small state commands religious learning and influence far beyond its shores. Steam and gunpowder have only strengthened its resolve to confront the forces of darkness.<br><br>Otava lies southwest of Giza in the southern ocean. Its ports make the island strategically important, while a network of overseas fortresses and port cities supplies it with food and raw materials. Those holdings belong to the Church of the All-Father in law but answer in practice to the Supreme Magister's chancery.<br><br>Supreme Magister Kastellos Neratta rules from the walled cathedral-fortress of Deilitis. The Marshal of the Inquisition—whose identity is carefully concealed—stands beside the Magister as the island's second great authority. Travelers, refugees, sailors, and religious orders have all shaped Otavan society, but faith in the All-Father binds them together. Otava is the birthplace of the Inquisition, the Order of Silver, and the Order of Black Gunpowder.<br><br>"
 
 /datum/virtue/origin/gronn
 	map_group_order = 1
@@ -156,15 +153,15 @@
 	map_x = 11.3
 	map_y = 31.6
 	map_state_id = "gronn"
-	map_state_name = "Гронн"
-	map_origin_name = "Гронн"
+	map_state_name = "Gronn"
+	map_origin_name = "Gronn"
 	list_group_id = "gronn"
-	list_group_name = "Гронн"
+	list_group_name = "Gronn"
 	name = "Gronnic"
 	origin_name = "Gronn"
 	added_languages = list(/datum/language/gronnic)
-	desc = "Я происхожу из холодных, суровых земель Гронна — либо с Северных островов, либо из Сестринских земель, Фьялла.<br>"
-	origin_desc = "<br><br>Культура <b><a href='https://wiki.twilight-fortress-axis.ru/index.php?title=%D0%A1%D0%B5%D0%B2%D0%B5%D1%80%D0%BD%D1%8B%D0%B5_%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B2%D0%B0'>Северных островов</a></b> и прилегающих к ним земель Гронна в Северных пустошах, называемых «Сестринскими землями», существенно отличается от привычных устоев других народов. На первый взгляд северяне недружелюбны и известны своими варварскими набегами на южные земли, однако они охотно вступают в торговые отношения с теми, кто способен добраться до них живым и с товаром.<br><br>Религия — один из ключевых отличительных признаков северян по сравнению с остальными народами. И на островах, и на Сестринских землях жители не признают божественный порядок Десяти и учения Псайдона, вместо этого поклоняясь шести великим зверям, каждый из которых олицетворяет важные принципы и нормы жизни. Верования северян имеют очевидные параллели с культом некоторых богов Пантеона, Святой Экклезиархии и Культа Спасения, однако сами Гронны открыто отрицают приверженность к этим учениям, придерживаясь собственных ритуалов и традиций. Открытых войн на почве веры Гронны не ведут, храня свои устои и не позволяя их разрушить, чему способствует и суровый климат, непривычный для завоевателей."
+	desc = "I come from the cold, harsh lands of Gronn — either from the Northern Isles or from the Sister Lands, Fjalla.<br>"
+	origin_desc = "<br><br><b>Gronn</b> encompasses the Northern Islands and the neighboring Sister Lands of the Northern Wastes. Outsiders know its people as guarded traders and fearsome raiders. Those who survive the journey with useful goods, however, can find willing partners among them.<br><br>Gronn faith rejects both the Ten and the teachings of Psydon. Its people honor six great beasts, each embodying a principle by which life should be lived. Foreign theologians draw parallels with other pantheons, but the Gronn firmly deny those interpretations and preserve their own rites. They seldom wage war solely over religion; the northern climate itself has proved a stronger defense against conversion than any army.<br><br>"
 
 /datum/virtue/origin/racial/crimson_lands
 	map_group_order = 1
@@ -174,10 +171,10 @@
 	map_x = 26.5
 	map_y = 69.3
 	map_state_id = "crimson_lands"
-	map_state_name = "Багровые Земли"
-	map_origin_name = "Багровые Земли"
+	map_state_name = "Crimson Lands"
+	map_origin_name = "Crimson Lands"
 	list_group_id = "crimson_lands"
-	list_group_name = "Багровые Земли"
+	list_group_name = "Crimson Lands"
 	list_group_order = 7
 	list_item_order = 1
 	name = "Crimsonlander"
@@ -185,8 +182,8 @@
 	added_languages = list(/datum/language/raneshi)
 	races = list(/datum/species/anthromorph,
 				/datum/species/anthromorphsmall)
-	desc = "Моя жизнь неразрывно связана с Багровыми Землями — будь то родина, ставшая жертвой магической катастрофы, или поля сражений, где в годы Сумеречной войны проливалась кровь солдат, наёмников и искателей удачи со всех концов Гримории. Какой бы ни была причина, пережитое среди алых пустошей изменило меня навсегда.<br>"
-	origin_desc = "<br><br><b>Багровые Земли</b> — обширный край между северными равнинами Чёрной Империи и владениями префектуры Наледи. Когда-то здесь существовали десятки независимых племен, небольших королевств и городов-государств, чьи правители черпали силу из древнего источника магии. Во времена Сумеречной войны эти земли стали главным путем вторжения армий Грензельхофта на юг, а позже — оплотом Волчьего шаха Зукхима, собравшего под своим знаменем северные племена и королей Багровых Земель для похода на Двергейл.<br><br>После поражения Волчьего шаха Базилевс Манса-Падаши решил навсегда покончить с угрозой с севера. По его приказу маги Башни Нок перегрузили источник, питавший чародеев Багровых Земель. Высвободившаяся энергия уничтожила большую часть местных владык: сильнейшие маги обратились в пепел или превратились в обезумевших вайлд-кинов, а многие простые жители были изуродованы магией, лишились рассудка или погибли. Лишь немногие пережили катастрофу, став свидетелями гибели своей родины.<br><br>Сегодня Багровые Земли представляют собой бесплодную алую пустошь, пропитанную остаточной магической энергией. Руины древних крепостей и башен скрывают несметные опасности и артефакты прошлого, привлекая искателей приключений, а немногие поселения ведут суровую борьбу за выживание среди проклятых, обедневших на зелень и живность земель.<br><br>"
+	desc = "My life is inextricably tied to the Crimson Lands — whether it is the homeland that fell victim to a magical catastrophe, or the battlefields where, during the years of the Twilight War, the blood of soldiers, mercenaries, and fortune seekers from all corners of Grimoria was shed. Whatever the reason, what I experienced among the scarlet wastelands changed me forever.<br>"
+	origin_desc = "<br><br><b>The Crimson Lands</b> stretch between the Black Empire's northern plains and the prefecture of Naledi. Dozens of tribes, petty kingdoms, and city-states once flourished there under rulers who drew power from an ancient magical source. During the Twilight War the region became Grenzelhoft's road south, then the stronghold of Wolf Shah Zukhim and his coalition against Dvergeil.<br><br>After Zukhim's defeat, Basileus Mansa-Padashi ordered the mages of the Tower of Nok to overload the source and end the northern threat. The resulting catastrophe incinerated powerful sorcerers, twisted others into maddened wild-kin, and killed or transformed much of the population.<br><br>Today the region is a barren scarlet waste saturated with unstable magic. Ruined towers and fortresses draw treasure-seekers despite their dangers, while scattered communities struggle to survive in a land almost stripped of ordinary plant and animal life."
 
 /datum/virtue/origin/raneshen
 	map_group_order = 1
@@ -196,18 +193,18 @@
 	map_x = 50.4
 	map_y = 71.6
 	map_state_id = "raneshen"
-	map_state_name = "Префектура Ранешен"
-	map_origin_name = "Префектура Ранешен"
+	map_state_name = "Prefecture of Raneshan"
+	map_origin_name = "Prefecture of Raneshan"
 	list_group_id = "zybantian_empire"
-	list_group_name = "Зибантийская Империя"
+	list_group_name = "Byzantine Empire"
 	list_group_order = 8
 	list_item_order = 3
-	list_subgroup_name = "Префектуры"
+	list_subgroup_name = "Prefectures"
 	name = "Zybantu - Ranesheni"
 	origin_name = "Raneshan"
 	added_languages = list(/datum/language/raneshi)
-	desc = "Я происхожу из земель Ранешена — префектуры Зибантии, известной как край, где правит сабля, а не золото. Ценность в Ранешене измеряется не торговыми прибылями, а боевой славой, завоеваниями и количеством рабов, захваченных в боях за честь.<br>"
-	origin_desc = "<br><br><b><a href='https://wiki.twilight-fortress-axis.ru/index.php?title=%D0%97%D0%B8%D0%B1%D0%B0%D0%BD%D1%82%D0%B8%D0%B9%D1%81%D0%BA%D0%B0%D1%8F_%D0%98%D0%BC%D0%BF%D0%B5%D1%80%D0%B8%D1%8F#%D0%9F%D1%80%D0%B5%D1%84%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0_%D0%A0%D0%B0%D0%BD%D0%B5%D1%88%D0%B5%D0%BD'>Ранешен</a></b> — вторая крупнейшая префектура Зибантии, расположенная на восточной границе Западных Королевств. Подобно Наледи, Ранешен управляется кефалом, которому предоставляется высокая степень автономии. Префектура занимает стратегическое положение на пересечении важнейших торговых путей, ведущих на Восток. В период расцвета Золотой Империи Ранешен щедро обогащался благодаря монополии на торговлю с дальним Востоком, получая редчайшие товары из Гёдзая. Однако с падением гегемонии Золотой Империи и установлением новых торговых порядков восточные гости редко посещают земли Ранешена, а диковинные товары вновь стали редкостью. "
+	desc = "I come from the lands of Raneshan — a prefecture of Zibantia, known as a land where the saber rules, not gold. Value in Raneshan is measured not by trade profits, but by battle glory, conquests, and the number of slaves captured in fights for honor.<br>"
+	origin_desc = "<br><br><b>Raneshen</b> is Zibantia's second-largest prefecture and marks the eastern edge of the Western Kingdoms. A kephalos governs it with broad autonomy, much like neighboring Naledi.<br><br>Its position once gave Raneshen a near-monopoly over trade with the Far East. Rare goods from Gyozdai enriched its cities during the Golden Empire's height. That prosperity faded when the old empire fell and merchants opened new routes; eastern caravans now arrive only rarely.<br><br>"
 
 /datum/virtue/origin/naledi
 	map_group_order = 1
@@ -217,18 +214,18 @@
 	map_x = 34.7
 	map_y = 77.5
 	map_state_id = "naledi"
-	map_state_name = "Префектура Наледи"
-	map_origin_name = "Префектура Наледи"
+	map_state_name = "Prefecture Naledi"
+	map_origin_name = "Prefecture Naledi"
 	list_group_id = "zybantian_empire"
-	list_group_name = "Зибантийская Империя"
+	list_group_name = "Byzantine Empire"
 	list_group_order = 8
 	list_item_order = 2
-	list_subgroup_name = "Префектуры"
+	list_subgroup_name = "Prefectures"
 	name = "Zybantu - Naledian"
 	origin_name = "Naledi"
 	added_languages = list(/datum/language/raneshi)
-	desc = "Я происхожу из земель Наледи — префектуры Зибантии, известной бескрайними пустынями и уникальными верованиями. Моя родина была в значительной степени разорена Сумеречной войной, и это не могло не повлиять на меня.<br>"
-	origin_desc = "<br><br><b><a href='https://wiki.twilight-fortress-axis.ru/index.php?title=%D0%97%D0%B8%D0%B1%D0%B0%D0%BD%D1%82%D0%B8%D0%B9%D1%81%D0%BA%D0%B0%D1%8F_%D0%98%D0%BC%D0%BF%D0%B5%D1%80%D0%B8%D1%8F#%D0%9F%D1%80%D0%B5%D1%84%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0_%D0%9D%D0%B0%D0%BB%D0%B5%D0%B4%D0%B8'>Наледи</a></b> является одной из двух крупнейших префектур Зибантии, управляемой кефалом, назначаемым Базилевсом. Несмотря на формальное подчинение центральной власти, Наледи обладает высокой степенью автономии в вопросах местного управления, культуры и религии. Регион представляет собой уникальное культурное и религиозное образование, резко отличающееся от остальной Зибантии как традициями, так и верованиями.<br><br>В отличии от остальной Зибантии, Наледи привержены не десятинской, а псайдонитской вере. Большинство наледийцев верят, что Всебог остаётся живым, и эта вера проникает буквально в каждый аспект их повседневной жизни, придавая культуре региона исключительную ярость и культурную целостность.<br><br>Согласно наледийской конфессии Псайдонитской веры, известной как Учение Судьбы, Псайдон предвидел своё поражение от рук Зизо (именуемой здесь Иблис) и, осознав неизбежное, добровольно оставил свой небесный трон. С тех пор он скитается среди обычных смертных, наблюдая за ними и ожидая дня, когда люди станут достойны его возвращения к власти. Согласно преданиям, именно Псайдон научил наледийцев носить золотые маски — второй лик, призванный защитить их душу и разум от влияния демонов и джиннов. "
+	desc = "I come from the lands of Naledi — the prefecture of Zibantia, known for its endless deserts and unique beliefs. My homeland was largely devastated by the Twilight War, and this could not help but affect me.<br>"
+	origin_desc = "<br><br><b>Naledi</b> is one of Zibantia's two largest prefectures and is governed by a kephalos appointed by the Basileus. Despite its formal subordination to the central government, Naledi retains broad autonomy over local administration, culture, and religion. Its traditions and beliefs distinguish it sharply from the rest of Zibantia.<br><br>Unlike most Zibantians, the Naledian people follow the Psydonite faith rather than the Ten. Most Naledians believe the Almighty still lives, a conviction that shapes every part of their daily life and lends their culture unusual fervor and cohesion.<br><br>The Naledian confession, known as the Doctrine of Fate, teaches that Psydon foresaw his defeat at the hands of Zizo—called Iblis in Naledi—and willingly abandoned his heavenly throne when he understood what was to come. Since then, he has walked among mortals, observing them until humanity proves worthy of his return. Legend holds that Psydon taught the Naledians to wear golden masks: second faces that shield the soul and mind from demons and jinn."
 
 /datum/virtue/origin/zybantian
 	map_group_order = 1
@@ -238,17 +235,17 @@
 	map_x = 40.8
 	map_y = 67.4
 	map_state_id = "zybantu"
-	map_state_name = "Зибантийская Империя"
-	map_origin_name = "Зибантийская Империя"
+	map_state_name = "Byzantine Empire"
+	map_origin_name = "Byzantine Empire"
 	list_group_id = "zybantian_empire"
-	list_group_name = "Зибантийская Империя"
+	list_group_name = "Byzantine Empire"
 	list_group_order = 8
 	list_item_order = 1
 	name = "Zybantian"
 	origin_name = "Zybantu"
 	added_languages = list(/datum/language/raneshi)
-	desc = "Я происхожу из земель Зиггурата Зибанту, ныне объединяющего осколки падшей Золотой Империи под единым флагом. Моя родина известна многолюдными и разнообразными городами, развитой магической традицией, торговлей рабами и сложной системой управления, сочетающей централизованную власть с региональной автономией.<br>"
-	origin_desc = "<br><br><b><a href='https://wiki.twilight-fortress-axis.ru/index.php?title=%D0%97%D0%B8%D0%B1%D0%B0%D0%BD%D1%82%D0%B8%D0%B9%D1%81%D0%BA%D0%B0%D1%8F_%D0%98%D0%BC%D0%BF%D0%B5%D1%80%D0%B8%D1%8F'>Зибантийская Империя,</a></b> или Зиггурат Зибанту — крупное государство юга, сформировавшееся на руинах Золотой Империи, поверженной Грензельхофтом в ходе Сумеречной Войны. Несмотря на тяжелые обстоятельства, что привели к формированию Зибантии, она сохраняет приверженность древним традициям, постепенно набирая утраченную силу и влияние.<br><br>Верховным правителем Зибантии является Базилевс Манаса-Падаши. Под его властью объединены как непосредственно зибантийские земли, так и префектуры Наледи и Ранешена. В качестве центра духовной власти выступает Вселенский Патриархат Двергейла, проповедующий власть Пантеона, возглавляемого Нок, а не Астратой.<br><br>Экономика Зибантии основана на работорговле. В прошлом Пурпурный флот Золотой Империи доминировал в Чёрном океане, взымая плату со всякого торгового судна, что пыталось пройти через его воды, но после Сумеречной Войны эта гегемония подошла к концу. Кроме того, земли Наледи, разоренные егерями Грензельхофта, до сих пор кишат сбежавшими рабами, промышляющими бандитизмом или, того хуже, маттиосизмом.<br><br>Весьма широкой известностью пользуются и зибантийские маги. Многие крупные ордена мастеров арканы — такие, как Орден Новой Луны — были уничтожены Грензельхофтом в ходе войны, но псайдонитские чародеи Наледи и другие волшебники до сих пор занимают важную нишу в зибантийском обществе.<br><br>"
+	desc = "I come from the lands of the Ziggurat of Zibantu, now uniting the fragments of the fallen Golden Empire under a single flag. My homeland is known for its populous and diverse cities, a developed magical tradition, the trade of slaves, and a complex system of governance combining centralized power with regional autonomy.<br>"
+	origin_desc = "<br><br><b>The Zibantian Empire</b>, or Zigurat Zibantu, arose in the south from the ruins of the Golden Empire after its defeat by Grenzelhoft in the Twilight War. It preserves many ancient institutions while slowly rebuilding its power.<br><br>Basileus Manasa-Padashi rules the Zibantian heartland and the autonomous prefectures of Naledi and Raneshen. The Universal Patriarchate of Dvergeil provides spiritual authority, teaching a form of the Pantheon in which Nok, rather than Astrata, holds primacy.<br><br>Enslaved labor and the slave trade remain central to the imperial economy. The Golden Empire's Purple Fleet once taxed every merchant crossing the Black Sea, but that naval supremacy ended with the war. Naledi still suffers from the devastation of Grenzelhoftian raids, and communities of escaped slaves have turned to banditry or Mattiosism. Zibantian arcane traditions also endured: although Grenzelhoft destroyed great orders such as the New Moon, Naledian Psydonite sorcerers and other mages remain influential.<br><br>"
 
 /datum/virtue/origin/kazengun
 	map_group_order = 3
@@ -258,17 +255,17 @@
 	map_x = 84.8
 	map_y = 66.9
 	map_state_id = "kazengun"
-	map_state_name = "Сёгунат Казен"
-	map_origin_name = "Сёгунат Казен"
+	map_state_name = "Shogunate Kazen"
+	map_origin_name = "Shogunate Kazen"
 	list_group_id = "kazengun"
-	list_group_name = "Сёгунат Казен"
+	list_group_name = "Shogunate Kazen"
 	list_group_order = 7
 	list_item_order = 1
 	name = "Kazengun - Mainlander"
 	origin_name = "Kazengun"
 	added_languages = list(/datum/language/kazengunese)
-	desc = "Я происхожу из окутанных туманом земель Казенгуна. Традиции и культура, к которым я привык с детства, до сих пор удивляют и поражают западников, с которыми я встречаюсь.<br>"
-	origin_desc = "<br><br><b><a href='https://wiki.twilight-fortress-axis.ru/index.php?title=%D0%A1%D1%91%D0%B3%D1%83%D0%BD%D0%B0%D1%82_%D0%9A%D0%B0%D0%B7%D0%B5%D0%BD'>Сёгунат Казен,</a></b> также известный как Казенгунат, Сёгунат Казенгун — крупное феодальное государство, территориально расположенное в восточной части мирового океана на крупных островах. Сила Сёгуна, военного правителя соединяет под своим началом могучие народы Ау'ра, сильные кланы юга и севера островов Казенгун, а также недавно приобретенные земли Джёсеон, что располагаются на востоке восточного материка.<br><br>Социальная стратификация, аристократия и Порядок Айсаты являются столпами Казенгунского общества. Пытаться пробиться в верха, или бросить вызов кому-то превосходящему - является уму непостижимым скандалом, граничащим с ересью. Однако, стоит аспиранту преуспеть в своих амбициях и закрепить за собой новый уважаемый статус - например, выбиться в даймё из крайне богатых торговцев - это будет считаться явлением 'порядочным и справедливым' - значит, так и было задумано Порядком Айсаты. Несмотря на это, культурный догмат по прежнему настаивает, что 'изменения - это противоестественно Порядку'."
+	desc = "I come from the mist-covered lands of Kazengun. The traditions and culture I have been accustomed to since childhood still amaze and astonish Westerners I meet.<br>"
+	origin_desc = "<br><br><b>The Kazen Shogunate</b>, also called Kazengun, is a great feudal island state in the eastern ocean. The Shogun's military authority binds together the Au'ra peoples, the powerful northern and southern clans, and the recently conquered lands of Joseon on the eastern continent.<br><br>Rigid social rank, aristocratic privilege, and the Aisatai Order form the pillars of Kazengun society. Openly challenging a superior is scandalous and can border on heresy. Advancement is accepted only when success itself appears to prove that the Order intended it: an exceptionally wealthy merchant might, for example, rise to daimyo. Even then, official doctrine insists that change is unnatural to the Order."
 
 /datum/virtue/origin/lingyue
 	map_group_order = 3
@@ -278,17 +275,17 @@
 	map_x = 81.3
 	map_y = 36.4
 	map_state_id = "jeoseon"
-	map_state_name = "Джёсеон"
-	map_origin_name = "Джёсеон"
+	map_state_name = "Joseon"
+	map_origin_name = "Joseon"
 	list_group_id = "kazengun"
-	list_group_name = "Сёгунат Казен"
+	list_group_name = "Shogunate Kazen"
 	list_group_order = 7
 	list_item_order = 2
 	name = "Kazengun - Jeoseonese"
 	origin_name = "Kazengun"
 	added_languages = list(/datum/language/lingyuese)
-	desc = "Я происхожу с земель Джёсеон — вассального королевства Сёгуната Казен. Некогда моя родина провозгласила независимость от Гёдзайского Царства, и, несмотря на то, что мой народ был вынужден склониться перед захватчиками, его свободолюбивый дух по-прежнему силен.<br>"
-	origin_desc = "<br><br>С незапамятных времён земли Джёсона входили в состав <b><a href='https://wiki.twilight-fortress-axis.ru/index.php?title=%D0%93%D1%91%D0%B4%D0%B7%D0%B0%D0%B9%D1%81%D0%BA%D0%BE%D0%B5_%D0%A6%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%BE'>Гёдзайского Царства.</a></b> Гёдзайскими историками считается, будто государство Джёсеон был первым из сколь-нибудь цивилизованных, что принесло клятву верности Царству Гёдзая, узрев их бесчисленные легионы, что несли слово и волю Малахитового Хуанди за десятилетия до Архипредательства и начала Войны в Небесах.<br><br>История взаимоотношений между Гёдзаем и Джёсеоном всегда была напряжённым, во многом потому, что Гёдзай считал это государство варварским, 'недостойным' равных связей, их дипломаты всегда вели себя словно победители с побеждёнными, что расстраивало последних. Столетия угнетения достигли своей кульминации в 11-м веке от Нового Порядка, когда Джёсон, воспользовавшись слабостью метрополии ввиду чреды междоусобиц и активности нежити, провозгласил независимость. И хотя сегодня эта земля находится под контролем Сёгуната Казен, что покорил ослабленное государство вскоре после разрушительного восстания Красных Повязок, её жители не забыли вкуса свободы, и их дух остается несломленным.<br><br>"
+	desc = "I come from the lands of Joseon — a vassal kingdom of the Kazen Shogunate. Once my homeland declared independence from the Gozaian Kingdom, and, despite the fact that my people were forced to bow before the invaders, their freedom-loving spirit remains strong.<br>"
+	origin_desc = "<br><br>For most of recorded history, Joseon belonged to <b>the Gyozdai realm.</b> Gyozdai chronicles claim that Joseon was the first civilized state to swear loyalty after witnessing the countless legions of the Malachite Huangdi, decades before the Arch-Betrayal and the War in the Heavens.<br><br>The relationship was never equal. Gyozdai elites dismissed Joseon as barbaric, and their diplomats treated its people as a conquered nation. Joseon finally declared independence in the eleventh century of the New Order, when civil conflict and undead incursions weakened its former master. The freedom was brief: after the devastating Red Band uprising, the Kazen Shogunate conquered the exhausted country. Its people nevertheless remember independence, and their desire for it endures.<br><br>"
 
 /datum/virtue/origin/gyedzenese
 	map_group_order = 2
@@ -298,15 +295,15 @@
 	map_x = 72.4
 	map_y = 36.6
 	map_state_id = "gyedzai"
-	map_state_name = "Гёдзайское Царство"
-	map_origin_name = "Гёдзайское Царство"
+	map_state_name = "The Gyoza Kingdom"
+	map_origin_name = "The Gyoza Kingdom"
 	list_group_order = 3
 	list_item_order = 1
 	name = "Gyedzenese"
 	origin_name = "Gyedzai"
 	added_languages = list(/datum/language/gyedzenese)
-	desc = "Я происхожу из земель Гёдзая, некогда находившихся под единой властью Хуанди. Ныне моя родина — не единое государство, что пережило Войну в Небесах, а лишь кучка разрозненных клик, борющихся за влияние и ресурсы.<br>"
-	origin_desc = "<br><br><b><a href='https://wiki.twilight-fortress-axis.ru/index.php?title=%D0%93%D1%91%D0%B4%D0%B7%D0%B0%D0%B9%D1%81%D0%BA%D0%BE%D0%B5_%D0%A6%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%BE'>Гёдзайское Царство,</a></b> также известное как Гёдзайская Империя - это общее название территорий, некогда находившихся под единой властью Хуанди (императора, царя) одной из знатной династии. Распавшееся свыше четырёхсот лет назад, название Гёдзай остаётся лишь как указатель на территории, объединённые по общим культурным, религиозным и языковым традициям. Это государство известно благодаря своим шёлкам, ведь именно здесь впервые был выведен тутовый шёлкопряд и чайным церемониям, ведь ни одна другая культура в мире не уподобилась столь тонкому и столь величественному представлению чайной церемонии, использующейся в дипломатии, бытовой жизни а так-же как метод выражения уважения.<br><br>На территории Гёдзайского Царства нет единого государства, лишь кучка клик и объединений, что беспощадно борются между собой вот уже несколько сотен лет за право называться Хуанди - единым правителем этих территорий. Ничто и никто пока что не смог объединить все эти территории под единым знаменем. Десять династий борются между друг другом, армии наступают одну на другую в то время как внутри каждой династии плетутся интриги, борясь за влияние внутри своих стран.<br><br>"
+	desc = "I come from the lands of Gyoza, once under the unified rule of Huangdi. Today my homeland is not a single state that survived the War in the Heavens, but merely a handful of disparate factions fighting for influence and resources.<br>"
+	origin_desc = "<br><br><b>Gyozdai</b>, sometimes called the Gyozdai Kingdom or Empire, is now a cultural name rather than a unified state. A Huangdi once ruled these lands through a succession of celebrated dynasties, but the empire fragmented more than four centuries ago. Shared language, religion, and custom still bind its peoples together. Gyozdai is renowned for silk cultivation and for tea ceremonies that serve equally as daily ritual, diplomatic language, and an expression of respect.<br><br>Ten rival dynasties, supported by shifting leagues and clans, now fight for the right to name a new Huangdi. Armies contest the borders while factions struggle within every court. No claimant has yet brought all Gyozdai beneath a single banner.<br><br>"
 
 /datum/virtue/origin/hammerhold
 	map_group_order = 1
@@ -316,13 +313,13 @@
 	map_x = 23.1
 	map_y = 18.8
 	map_state_id = "hammerhold"
-	map_state_name = "Царство Хаммерхолд"
-	map_origin_name = "Царство Хаммерхолд"
+	map_state_name = "The Kingdom of Hammerhold"
+	map_origin_name = "The Kingdom of Hammerhold"
 	name = "Hammerholdian"
 	origin_name = "Hammerhold"
 	added_languages = list(/datum/language/elvish)
-	desc = "Я происхожу из земель Хаммерхолда — холодных земель, ставших домом для эльфийского народа после гибели Божественной Империи.<br>"
-	origin_desc = "<br><br><b><a href='https://wiki.twilight-fortress-axis.ru/index.php?title=%D0%A6%D0%B0%D1%80%D1%81%D1%82%D0%B2%D0%BE_%D0%A5%D0%B0%D0%BC%D0%BC%D0%B5%D1%80%D1%85%D0%BE%D0%BB%D0%B4'>Царство Хаммерхолд,</a></b> оно же известное как Шесть Великих Княжеств, небольшое в своих размерах, но необъятное в своей значимости. Хаммерхолд — Щит Севера, выступающий оплотом борьбы против трех великих бедствий севера: гоблинские племена, шествие мертвых и кланы людоедов - чье нашествие грозит Западному Континенту наступлением Темных Времен. Здесь правит безмолвный хлад, здесь теплое лето и богатый урожай - несбыточная роскошь; но именно в этих землях рождаются самые стойкие сыны и дочери Севера, которые обращают свою дубовую волю против злейших врагов цивилизованного мира.<br><br>Земля хаммерхолдская поделена между Царским Двором и пятью княжествами-марками, служащими северные и южными хранителями мира в землях Царства. Во главе Хаммерхолда стоит древний эльфийский род Хмельницких, праотцы которого застали правление Всеотца воочию, по крайней мере, именно так слагают легенды. Именно эльфы облагородили дикие человеческие просторы, привнеся цивилизованное слово. Из столетия в столетие именно представительницы рода возлагают на свои головы царственную Шапку Мономаха, предзнаменовая свое правление долгим и неспешным. На границе Дикого Севера и Беспокойного Юга воздвигнуты вассальные княжества, кои обязались хранить границы свои от посягательства сил извне.<br><br>"
+	desc = "I come from the lands of Hammerhold — cold lands that became home to the elven people after the fall of the Divine Empire.<br>"
+	origin_desc = "<br><br><b>The Kingdom of Hammerhold</b>, also called the Six Great Principalities, is small in territory but vital to the Western Continent's defense. It stands against three northern scourges: goblin tribes, marching dead, and cannibal clans. Warm summers and rich harvests are rare, but the harsh country raises people renowned for endurance.<br><br>The royal demesne and five princely marches divide Hammerhold between them. The ancient elven House of Khmelnitsky holds the crown and claims descent from witnesses to the All-Father's reign. By tradition, the women of that house wear the Monomakh Hat and rule for long, measured reigns. Their vassal principalities guard the frontier between the Wild North and the troubled south.<br><br>"
 
 /datum/virtue/origin/avar
 	map_group_order = 2
@@ -332,13 +329,13 @@
 	map_x = 62.2
 	map_y = 24.8
 	map_state_id = "aavnr"
-	map_state_name = "Нагорье Аавнр"
-	map_origin_name = "Нагорье Аавнр"
+	map_state_name = "Aavnur Plateau"
+	map_origin_name = "Aavnur Plateau"
 	name = "Aavnic"
 	origin_name = "Avar"
 	added_languages = list(/datum/language/aavnic)
-	desc = "Я происхожу с нагорья Аавнр — земли бескрайних степей, воинов и кочевников, что лишь недавно вздохнула полной грудью после столетий гнёта Гёдзая.<br>"
-	origin_desc = "<br><br><b><a href='https://wiki.twilight-fortress-axis.ru/index.php?title=%D0%9D%D0%B0%D0%B3%D0%BE%D1%80%D1%8C%D0%B5_%D0%90%D0%B0%D0%B2%D0%BD%D1%80'>Нагорье Аавнр,</a></b> оно же Аавнрское Нагорье — общее название обширного региона гор и степей севернее Гёдзая. В последние годы Аавнр находится в состоянии затяжного кризиса государственности, обусловленного консерватизмом кочевого населения, противящегося переходу к оседлому образу жизни и по сей день, при одновременном постепенном формировании более развитой феодальной цивилизации на севере.<br><br>Формально на аавнрской земле не существует единого государства, однако сложился его политический прообраз — конфедерация, институционально связанная с городом-государством Сёрэнднижина. Именно там периодически собираются племенные вожди, правители городов и степные ханы, чтобы обсудить новости, уладить конфликты, заключить торговые соглашения или, напротив, объявить вражду. Наиболее влиятельные семь персон Аавнра образуют Совет, призванный принимать ключевые решения. На практике же этот конфедеративный механизм часто остаётся пустой формальностью: в условиях серьёзных конфликтов стороны предпочитают действовать самостоятельно, опираясь на собственную силу и союзные обязательства, а не на решения Совета."
+	desc = "I come from the Aavnur Plateau — a land of endless steppes, warriors, and nomads, which has only recently been able to breathe freely after centuries of Gödzai oppression.<br>"
+	origin_desc = "<br><br><b>The Aavnr Highlands</b> are a vast expanse of mountains and steppe north of Gyozdai. Aavnr has no unified state. Many nomadic communities resist permanent settlement, even as a feudal society develops in the north.<br><br>A loose confederation centered on the city-state of Serendnizhina offers the nearest thing to common government. Tribal chiefs, urban rulers, and steppe khans gather there to exchange news, settle disputes, bargain over trade, or declare hostilities. Seven leading figures form a council for major decisions, but its authority is often ceremonial. In serious conflicts, each faction relies upon its own strength and alliances."
 
 /datum/virtue/origin/racial/lirvas
 	map_group_order = 2
@@ -348,8 +345,8 @@
 	map_x = 75.3
 	map_y = 48.5
 	map_state_id = "lirvas"
-	map_state_name = "Лирвас, Сто Одиннадцатая Империя"
-	map_origin_name = "Лирвас, Сто Одиннадцатая Империя"
+	map_state_name = "Lirvas, The One Hundred and Eleventh Empire"
+	map_origin_name = "Lirvas, The One Hundred and Eleventh Empire"
 	name = "Lirvasian"
 	origin_name = "Lirvas"
 	added_languages = list(/datum/language/draconic)
@@ -357,8 +354,8 @@
 				/datum/species/lizardfolk,
 				/datum/species/anthromorph,
 				/datum/species/dracon)
-	desc = "Я происхожу из джунглей Лирваса, где на руинах десятков падших цивилизаций потомки величественных драконов построили Вечную Империю.<br>"
-	origin_desc = "<br><br><b><a href='https://wiki.twilight-fortress-axis.ru/index.php?title=%D0%9B%D0%B8%D1%80%D0%B2%D0%B0%D1%81,_%D0%A1%D1%82%D0%BE_%D0%9E%D0%B4%D0%B8%D0%BD%D0%BD%D0%B0%D0%B4%D1%86%D0%B0%D1%82%D0%B0%D1%8F_%D0%98%D0%BC%D0%BF%D0%B5%D1%80%D0%B8%D1%8F'>Сто одиннадцатая Империя Лирваса,</a></b> как сказано в пророчестве наг, должна стать последней — и вечной. Тысячи кобольдов, ящеролюдов, и драконидов спешат вернуться на свою родину, чтобы приложить руку к исполнению древнего пророчества, и положить конец стародавним противникам из Гёдзая."
+	desc = "I come from the jungles of Lirvas, where on the ruins of dozens of fallen civilizations the descendants of majestic dragons built the Eternal Empire.<br>"
+	origin_desc = "<br><br><b>The One Hundred and Eleventh Empire of Lirvas</b> is, according to naga prophecy, destined to be the last empire—and an eternal one. Kobolds, lizardfolk, and draconoids return from across the world to fulfill that promise and settle their ancient struggle with Gyozdai.<br><br>"
 
 /datum/virtue/origin/racial/underdark
 	map_group_order = 4
@@ -366,13 +363,13 @@
 	map_origin_order = 1
 	map_visible = FALSE
 	map_state_id = "underdark"
-	map_state_name = "Подземье"
-	map_origin_name = "Подземье"
+	map_state_name = "The Underdark"
+	map_origin_name = "The Underdark"
 	list_group_order = 3
 	list_item_order = 1
 	name = "Underdweller"
 	origin_name = "the Underdark"
-	desc = "Я происхожу из Подземья — огромной сети пещер, расположенной глубоко под поверхностью Гримории и простирающейся почти под всей территорией Западных Королевств.<br>"
+	desc = "I come from the Underdark — a vast network of caves located deep beneath the surface of Grimoria and stretching almost beneath the entire territory of the Western Kingdoms.<br>"
 	added_languages = list(/datum/language/undercommon)
 	races = list(/datum/species/elf/dark,
 				/datum/species/human/halfelf,
@@ -383,7 +380,7 @@
 				/datum/species/anthromorphsmall,
 				/datum/species/ooze,
 				/datum/species/moth)
-	origin_desc = "<br><br>Глубоко под поверхностью Гримории, там, куда не добирается свет Астраты и Нок, находится <b><a href='https://wiki.twilight-fortress-axis.ru/index.php?title=%D0%9F%D0%BE%D0%B4%D0%B7%D0%B5%D0%BC%D1%8C%D0%B5'>Подземье</a></b> — огромная сеть пещер, простирающаяся почти под всей территорией Западных Королевств. Исследование бесчисленных загадок этого места существенно осложняется тем, что с незапамятных времён Подземье является пристанищем и домом для народа дроу, чьи величественные подземные города зачастую оказываются смертельной ловушкой для неосторожных путников.<br><br>С точки зрения структуры Подземье разделено на три уровня:<br><br>Верхнее Подземье представляет собой условный вход на более глубокие уровни. Чаще всего это древние пещеры и катакомбы, подвалы с потайными ходами и храмы, древние руины и тому подобное. Там можно встретить всех, но чаще всего авантюристов и контрабандистов, которые пользуются его ходами для преодоления больших расстояний вне поверхности, к которому оно ближе всего.<br><br>Среднее Подземье находится на порядок глубже, примерно до 15 миль в мрак и глубину. Это место, где никогда не светит солнце, а источники воды считаются роскошью. Тут обитают как дроу, так и более опасные существа. Пурпурные черви выкапывают все новые и новые ходы в поисках добычи, умберхалки, они же огромных размеров кроты, вместо морковки пожирают ноги заблудившихся путников, бехолдеры, они же огромные глаза с множеством щупалец, которые своим взглядом порабощают и превращают в живые статуи — лишь малая часть того, что ждет неподготовленного заблудившегося шахтера.<br><br>Нижнее Подземье — место, откуда никто не возвращался, во всяком случае в здравом уме. Даже самые опасные твари Среднего Подземья неохотно посещают это место. В вечной тьме рассеиваются иллюзии, а свет быстро угасает, магические аномалии искажают пространство и время, искажая тело и разум неосторожного путника."
+	origin_desc = "<br><br>Beneath Grimoria, beyond the light of Astrata and Nok, lies <b>the Underdark</b>: a cave system extending beneath much of the Western Kingdoms. The drow have made it their refuge since ancient times, and their magnificent cities can become death traps for careless visitors.<br><br>The Upper Underdark consists of caves, catacombs, buried temples, hidden cellars, and ruins close to the surface. Adventurers and smugglers use its passages to travel unseen.<br><br>The Middle Underdark descends roughly fifteen miles into permanent night, where clean water is precious. Drow settlements share this depth with purple worms, umber hulks, beholders, giant moles, and worse creatures that prey upon unprepared travelers.<br><br>No reliable account has returned from the Lower Underdark. Even the predators of the middle depths avoid it. Light fails quickly there, illusions unravel, and magical anomalies distort space, time, body, and mind."
 
 /datum/virtue/origin/racial/underdark_drow
 	map_group_order = 4
@@ -391,17 +388,17 @@
 	map_origin_order = 2
 	map_visible = FALSE
 	map_state_id = "underdark"
-	map_state_name = "Подземье"
-	map_origin_name = "Города-подземелья"
+	map_state_name = "The Underdark"
+	map_origin_name = "Underground Cities"
 	list_group_order = 3
 	list_item_order = 2
 	name = "Underdweller - Drow Cities"
 	origin_name = "the Underdark"
-	desc = "Я происхожу из мрачного города тёмных эльфов, находящегося в Среднем Подземье. Моя юность прошла в паутине интриг, борьбе за выживание и молитвах Госпоже Тьмы — будь они искренними или притворными.<br>"
+	desc = "I come from the gloomy city of dark elves, located in the Middle Underworld. My youth was spent in a web of intrigues, survival struggles, and prayers to the Lady of Darkness — whether they were sincere or pretended.<br>"
 	added_languages = list(/datum/language/undead)
 	races = list(/datum/species/elf/dark,
 				/datum/species/human/halfelf)
-	origin_desc = "<br><br>Глубоко под поверхностью Гримории, там, куда не добирается свет Астраты и Нок, находится <b><a href='https://wiki.twilight-fortress-axis.ru/index.php?title=%D0%9F%D0%BE%D0%B4%D0%B7%D0%B5%D0%BC%D1%8C%D0%B5'>Подземье</a></b> — огромная сеть пещер, простирающаяся почти под всей территорией Западных Королевств. Исследование бесчисленных загадок этого места существенно осложняется тем, что с незапамятных времён Подземье является пристанищем и домом для народа дроу, чьи величественные подземные города зачастую оказываются смертельной ловушкой для неосторожных путников.<br><br>С точки зрения структуры Подземье разделено на три уровня:<br><br>Верхнее Подземье представляет собой условный вход на более глубокие уровни. Чаще всего это древние пещеры и катакомбы, подвалы с потайными ходами и храмы, древние руины и тому подобное. Там можно встретить всех, но чаще всего авантюристов и контрабандистов, которые пользуются его ходами для преодоления больших расстояний вне поверхности, к которому оно ближе всего.<br><br>Среднее Подземье находится на порядок глубже, примерно до 15 миль в мрак и глубину. Это место, где никогда не светит солнце, а источники воды считаются роскошью. Тут обитают как дроу, так и более опасные существа. Пурпурные черви выкапывают все новые и новые ходы в поисках добычи, умберхалки, они же огромных размеров кроты, вместо морковки пожирают ноги заблудившихся путников, бехолдеры, они же огромные глаза с множеством щупалец, которые своим взглядом порабощают и превращают в живые статуи — лишь малая часть того, что ждет неподготовленного заблудившегося шахтера.<br><br>Нижнее Подземье — место, откуда никто не возвращался, во всяком случае в здравом уме. Даже самые опасные твари Среднего Подземья неохотно посещают это место. В вечной тьме рассеиваются иллюзии, а свет быстро угасает, магические аномалии искажают пространство и время, искажая тело и разум неосторожного путника."
+	origin_desc = "<br><br>Beneath Grimoria, beyond the light of Astrata and Nok, lies <b>the Underdark</b>: a cave system extending beneath much of the Western Kingdoms. The drow have made it their refuge since ancient times, and their magnificent cities can become death traps for careless visitors.<br><br>The Upper Underdark consists of caves, catacombs, buried temples, hidden cellars, and ruins close to the surface. Adventurers and smugglers use its passages to travel unseen.<br><br>The Middle Underdark descends roughly fifteen miles into permanent night, where clean water is precious. Drow settlements share this depth with purple worms, umber hulks, beholders, giant moles, and worse creatures that prey upon unprepared travelers.<br><br>No reliable account has returned from the Lower Underdark. Even the predators of the middle depths avoid it. Light fails quickly there, illusions unravel, and magical anomalies distort space, time, body, and mind."
 
 /datum/virtue/origin/racial/akhdruk
 	map_group_order = 4
@@ -409,17 +406,17 @@
 	map_origin_order = 1
 	map_visible = FALSE
 	map_state_id = "akhdruk"
-	map_state_name = "Друд Акхдрук"
-	map_origin_name = "Друд Акхдрук"
+	map_state_name = "Drud Akhdruk"
+	map_origin_name = "Drud Akhdruk"
 	list_group_order = 4
 	list_item_order = 1
 	name = "Akhdruki"
 	added_languages = list(/datum/language/dwarvish)
 	origin_name = "Drud Akhdruk"
-	desc = "Я происхожу из Друд Акхдрук, единого королевства дворфов, объединяющего десятки крепостей по всей Гримории.<br>"
+	desc = "I come from Drud Akhdruk, a united kingdom of dwarves, bringing together dozens of fortresses across Grimoria.<br>"
 	races = list(/datum/species/dwarf/mountain,
 				/datum/species/dwarf/gnome)
-	origin_desc = "<br><br>Наиболее важным объектом, на кои обращается внимание в дворфийском обществе, обычно выступает сумма трёх вещей: возраст, богатство и мастерство. Чем больше у дворфа этих качеств, тем выше его положение в обществе. Но дворфы не хвастаются достижениями своих семей.<br><br>Дворфы питают привязанность к прошлому и традициям своего народа и постоянно стремятся помнить своих предков, ремонтируя и поддерживая свои изделия. Все кузнецы этого народа умеют перековывать древние оружие и постоянно пытаются использовать древние реликвии в своих новых работах. Все самые мощные из этих видов оружия выкованы из черностали.<br><br>Дворфы обладают жестким и непреклонным чувством чести, которое сосредоточено вокруг клятв или обещаний. Обещание не умирает вместе с клятвопреступником, как и предательство не умирает вместе с нарушителем клятвы. Дворф будет связан невыполненным обещанием, данным предком, и обязуется его исполнить. Точно так же они будут искать возмещения у потомков нарушителей клятвы.<br><br>Серьезные нарушения веры или закона зафиксированы в Книге обид. Каждый уважающий дворф должен носить личную книгу, для записи личных обид, нанесенных ему кем или чем-либо."
+	origin_desc = "<br><br>Dwarven standing rests on three measures: age, wealth, and mastery of a craft. Those who possess all three command the greatest respect, though boasting about one's lineage is considered poor form.<br><br>Dwarves honor their ancestors by preserving what they made. Craftspeople repair ancient works, reforge inherited weapons, and incorporate old relics into new creations. Their greatest arms are forged from blacksteel.<br><br>Oaths lie at the heart of dwarven honor. A broken promise does not die with the oathbreaker: descendants may inherit both the duty to fulfill an ancestor's pledge and the right to demand restitution from the betrayer's heirs.<br><br>Grave offenses against faith or law are entered into a Book of Grudges. Every respectable dwarf carries a personal volume in which to record wrongs that remain unsettled."
 
 /datum/virtue/origin/racial/infernal
 	map_group_order = 4
@@ -427,18 +424,18 @@
 	map_origin_order = 1
 	map_visible = FALSE
 	map_state_id = "infernal"
-	map_state_name = "Инферно"
-	map_origin_name = "Инферно"
+	map_state_name = "Inferno"
+	map_origin_name = "Inferno"
 	list_group_order = 5
 	list_item_order = 1
 	name = "Infernal"
 	added_languages = list(/datum/language/hellspeak)
 	origin_name = "the Inferno"
-	desc = "Я происхожу из Инферно — одного из внешних Планов реальности, родины демонов. Преодолев этот мир беспринципного зла и институциональной жестокости, я выбрался на чуждые земли Гримории.<br>"
+	desc = "I come from Inferno — one of the outer Planes of reality, the homeland of demons. Having overcome this world of unscrupulous evil and institutional cruelty, I made my way to the foreign lands of Grimoria.<br>"
 	races = list(/datum/species/tieberian,
 				/datum/species/dullahan,
 				/datum/species/demihuman)
-	origin_desc = "<br><br>Будучи наиболее близким из внешних Планов, <b><a href='https://wiki.twilight-fortress-axis.ru/index.php?title=%D0%98%D0%BD%D1%84%D0%B5%D1%80%D0%BD%D0%BE'>Инферно</a></b> оказывает значительное влияние на Гриморию и её обитателей. Его образ фигурирует в мифологии разных народов и цивилизаций мира под различными именами — на островах Этруски используют слово Аверно, в то время как народы Западных Королевств называют его Ад. Некоторые псайдонитские церковники ассоциируют этот План с Тартаром, в который души грешников отправляются после смерти, однако по свидетельствам самих обитателей этого места данное представление не совсем верно — в Инферно попадают души лишь тех, кто при жизни заключил магический пакт с одним из дьяволов.<br><br>Ввиду космологической близости Инферно и Гримории, нередки случаи, когда амбициозные демонические лорды совершают вторжение через границу между мирами с целью похищения ресурсов или же простой демонстрации собственной силы. Как правило, такие вторжения оставляют за собой обильные разрушения, разорённые земли и новые поколения тифлингов."
+	origin_desc = "<br><br><b>Inferno</b> is the nearest of the outer planes and exerts a powerful influence upon Grimoria. Etruscans call it Averno; in the Western Kingdoms it is simply Hell. Some Psydonite clergy identify it with Tartarus, the destination of sinful souls, but infernal witnesses dispute that teaching. They claim only souls bound by a mortal pact with a devil are drawn there.<br><br>Because the two planes lie so close together, ambitious infernal lords often cross the boundary to seize resources or display their power. Such incursions leave ruined lands, shattered communities, and new generations of tieflings in their wake."
 
 /datum/virtue/origin/racial/ancient
 	map_group_order = 4
@@ -446,17 +443,17 @@
 	map_origin_order = 1
 	map_visible = FALSE
 	map_state_id = "ancient"
-	map_state_name = "Древняя эпоха"
-	map_origin_name = "Древняя эпоха"
+	map_state_name = "Ancient Age"
+	map_origin_name = "Ancient Age"
 	list_group_order = 6
 	list_item_order = 1
 	name = "Ancient"
 	origin_name = "Age Long Gone"
 	added_languages = list(/datum/language/celestial)
-	desc = "Истоки моего происхождения утеряны в веках. Я произошел с земель, что ныне не хранят следов моей культуры, или же вовсе появился на свет исключительно божественным вмешательством.<br>"
+	desc = "My origins have been lost to the centuries. I come from a land where no trace of my culture remains, or perhaps divine intervention alone brought me into being.<br>"
 	races = list(/datum/species/elf/wood,
 				/datum/species/elf/dark,
 				/datum/species/elf/sun,
 				/datum/species/aasimar,
 				/datum/species/dracon)
-	origin_desc = "<br>Далеко не все из ныне живущих разумных могут похвастаться тем, что их родина ныне до сих пор находится на карте мира. Война в Небесах и Эра Раздора стерли с лица Гримории многие места, что некогда были домом для многих миллионов. Лишь в редких летописях сохранились упоминания о гегемониях былого."
+	origin_desc = "<br>Not every people can still point to a homeland on a modern map. The War in the Heavens and the Age of Strife erased realms that once held millions, leaving only scattered ruins and a few surviving chronicles to testify that those powers ever existed."

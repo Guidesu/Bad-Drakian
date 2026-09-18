@@ -977,24 +977,24 @@ SUBSYSTEM_DEF(gamemode)
 	var/last_item = items_copy[length(items_copy)]
 	items_copy.Cut(length(items_copy), length(items_copy) + 1)
 	var/delimiter = ", "
-	return "[jointext(items_copy, delimiter)] и [last_item]"
+	return "[jointext(items_copy, delimiter)] and [last_item]"
 /datum/controller/subsystem/gamemode/proc/story_misc(storyteller_type)
 	var/list/misc = list()
 	var/datum/storyteller/preset = storytellers?[storyteller_type]
 	if(!preset)
 		return misc
 	if(preset.block_hard)
-		misc += "Крупные антагонисты отключены"
+		misc += "Major antagonists disabled"
 	else if(preset.guaranteed_hard)
-		misc += "Гарантированный крупный антагонист на старте раунда (требует онлайн [HARD_ANTAG_MIN_POP]+)"
+		misc += "Guaranteed major antagonist at the start of the round (requires online [HARD_ANTAG_MIN_POP]+)"
 		if(preset.hard_mult > 1)
-			misc += "Крупные антагонисты масштабируются по онлайну в [preset.hard_mult]x сильнее"
+			misc += "Major antagonists scale online in [preset.hard_mult]x stronger"
 	if(preset.block_soft)
-		misc += "Малые антагонисты отключены (Wretch/Gnoll/Assassin)"
+		misc += "Small antagonists disabled (Wretch/Gnoll/Assassin)"
 	else
-		misc += "Лимит Wretch: [preset.wretch_slot_cap][preset.wretch_slot_cap > 5 ? " (масштабируется)" : " (фиксированный)"]"
-	misc += "Слоты Hag: [preset.hag_slots]"
-	misc += "Dreamwalker: [preset.allow_dreamwalker ? "может выпасть" : "отключён"]"
+		misc += "Wretch limit: [preset.wretch_slot_cap][preset.wretch_slot_cap > 5 ?" (scales)" : " (fixed)"]"
+	misc += "Slots Hag: [preset.hag_slots]"
+	misc += "Dreamwalker: [preset.allow_dreamwalker ? "may fall out" : "disabled"]"
 	return misc
 
 /// Gnoll head-count a preset opens, from its scaling mode.
@@ -1091,10 +1091,10 @@ SUBSYSTEM_DEF(gamemode)
 	dat += "<div style='font-family:Verdana,sans-serif;font-size:12px;line-height:1.35;color:#e8e8e8;padding:4px 6px;'>"
 	dat += "<div style='font-size:14px;font-weight:bold;margin-bottom:4px;'>[storyboy.get_display_name()]</div>"
 	dat += "<div style='margin-bottom:6px;color:#cfcfcf;'>[storyboy.vote_desc]</div>"
-	var/misc_text = "Нет"
+	var/misc_text = "No"
 	if(length(misc))
 		misc_text = jointext(misc, "<br>")
-	dat += "<div><b>В этом раунде:</b></div>"
+	dat += "<div><b>This round: </b></div>"
 	dat += "<div style='margin-left:10px;'>[misc_text]</div>"
 	dat += "</div>"
 	return jointext(dat, "")
@@ -1668,10 +1668,10 @@ SUBSYSTEM_DEF(gamemode)
 	var/list/guaranteed_roundstart_names = list()
 	for(var/datum/round_event_control/antagonist/solo/event as anything in guaranteed_roundstart_pool)
 		guaranteed_roundstart_names += event.name
-	var/guaranteed_pool_text = length(guaranteed_roundstart_names) ? story_ru_list(guaranteed_roundstart_names) : "Нет"
-	dat += "<BR>Гарантированный пул старта раунда: [guaranteed_pool_text]"
+	var/guaranteed_pool_text = length(guaranteed_roundstart_names) ? story_ru_list(guaranteed_roundstart_names) : "No"
+	dat += "<BR>Guaranteed round start pool: [guaranteed_pool_text]"
 	if(current_roundstart_event)
-		dat += "<BR>Выбранный антагонист старта раунда: [current_roundstart_event.name]"
+		dat += "<BR>Selected antagonist for the start of the round: [current_roundstart_event.name]"
 
 	// Job Scaling Info
 	dat += "<BR><b>--- Job Scaling ---</b>"
@@ -1893,7 +1893,7 @@ SUBSYSTEM_DEF(gamemode)
 		if(!istype(storyboy))
 			return
 
-		var/datum/browser/popup = new(user, "storyboy_details", "[storyboy.get_display_name()] - Подробности режима")
+		var/datum/browser/popup = new(user, "storyboy_details", "[storyboy.get_display_name()] - Mode details")
 		popup.width = DESC_POPUP_WIDTH
 		popup.height = DESC_POPUP_HEIGHT
 		popup.set_content(story_popup(storyboy.type))

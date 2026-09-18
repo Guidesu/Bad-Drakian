@@ -1,7 +1,7 @@
 GLOBAL_VAR(king_throne)
 
 /obj/structure/roguethrone
-	name = "throne of Twilight Axis"
+	name = "realm throne"
 	desc = "A big throne, to hold the Lord's giant personality. Say 'secrets of the throat' with the crown on your head if you are confused."
 	icon = 'icons/roguetown/misc/96x96.dmi'
 	icon_state = "throne"
@@ -84,7 +84,7 @@ GLOBAL_VAR(king_throne)
 
 /obj/structure/roguethrone/examine(mob/user)
 	. = ..()
-	. += span_notice("The throne of the [SSticker.realm_type] of [SSticker.realm_name].")
+	. += span_notice("The throne of the [SSticker.realm_type] of [get_realm_name()].")
 	if(active_rite)
 		var/status = active_rite.get_status_text()
 		if(status)
@@ -99,7 +99,7 @@ GLOBAL_VAR(king_throne)
 
 /obj/structure/roguethrone/get_mechanics_examine(mob/user)
 	. = ..()
-	. += span_info("<b>Throat Commands</b> (say these at the Throat of Azure Peak):")
+	. += span_info("<b>Throat Commands</b> (say these at the Throat of [get_realm_name()]):")
 	. += span_info("'Make Announcement' - broadcast a message (requires crown)")
 	. += span_info("'Revise Charter' - revise or restore charters (requires crown, ruler only)")
 	. += span_info("'Make Decree' - issue a royal decree (requires crown, ruler only)")
@@ -118,6 +118,15 @@ GLOBAL_VAR(king_throne)
 	. += span_info("'I Assent' - support an active claim near the throne during the gathering phase")
 	. += span_info("'I Abdicate' - the current ruler yields near the throne, skipping to contestation")
 	. += span_info("'Stop Ascent' - while seated on the throne during contestation, pause and halt the rite. Remain seated for [RITE_COUNTER_CLAIM_DURATION / (1 MINUTES)] minute(s) to cancel.")
+	. += span_info("'Name the Realm' - use the throne action to name or rename the realm (ruler or administrator only)")
+
+/obj/structure/roguethrone/verb/name_the_realm()
+	set name = "Name the Realm"
+	set src in oview(1)
+	if(!usr || (usr != SSticker.rulermob && (!usr.client || !check_rights_for(usr.client, R_ADMIN))))
+		to_chat(usr, span_warning("Only the legitimate ruler or an administrator may name the realm."))
+		return
+	SSticker.prompt_realm_name(usr, "throne decree")
 
 /obj/structure/roguethrone/lordcolor(primary,secondary)
 	if(!primary || !secondary)

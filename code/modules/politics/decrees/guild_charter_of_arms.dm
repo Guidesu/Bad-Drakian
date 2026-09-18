@@ -1,17 +1,17 @@
 /datum/decree/guild_charter_of_arms
 	id = DECREE_GUILD_CHARTER_OF_ARMS
-	name = "Статут Гильдии наемников"
+	name = "Statute of the Mercenary Guild"
 	category = DECREE_CATEGORY_NEW
-	mechanical_text = "Предельный размер подушной подати для наемников ограничен 15 маммонами; Гильдия наемников вносит ежедневную подать в счет Обета Горожан."
-	flavor_text = {"Настоящий Статут Гильдии наемников, заключенный под знаменем Равокса между Короной Азурии и Гильдией наемников Западных Королевств, свидетельствует о том, что Корона признаёт Гильдию в качестве зарегистрированной иностранной организации, самоуправляющейся в своих делах и подотчётной исключительно своим капитанам. Наемники, что служат под флагом Гильдии, не будут нести никакого обременения, кроме наименьших из возможных податей.
+	mechanical_text = "The cap on the capitation tax for mercenaries is limited to 15 mammon; The Mercenary Guild contributes a daily tax towards the Citizens' Vow."
+	flavor_text = {"These Mercenary Guild Statutes, negotiated under the banner of Ravox between the Crown of Azuria and the Mercenary Guild of the Western Kingdoms, indicate that the Crown recognizes the Guild as a registered foreign organization, self-governing in its affairs and answerable solely to its captains. Mercenaries who serve under the flag of the Guild will not bear any burden, except for the smallest possible taxes.
 
-Корона не требует от Гильдии клятвы верности и не обязана оказывать ей никаких услуг в ответ. Корона не будет вмешиваться в контракты, заключаемые Гильдией, и будет защищать право ее членов носить оружие, а также начинать сражения и участвовать в оных по своему усмотрению, при условии, что это не нарушает мир в Герцогстве и не связано с пиратством, разбоем или другими действиями, непосредственно угрожающими интересам Короны.
+The Crown does not require an oath of loyalty from the Guild and is not obliged to provide it with any services in return. The Crown will not interfere in contracts concluded by the Guild and will protect the right of its members to bear arms, as well as to initiate battles and participate in them at their discretion, provided that this does not disturb the peace in the Duchy and is not related to piracy, robbery, or other actions directly threatening the interests of the Crown.
 
-В знак признания этого статуса казна Гильдии, наполняемая за счёт взносов её членов, будет ежедневно вносить подать как часть Обета Горожан, в качестве жеста доброй воли и вклада в общее благосостояние Герцогства от носителей оружия и агентов Равокса, обеспечивающих в оном отправление правосудия. И если будет обнаружен преступник, носящий знаки Гильдии, Гильдия не несет за это никакой ответственности, и правосудие Короны в отношении этого лица осуществляется беспрепятственно.
+In recognition of this status, the Guild's treasury, funded by the contributions of its members, will daily pay a levy as part of the Citizens' Oath, as a gesture of goodwill and a contribution to the common welfare of the Duchy from the bearers of arms and agents of Ravox, ensuring the administration of justice therein. And if a criminal is found bearing the symbols of the Guild, the Guild bears no responsibility for this, and the Crown's justice concerning this person is carried out unhindered.
 
-Заверено печатью Короны и печатью Гильдии намеников Западных Королевств."}
-	revoke_text = "Правитель сиих земель прекратил действие Статута Гильдии наемников. Наемники Гильдии Западных Королевств вновь обязаны выплачивать налоги и подати в полном объеме, а Гильдия, в свою очередь, останавливает выплаты в казну."
-	restore_text = "Правитель сиих земель возобновил Статут Гильдии наемников. Особый налоговый статус Гильдии восстановлен, и она вновь присоединяется к Обету Горожан."
+Certified by the seal of the Crown and the seal of the Guild of the Western Kingdoms."}
+	revoke_text = "The ruler of these lands has terminated the Statute of the Mercenary Guild. Mercenaries of the Guild of the Western Kingdoms are again obliged to pay taxes and taxes in full, and the Guild, in turn, stops payments to the treasury."
+	restore_text = "The ruler of these lands renewed the Statute of the Mercenaries Guild. The Guild's special tax status is restored and it rejoins the Citizens' Pledge."
 
 /datum/decree/guild_charter_of_arms/roll_initial_year()
 	return CALENDAR_EPOCH_YEAR - rand(30, 80)

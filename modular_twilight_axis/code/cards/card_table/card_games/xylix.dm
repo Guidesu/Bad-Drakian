@@ -65,7 +65,7 @@
 	if(!unseen.len)
 		return
 	seen += pick(unseen)
-	to_chat(user, span_notice("Ксаликс на миг показывает одну карту [target.name]."))
+	to_chat(user, span_notice("Xalix momentarily shows one card [target.name]."))
 
 /datum/card_table_session/proc/xylix_try_reveal_for_turn_holder(datum/card_table_player/turn_holder)
 	if(!turn_holder)
@@ -79,7 +79,7 @@
 /datum/card_table_session/proc/xylix_check_exposure(mob/user)
 	if(!user || !prob(xylix_caught_chance(user)))
 		return FALSE
-	var/msg = "[card_table_display_name(user)] слишком внимательно следит за колодой."
+	var/msg = "[card_table_display_name(user)] is watching the deck too closely."
 	for(var/datum/card_table_player/player in players)
 		if(player.left)
 			continue
@@ -90,5 +90,5 @@
 		var/mob/O = card_table_find_mob_by_ckey(ckey)
 		if(O && O != user)
 			to_chat(O, span_warning(msg))
-	to_chat(user, span_warning("Пальцы Ксаликса дрогнули. Кто-то мог заметить мухлеж."))
+	to_chat(user, span_warning("Xalix's fingers trembled. Someone might have noticed the cheating."))
 	return TRUE

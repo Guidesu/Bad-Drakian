@@ -39,21 +39,21 @@
 #define DETAIL_TEXT_ORC_RUIN "An old coastal wayfort, now filed with Inhumenity like pus in a wound. Beneath salt-stained cliffs, iron-masked raiders sharpen their blades, and prepare for war."
 
 // Terrorbog
-#define DETAIL_TEXT_TERRORBOG "Болота Ужаса во все времена оставались крепостью зла и тьмы. Стража не патрулирует эти земли, а попасть в засаду здесь столь же просто, сколь оступиться в глубокой трясине. Многие искатели приключений нашли здесь свою смерть, но не для всех она стала концом."
+#define DETAIL_TEXT_TERRORBOG "The Swamps of Terror have always remained a fortress of evil and darkness. There are no guards patrolling these lands, and getting ambushed here is as easy as stumbling into a deep quagmire. Many adventurers met their death here, but it was not the end for all."
 
 // North Coast
 #define DETAIL_TEXT_NORTH_COAST "Chilly winds blow from the palagic northways. This is the part of land where the trading ships hook 'round to return to land after months' voyages- and where they are plundered by ne'er-do-wells. \n\
 Abyssor rests offshore. Even his quietest exhale is enough to send waves from the hadal to crash onto sand."
-#define DETAIL_TEXT_NORTH_COAST_HAMLET "Ещё недавно в этой небольшой шахтерской деревушке жизнь била ключом — в церкви звонили колокола, звон от ударов молота о наковальню не стихал ни днём, ни ночью, а в таверне искатели приключений с юга делились с местными последними слухами из столицы. Сейчас же здесь не осталось ни единой живой души. Ожившие мертвецы, что ныне заполнили пустые дома, весьма весьма недвусмысленно указывают на виновников произошедшего."
+#define DETAIL_TEXT_NORTH_COAST_HAMLET "Until recently, life was in full swing in this small mining village - bells were ringing in the church, the ringing of hammer blows on an anvil did not subside day or night, and in the tavern adventurers from the south shared the latest rumors from the capital with locals. Now there is not a single living soul left here. The living dead that now fill the empty houses very clearly point to the culprits of what happened."
 #define DETAIL_TEXT_MAD_DUKE_COURT ""
 #define DETAIL_TEXT_FALLEN_MANOR "A once-grand attempt at nobility now reduced to no more than a crumbling mess of what was once overly optimistic expansion, destroyed by the fallen 'Duke's' greed and lust for more control than he could truly handle. Not happy with simply being a serf, he sought more, and fell to ruin because of it. Now known as the Fallen 'Duke', he rots in his decayed manor, surrounded by his undead minions."
 
 // Actual Azure Coast
 #define DETAIL_TEXT_ACTUAL_COAST ""
-#define DETAIL_TEXT_CITY_COAST "Отсюда можно видеть огни Сумеречной Оси, столицы Великого Герцогства. От порта и делового квартала на берегу залива до жилых районов на возвышенности, Ось подобна полосе света, что раскинулась по всей протяженности склона горы."
+#define DETAIL_TEXT_CITY_COAST "From here you can see the lights of the capital. From the port and business district on the bay to residential areas on high ground, the city is a strip of light stretching along the mountainside."
 
 // Mount Decap & Dungeons
-#define DETAIL_TEXT_DECAP "Безголовая Гора, Висельная Гора, Гора Обезглавливания... В первые годы существования Великого Герцогства здесь проводились массовые казни сторонников тёмных сил, что властвовали над этой долиной до пришествия сил под флагом Астраты.\n\ Ныне, Безголовая Гора остается одним из самых опасных мест в Герцогстве. Зловещие слухи ходят об этом месте — якобы, именно здесь скрываются шайки маттиоситов, что терроризируют северные тракты страны. Азурийские Смотрители не патрулируют этот регион, справедливо полагая, что живыми они отсюда не вернутся.\n\ Впрочем, путников и искателей приключений здесь поджидает не только опасность. По некоторым слухам, именно здесь находятся руины Тарихеи — древнего города Божественной Империи, разрушенного до основания во время Войны в Небесах. Несметные богатства скрываются в его хранилищах, ожидая тех, кому хватит смелости забрать их."
+#define DETAIL_TEXT_DECAP "Headless Mountain, Hanging Mountain, Decapitation Mountain... In the early years of the Grand Duchy, mass executions of supporters of the dark forces that ruled over this valley before the arrival of forces under the flag of Astrata were carried out here. \n\ Nowadays, Headless Mountain remains one of the most dangerous places in the Duchy. Ominous rumors are circulating about this place - supposedly, this is where gangs of Matthiosites are hiding, terrorizing the northern roads of the country. The Asurian Watchers do not patrol this region, rightly believing that they will not return alive.\n\ However, not only danger awaits travelers and adventurers here. According to some rumors, this is where the ruins of Tarichea are located - the ancient city of the Divine Empire, destroyed to the ground during the War in Heaven. Countless riches lie hidden in its vaults, waiting for those brave enough to claim them."
 #define DETAIL_TEXT_DECAP_TARICHEA ""
 #define DETAIL_TEXT_DECAP_GUNDU_ZIRAK ""
 #define DETAIL_TEXT_DECAP_DRAGONDEN ""
@@ -87,7 +87,7 @@ Rusted metals distantly grind in anoxic pus-condensate in-tune with the Signal. 
 #define DETAIL_TEXT_UNIVERSITY_OF_AZURIA ""
 #define DETAIL_TEXT_CHAPEL "Narthex of faith, roosting the Flock."
 #define DETAIL_TEXT_INQUISITION_HQ ""
-#define DETAIL_TEXT_AZUREAN_GUILD_OF_CRAFT "Здесь базируется легендарная Азурийская Гильдия Мастеров, изделиям которой Великое Герцогство во многом обязано своим богатством."
+#define DETAIL_TEXT_AZUREAN_GUILD_OF_CRAFT "The legendary Asurian Guild of Craftsmen is based here, to whose products the Grand Duchy owes much of its wealth."
 
 
 // Tomb of Alotheos

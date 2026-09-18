@@ -22,7 +22,7 @@
 
 /obj/item/rogueweapon/sword/rapier/foldsword
 	name = "pathmaker"
-	desc = "Дорогостоющий складной меч, сделанный специально по заказу для десницы. Можно носить как обычный меч в ножнах, так и в сумке или в поясе, если сложить."
+	desc = "An expensive folding sword, made specifically for the right hand. You can carry either a regular sword in a sheath or in a bag or belt if folded."
 	icon = 'modular_twilight_axis/icons/roguetown/weapons/64.dmi'
 	icon_state = "folding_sword_on"
 	var/extended = FALSE

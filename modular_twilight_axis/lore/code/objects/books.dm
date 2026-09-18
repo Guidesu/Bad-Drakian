@@ -1,8 +1,8 @@
 /obj/item/book/rogue/bibble
 	name = "The Verses and Acts of the Ten"
-	desc = "<font color='cfa446'>'ДЕСЯТЬ направляют нас сквозь тьму. ДЕСЯТЬ БОГОВ превыше всего.'</font> \
-	</br>Священная книга Церкви Десяти, распространяемая Святыми Престолами по всей Гримории. Разделена на три Завета в хронологическом порядке. \
-	</br>ЛЕВИТ - Первый Завет, повествующий о временах Становления и Первородной Эры. </br>ДЕКАНОМИКОН - Второй Завет, повествующий о Войне в Небесах, что сотрясла наш мир до основания. </br>НОВЫЙ РАССВЕТ - Третий Завет, повествующий о становлении Божественного Порядка и о Неделимом Пантеоне."
+	desc = "<font color='cfa446'>'TEN guide us through the darkness. TEN GODS above all.'</font> \
+	</br>The sacred book of the Church of the Ten, distributed by the Holy Thrones throughout Grimoria. Divided into three Covenants in chronological order.\
+	</br>LEVIT - The First Covenant, telling of the times of Formation and the Primordial Era.</br>DEKANOMICON - The Second Covenant, recounting the War in the Heavens, which shook our world to its foundations.</br>NEW DAWN - The Third Covenant, recounting the establishment of the Divine Order and the Indivisible Pantheon."
 	icon_state = "bibble_0"
 	base_icon_state = "bibble"
 	title = "The Verses and Acts of the Ten"
@@ -24,20 +24,20 @@
 		return
 	if(in_range(user, src) || isobserver(user))
 		user.changeNext_move(CLICK_CD_MELEE)
-		var/list/choices = list("ЛЕВИТ", "ДЕКАНОМИКОН", "НОВЫЙ РАССВЕТ")
-		var/section_choice = tgui_input_list(user, "Мудростью какого Завета я буду делиться?", "БОЖЕСТВЕННОЕ ПРОСВЕЩЕНИЕ", choices)
+		var/list/choices = list("LEVIT", "DEKANOMIKON", "NEW DAWN")
+		var/section_choice = tgui_input_list(user, "By the wisdom of which Covenant shall I share?", "DIVINE ENLIGHTENMENT", choices)
 		var/chosentxt
 		switch(section_choice)
-			if("ЛЕВИТ")
+			if("LEVIT")
 				chosentxt = 'modular_twilight_axis/lore/strings/visage.txt'
-			if("ДЕКАНОМИКОН")
+			if("DEKANOMIKON")
 				chosentxt = 'modular_twilight_axis/lore/strings/decanomicon.txt'
-			if("НОВЫЙ РАССВЕТ")
+			if("NEW DAWN")
 				chosentxt = 'modular_twilight_axis/lore/strings/newdawn.txt'
 			else
 				return
 		var/list/verses = world.file2list(chosentxt)
-		var/m = tgui_input_list(user, "Какой стих я зачитаю?", "БОЖЕСТВЕННОЕ ПРОСВЕЩЕНИЕ", verses)
+		var/m = tgui_input_list(user, "Which verse shall I read?", "DIVINE ENLIGHTENMENT", verses)
 		if(m)
 			user.say(m)
 		else
@@ -45,12 +45,12 @@
 			user.say(m)
 
 /obj/item/book/rogue/bibble/psy
-	desc = "<font color='3bb5d3'>'И Он плачет. Не за тебя, не за себя, но за всех нас.'</font> \
-	</br>Том в кожаном переплете, содержащий учения Церкви Всеотца. Книга разделена на четыре Завета, отражающих верования наиболее крупных и значимых конфессий псайдонитской веры. \
-	</br>ЗАВЕТ ПСАЙДОНА - учение Старой Веры, что вело праведных во времена до Архипредательства. \
-	</br>ЖИТИЁ ПСАЙДОНА - сотворение Псайдонии такой, какой мы её знаем. \
-	</br>ЗАВЕТ ОТАВИКА - истина новой эпохи, поведанная нам Великим Магистром Отаванским. \
-	</br>ЗАВЕТ СУДЬБЫ - учение жителей Наледи, союзников в борьбе со злом, что захватило наш грешный мир."
+	desc = "<font color='3bb5d3'>'And He weeps. Not for you, not for Himself, but for all of us.'</font>\
+	</br>A leather-bound volume containing the teachings of the Church of the All-Father. The book is divided into four Covenants, reflecting the beliefs of the largest and most significant confessions of the Psydonite faith.\
+	</br>COVENANT OF PSYDON - the teachings of the Old Faith, which guided the righteous in the times before the Arch-Betrayal.\
+	</br>LIFE OF PSYDON - the creation of Psydonia as we know it.\
+	</br>COVENANT OF OTAVIK - the truth of the new era, told to us by the Great Master of Otavan.\
+	</br>COVENANT OF FATE - the teachings of the inhabitants of Naledi, allies in the fight against the evil that has seized our sinful world."
 
 /obj/item/book/rogue/bibble/psy/read(mob/living/carbon/human/user)
 	if(!open)
@@ -66,39 +66,39 @@
 		user.changeNext_move(CLICK_CD_MELEE)
 		if(sect)
 			var/list/verses = world.file2list("modular_twilight_axis/lore/strings/psy[sect].txt")
-			var/m = tgui_input_list(user, "Какой стих я зачитаю?", "БОЖЕСТВЕННОЕ ПРОСВЕЩЕНИЕ", verses)
+			var/m = tgui_input_list(user, "Which verse shall I read?", "DIVINE ENLIGHTENMENT", verses)
 			if(m)
 				if(prob(1) && sect == "sect1")
 					user.playsound_local(user, 'sound/misc/psydong.ogg', 100, FALSE)
-					user.say("ПСАЙ 66:6... +_Всеотец_+ изрёк: «Я прощаю тебя, ибо люблю тебя как отец любит свою дочь». И кровь стекала по лезвию и из груди е- Откуда это здесь?!")
+					user.say("PSAI 66:6... +_The All-Father_+ said, \"I forgive you, for I love you as a father loves his daughter.\" And the blood ran down the blade and from the chest of e- Where is this here?!")
 				else
 					user.say(m)
 			else
 				m = pick(verses)
 				if(prob(1) && sect == "sect1")
 					user.playsound_local(user, 'sound/misc/psydong.ogg', 100, FALSE)
-					user.say("ПСАЙ 66:6... +_Всеотец_+ изрёк: «Я прощаю тебя, ибо люблю тебя как отец любит свою дочь». И кровь стекала по лезвию и из груди е- Откуда это здесь?!")
+					user.say("PSAI 66:6... +_The All-Father_+ said, \"I forgive you, for I love you as a father loves his daughter.\" And the blood ran down the blade and from the chest of e- Where is this here?!")
 				else
 					user.say(m)
 
 /obj/item/book/rogue/bibble/psy/MiddleClick(mob/user, params)
-	var/sects = list("ЗАВЕТ ПСАЙДОНА", "ЖИТИЁ ПСАЙДОНА", "ЗАВЕТ ОТАВИКА", "ЗАВЕТ СУДЬБЫ")
-	var/sect_choice = input(user, "Выберите Завет", "О ПСАЙДОНИИ") as anything in sects
+	var/sects = list("THE COVENANT OF PSYDON", "THE LIFE OF PSYDON", "THE COVENANT OF OTAVIK", "THE COVENANT OF DESTINY")
+	var/sect_choice = input(user, "Choose the covenant", "OF PSYDONIA") as anything in sects
 	switch(sect_choice)
-		if("ЗАВЕТ ПСАЙДОНА")
+		if("THE COVENANT OF PSYDON")
 			sect = "sect1"
-		if("ЖИТИЁ ПСАЙДОНА")
+		if("THE LIFE OF PSYDON")
 			sect = "sect2"
-		if("ЗАВЕТ ОТАВИКА")
+		if("THE COVENANT OF OTAVIK")
 			sect = "sect3"
-		if("ЗАВЕТ СУДЬБЫ")
+		if("THE COVENANT OF DESTINY")
 			sect = "sect4"
 	return
 
 /obj/item/book/rogue/bibble/zizo
 	name = "Lexicon of Her Truth"
-	desc = "<font color='ff0000'>'Познавая Её учение, однажды мы пройдем по Её стопам.'</font> \
-	</br>Том, запрещенный к прочтению Святым Престолом, содержащий пересказ смертной жизни и вознесения Зизо, Госпожи Тьмы - или, по крайней мере, ту версию оных, которой придерживаются культисты Спасения. Подозрительно пахнет засохшей кровью.</br>"
+	desc = "<font color='ff0000'>'By learning Her teachings, one day we will walk in Her footsteps.'</font> \
+	</br>A tome forbidden by the Holy See, containing an account of the mortal life and ascension of Zizo, Lady of Darkness - or, at least, the version of it adhered to by the cultists of Salvation. It suspiciously smells of dried blood.</br>"
 	icon_state = "zible_0"
 	base_icon_state = "zible"
 	title = "Lexicon of Her Truth"
@@ -126,7 +126,7 @@
 	if(in_range(user, src) || isobserver(user))
 		user.changeNext_move(CLICK_CD_MELEE)
 		var/list/verses = world.file2list("modular_twilight_axis/lore/strings/zizo.txt")
-		var/m = tgui_input_list(user, "Какой стих я зачитаю?", "БОЖЕСТВЕННОЕ ПРОСВЕЩЕНИЕ", verses)
+		var/m = tgui_input_list(user, "Which verse shall I read?", "DIVINE ENLIGHTENMENT", verses)
 		if(m)
 			user.say(m)
 		else

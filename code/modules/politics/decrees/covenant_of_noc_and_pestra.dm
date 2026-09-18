@@ -1,8 +1,8 @@
 /datum/decree/noc_pestra_covenant
 	id = DECREE_NOC_PESTRA_COVENANT
-	name = "Завет Нок и Пестры"
+	name = "Covenant of Nok and Motley"
 	category = DECREE_CATEGORY_NEW
-	mechanical_text = "Устанавливает верхний предел подушной подати для представителей Университета и Апотекарской палаты, а также минимальный уровень их заработной платы: придворный маг — 40 м, архивариус — 20 м, арканный маг — 10 м, главный лекарь — 80 м, апотекарий — 40 м."
+	mechanical_text = "Sets the upper limit of the capitation tax for representatives of the University and the Apothecary Chamber, as well as the minimum level of their salaries: court magician - 40 m, archivist - 20 m, arcane magician - 10 m, chief healer - 80 m, apothecary - 40 m."
 	/// Jobs covered by the scholarly half of the covenant (Noc's mantle).
 	var/static/list/university_jobs = list(
 		"Court Magician",
@@ -21,13 +21,13 @@
 		"Head Physician" = 80,
 		"Apothecary" = 40,
 	)
-	flavor_text = {"Настоящий Завет, заключённый под бдительным взором Нок и милостивой рукой Пестры, свидетельствует о том, что ученые умы Университета и целители Апотекарской палаты не будут нести никакого обременения, кроме наименьших из возможных податей, и будут получать из казны Короны честный минимум того, что им причитается, пока действует настоящий Завет.
+	flavor_text = {"This Covenant, made under the watchful eye of Nok and the merciful hand of Pestra, testifies that the learned minds of the University and the healers of the Apothecary's Chamber will bear no burden except the least possible taxes, and will receive from the treasury of the Crown the fair minimum of what is due them while this Covenant is in force.
 
-Взамен, лицензированные ученые умы Университета обязуются будут хранить знания и мудрость сиих щемель, сохранять их и преподавать достойным и светлым умам, ибо Нок даровала людям дар арканы и мудрости, чтобы мы могли распространять и преумножать их. А дипломированные целители Апотекарской палаты, посланники Пестры, принимают обязательство лечить раны каждого подданного Короны, пришедшего к их порогу, будь то нищий или горожанин, и никогда не откажут раненому из-за недостатка монет, ибо Пестра милосердна и научила нас медицине, чтобы мы могли заботиться друг о друге.
+In return, the licensed scholarly minds of the University shall commit to preserving the knowledge and wisdom of these scrolls, maintaining them, and teaching them to worthy and enlightened minds, for Nok has granted humans the gift of arcana and wisdom so that we may spread and multiply them. And the certified healers of the Apothecary Chamber, messengers of Pestr, pledge to heal the wounds of every subject of the Crown who comes to their threshold, whether beggar or townsman, and shall never refuse the wounded due to lack of coins, for Pestr is merciful and has taught us medicine so that we may care for one another.
 
-Заверено печатью Короны, милостью Нок и Пестры."}
-	revoke_text = "Правитель сиих земель прекратил действие Завета Нок и Пестры. Представители Университета и Апотекарской палаты теперь облагаются налогами и податями в полном объеме. Сколь долго продержится милость Нок и Пестры, ежели слуги их будут возносить молитвы о тягости их бытия?"
-	restore_text = "Правитель сиих земель восстановил Завет Нок и Пестры. Представители Университета и Апотекарской палаты вновь обрели свой защищенный статус, дабы торжествовали на землях под властью Короны мудрость и милосердие."
+Endorsed with the seal of the Crown, by the grace of Nok and Pestr."}
+	revoke_text = "The ruler of these lands terminated the Covenant of Nok and Motley. Representatives of the University and the Apothecary Chamber are now subject to taxes and duties in full. How long will the mercy of Nok and Motley last if their servants offer prayers about the burden of their existence?"
+	restore_text = "The ruler of these lands restored the Covenant of Nok and Motley. Representatives of the University and the Apothecary Chamber regained their protected status, so that wisdom and mercy would triumph in the lands under the rule of the Crown."
 
 /datum/decree/noc_pestra_covenant/roll_initial_year()
 	return CALENDAR_EPOCH_YEAR - rand(20, 60)

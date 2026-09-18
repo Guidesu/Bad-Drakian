@@ -1,10 +1,10 @@
 /datum/erp_action/other/legs/footjob
 	abstract = FALSE
-	name = "Работа ножками"
+	name = "Footwork"
 	required_target_organ = SEX_ORGAN_PENIS
 	require_grab = TRUE
-	message_start = "{actor} зажимает член {partner} ступнями.."
-	message_tick = "{actor} {force} и {speed} водит ступнями по члену {partner}."
-	message_finish =  "{actor} убирает ножки от члена {partner}."
-	message_climax_passive = "{partner} кончает на ножки {actor}."
+	message_start = "{actor} clamps {partner}'s penis with his feet.."
+	message_tick = "{actor} {force} and {speed} moves his feet on {partner}'s penis."
+	message_finish =  "{actor} removes his legs from {partner}'s penis."
+	message_climax_passive = "{partner} cums on {actor}'s feet."
 	

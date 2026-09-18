@@ -1,5 +1,5 @@
-// Модуль для порта причесек
-// Не забудьте добавить тип прически в файл code\modules\client\customizer\customizers\bodypart_feature\hair.dm
+//Module for the hair port
+//Do not forget to add the hairstyle type to the file code\modules\client\customizer\customizers\bodypart_feature\hair.dm
 
 /datum/sprite_accessory/hair/head/ta
 	icon = 'modular_twilight_axis/icons/mob/sprite_accessory/hair/hairstyles.dmi'

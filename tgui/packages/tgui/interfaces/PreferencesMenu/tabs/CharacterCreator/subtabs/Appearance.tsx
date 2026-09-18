@@ -62,6 +62,8 @@ const SubtabAppearanceCardBody = () => {
     mcolor3,
     skin_tone_wording,
     taur_color,
+    taur_markings,
+    taur_tertiary,
     taur_name,
     update_mutant_colors,
     use_mutcolor,
@@ -146,8 +148,18 @@ const SubtabAppearanceCardBody = () => {
               <Stack.Item>
                 <ColorButton
                   backgroundColor={taur_color}
-                  tooltip={`Taur Color: ${ensureColorHash(taur_color)}`}
+                  tooltip={`Base: ${ensureColorHash(taur_color)}`}
                   onClick={() => act('taur_color')}
+                />
+                <ColorButton
+                  backgroundColor={taur_markings}
+                  tooltip={`Markings: ${ensureColorHash(taur_markings)}`}
+                  onClick={() => act('taur_markings')}
+                />
+                <ColorButton
+                  backgroundColor={taur_tertiary}
+                  tooltip={`Tertiary: ${ensureColorHash(taur_tertiary)}`}
+                  onClick={() => act('taur_tertiary')}
                 />
               </Stack.Item>
             </Stack>

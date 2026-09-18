@@ -32,7 +32,7 @@ export const VampireRiftGate = () => {
   } = data;
 
   return (
-    <Window title="Врата разлома" width={430} height={360} theme="dark">
+    <Window title="Rift gates" width={430} height={360} theme="dark">
       <Window.Content>
         <Stack vertical fill>
           <Stack.Item>
@@ -40,22 +40,22 @@ export const VampireRiftGate = () => {
               <Stack align="center">
                 <Stack.Item grow>
                   <Box bold fontSize={1.2}>
-                    ВРАТА РАЗЛОМА
+                    BREAKAGE GATE
                   </Box>
-                  <Box color="label">Цена: {formatVitae(vitaeCost)} витэ</Box>
+                  <Box color="label">Price:{formatVitae(vitaeCost)} energy</Box>
                 </Stack.Item>
                 <Stack.Item>
                   <Box color={sendingActive ? 'bad' : 'good'}>
-                    {sendingActive ? 'ОТПРАВКА АКТИВНА' : 'СПИТ'}
+                    {sendingActive ? 'DISPATCH ACTIVE' : 'SLEEPING'}
                   </Box>
                 </Stack.Item>
               </Stack>
             </Section>
           </Stack.Item>
           <Stack.Item grow basis={0}>
-            <Section title="Якоря" fill scrollable>
+            <Section title="Anchors" fill scrollable>
               {!isVampire ? (
-                <EmptyState text="Только вампиры могут пробудить Врата разлома." />
+                <EmptyState text="Only vampires can awaken the Rift Gates." />
               ) : amulets.length ? (
                 amulets.map((amulet) => (
                   <Box
@@ -73,8 +73,8 @@ export const VampireRiftGate = () => {
                         <Box bold>{amulet.name}</Box>
                         <Box color="label">{amulet.area}</Box>
                         <Box color={amulet.isTwilight ? 'good' : 'average'}>
-                          {amulet.isTwilight ? 'Сумеречный якорь' : 'Старый якорь'} -{' '}
-                          зарядов: {amulet.uses}
+                          {amulet.isTwilight ? 'Twilight anchor' : 'Old anchor'} -{' '}
+                          charges:{amulet.uses}
                         </Box>
                       </Stack.Item>
                       <Stack.Item width="92px">
@@ -84,7 +84,7 @@ export const VampireRiftGate = () => {
                           disabled={!hasVitae}
                           onClick={() => act('open_return', { amulet_ref: amulet.ref })}
                         >
-                          НАЗАД
+                          BACK
                         </Button>
                         <Button
                           fluid
@@ -93,14 +93,14 @@ export const VampireRiftGate = () => {
                           disabled={!hasVitae || sendingActive}
                           onClick={() => act('open_sending', { amulet_ref: amulet.ref })}
                         >
-                          ТУДА
+                          THERE
                         </Button>
                       </Stack.Item>
                     </Stack>
                   </Box>
                 ))
               ) : (
-                <EmptyState text="Нет привязанных амулетов разлома." />
+                <EmptyState text="No bound rift amulets." />
               )}
             </Section>
           </Stack.Item>

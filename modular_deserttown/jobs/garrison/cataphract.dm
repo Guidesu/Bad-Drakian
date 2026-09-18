@@ -8,9 +8,9 @@
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
 	forbidden_races = list(RACES_CONSTRUCT RACES_DESPISED RACES_OOZE)
-	tutorial = "Ты — Фарис, катафрактарий высочайшей выучки. \
-        Ты был рожден в семье мелкой хассы и с малых лет воспитывался как радиф, ныне же ты стоишь в страже у трона Султанской династии, внимая их приказам и являясь последним оплотом рыцарской чести в эти темные времена. \
-        Твой взор устремлен лишь на правящего Султана, а твоя жизнь принадлежит его безопасности. Не подведи."
+	tutorial = "You are Faris, a cataphract of the highest training. \
+        You were born into a minor Hassa family and raised from a young age as a Radif, and now you stand guard at the throne of the Sultanic dynasty, heeding their orders and serving as the last bastion of knightly honor in these dark times.\
+        Your gaze is fixed solely on the ruling Sultan, and your life belongs to his safety. Do not fail."
 	display_order = JDO_KNIGHT
 	whitelist_req = TRUE
 	outfit = /datum/outfit/job/roguetown/cataphract
@@ -83,8 +83,8 @@
 
 /datum/advclass/cataphract/greatweapon
 	name = "Greatweapon Warrior"
-	tutorial = "Твои тренировки были суровы, а удары твои сокрушают врагов с силой самой пустынной бури. \
-    Ты довел до совершенства владение тяжелыми мечами, боевыми топорами, булавами и алебардами, что подобает истинному Фарису."
+	tutorial = "Your training has been harsh, and your blows crush your enemies with the force of the most desert storm. \
+    You have perfected the mastery of heavy swords, war axes, maces, and halberds, befitting a true Faris."
 	outfit = /datum/outfit/job/roguetown/cataphract/greatweapon
 
 	subclass_virtues = list(
@@ -180,8 +180,8 @@
 
 /datum/advclass/cataphract/shieldmaster
 	name = "Shieldmaster"
-	tutorial = "Ты обучен традиционной пешей рати, мастерски владея мечами, кистенями или палицами. \
-    Твоя стойкость и искусство сочетать надежный щит с клинком делают тебя противником, чью оборону почти невозможно сокрушить!"
+	tutorial = "You are trained in traditional foot warfare, masterfully wielding swords, flails or clubs. \
+    Your resilience and skill in combining a reliable shield with a blade make you an opponent whose defense is almost impossible to break!"
 	outfit = /datum/outfit/job/roguetown/cataphract/shieldmaster
 	
 	subclass_virtues = list(
@@ -258,9 +258,9 @@
 
 /datum/advclass/cataphract/dervish
 	name = "Royal Dervish"
-	tutorial = "Твои боевые навыки необычны для Фариса. \
-    Твои стремительные маневры и мастерское владение клинком приводят в восторг даже самую искушенную хассу, ведь ты отдаешь предпочтение быстрым и элегантным стальным клинкам. \
-    Пусть ты вполне эффективен в средних доспехах, но твои навыки уклонения по-настоящему раскроются, лишь когда ты облачишься в более легкую защиту."
+	tutorial = "Your fighting skills are unusual for Faris. \
+    Your swift maneuvers and masterful bladesmanship delight even the most experienced hassa, as you favor fast and elegant steel blades.\
+    While you are quite effective in medium armor, your evasion skills will truly shine only when you don lighter protection."
 	outfit = /datum/outfit/job/roguetown/cataphract/dervish
 	
 	subclass_virtues = list(
@@ -359,10 +359,10 @@
     
 /datum/advclass/cataphract/rais_cataphract
 	name = "Rais-Cataphract"
-	tutorial = "Вы - глава и абсолютный авторитет среди катафрактов, стоящий на страже Султаната. \
-    Вы так долго вели элитную тяжелую кавалерию сквозь вихри войн, что Вас отметил лично Султан своим вниманием и удостоил Вас честью вести его катафрактов в бой. \
-    Пусть ни один враг во всей Гримории не забывает тяжесть вашей поступи. Вашей зибантийской сталью и сокрушительным натиском кавалерии вы растоптали больше жизней, \
-    чем любой придворный интриган или палач-наместник когда-либо мог занести в свои тайные списки заговоров."
+	tutorial = "You are the head and absolute authority among the cataphracts, guarding the Sultanate. \
+    You have led elite heavy cavalry through the storms of war for so long that you have been personally noticed by the Sultan and honored with the privilege of leading his cataphracts into battle.\
+    Let no enemy in all of Grimoria forget the weight of your march. With your Byzantine steel and the crushing charge of your cavalry, you have trampled more lives,\
+    than any court intriguer or executioner-governor could ever record in their secret lists of plots."
 	outfit = /datum/outfit/job/roguetown/cataphract/rais_cataphract
 	maximum_possible_slots = 1
 	category_tags = list(CTAG_CATAPHRACT)
@@ -399,7 +399,7 @@
 
 /obj/item/clothing/cloak/cataphract_rais
     name = "Rais-Cataphract's cloak"
-    desc = "Безумно красиво и не менее безумно дорогой плащ, выполненный из лучшего шёлка и окрашенный в пурпурный цвет. Ловцы багрянок - так называют людей добывающих пурпур - трудятся не менее месяца ради одного такого плаща. Носить такое - признак авторитета и богатства."
+    desc = "Insanely beautiful and no less incredibly expensive cloak, made of the best silk and dyed purple. Purple catchers - that's what people who mine purple are called - work for at least a month for one such cloak. Wearing this is a sign of authority and wealth."
     icon = 'icons/roguetown/clothing/special/captain.dmi'
     mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/captain.dmi'
     sleeved = 'icons/roguetown/clothing/special/onmob/captain.dmi'

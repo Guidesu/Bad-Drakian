@@ -85,7 +85,7 @@
 		Hu.verbs += /mob/living/carbon/human/verb/hold_breath
 
 /mob/living/carbon/human/verb/hold_breath()
-	set name = "Задержать дыхание"
+	set name = "Hold your breath"
 	set category = "Emotes"
 
 	if(!mind || mind.assigned_role != "Hag")
@@ -99,14 +99,14 @@
 	if(is_holding)
 		REMOVE_TRAIT(src, TRAIT_HOLDBREATH, "hold_breath_verb")
 		visible_message(
-			span_notice("[src] перестает задерживать дыхание."),
-			span_notice("Ты перестаешь задерживать дыхание.")
+			span_notice("[src] stops holding your breath."),
+			span_notice("You stop holding your breath.")
 		)
 	else
 		ADD_TRAIT(src, TRAIT_HOLDBREATH, "hold_breath_verb")
 		visible_message(
-			span_notice("[src] задерживает свое дыхание."),
-			span_notice("Ты задерживаешь свое дыхание.")
+			span_notice("[src] holds his breath."),
+			span_notice("You hold your breath.")
 		)
 
 // TA EDIT END

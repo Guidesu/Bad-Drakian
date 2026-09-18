@@ -1,5 +1,5 @@
 /*
-В этом блоке указываются примеры для указания позиций для спавна мобов, джобок и структур. Сохранено не тронуты для примера по каждому пункту
+This block contains examples for specifying positions for spawning mobs, jobs, and structures. Preserved untouched as an example for each item
 // Pets
 /datum/area_spawn/markus
 	target_areas = list(/area/station/cargo/sorting, /area/station/cargo/storage, /area/station/cargo/office, /area/station/command/heads_quarters/qm)
@@ -33,4 +33,4 @@
 	desired_atom = /obj/effect/landmark/start/telecomms_specialist
 */
 
-// Этот блок - пример для создания новой зоны, так как автомаппару ТРЕБУЕТСЯ, чтобы у каждого турфа была привязка к зоне
+//This block is an example for creating a new zone, since the automappar REQUIRES that each turf be linked to the zone

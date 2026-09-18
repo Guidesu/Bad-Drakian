@@ -1,10 +1,10 @@
 /datum/advclass/janissary/sihrbaz
 	name = "Janissary Sihrbaz"
-	tutorial = "Вы - живое орудие Султаната, боевой маг, чья арканная сила закована в жесткие тиски воинской дисциплины. \
-        В отличие от бесславных Сахир-марадунов, скрывающихся в песках фронтира, вы принесли священную присягу Султану и обучались убивать строем. \
-        В ваших руках классическая аркана превратилась в безупречное, пугающее искусство войны: вы способны выжигать целые фланги противника, \
-        нерушимым щитом удерживать рубежи Султаната и насылать разрушительные магические залпы, сокрушающие вражеские порядки. \
-        Пусть враги трепещут перед вашей мощью, ведь вы - боевой маг."
+	tutorial = "You are a living weapon of the Sultanate, a battle mage whose arcane power is chained in the tight grip of military discipline. \
+        Unlike the inglorious Sahir-Maraduns hiding in the sands of the frontier, you have sworn a sacred oath to the Sultan and have been trained to kill in formation.\
+        In your hands, the classical arcana has turned into a flawless, terrifying art of war: you are able to burn entire flanks of the enemy,\
+        to hold the borders of the Sultanate with an indestructible shield and unleash devastating magical blasts that crush enemy ranks.\
+        Let enemies tremble before your power, for you are a battle mage."
 	maximum_possible_slots = 1
 	outfit = /datum/outfit/job/roguetown/janissary/sihrbaz
 	category_tags = list(CTAG_JANISSARY)

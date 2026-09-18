@@ -231,7 +231,7 @@ GLOBAL_LIST_INIT(cmode_tracks_by_type, build_cmode_tracks())
 	name = "Cultic Witchcraft"
 	desc = ""
 	shortname = "Cultic"
-	credits = "Igor Kornelyuk - Воланд (\"Voland\")"
+	credits = "Igor Kornelyuk - Woland (\"Voland\")"
 	musicpath = list('sound/music/combat_cult.ogg')
 
 /datum/combat_music/combat

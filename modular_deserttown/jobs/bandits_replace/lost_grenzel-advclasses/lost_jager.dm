@@ -1,6 +1,6 @@
 /datum/advclass/lost_grenzel/lost_jager
 	name = "Lost Jäger"
-	tutorial = "В пустынях Зибантии именно вы стали тем, кто помог выжить остальным товарищам - имея навыки к охоте и ориентированию на месте, вы смогли обеспечить своим товарищам безопасный проход."
+	tutorial = "In the deserts of Zybanthia, it was you who helped the rest of your comrades survive - having the skills to hunt and navigate in place, you were able to provide your comrades with safe passage."
 	allowed_sexes = list(MALE, FEMALE)
 
 	outfit = /datum/outfit/job/roguetown/lost_grenzel/lost_jager

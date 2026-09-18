@@ -84,8 +84,8 @@
 
 /obj/item/clothing/shoes/roguetown/boots/armor/blacksteel/legate
 	name = "legate's caligae"
-	desc = "Сделанные в форме сандалий сабатоны, выкованные из ценной черной стали. Когда-то это были шлемы гордых рыцарей Грензельхофта, теперь же в них маршируют по горячему песку Зибантии. \
-	</br>‎  </br>Символы чужой гордости и былого величия ныне стали лишь грязью под ногами победителей. Помни об этом, когда будешь воздвигать свой собственный монумент."
+	desc = "Sandal-shaped sabatons forged from precious black steel. Once these were the helmets of the proud knights of Grenzelhoft, but now they march in them across the hot sand of Zybanthia. \
+	</br>‎  </br>Symbols of foreign pride and former greatness have now become only dirt under the feet of the victors. Remember this when you build your own monument."
 	icon = 'modular_twilight_axis/icons/roguetown/clothing/boots.dmi'
 	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/onmob/boots.dmi'
 	icon_state = "lplateboots"

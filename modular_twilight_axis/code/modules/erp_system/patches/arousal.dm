@@ -633,7 +633,7 @@
 	var/sp = satisfaction_points
 
 	if(is_lovefiend() && sp <= 1)
-		return "слабо"
+		return "weak"
 
 	if(is_lovefiend())
 		sp -= 1
@@ -641,15 +641,15 @@
 	var/t = clamp(round(sp), 0, ERP_SP_MAX)
 
 	switch(t)
-		if(0) 	return "пустота"   
-		if(1) 	return "нормально"
-		if(2)   return "хорошо"
-		if(3)   return "очень хорошо"
-		if(4)   return "прекрасно"
-		if(5)   return "блаженство"
-		if(6)   return "перегруз"
+		if(0) 	return "emptiness"   
+		if(1) 	return "normal"
+		if(2)   return "good"
+		if(3)   return "very good"
+		if(4)   return "great"
+		if(5)   return "bliss"
+		if(6)   return "overload"
 
-	return "нормально"
+	return "normal"
 
 /datum/component/arousal/get_arousal(datum/source, list/arousal_data)
 	var/cost = get_charge_cost_for_climax()

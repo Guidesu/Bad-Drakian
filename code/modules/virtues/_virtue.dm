@@ -64,13 +64,13 @@ GLOBAL_LIST_EMPTY(virtues)
 /datum/virtue/New()
 	. = ..()
 	if (triumph_cost)
-		desc += " <b>Costs [triumph_cost] TRIUMPH[triumph_cost?"S":""].</b>"
+		desc += " <b>Costs [triumph_cost] POINT[triumph_cost?"S":""].</b>"
 
 	if(max_choices || length(extra_choices) || length(choice_costs) || length(choice_tooltips))
 		if(max_choices > length(extra_choices))
 			CRASH("[src] has fewer extra_choices than there can be max_choices! Very bad!")
 		if(max_choices > length(choice_costs))
-			CRASH("[src] has more max choices than there are cost entries. Very bad! We can't pay 'null' triumphs!")
+			CRASH("[src] has more max choices than there are cost entries. Very bad! We can't pay 'null' points!")
 		if(length(choice_tooltips) > length(extra_choices))
 			CRASH("[src] has more tooltips than there are extra_choices. A deleted extra_choice entry was likely not cleaned up properly.")
 
@@ -85,7 +85,7 @@ GLOBAL_LIST_EMPTY(virtues)
 				total_cost += choice_costs[i]
 		if(total_cost)
 			if(recipient.get_triumphs() < total_cost)
-				to_chat(recipient, span_notice("Not enough Triumphs for [name]. It has not been applied."))
+				to_chat(recipient, span_notice("Not enough points for [name]. It has not been applied."))
 				return FALSE
 			recipient.adjust_triumphs(-total_cost)
 	for(var/choice in picked_choices)
@@ -172,7 +172,7 @@ GLOBAL_LIST_EMPTY(virtues)
 		return FALSE
 
 	if (recipient.get_triumphs() < triumph_cost)
-		to_chat(recipient, span_notice("Not enough Triumphs for [name]. It has not been applied."))
+		to_chat(recipient, span_notice("Not enough points for [name]. It has not been applied."))
 		return FALSE
 
 	recipient.adjust_triumphs(-triumph_cost, FALSE)

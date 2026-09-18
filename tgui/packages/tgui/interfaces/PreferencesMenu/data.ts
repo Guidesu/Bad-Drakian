@@ -19,6 +19,8 @@ export type GameSettingsData = {
   schizo_voice: BooleanLike;
   no_storyteller_events: BooleanLike;
   verbose_character_creator: BooleanLike;
+  show_pubic_hair: BooleanLike;
+  show_armpit_hair: BooleanLike;
   antags: Antag[];
   admin_prefs: AdminPrefData | null; // null indicates not an admin
 };

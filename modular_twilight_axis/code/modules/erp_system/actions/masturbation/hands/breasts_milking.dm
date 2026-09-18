@@ -1,14 +1,14 @@
 /datum/erp_action/self/hands/milking_breasts
 	abstract = FALSE
 
-	name = "Доение груди"
+	name = "Breast milking"
 	required_target_organ = SEX_ORGAN_BREASTS
 
 	inject_timing      = INJECT_CONTINUOUS
 	inject_source      = INJECT_FROM_PASSIVE
 	inject_target_mode = INJECT_CONTAINER
 
-	message_start = "{actor} берёт свою грудь в ладони и начинает медленно сжимать соски."
-	message_tick = "{actor} {force} и {speed} выжимает грудь, ощущая, как она наполняется."
-	message_finish = "{actor} перестаёт сжимать грудь, позволяя соскам расслабиться."
-	message_climax_active =	"{actor} вздрагивает, чувствуя, как молоко обильно вырывается из груди."
+	message_start = "{actor} takes his breasts in his palms and begins to slowly squeeze the nipples."
+	message_tick = "{actor} {force} and {speed} squeeze out his chest, feeling it fill."
+	message_finish = "{actor} stops squeezing his chest, allowing his nipples to relax."
+	message_climax_active =	"{actor} shudders, feeling the milk gushing out of her chest profusely."

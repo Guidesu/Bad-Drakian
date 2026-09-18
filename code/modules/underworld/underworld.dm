@@ -102,7 +102,7 @@
 
 /obj/structure/underworld/carriage_normal
 	name = "Carriage"
-	desc = "Twilight Axis awaits."
+	desc = "The realm awaits."
 	icon = 'icons/roguetown/underworld/enigma_carriage.dmi'
 	icon_state = "carriage_normal"
 	anchored = TRUE
@@ -174,5 +174,4 @@ GLOBAL_VAR_INIT(underworld_coins, 0)
 	if(GLOB.underworld_coins < 8)
 		for(var/obj/effect/landmark/underworldcoin/B in GLOB.landmarks_list)
 			new /obj/item/underworld/coin(B.loc)
-
 

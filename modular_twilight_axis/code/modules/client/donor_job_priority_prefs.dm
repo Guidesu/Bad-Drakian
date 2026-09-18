@@ -4,10 +4,10 @@
 	var/datum/preferences/prefs = user.client?.prefs
 	var/patreon_level = donor_job_boost_patreon_level(user.ckey, user.client)
 	var/remaining = donor_job_boost_rounds_remaining(prefs, user.ckey, user.client)
-	var/status = remaining ? "будет доступно через [remaining] раунд" : "доступно"
-	var/cooldown_text = donor_job_boost_has_no_cooldown(patreon_level) ? "каждый раунд" : "раз в два раунда ([status])"
-	var/job_limit_text = donor_job_boost_grants_any_job(patreon_level) ? "любая роль" : "только роли с несколькими слотами"
-	return "<b>Меценат ([DONOR_JOB_BOOST_MIN_PATREON_LEVEL]+ ур.):</b> один класс с <font color='gold'>HIGH +</font> ([cooldown_text]), [job_limit_text].<br>"
+	var/status = remaining ? "will be available through [remaining] round" : "available"
+	var/cooldown_text = donor_job_boost_has_no_cooldown(patreon_level) ? "every round" : "once every two rounds ([status])"
+	var/job_limit_text = donor_job_boost_grants_any_job(patreon_level) ? "any role" : "only roles with multiple slots"
+	return "<b>Universal priority:</b> one class with <font color='gold'>HIGH +</font> ([cooldown_text]), [job_limit_text].<br>"
 
 /datum/preferences/proc/job_pref_display_data(datum/job/job, mob/user)
 	var/list/result = list(
@@ -67,14 +67,14 @@
 			return JP_HIGH
 		if(JOB_PREF_UI_BOOST)
 			if(!donor_job_boost_ckey_eligible(user?.ckey, user?.client))
-				to_chat(user, span_warning("HIGH + доступен меценатам от [DONOR_JOB_BOOST_MIN_PATREON_LEVEL]-го уровня и выше."))
+				to_chat(user, span_warning("HIGH + is unavailable for this account."))
 				return null
 			if(!donor_job_boost_job_eligible(job, user?.ckey, user?.client))
-				to_chat(user, span_warning("HIGH + нельзя выбрать для ролей с одним слотом (доступно с [DONOR_JOB_BOOST_ANY_JOB_LEVEL]-го уровня)."))
+				to_chat(user, span_warning("HIGH + cannot be selected for roles with one slot (available from [DONOR_JOB_BOOST_ANY_JOB_LEVEL] level)."))
 				return null
 			if(!donor_job_boost_available(src, user?.ckey, user?.client))
 				var/remaining = donor_job_boost_rounds_remaining(src, user?.ckey, user?.client)
-				to_chat(user, span_warning("HIGH + будет доступен через [remaining] раунд(ов) (с [DONOR_JOB_BOOST_NO_COOLDOWN_LEVEL]-го уровня — каждый раунд)."))
+				to_chat(user, span_warning("HIGH + will be available through [remaining] round(s) (from [DONOR_JOB_BOOST_NO_COOLDOWN_LEVEL] level - every round)."))
 				return null
 			return JP_BOOST
 	return null

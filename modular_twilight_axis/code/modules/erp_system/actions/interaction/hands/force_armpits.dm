@@ -1,8 +1,8 @@
 /datum/erp_action/other/hands/force_armpits
 	abstract = FALSE
-	name = "Прижать к подмышкам"
+	name = "Press to the armpits"
 	required_target_organ = SEX_ORGAN_MOUTH
 	require_grab = TRUE
-	message_start = "{actor} хватает {dullahan?отделенную :}голову {partner}."
-	message_tick = "{actor} {force} и {speed} водит лицом {dullahan?отделенной головы :}{partner} по своим подмышкам."
-	message_finish =  "{actor} убирает руку от {dullahan?отделенной головы :}{partner}."
+	message_start = "{actor} grabs the {dullahan?separated :}head of {partner}."
+	message_tick = "{actor} {force} and {speed} move the face of {dullahan?separated head :}{partner} along their armpits."
+	message_finish =  "{actor} removes his hand from {dullahan?separated head :}{partner}."

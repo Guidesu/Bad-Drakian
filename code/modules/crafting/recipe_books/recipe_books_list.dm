@@ -126,7 +126,7 @@
 
 /obj/item/recipe_book/survival/get_mechanics_examine(mob/user)
 	. = ..()
-	. += span_info("Try checking out Azure Peak's official wikipedia - https://azurepeak.miraheze.org/wiki/Main_Page - for anything else you might wish to learn about.")
+	. += span_info("For more help, ask the BAD DRAKIAN community at https://discord.gg/xWFc2MwJdG.")
 	. += span_info("Examining things will display a small blurb in the chatbox. If present, clicking the blurb's 'Mechanics' tab or '(?)' button will reveal more detailed information about the thing-in-question.")
 	. += span_info("In particular, many things will have detailed tutorials about core mechanics inside of their 'Mechanics' tab. A bed can explain how sleeping works, a tree can explain how climbing works, and so-on. Examine the world around you to decipher its secrets.")
 	. += span_info("Adventurers, Pilgrims, and other newcomers usually spawn to the south of Town. Following the cobblestone road - and any signs of civilization - will eventually lead you there.")

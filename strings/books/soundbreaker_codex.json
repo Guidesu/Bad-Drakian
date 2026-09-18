@@ -1,17 +1,17 @@
 {
   "Contents": [
-    "<strong><em>Малоизвестный трактат Школы Ритма и Удара</em></strong><br><br>Сей кодекс описывает искусство тех, кто не просто слышит музыку, но позволяет разуму своему следовать за нею, ломая плоть и волю врагов. Звуколом не поёт для зала и не играет для вдохновения. Его ритм и есть оружие.<br>Музыка является началом и концом. Вступив в бой без неё, воин теряет уверенность, а звук в его ударах становится глух. Те, кто пренебрегают ритмом, быстро узнают цену рукотворной тишины.<br><br>",
-    "<strong>О проявлении Ритма</strong><br>Каждый точный удар рождает ритм. Пока ноты не сбиты и последовательность не нарушена, звуколом накапливает внутреннее напряжение. Ритм усиливает удары и позволяет навязывать противнику темп боя, лишая его возможности действовать свободно.<br><br>",
-    "<strong>О последовательностях</strong><br>Ноты, сыгранные в верном порядке, складываются в узор. Такой узор завершается приёмом, который либо фиксирует цель, либо нарушает её равновесие, либо наносит сокрушительный удар. Но если хотя бы одна нота сорвана, мелодия рассыпается, и ритм угасает.<br><br>",
-    "<strong>Обозначения нот</strong><br><small>1</small> Bend - изгиб ритма<br><small>2</small> Barre - протяжённый удар<br><small>3</small> Shred - резкий срыв<br><small>4</small> Riff - напев защиты",
-    "<h3><strong>Добивающие комбинации</strong></h3><br>",
-	"<strong>Echo</strong> — <small>1,1,1</small> Тройной удар, чистая сила. Без уловок, только давление и добивание.<br>",
-	"<strong>Tempo</strong> — <small>2,2,2</small> Направленный импульс звука, выпускающий ноту, что поразит первого встречного оставляя порезы.<br>",
-	"<strong>Harmonic Burst</strong> — <small>3,1,2</small> Гармонический взрыв, что срывает бойца, обращая звуком и воплощая за спиной его врагов.<br>",
-	"<strong>Reverb Cut</strong> — <small>4,2,1,3</small> Звуковой удар ужасающей силы, что оттакливает прочь врагов перед звуколомом.<br>",
-	"<strong>Bass Drop</strong> — <small>4,1,2,3</small> Двухдольный удар, что сперва выпускает точечный удар, что перерождается в звуковую волну.<br>",
-	"<strong>Syncopation</strong> — <small>3,2,4,1</small> Особый ритм, вибрации которого направлены сломить не тело врага, а его снаряжение, что обволакивает тело.<br>",
-	"<strong>Crescendo</strong> — <small>2,3,1,3,2</small> Нарастающий рисунок, ритм, что изматывает врага, лишая его выносливости и в критическом случае, нарушая его равновесие.<br>",
-	"<strong>Overture</strong> — <small>1,4,3,4,2</small> Прерывающий узор. Темп цели ломается, и на краткий миг она теряет возможность действовать.<br>"
+    "<strong><em>Little-known treatise of the School of Rhythm and Strike</em></strong><br><br>This codex describes the art of those who not only hear music but allow their mind to follow it, breaking the flesh and will of enemies. The sound-breaker does not sing for the hall and does not play for inspiration. His rhythm is his weapon.<br>Music is the beginning and the end. Entering battle without it, a warrior loses confidence, and the sound in his strikes becomes dull. Those who neglect rhythm quickly learn the price of man-made silence.<br><br>",
+    "<strong>On the manifestation of Rhythm</strong><br>Every precise strike gives birth to rhythm. As long as the notes are not missed and the sequence is not interrupted, the sound-breaker accumulates internal tension. Rhythm strengthens strikes and allows imposing the pace of battle on the enemy, depriving him of the ability to act freely.<br><br>",
+    "<strong>About sequences</strong><br>Notes played in the correct order form a pattern. Such a pattern ends with a move that either fixes the target, disturbs its balance, or delivers a crushing blow. But if even one note is missed, the melody falls apart, and the rhythm fades.<br><br>",
+    "<strong>Note markings</strong><br><small>1</small> Bend - bending the rhythm<br><small>2</small> Barre - sustained strike<br><small>3</small> Shred - sharp tear<br><small>4</small> Riff - defensive tune",
+    "<h3><strong>Finishing combinations</strong></h3><br>",
+	"<strong>Echo</strong> — <small>1,1,1</small> Triple hit, pure force. No tricks, just pressure and finishing.",
+	"<strong>Tempo</strong> — <small>2,2,2</small> A directed sound impulse that releases a note which will strike the first passerby, leaving cuts.<br>",
+	"<strong>Harmonic Burst</strong> — <small>3,1,2</small> A harmonic explosion that knocks a fighter off, turning sound and manifesting his enemies behind him.<br>",
+	"<strong>Reverb Cut</strong> — <small>4,2,1,3</small> A sound strike of terrifying force that knocks enemies away in front of the sound breaker.<br>",
+	"<strong>Bass Drop</strong> — <small>4,1,2,3</small> A two-part strike that first releases a focused hit, which transforms into a sound wave.<br>",
+	"<strong>Syncopation</strong> — <small>3,2,4,1</small> A special rhythm whose vibrations are aimed not at breaking the enemy's body, but his equipment that envelops the body.<br>",
+	"<strong>Crescendo</strong> — <small>2,3,1,3,2</small> An increasing pattern, rhythm that exhausts the enemy, depriving them of endurance and, in critical cases, disrupting their balance.<br>",
+	"<strong>Overture</strong> — <small>1,4,3,4,2</small> Interrupting pattern. The target's tempo breaks, and for a brief moment, they lose the ability to act.<br>"
   ]
 }

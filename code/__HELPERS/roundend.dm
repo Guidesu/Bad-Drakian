@@ -186,7 +186,7 @@
 					add_roundpoints(job.round_contrib_points, H.ckey)
 		if(favor_bonus > 0 && H.ckey && H.job && (H.job == "Merchant" || H.job == "Shophand"))
 			H.adjust_triumphs(favor_bonus)
-			to_chat(H, "\n<font color='purple'><b>+[favor_bonus] TRIUMPHS</b> awarded for trade volume earned with the Azurian Trading Company.</font>")
+			to_chat(H, "\n<font color='purple'><b>+[favor_bonus] POINTS</b> awarded for trade volume earned with the Azurian Trading Company.</font>")
 	add_roundplayed(key_list)
 
 	update_god_rankings()

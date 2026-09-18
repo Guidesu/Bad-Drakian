@@ -1,9 +1,9 @@
 /datum/erp_action/other/mouth/cunnilingus
 	abstract = FALSE
-	name = "Куннилингус"
+	name = "Cunnilingus"
 	required_target_organ = SEX_ORGAN_VAGINA
-	message_start = "{actor} припадет к лону {partner}."
-	message_tick = "{actor} {force} и {speed} вылизывает киску {partner}."
-	message_finish =  "{actor} убирает лицо от паха {partner}."
-	message_climax_passive = "{partner} кончает на лицо {actor}."
+	message_start = "{actor} will fall to {partner}'s womb."
+	message_tick = "{actor} {force} and {speed} lick {partner}'s pussy."
+	message_finish =  "{actor} moves his face away from {partner}'s groin."
+	message_climax_passive = "{partner} cums on {actor}'s face."
 	

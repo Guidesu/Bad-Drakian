@@ -11,7 +11,7 @@
 	if(new_card)
 		player.hand += list(new_card)
 	player.draws_used = 1
-	message = "[player.name] меняет карту."
+	message = "[player.name] changes the map."
 	return TRUE
 
 /datum/card_table_session/proc/poker_ready(mob/user)
@@ -19,7 +19,7 @@
 	if(stage != CARD_TABLE_STAGE_PLAYING || game_type != CARD_TABLE_GAME_POKER || !player)
 		return FALSE
 	player.ready = TRUE
-	message = "[player.name] готов."
+	message = "[player.name] ready."
 	for(var/datum/card_table_player/P in players)
 		if(P.left)
 			continue
@@ -78,7 +78,7 @@
 			break
 		community_cards += list(new_card)
 		if(poker_reset_betting_round())
-			message = "Открыта общая карта [community_cards.len]/5. Новый круг ставок."
+			message = "Common card [community_cards.len]/5 is open. New round of bets."
 			return
 	poker_finish()
 
@@ -113,7 +113,7 @@
 	player.poker_total_bet += delta
 	player.poker_bet = poker_current_bet
 	player.ready = TRUE
-	message = poker_current_bet ? "[player.name] поддерживает ставку." : "[player.name] делает чек."
+	message = poker_current_bet ? "[player.name] supports the bid." : "[player.name] checks."
 	poker_next_turn()
 	return TRUE
 
@@ -133,7 +133,7 @@
 			other.ready = FALSE
 	player.poker_bet = poker_current_bet
 	player.ready = TRUE
-	message = "[player.name] ставит [amount]."
+	message = "[player.name] sets [amount]."
 	poker_next_turn()
 	return TRUE
 
@@ -144,7 +144,7 @@
 	var/success = poker_bet(user, max(poker_current_bet + 100, player.poker_bet + 100))
 	if(success)
 		player.poker_all_in = TRUE
-		message = "[player.name] идет ва-банк."
+		message = "[player.name] goes all in."
 	return success
 
 /datum/card_table_session/proc/poker_fold(mob/user)
@@ -154,7 +154,7 @@
 	player.poker_folded = TRUE
 	player.ready = TRUE
 	player.result = "Fold"
-	message = "[player.name] отказывается от раздачи."
+	message = "[player.name] refuses to distribute."
 	poker_next_turn()
 	return TRUE
 
@@ -171,7 +171,7 @@
 			player.hand += list(new_card)
 		player.draws_used = 1
 	player.ready = TRUE
-	message = "[player.name] завершает ход."
+	message = "[player.name] ends its turn."
 	for(var/datum/card_table_player/P in players)
 		if(P.left)
 			continue
@@ -244,5 +244,5 @@
 		else
 			P.result = (P == winner) ? "Winner" : "Lost"
 	stage = CARD_TABLE_STAGE_FINISHED
-	var/winner_name = winner ? winner.name : "Никто"
-	message = "[winner_name] выигрывает раздачу."
+	var/winner_name = winner ? winner.name : "Nobody"
+	message = "[winner_name] wins the hand."

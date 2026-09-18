@@ -140,7 +140,7 @@
 
 	var/max_units = max(1, penis_org.count_to_action)
 
-	// Если уже есть активный кнот на этой же паре — просто обновляем активность.
+	//If there is already an active note on the same pair, simply update the activity.
 	if(active_links && active_links.len)
 		for(var/datum/erp_knot_link/KL as anything in active_links)
 			if(!istype(KL) || !KL.is_valid())

@@ -184,11 +184,6 @@
 	var/phrase = STRIP_HTML_SIMPLE(n, MAX_MESSAGE_LEN)
 	var/leng = length_char(phrase)
 	var/has_cyrillic = FALSE
-	for(var/i = 1 to leng)
-		var/checkletter = LOWER_TEXT(copytext_char(phrase, i, i + 1))
-		if(checkletter in list("а", "б", "в", "г", "д", "е", "ё", "ж", "з", "и", "й", "к", "л", "м", "н", "о", "п", "р", "с", "т", "у", "ф", "х", "ц", "ч", "ш", "щ", "ъ", "ы", "ь", "э", "ю", "я"))
-			has_cyrillic = TRUE
-			break
 
 	var/counter = leng
 	var/newphrase = ""
@@ -200,28 +195,28 @@
 		if(has_cyrillic)
 			if(prob(20))
 				switch(lowerletter)
-					if("с")
-						newletter = (newletter == uppertext(newletter)) ? "Ш" : "ш"
-					if("з")
-						newletter = (newletter == uppertext(newletter)) ? "Ж" : "ж"
-					if("ц")
-						newletter = (newletter == uppertext(newletter)) ? "С" : "с"
-					if("ч")
-						newletter = (newletter == uppertext(newletter)) ? "Щ" : "щ"
+					if("with")
+						newletter = (newletter == uppertext(newletter)) ? "W" : "w"
+					if("in")
+						newletter = (newletter == uppertext(newletter)) ? "F" : "in"
+					if("c")
+						newletter = (newletter == uppertext(newletter)) ? "S" : "with"
+					if("h")
+						newletter = (newletter == uppertext(newletter)) ? "" : "w"
 
-			if(lowerletter in list("а", "е", "ё", "и", "о", "у", "ы", "э", "ю", "я"))
+			if(lowerletter in list("a", "in", "in", "in", "o", "y", "y", "", "", ""))
 				if(prob(12))
 					newletter += newletter
 					if(prob(20))
 						newletter += copytext_char(newletter, 1, 2)
-			else if(lowerletter in list("б", "в", "г", "д", "ж", "з", "к", "л", "м", "н", "п", "р", "с", "т", "ф", "х", "ц", "ч", "ш", "щ"))
+			else if(lowerletter in list("b", "in", "in", "in", "in", "in", "to", "l", "m", "n", "n", "r", "with", "t", "f", "x", "c", "h", "w", "w"))
 				if(prob(4))
 					newletter += newletter
 
 			if(newletter == " " && prob(7))
-				newletter = "... э-э... "
+				newletter = "... uh..."
 			else if(newletter == "." && prob(5))
-				newletter = " *ИК*."
+				newletter = "*IR*."
 		else
 			if(rand(1, 3) == 3)
 				if(lowerletter == "o")

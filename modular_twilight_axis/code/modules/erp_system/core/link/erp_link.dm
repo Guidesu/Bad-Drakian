@@ -121,7 +121,7 @@
 
 /// Keyword replacement helper for templates: {zone}.
 /datum/erp_sex_link/proc/get_target_zone_text()
-	return SSerp?.link_presenter?.get_target_zone_text(src) || "тело"
+	return SSerp?.link_presenter?.get_target_zone_text(src) || "body"
 
 /// Legacy compatibility shim (do not use in new code; kept to avoid breaking old callsites).
 /datum/erp_sex_link/proc/get_target_zone(mob/living/user, mob/living/target)
@@ -129,11 +129,11 @@
 
 /// Keyword replacement helper for templates: {force}.
 /datum/erp_sex_link/proc/get_force_text()
-	return SSerp?.link_presenter?.get_force_text(force) || "уверенно"
+	return SSerp?.link_presenter?.get_force_text(force) || "confidently"
 
 /// Keyword replacement helper for templates: {speed}.
 /datum/erp_sex_link/proc/get_speed_text()
-	return SSerp?.link_presenter?.get_speed_text(speed) || "ритмично"
+	return SSerp?.link_presenter?.get_speed_text(speed) || "rhythmically"
 
 /// Minimal UI state used by UI/debug displays.
 /datum/erp_sex_link/proc/get_ui_state()

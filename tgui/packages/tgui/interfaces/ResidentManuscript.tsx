@@ -154,239 +154,239 @@ type ResidentManuscriptData = {
 };
 
 const TEXTS: ResidentManuscriptTexts = {
-  window_title: 'Грамота жителя',
-  title: 'Грамота жителя',
-  subtitle_prefix: 'Удостоверение, скрепленное чернилами и печатью',
+  window_title: 'Resident Certificate',
+  title: 'Resident Certificate',
+  subtitle_prefix: 'Certificate sealed with ink and stamp',
   profiles: {
     resident: {
-      display_name: 'Грамота жителя',
-      subtitle: 'Под рукой Короны',
+      display_name: 'Resident Certificate',
+      subtitle: 'At Hand of the Crown',
       description:
-        'Да будет ведомо: предъявитель внесен в реестр жителей этих земель. Ему дозволено проживание, обращение к городскому праву и проход через городские ворота до истечения срока грамоты.',
+        'Be it known: the bearer is included in register of inhabitants of these lands. He is allowed to reside, apply to city law and pass through the city gates until the expiration of the charter.',
     },
     imperial: {
-      display_name: 'Имперская грамота покровительства',
-      subtitle: 'Под имперской контрасигнацией',
+      display_name: 'Imperial Letter of Patronage',
+      subtitle: 'Under Imperial Countersignature',
       description:
-        'Да будет ведомо: предъявитель занимает должность, сан или службу, признанную имперской канцелярией Грензельхофта и властью Герцогства Азурия. Грамота удостоверяет его полномочия и не передается иным лицам.',
+        'Let it be known that the bearer holds an office, dignity or service recognized by the Imperial Office of Grenzelhoft and the authority of the Duchy of Azuria. The certificate certifies his authority and is not transferred to other persons.',
     },
     enigma_crown: {
-      display_name: 'Коронная грамота Энигмы',
-      subtitle: 'Под рукой Короля Рокхилла',
+      display_name: 'Crown Letter of Enigma',
+      subtitle: 'Under the Hand of the King of Rockhill',
       description:
-        'Да будет ведомо: предъявитель признан коронной властью Королевства Энигмы на Рокхилле. Его распоряжения и достоинство признаются в пределах королевского закона и срока настоящей грамоты.',
+        'Be it known: the bearer is recognized by the crown authority of the Kingdom of Enigma on Rockhill. His orders and dignity are recognized within the limits of royal law and the term of this charter.',
     },
     valorian_church: {
-      display_name: 'Валорийская грамота Святого Престола',
-      subtitle: 'Под церковью Неделимых Десяти',
+      display_name: 'Valorian Charter of the Holy See',
+      subtitle: 'Under the Church of the Indivisible Ten',
       description:
-        'Да будет ведомо: предъявитель признан Святым Престолом Валории и вправе совершать церковную службу на Рокхилле. Его сан, печать и церковные распоряжения подлежат признанию в пределах настоящей грамоты.',
+        'Let it be known: the bearer is recognized by the Holy See of Valoria and has the right to perform church services on Rockhill. His dignity, seal and ecclesiastical orders are subject to recognition within the limits of this charter.',
     },
     grenzelhoft_mission: {
-      display_name: 'Имперское командировочное удостоверение',
-      subtitle: 'Печатью канцелярии Грензельхофта',
+      display_name: 'Imperial Travel Certificate',
+      subtitle: 'Seal of the Grenzelhoft Chancellery',
       description:
-        'Да будет ведомо: предъявитель включен в отряд, направленный имперской канцелярией Грензельхофта. Ему дозволено следовать с порученной миссией, сопровождать лорда-посланника и предъявлять настоящую бумагу властям.',
+        'Let it be known that the bearer is included in the detachment sent by the Imperial Grenzelhoft Chancellery. He is allowed to go on the assigned mission, accompany the Lord Envoy and present the real paper to the authorities.',
     },
     heartfelt_identity: {
-      display_name: 'Хартфельтское удостоверение личности',
-      subtitle: 'Под печатью хартфельтской канцелярии',
+      display_name: 'Hartfelt ID Card',
+      subtitle: 'Under the seal of the Hartfelt Chancery',
       description:
-        'Да будет ведомо: предъявитель удостоверен как житель Хартфелта. Его имя, личность и право на предъявление этой бумаги признаются канцелярией Хартфелта.',
+        "Let it be known that the bearer is certified as a resident of Hartfelt. His name, identity and right to produce this paper are recognized by Hartfelt's office.",
     },
     heartfelt_noble: {
-      display_name: 'Свидетельство о дворянстве',
-      subtitle: 'Под печатью хартфельтской канцелярии',
+      display_name: 'Certificate of Nobility',
+      subtitle: 'Under the seal of the Hartfelt Chancery',
       description:
-        'Да будет ведомо: предъявитель удостоверен как благородный житель Хартфелта. Его имя, достоинство и право следовать при хартфельтской свите признаются настоящей бумагой.',
+        'Let it be known that the bearer is certified as a noble resident of Hartfelt. His name, dignity and right to follow in the Hartfelt retinue are recognized by this paper.',
     },
     guards: {
-      display_name: 'Гарнизонная грамота',
-      subtitle: 'От гарнизона и Короны',
+      display_name: 'Garrison Letter',
+      subtitle: 'From the garrison and the Crown',
       description:
-        'Да будет ведомо: предъявитель принят на службу городского гарнизона. Ему дозволено носить оружие при исполнении, требовать содействия в пределах приказа и отвечать перед своим начальством.',
+        'Let it be known: the bearer has been accepted into the service of the city garrison. He is allowed to carry weapons while on duty, demand assistance within the limits of the order and answer to his superiors.',
     },
     church: {
-      display_name: 'Церковная грамота веры',
-      subtitle: 'Под Десятеричным Светом',
+      display_name: 'Church Letter of Faith',
+      subtitle: 'Under the Tenfold Light',
       description:
-        'Да будет ведомо: предъявитель состоит при церкви и допускается к храмовой службе в пределах своего сана или должности. Его церковное положение признается до отмены грамоты либо истечения срока.',
+        'Let it be known: the bearer is a member of the church and is admitted to temple services within the limits of his rank or position. His ecclesiastical position is recognized until the charter is revoked or the term expires.',
     },
     craftsmen: {
-      display_name: 'Хартия ремесленной гильдии',
-      subtitle: 'Честной рукой и бронзой',
+      display_name: 'Charter of the Craft Guild',
+      subtitle: 'With an honest hand and bronze',
       description:
-        'Да будет ведомо: предъявитель признан ремесленником или служащим ремесленной гильдии. Ему дозволено вести работу по своему ремеслу, заключать заказы и пользоваться защитой гильдейского порядка.',
+        'Let it be known: the bearer is recognized as a craftsman or employee of the craft guild. He is allowed to work at his craft, enter into orders and enjoy the protection of the guild order.',
     },
     merchant: {
-      display_name: 'Валорийское торговое разрешение',
-      subtitle: 'Печатью Торговой гильдии Астинии-ди-Сала',
+      display_name: 'Valorian Trade Authorization',
+      subtitle: 'Seal of the Trade Guild of Astinia di Sala',
       description:
-        'Да будет ведомо: предъявитель действует по разрешению валорийской Торговой гильдии. Ему дозволено вести торговлю, принимать товары, заключать сделки и держать торговые книги под гильдейской печатью.',
+        'Let it be known that the bearer is acting under the authority of the Valorian Trade Guild. He is allowed to conduct trade, accept goods, enter into transactions and keep trade books under the guild seal.',
     },
     mages: {
-      display_name: 'Патент гильдии магов',
-      subtitle: 'Светом Короны, звездой и сигилом',
+      display_name: 'Mages Guild Patent',
+      subtitle: 'By the Light of the Crown, Star and Sigil',
       description:
-        'Да будет ведомо: предъявитель признан дозволенным практиком магического ремесла. Ему разрешено вести утвержденные работы, хранить необходимые инструменты и отвечать перед гильдией или двором.',
+        'Let it be known that the bearer is recognized as a permitted practitioner of the magical craft. He is allowed to carry out approved work, keep the necessary tools, and answer to the guild or court.',
     },
     commoner: {
-      display_name: 'Грамота горожанина',
-      subtitle: 'Знаком городского старейшины',
+      display_name: "Citizen's Certificate",
+      subtitle: 'By the sign of the city elder',
       description:
-        'Да будет ведомо: предъявитель внесен в городской учет как простолюдин. Ему дозволено находиться среди законного люда города без дворянских прав и особых привилегий.',
+        'Let it be known: the bearer is entered into the city register as a commoner. He is allowed to be among the legitimate people of the city without noble rights and special privileges.',
     },
     mercenary: {
-      display_name: 'Наемный контракт',
-      subtitle: 'Монетой, сталью и словом',
+      display_name: 'Hire contract',
+      subtitle: 'Coin, steel and word',
       description:
-        'Да будет ведомо: предъявитель принят на наемную службу по договору. Ему дозволено носить оружие, исполнять оплаченный контракт и отвечать за свои действия перед нанимателем и законом.',
+        'Let it be known: the bearer has been accepted into hired service under the contract. He is allowed to carry weapons, fulfill a paid contract and be responsible for his actions before the employer and the law.',
     },
     otava: {
-      display_name: 'Инквизиторский эдикт',
-      subtitle: 'Истиной, дознанием и очищающим пламенем',
+      display_name: 'Inquisitorial Edict',
+      subtitle: 'By truth, inquiry and purifying flame',
       description:
-        'Да будет ведомо: предъявитель состоит при Инквизиции Отавы. Ему дозволено проводить дознания, предъявлять требования по делам веры и действовать в пределах признанных полномочий.',
+        'Let it be known: the bearer is a member of the Inquisition of Otava. He is allowed to conduct inquiries, make demands in matters of faith and act within the limits of recognized authority.',
     },
     retinue: {
-      display_name: 'Грамота дворцовой службы',
-      subtitle: 'Под герцогской рукой и присягой',
+      display_name: 'Certificate of Palace Service',
+      subtitle: 'Under the ducal hand and oath',
       description:
-        'Да будет ведомо: предъявитель состоит при дворе Герцогства Азурия и несет личную службу герцогу. Его место, обязанности и право находиться при дворе подтверждаются настоящей грамотой.',
+        'Let it be known: the bearer is at the court of the Duchy of Azuria and performs personal service to the duke. His place, duties and right to be at court are confirmed by this charter.',
     },
   },
   labels: {
-    owner: 'Имя',
-    age: 'Возраст',
-    status: 'Сословие',
-    expires: 'Действует до',
-    issued: 'Выдано в',
-    seals: 'Печати',
-    verification: 'Подлинность',
-    defects: 'Замеченные изъяны',
+    owner: 'Name',
+    age: 'Age',
+    status: 'Caste',
+    expires: 'Valid until',
+    issued: 'Issued in',
+    seals: 'Seals',
+    verification: 'Authenticity',
+    defects: 'Noted defects',
   },
   buttons: {
-    save: 'Сохранить',
-    inspect: 'Осмотреть',
-    stamp: 'Поставить печать',
-    claim: 'Признать жительство',
-    bind: 'Закрепить',
+    save: 'Save',
+    inspect: 'Inspect',
+    stamp: 'Apply stamp',
+    claim: 'Acknowledge residence',
+    bind: 'Secure',
   },
   tooltips: {
-    save: 'Сохранить заполненную подделку.',
-    inspect: 'Тайно осмотреть грамоту на признаки подделки.',
-    stamp: 'Поставить доступную вам официальную печать.',
-    claim: 'Использовать грамоту как доказательство жительства.',
-    bind: 'Закрепить грамоту за своим именем.',
+    save: 'Save the completed forgery.',
+    inspect: 'Secretly inspect the charter for signs of forgery.',
+    stamp: 'Apply the official seal available to you.',
+    claim: 'Use the charter as proof of residence.',
+    bind: 'Attach the charter to your name.',
   },
   placeholders: {
-    owner: 'Имя владельца',
+    owner: "Owner's name",
   },
   owner_age_options: {
-    Adult: 'Взрослый',
-    'Middle-Aged': 'Средних лет',
-    Old: 'Старый',
+    Adult: 'Adult',
+    'Middle-Aged': 'Middle-aged',
+    Old: 'Old',
   },
   owner_status_options: {
-    commoner: 'Простолюдин',
-    noble: 'Под милостью Астраты',
+    commoner: 'Commoner',
+    noble: 'Under the Grace of Astrata',
   },
   states: {
-    owner: 'Эта грамота закреплена за вами.',
-    other: 'Эта грамота принадлежит другому.',
-    unbound: 'Эта грамота еще не закреплена за владельцем.',
-    blank_hint: 'Чистую грамоту нужно заполнить пером.',
-    fake_edit_hint: 'Подозрительная заготовка ждет вписанного имени.',
-    seal_missing: 'не заверено',
+    owner: 'This charter is secured to you.',
+    other: 'This charter belongs to another.',
+    unbound: 'This charter is not yet secured to an owner.',
+    blank_hint: 'A blank charter needs to be filled in with a pen.',
+    fake_edit_hint: 'A suspicious form awaits an inserted name.',
+    seal_missing: 'not certified',
     empty: '-',
-    unknown: 'Неизвестно',
-    unclear_hand: 'Неразборчивая рука',
+    unknown: 'Unknown',
+    unclear_hand: 'Illegible hand',
   },
   verification: {
-    fake: 'Грамота выглядит поддельной.',
-    real: 'Грамота выглядит подлинной.',
-    unknown: 'Грамота не вызывает очевидных подозрений.',
-    none: 'Подлинность еще не проверялась.',
+    fake: 'The charter looks forged.',
+    real: 'The charter looks genuine.',
+    unknown: 'The charter does not raise obvious suspicions.',
+    none: 'Authenticity has not yet been verified.',
   },
   aria: {
-    seal: 'Печать',
+    seal: 'Seal',
   },
   seals: {
-    chancellor: { title: 'Канцлер', stamper: 'Канцлер' },
-    elder: { title: 'Старейшина', stamper: 'Старейшина' },
-    ruler: { title: 'Корона', stamper: 'Корона' },
-    hand: { title: 'Десница', stamper: 'Десница' },
-    sergeant: { title: 'Сержант', stamper: 'Сержант стражи' },
-    marshal: { title: 'Маршал', stamper: 'Маршал' },
-    bishop: { title: 'Епископ', stamper: 'Епископ' },
-    guild_leader: { title: 'Глава гильдии', stamper: 'Глава гильдии' },
-    inquisitor: { title: 'Инквизитор', stamper: 'Инквизитор' },
-    court_magician: { title: 'Придворный маг', stamper: 'Придворный маг' },
+    chancellor: { title: 'Chancellor', stamper: 'Chancellor' },
+    elder: { title: 'Elder', stamper: 'Elder' },
+    ruler: { title: 'Crown', stamper: 'Crown' },
+    hand: { title: 'Hand', stamper: 'Hand' },
+    sergeant: { title: 'Sergeant', stamper: 'Sergeant of the Guard' },
+    marshal: { title: 'Marshal', stamper: 'Marshal' },
+    bishop: { title: 'Bishop', stamper: 'Bishop' },
+    guild_leader: { title: 'Guild Leader', stamper: 'Guild Leader' },
+    inquisitor: { title: 'Inquisitor', stamper: 'Inquisitor' },
+    court_magician: { title: 'Court Mage', stamper: 'Court Mage' },
     merchant_master: {
-      title: 'Старший торговец',
-      stamper: 'Старший торговец',
+      title: 'Senior Trader',
+      stamper: 'Senior Trader',
     },
     kaiser: {
-      title: 'Имперская канцелярия',
-      stamper: 'Канцелярия Грензельхофта',
+      title: 'Imperial Chancellery',
+      stamper: 'Grenzelhoft Chancellery',
     },
     valorian: {
-      title: 'Валорийская торговая гильдия',
-      stamper: 'Торговая гильдия Астинии-ди-Сала',
+      title: 'Valorian Trade Guild',
+      stamper: 'Astinia di Sala Trade Guild',
     },
     valorian_holy_see: {
-      title: 'Валорийский Святой Престол',
-      stamper: 'Святой Престол Валории',
+      title: 'Valorian Holy See',
+      stamper: 'Holy See of Valoria',
     },
-    royal_protection: { title: 'Королевская протекция', stamper: 'Король' },
+    royal_protection: { title: 'Royal Patronage', stamper: 'King' },
     heartfelt_chancery: {
-      title: 'Хартфельтская канцелярия',
-      stamper: 'Канцелярия Хартфелта',
+      title: 'Heartfelt Chancery',
+      stamper: 'Heartfelt Chancery',
     },
   },
   description:
-    'Да будет ведомо: эта грамота удостоверяет имя, правовой статус и действие предъявленных печатей.',
+    'Let it be known: this certificate certifies the name, legal status, and effect of the presented seals.',
   defects: {
-    ink_blot: 'В одном углу пергамента виднеется слабая чернильная клякса.',
-    seal_smudge: 'Чернила вокруг одной печати слегка размазаны.',
-    owner_wobble: 'Одна буква в имени владельца выведена неверной рукой.',
-    ragged_edge: 'Край пергамента обрезан неровно.',
-    uncertain_hand: 'Подпись лишена уверенной руки.',
-    stale_smell: 'От пергамента тянет несвежим запахом.',
+    ink_blot: 'In one corner of the parchment, a faint ink blot is visible.',
+    seal_smudge: 'The ink around one seal is slightly smudged.',
+    owner_wobble: "One letter in the owner's name is written by the wrong hand.",
+    ragged_edge: 'The edge of the parchment is cut unevenly.',
+    uncertain_hand: 'The signature lacks a confident hand.',
+    stale_smell: 'The parchment smells musty.',
     misaligned_initial:
-      'Лазуритный инициал сбился со строки и высох поверх основного текста.',
+      'The azure initial is misaligned from the line and has dried over the main text.',
     fresh_pricking:
-      'Свежие проколы разлиновки на нижнем поле не совпадают с написанными строками.',
-    cut_gilding: 'Позолоченный край местами лежит поверх свежего среза.',
+      'Fresh pricks in the ruling on the lower margin do not match the written lines.',
+    cut_gilding: 'The gilded edge in places lies over a fresh cut.',
     rethreaded_cord:
-      'Шелково-золотой шнур продет заново: вокруг отверстий видны оборванные волокна.',
+      'The silk-gold cord has been threaded anew: around the holes, torn fibers are visible.',
     reheated_wax:
-      'Одна восковая печать теплее цветом и блестит так, будто ее недавно плавили снова.',
+      'One wax seal is warmer in color and shines as if it had been recently melted again.',
     blue_halo:
-      'Чернила дают синеватый ореол в середине строки, словно их смешали с иной водой.',
+      'The ink gives a bluish halo in the middle of the line, as if it had been mixed with other water.',
     corrected_date:
-      'Один штрих в дате зачеркнут слишком чисто для канцелярской руки.',
+      "One stroke in the date is crossed out too neatly for a clerk's hand.",
     heretical_marginalia:
-      "Между строк проступает чужая помета: 'Зизо хранит шепот, Граггар ждет крови, Маттиос взвесит долг.'",
+      "Between the lines, someone else's note emerges: 'Zizo keeps the whisper, Graggar awaits blood, Mattios will weigh the debt.'",
   },
   visual_hints: {
     heretical_marginalia_lines: [
-      'Зизо хранит шепот',
-      'Граггар ждет крови',
-      'Маттиос взвесит долг',
+      'Zizo keeps the whisper',
+      'Graggar awaits blood',
+      'Mattios will weigh the debt',
     ],
-    misaligned_initial: 'Г',
+    misaligned_initial: 'G',
   },
   validation_notes: {
     steady_seals:
-      'Печати сидят ровно, чернила уверены, а шнур не показывает следов повторного продевания.',
+      'The seals sit evenly, the ink is steady, and the cord shows no signs of being threaded again.',
     proper_ruling:
-      'Разлиновка, проколы и строки согласуются друг с другом; это надлежащая грамота.',
+      'The ruling, punctures, and lines correspond with each other; this is a proper document.',
     matched_hand:
-      'Рука, печати и позолоченный край сходятся. Очевидных причин сомневаться в документе нет.',
+      'The hand, seals, and gilded edge align. There are no obvious reasons to doubt the document.',
     deep_wax:
-      'Воск принял оттиск глубоко и чисто, а строки не показывают чужой руки.',
-    proper_rite: 'Документ, похоже, подготовлен по канцелярскому обряду.',
+      'The wax took the imprint deeply and cleanly, and the lines show no other hand.',
+    proper_rite: 'The document appears to have been prepared according to official procedure.',
   },
 };
 
@@ -425,7 +425,7 @@ const resolveRealmKey = (
 ): RealmKey => {
   const candidate =
     value ||
-    (issuedPlace?.includes('Рокхилл') ? 'rockhill' : 'azuria');
+    (issuedPlace?.includes('Rockhill') ? 'rockhill' : 'azuria');
   return REALM_KEYS.includes(candidate as RealmKey)
     ? (candidate as RealmKey)
     : 'azuria';
@@ -442,43 +442,43 @@ const resolveOwnerStatusLabel = (
 ): string => {
   if (profileId === 'retinue' && statusKey === 'noble') {
     return realmKey === 'rockhill'
-      ? 'Королевская служба'
-      : 'Герцогская служба';
+      ? 'Royal service'
+      : 'Ducal service';
   }
   if (profileId === 'imperial') {
-    return statusKey === 'noble' ? 'Имперская протекция' : 'Имперская служба';
+    return statusKey === 'noble' ? 'Imperial protection' : 'Imperial service';
   }
   if (profileId === 'enigma_crown') {
-    return statusKey === 'noble' ? 'Королевская власть' : 'Королевский двор';
+    return statusKey === 'noble' ? 'Royal power' : 'Royal court';
   }
   if (profileId === 'valorian_church') {
-    return statusKey === 'noble' ? 'Святой Престол' : 'Церковная служба';
+    return statusKey === 'noble' ? 'Holy See' : 'Church service';
   }
   if (profileId === 'grenzelhoft_mission') {
     return statusKey === 'noble'
-      ? 'Имперский представитель'
-      : 'Имперское поручение';
+      ? 'Imperial representative'
+      : 'Imperial mandate';
   }
   if (profileId === 'heartfelt_noble') {
-    return 'Благородный житель Хартфелта';
+    return 'Noble resident of Hartfelt';
   }
   if (profileId === 'heartfelt_identity') {
     return statusKey === 'noble'
-      ? 'Благородный житель Хартфелта'
-      : 'Житель Хартфелта';
+      ? 'Noble resident of Hartfelt'
+      : 'Resident of Hartfelt';
   }
   if (profileId === 'otava') {
     if (realmKey === 'rockhill') {
       return statusKey === 'noble'
-        ? 'Королевская протекция'
-        : 'Отаванская миссия';
+        ? 'Royal Patronage'
+        : 'Otava mission';
     }
-    return statusKey === 'noble' ? 'Отаванская протекция' : 'Инквизиция Отавы';
+    return statusKey === 'noble' ? 'Otava protection' : 'Otava Inquisition';
   }
   if (profileId === 'merchant') {
     return statusKey === 'noble'
-      ? 'Валорийский патриций'
-      : 'Валорийская торговая протекция';
+      ? 'Valorian patrician'
+      : 'Valorian trade protection';
   }
   return (
     texts.owner_status_options[statusKey] || texts.owner_status_options.commoner

@@ -27,13 +27,13 @@
 	ADD_TRAIT(H, TRAIT_OUTLANDER, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_OUTLAW, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_PSYCHOSIS, TRAIT_GENERIC)
-	to_chat(H, span_alertsyndie("Я - ПОТЕРЯННЫЙ ГРЕНЗЕЛЬХОФТЕЦ!"))
-	to_chat(H, span_boldwarning("Оставшись в одиночестве посреди окровавленных песков вас сплотила ненависть. Вас сплотила жажда мести. Вы - один из потерянных грензельхофтцев. Ваша цель - убивать, грабить и мстить."))
+	to_chat(H, span_alertsyndie("I AM THE LOST GRENZELHOFTZ!"))
+	to_chat(H, span_boldwarning("Left alone in the middle of the bloody sands, you were united by hatred. You are united by a thirst for revenge. You are one of the lost Grenzelhoftians. Your goal is to kill, rob and take revenge."))
 	H.AddComponent(/datum/component/lost_grenzel_hate)
 
-// ненависть грензелей
+//grenzel hatred
 /datum/stressevent/lost_grenzel_hate
-	desc = span_boldred("Уберите, уберите этого швайнехунда от меня подальше!")
+	desc = span_boldred("Take this Schweinehund away from me!")
 	stressadd = 5
 	timer = INFINITY
 
@@ -90,7 +90,7 @@
 				has_debuff = TRUE
 			
 			if(current_time >= last_message_time + 1 MINUTES)
-				to_chat(L, span_userdanger("Уберите, уберите этого швайнехунда от меня подальше!"))
+				to_chat(L, span_userdanger("Take this Schweinehund away from me!"))
 				last_message_time = current_time
 	else
 		if(time_near_others > 0)
@@ -99,9 +99,9 @@
 			has_debuff = FALSE
 			L.remove_stress(/datum/stressevent/lost_grenzel_hate)
 
-// страх грензелей у всех остальных
+//everyone else has fear of grensels
 /datum/stressevent/lost_grenzel_fear
-	desc = span_boldred("Это же безумный дезертир! Нужно уходить пока при памяти!")
+	desc = span_boldred("This is a crazy deserter! You need to leave while you still remember!")
 	stressadd = 5
 	timer = INFINITY
 
@@ -149,7 +149,7 @@
 			has_debuff = TRUE
 		
 		if(current_time >= last_message_time + 1 MINUTES)
-			to_chat(L, span_userdanger("Это же безумный дезертир! Нужно уходить пока при памяти!"))
+			to_chat(L, span_userdanger("This is a crazy deserter! You need to leave while you still remember!"))
 			last_message_time = current_time
 	else
 		if(time_near_lg > 0)
@@ -169,7 +169,7 @@
 	spawn_positions = 0
 	antag_job = TRUE
 	
-	tutorial = "Оставшись в одиночестве посреди окровавленных песков вас сплотила ненависть. Вас сплотила жажда мести. Вот уже несколько лет вы передвигаетесь от города к городу и мстите, за вами следует выжженная земля, кровь и кости, шок и трепет. Вас не пощадят - вас никогда не помилуют. Зибантийские свиньи не удосужатся вас даже похоронить с миром - и будут издеваться над телом. Вы умрёте, умрёте бесславно, но заберёте с собой десяток-другой швайхундов."
+	tutorial = "Left alone in the middle of the bloody sands, you were united by hatred. You are united by a thirst for revenge. For several years now, you have been moving from city to city and taking revenge, followed by scorched earth, blood and bones, shock and awe. You will not be spared - you will never be pardoned. The Zibantian pigs won’t even bother to bury you in peace - and will abuse your body. You will die, you will die ingloriously, but you will take a dozen or two Schweihunds with you."
 
 	outfit = null
 	outfit_female = null
@@ -231,7 +231,7 @@
 
 /datum/migrant_role/lost_grenzel
 	name = "Lost Grenzel"
-	greet_text = "Оставшись в одиночестве посреди окровавленных песков вас сплотила ненависть. Вас сплотила жажда мести. Вы - один из потерянных грензельхофтцев."
+	greet_text = "Left alone in the middle of the bloody sands, you were united by hatred. You are united by a thirst for revenge. You are one of the lost Grenzelhoftians."
 	outfit = /datum/outfit/job/roguetown/lost_grenzel
 	antag_datum = /datum/antagonist/bandit/lost_grenzel
 	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
@@ -250,7 +250,7 @@
 	)
 	min_pop = 80
 	spawn_landmark = "LostGrenzel"
-	greet_text = "Из залитых кровью песков выходят потерянные грензельхофтцы. Город запомнит их в крови и пепле."
+	greet_text = "The lost Grenzelhoftians emerge from the blood-stained sands. The city will remember them in blood and ashes."
 
 /datum/round_event_control/antagonist/migrant_wave/lost_grenzel/valid_for_map()
 	return deserttown_antag_wave_is_desert_town()
@@ -357,7 +357,7 @@
 		for(var/mob/dead/new_player/player as anything in GLOB.new_player_list)
 			if(!player.client)
 				continue
-			to_chat(player, span_danger("Потерянные грензельхофтцы выходят из залитых кровью песков. Пять слотов для потерянных грензельхофтцев были открыты."))
+			to_chat(player, span_danger("The lost Grenzelhoftians emerge from the blood-stained sands. Five slots for lost Grenzelhoftians have been opened."))
 
 	..()
 

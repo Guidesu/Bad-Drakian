@@ -1,6 +1,6 @@
 /datum/advclass/sahir_maradun
-	name = "Sahir-maradun" // Что означает "разбойник-чародей", аналог хеджмага бандита, но в местных условиях.
-	tutorial = "«... На самой же окраине, вдали от блеска султанских маммонов, обитают лишь те, кто отверг предопределенность - Сахи́р-мараду́ны, разбойные маги, выбравшие путь воли, а не долга ...»"
+	name = "Sahir-maradun" //What does "robber-sorcerer" mean, an analogue of a bandit hedge mage, but in local conditions.
+	tutorial = "“...On the very outskirts, far from the splendor of the Sultan’s mammon, live only those who rejected predestination - Sahir-Maraduns, robber magicians who chose the path of will, not duty...”"
 	allowed_sexes = list(MALE, FEMALE)
 	
 	outfit = /datum/outfit/job/roguetown/freeman/sahir_maradun

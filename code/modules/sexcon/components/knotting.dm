@@ -52,6 +52,10 @@
 	return TRUE
 
 /datum/component/knotting/proc/can_knot(mob/living/carbon/human/user, mob/living/carbon/human/target)
+	// Knotting is a persistent physical link and requires both players' live ERP consent.
+	if((user.client?.prefs && !user.client.prefs.sexable) || (target.client?.prefs && !target.client.prefs.sexable))
+		to_chat(user, span_warning("Knotting is blocked by a participant's content preferences."))
+		return FALSE
 	// Check if user can knot
 	if(!check_knot_penis_type())
 		return FALSE
@@ -130,7 +134,7 @@
 			if(4)
 				to_chat(target, span_userdanger("You have been quad-knotted!"))
 			if(5)
-				// LЄДGЦЄ ФF LЄGЄЙDS ЯЄFЄЯЄЙCЄ
+				//
 				to_chat(target, span_userdanger("You have been penta-knotted!"))
 			else
 				// Six is the appropriate number for a joke message here
@@ -140,6 +144,8 @@
 
 	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(knot_movement))
 	RegisterSignal(target, COMSIG_MOVABLE_MOVED, PROC_REF(knot_movement))
+	RegisterSignal(user, list(COMSIG_MOB_LOGOUT, COMSIG_MOB_DEATH, COMSIG_QDELETING), PROC_REF(on_participant_lost))
+	RegisterSignal(target, list(COMSIG_MOB_LOGOUT, COMSIG_MOB_DEATH, COMSIG_QDELETING), PROC_REF(on_participant_lost))
 
 	log_combat(user, target, "Started knot tugging")
 
@@ -230,8 +236,15 @@
 		knot_remove()
 		return FALSE
 	#endif
+	if(top.stat >= SOFT_CRIT || btm.stat >= SOFT_CRIT)
+		knot_remove()
+		return FALSE
 
 	return TRUE
+
+/datum/component/knotting/proc/on_participant_lost(datum/source)
+	SIGNAL_HANDLER
+	knot_remove(notify = FALSE)
 
 /datum/component/knotting/proc/handle_special_movement_cases(mob/living/carbon/human/top, mob/living/carbon/human/btm)
 	// Fireman carry case
@@ -426,13 +439,13 @@
 	if(istype(top))
 		if(!keep_top_status)
 			top.remove_status_effect(/datum/status_effect/knotted)
-		UnregisterSignal(top, COMSIG_MOVABLE_MOVED)
+		UnregisterSignal(top, list(COMSIG_MOVABLE_MOVED, COMSIG_MOB_LOGOUT, COMSIG_MOB_DEATH, COMSIG_QDELETING))
 		log_combat(top, top, "Stopped knot tugging")
 
 	if(istype(btm))
 		if(!keep_btm_status)
 			btm.remove_status_effect(/datum/status_effect/knot_tied)
-		UnregisterSignal(btm, COMSIG_MOVABLE_MOVED)
+		UnregisterSignal(btm, list(COMSIG_MOVABLE_MOVED, COMSIG_MOB_LOGOUT, COMSIG_MOB_DEATH, COMSIG_QDELETING))
 		log_combat(btm, btm, "Stopped knot tugging")
 
 	knotted_owner = null

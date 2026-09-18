@@ -7,7 +7,7 @@
 /datum/config_entry/string/admin_notes_channel
 	default = null
 
-// TODO: Обрати внимание на каждый прок. Их нужно будет упростить по DRY.
+//TODO: Pay attention to every proc. They will need to be simplified according to DRY.
 
 /world/proc/create_discord_embed_footer()
 	return new /datum/tgs_chat_embed/footer(
@@ -38,7 +38,7 @@
 	return chunks
 
 /world/proc/send_discord_ban_log(title, description, colour, player_ckey, admin_ckey, reason, admin_bans_channel, admin_bans_channel2)
-	var/full_text = "[description]\n\n**Игрок:** `[player_ckey]`\n**Администратор:** `[admin_ckey]`\n**Причина:**\n[reason]"
+	var/full_text = "[description]\n\n**Player:** `[player_ckey]`\n**Administrator:** `[admin_ckey]`\n**Reason:**\n[reason]"
 	if(length_char(full_text) <= 1900 && length_char(reason) <= 1000)
 		var/datum/tgs_chat_embed/structure/embed = new()
 		embed.title = title
@@ -46,13 +46,13 @@
 		embed.colour = colour
 		embed.footer = create_discord_embed_footer()
 		var/datum/tgs_chat_embed/field/field_player_ckey = new(
-			"Игрок", "`[player_ckey]`"
+			"Player", "`[player_ckey]`"
 		)
 		var/datum/tgs_chat_embed/field/field_admin_ckey = new(
-			"Администратор", "`[admin_ckey]`"
+			"Administrator", "`[admin_ckey]`"
 		)
 		var/datum/tgs_chat_embed/field/field_reason = new(
-			"Причина", "[copytext_char(reason, 1)]"
+			"Reason", "[copytext_char(reason, 1)]"
 		)
 		field_player_ckey.is_inline = TRUE
 		field_admin_ckey.is_inline = TRUE
@@ -85,7 +85,7 @@
 		if(admin_bans_channel2)
 			send2chat(message, admin_bans_channel2)
 
-/// Отправляет средствами TGS сообщение о блокировке игрока или его ролей.
+/// Sends a message using TGS about blocking a player or his roles.
 /world/proc/TgsAnnounceBan(player_ckey, admin_ckey, duration, time_message, roles, reason, severity, applies_to_admins)
 	if(!TgsAvailable())
 		return
@@ -98,33 +98,33 @@
 		return
 
 	var/severity_dict = list(
-		"high" = "Высокая",
-		"medium" = "Средняя",
-		"minor" = "Малая",
+		"high" = "High",
+		"medium" = "Medium",
+		"minor" = "Low",
 		"none" = "None",
 	)
 
 	var/is_role_ban = roles[1] != "Server"
 
-	var/title = is_role_ban ? "Бан ролей" : "Бан"
-	var/description = "Игрок теряет возможность играть на сервере."
+	var/title = is_role_ban ? "Role ban" : "Ban"
+	var/description = "The player loses the opportunity to play on the server."
 
 	if(is_role_ban)
 		var/list/role_lines = list()
 		for(var/role_name in roles)
 			role_lines += "• `[role_name]`"
-		description = "Игрок потерял доступ к указанным ролям:\n[role_lines.Join("\n")]"
+		description = "The player has lost access to the specified roles:\n[role_lines.Join("\n")]"
 
 	description += "\n"
 
 	var/localized_severity = severity_dict[lowertext(severity)]
 	if(localized_severity != "none")
-		description += "**Тяжесть наказания:** [localized_severity]\n"
+		description += "**Severity of punishment:** [localized_severity]\n"
 
-	description += "**Срок наказания:** [duration ? time_message : "*НАВСЕГДА*"]"
+	description += "**Penalty period:** [duration ? time_message : "*PERMANENT*"]"
 
 	if(applies_to_admins)
-		description += "\n*Применено к администратору*"
+		description += "\n*Applied to administrator*"
 
 	send_discord_ban_log(
 		title,
@@ -137,7 +137,7 @@
 		admin_bans_channel2,
 	)
 
-/// Отправляет средствами TGS сообщение в дискорд об изменении PQ игрока.
+/// Sends a message to discord using TGS about a change in the player's PQ
 /world/proc/TgsAnnouncePQChanges(value, player_ckey, admin_ckey, reason)
 	if(!TgsAvailable())
 		return
@@ -148,21 +148,21 @@
 		return
 
 	var/datum/tgs_chat_embed/structure/embed = new()
-	embed.title = "Изменение PQ"
-	embed.description = reason ? "**Причина**\n" + reason : "Причина не указана!"
+	embed.title = "Change in PQ"
+	embed.description = reason ? "**Reason**\n" + reason : "Reason not specified!"
 	embed.colour = value > 0 ? "#a6da95" : "#ed8796"
 	embed.footer = create_discord_embed_footer()
 
 	var/datum/tgs_chat_embed/field/field_player_ckey = new(
-		"Игрок", "`[player_ckey]`"
+		"Player", "`[player_ckey]`"
 	)
 
 	var/datum/tgs_chat_embed/field/field_admin_ckey = new(
-		"Администратор", "`[admin_ckey]`"
+		"Administrator", "`[admin_ckey]`"
 	)
 
 	var/datum/tgs_chat_embed/field/field_changed_value = new(
-		"Изменено на", "`[value]`"
+		"Changed to", "`[value]`"
 	)
 
 	field_player_ckey.is_inline = TRUE
@@ -194,21 +194,21 @@
 		return
 
 	var/datum/tgs_chat_embed/structure/embed = new()
-	embed.title = "Изменение триумфов"
-	embed.description = reason ? "**Причина**\n" + reason : "Причина не указана!"
+	embed.title = "Change of points"
+	embed.description = reason ? "**Reason**\n" + reason : "Reason not specified!"
 	embed.colour = value > 0 ? "#a6da95" : "#ed8796"
 	embed.footer = create_discord_embed_footer()
 
 	var/datum/tgs_chat_embed/field/field_player_ckey = new(
-		"Игрок", "`[player_ckey]`"
+		"Player", "`[player_ckey]`"
 	)
 
 	var/datum/tgs_chat_embed/field/field_admin_ckey = new(
-		"Администратор", "`[admin_ckey]`"
+		"Administrator", "`[admin_ckey]`"
 	)
 
 	var/datum/tgs_chat_embed/field/field_changed_value = new(
-		"Изменено на", "`[value]`"
+		"Changed to", "`[value]`"
 	)
 
 	field_player_ckey.is_inline = TRUE
@@ -245,11 +245,11 @@
 	embed.footer = create_discord_embed_footer()
 
 	var/datum/tgs_chat_embed/field/field_player_ckey = new(
-		"Игрок", "`[player_ckey]`"
+		"Player", "`[player_ckey]`"
 	)
 
 	var/datum/tgs_chat_embed/field/field_admin_ckey = new(
-		"Администратор", "`[admin_ckey]`"
+		"Administrator", "`[admin_ckey]`"
 	)
 
 	field_player_ckey.is_inline = TRUE
@@ -284,15 +284,15 @@
 	embed.footer = create_discord_embed_footer()
 
 	var/datum/tgs_chat_embed/field/field_player_ckey = new(
-		"Игрок", "`[target_key]`"
+		"Player", "`[target_key]`"
 	)
 
 	var/datum/tgs_chat_embed/field/field_admin_ckey = new(
-		"Администратор", "`[admin_ckey]`"
+		"Administrator", "`[admin_ckey]`"
 	)
 
 	var/datum/tgs_chat_embed/field/field_secret = new(
-		"Secret?", "[secret ? "Да" : "Нет"]"
+		"Secret?", "[secret ? "Yes" : "No"]"
 	)
 
 	field_player_ckey.is_inline = TRUE
@@ -306,7 +306,7 @@
 	)
 
 	if(expiry)
-		embed.fields.Add(new /datum/tgs_chat_embed/field("Исчезнет", "[expiry]"))
+		embed.fields.Add(new /datum/tgs_chat_embed/field("Will disappear", "[expiry]"))
 
 	var/datum/tgs_message_content/message = new("")
 	message.embed = embed
@@ -344,16 +344,16 @@
 		role_lines += "• `[role]`"
 	var/description
 	if(server_unban && !length(non_server_roles))
-		description = "Игрок получил доступ к серверу!"
+		description = "The player has gained access to the server"
 	else if(server_unban)
-		description = "Игрок получил доступ к серверу!\n\nИгрок получил доступ к указанным ролям:\n[role_lines.Join("\n")]"
+		description = "The player has gained access to the server!\n\nThe player has gained access to the specified roles:\n[role_lines.Join("\n")]"
 	else if(length(non_server_roles) == 1)
-		description = "Игрок получил доступ к указанной роли `[non_server_roles[1]]`!"
+		description = "The player has access to the specified role `[non_server_roles[1]]`!"
 	else
-		description = "Игрок получил доступ к указанным ролям:\n[role_lines.Join("\n")]"
+		description = "The player gained access to the specified roles:\n[role_lines.Join("\n")]"
 
 	send_discord_ban_log(
-		"Разбан",
+		"Unbanned",
 		description,
 		"#a6da95",
 		player_ckey,
@@ -374,12 +374,12 @@
 		return
 
 	var/list/change_names = list(
-		"Key" = "Ключ",
+		"Key" = "Key",
 		"IP" = "IP",
 		"CID" = "CID",
-		"Applies to admins" = "Применение к администраторам",
-		"Duration" = "Срок",
-		"Reason" = "Причина",
+		"Applies to admins" = "Application to administrators",
+		"Duration" = "Term",
+		"Reason" = "Reason",
 	)
 	var/list/change_lines = list()
 	for(var/change_key in changes)
@@ -389,12 +389,12 @@
 		var/change_value = replacetext("[changes[change_key]]", "<br>", "\n")
 		change_lines += "**[change_name]:**\n[change_value]"
 
-	var/full_text = "**Игрок:** `[player_ckey]`\n**Администратор:** `[admin_ckey]`\n\n[change_lines.Join("\n\n")]"
+	var/full_text = "**Player:** `[player_ckey]`\n**Administrator:** `[admin_ckey]`\n\n[change_lines.Join("\n\n")]"
 	var/list/chunks = split_discord_log_text(full_text)
 	for(var/index in 1 to chunks.len)
 		var/datum/tgs_chat_embed/structure/embed = new()
 		if(index == 1)
-			embed.title = "Изменение бана"
+			embed.title = "Change ban"
 		embed.description = chunks[index]
 		embed.colour = "#f5a97f"
 		if(index == chunks.len)
@@ -418,22 +418,22 @@
 	var/pretty_type
 	switch(type)
 		if("note")
-			pretty_type = "заметки"
+			pretty_type = "notes"
 		if("message")
-			pretty_type = "сообщения"
+			pretty_type = "messages"
 		if("watchlist entry")
-			pretty_type = "записи в watchlist"
+			pretty_type = "entries in watchlist"
 		else
 			return
 
 	var/old_discord_text = replacetext("[old_text]", "<br>", "\n")
 	var/new_discord_text = replacetext("[new_text]", "<br>", "\n")
-	var/full_text = "**Игрок:** `[target_key]`\n**Автор записи:** `[author_key]`\n**Изменил:** `[editor_ckey]`\n\n**Было:**\n[old_discord_text]\n\n**Стало:**\n[new_discord_text]"
+	var/full_text = "**Player:** `[target_key]`\n**Author of entry:** `[author_key]`\n**Changed by:** `[editor_ckey]`\n\n**Was:**\n[old_discord_text]\n\n**Became:**\n[new_discord_text]"
 	var/list/chunks = split_discord_log_text(full_text)
 	for(var/index in 1 to chunks.len)
 		var/datum/tgs_chat_embed/structure/embed = new()
 		if(index == 1)
-			embed.title = "Изменение [pretty_type]"
+			embed.title = "Change [pretty_type]"
 		embed.description = chunks[index]
 		embed.colour = "#f5a97f"
 		if(index == chunks.len)
@@ -453,21 +453,21 @@
 
 	var/pretty_type = capitalize("[type]")
 	var/datum/tgs_chat_embed/structure/embed = new()
-	embed.title = "Удаление [pretty_type]"
+	embed.title = "Deleting [pretty_type]"
 	embed.description = copytext_char("[text]", 1, 4000)
 	embed.colour = "#ed8796"
 	embed.footer = create_discord_embed_footer()
 
 	var/datum/tgs_chat_embed/field/field_player_ckey = new(
-		"Игрок", "`[target_key]`"
+		"Player", "`[target_key]`"
 	)
 
 	var/datum/tgs_chat_embed/field/field_admin_ckey = new(
-		"Удалил", "`[admin_ckey]`"
+		"Deleting", "`[admin_ckey]`"
 	)
 
 	var/datum/tgs_chat_embed/field/field_type = new(
-		"Тип", "`[type]`"
+		"Type", "`[type]`"
 	)
 
 	field_player_ckey.is_inline = TRUE
@@ -485,7 +485,7 @@
 
 	send2chat(message, admin_notes_channel)
 
-// Трогаем ПКью через дискорд бота
+//Touching PC via discord bot
 
 /datum/world_topic/pq_adjust
 	keyword = "pqadjust"
@@ -503,7 +503,7 @@
 	if(!target_ckey)
 		return list("status" = "error", "message" = "Target ckey is empty.")
 	if(admin_ckey == target_ckey)
-		return list("status" = "error", "message" = "Самому себе PQ менять нельзя.")
+		return list("status" = "error", "message" = "You cannot change your own PQ.")
 	if(isnull(amount))
 		return list("status" = "error", "message" = "Amount is invalid.")
 	amount = round(amount)

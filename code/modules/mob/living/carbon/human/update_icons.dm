@@ -689,7 +689,8 @@ There are several things that need to be remembered:
 				racecustom = dna.species.clothes_id
 			var/obj/item/bodypart/taur/taur = get_taur_tail()
 			if(taur)
-				shoes_overlay = shoes.build_worn_icon(default_layer = SHOES_LAYER, default_icon_file = 'icons/mob/clothing/feet.dmi', female = FALSE, customi = racecustom, sleeveindex = footindex)
+				var/icon/taur_leg_mask = taur.clip_mask_legs || taur.clip_mask
+				shoes_overlay = shoes.build_worn_icon(default_layer = SHOES_LAYER, default_icon_file = 'icons/mob/clothing/feet.dmi', female = FALSE, customi = racecustom, sleeveindex = footindex, clip_mask = taur_leg_mask)
 			else if((gender == FEMALE && !dna.species.use_m) || dna.species.use_f)
 				shoes_overlay = shoes.build_worn_icon(default_layer = SHOES_LAYER, default_icon_file = 'icons/mob/clothing/feet.dmi', female = TRUE, customi = racecustom, sleeveindex = footindex, boobed_overlay = has_boobed_overlay())
 			else
@@ -1141,6 +1142,13 @@ There are several things that need to be remembered:
 	if(undercloaks.len)
 		overlays_standing[UNDER_CLOAK_LAYER] = undercloaks
 
+	var/obj/item/bodypart/taur/taur_back = get_taur_tail()
+	if(taur_back?.taur_clothing_category && (istype(backr, /obj/item/storage) || istype(backl, /obj/item/storage)))
+		var/mutable_appearance/saddlebag_overlay = mutable_appearance('icons/roguetown/clothing/special/onmob/taur_clothing.dmi', "saddlebag_[taur_back.taur_clothing_category]", -BACK_LAYER)
+		saddlebag_overlay.pixel_x = taur_back.offset_x
+		overcloaks += saddlebag_overlay
+		overlays_standing[BACK_LAYER] = overcloaks
+
 	rebuild_obscured_flags()
 	apply_overlay(BACK_LAYER)
 	apply_overlay(BACK_BEHIND_LAYER)
@@ -1188,7 +1196,20 @@ There are several things that need to be remembered:
 					cloak_overlay.pixel_x += dna.species.offset_features[OFFSET_CLOAK_F][1]
 					cloak_overlay.pixel_y += dna.species.offset_features[OFFSET_CLOAK_F][2]
 			if(cloak.alternate_worn_layer == TABARD_LAYER)
-				overlays_standing[TABARD_LAYER] = cloak_overlay
+				if(taur?.taur_clothing_category && istype(cloak, /obj/item/clothing/cloak/tabard))
+					var/mutable_appearance/taur_tabard_overlay = mutable_appearance('icons/roguetown/clothing/special/onmob/taur_clothing.dmi', "caparison-tabard_[taur.taur_clothing_category]", -TABARD_LAYER)
+					taur_tabard_overlay.pixel_x = taur.offset_x
+					if(cloak.color)
+						taur_tabard_overlay.color = cloak.color
+					overlays_standing[TABARD_LAYER] = list(cloak_overlay, taur_tabard_overlay)
+				else if(taur?.taur_clothing_category && istype(cloak, /obj/item/clothing/cloak/tabard/stabard))
+					var/mutable_appearance/taur_caparison_overlay = mutable_appearance('icons/roguetown/clothing/special/onmob/taur_clothing.dmi', "caparison_[taur.taur_clothing_category]", -TABARD_LAYER)
+					taur_caparison_overlay.pixel_x = taur.offset_x
+					if(cloak.color)
+						taur_caparison_overlay.color = cloak.color
+					overlays_standing[TABARD_LAYER] = list(cloak_overlay, taur_caparison_overlay)
+				else
+					overlays_standing[TABARD_LAYER] = cloak_overlay
 			if(cloak.alternate_worn_layer == CLOAK_BEHIND_LAYER)
 				overlays_standing[CLOAK_BEHIND_LAYER] = cloak_overlay
 			if(!cloak.alternate_worn_layer || cloak.alternate_worn_layer == UNDER_ARMOR_LAYER)
@@ -1267,6 +1288,40 @@ There are several things that need to be remembered:
 	apply_overlay(CLOAK_BEHIND_LAYER)
 	apply_overlay(CLOAK_LAYER)
 
+/mob/living/carbon/human/proc/get_taur_barding_overlays(obj/item/clothing/worn, clothing_layer)
+	var/obj/item/bodypart/taur/taur = get_taur_tail()
+	if(!taur?.taur_clothing_category || !worn)
+		return list()
+	var/barding_state
+	switch(worn.armor_class)
+		if(ARMOR_CLASS_LIGHT)
+			barding_state = "leather"
+		if(ARMOR_CLASS_MEDIUM)
+			barding_state = "chainmail"
+		if(ARMOR_CLASS_HEAVY)
+			barding_state = "plate"
+	if(!barding_state)
+		return list()
+	var/list/result = list()
+	var/mutable_appearance/barding = mutable_appearance('icons/roguetown/clothing/special/onmob/taur_clothing.dmi', "[barding_state]_[taur.taur_clothing_category]", -clothing_layer)
+	barding.pixel_x = taur.offset_x
+	result += barding
+	if(worn.armor_class != ARMOR_CLASS_HEAVY)
+		return result
+	var/mutable_appearance/tasset_primary = mutable_appearance('icons/roguetown/clothing/special/onmob/taur_clothing.dmi', "plate-tasset1_[taur.taur_clothing_category]", -clothing_layer)
+	tasset_primary.pixel_x = taur.offset_x
+	tasset_primary.appearance_flags = RESET_COLOR
+	if(taur.tasset1_color)
+		tasset_primary.color = taur.tasset1_color
+	result += tasset_primary
+	var/mutable_appearance/tasset_secondary = mutable_appearance('icons/roguetown/clothing/special/onmob/taur_clothing.dmi', "plate-tasset2_[taur.taur_clothing_category]", -clothing_layer)
+	tasset_secondary.pixel_x = taur.offset_x
+	tasset_secondary.appearance_flags = RESET_COLOR
+	if(taur.tasset2_color)
+		tasset_secondary.color = taur.tasset2_color
+	result += tasset_secondary
+	return result
+
 /mob/living/carbon/human/update_inv_shirt()
 	remove_overlay(SHIRT_LAYER)
 	remove_overlay(SHIRTSLEEVE_LAYER)
@@ -1304,7 +1359,9 @@ There are several things that need to be remembered:
 				if(OFFSET_SHIRT_F in dna.species.offset_features)
 					shirt_overlay.pixel_x += dna.species.offset_features[OFFSET_SHIRT_F][1]
 					shirt_overlay.pixel_y += dna.species.offset_features[OFFSET_SHIRT_F][2]
-			overlays_standing[SHIRT_LAYER] = shirt_overlay
+			var/list/shirt_overlays = list(shirt_overlay)
+			shirt_overlays += get_taur_barding_overlays(wear_shirt, SHIRT_LAYER)
+			overlays_standing[SHIRT_LAYER] = shirt_overlays
 
 			//add sleeve overlays, then offset
 			var/list/sleeves = list()
@@ -1377,7 +1434,9 @@ There are several things that need to be remembered:
 				if(OFFSET_ARMOR_F in dna.species.offset_features)
 					armor_overlay.pixel_x += dna.species.offset_features[OFFSET_ARMOR_F][1]
 					armor_overlay.pixel_y += dna.species.offset_features[OFFSET_ARMOR_F][2]
-			overlays_standing[ARMOR_LAYER] = armor_overlay
+			var/list/armor_overlays = list(armor_overlay)
+			armor_overlays += get_taur_barding_overlays(wear_armor, ARMOR_LAYER)
+			overlays_standing[ARMOR_LAYER] = armor_overlays
 
 			//add sleeve overlays, then offset
 			var/list/sleeves = list()
@@ -1411,7 +1470,7 @@ There are several things that need to be remembered:
 	remove_overlay(LEGSLEEVE_LAYER)
 
 	var/obj/item/bodypart/taur/taur = get_taur_tail()
-	var/icon/c_mask = taur?.clip_mask
+	var/icon/c_mask = taur?.clip_mask_legs || taur?.clip_mask
 
 	if(client && hud_used)
 		var/atom/movable/screen/inventory/inv = hud_used.inv_slots[SLOT_PANTS]

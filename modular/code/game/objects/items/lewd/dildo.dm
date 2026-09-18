@@ -15,6 +15,7 @@
 	var/pleasure = 4
 	var/can_custom = TRUE
 	var/dildo_material
+	var/is_attached_to_belt = FALSE
 
 /obj/item/dildo/New()
 	. = ..()

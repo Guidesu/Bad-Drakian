@@ -142,6 +142,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["stopdroning"]		>> stopdroning
 	S["masked_examine"]		>> masked_examine
 	S["nsfw_examine_always"]>> nsfw_examine_always // TA EDIT
+	S["show_pubic_hair"]	>> show_pubic_hair
+	S["show_armpit_hair"]	>> show_armpit_hair
 	S["full_examine"]		>> full_examine
 	S["mute_animal_emotes"]	>> mute_animal_emotes
 	S["autoconsume"]		>> autoconsume
@@ -155,6 +157,14 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["grain"]				>> grain
 	S["icon_scaling"]		>> icon_scaling
 	S["sexable"]			>> sexable
+	S["chastenable"]		>> chastenable
+	S["chastity_hardmode"]	>> chastity_hardmode
+	S["extreme_erp"]		>> extreme_erp
+	S["edging"]			>> edging
+	S["facial_brands"]		>> facial_brands
+	S["sensitive_brands"]	>> sensitive_brands
+	S["descriptor_color"]	>> descriptor_color
+	S["cursed_collarable"]	>> cursed_collarable
 	S["shake"]				>> shake
 	S["mastervol"]			>> mastervol
 	S["lastclass"]			>> lastclass
@@ -223,6 +233,14 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	auto_fit_viewport	= sanitize_bool(auto_fit_viewport, initial(auto_fit_viewport))
 	shake				= sanitize_bool(shake, initial(shake))
 	sexable				= sanitize_bool(sexable, initial(sexable))
+	chastenable			= sanitize_bool(chastenable, initial(chastenable))
+	chastity_hardmode	= sanitize_bool(chastity_hardmode, initial(chastity_hardmode))
+	extreme_erp			= sanitize_bool(extreme_erp, initial(extreme_erp))
+	edging				= sanitize_bool(edging, initial(edging))
+	facial_brands		= sanitize_bool(facial_brands, initial(facial_brands))
+	sensitive_brands	= sanitize_bool(sensitive_brands, initial(sensitive_brands))
+	descriptor_color	= sanitize_bool(descriptor_color, initial(descriptor_color))
+	cursed_collarable	= sanitize_bool(cursed_collarable, initial(cursed_collarable))
 	compliance_notifs	= sanitize_bool(compliance_notifs, initial(compliance_notifs))
 	stopdroning			= sanitize_bool(stopdroning, initial(stopdroning))
 	anonymize			= sanitize_bool(anonymize, initial(anonymize))
@@ -230,6 +248,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	donor_ooc_icon		= sanitize_bool(donor_ooc_icon, initial(donor_ooc_icon))
 	donor_examine_icon	= sanitize_bool(donor_examine_icon, initial(donor_examine_icon))
 	nsfw_examine_always	= sanitize_bool(nsfw_examine_always, initial(nsfw_examine_always))
+	show_pubic_hair		= sanitize_bool(show_pubic_hair, initial(show_pubic_hair))
+	show_armpit_hair	= sanitize_bool(show_armpit_hair, initial(show_armpit_hair))
 	no_runechat_animation = sanitize_bool(no_runechat_animation, initial(no_runechat_animation))
 	icon_scaling		= sanitize_bool(icon_scaling, initial(icon_scaling))
 	defiant			= sanitize_bool(defiant, initial(defiant))
@@ -347,6 +367,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["stopdroning"], stopdroning)
 	WRITE_FILE(S["masked_examine"], masked_examine)
 	WRITE_FILE(S["nsfw_examine_always"], nsfw_examine_always) // TA EDIT
+	WRITE_FILE(S["show_pubic_hair"], show_pubic_hair)
+	WRITE_FILE(S["show_armpit_hair"], show_armpit_hair)
 	WRITE_FILE(S["full_examine"], full_examine)
 	WRITE_FILE(S["mute_animal_emotes"], mute_animal_emotes)
 	WRITE_FILE(S["autoconsume"], autoconsume)
@@ -360,6 +382,14 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["grain"], grain)
 	WRITE_FILE(S["icon_scaling"], icon_scaling)
 	WRITE_FILE(S["sexable"], sexable)
+	WRITE_FILE(S["chastenable"], chastenable)
+	WRITE_FILE(S["chastity_hardmode"], chastity_hardmode)
+	WRITE_FILE(S["extreme_erp"], extreme_erp)
+	WRITE_FILE(S["edging"], edging)
+	WRITE_FILE(S["facial_brands"], facial_brands)
+	WRITE_FILE(S["sensitive_brands"], sensitive_brands)
+	WRITE_FILE(S["descriptor_color"], descriptor_color)
+	WRITE_FILE(S["cursed_collarable"], cursed_collarable)
 	WRITE_FILE(S["shake"], shake)
 	WRITE_FILE(S["lastclass"], lastclass)
 	save_donor_job_boost_prefs(S) // TA EDIT
@@ -669,6 +699,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["highlight_color"]	>> highlight_color
 	S["taur_type"]			>> taur_type
 	S["taur_color"]			>> taur_color
+	S["taur_markings"]		>> taur_markings
+	S["taur_tertiary"]		>> taur_tertiary
 
 /datum/preferences/proc/_load_familiar_prefs(S)
 	S["familiar_names"]					>> familiar_prefs.familiar_names
@@ -846,6 +878,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	features["mcolor3"]	= sanitize_hexcolor(features["mcolor3"], 6, FALSE)
 	voice_color			= sanitize_hexcolor(voice_color, 6, TRUE, initial(voice_color))
 	taur_color			= sanitize_hexcolor(taur_color, 6, TRUE, initial(taur_color))
+	taur_markings		= sanitize_hexcolor(taur_markings, 6, TRUE, initial(taur_markings))
+	taur_tertiary		= sanitize_hexcolor(taur_tertiary, 6, TRUE, initial(taur_tertiary))
 	vampire_skin = sanitize_hexcolor(vampire_skin, 6, TRUE, null, TRUE)
 	vampire_eyes = sanitize_hexcolor(vampire_eyes, 6, TRUE, null, TRUE)
 	vampire_hair = sanitize_hexcolor(vampire_hair, 6, TRUE, null, TRUE)
@@ -1136,6 +1170,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["highlight_color"]		, highlight_color)
 	WRITE_FILE(S["taur_type"]			, taur_type)
 	WRITE_FILE(S["taur_color"]			, taur_color)
+	WRITE_FILE(S["taur_markings"]		, taur_markings)
+	WRITE_FILE(S["taur_tertiary"]		, taur_tertiary)
 	WRITE_FILE(S["favorite_cuisine"]	, favorite_cuisine)
 	WRITE_FILE(S["favorite_dish"]		, favorite_dish)
 	WRITE_FILE(S["favorite_drink"]		, favorite_drink)

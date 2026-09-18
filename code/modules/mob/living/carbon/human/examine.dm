@@ -134,11 +134,11 @@
 			var/target_is_lg = mind?.has_antag_datum(/datum/antagonist/bandit/lost_grenzel)
 
 			if(user_is_lg && species_origin == "Grenzelhoft" && !target_is_lg)
-				. += span_userdanger("<b>ПОДЛЫЙ ПРЕДАТЕЛЬ!</b>")
+				. += span_userdanger("<b> FOUL TRAITOR!</b>")
 			if(target_is_lg && user_origin == "Grenzelhoft" && !user_is_lg)
-				. += span_userdanger("<b>ОБЕЗУМЕВШИЙ В ПЕСКАХ!</b>")
+				. += span_userdanger("<b>MASEN IN THE SANDS!</b>")
 		if(mind?.has_antag_datum(/datum/antagonist/bandit/lost_grenzel) && !HAS_TRAIT(user, TRAIT_OUTLANDER))
-			. += span_userdanger("<b>НАЛЁТНИЧЕСКАЯ МРАЗЬ, ДЕТОУБИЙЦА!</b>")*/ // Lost Grenzel comment
+			. += span_userdanger("<b>RAIDER Scum, CHILD KILLER!</b>")*/ // Lost Grenzel comment
 
 
 	if(is_npc(src) && src.stat == CONSCIOUS) //NPCs always show up if they're mindless.
@@ -245,13 +245,13 @@
 		if(partner_mob && partner_mob != src && erpC.has_active_actions())
 			if(erp_hidden)
 				if(can_see_hidden)
-					. += span_warning("[m1] сплетается с [partner_mob].")
+					. += span_warning("[m1] is intertwined with [partner_mob].")
 			else
 				if(user != src && isliving(user))
 					var/mob/living/L = user
-					. += (L.STAPER >= 8 && L.STAINT >= 5) ? span_aiprivradio("[m1] сплетается с [partner_mob].") : span_warning("[m1] сплетается с кем-то...")
+					. += (L.STAPER >= 8 && L.STAINT >= 5) ? span_aiprivradio("[m1] is intertwined with [partner_mob].") : span_warning("[m1] is entangled with someone...")
 				else
-					. += span_aiprivradio("[m1] сплетается с [partner_mob].")
+					. += span_aiprivradio("[m1] is intertwined with [partner_mob].")
 
 	if(can_see_hidden)
 		var/datum/status_effect/erp_coating/groin/G = null
@@ -264,26 +264,26 @@
 
 		var/datum/status_effect/erp_coating/face/B = has_status_effect(/datum/status_effect/erp_coating/face)
 		if(G)
-			var/txt = !G.has_dried_up ? "имеет влажные стекающие следы выделений на паху" : "имеет влажные подсыхающие следы выделений на паху"
+			var/txt = !G.has_dried_up ? "has wet, dripping traces of discharge on the groin" : "has wet, drying traces of discharge on the groin"
 			if(user != src && isliving(user))
 				var/mob/living/L = user
-				. += (L.STAPER >= 8 && L.STAINT >= 5) ? span_aiprivradio("[m1] [txt].") : span_warning("[m1] выглядит грязно в районе паха.")
+				. += (L.STAPER >= 8 && L.STAINT >= 5) ? span_aiprivradio("[m1] [txt].") : span_warning("[m1] looks dirty in the groin area.")
 			else
 				. += span_aiprivradio("[m1] [txt].")
 
 		if(CH)
-			var/txt = !CH.has_dried_up ? "имеет влажные следы выделений на груди" : "имеет подсохшие выделения на груди"
+			var/txt = !CH.has_dried_up ? "has wet traces of discharge on the chest" : "has dried discharge on the chest"
 			if(user != src && isliving(user))
 				var/mob/living/L = user
-				. += (L.STAPER >= 8 && L.STAINT >= 5) ? span_aiprivradio("[m1] [txt].") : span_warning("[m1] имеет чем-то запачканную грудь.")
+				. += (L.STAPER >= 8 && L.STAINT >= 5) ? span_aiprivradio("[m1] [txt].") : span_warning("[m1] has something stained on the chest.")
 			else
 				. += span_aiprivradio("[m1] [txt].")
 
 		if(B)
-			var/txt = !B.has_dried_up ? "блестит влажными выделениями" : "имеет сухие следы выделений на лице"
+			var/txt = !B.has_dried_up ? "is shiny with wet discharge" : "has dry traces of discharge on the face"
 			if(user != src && isliving(user))
 				var/mob/living/L = user
-				. += (L.STAPER >= 8 && L.STAINT >= 5) ? span_aiprivradio("[m1] [txt].") : span_warning("[m1] выглядит грязно.")
+				. += (L.STAPER >= 8 && L.STAINT >= 5) ? span_aiprivradio("[m1] [txt].") : span_warning("[m1] looks dirty.")
 			else
 				. += span_aiprivradio("[m1] [txt].")
 
@@ -813,11 +813,11 @@
 			var/slave_descriptor
 			switch(pronouns)
 				if(HE_HIM)
-					slave_descriptor = "Он всего лишь жалкий раб..."
+					slave_descriptor = "He's just a pathetic slave..."
 				if(SHE_HER)
-					slave_descriptor = "Она всего лишь жалкая рабыня..."
+					slave_descriptor = "She's just a pathetic slave..."
 				else
-					slave_descriptor = "Это всего лишь жалкий раб..."
+					slave_descriptor = "She's just a pathetic slave..."
 			if(slave_descriptor)
 				. += span_warning(slave_descriptor) // TA EDIT
 
@@ -1001,9 +1001,9 @@
 			var/mob/living/carbon/human/H_user = ishuman(user) ? user : null
 			var/user_origin = H_user?.dna?.species?.origin
 			if(species_origin == "Grenzelhoft" && !HAS_TRAIT(user, TRAIT_OUTLANDER) && user_origin != "Grenzelhoft")
-				origin_suffix = " <span class='warning' style='font-size: inherit !important; font-weight: inherit !important;'>Имперский кафир!</span>"
+				origin_suffix = "<span class='warning' style='font-size: inherit !important; font-weight: inherit !important;'>Imperial infidel!</span>"
 			else if(H_user && user_origin == "Grenzelhoft" && (species_origin == "Raneshan" || species_origin == "Naledi" || species_origin == "Zybantu"))
-				origin_suffix = " <span class='warning' style='font-size: inherit !important; font-weight: inherit !important;'>Зибантийский швайнехунд!</span>"
+				origin_suffix = "<span class='warning' style='font-size: inherit !important; font-weight: inherit !important;'>Zibantine Schweinehund!</span>"
 		. += span_info("[pronoun] [wording] [origin].[origin_suffix] [astratan_tooltip]")	//"He hails from [X / Nowhere]" || "His [word] originates from [X]" || "His [word] is implacable..."
 
 		if(HAS_TRAIT(src, TRAIT_WITCH))

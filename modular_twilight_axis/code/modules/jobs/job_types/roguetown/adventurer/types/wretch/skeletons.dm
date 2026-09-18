@@ -1,6 +1,6 @@
 /obj/item/clothing/head/roguetown/duelhat/pretzel/skelet
 	name = "old rebel's hat"
-	desc = "Старая фаретровая шляпа, пожёванная временем, идеально подходит какому-нибудь бунтовщику против этого общество, позади которого ничего не осталось кроме кучки костей."
+	desc = "An old farret hat, chewed by time, is ideal for some rebel against this society, behind whom nothing remains but a pile of bones."
 	max_integrity = 100
 	armor = ARMOR_LEATHER
 	body_parts_covered = HEAD|HAIR|EARS

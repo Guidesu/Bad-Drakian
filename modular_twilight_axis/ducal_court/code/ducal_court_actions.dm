@@ -1,8 +1,8 @@
 /datum/ducal_court/proc/court_action_blocker(mob/living/carbon/human/user, action)
 	if(!istype(user))
-		return "Управлять двором может лишь живой подданный."
+		return "Only a living subject can manage the courtyard."
 	if(!get_throat())
-		return "Древняя магия молчит."
+		return "Ancient magic is silent."
 
 	var/has_crown = user_has_crown(user)
 	var/has_authority = user_has_ducal_authority(user)
@@ -15,100 +15,100 @@
 			return null
 		if("summon_key")
 			if(!has_crown)
-				return "Требуется корона."
+				return "A crown is required."
 			return null
 		if("make_announcement")
 			if(!has_crown)
-				return "Требуется корона."
+				return "A crown is required."
 			if(world.time < GLOB.last_crown_announcement_time + 2 MINUTES)
-				return "Время для нового объявления ещё не пришло."
+				return "The time for a new announcement has not yet come."
 			if(!can_announce)
-				return "Древняя магия ещё восстанавливает силу."
+				return "Ancient magic is still regaining strength."
 			return null
 		if("revise_charter", "restore_charter", "set_taxes", "change_colors")
 			if(!has_crown)
-				return "Требуется корона."
+				return "A crown is required."
 			if(!has_authority)
-				return "Только правитель или регент."
+				return "Only the ruler or regent."
 			return null
 		if("issue_decree", "set_laws", "make_law", "purge_laws", "purge_decrees")
 			if(!has_crown)
-				return "Требуется корона."
+				return "A crown is required."
 			if(!has_authority)
-				return "Только правитель или регент."
+				return "Only the ruler or regent."
 			if(!can_announce)
-				return "Древняя магия ещё восстанавливает силу."
+				return "Ancient magic is still regaining strength."
 			return null
 		if("declare_outlaw")
 			if(!has_crown)
-				return "Требуется корона."
+				return "A crown is required."
 			if(!has_authority)
-				return "Только правитель или регент."
+				return "Only the ruler or regent."
 			if(!user_has_lord_job(user))
-				return "Объявить вне закона может лишь правящий сан."
+				return "Only the reigning rank can declare outlawed."
 			if(!can_announce)
-				return "Древняя магия ещё восстанавливает силу."
+				return "Ancient magic is still regaining strength."
 			return null
 		if("ascend")
 			if(!throne)
-				return "Трона, на который можно притязать, нет."
+				return "There is no throne to claim."
 			if(rite)
-				return "Ритуал наследования уже идёт."
+				return "The succession ritual is already underway."
 			if(!SSticker.had_ruler)
-				return "Некого свергать — правителя не было."
+				return "There is no one to overthrow — there was no ruler."
 			if(SSticker.rulermob == user)
-				return "Трон уже ваш."
+				return "The throne is already yours."
 			if(SSgamemode.roundvoteend)
-				return "Судьба земель уже решена."
+				return "The fate of the lands is already decided."
 			if(!has_available_usurpation_rite(user))
-				return "Вам не доступен ни один ритуал наследования."
+				return "No succession ritual is available to you."
 			return null
 		if("assent")
 			if(!rite)
-				return "Нет притязания, требующего согласия."
+				return "There is no claim requiring consent."
 			if(rite.stage != RITE_STAGE_GATHERING)
-				return "Согласие принимается лишь во время сбора голосов."
+				return "Consent is only accepted during the gathering of votes."
 			if(!user_near_throne(user))
-				return "Чтобы выразить согласие, встаньте у трона."
+				return "To express consent, stand by the throne."
 			return null
 		if("abdicate")
 			if(!rite)
-				return "Нет притязания, в пользу которого можно отречься."
+				return "There is no claim to renounce."
 			if(rite.stage >= RITE_STAGE_CONTESTING)
-				return "Ритуал уже оспаривается."
+				return "The ritual is already being contested."
 			if(!has_authority)
-				return "Отречься может лишь правитель или регент."
+				return "Only the ruler or regent may renounce."
 			if(!user_near_throne(user))
-				return "Чтобы отречься, встаньте у трона."
+				return "To abdicate, stand at the throne."
 			return null
 		if("stop_ascent")
 			if(!rite)
-				return "Нет восхождения, которое можно остановить."
+				return "There is no ascension that can be stopped."
 			if(rite.stage != RITE_STAGE_CONTESTING)
-				return "Остановить восхождение можно лишь на этапе оспаривания."
+				return "Ascension can only be stopped at the contestation stage."
 			if(rite.contester)
-				return "Кто-то уже оспаривает ритуал с трона."
+				return "Someone is already contesting the ritual from the throne."
 			if(!throne || !(user in throne.buckled_mobs))
-				return "Сядьте на трон, чтобы остановить наследование."
+				return "Sit on the throne to stop the inheritance."
 			return null
 		if("become_regent")
 			if(!has_crown)
-				return "Требуется корона."
+				return "A crown is required."
 			if(SSticker.rulermob == user)
-				return "Трон уже ваш."
+				return "The throne is already yours."
 			var/mob/living/current_lord = SSticker.rulermob
 			if(current_lord && !QDELETED(current_lord) && current_lord.stat != DEAD)
-				return "Истинный правитель ещё пребывает в этих землях."
+				return "The true ruler still dwells in these lands."
 			if(!HAS_TRAIT(user, TRAIT_NOBLE))
-				return "Требуется благородная кровь."
+				return "Noble blood is required."
 			if(!(user.job in GLOB.regency_positions))
-				return "Ваш сан не может нести корону как регент."
+				return "Your rank cannot bear the crown as regent."
 			if(SSticker.regentday == GLOB.dayspassed)
-				return "Регент уже был провозглашён сегодня."
+				return "A regent has already been proclaimed today."
 			if(SSticker.regentmob == user)
-				return "Вы уже регент."
+				return "You are already a regent."
 			return null
-	return "Неизвестное действие двора."
+	return "Unknown court action."
 
 /datum/ducal_court/proc/reject_court_action(mob/living/carbon/human/user, action)
 	var/reason = court_action_blocker(user, action)
@@ -245,7 +245,7 @@
 		return FALSE
 	var/mob/living/carbon/human/user = ui.user
 	if(!user_seated_on_throne(user))
-		to_chat(user, span_warning("Вы более не восседаете на троне."))
+		to_chat(user, span_warning("You no longer sit on the throne."))
 		ui.close()
 		return TRUE
 	return handle_court_action(user, action, params)
@@ -256,7 +256,7 @@
 		if("make_announcement")
 			if(reject_court_action(user, "make_announcement"))
 				return TRUE
-			var/text = get_court_prompt_text(user, "Что будет объявлено землям?", "Объявление")
+			var/text = get_court_prompt_text(user, "What will be announced to the lands?", "Announcement")
 			if(text && !reject_court_action(user, "make_announcement"))
 				T?.make_announcement(user, text)
 			return TRUE
@@ -270,7 +270,7 @@
 		if("issue_decree")
 			if(reject_court_action(user, "issue_decree"))
 				return TRUE
-			var/text = get_court_prompt_text(user, "Какой указ будет издан?", "Указ")
+			var/text = get_court_prompt_text(user, "What decree will be issued?", "Decree")
 			if(text && !reject_court_action(user, "issue_decree"))
 				T?.make_decree(user, text)
 			return TRUE
@@ -284,7 +284,7 @@
 		if("make_law")
 			if(reject_court_action(user, "make_law"))
 				return TRUE
-			var/text = get_court_prompt_text(user, "Какой закон будет принят?", "Новый закон")
+			var/text = get_court_prompt_text(user, "What law will be passed?", "New law")
 			if(text && !reject_court_action(user, "make_law"))
 				make_law(text)
 			return TRUE
@@ -304,11 +304,11 @@
 			else if(!isnum(law_number))
 				law_number = null
 			if(!isnum(law_number))
-				to_chat(user, span_warning("Закона с таким номером нет."))
+				to_chat(user, span_warning("There is no law with this number."))
 				return TRUE
 			law_number = round(law_number)
 			if(!islist(GLOB.laws_of_the_land) || law_number < 1 || law_number > length(GLOB.laws_of_the_land))
-				to_chat(user, span_warning("Закона с таким номером нет."))
+				to_chat(user, span_warning("There is no law with this number."))
 				return TRUE
 			remove_law(law_number)
 			return TRUE
@@ -330,7 +330,7 @@
 		if("declare_outlaw")
 			if(reject_court_action(user, "declare_outlaw"))
 				return TRUE
-			var/text = get_court_prompt_text(user, "Кого объявить вне закона или помиловать? Укажите точное имя.", "Вне закона")
+			var/text = get_court_prompt_text(user, "Who should be declared outlaw or pardoned? Specify the exact name.", "Outlaw")
 			if(text && !reject_court_action(user, "declare_outlaw"))
 				T?.declare_outlaw(user, text)
 			return TRUE
@@ -350,15 +350,15 @@
 		if("purge_laws")
 			if(reject_court_action(user, "purge_laws"))
 				return TRUE
-			var/confirm = tgui_alert(user, "Отменить все законы этих земель?", "Отмена законов", list("Отменить", "Назад"))
-			if(confirm == "Отменить" && !reject_court_action(user, "purge_laws"))
+			var/confirm = tgui_alert(user, "Cancel all laws of these lands?", "Cancellation of laws", list("Cancel", "Back"))
+			if(confirm == "Cancel" && !reject_court_action(user, "purge_laws"))
 				purge_laws()
 			return TRUE
 		if("purge_decrees")
 			if(reject_court_action(user, "purge_decrees"))
 				return TRUE
-			var/confirm = tgui_alert(user, "Отменить все указы этих земель?", "Отмена указов", list("Отменить", "Назад"))
-			if(confirm == "Отменить" && !reject_court_action(user, "purge_decrees"))
+			var/confirm = tgui_alert(user, "Cancel all decrees of these lands?", "Revocation of decrees", list("Cancel", "Back"))
+			if(confirm == "Cancel" && !reject_court_action(user, "purge_decrees"))
 				purge_decrees()
 			return TRUE
 		if("ascend")

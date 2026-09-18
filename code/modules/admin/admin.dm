@@ -406,7 +406,7 @@
 	if((!isnull(amt2change) && amt2change != 0) && !raisin)
 		return
 	if(ckey == admin)
-		to_chat(src, span_boldwarning("Самому себе PQ менять нельзя."))
+		to_chat(src, span_boldwarning("You cannot change your own PQ."))
 		return
 	adjust_playerquality(amt2change, ckey, admin, raisin)
 	to_chat(M.client, "<span class=\"admin\"><span class=\"prefix\">ADMIN LOG:</span> <span class=\"message linkify\">Your PQ has been adjusted by [amt2change] by [admin] for reason: [raisin]</span></span>")

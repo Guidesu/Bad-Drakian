@@ -41,6 +41,8 @@ export type BodyData = {
   taur_type: Path | null; // null indicates no taur
   taur_name: string;
   taur_color: Color;
+  taur_markings: Color;
+  taur_tertiary: Color;
   allowed_taur_types: Path[];
 };
 

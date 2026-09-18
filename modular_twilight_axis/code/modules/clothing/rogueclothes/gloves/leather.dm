@@ -35,7 +35,7 @@
 
 /obj/item/clothing/gloves/roguetown/otavan/psygloves/overseer
 	name = "confessor gloves"
-	desc = "Перчатки из черной кожи, украшенные яркими полосами."
+	desc = "Black leather gloves decorated with bright stripes."
 	icon = 'modular_twilight_axis/icons/roguetown/clothing/inquisition_overseer/overseer.dmi'
 	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/inquisition_overseer/onmob/overseer_onmob.dmi'
 	icon_state = "overseergloves"
@@ -44,7 +44,7 @@
 
 /obj/item/clothing/gloves/roguetown/otavan/inqgloves/overseer
 	name = "silver-trimmed confessor gloves"
-	desc = "Перчатки из черной кожи, украшенные яркими полосами."
+	desc = "Black leather gloves decorated with bright stripes."
 	icon = 'modular_twilight_axis/icons/roguetown/clothing/inquisition_overseer/overseer.dmi'
 	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/inquisition_overseer/onmob/overseer_onmob.dmi'
 	icon_state = "viceseergloves"

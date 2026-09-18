@@ -79,7 +79,7 @@
 			to_chat(user, span_alert("I must wait before I can issue another Dictat!"))
 			revert_cast()
 			return
-		user.say("Храмовники, сосредоточьтесь на цели! Да направит Нок вашу руку!!")
+		user.say("Templars, focus on the target! May Nok guide your hand!!")
 		var/area/rogue/our_area = get_area(target)
 		if(!(our_area.holy_area))
 			target.apply_status_effect(/datum/status_effect/buff/order/martyr_guidance)
@@ -139,7 +139,7 @@
 			to_chat(user, span_alert("I must wait before I can issue another Dictat!"))
 			revert_cast()
 			return
-		user.say("Вперёд, храмовники! Ксайликс направит нас к победе!!")
+		user.say("Forward, templars! Xylix will guide us to victory!!")
 		var/area/rogue/our_area = get_area(target)
 		if(!(our_area.holy_area))
 			target.apply_status_effect(/datum/status_effect/buff/order/martyr_expedite)
@@ -205,7 +205,7 @@
 			to_chat(user, span_alert("I must wait before I can issue another Dictat!"))
 			revert_cast()
 			return
-		user.say("Храмовники! Встаньте и сражайтесь! Равокс смотрит на вас!!")
+		user.say("Templars! Stand up and fight! Ravox is looking at you!!")
 		var/area/rogue/our_area = get_area(target)
 		if(!(target.mobility_flags & MOBILITY_STAND))
 			target.SetUnconscious(0)
@@ -281,7 +281,7 @@
 			to_chat(user, span_alert("I must wait before I can issue another Dictat!"))
 			revert_cast()
 			return
-		user.say("Ни шагу назад, храмовники! Малум укрепит нашу волю!!")
+		user.say("Not a step back, templars! Malum will strengthen our will!!")
 		var/area/rogue/our_area = get_area(target)
 		if(!(our_area.holy_area))
 			target.apply_status_effect(/datum/status_effect/buff/order/martyr_laststand)

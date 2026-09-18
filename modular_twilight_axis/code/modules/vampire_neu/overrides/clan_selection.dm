@@ -1,8 +1,8 @@
 #define VAMPIRE_CHOOSE_CLAN_ALERT_CATEGORY "vampire_choose_clan"
 
 /atom/movable/screen/alert/vampire_choose_clan
-	name = "Выбор клана"
-	desc = "Выберите клан вампиров, когда будете готовы. Нажмите, чтобы открыть меню."
+	name = "Clan choice"
+	desc = "Choose a vampire clan when you are ready. Click to open the menu."
 	icon = 'icons/mob/actions/roguespells.dmi'
 	icon_state = "bat_transform"
 	alert_group = ALERT_BUFF

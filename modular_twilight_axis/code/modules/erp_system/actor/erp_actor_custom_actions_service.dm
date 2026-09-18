@@ -4,7 +4,7 @@
 /datum/erp_actor_custom_actions_service/proc/create_custom_action(datum/erp_actor/A)
 	var/datum/erp_action/N = new
 	N.id = "custom_[world.time]_[rand(1000,9999)]"
-	N.name = "Новое действие"
+	N.name = "New action"
 	N.ckey = A.client?.ckey
 	N.abstract = FALSE
 	A.custom_actions += N

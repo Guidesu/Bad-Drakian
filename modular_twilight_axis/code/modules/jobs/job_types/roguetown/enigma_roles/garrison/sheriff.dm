@@ -9,11 +9,11 @@
 	forbidden_races = list(RACES_DESPISED)
 	allowed_ages = list(AGE_MIDDLEAGED, AGE_OLD)
 	display_order = JDO_SHERIFF
-	tutorial = "Преступность всегда была постоянной составляющей вашей жизни, и вы всегда выбирали сторону справедливости. \
-	Вы поднялись в ряды стражников, и теперь руководите ими - следите за тем, чтобы они соблюдали законы этой земли. \
-	Уже прошло 12 лет, как вы несете службу Королю, что объявил Рокхилл своей ставкой, сразу же после ПРОПАЖИ Барона Эрика Рейвенкрофта. \
-	В бессонные ночи, вам все время приходит мысль, не дающая покоя, что Король обоснуется тут уже не как обещал на время, а навсегда... \
-	Благо ли это для Рокхилла? Действительно ли Барон пропал без вмешательства Короля?.."
+	tutorial = "Crime has always been a constant in your life, and you have always chosen the side of justice. \
+	You have risen through the ranks of the guards, and now lead them – ensure that they comply with the laws of this land.\
+	It has already been12 years since you have been in service to the King, who declared Rockhill his base immediately after the DISAPPEARANCE of Baron Eric Ravencroft.\
+	In sleepless nights, the thought constantly comes to you, giving no rest, that the King will settle here not as promised for a short time, but forever...\
+	Is this a blessing for Rockhill? Did the Baron really disappear without the King’s intervention?.."
 	whitelist_req = TRUE
 	outfit = /datum/outfit/job/roguetown/sheriff
 	advclass_cat_rolls = list(CTAG_SHERIFF = 2)
@@ -43,11 +43,11 @@
 
 /datum/advclass/sheriff
 	name = "Town Sheriff"
-	tutorial = "Преступность всегда была постоянной составляющей вашей жизни, и вы всегда выбирали сторону справедливости. \
-	Вы поднялись в ряды стражников, и теперь руководите ими - следите за тем, чтобы они соблюдали законы этой земли. \
-	Уже прошло 12 лет, как вы несете службу Королю, что объявил Рокхилл своей ставкой, сразу же после ПРОПАЖИ Барона. \
-	В бессонные ночи, вам все время приходит мысль, не дающая покоя, что Король обоснуется тут уже не как обещал на время, а навсегда... \
-	Благо ли это для Рокхилла? Действительно ли Барон пропал без вмешательства Короля?.."
+	tutorial = "Crime has always been a constant in your life, and you have always chosen the side of justice. \
+	You have risen through the ranks of the guards, and now lead them – ensure that they comply with the laws of this land.\
+	It has already been12 years, you have been serving the King, who declared Rockhill his stronghold, immediately after the Baron’s DISAPPEARANCE.\
+	In sleepless nights, the thought constantly comes to you, giving no rest, that the King will settle here not as promised for a short time, but forever...\
+	Is this a blessing for Rockhill? Did the Baron really disappear without the King’s intervention?.."
 
 	category_tags = list(CTAG_SHERIFF)
 	traits_applied = list(TRAIT_MEDIUMARMOR, TRAIT_GUARDSMAN, TRAIT_STEELHEARTED)

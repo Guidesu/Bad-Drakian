@@ -1695,7 +1695,7 @@ More uniquely, her rites always cut out the light in the room, then proc. 10 sec
 	if(user.has_status_effect(/datum/status_effect/debuff/ritesexpended))
 		to_chat(user,span_warning("I have performed enough rituals for the day... I must rest before communing more."))
 		return
-	var/riteselection = input(user, "Rituals of Brotherhood", src) as null|anything in matthiosrites //TA Lore edit. Можно сделать модульно, но так это будет сложнее мейнтейнить
+	var/riteselection = input(user, "Rituals of Brotherhood", src) as null|anything in matthiosrites //TA Lore edit. It can be done modularly, but it will be more difficult to maintain
 	switch(riteselection) // put ur rite selection here
 		if("Rite of Armaments")
 			if(user.has_status_effect(/datum/status_effect/debuff/armamentrites))

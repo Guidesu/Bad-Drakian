@@ -1,5 +1,5 @@
 #define CHAINWHOOSH         list('modular_twilight_axis/sound/combat/chainwoosh.ogg','modular_twilight_axis/sound/combat/chainhit.ogg')
-//Интенты
+//Intents
 
 /datum/intent/whip/chain_lash
     name = "chain lash"
@@ -47,7 +47,7 @@
     icon_state = "incut"
     item_d_type = "slash"
 
-// --- Сам предмет ---
+//--- The item itself ---
 
 /obj/item/rogueweapon/whip/witcher_chain
     name = "battle chain"
@@ -145,7 +145,7 @@
     transform_type = /obj/item/clothing/wrists/roguetown/bracers/witcher/bronze
 
 /*
-// ---  Цепь граггара пока коммент ---
+//--- Graggar's chain is currently commented ---
 
 /obj/item/rogueweapon/whip/witcher_chain/graggar
     name = "graggar battle chain"
@@ -314,7 +314,7 @@
 
 //SPECIAL
 
-// --- Визуальные эффекты полета и натяжения ---
+//--- Visual effects of flight and tension ---
 
 /obj/effect/temp_visual/chain_trail
     icon = 'icons/effects/effects.dmi'
@@ -346,7 +346,7 @@
     pixel_x = -16
     pixel_y = -16
 
-// --- Логика спешиала ---
+//--- Special logic ---
 
 /datum/special_intent/witcher_chain_hook
     name = "Chain Ensnare"
@@ -562,7 +562,7 @@
         span_userdanger("The sharp tip of the chain pierces me, the links lash out and wrap around my body!")
     )
 
-    // Урон при контакте наконечника (колющий с хорошим бронепробитием)
+    //Damage on tip contact (piercing with good armor penetration)
     if(hooked_target.mobility_flags & MOBILITY_STAND)
         apply_generic_weapon_damage(hooked_target, hook_damage, "stab", BODY_ZONE_CHEST, bclass = BCLASS_STAB)
 
@@ -628,7 +628,7 @@
         hooked_target.apply_status_effect(/datum/status_effect/debuff/vulnerable, 2 SECONDS)
         hooked_target.OffBalance(3 SECONDS)
 
-        // Завершающий удар наотмашь тяжелой петлей
+        //Finishing blow with a heavy overhand loop
         apply_generic_weapon_damage(hooked_target, final_damage, "blunt", BODY_ZONE_CHEST, bclass = BCLASS_BLUNT)
 
         playsound(target_turf, 'sound/combat/hits/blunt/flailhit.ogg', 100, TRUE)

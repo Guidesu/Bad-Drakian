@@ -8,12 +8,12 @@
 	allowed_sexes = list(MALE, FEMALE)
 	forbidden_races = list(RACES_DESPISED)
 	job_traits = list(TRAIT_WOODSMAN)
-	tutorial = "Авангард, названный так за их судьбу - оберегать дальние рубежи Рокхилла - стойко оберегает деревню и подходы к городу. \
-	Часто набранный из местных крестьянских сынов и дочерей, они часто отстаивают интересы не Короля или Барона, но своей деревни. \
-	Какое им дело до того что происходит в городе, если болотные твари наступают на их дом в деревне, убивают их соседей и друзей, \
-	знакомых с самых ранних лет жизни? \
-	Оставаясь одним из самых незаметных воинств, тем не менее Авангард остаётся тем, \
-	кто примет на себя первый удар всевозможных врагов."
+	tutorial = "The vanguard, so named for their destiny - to protect the distant borders of Rockhill - staunchly protects the village and the approaches to the city. \
+	Often recruited from local peasant sons and daughters, they often defend the interests not of the King or the Baron, but of their village.\
+	What business do they have with what happens in the city, if marsh creatures attack their home in the village, killing their neighbors and friends,\
+	acquaintances from the earliest years of life?\
+	Remaining one of the most inconspicuous military units, nevertheless, the Vanguard remains the one,\
+	who will take the first strike of all kinds of enemies."
 	display_order = JDO_VANGUARD
 	whitelist_req = TRUE
 
@@ -64,14 +64,14 @@
 // Melee goon
 /datum/advclass/vanguard/footsman
 	name = "Vanguard Footman"
-	tutorial = "Вы хорошо владеете мечом и обладаете навыками, полезными в ближнем бою. \
-	Вы будете стоять впереди. И защищать."
+	tutorial = "You are skilled with a sword and have skills useful in close combat. \
+	You will stand in front. And defend."
 	outfit = /datum/outfit/job/roguetown/vanguard/footsman
 
 	category_tags = list(CTAG_VANGUARD)
 	traits_applied = list(TRAIT_MEDIUMARMOR)
 	subclass_stats = list(
-		STATKEY_STR = 2,// У них даётся +3 точности + 1 СПД бонусом, так что логично открутить у них точность + скорость.
+		STATKEY_STR = 2,//They give +3 accuracy + 1 SPD bonus, so it’s logical to unscrew their accuracy + speed.
 		STATKEY_CON = 1,
 		STATKEY_WIL = 2
 	)
@@ -113,7 +113,7 @@
 			if("Warhammer & Shield")
 				beltr = /obj/item/rogueweapon/mace/warhammer
 				backl = /obj/item/rogueweapon/shield/wood
-				H.adjust_skillrank_up_to(/datum/skill/combat/maces, 4, TRUE) // Надеюсь, что четвертые навыки не сломают баланс в могилу. Надо смотреть.
+				H.adjust_skillrank_up_to(/datum/skill/combat/maces, 4, TRUE) //I hope that the fourth skills will not break the balance to the grave. We must watch.
 			if("Axe & Shield")
 				beltr = /obj/item/rogueweapon/stoneaxe/woodcut
 				backl = /obj/item/rogueweapon/shield/wood
@@ -144,8 +144,8 @@
 
 /datum/advclass/vanguard/archer
 	name = "Vanguard Archer"
-	tutorial = "Вы хорошо владеете приемами обращения с луком и довольно метко стреляете. \
-	Вы будете стоять позади и на высотах, чтобы прикрывать передние ряды."
+	tutorial = "You are good at using a bow and shoot quite accurately. \
+	You will stand behind and on the heights to cover the front lines."
 	outfit = /datum/outfit/job/roguetown/vanguard/archer
 
 	category_tags = list(CTAG_VANGUARD)
@@ -194,11 +194,11 @@
 		switch(weapon_choice)
 			if("Footman archer")
 				ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
-				H.change_stat(STATKEY_STR, 1) //Футману силу.
+				H.change_stat(STATKEY_STR, 1) //Strength to Footman.
 				H.adjust_skillrank_up_to(/datum/skill/combat/swords, 3, TRUE)
 			if("Light archer")
 				ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
-				H.change_stat(STATKEY_PER, 1) //Стрелку точность.
+				H.change_stat(STATKEY_PER, 1) //Arrow accuracy.
 				H.adjust_skillrank_up_to(/datum/skill/combat/knives, 3, TRUE)
 	H.verbs |= /mob/proc/haltyell
 
@@ -217,7 +217,7 @@
 
 /datum/advclass/vanguard/standard_bearer
 	name = "Vanguard Standard Bearer"
-	tutorial = "Вы хорошо показали себя в многочисленных боях и были удостоены чести нести знамя, дабы вдохновлять ваших товарищей."
+	tutorial = "You have performed well in numerous battles and have been given the honor of carrying the banner to inspire your comrades."
 	outfit = /datum/outfit/job/roguetown/vanguard/standard_bearer
 
 	category_tags = list(CTAG_VANGUARD)
@@ -249,7 +249,7 @@
 /datum/outfit/job/roguetown/vanguard/standard_bearer
 	beltr = /obj/item/rogueweapon/sword/iron
 	backl = /obj/item/rogueweapon/scabbard/gwstrap
-	r_hand = /obj/item/rogueweapon/spear/keep_standard //  Надо знамени авангарда добавить какие то бафы для толпы, чтобы подчеркнуть их стиль боя "Толпой гасят даже льва".
+	r_hand = /obj/item/rogueweapon/spear/keep_standard //We need to add some buffs to the vanguard's banner for the crowd to emphasize their fighting style "Even a lion is brought down by the crowd."
 	backpack_contents = list(
 		/obj/item/rogueweapon/huntingknife/idagger = 1,
 		/obj/item/rope/chain = 1,
@@ -314,14 +314,13 @@
 
 /obj/item/clothing/cloak/forrestercloak/vanguard
 	name = "vanguard cloak"
-	desc = "Плащ, который носят бойцы Авангарда. На воротнике, как правило, вышито имя владельца. Согласно традиции, плащи падших бойцов Авангарда сжигаются в присутствии Короля Энигмы, чтобы правитель этих земель помнил о каждом из тех, кто первым встречает удар зла, таящегося во мраке ночи."
+	desc = "The cloak worn by Vanguard fighters. The collar usually has the owner's name embroidered on it. According to tradition, the cloaks of fallen Vanguard fighters are burned in the presence of the King of Enigma so that the ruler of these lands remembers each of those who first meet the blow of the evil lurking in the darkness of night."
 	icon_state = "shadowcloak"
 	item_state = "shadowcloak"
 
 /obj/item/clothing/suit/roguetown/armor/leather/studded/warden/vanguard
 	name = "vanguard armor"
-	desc = "Многослойная броня, состоящая из колчужной подкладки под слоем дубленой кожи, поверх которых нашита тёмная ткань, скрывающая бойца в темноте. «Мы погибаем во мраке ночи, чтобы вы жили при свете дня»."
+	desc = "Multi-layered armor consisting of chainmail padding under a layer of tanned leather, over which a dark fabric is sewn to hide the fighter in the shadows. \"We die in the darkness of night so that you may live in the light of day.\""
 	icon = 'icons/roguetown/clothing/armor.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/armor.dmi'
 	icon_state = "shadowrobe"
-

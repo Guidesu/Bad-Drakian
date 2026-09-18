@@ -87,10 +87,10 @@ export const ArtGallery = () => {
             <Stack.Item>
               <Tabs>
                 <Tabs.Tab selected={activeTab === 'gallery'} onClick={() => setActiveTab('gallery')}>
-                  Галерея
+                  Gallery
                 </Tabs.Tab>
                 <Tabs.Tab selected={activeTab === 'logs'} onClick={() => setActiveTab('logs')}>
-                  Логи удаления ({data.deletion_logs?.length || 0})
+                  Deletion logs({data.deletion_logs?.length || 0})
                 </Tabs.Tab>
               </Tabs>
             </Stack.Item>
@@ -100,35 +100,35 @@ export const ArtGallery = () => {
             <Stack.Item grow>
               <Stack fill>
                 <Stack.Item width="220px">
-                  <Section title="Поиск и Сортировка" fill scrollable>
+                  <Section title="Search and Sort" fill scrollable>
                     <Input
                       fluid
-                      placeholder="Поиск по названию/автору..."
+                      placeholder="Search by name/author..."
                       value={searchQuery}
                       onChange={setSearchQuery}
                       style={{ marginBottom: '8px' }}
                     />
 
                     <Stack align="center" style={{ marginBottom: '12px' }}>
-                      <Stack.Item>Сортировать:</Stack.Item>
+                      <Stack.Item>Sort by:</Stack.Item>
                       <Stack.Item>
                         <Button
                           icon="clock"
                           selected={sortBy === 'date'}
                           onClick={() => setSortBy('date')}
-                          tooltip="Сначала новые"
+                          tooltip="Newest first"
                         />
                         <Button
                           icon="sort-alpha-down"
                           selected={sortBy === 'alphabet'}
                           onClick={() => setSortBy('alphabet')}
-                          tooltip="По алфавиту"
+                          tooltip="Alphabetically"
                         />
                         <Button
                           icon="heart"
                           selected={sortBy === 'likes'}
                           onClick={() => setSortBy('likes')}
-                          tooltip="По популярности"
+                          tooltip="By popularity"
                         />
                       </Stack.Item>
                     </Stack>
@@ -145,7 +145,7 @@ export const ArtGallery = () => {
                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                               <div>
                                 <b>{p.title}</b> <br/>
-                                <span style={{ fontSize: '10px', opacity: 0.7 }}>от {p.author}</span>
+                                <span style={{ fontSize: '10px', opacity: 0.7 }}>from{p.author}</span>
                               </div>
                               {getLikesCount(p.id) > 0 && (
                                 <span style={{ color: '#e74c3c', fontSize: '11px' }}>
@@ -161,7 +161,7 @@ export const ArtGallery = () => {
                 </Stack.Item>
 
                 <Stack.Item grow>
-                  <Section title="Просмотр" fill>
+                  <Section title="View" fill>
                     {selectedId ? (
                       <Stack vertical align="center">
                         <Stack.Item>
@@ -176,28 +176,28 @@ export const ArtGallery = () => {
                               imageRendering: 'pixelated'
                             }} />
                           ) : (
-                            <Box>Загрузка холста из архива...</Box>
+                            <Box>Loading canvas from archive...</Box>
                           )}
                         </Stack.Item>
 
                         <Stack.Item mt={2} textAlign="center">
                           <Box bold fontSize={2}>{data.paintings.find(p => p.id === selectedId)?.title}</Box>
-                          <Box italic>Автор: {data.paintings.find(p => p.id === selectedId)?.author}</Box>
+                          <Box italic>Author:{data.paintings.find(p => p.id === selectedId)?.author}</Box>
 
                           <Box color="#f4cf5c" fontSize="15px" mt={0.5}>
-                            Дата создания: {data.paintings.find(p => p.id === selectedId)?.ic_date || 'До Эпохи Нового Порядка'}
+                            Creation date:{data.paintings.find(p => p.id === selectedId)?.ic_date || 'Up to the Age of the New Order'}
                           </Box>
 
                           {data.is_admin && (
                             <>
                               <Box color="label" fontSize="15px" mt={0.5}>
-                                Ckey автора: {data.paintings.find(p => p.id === selectedId)?.author_ckey || 'неизвестно'}
+                                Ckey by author:{data.paintings.find(p => p.id === selectedId)?.author_ckey || 'Unknown'}
                               </Box>
                               <Box color="label" fontSize="15px" mt={0.5}>
-                                Создано: {data.paintings.find(p => p.id === selectedId)?.real_date || 'неизвестно'}
+                                Created: {data.paintings.find(p => p.id === selectedId)?.real_date || 'Unknown'}
                               </Box>
                               <Box color="label" fontSize="15px" mt={0.5}>
-                                Раунд создания: {data.paintings.find(p => p.id === selectedId)?.round_id || 'неизвестно'}
+                                Creation round:{data.paintings.find(p => p.id === selectedId)?.round_id || 'Unknown'}
                               </Box>
                             </>
                           )}
@@ -211,14 +211,14 @@ export const ArtGallery = () => {
                                 color={hasLiked(selectedId) ? 'good' : 'default'}
                                 onClick={() => act('like_painting', { id: selectedId })}
                               >
-                                {hasLiked(selectedId) ? 'Любимая картина!' : 'Мне нравится'} ({getLikesCount(selectedId)})
+                                {hasLiked(selectedId) ? 'Favorite painting!' : 'I like it'} ({getLikesCount(selectedId)})
                               </Button>
                             </Stack.Item>
 
                             {data.is_admin && (
                               <Stack.Item>
                                 <Button.Confirm color="bad" icon="trash" onClick={() => handleDelete(selectedId)}>
-                                  Удалить
+                                  Delete
                                 </Button.Confirm>
                               </Stack.Item>
                             )}
@@ -227,7 +227,7 @@ export const ArtGallery = () => {
                       </Stack>
                     ) : (
                       <Box italic textAlign="center" mt={10}>
-                        Выберите картину из списка слева.
+                        Select a card from the list on the left.
                       </Box>
                     )}
                   </Section>
@@ -238,9 +238,9 @@ export const ArtGallery = () => {
 
           {activeTab === 'logs' && data.is_admin && (
             <Stack.Item grow>
-              <Section title="Логи модерации" fill scrollable>
+              <Section title="Moderation logs" fill scrollable>
                 {data.deletion_logs?.length === 0 ? (
-                  <NoticeBox>Логи пусты. Картины не удалялись.</NoticeBox>
+                  <NoticeBox>Logs are empty. No cards were removed.</NoticeBox>
                 ) : (
                   <Stack vertical>
                     {data.deletion_logs?.map((log, index) => (

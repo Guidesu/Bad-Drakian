@@ -1,4 +1,4 @@
-// Формула рассчета сколько нужно игроков для возвышения, плюс фиксация этого числа раундстартом.
+//Formula for calculating how many players are needed to ascend, plus fixing this number with roundstart.
 /datum/antag_retainer/proc/set_cult_ascension_required_cultists(player_count)
 	cult_ascension_required_cultists = max(1, round(player_count / 6))
 

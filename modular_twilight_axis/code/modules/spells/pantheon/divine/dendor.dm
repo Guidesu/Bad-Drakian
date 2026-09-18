@@ -34,8 +34,8 @@
 	desc = "The vines hirt you, but protects!"
 
 /datum/intent/simple/beast_claws/slash
-	name = "Рассекающий удар"
-	desc = "Звериные когти помогают рвать свою добычу, заставляя её истекать кровью."
+	name = "Cleaving Strike"
+	desc = "Beast claws help tear their prey, causing it to bleed."
 	blade_class = BCLASS_CHOP
 	animname = "cut"
 	hitsound = "genslash"
@@ -57,7 +57,7 @@
 	possible_item_intents = list(/datum/intent/simple/beast_claws/slash)
 	can_parry = TRUE
 	wdefense = 7
-	// Временная замена до момента появления спрайтера. Увы.
+	//Temporary replacement until the spriter appears. Unfortunately.
 	item_state = null
 	lefthand_file = null
 	righthand_file = null
@@ -73,12 +73,12 @@
 // - - -
 
 /obj/effect/proc_holder/spell/self/beast_claws
-	name = "Когти зверя"
-	desc = "Вытянутые когти подобные острым лезвиям, способным как резать так и колоть. \
-	Старшие друиды рассказывают легенду, согласно которым Дендор использовал свои зверские когти, \
-	когда повздорил с Равоксом, богом войны. \
-	Их битва длилась три дэя, во время которых в леса было страшно даже заглядывать. \
-	Однако, на четвертый дэй все стихло, боги помирились."
+	name = "Beast's claws"
+	desc = "Elongated claws are like sharp blades that can both cut and pierce.\
+	The senior druids tell a legend, according to which Dendor used his beastly claws,\
+	when he had a quarrel with Ravox, the god of war.\
+	Their battle lasted three days, during which it was frightening even to look into the forests.\
+	However, on the fourth day, everything calmed down, the gods reconciled."
 	overlay_state = "dendor"
 	req_items = /obj/item/clothing/neck/roguetown/psicross/dendor
 	antimagic_allowed = TRUE
@@ -91,7 +91,7 @@
 
 	var/obj/item/active_hand_item = user.get_active_held_item()
 
-	// Предовтращение манипуляций с когтями оборотня.
+	//Prevention of werewolf claw manipulation.
 	if(istype(active_hand_item, /obj/item/rogueweapon/werewolf_claw))
 		revert_cast()
 		return FALSE
@@ -110,8 +110,8 @@
 // -- Debuff
 
 /atom/movable/screen/alert/status_effect/debuff/beast_rage
-	name = "Уставший зверь"
-	desc = "Мой внутренний зверь устал, как и я."
+	name = "Tired beast"
+	desc = "My inner beast is as tired as I am."
 	icon_state = "debuff"
 
 /datum/status_effect/debuff/beast_rage_weakness
@@ -127,8 +127,8 @@
 // -- Buff
 
 /atom/movable/screen/alert/status_effect/buff/beast_rage
-	name = "Буйствующий зверь"
-	desc = "Мой внутренний зверь буйствует! Силы переполняют меня, но мой разум гаснет!"
+	name = "A raging beast"
+	desc = "My inner beast is on a rampage! I am overwhelmed with strength, but my mind is fading!"
 	icon_state = "buff"
 
 /datum/status_effect/buff/beast_rage
@@ -150,14 +150,14 @@
 // -- Spell
 
 /obj/effect/proc_holder/spell/self/beast_rage
-	name = "Буйство зверя"
+	name = "Beast Rampage"
 	desc = ""
 	overlay_state = "dendor"
 	recharge_time = 3 MINUTES
 	req_items = /obj/item/clothing/neck/roguetown/psicross/dendor
 	sound = 'sound/magic/churn.ogg'
 	associated_skill = /datum/skill/magic/druidic
-	invocations = list("Вот она! Ярость дикого сердца!")
+	invocations = list("Here it is! The fury of a wild heart!")
 	invocation_type = "shout" //can be none, whisper, emote and shout
 	miracle = TRUE
 	devotion_cost = 125
@@ -169,7 +169,7 @@
 	user.Dizzy(10)
 
 /obj/effect/proc_holder/spell/targeted/create_seed
-	name = "Чудо создания семян"
+	name = "The Miracle of Seed Creation"
 	range = -1
 	overlay_state = "blesscrop"
 	releasedrain = 30
@@ -184,17 +184,17 @@
 /obj/effect/proc_holder/spell/targeted/create_seed/proc/get_seeds_dict()
 	var/list/allowed_seeds = list()
 
-	allowed_seeds["Болотная трава"] = /obj/item/seeds/swampweed
-	allowed_seeds["Табак"] = /obj/item/seeds/pipeweed
-	allowed_seeds["Капуста"] = /obj/item/seeds/cabbage
-	allowed_seeds["Картофель"] = /obj/item/seeds/potato
-	allowed_seeds["Лук"] = /obj/item/seeds/onion
-	allowed_seeds["Овес"] = /obj/item/seeds/wheat/oat
-	allowed_seeds["Пшеница"] = /obj/item/seeds/wheat
-	allowed_seeds["Чай"] = /obj/item/seeds/tea
-	allowed_seeds["Яблоня"] = /obj/item/seeds/apple
-	allowed_seeds["Ягодный куст (ядовитый)"] = /obj/item/seeds/berryrogue/poison
-	allowed_seeds["Ягодный куст"] = /obj/item/seeds/berryrogue
+	allowed_seeds["Swamp Grass"] = /obj/item/seeds/swampweed
+	allowed_seeds["Tobacco"] = /obj/item/seeds/pipeweed
+	allowed_seeds["Cabbage"] = /obj/item/seeds/cabbage
+	allowed_seeds["Potato"] = /obj/item/seeds/potato
+	allowed_seeds["Onion"] = /obj/item/seeds/onion
+	allowed_seeds["Oats"] = /obj/item/seeds/wheat/oat
+	allowed_seeds["Wheat"] = /obj/item/seeds/wheat
+	allowed_seeds["Tea"] = /obj/item/seeds/tea
+	allowed_seeds["Apple tree"] = /obj/item/seeds/apple
+	allowed_seeds["Berry bush (poisonous)"] = /obj/item/seeds/berryrogue/poison
+	allowed_seeds["Berry bush"] = /obj/item/seeds/berryrogue
 
 	return allowed_seeds
 
@@ -205,8 +205,8 @@
 
 	var/selected_option = input(
 		user,
-		"Семена какого растения вы хотите сотворить?",
-		"Создание семян"
+		"Seeds of which plant do you want to create?",
+		"Creating seeds"
 	) as null | anything in seeds_dict
 
 	if(!selected_option)

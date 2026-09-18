@@ -6,7 +6,7 @@
 
 /datum/map_adjustment/template/dunworld
 	map_file_name = "dun_world.dmm"
-	realm_name = "Twilight Axis"
+	realm_name = "the realm"
 	blacklist = list(
 		/datum/job/roguetown/royal_guard, 
 		/datum/job/roguetown/sheriff, 

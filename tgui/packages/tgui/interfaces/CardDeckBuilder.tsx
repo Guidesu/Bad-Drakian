@@ -240,26 +240,26 @@ const effectIconAssets: Record<string, string> = {
 };
 
 const effectDescriptions: Record<string, string> = {
-  morale: 'Прилив сил: +1 к силе остальных отрядов в этом ряду.',
-  scorch: 'Казнь: уничтожает сильнейшую карту противника.',
+  morale: 'Surge of strength: +1 to the strength of other units in this row.',
+  scorch: 'Execution: destroys the strongest enemy card.',
   scorch_infantry:
-    'Казнь: уничтожает сильнейшую пехоту врага, если его пехота имеет 10+ силы.',
-  scorch_global: 'Казнь: уничтожает сильнейшую карту или карты на поле.',
-  spy: 'Шпион: кладётся на поле врага и даёт вам две карты.',
-  medic: 'Медик: возвращает сильнейшую отбитую карту на поле.',
-  bond: 'Прочная связь: одинаковые карты с этим умением усиливают друг друга.',
-  agile: 'Проворство: тестовая метка гибкой карты.',
-  muster: 'Двойник: выкладывает такие же карты из руки и колоды.',
-  horn: 'Командирский рог: удваивает силу выбранного ряда на раунд.',
-  decoy: 'Чучело: возвращает сильнейшую вашу карту с поля в руку.',
-  berserk: 'Берсерк: под Мардрёмом превращается в медведя.',
-  mardroeme: 'Мардрём: превращает берсерков в ряду в медведей.',
+    'Execution: destroys the strongest enemy infantry if their infantry has 10+ strength.',
+  scorch_global: 'Execution: destroys the strongest card or cards on the field.',
+  spy: 'Spy: is placed on the enemy field and gives you two cards.',
+  medic: 'Medic: returns the strongest discarded card to the field.',
+  bond: 'Strong Bond: identical cards with this skill strengthen each other.',
+  agile: 'Agility: test marker of a flexible card.',
+  muster: 'Doppelganger: lays out identical cards from hand and deck.',
+  horn: "Commander's Horn: doubles the strength of the chosen row for a round.",
+  decoy: 'Scarecrow: returns your strongest card on the field to your hand.',
+  berserk: 'Berserk: under MarDrem transforms into a bear.',
+  mardroeme: 'MarDrem: transforms berserkers in the row into bears.',
   avenger:
-    'Призвание Мстителя: при уничтожении призывает сильную карту на своё место.',
-  clear_weather: 'Ясная погода: снимает всю погоду.',
-  frost: 'Мороз: снижает пехоту до 1.',
-  fog: 'Туман: снижает лучников до 1.',
-  rain: 'Дождь: снижает осаду до 1.',
+    "Avenger's Summon: upon destruction, summons a strong card in its place.",
+  clear_weather: 'Clear Weather: removes all weather.',
+  frost: 'Frost: reduces infantry to 1.',
+  fog: 'Fog: reduces archers to 1.',
+  rain: 'Rain: reduces siege to 1.',
 };
 
 const CardIconBadge = ({

@@ -72,7 +72,7 @@
 	name = "hussar's plate harness"
 	desc = "An ornate suit of plate armour made with Aavnr's finest Vyšvou steel, meant to be used by the Potentate's elite cavalry. A frame is attached to the back of the cuirass, and raptor feathers create the illusion of an angel's wings."
 	icon_state = "hussar"
-	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/onmob/32х48/armor.dmi'
+	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/onmob/32x48/armor.dmi'
 	icon = 'modular_twilight_axis/icons/roguetown/clothing/armor.dmi'
 	body_parts_covered = COVERAGE_ALL_BUT_HANDLEGS
 	equip_delay_self = 5 SECONDS

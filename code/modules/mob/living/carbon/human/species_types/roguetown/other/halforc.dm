@@ -16,7 +16,7 @@
 	being born in these rough places otherwise devoid of a fairer sex. Your mother-clan is in thrall \
 	to the Ironmask. True orcs would kill you on sight, seeing you as a mongrel dog, and non-orcish \
 	people cannot decide between regarding you with either mere distrust or outright disgust. Yet \
-	somehow your wandering feet came to Twilight Axis, where half-orcs ply muscle and their hardiness \
+	somehow your wandering feet came to the realm, where half-orcs ply their muscle and hardiness \
 	in the rough underbelly or outer reaches of society."
 
 	skin_tone_wording = "Clan"
@@ -88,6 +88,8 @@
 		/datum/customizer/bodypart_feature/face_detail,
 		/datum/customizer/bodypart_feature/underwear,
 		/datum/customizer/bodypart_feature/legwear,
+		/datum/customizer/bodypart_feature/pubes,
+		/datum/customizer/bodypart_feature/pits,
 		/datum/customizer/bodypart_feature/piercing,
 		/datum/customizer/organ/testicles/anthro,
 		/datum/customizer/organ/penis/anthro,

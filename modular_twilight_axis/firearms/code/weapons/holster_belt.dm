@@ -1,6 +1,6 @@
 /obj/item/storage/belt/rogue/leather/twilight_holsterbelt
 	name = "holster belt"
-	desc = "Ремень с кобурой. Пришлось пожертвовать местом на поясе ради возможности удобно носить пистоль."
+	desc = "Belt with holster. Had to sacrifice space on the belt for the ability to carry a pistol conveniently."
 	icon = 'modular_twilight_axis/firearms/icons/obj_belts.dmi'
 	mob_overlay_icon = 'modular_twilight_axis/firearms/icons/onmob_belts.dmi'
 	icon_state = "holsterbelt"
@@ -61,13 +61,13 @@
 /obj/item/storage/belt/rogue/leather/twilight_holsterbelt/examine(mob/user)
 	. = ..()
 	if(pistol.len == 1)
-		. += span_notice("В кобуре есть оружие.")
+		. += span_notice("There is a weapon in the holster.")
 	else
-		. += span_notice("Кобура пустая.")
+		. += span_notice("The holster is empty.")
 
 /obj/item/storage/belt/rogue/leather/twilight_holsterbelt/lord
 	name = "plaque holster belt"
-	desc = "Пояс с позолоченными металлическими вставками, демонстрирующими богатство и статус. Оснащен кобурой для удобного размещения пистоля."
+	desc = "Belt with gilded metal inserts, demonstrating wealth and status. Equipped with a holster for convenient pistol placement."
 	sellprice = 50
 	sewrepair = FALSE
 	anvilrepair = /datum/skill/craft/armorsmithing
@@ -82,7 +82,7 @@
 
 /obj/item/storage/belt/rogue/leather/twilight_holsterbelt/black
 	name = "black holster belt"
-	desc = "Чёрный ремень с кобурой. Пришлось пожертвовать местом на поясе ради возможности удобно носить пистоль."
+	desc = "Black belt with holster. Had to sacrifice space on the belt for the ability to carry the pistol conveniently."
 	icon = 'modular_twilight_axis/firearms/icons/obj_belts_black.dmi'
 	mob_overlay_icon = 'modular_twilight_axis/firearms/icons/onmob_belts_black.dmi'
 
@@ -94,7 +94,7 @@
 
 /obj/item/storage/belt/rogue/leather/twilight_holsterbelt/blackpowder
 	name = "blackpowder order holster belt"
-	desc = "Ремень с кобурой образца Ордена Чёрного Пороха. Улучшенная посадка позволяет носить пистоль без потери места на поясе."
+	desc = "Belt with holster of the Black Powder Order model. Improved fit allows carrying the pistol without losing belt space."
 	icon = 'modular_twilight_axis/firearms/icons/obj_belts_blackpowder.dmi'
 	mob_overlay_icon = 'modular_twilight_axis/firearms/icons/onmob_belts_blackpowder.dmi'
 	component_type = /datum/component/storage/concrete/roguetown/belt

@@ -235,7 +235,7 @@
 	. += span_info("You can wrap an item in paper to create a mailable package.")
 	if(isobserver(user) && ghosts_allowed())
 		. += span_info("Mail from beyond the borders can also be received.")
-	. += span_info("Роль придворного агента может посылать бесплатные письма через ПКМ-панель, но только деснице.") // TA EDIT
+	. += span_info("The Court Agent role can send free letters via the RMB panel, but only to the Hand.") // TA EDIT
 	if(HAS_TRAIT(user, TRAIT_INQUISITION))
 		. += span_info("<br>The MARQUETTE can be accessed via a secret compartment fitted within the HERMES. Load a Marque to access it.")
 		. += span_info("You can send arrival slips, accusation slips, fully loaded INDEXERs or confessions here.")

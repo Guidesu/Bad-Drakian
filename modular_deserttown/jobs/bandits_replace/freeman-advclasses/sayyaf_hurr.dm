@@ -1,6 +1,6 @@
 /datum/advclass/sayyaf_hurr
 	name = "Sayyaf-Hurr"
-	tutorial = "«... Сайяф-Хурр, так назвали его пустынники, мечник опьянённый свободой и волей ...»"
+	tutorial = "\"... Sayyaf-Hurr, that is what the desert folk called him: a swordsman intoxicated by freedom and will...\""
 	allowed_sexes = list(MALE, FEMALE)
 	
 	outfit = /datum/outfit/job/roguetown/freeman/sayyaf_hurr

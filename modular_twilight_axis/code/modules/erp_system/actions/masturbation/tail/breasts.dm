@@ -1,8 +1,8 @@
 /datum/erp_action/self/tail/squeeze_breasts
 	abstract = FALSE
 
-	name = "Сжать грудь хвостом"
+	name = "Squeeze chest with tail"
 	required_target_organ = SEX_ORGAN_BREASTS	
-	message_start = "{actor} обвивает хвост вокруг груди."
-	message_tick = "{actor} {force} и {speed} сжимает хвостом грудь."
-	message_finish =  "{actor} отпускает грудь."
+	message_start = "{actor} wraps tail around chest."
+	message_tick = "{actor} {force} and {speed} squeezes its chest with its tail."
+	message_finish =  "{actor} lets go of his chest."

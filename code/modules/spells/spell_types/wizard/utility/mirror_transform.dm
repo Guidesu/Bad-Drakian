@@ -58,7 +58,7 @@
 
 	switch(chosen)
 		//TA addition start - new ERP SYSTEM
-//		if("Nudeshot")  // Надо будет сделать кнопку добавления в NSFW галерею и кнопку удаления от туда картинок. Это уже потом.
+//if("Nudeshot") // It will be necessary to create a button for adding to the NSFW gallery and a button for removing pictures from there. That comes later.
 //			H.mirror_set_nudeshot_url()
 		//TA addition end - new ERP SYSTEM
 		if("Hairstyle")

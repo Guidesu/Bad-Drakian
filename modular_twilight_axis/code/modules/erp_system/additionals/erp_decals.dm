@@ -18,6 +18,8 @@
 	if(!reagents)
 		reagents = new /datum/reagents(reagents_capacity)
 		reagents.my_atom = src
+	// Organic residue eventually dries away even when nobody cleans or consumes it.
+	QDEL_IN(src, 20 MINUTES)
 
 /obj/effect/decal/cleanable/coom/Destroy()
 	if(reagents)
@@ -46,10 +48,10 @@
 				continue
 
 			playsound(user, pick('sound/misc/mat/guymouth (1).ogg','sound/misc/mat/guymouth (2).ogg','sound/misc/mat/guymouth (3).ogg','sound/misc/mat/guymouth (4).ogg','sound/misc/mat/guymouth (5).ogg'), 100, FALSE, ignore_walls = FALSE)
-			user.visible_message("<span class='love'>[user] начинает облизывать [src].</span>")
+			user.visible_message("<span class='love'>[user] begins to lick [src].</span>")
 			if(do_after(L, 25, target = src))
 				playsound(user, pick('sound/misc/mat/mouthend (1).ogg','sound/misc/mat/mouthend (2).ogg'), 100, FALSE, ignore_walls = FALSE)
-				user.visible_message("<span class='love'>[user] облизывает [src] нежно.</span>")
+				user.visible_message("<span class='love'>[user] licks [src] tenderly.</span>")
 				var/take = min(6, M.reagents.total_volume)
 				if(user.reagents && take > 0)
 					M.reagents.trans_to(user, take, 1, TRUE, TRUE)

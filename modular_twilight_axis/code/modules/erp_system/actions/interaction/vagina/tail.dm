@@ -1,9 +1,9 @@
 /datum/erp_action/other/vagina/tail
 	abstract = FALSE
-	name = "Использовать хвост"
+	name = "Use tail"
 	required_target_organ = SEX_ORGAN_TAIL
-	message_start = "{actor} {force} и {speed} хватает хвост {partner}, прижимая его к своему лону."
-	message_tick = "{actor} {force} и {speed} водит хвостом {partner} в своей киске."
-	message_finish =  "{actor} вытаскивает хвост {partner} из своего влагалища."
-	message_climax_active = "{actor} кончает, киской сжимая хвост {partner}."
+	message_start = "{actor} {force} and {speed} grab {partner}'s tail, pressing it to her womb."
+	message_tick = "{actor} {force} and {speed} drive {partner}'s tail in her pussy."
+	message_finish =  "{actor} pulls {partner}'s tail out of her vagina."
+	message_climax_active = "{actor} cums, squeezing {partner}'s tail with her pussy."
 

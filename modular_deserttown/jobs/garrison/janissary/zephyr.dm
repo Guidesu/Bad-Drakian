@@ -1,8 +1,8 @@
 /datum/advclass/janissary/zephyr
 	name = "Janissary Zephyr"
-	tutorial = "Ты — профессиональный солдат Султанского воинства, мастер дальнего боя. \
-        Твой взор остер, а рука тверда: ты выслеживаешь уязвимости в доспехах врага, \
-        неся погибель любому, кто осмелится бросить вызов порядку Султаната."
+	tutorial = "You are a professional soldier of the Sultan’s army, a master of ranged combat. \
+        Your gaze is sharp, and your hand is steady: you track weaknesses in the enemy's armor,\
+        bringing death to anyone who dares to challenge the order of the Sultanate."
 	outfit = /datum/outfit/job/roguetown/janissary/zephyr
 
 	category_tags = list(CTAG_JANISSARY)

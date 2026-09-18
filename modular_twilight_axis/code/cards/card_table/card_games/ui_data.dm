@@ -69,53 +69,53 @@
 	var/list/rules = list()
 	switch(game_type)
 		if(CARD_TABLE_GAME_FOOL)
-			rules += "Цель: первым избавиться от всех карт после окончания колоды."
-			rules += "Атакующий кладет карту, защитник бьет старшей той же масти или козырем."
+			rules += "Goal: be the first to get rid of all the cards after the deck runs out."
+			rules += "The attacker puts down a card, the defender hits the highest one of the same suit or a trump card."
 			if(fool_variant == CARD_TABLE_FOOL_THROW_IN || fool_variant == CARD_TABLE_FOOL_THROW_TRANSFER)
-				rules += "Этруский вариант: дополнительные карты можно подкидывать по рангу уже лежащих карт. В первом бою максимум 5 атак, дальше можно подкидывать, пока у защитника есть карты на руке."
+				rules += "Etruscan variant: additional cards can be thrown according to the rank of cards already lying. In the first battle there is a maximum of 5 attacks, then you can throw them as long as the defender has cards in his hand."
 			if(fool_variant == CARD_TABLE_FOOL_TRANSFER || fool_variant == CARD_TABLE_FOOL_THROW_TRANSFER)
-				rules += "Отаванский вариант: защитник может перевести ход картой того же ранга."
+				rules += "Otavan variant: the defender can transfer the move with a card of the same rank."
 			if(fool_variant == CARD_TABLE_FOOL_CLASSIC)
-				rules += "Хаммерхолдский вариант: одна атака и одна защита за ход."
+				rules += "Hammerhold variant: one attack and one defense per turn."
 		if(CARD_TABLE_GAME_BLACKJACK)
-			rules += "Цель: набрать ближе к 21, не перебрав."
-			rules += "Взять берет карту, Оставить фиксирует руку."
-			rules += "Дилер всегда один из игроков. [dealer_rotation_label()]."
+			rules += "Goal: get closer to 21 without going overboard."
+			rules += "Take takes a card, Leave fixes the hand."
+			rules += "The dealer is always one of the players. [dealer_rotation_label()]."
 			switch(blackjack_variant)
 				if(CARD_TABLE_BLACKJACK_GRON)
-					rules += "Гроннский: туз считается за 1; валет, дама и король за 11."
+					rules += "Gronnsky: ace counts as 1; jack, queen and king are 11."
 				if(CARD_TABLE_BLACKJACK_VALORIA)
-					rules += "Валорийский: туз, валет, дама и король считаются за 10."
+					rules += "Valorian: ace, jack, queen and king are 10."
 				if(CARD_TABLE_BLACKJACK_GRENZELHOFT)
-					rules += "Грензельхофтский: туз за 10, но два туза дают 21; валет, дама и король за 10."
+					rules += "Grenzelhoft: ace is 10, but two aces are 21; jack, queen and king count as 10."
 				if(CARD_TABLE_BLACKJACK_KAZENGUN)
-					rules += "Казенгунский: туз, валет, дама и король считаются за 1."
+					rules += "Kazengunsky: ace, jack, queen and king count as 1."
 				else
-					rules += "Азурийский: туз за 11, но два туза дают 21; валет, дама и король за 10."
+					rules += "Azurian: ace counts as 11, but two aces give 21; jack, queen and king for 10."
 		if(CARD_TABLE_GAME_POKER)
-			rules += "Цель: собрать лучшую комбинацию."
-			rules += "Ставки: введите сумму. Если сумма не выше текущей ставки, кнопка Ставка делает чек или поддержку; если выше - поднимает ставку. Ва-банк ставит все, Отказаться сбрасывает руку."
+			rules += "Goal: collect the best combination."
+			rules += "Bets: Enter the amount. If the amount is not higher than the current bet, the Bet button checks or supports; if higher, he raises the bet. All-in bets everything, Refuse folds the hand."
 			switch(poker_variant)
 				if(CARD_TABLE_POKER_TEXAS)
-					rules += "Ранешенский: у игрока 2 карты, на столе 5 общих карт."
+					rules += "Raneshensky: the player has 2 cards, there are 5 community cards on the table."
 				if(CARD_TABLE_POKER_OMAHA)
-					rules += "Валорийский: у игрока 4 карты, на столе 5 общих карт."
+					rules += "Valorian: the player has 4 cards, there are 5 community cards on the table."
 				if(CARD_TABLE_POKER_STUD)
-					rules += "Гиза: игрок получает 5 личных карт без обмена."
+					rules += "Giza: The player receives 5 personal cards without exchanging."
 				else
-					rules += "Азурийский: игрок получает 5 карт и может один раз заменить одну карту."
-			rules += "Дилер всегда один из игроков. [dealer_rotation_label()]."
+					rules += "Asurian: The player receives 5 cards and can replace one card once."
+			rules += "The dealer is always one of the players. [dealer_rotation_label()]."
 			if(poker_uses_community_cards())
-				rules += "Ранешенский, Валорийский и Гиза: общие карты открываются по одной за круг, после каждой карты повторяется круг ставок."
+				rules += "Raneshensky, Valorian and Giza: community cards are revealed one per round, after each card the round of bets is repeated."
 			else
-				rules += "Азурийский: общих карт на столе нет, сравниваются только руки игроков."
+				rules += "Asurian: there are no community cards on the table, only the players' hands are compared."
 		if(CARD_TABLE_GAME_SOLITAIRE)
-			rules += "Цель: разложить карты по стопкам пасьянса."
+			rules += "Goal: arrange the cards into solitaire piles."
 			if(solitaire_variant == CARD_TABLE_SOLITAIRE_SPIDER)
-				rules += "Паук: две колоды, десять колонок. Запас сдает по карте в каждую колонку."
-				rules += "Переносить можно открытую нисходящую последовательность одной масти. Собранная масть от короля до туза снимается."
+				rules += "Spider: two decks, ten columns. The stock deals a card to each column."
+				rules += "You can transfer an open descending sequence of the same suit. The collected suit from king to ace is removed."
 			else
-				rules += "Солитер: семь колонок, запас и четыре базы по мастям от туза до короля."
+				rules += "Solitaire: seven columns, stock and four bases in suits from Ace to King."
 	return rules
 
 /datum/card_table_session/proc/build_ui_data(mob/user) as /list

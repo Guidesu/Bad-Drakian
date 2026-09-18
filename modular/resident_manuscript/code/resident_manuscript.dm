@@ -2,7 +2,7 @@
 	var/list/map_names
 	var/enabled = TRUE
 	var/realm_key = "azuria"
-	var/issued_place = "Герцогство Азурия"
+	var/issued_place = "Duchy of Azuria"
 	var/uses_azuria_titles = FALSE
 	var/uses_rockhill_titles = FALSE
 	var/uses_resident_tavern_spawn = FALSE
@@ -17,7 +17,7 @@
 /datum/resident_manuscript_map_profile/rockhill
 	map_names = list("Rockhill")
 	realm_key = "rockhill"
-	issued_place = "Королевство Энигмы, Рокхилл"
+	issued_place = "Kingdom of Enigma, Rockhill"
 	uses_azuria_titles = FALSE
 	uses_rockhill_titles = TRUE
 	uses_resident_tavern_spawn = TRUE
@@ -26,7 +26,7 @@
 	map_names = list("Desert Town")
 	enabled = FALSE
 	realm_key = "desert_town"
-	issued_place = "Пустынный город"
+	issued_place = "Desert City"
 	uses_azuria_titles = FALSE
 
 /proc/get_resident_manuscript_map_profile(map_name)
@@ -62,7 +62,7 @@
 /proc/resident_manuscripts_enabled()
 	var/datum/resident_manuscript_map_profile/map_profile = get_resident_manuscript_map_profile()
 	if(!map_profile.enabled)
-		// TO DO - нужно дописать для карты отдельные параметры, так как контент карты и культура сильно отличаются от Dun World
+		//TO DO - you need to add individual parameters for the map, since the content of the map and culture are very different from Dun World
 		return FALSE
 	return TRUE
 
@@ -144,8 +144,8 @@
 	)
 
 /obj/item/book/granter/resident_manuscript
-	name = "Грамота жителя"
-	desc = "Тонкая грамота на плотной бумаге, подтверждающая законное проживание под властью Короны."
+	name = "Resident Certificate"
+	desc = "A thin letter on thick paper confirming the legality residence under the authority of the Crown."
 	icon = 'icons/roguetown/items/misc.dmi'
 	icon_state = "contractsigned"
 	oneuse = FALSE
@@ -256,7 +256,7 @@
 	if(document_profile?.display_name)
 		name = document_profile.display_name
 	else
-		name = "Грамота жителя"
+		name = "Resident Certificate"
 	icon_state = "contractsigned"
 	if(auto_stamp_seals)
 		stamp_default_seals()
@@ -512,14 +512,14 @@
 	if(!params)
 		params = list()
 	owner_character_key = null
-	owner_name = sanitize_manuscript_field(params["owner_name"], MAX_NAME_LEN, "Неизвестный")
+	owner_name = sanitize_manuscript_field(params["owner_name"], MAX_NAME_LEN, "Unknown")
 	owner_age = normalize_age_key(params["owner_age"])
 	owner_status_key = normalize_status_key(params["owner_status_key"])
 	is_bound = TRUE
 	if(document_profile?.display_name)
 		name = document_profile.display_name
 	else
-		name = "Грамота жителя"
+		name = "Resident Certificate"
 	icon_state = "contractsigned"
 	undetectable_fake = can_write_master_forgery(user)
 	authority_validated = FALSE
@@ -527,14 +527,14 @@
 	detection_results = list()
 	detection_note_keys = list()
 	playsound(user, 'sound/items/write.ogg', 40, TRUE, -2)
-	to_chat(user, span_notice("Вы завершаете подозрительную грамоту."))
+	to_chat(user, span_notice("You complete a suspicious letter."))
 	return TRUE
 
 /obj/item/book/granter/resident_manuscript/proc/claim_residence(mob/living/carbon/human/user)
 	if(!can_claim_residence(user))
 		return FALSE
 	ADD_TRAIT(user, TRAIT_RESIDENT, TRAIT_GENERIC)
-	to_chat(user, span_notice("Печати достаточны: вас признают жителем этих земель."))
+	to_chat(user, span_notice("The seals are sufficient: you are recognized as a resident of these lands."))
 	return TRUE
 
 /obj/item/book/granter/resident_manuscript/proc/handle_stamp(mob/living/carbon/human/user)
@@ -544,13 +544,13 @@
 	if(!stamp_seal(seal_key, user, FALSE))
 		return FALSE
 	playsound(user, 'sound/items/write.ogg', 50, TRUE, -2)
-	to_chat(user, span_notice("Вы вдавливаете свою печать в грамоту."))
+	to_chat(user, span_notice("You press your seal into the document."))
 	return TRUE
 
 /obj/item/book/granter/resident_manuscript/proc/log_detection_attempt(mob/living/carbon/human/user, result, method = "unknown", roll_success, chance)
-	var/log_ckey = user.ckey || user.key || "нет ckey"
-	var/character_name = user.real_name || user.name || "Неизвестно"
-	var/scroll_owner_name = owner_name || "Не закреплена"
+	var/log_ckey = user.ckey || user.key || "no ckey"
+	var/character_name = user.real_name || user.name || "Unknown"
+	var/scroll_owner_name = owner_name || "Not assigned"
 	var/roll_success_text = isnull(roll_success) ? "n/a" : "[roll_success]"
 	var/chance_text = isnull(chance) ? "n/a" : "[chance]"
 	var/log_line = "RESIDENT MANUSCRIPT CHECK: document=[REF(src)] inspector_ckey=[log_ckey] inspector_name=[character_name] method=[method] roll_success=[roll_success_text] chance=[chance_text] shown_result=[result] fake=[is_fake] master_fake=[undetectable_fake] authority_validated=[authority_validated] scroll_owner=[scroll_owner_name]"
@@ -561,7 +561,7 @@
 	LAZYSET(detection_results, detection_key, result)
 	log_detection_attempt(user, result, method, roll_success, chance)
 	if(result == RESIDENT_MANUSCRIPT_VERIFICATION_FAKE)
-		to_chat(user, span_warning("Вы замечаете признаки подделки в грамоте."))
+		to_chat(user, span_warning("You notice signs of forgery in the document."))
 	else
 		var/note_key = pick(resident_manuscript_validation_note_keys())
 		LAZYSET(detection_note_keys, detection_key, note_key)
@@ -611,9 +611,9 @@
 /obj/item/book/granter/resident_manuscript/examine(mob/user)
 	. = ..()
 	if(is_bound && owner_name)
-		. += span_info("Грамота выдана на имя [owner_name].")
+		. += span_info("The certificate was issued in the name of [owner_name].")
 	else
-		. += span_info("Грамота еще не закреплена за владельцем.")
+		. += span_info("The certificate has not yet been assigned to the owner.")
 
 /obj/item/book/granter/resident_manuscript/attack_self(mob/living/user)
 	ui_interact(user)
@@ -636,12 +636,12 @@
 			ui_interact(user)
 			return TRUE
 		if(bind_to_holder(user))
-			to_chat(user, span_notice("Вы заполняете грамоту и закрепляете ее за своим именем."))
+			to_chat(user, span_notice("You fill out the certificate and assign it to your name."))
 			playsound(user, 'sound/items/write.ogg', 40, TRUE, -2)
 			return TRUE
 	if(handle_stamp(user))
 		return TRUE
-	to_chat(user, span_warning("Вы не можете добавить в эту грамоту ничего надлежащего."))
+	to_chat(user, span_warning("You cannot add anything appropriate to this letter."))
 	return TRUE
 
 /obj/item/book/granter/resident_manuscript/ui_state(mob/user)
@@ -650,7 +650,7 @@
 /obj/item/book/granter/resident_manuscript/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, "ResidentManuscript", "Грамота жителя")
+		ui = new(user, src, "ResidentManuscript", "Resident Certificate")
 		ui.open()
 
 /obj/item/book/granter/resident_manuscript/ui_data(mob/user)
@@ -743,16 +743,16 @@
 	return FALSE
 
 /obj/item/book/granter/resident_manuscript/blank
-	name = "Чистая грамота жителя"
-	desc = "Чистая грамота жителя. Заполните ее пером, затем принесите надлежащим властям для печатей."
+	name = "Clean certificate of a resident"
+	desc = "Clean certificate of a resident. Fill it out with a pen, then bring it to the proper authorities for stamps."
 	icon_state = "contractunsigned"
 	auto_stamp_seals = FALSE
 	auto_bind_on_equip = FALSE
 	requires_feather_to_bind = TRUE
 
 /obj/item/book/granter/resident_manuscript/fake
-	name = "Подозрительная грамота жителя"
-	desc = "Грамота жителя, происхождение которой лучше не обсуждать."
+	name = "Suspicious letter from a resident"
+	desc = "Letter from a resident, the origin of which is best not discussed."
 	auto_stamp_seals = FALSE
 	auto_bind_on_equip = FALSE
 	is_fake = TRUE
@@ -766,181 +766,181 @@
 /obj/item/book/granter/resident_manuscript/roundstart
 
 /obj/item/book/granter/resident_manuscript/imperial
-	desc = "Имперская грамота покровительства, скрепленная контрасигнацией канцелярии."
+	desc = "Imperial letter of patronage, countersigned by the Chancellery."
 	document_profile_id = "imperial"
 
 /obj/item/book/granter/resident_manuscript/blank/imperial
-	desc = "Чистая имперская грамота покровительства. Заготовка для канцелярского заполнения и заверения."
+	desc = "Pure imperial charter of patronage. Blank for clerical filling and certification."
 	document_profile_id = "imperial"
 
 /obj/item/book/granter/resident_manuscript/fake/imperial
-	desc = "Имперская грамота покровительства, происхождение которой лучше не обсуждать."
+	desc = "Imperial charter of patronage, the origin of which is best left undiscussed."
 	document_profile_id = "imperial"
 
 /obj/item/book/granter/resident_manuscript/enigma_crown
-	desc = "Коронная грамота Энигмы, удостоверяющая королевские полномочия предъявителя на Рокхилле."
+	desc = "Enigma Crown Charter certifying the bearer's royal credentials on Rockhill."
 	document_profile_id = "enigma_crown"
 
 /obj/item/book/granter/resident_manuscript/blank/enigma_crown
-	desc = "Чистая коронная грамота Энигмы. Заполните ее пером, затем принесите за печатью королевского двора."
+	desc = "Pure Enigma crown letter. Fill it out with a pen, then bring it for the seal of the royal court."
 	document_profile_id = "enigma_crown"
 
 /obj/item/book/granter/resident_manuscript/fake/enigma_crown
-	desc = "Коронная грамота Энигмы, происхождение которой лучше не обсуждать."
+	desc = "Crown letter of Enigma, the origin of which is best not discussed."
 	document_profile_id = "enigma_crown"
 
 /obj/item/book/granter/resident_manuscript/valorian_church
-	desc = "Валорийская грамота Святого Престола, признающая церковный сан предъявителя на Рокхилле."
+	desc = "Valorian charter of the Holy See recognizing the ecclesiastical office of the bearer on Rockhill."
 	document_profile_id = "valorian_church"
 
 /obj/item/book/granter/resident_manuscript/blank/valorian_church
-	desc = "Чистая валорийская грамота Святого Престола. Заполните ее пером, затем принесите за церковной печатью."
+	desc = "Pure Valorian charter of the Holy See. Fill it out with a pen, then bring it for the church seal."
 	document_profile_id = "valorian_church"
 
 /obj/item/book/granter/resident_manuscript/fake/valorian_church
-	desc = "Валорийская грамота Святого Престола, происхождение которой лучше не обсуждать."
+	desc = "Valorian charter of the Holy See, the origin of which is best not discussed."
 	document_profile_id = "valorian_church"
 
 /obj/item/book/granter/resident_manuscript/grenzelhoft_mission
-	desc = "Имперское командировочное удостоверение, признающее предъявителя частью направленного отряда."
+	desc = "Imperial travel certificate recognizing the bearer as part of the dispatched detachment."
 	document_profile_id = "grenzelhoft_mission"
 
 /obj/item/book/granter/resident_manuscript/blank/grenzelhoft_mission
-	desc = "Чистое имперское командировочное удостоверение. Заготовка для канцелярского заполнения и заверения."
+	desc = "Blank Imperial Travel Certificate. Blank for clerical filling and certification."
 	document_profile_id = "grenzelhoft_mission"
 
 /obj/item/book/granter/resident_manuscript/fake/grenzelhoft_mission
-	desc = "Имперское командировочное удостоверение, происхождение которого лучше не обсуждать."
+	desc = "Imperial travel certificate, the origin of which is best left undiscussed."
 	document_profile_id = "grenzelhoft_mission"
 
 /obj/item/book/granter/resident_manuscript/heartfelt_identity
-	desc = "Хартфельтское удостоверение личности, заверяющее имя и положение предъявителя."
+	desc = "Hartfelt identification card certifying the name and position of the bearer."
 	document_profile_id = "heartfelt_identity"
 
 /obj/item/book/granter/resident_manuscript/blank/heartfelt_identity
-	desc = "Чистое хартфельтское удостоверение личности. Заготовка для канцелярского заполнения и заверения."
+	desc = "Clean Hartfelt ID. Blank for clerical filling and certification."
 	document_profile_id = "heartfelt_identity"
 
 /obj/item/book/granter/resident_manuscript/fake/heartfelt_identity
-	desc = "Хартфельтское удостоверение личности, происхождение которого лучше не обсуждать."
+	desc = "Hartfelt ID, the origin of which is best left undiscussed."
 	document_profile_id = "heartfelt_identity"
 
 /obj/item/book/granter/resident_manuscript/heartfelt_noble
-	desc = "Свидетельство о дворянстве, заверяющее благородное положение предъявителя."
+	desc = "Certificate of nobility, certifying the noble position of the bearer."
 	document_profile_id = "heartfelt_noble"
 
 /obj/item/book/granter/resident_manuscript/blank/heartfelt_noble
-	desc = "Чистое свидетельство о дворянстве. Заготовка для канцелярского заполнения и заверения."
+	desc = "A clean certificate of nobility. Blank for clerical filling and certification."
 	document_profile_id = "heartfelt_noble"
 
 /obj/item/book/granter/resident_manuscript/fake/heartfelt_noble
-	desc = "Свидетельство о дворянстве, происхождение которого лучше не обсуждать."
+	desc = "Certificate of nobility, the origin of which is best not discussed."
 	document_profile_id = "heartfelt_noble"
 
 /obj/item/book/granter/resident_manuscript/guards
-	desc = "Гарнизонная грамота, удостоверяющая службу предъявителя в городском гарнизоне."
+	desc = "Garrison certificate certifying the bearer's service in the city garrison."
 	document_profile_id = "guards"
 
 /obj/item/book/granter/resident_manuscript/blank/guards
-	desc = "Чистая гарнизонная грамота. Заполните ее пером, затем принесите надлежащим властям для печатей."
+	desc = "Clean garrison letter. Fill it out with a pen, then bring it to the proper authorities for stamps."
 	document_profile_id = "guards"
 
 /obj/item/book/granter/resident_manuscript/fake/guards
-	desc = "Гарнизонная грамота, происхождение которой лучше не обсуждать."
+	desc = "Garrison charter, the origin of which is best not discussed."
 	document_profile_id = "guards"
 
 /obj/item/book/granter/resident_manuscript/church
-	desc = "Церковная грамота Десятеричной Церкви, признающая предъявителя верным чадом веры."
+	desc = "Ecclesiastical charter of the Church of the Ten, recognizing the bearer as a faithful child of the faith."
 	document_profile_id = "church"
 
 /obj/item/book/granter/resident_manuscript/blank/church
-	desc = "Чистая церковная грамота. Заполните ее пером, затем принесите за печатью епископа."
+	desc = "Clean church charter. Fill it out with a pen, then bring it for the bishop's seal."
 	document_profile_id = "church"
 
 /obj/item/book/granter/resident_manuscript/fake/church
-	desc = "Церковная грамота, происхождение которой лучше не обсуждать."
+	desc = "Church charter, the origin of which is best not discussed."
 	document_profile_id = "church"
 
 /obj/item/book/granter/resident_manuscript/craftsmen
-	desc = "Хартия ремесленной гильдии, признающая положение предъявителя среди мастеров города."
+	desc = "Craft Guild Charter, recognizing the bearer's position among the city's craftsmen."
 	document_profile_id = "craftsmen"
 
 /obj/item/book/granter/resident_manuscript/blank/craftsmen
-	desc = "Чистая хартия ремесленной гильдии. Заполните ее пером, затем принесите надлежащим властям для печатей."
+	desc = "Pure Charter of the Craft Guild. Fill it out with a pen, then bring it to the proper authorities for stamps."
 	document_profile_id = "craftsmen"
 
 /obj/item/book/granter/resident_manuscript/fake/craftsmen
-	desc = "Гильдейская хартия, происхождение которой лучше не обсуждать."
+	desc = "Guild charter, the origins of which are best left undiscussed."
 	document_profile_id = "craftsmen"
 
 /obj/item/book/granter/resident_manuscript/commoner
-	desc = "Помятая грамота горожанина на дешевой тряпичной бумаге, достаточная лишь для простого положения."
+	desc = "A crumpled citizen's letter on cheap rag paper, sufficient only for a simple position."
 	document_profile_id = "commoner"
 
 /obj/item/book/granter/resident_manuscript/blank/commoner
-	desc = "Дешевая чистая грамота горожанина, тонкая на сгиб и шершавая на кляксы."
+	desc = "A cheap, clean letter from a city dweller, thin to bend and rough for blots."
 	document_profile_id = "commoner"
 
 /obj/item/book/granter/resident_manuscript/fake/commoner
-	desc = "Пятнистая грамота горожанина с плохой бумагой и подозрительно свежими чернилами."
+	desc = "A spotted citizen's letter with bad paper and suspiciously fresh ink."
 	document_profile_id = "commoner"
 
 /obj/item/book/granter/resident_manuscript/mercenary
-	desc = "Пурпурный наемный контракт, признающий предъявителя вольным клинком достойного положения."
+	desc = "A purple mercenary contract recognizing the bearer as a Freeblade of worthy standing."
 	document_profile_id = "mercenary"
 
 /obj/item/book/granter/resident_manuscript/blank/mercenary
-	desc = "Чистый наемный контракт. Заполните его пером, затем принесите надлежащим властям для печатей."
+	desc = "Pure hire contract. Fill it out with a pen, then bring it to the proper authorities for stamps."
 	document_profile_id = "mercenary"
 
 /obj/item/book/granter/resident_manuscript/fake/mercenary
-	desc = "Наемный контракт, происхождение которого лучше не обсуждать."
+	desc = "A mercenary contract, the origin of which is best left undiscussed."
 	document_profile_id = "mercenary"
 
 /obj/item/book/granter/resident_manuscript/otava
-	desc = "Серебряно-золотой эдикт Отавы, дающий предъявителю власть в делах истины и веры."
+	desc = "Silver and gold Edict of Otava, giving the bearer authority in matters of truth and faith."
 	document_profile_id = "otava"
 
 /obj/item/book/granter/resident_manuscript/blank/otava
-	desc = "Чистый эдикт Отавы. Заполните его пером, затем принесите за печатью инквизитора."
+	desc = "Pure Edict of Otava. Fill it with the quill, then bring it to the inquisitor for the seal."
 	document_profile_id = "otava"
 
 /obj/item/book/granter/resident_manuscript/fake/otava
-	desc = "Эдикт Отавы, происхождение которого лучше не обсуждать."
+	desc = "Edict of Otava, the origin of which is best left undiscussed."
 	document_profile_id = "otava"
 
 /obj/item/book/granter/resident_manuscript/retinue
-	desc = "Грамота дворцовой службы, указывающая на личную присягу и место предъявителя при дворе."
+	desc = "Letter of palace service indicating the personal oath and place of the bearer at court."
 	document_profile_id = "retinue"
 
 /obj/item/book/granter/resident_manuscript/blank/retinue
-	desc = "Чистая грамота дворцовой службы. Заполните ее пером, затем принесите за печатью двора."
+	desc = "Clean certificate of palace service. Fill it out with a quill, then bring it for the court seal."
 	document_profile_id = "retinue"
 
 /obj/item/book/granter/resident_manuscript/fake/retinue
-	desc = "Грамота дворцовой службы, происхождение которой лучше не обсуждать."
+	desc = "A certificate from the palace service, the origin of which is best not discussed."
 	document_profile_id = "retinue"
 
 /obj/item/book/granter/resident_manuscript/merchant
-	desc = "Валорийское торговое разрешение, признающее положение предъявителя в торговле и договорах."
+	desc = "Valorian trade permit recognizing the position of bearer in trade and contracts."
 	document_profile_id = "merchant"
 
 /obj/item/book/granter/resident_manuscript/blank/merchant
-	desc = "Чистое валорийское торговое разрешение. Заполните его пером, затем принесите за гильдейской печатью."
+	desc = "Pure Valorian Trade Permit. Fill it with a quill, then bring it back for the guild seal."
 	document_profile_id = "merchant"
 
 /obj/item/book/granter/resident_manuscript/fake/merchant
-	desc = "Валорийское торговое разрешение, происхождение которого лучше не обсуждать."
+	desc = "Valorian trade permit, the origins of which are best left undiscussed."
 	document_profile_id = "merchant"
 
 /obj/item/book/granter/resident_manuscript/mages
-	desc = "Патент гильдии магов, признающий предъявителя дозволенным практиком под властью Короны."
+	desc = "A Mages Guild Patent recognizing the bearer as a permitted practitioner under the authority of the Crown."
 	document_profile_id = "mages"
 
 /obj/item/book/granter/resident_manuscript/blank/mages
-	desc = "Чистый патент гильдии магов. Заполните его пером, затем принесите за печатью придворного мага."
+	desc = "Pure patent of the guild of magicians. Fill it with the quill, then bring it for the court magician's seal."
 	document_profile_id = "mages"
 
 /obj/item/book/granter/resident_manuscript/fake/mages
-	desc = "Патент гильдии магов, происхождение которого лучше не обсуждать."
+	desc = "A patent from the Mages Guild, the origin of which is best left undiscussed."
 	document_profile_id = "mages"

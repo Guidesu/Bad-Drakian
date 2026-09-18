@@ -8,10 +8,10 @@
 	forbidden_races = list(RACES_DESPISED)
 	allowed_sexes = list(MALE, FEMALE)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED, AGE_OLD)
-	tutorial = "Вы - воин с экспертной подготовкой; рожденный в мелком дворянстве и с юных лет воспитанный как оруженосец. \
-	Ваша доблесть и воинские умения были замечены еще давно короной и теперь вы удостоены величайшей чести - быть подле Короля. \
-	Уже как 12 лет вы защищаете его в этом проклятом баронстве. Вам не на кого положиться, кроме как на себя, Короля и маршала, \
-	а также королевскую гвардию, ведь за стенами замка лишь гнилозубые крестьяне и глупцы, что слепо отрицают смерть Барона."
+	tutorial = "You are a warrior with expert training; born into minor nobility and raised from a young age as a squire.\
+	Your valor and martial skills were long ago noticed by the crown, and now you are granted the greatest honor — to be near the King.\
+	For12 years you have defended him in this cursed barony. You have no one to rely on but yourself, the King, and the marshal,\
+	as well as the royal guard, for beyond the castle walls are only rotten-toothed peasants and fools who blindly deny the Baron’s death."
 	display_order = JDO_ROYALKNIGHT
 	whitelist_req = TRUE
 	outfit = /datum/outfit/job/roguetown/knight_enigma
@@ -70,10 +70,10 @@
 
 /datum/advclass/knight_enigma/heavy
 	name = "Royal Knight"
-	tutorial = "Вы - воин с экспертной подготовкой; рожденный в мелком дворянстве и с юных лет воспитанный как оруженосец. \
-	Ваша доблесть и воинские умения были замечены еще давно короной и теперь вы удостоены величайшей чести - быть подле Короля. \
-	Уже как 12 лет вы защищаете его в этом проклятом баронстве. Вам не на кого положиться, кроме как на себя, Короля и маршала, \
-	а также королевскую гвардию, ведь за стенами замка лишь гнилозубые крестьяне и глупцы, что слепо отрицают смерть Барона."
+	tutorial = "You are a warrior with expert training; born into minor nobility and raised from a young age as a squire.\
+	Your valor and martial skills were long ago noticed by the crown, and now you are granted the greatest honor — to be near the King.\
+	For12 years you have defended him in this cursed barony. You have no one to rely on but yourself, the King, and the marshal,\
+	as well as the royal guard, for beyond the castle walls are only rotten-toothed peasants and fools who blindly deny the Baron’s death."
 	outfit = /datum/outfit/job/roguetown/knight_enigma/heavy
 
 	category_tags = list(CTAG_ROYALKNIGHT)

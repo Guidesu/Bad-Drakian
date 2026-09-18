@@ -49,7 +49,7 @@
 	desc = "Fine armor made of treated animal scales, denoting an esteemd career in the dunes."
 	icon_state = "huus"
 	item_state = "huus"
-	//здесь были строчки защиты, вырезаны т.к. айтем наследует статы защиты от бригандины
+	//There were lines of protection here, cut out because... The item inherits the defense stats from the brigandine
 	blocksound = SOFTHIT
 	slot_flags = ITEM_SLOT_ARMOR
 	blade_dulling = DULLING_BASHCHOP

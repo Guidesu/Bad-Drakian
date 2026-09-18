@@ -82,6 +82,15 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/list/features = MANDATORY_FEATURE_LIST
 	var/shake = TRUE
 	var/sexable = FALSE
+	/// Ratwood-compatible adult-content consent flags. New categories must remain opt-in.
+	var/chastenable = FALSE
+	var/chastity_hardmode = FALSE
+	var/extreme_erp = FALSE
+	var/edging = FALSE
+	var/facial_brands = FALSE
+	var/sensitive_brands = FALSE
+	var/descriptor_color = FALSE
+	var/cursed_collarable = FALSE
 	var/compliance_notifs = TRUE
 
 	//Job preferences 2.0 - indexed by job title , no key or value implies never
@@ -111,6 +120,9 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/donor_examine_icon = TRUE // TA EDIT
 	var/masked_examine = FALSE
 	var/nsfw_examine_always = FALSE // TA EDIT
+	/// Whether body-hair details appear when examining an exposed character.
+	var/show_pubic_hair = TRUE
+	var/show_armpit_hair = TRUE
 	var/full_examine = TRUE
 	var/mute_animal_emotes = FALSE
 	var/autoconsume = FALSE
@@ -164,10 +176,10 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/vampire_headshot_link
 	var/werewolf_headshot_link //not used but setting up for the future
 	var/chatheadshot = TRUE
-	var/list/violated = list() // ТА
+	var/list/violated = list() //TA
 	var/ooc_extra
-	var/ooc_extra_img // ТА
-	var/ooc_extra_img_link // ТА
+	var/ooc_extra_img //TA
+	var/ooc_extra_img_link //TA
 	var/song_artist
 	var/song_title
 	var/list/descriptor_entries = list()
@@ -206,6 +218,8 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 	var/taur_type = null
 	var/taur_color = "#ffffff"
+	var/taur_markings = "#ffffff"
+	var/taur_tertiary = "#ffffff"
 
 	var/favorite_cuisine = NONE
 	var/favorite_dish = NONE

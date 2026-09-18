@@ -586,9 +586,9 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_KNEESTINGER_IMMUNITY = "I am immune to the shock of kneestingers and vines.",
 	TRAIT_SOUL_EXAMINE = span_deadsay("I know when someone's soul has departed."),
 	TRAIT_CRACKHEAD = span_love("I can use drugs as much as I want!"),
-	TRAIT_BOW_DOUBLESHOT = span_info("Я овладел искусством Двойного выстрела. Могу быстро достать вторую стрелу из колчана."),//TA EDIT
-	TRAIT_BOW_LONGSHOT = span_info("Я овладел Дальнобойным выстрелом. Чем дальше моя цель, тем смертоноснее моя стрела."),//TA EDIT
-	TRAIT_BOW_BACKSTEP = span_info("Я овладел искусством Выстрел с отскоком. Дал дал ушел."),//TA EDIT
+	TRAIT_BOW_DOUBLESHOT = span_info("I have mastered the art of Double Shot. I can quickly get the second arrow from the quiver."),//TA EDIT
+	TRAIT_BOW_LONGSHOT = span_info("I have mastered Long Shot. The further away my target, the deadlier my arrow."),//TA EDIT
+	TRAIT_BOW_BACKSTEP = span_info("I have mastered the art of the Bounce Shot. Dal dal left."),//TA EDIT
 	TRAIT_FREEMAN = span_bloody("I can recognize other free men, and they can recognize me too."),
 	TRAIT_KNOWNCRIMINAL = span_bloody("I am a branded criminal. Nothing can change this."),
 	TRAIT_NORUN = span_warning("My body has atrophied in my state of decay; my leg joints just don't have the strength or durability for running anymore"),
@@ -714,7 +714,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_EXCOMMUNICATED = span_warning("I have been excommunicated."),
 	TRAIT_RECENT_CONVERT = span_info("I have recently converted to a new patron; I shall not forsake them so soon."),
 	TRAIT_UNCONVERTIBLE = span_info("My nature is inextricably tied to my patron. Any attempts at conversion will fail."),
-	TRAIT_SLAVE = span_warning("Я был угнан в рабство! О, боги, помилуйте мою душу - это невыносимая судьба! Со мною обращаются как с вещью!"), // TA EDIT
+	TRAIT_SLAVE = span_warning("I was taken into slavery! Oh gods, have mercy on my soul - this is an unbearable fate! I'm being treated like a thing!"), // TA EDIT
 	TRAIT_CURSE_ZIZO = span_warning("I am forsaken by the Mistress of Darkness. Her grasp reaches for my heart."), // TA EDIT
 	TRAIT_CURSE_GRAGGAR = span_warning("I am forsaken by the Warlord. Bloodlust is only thing I know for real."),
 	TRAIT_CURSE_MATTHIOS = span_warning("I am forsaken by the Father. Do I not deserve to be free?"), // TA EDIT
@@ -790,9 +790,9 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_WOUNDREGEN = span_info("My wounds and bones mend on their own, my bleeding clots quickly.."),
 	TRAIT_VOLF = span_info("I can barely see in the darkness of the world.."),
 
-	TRAIT_ARTILLERY_EXPERT = span_greentext("Я ранее обращался с артиллерией и разбираюсь в тонкостях её наводки."),
+	TRAIT_ARTILLERY_EXPERT = span_greentext("I have handled artillery before and understand the intricacies of its aiming."),
 	TRAIT_ZIZOEYES = span_notice("You no longer fear a veil of the darkness, yet your eyes are glimmering lights in it.."),
-	TRAIT_NOC_LIGHT_BLESSING = span_notice("Нок благославила меня на существование под её светом."),
+	TRAIT_NOC_LIGHT_BLESSING = span_notice("Nok blessed me to exist under her light."),
 	TRAIT_OUTLANDER = span_info("The locals see me as not of their land.")
 ))
 

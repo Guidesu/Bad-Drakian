@@ -28,7 +28,7 @@ export const CanvasPainter = () => {
   const [tool, setTool] = useState<'brush' | 'eraser' | 'bucket'>('brush');
 
   const [colorHistory, setColorHistory] = useLocalState<string[]>('canvas_color_hist', ['#000000', '#ffffff', '#ff0000', '#00ff00', '#0000ff']);
-  const [layers, setLayers] = useLocalState<Layer[]>('canvas_layers_v3', [{ id: Date.now(), name: 'Слой 1', visible: true, pixels: {} }]);
+  const [layers, setLayers] = useLocalState<Layer[]>('canvas_layers_v3', [{ id: Date.now(), name: 'Layer 1', visible: true, pixels: {} }]);
   const [activeLayerId, setActiveLayerId] = useLocalState<number>('canvas_active_layer', layers[0].id);
 
   useEffect(() => {
@@ -207,13 +207,13 @@ export const CanvasPainter = () => {
     });
 
     const resetId = Date.now();
-    setLayers([{ id: resetId, name: 'Слой 1', visible: true, pixels: {} }]);
+    setLayers([{ id: resetId, name: 'Layer 1', visible: true, pixels: {} }]);
     setActiveLayerId(resetId);
   };
 
   const addLayer = () => {
     const newId = Date.now();
-    setLayers([...layers, { id: newId, name: `Слой ${layers.length + 1}`, visible: true, pixels: {} }]);
+    setLayers([...layers, { id: newId, name: `Layer ${layers.length + 1}`, visible: true, pixels: {} }]);
     setActiveLayerId(newId);
   };
 
@@ -257,7 +257,7 @@ export const CanvasPainter = () => {
                         <Stack.Item>
                           <Stack align="center">
                             <input type="color" value={pickerColor} onChange={(e) => setPickerColor(e.target.value)} style={{ cursor: 'pointer', height: '24px', width: '24px', padding: 0, border: 'none' }} />
-                            <Button icon="check" onClick={() => handleColorChange(pickerColor)} tooltip="Применить цвет" />
+                            <Button icon="check" onClick={() => handleColorChange(pickerColor)} tooltip="Apply color" />
                             {colorHistory.map((c, i) => (
                               <ColorBox key={i} color={c.substring(0, 7)} onClick={() => handleColorChange(c.substring(0, 7))} style={{ cursor: 'pointer', border: color === c.substring(0, 7) ? '2px solid white' : '1px solid black' }} />
                             ))}
@@ -265,9 +265,9 @@ export const CanvasPainter = () => {
                         </Stack.Item>
                         <Stack.Item mt={1}>
                           <Stack align="center">
-                            <Button icon="paint-brush" selected={tool === 'brush'} onClick={() => setTool('brush')} tooltip="Кисть" />
-                            <Button icon="fill" selected={tool === 'bucket'} onClick={() => setTool('bucket')} tooltip="Заливка" />
-                            <Button icon="eraser" selected={tool === 'eraser'} onClick={() => setTool('eraser')} tooltip="Ластик" />
+                            <Button icon="paint-brush" selected={tool === 'brush'} onClick={() => setTool('brush')} tooltip="Brush" />
+                            <Button icon="fill" selected={tool === 'bucket'} onClick={() => setTool('bucket')} tooltip="Fill" />
+                            <Button icon="eraser" selected={tool === 'eraser'} onClick={() => setTool('eraser')} tooltip="Eraser" />
                           </Stack>
                         </Stack.Item>
                       </Stack>
@@ -276,7 +276,7 @@ export const CanvasPainter = () => {
                     <Stack.Item width="150px">
                       <Stack vertical>
                         <Stack.Item>
-                          <Tooltip content="Толщина кисти">
+                          <Tooltip content="Brush thickness">
                             <Stack align="center">
                               <span style={{ fontSize: '10px', width: '20px' }}>px {brushSize}</span>
                               <Slider value={brushSize} minValue={1} maxValue={5} stepPixelSize={25} step={1} onChange={(_, v) => setBrushSize(v)} />
@@ -284,7 +284,7 @@ export const CanvasPainter = () => {
                           </Tooltip>
                         </Stack.Item>
                         <Stack.Item>
-                          <Tooltip content="Плотность (Прозрачность)">
+                          <Tooltip content="Density (Transparency)">
                             <Stack align="center">
                               <span style={{ fontSize: '10px', width: '20px' }}>% {opacity}</span>
                               <Slider value={opacity} minValue={10} maxValue={100} stepPixelSize={8} step={10} onChange={(_, v) => setOpacity(v)} />
@@ -295,7 +295,7 @@ export const CanvasPainter = () => {
                     </Stack.Item>
 
                     <Stack.Item>
-                      <Button color="good" icon="save" onClick={handleSave}>Закончить</Button>
+                      <Button color="good" icon="save" onClick={handleSave}>Finish</Button>
                     </Stack.Item>
                   </Stack>
                 </Section>
@@ -303,7 +303,7 @@ export const CanvasPainter = () => {
             </Stack>
           </Stack.Item>
           <Stack.Item width="160px">
-            <Section title="Слои" fill buttons={<Button icon="plus" onClick={addLayer} tooltip="Новый слой" />}>
+            <Section title="Layers" fill buttons={<Button icon="plus" onClick={addLayer} tooltip="New layer" />}>
               <Stack vertical>
                 {[...layers].reverse().map(layer => (
                   <Stack.Item key={layer.id}>

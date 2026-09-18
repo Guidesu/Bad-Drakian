@@ -28,6 +28,8 @@
 		"taur_type" = taur_type,
 		"taur_name" = "None",
 		"taur_color" = taur_color,
+		"taur_markings" = taur_markings,
+		"taur_tertiary" = taur_tertiary,
 		"allowed_taur_types" = pref_species.allowed_taur_types,
 	)
 

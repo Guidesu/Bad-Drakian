@@ -250,10 +250,10 @@
 	regenerate_icons()
 	set_resting(FALSE)
 
-/mob/living/carbon/proc/Taurize(taur_type = /obj/item/bodypart/taur/horse, color = "#ffffff")
+/mob/living/carbon/proc/Taurize(taur_type = /obj/item/bodypart/taur/horse, color = "#ffffff", markings = "#ffffff", tertiary = "#ffffff")
 	// Same taur part short circuit to save on taurize cost because it occupies up to 8 - 9 ms out of a 20 ms call of preview
 	var/obj/item/bodypart/taur/existing = get_taur_tail()
-	if(existing && existing.type == taur_type && existing.taur_color == color)
+	if(existing && existing.type == taur_type && existing.taur_color == color && existing.taur_markings == markings && existing.taur_tertiary == tertiary)
 		return
 
 	for(var/X in bodyparts)
@@ -265,6 +265,8 @@
 
 	var/obj/item/bodypart/taur/T = new taur_type()
 	T.taur_color = color
+	T.taur_markings = markings
+	T.taur_tertiary = tertiary
 	T.attach_limb(src)
 
 	if(shoes)

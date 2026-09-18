@@ -98,7 +98,7 @@
 			return FALSE
 		for(var/list/column in solitaire_tableau)
 			if(!column.len)
-				to_chat(user, span_warning("В пауке нельзя сдавать из запаса, пока есть пустая колонка."))
+				to_chat(user, span_warning("In the spider, you cannot deal from the stock while there is an empty column."))
 				return FALSE
 		for(var/column_index = 1, column_index <= solitaire_tableau.len, column_index++)
 			var/list/card = solitaire_stock[solitaire_stock.len]
@@ -109,16 +109,16 @@
 		solitaire_check_spider_runs()
 		if(solitaire_completed_sets >= 8)
 			stage = CARD_TABLE_STAGE_FINISHED
-			message = "[card_table_display_name(user)] раскладывает паука."
+			message = "[card_table_display_name(user)] lays out the spider."
 		else
-			message = "[card_table_display_name(user)] сдает ряд из запаса."
+			message = "[card_table_display_name(user)] rents out a row from stock."
 		return TRUE
 	if(solitaire_stock.len)
 		var/list/card = solitaire_stock[solitaire_stock.len]
 		solitaire_stock.Cut(solitaire_stock.len, solitaire_stock.len + 1)
 		card["face_up"] = TRUE
 		discard += list(card)
-		message = "[card_table_display_name(user)] открывает карту из запаса."
+		message = "[card_table_display_name(user)] opens a card from the supply."
 		return TRUE
 	if(discard.len)
 		for(var/i = discard.len, i >= 1, i--)
@@ -126,7 +126,7 @@
 			card["face_up"] = FALSE
 			solitaire_stock += list(card)
 		discard = list()
-		message = "[card_table_display_name(user)] переворачивает сброс в запас."
+		message = "[card_table_display_name(user)] flips the reset to stock."
 		return TRUE
 	return FALSE
 
@@ -184,16 +184,16 @@
 	if(target_type == "foundation")
 		var/list/foundation = solitaire_foundations[target_suit]
 		foundation += list(card)
-		message = "[card_table_display_name(user)] кладет [card_table_card_label(card)] в базу."
+		message = "[card_table_display_name(user)] puts [card_table_card_label(card)] into the base."
 	else
 		var/list/target_column_list = solitaire_tableau[target_column]
 		for(var/list/moving_card in moving_cards)
 			target_column_list += list(moving_card)
-		message = "[card_table_display_name(user)] перекладывает [card_table_card_label(card)]."
+		message = "[card_table_display_name(user)] shifts [card_table_card_label(card)]."
 		solitaire_check_spider_runs()
 		if(solitaire_variant == CARD_TABLE_SOLITAIRE_SPIDER && solitaire_completed_sets >= 8)
 			stage = CARD_TABLE_STAGE_FINISHED
-			message = "[card_table_display_name(user)] раскладывает паука."
+			message = "[card_table_display_name(user)] lays out the spider."
 	var/foundation_cards = 0
 	for(var/suit in list("H", "D", "C", "S"))
 		var/list/foundation_check = solitaire_foundations[suit]
@@ -201,5 +201,5 @@
 			foundation_cards += foundation_check.len
 	if(foundation_cards >= 52)
 		stage = CARD_TABLE_STAGE_FINISHED
-		message = "[card_table_display_name(user)] раскладывает пасьянс."
+		message = "[card_table_display_name(user)] plays solitaire."
 	return TRUE

@@ -73,8 +73,8 @@
 		GLOB.loadout_items[path] = loadout_item
 		GLOB.loadout_items_by_name[loadout_item.name] = loadout_item // TW EDIT
 
-	GLOB.loadout_items_by_category["Всё"] = list()
-	GLOB.loadout_items_by_category["Донат"] = list()
+	GLOB.loadout_items_by_category["All"] = list()
+	GLOB.loadout_items_by_category["Legacy Cosmetics"] = list()
 	for(var/item_name in GLOB.loadout_items_by_name)
 		var/datum/loadout_item/item = GLOB.loadout_items_by_name[item_name]
 		if(item.category)
@@ -83,12 +83,12 @@
 					if(!GLOB.loadout_items_by_category[cat])
 						GLOB.loadout_items_by_category[cat] = list()
 					GLOB.loadout_items_by_category[cat] += item
-					GLOB.loadout_items_by_category["Всё"] += item
+					GLOB.loadout_items_by_category["All"] += item
 			else 
 				if(!GLOB.loadout_items_by_category[item.category])
 					GLOB.loadout_items_by_category[item.category] = list()
 				GLOB.loadout_items_by_category[item.category] += item
-				GLOB.loadout_items_by_category["Всё"] += item
+				GLOB.loadout_items_by_category["All"] += item
 
 	// Inquisition Hermes list
 	for (var/path in subtypesof(/datum/inqports))

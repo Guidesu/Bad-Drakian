@@ -94,17 +94,17 @@ SUBSYSTEM_DEF(investments)
 	for(var/datum/investment/investment in awaiting_investments)
 		if(world.time >= investment.time_purchased + investment.pay_eta)
 			if(investment.fail_chance > rand(1,100))
-				SStreasury.log_to_steward("Инвестиция '[investment.investment_name]' провалилась. Деньги потеряны.")
-				SStreasury.steward_machine.say("Инвестиция '[investment.investment_name]' провалилась! Деньги потеряны.")
+				SStreasury.log_to_steward("Investment '[investment.investment_name]' failed. Money lost.")
+				SStreasury.steward_machine.say("Investment '[investment.investment_name]' failed! Money lost.")
 				awaiting_investments -= investment
 				qdel(investment)
 			else
 				if(investment.regular_payment)
 					active_investments += investment
 					awaiting_investments -= investment
-					SStreasury.steward_machine.say("Инвестиция '[investment.investment_name]' успешна, доход должен расти.")
+					SStreasury.steward_machine.say("Investment '[investment.investment_name]' is successful, income should increase.")
 				else
-					SStreasury.steward_machine.say("Мы получили одноразовую выплату за инвестицию '[investment.investment_name]'.")
+					SStreasury.steward_machine.say("We received a one-time payment for investment '[investment.investment_name]'.")
 					money_earned += investment.onetime_payment
 					awaiting_investments -= investment
 					qdel(investment)
@@ -116,14 +116,14 @@ SUBSYSTEM_DEF(investments)
 		generated_through_round += investment.regular_payment
 
 	if(money_earned != 0)
-		SStreasury.give_money_treasury(money_earned, "Инвестиции")
-		SStreasury.steward_machine.say("Получено [money_earned]m за инвестиции.")
+		SStreasury.give_money_treasury(money_earned, "Investments")
+		SStreasury.steward_machine.say("Received [money_earned]m for investments.")
 
 
 
 /////DATUMS////
 /datum/investment
-	var/investment_name = "Инвестиция"
+	var/investment_name = "Investment"
 	var/pay_eta = 15 MINUTES
 	var/time_purchased
 	var/price = 0
@@ -133,140 +133,140 @@ SUBSYSTEM_DEF(investments)
 	var/random_values = TRUE
 
 /datum/investment/land
-	investment_name = "Инвестиция в землю"
+	investment_name = "Investment in land"
 	price = 1000
 	pay_eta = 5 MINUTES
 	regular_payment = 34
 	fail_chance = 7
 
 /datum/investment/real_estate
-	investment_name = "Инвестиция в недвижимость"
+	investment_name = "Investment in real estate"
 	price = 2500
 	pay_eta = 12.5 MINUTES
 	regular_payment = 84
 	fail_chance = 7
 
 /datum/investment/trade_routes
-	investment_name = "Инвестиция в торговые пути"
+	investment_name = "Investment in trade routes"
 	price = 8000
 	pay_eta = 20 MINUTES
 	regular_payment = 267
 	fail_chance = 7
 
 /datum/investment/repair_bridge
-	investment_name = "Профинансировать ремонт торговых путей"
+	investment_name = "Finance the repair of trade routes"
 	price = 100
 	pay_eta = 7.5 MINUTES
 	regular_payment = 4
 	fail_chance = 5
 
 /datum/investment/trade_loan
-	investment_name = "Заем торговой гильдии"
+	investment_name = "Loan to the trade guild"
 	price = 200
 	pay_eta = 5 MINUTES
 	onetime_payment = 300
 	fail_chance = 20
 
 /datum/investment/trade_loan_merc
-	investment_name = "Заем гильдии наемников"
+	investment_name = "Mercenary guild loan"
 	price = 100
 	pay_eta = 5 MINUTES
 	onetime_payment = 120
 	fail_chance = 20
 
 /datum/investment/trade_loan_unknown
-	investment_name = "Срочный заем ненадежному лицу"
+	investment_name = "Urgent loan to an unreliable person"
 	price = 300
 	pay_eta = 5 MINUTES
 	onetime_payment = 900
 	fail_chance = 50
 
 /datum/investment/gold
-	investment_name = "Инвестиция в золото"
+	investment_name = "Investment in gold"
 	price = 45
 	pay_eta = 2 MINUTES
 	onetime_payment = 60
 	fail_chance = 30
 
 /datum/investment/silver
-	investment_name = "Инвестиция в серебро"
+	investment_name = "Investment in silver"
 	price = 60
 	pay_eta = 2 MINUTES
 	onetime_payment = 90
 	fail_chance = 30
 
 /datum/investment/gems
-	investment_name = "Инвестиция в драгоценные камни"
+	investment_name = "Investment in precious stones"
 	price = 60
 	pay_eta = 2 MINUTES
 	onetime_payment = 70
 	fail_chance = 30
 
 /datum/investment/gold_x5
-	investment_name = "Инвестиция в золото x5"
+	investment_name = "Investment in gold x5"
 	price = 225
 	pay_eta = 3 MINUTES
 	onetime_payment = 300
 	fail_chance = 30
 
 /datum/investment/silver_x5
-	investment_name = "Инвестиция в серебро x5"
+	investment_name = "Silver Investment x5"
 	price = 300
 	pay_eta = 3 MINUTES
 	onetime_payment = 450
 	fail_chance = 30
 
 /datum/investment/gems_x5
-	investment_name = "Инвестиция в драгоценные камни x5"
+	investment_name = "Gems Investment x5"
 	price = 225
 	pay_eta = 3 MINUTES
 	onetime_payment = 350
 	fail_chance = 30
 
 /datum/investment/feodal_lands
-	investment_name = "Инвестиция в местные феодальные земли"
+	investment_name = "Local Fief Investment"
 	price = 800
 	pay_eta = 7.5 MINUTES
 	regular_payment = 27
 	fail_chance = 3
 
 /datum/investment/overseas_feodal_lands
-	investment_name = "Инвестиция в заморские феодальные земли"
+	investment_name = "Overseas Fief Investment"
 	price = 850
 	pay_eta = 7.5 MINUTES
 	regular_payment = 29
 	fail_chance = 10
 
 /datum/investment/salt_mine
-	investment_name = "Доля в соляной шахте"
+	investment_name = "Salt Mine Share"
 	price = 1500
 	pay_eta = 15 MINUTES
 	regular_payment = 50
 	fail_chance = 4
 
 /datum/investment/blacksmith_guild
-	investment_name = "Поддержка кузнечной гильдии"
+	investment_name = "Blacksmith Guild Support"
 	price = 3000
 	pay_eta = 10 MINUTES
 	regular_payment = 100
 	fail_chance = 6
 
 /datum/investment/river_ferry
-	investment_name = "Строительство речной переправы"
+	investment_name = "Construction of a river crossing"
 	price = 1200
 	pay_eta = 8 MINUTES
 	regular_payment = 40
 	fail_chance = 5
 
 /datum/investment/alchemist_lab
-	investment_name = "Спонсирование алхимических изысканий"
+	investment_name = "Sponsoring alchemical research"
 	price = 900
 	pay_eta = 5 MINUTES
 	regular_payment = 36
 	fail_chance = 25
 
 /datum/investment/smugglers_cargo
-	investment_name = "Выкуп конфиската у контрабандистов"
+	investment_name = "Redemption of confiscated goods from smugglers"
 	price = 1200
 	pay_eta = 15 MINUTES
 	onetime_payment = 2800

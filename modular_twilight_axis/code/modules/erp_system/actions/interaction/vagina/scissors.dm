@@ -1,10 +1,10 @@
 /datum/erp_action/other/vagina/scissors
 	abstract = FALSE
-	name = "Ножницы"
+	name = "Scissors"
 	required_target_organ = SEX_ORGAN_VAGINA
-	message_start = "{actor} прижимается вагиной к киске {partner}."
-	message_tick = "{actor} {force} и {speed} трётся своей вагиной об вагину {partner}."
-	message_finish =  "{actor} расцепляет вагины с {partner}."
-	message_climax_active = "{actor} кончает на промежность {partner}."
-	message_climax_passive = "{partner} кончает на промежность {actor}."
+	message_start = "{actor} presses her vagina against {partner}'s pussy."
+	message_tick = "{actor} {force} and {speed} rub their vagina against {partner}'s vagina."
+	message_finish =  "{actor} uncouples vaginas from {partner}."
+	message_climax_active = "{actor} cums on {partner}'s crotch."
+	message_climax_passive = "{partner} cums on {actor}'s crotch."
 	

@@ -12,11 +12,11 @@ GLOBAL_DATUM(ducal_court, /datum/ducal_court)
 	if(!ishuman(user))
 		return
 	if(!(user in buckled_mobs))
-		to_chat(user, span_warning("Чтобы управлять двором, нужно восседать на троне."))
+		to_chat(user, span_warning("To rule the court, you need to sit on the throne."))
 		return
 	var/datum/ducal_court/court = get_ducal_court()
 	if(!court.get_throat())
-		to_chat(user, span_warning("Древняя магия молчит."))
+		to_chat(user, span_warning("Ancient magic is silent."))
 		return
 	court.ui_interact(user)
 	return TRUE

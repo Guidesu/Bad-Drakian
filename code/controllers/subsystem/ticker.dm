@@ -67,14 +67,16 @@ SUBSYSTEM_DEF(ticker)
 	var/list/royals_readied = list()
 
 	/// Realm name, the location name of the current map
-	var/realm_name = "Azure Peak"
-	/// Formal realm type (e.g. "Grand Duchy", "Most Serene Republic"). Changed by usurpation rites.
-	var/realm_type = "Grand Duchy"
-	/// Short form for casual references (e.g. "Duchy", "Republic"). Changed by usurpation rites.
-	var/realm_type_short = "Duchy"
+	var/realm_name
+	/// Whether a ruler has selected a round-local realm name.
+	var/realm_named = FALSE
+	/// Formal realm type (e.g. "Sovereign County", "Most Serene Republic"). Changed by usurpation rites.
+	var/realm_type = "Sovereign County"
+	/// Short form for casual references (e.g. "County", "Republic"). Changed by usurpation rites.
+	var/realm_type_short = "County"
 
 	/// Reports the current ruler's display name
-	var/rulertype = "Grand Duke"
+	var/rulertype = "Count"
 	/// The current ruling mob
 	var/rulermob = null
 	/// Current regent mob
@@ -346,10 +348,9 @@ SUBSYSTEM_DEF(ticker)
 	message_admins(span_boldannounce("Starting game..."))
 
 	if(SSmapping.map_adjustment)
-		realm_name = SSmapping.map_adjustment.realm_name
 		realm_type = SSmapping.map_adjustment.realm_type // TA EDIT
 		realm_type_short = SSmapping.map_adjustment.realm_type_short // TA EDIT
-	to_world("<b><span class='notice'><span class='big'>Welcome to the [SSticker.realm_type] of [SSticker.realm_name].</span></span></b>")
+	to_world("<b><span class='notice'><span class='big'>Welcome to the realm.</span></span></b>")
 	var/init_start = world.timeofday
 	CHECK_TICK
 	//Configure mode and assign player to special mode stuff
@@ -815,6 +816,40 @@ SUBSYSTEM_DEF(ticker)
 	else
 		SSticker.rulertype = lord_job?.display_title || lord_job?.title
 	SEND_GLOBAL_SIGNAL(COMSIG_TICKER_RULERMOB_SET, rulermob)
+	if(rulermob)
+		INVOKE_ASYNC(src, PROC_REF(prompt_realm_name), rulermob, realm_named ? "new reign" : "initial reign")
+
+/// The only supported mutation path for the round-local realm name.
+/datum/controller/subsystem/ticker/proc/set_realm_name(new_name, mob/actor, reason = "manual rename")
+	if(!actor || (actor != rulermob && (!actor.client || !check_rights_for(actor.client, R_ADMIN))))
+		if(actor)
+			to_chat(actor, span_warning("Only the legitimate ruler or an administrator may name the realm."))
+		return FALSE
+	var/clean_name = trim(strip_html_simple("[new_name]", 41))
+	clean_name = copytext_char(clean_name, 1, 41)
+	if(!length(clean_name))
+		return FALSE
+	var/old_name = realm_name || "the realm"
+	if(realm_named && lowertext(old_name) == lowertext(clean_name))
+		to_chat(actor, span_notice("The realm already bears that name."))
+		return FALSE
+	realm_name = clean_name
+	realm_named = TRUE
+	log_game("REALM NAME: [key_name(actor)] changed '[old_name]' to '[clean_name]' ([reason]).")
+	to_world(span_boldannounce("By sovereign decree, [old_name] shall now be known as [clean_name]!"))
+	SEND_GLOBAL_SIGNAL(COMSIG_REALM_NAME_CHANGED, old_name, clean_name, actor, reason)
+	return TRUE
+
+/datum/controller/subsystem/ticker/proc/prompt_realm_name(mob/actor, reason = "reign")
+	if(!actor || QDELETED(actor))
+		return
+	var/proposed_name = tgui_input_text(actor, "Name the realm for this round. Leave this blank to keep the neutral name.", "Name the Realm", realm_named ? realm_name : null, max_length = 40, encode = FALSE)
+	if(isnull(proposed_name) || !length(trim(proposed_name)))
+		return
+	set_realm_name(proposed_name, actor, reason)
+
+/proc/get_realm_name()
+	return SSticker?.realm_name || "the realm"
 
 /// Wrapper for sunsteal proc
 /datum/controller/subsystem/ticker/proc/sunsteal(mob/living/sunstealer)

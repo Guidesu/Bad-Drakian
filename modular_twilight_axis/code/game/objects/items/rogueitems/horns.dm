@@ -1,6 +1,6 @@
 /obj/item/signal_horna
 	name = "signal horn"
-	desc = "Используется для сбора войск и подачи сигналов тревоги."
+	desc = "Used to gather troops and sound alarms."
 	icon = 'modular_twilight_axis/icons/roguetown/items/misc.dmi'
 	icon_state = "signal_horn"
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_NECK
@@ -14,15 +14,15 @@
 /obj/item/signal_horna/attack_self(mob/living/user)
 	. = ..()
 	if(world.time < last_horn + 30 SECONDS)
-		to_chat(user, "Мои легкие должны отдохнуть, прежде чем я смогу дуть в [src.name]!")
+		to_chat(user, "My lungs need to rest before I can blow [src.name]!")
 		return
-	user.visible_message("<span class='warning'>[capitalize(user.name)] вот-вот дунет в [src.name]!</span>")
+	user.visible_message("<span class='warning'>[capitalize(user.name)] is about to blow the horn [src.name]!</span>")
 	if(do_after(user, 15))
 		last_horn = world.time
 		sound_horn(user)
 
 /obj/item/signal_horna/proc/sound_horn(mob/living/user)
-	user.visible_message("<span class='warning'>[capitalize(user.name)] дует в рог!</span>")
+	user.visible_message("<span class='warning'>[capitalize(user.name)] is about to blow the horn!</span>")
 	playsound(src, 'modular_twilight_axis/sound/items/horn/signalhorn.ogg', 100, TRUE)
 	var/turf/origin_turf = get_turf(src)
 
@@ -35,63 +35,63 @@
 		var/distance = get_dist(player, origin_turf)
 		if(distance <= 7)
 			continue
-		var/dirtext = " к "
+		var/dirtext = "to"
 		var/direction = angle2dir(Get_Angle(player, origin_turf))
 		switch(direction)
 			if(NORTH)
-				dirtext += "северу"
+				dirtext += "north"
 			if(SOUTH)
-				dirtext += "югу"
+				dirtext += "south"
 			if(EAST)
-				dirtext += "востоку"
+				dirtext += "east"
 			if(WEST)
-				dirtext += "западу"
+				dirtext += "west"
 			if(NORTHWEST)
-				dirtext += "северо-западу"
+				dirtext += "northwest"
 			if(NORTHEAST)
-				dirtext += "северо-востоку"
+				dirtext += "northeast"
 			if(SOUTHWEST)
-				dirtext += "юго-западу"
+				dirtext += "southwest"
 			if(SOUTHEAST)
-				dirtext += "юго-востоку"
+				dirtext += "southeast"
 			else //Where ARE you.
-				dirtext = ", но я не могу определить, откуда он раздался"
+				dirtext = ", but I can’t determine where it came from"
 		var/disttext
 		switch(distance)
 			if(0 to 20)
-				disttext = " очень близко"
+				disttext = "very close"
 			if(20 to 40)
-				disttext = " близко"
+				disttext = "close"
 			if(40 to 80)
 				disttext = ""
 			if(80 to 160)
-				disttext = " далеко"
+				disttext = "far"
 			else
-				disttext = " очень далеко"
+				disttext = "very far"
 
 		//sound played for other players
 		player.playsound_local(get_turf(player), 'modular_twilight_axis/sound/items/horn/signalhorn.ogg', 35, FALSE, pressure_affected = FALSE)
-		to_chat(player, "<span class='warning'>Я слышу рёв сигнального рога где-то[disttext][dirtext]!</span>")
+		to_chat(player, "<span class='warning'> I hear the roar of a signal horn somewhere[disttext][dirtext]!</span>")
 
 /datum/intent/rally
-	name = "Сигнал сбора"
-	desc = "Услышав одиночный рев рога, все подчиненные должны явиться для построения."
+	name = "Collection signal"
+	desc = "Upon hearing a single blast of the horn, all subordinates must come to formation."
 	icon_state = "inrally"
 	no_attack = TRUE
 	candodge = TRUE
 	canparry = TRUE
 
 /datum/intent/alert
-	name = "Сигнал тревоги"
-	desc = "Услышав двойной рев рога, все подчиненные должны как можно скорее прибыть при оружии."
+	name = "Alarm signal"
+	desc = "Hearing the double blaring of the horn, all subordinates must arrive with weapons as soon as possible."
 	icon_state = "inalert"
 	no_attack = TRUE
 	candodge = TRUE
 	canparry = TRUE
 
 /datum/intent/alarm
-	name = "Сигнал полной тревоги"
-	desc = "Услышав тройной рев рога, все подчиненные обязаны бросить все текущие дела и прийти на выручку."
+	name = "Full alarm signal"
+	desc = "Having heard the triple roar of the horn, all subordinates are obliged to drop all current affairs and come to the rescue."
 	icon_state = "inalarm"
 	no_attack = TRUE
 	candodge = TRUE
@@ -99,7 +99,7 @@
 
 /obj/item/signal_hornn/red
 	name = "sergeant's horn"
-	desc = "Используется для сбора войск и подачи сигналов тревоги."
+	desc = "Used to gather troops and sound alarms."
 	possible_item_intents = list(/datum/intent/rally, /datum/intent/alert, /datum/intent/alarm)
 	icon = 'modular_twilight_axis/icons/roguetown/items/misc.dmi'
 	icon_state = "signal_horn_red"
@@ -114,9 +114,9 @@
 /obj/item/signal_hornn/red/attack_self(mob/living/user)
 	. = ..()
 	if(world.time < last_horn + 30 SECONDS)
-		to_chat(user, "Мои легкие должны отдохнуть, прежде чем я смогу дуть в [src.name]!")
+		to_chat(user, "My lungs need to rest before I can blow [src.name]!")
 		return
-	user.visible_message("<span class='warning'>[capitalize(user.name)] вот-вот дунет в [src.name]!</span>")
+	user.visible_message("<span class='warning'>[capitalize(user.name)] is about to blow the horn [src.name]!</span>")
 	if(do_after(user, 15) && user.used_intent.type == /datum/intent/rally)
 		last_horn = world.time
 		sound_horn_rally_red(user)
@@ -128,7 +128,7 @@
 		sound_horn_alarm_red(user)
 
 /obj/item/signal_hornn/red/proc/sound_horn_rally_red(mob/living/user)
-	user.visible_message("<span class='warning'>[capitalize(user.name)] дует в рог гвардии!</span>")
+	user.visible_message("<span class='warning'>[capitalize(user.name)] blowing the guard's horn!</span>")
 	playsound(src, 'modular_twilight_axis/sound/items/horn/rallyRetinue.ogg', 100, TRUE)
 	var/turf/origin_turf = get_turf(src)
 
@@ -141,46 +141,46 @@
 		var/distance = get_dist(player, origin_turf)
 		if(distance <= 7)
 			continue
-		var/dirtext = " к "
+		var/dirtext = "to"
 		var/direction = angle2dir(Get_Angle(player, origin_turf))
 		switch(direction)
 			if(NORTH)
-				dirtext += "северу"
+				dirtext += "north"
 			if(SOUTH)
-				dirtext += "югу"
+				dirtext += "south"
 			if(EAST)
-				dirtext += "востоку"
+				dirtext += "east"
 			if(WEST)
-				dirtext += "западу"
+				dirtext += "west"
 			if(NORTHWEST)
-				dirtext += "северо-западу"
+				dirtext += "northwest"
 			if(NORTHEAST)
-				dirtext += "северо-востоку"
+				dirtext += "northeast"
 			if(SOUTHWEST)
-				dirtext += "юго-западу"
+				dirtext += "southwest"
 			if(SOUTHEAST)
-				dirtext += "юго-востоку"
+				dirtext += "southeast"
 			else //Where ARE you.
-				dirtext = ", но я не могу определить, откуда он раздался"
+				dirtext = ", but I can’t determine where it came from"
 		var/disttext
 		switch(distance)
 			if(0 to 20)
-				disttext = " очень близко"
+				disttext = "very close"
 			if(20 to 40)
-				disttext = " близко"
+				disttext = "close"
 			if(40 to 80)
 				disttext = ""
 			if(80 to 160)
-				disttext = " далеко"
+				disttext = "far"
 			else
-				disttext = " очень далеко"
+				disttext = "very far"
 
 		//sound played for other players
 		player.playsound_local(get_turf(player), 'modular_twilight_axis/sound/items/horn/rallyRetinue.ogg', 35, FALSE, pressure_affected = FALSE)
-		to_chat(player, "<span class='warning'>Я слышу созыв сбора при помощи сигнального рога гвардии где-то[disttext][dirtext]!</span>")
+		to_chat(player, "<span class='warning'>I hear the convening of a meeting with the help of the guard's signal horn somewhere[disttext][dirtext]!</span>")
 
 /obj/item/signal_hornn/red/proc/sound_horn_alert_red(mob/living/user)
-	user.visible_message("<span class='warning'>[capitalize(user.name)] дует в рог гвардии!</span>")
+	user.visible_message("<span class='warning'>[capitalize(user.name)] blowing the guard's horn!</span>")
 	playsound(src, 'modular_twilight_axis/sound/items/horn/AlertRetinue.ogg', 100, TRUE)
 	var/turf/origin_turf = get_turf(src)
 
@@ -193,46 +193,46 @@
 		var/distance = get_dist(player, origin_turf)
 		if(distance <= 7)
 			continue
-		var/dirtext = " к "
+		var/dirtext = "to"
 		var/direction = angle2dir(Get_Angle(player, origin_turf))
 		switch(direction)
 			if(NORTH)
-				dirtext += "северу"
+				dirtext += "north"
 			if(SOUTH)
-				dirtext += "югу"
+				dirtext += "south"
 			if(EAST)
-				dirtext += "востоку"
+				dirtext += "east"
 			if(WEST)
-				dirtext += "западу"
+				dirtext += "west"
 			if(NORTHWEST)
-				dirtext += "северо-западу"
+				dirtext += "northwest"
 			if(NORTHEAST)
-				dirtext += "северо-востоку"
+				dirtext += "northeast"
 			if(SOUTHWEST)
-				dirtext += "юго-западу"
+				dirtext += "southwest"
 			if(SOUTHEAST)
-				dirtext += "юго-востоку"
+				dirtext += "southeast"
 			else //Where ARE you.
-				dirtext = ", но я не могу определить, откуда он раздался"
+				dirtext = ", but I can’t determine where it came from"
 		var/disttext
 		switch(distance)
 			if(0 to 20)
-				disttext = " очень близко"
+				disttext = "very close"
 			if(20 to 40)
-				disttext = " близко"
+				disttext = "close"
 			if(40 to 80)
 				disttext = ""
 			if(80 to 160)
-				disttext = " далеко"
+				disttext = "far"
 			else
-				disttext = " очень далеко"
+				disttext = "very far"
 
 		//sound played for other players
 		player.playsound_local(get_turf(player), 'modular_twilight_axis/sound/items/horn/AlertRetinue.ogg', 35, FALSE, pressure_affected = FALSE)
-		to_chat(player, "<span class='warning'>Я слышу объявление тревоги при помощи сигнального рога гвардии где-то[disttext][dirtext]!</span>")
+		to_chat(player, "<span class='warning'>I hear an alarm being announced on a guard's signal horn somewhere[disttext][dirtext]!</span>")
 
 /obj/item/signal_hornn/red/proc/sound_horn_alarm_red(mob/living/user)
-	user.visible_message("<span class='warning'>[capitalize(user.name)] дует в рог гвардии!</span>")
+	user.visible_message("<span class='warning'>[capitalize(user.name)] blowing the guard's horn!</span>")
 	playsound(src, 'modular_twilight_axis/sound/items/horn/FullAlertRetinue.ogg', 100, TRUE)
 	var/turf/origin_turf = get_turf(src)
 
@@ -245,47 +245,47 @@
 		var/distance = get_dist(player, origin_turf)
 		if(distance <= 7)
 			continue
-		var/dirtext = " к "
+		var/dirtext = "to"
 		var/direction = angle2dir(Get_Angle(player, origin_turf))
 		switch(direction)
 			if(NORTH)
-				dirtext += "северу"
+				dirtext += "north"
 			if(SOUTH)
-				dirtext += "югу"
+				dirtext += "south"
 			if(EAST)
-				dirtext += "востоку"
+				dirtext += "east"
 			if(WEST)
-				dirtext += "западу"
+				dirtext += "west"
 			if(NORTHWEST)
-				dirtext += "северо-западу"
+				dirtext += "northwest"
 			if(NORTHEAST)
-				dirtext += "северо-востоку"
+				dirtext += "northeast"
 			if(SOUTHWEST)
-				dirtext += "юго-западу"
+				dirtext += "southwest"
 			if(SOUTHEAST)
-				dirtext += "юго-востоку"
+				dirtext += "southeast"
 			else //Where ARE you.
-				dirtext = ", но я не могу определить, откуда он раздался"
+				dirtext = ", but I can’t determine where it came from"
 		var/disttext
 		switch(distance)
 			if(0 to 20)
-				disttext = " очень близко"
+				disttext = "very close"
 			if(20 to 40)
-				disttext = " близко"
+				disttext = "close"
 			if(40 to 80)
 				disttext = ""
 			if(80 to 160)
-				disttext = " далеко"
+				disttext = "far"
 			else
-				disttext = " очень далеко"
+				disttext = "very far"
 
 		//sound played for other players
 		player.playsound_local(get_turf(player), 'modular_twilight_axis/sound/items/horn/FullAlertRetinue.ogg', 35, FALSE, pressure_affected = FALSE)
-		to_chat(player, "<span class='warning'>Я слышу объявление полной тревоги при помощи сигнального рога гвардии где-то[disttext][dirtext]!</span>")
+		to_chat(player, "<span class='warning'>I hear a full alarm being announced on a guard's signal horn somewhere[disttext][dirtext]!</span>")
 
 /obj/item/signal_hornn/blue
 	name = "town guard horn"
-	desc = "Используется для сбора войск и подачи сигналов тревоги."
+	desc = "Used to gather troops and sound alarms."
 	icon = 'modular_twilight_axis/icons/roguetown/items/misc.dmi'
 	icon_state = "signal_horn_blue"
 	possible_item_intents = list(/datum/intent/rally, /datum/intent/alert, /datum/intent/alarm)
@@ -300,9 +300,9 @@
 /obj/item/signal_hornn/blue/attack_self(mob/living/user)
 	. = ..()
 	if(world.time < last_horn + 30 SECONDS)
-		to_chat(user, "Мои легкие должны отдохнуть, прежде чем я смогу дуть в [src.name]!")
+		to_chat(user, "My lungs need to rest before I can blow [src.name]!")
 		return
-	user.visible_message("<span class='warning'>[capitalize(user.name)] вот-вот дунет в [src.name]!</span>")
+	user.visible_message("<span class='warning'>[capitalize(user.name)] is about to blow the horn [src.name]!</span>")
 	if(do_after(user, 15) && user.used_intent.type == /datum/intent/rally)
 		last_horn = world.time
 		sound_horn_rally_blue(user)
@@ -314,7 +314,7 @@
 		sound_horn_alarm_blue(user)
 
 /obj/item/signal_hornn/blue/proc/sound_horn_rally_blue(mob/living/user)
-	user.visible_message("<span class='warning'>[capitalize(user.name)] дует в рог дозора!</span>")
+	user.visible_message("<span class='warning'>[capitalize(user.name)] is blowing the watch horn!</span>")
 	playsound(src, 'modular_twilight_axis/sound/items/horn/rallyWatchmen.ogg', 100, TRUE)
 	var/turf/origin_turf = get_turf(src)
 
@@ -327,46 +327,46 @@
 		var/distance = get_dist(player, origin_turf)
 		if(distance <= 7)
 			continue
-		var/dirtext = " к "
+		var/dirtext = "to"
 		var/direction = angle2dir(Get_Angle(player, origin_turf))
 		switch(direction)
 			if(NORTH)
-				dirtext += "северу"
+				dirtext += "north"
 			if(SOUTH)
-				dirtext += "югу"
+				dirtext += "south"
 			if(EAST)
-				dirtext += "востоку"
+				dirtext += "east"
 			if(WEST)
-				dirtext += "западу"
+				dirtext += "west"
 			if(NORTHWEST)
-				dirtext += "северо-западу"
+				dirtext += "northwest"
 			if(NORTHEAST)
-				dirtext += "северо-востоку"
+				dirtext += "northeast"
 			if(SOUTHWEST)
-				dirtext += "юго-западу"
+				dirtext += "southwest"
 			if(SOUTHEAST)
-				dirtext += "юго-востоку"
+				dirtext += "southeast"
 			else //Where ARE you.
-				dirtext = ", но я не могу определить, откуда он раздался"
+				dirtext = ", but I can’t determine where it came from"
 		var/disttext
 		switch(distance)
 			if(0 to 20)
-				disttext = " очень близко"
+				disttext = "very close"
 			if(20 to 40)
-				disttext = " близко"
+				disttext = "close"
 			if(40 to 80)
 				disttext = ""
 			if(80 to 160)
-				disttext = " далеко"
+				disttext = "far"
 			else
-				disttext = " очень далеко"
+				disttext = "very far"
 
 		//sound played for other players
 		player.playsound_local(get_turf(player), 'modular_twilight_axis/sound/items/horn/rallyWatchmen.ogg', 35, FALSE, pressure_affected = FALSE)
-		to_chat(player, "<span class='warning'>Я слышу созыв сбора при помощи сигнального рога дозора где-то[disttext][dirtext]!</span>")
+		to_chat(player, "<span class='warning'>I hear the call for a meeting with the help of the watch signal horn somewhere[disttext][dirtext]!</span>")
 
 /obj/item/signal_hornn/blue/proc/sound_horn_alert_blue(mob/living/user)
-	user.visible_message("<span class='warning'>[capitalize(user.name)] дует в рог дозора!</span>")
+	user.visible_message("<span class='warning'>[capitalize(user.name)] is blowing the watch horn!</span>")
 	playsound(src, 'modular_twilight_axis/sound/items/horn/AlertWatchmen.ogg', 100, TRUE)
 	var/turf/origin_turf = get_turf(src)
 
@@ -379,46 +379,46 @@
 		var/distance = get_dist(player, origin_turf)
 		if(distance <= 7)
 			continue
-		var/dirtext = " к "
+		var/dirtext = "to"
 		var/direction = angle2dir(Get_Angle(player, origin_turf))
 		switch(direction)
 			if(NORTH)
-				dirtext += "северу"
+				dirtext += "north"
 			if(SOUTH)
-				dirtext += "югу"
+				dirtext += "south"
 			if(EAST)
-				dirtext += "востоку"
+				dirtext += "east"
 			if(WEST)
-				dirtext += "западу"
+				dirtext += "west"
 			if(NORTHWEST)
-				dirtext += "северо-западу"
+				dirtext += "northwest"
 			if(NORTHEAST)
-				dirtext += "северо-востоку"
+				dirtext += "northeast"
 			if(SOUTHWEST)
-				dirtext += "юго-западу"
+				dirtext += "southwest"
 			if(SOUTHEAST)
-				dirtext += "юго-востоку"
+				dirtext += "southeast"
 			else //Where ARE you.
-				dirtext = ", но я не могу определить, откуда он раздался"
+				dirtext = ", but I can’t determine where it came from"
 		var/disttext
 		switch(distance)
 			if(0 to 20)
-				disttext = " очень близко"
+				disttext = "very close"
 			if(20 to 40)
-				disttext = " близко"
+				disttext = "close"
 			if(40 to 80)
 				disttext = ""
 			if(80 to 160)
-				disttext = " далеко"
+				disttext = "far"
 			else
-				disttext = " очень далеко"
+				disttext = "very far"
 
 		//sound played for other players
 		player.playsound_local(get_turf(player), 'modular_twilight_axis/sound/items/horn/AlertWatchmen.ogg', 35, FALSE, pressure_affected = FALSE)
-		to_chat(player, "<span class='warning'>Я слышу объявление тревоги при помощи сигнального рога дозора где-то[disttext][dirtext]!</span>")
+		to_chat(player, "<span class='warning'>I hear an alarm being announced using a patrol signal horn somewhere[disttext][dirtext]!</span>")
 
 /obj/item/signal_hornn/blue/proc/sound_horn_alarm_blue(mob/living/user)
-	user.visible_message("<span class='warning'>[capitalize(user.name)] дует в рог дозора!</span>")
+	user.visible_message("<span class='warning'>[capitalize(user.name)] is blowing the watch horn!</span>")
 	playsound(src, 'modular_twilight_axis/sound/items/horn/FullAlertWatchmen.ogg', 100, TRUE)
 	var/turf/origin_turf = get_turf(src)
 
@@ -431,47 +431,47 @@
 		var/distance = get_dist(player, origin_turf)
 		if(distance <= 7)
 			continue
-		var/dirtext = " к "
+		var/dirtext = "to"
 		var/direction = angle2dir(Get_Angle(player, origin_turf))
 		switch(direction)
 			if(NORTH)
-				dirtext += "северу"
+				dirtext += "north"
 			if(SOUTH)
-				dirtext += "югу"
+				dirtext += "south"
 			if(EAST)
-				dirtext += "востоку"
+				dirtext += "east"
 			if(WEST)
-				dirtext += "западу"
+				dirtext += "west"
 			if(NORTHWEST)
-				dirtext += "северо-западу"
+				dirtext += "northwest"
 			if(NORTHEAST)
-				dirtext += "северо-востоку"
+				dirtext += "northeast"
 			if(SOUTHWEST)
-				dirtext += "юго-западу"
+				dirtext += "southwest"
 			if(SOUTHEAST)
-				dirtext += "юго-востоку"
+				dirtext += "southeast"
 			else //Where ARE you.
-				dirtext = ", но я не могу определить, откуда он раздался"
+				dirtext = ", but I can’t determine where it came from"
 		var/disttext
 		switch(distance)
 			if(0 to 20)
-				disttext = " очень близко"
+				disttext = "very close"
 			if(20 to 40)
-				disttext = " близко"
+				disttext = "close"
 			if(40 to 80)
 				disttext = ""
 			if(80 to 160)
-				disttext = " далеко"
+				disttext = "far"
 			else
-				disttext = " очень далеко"
+				disttext = "very far"
 
 		//sound played for other players
 		player.playsound_local(get_turf(player), 'modular_twilight_axis/sound/items/horn/FullAlertWatchmen.ogg', 35, FALSE, pressure_affected = FALSE)
-		to_chat(player, "<span class='warning'>Я слышу объявление полной тревоги при помощи сигнального рога дозора где-то[disttext][dirtext]!</span>")
+		to_chat(player, "<span class='warning'>I I hear the announcement of a full alarm with the help of a watch horn somewhere[disttext][dirtext]!</span>")
 
 /obj/item/signal_hornn/green
 	name = "vanguard's horn"
-	desc = "Используется для сбора войск и подачи сигналов тревоги."
+	desc = "Used to gather troops and sound alarms."
 	icon = 'modular_twilight_axis/icons/roguetown/items/misc.dmi'
 	icon_state = "signal_horn_green"
 	possible_item_intents = list(/datum/intent/rally, /datum/intent/alert, /datum/intent/alarm)
@@ -486,9 +486,9 @@
 /obj/item/signal_hornn/green/attack_self(mob/living/user)
 	. = ..()
 	if(world.time < last_horn + 30 SECONDS)
-		to_chat(user, "Мои легкие должны отдохнуть, прежде чем я смогу дуть в [src.name]!")
+		to_chat(user, "My lungs need to rest before I can blow [src.name]!")
 		return
-	user.visible_message("<span class='warning'>[capitalize(user.name)] вот-вот дунет в [src.name]!</span>")
+	user.visible_message("<span class='warning'>[capitalize(user.name)] is about to blow the horn [src.name]!</span>")
 	if(do_after(user, 15) && user.used_intent.type == /datum/intent/rally)
 		last_horn = world.time
 		sound_horn_rally_green(user)
@@ -500,7 +500,7 @@
 		sound_horn_alarm_green(user)
 
 /obj/item/signal_hornn/green/proc/sound_horn_rally_green(mob/living/user)
-	user.visible_message("<span class='warning'>[capitalize(user.name)] дует в рог авангарда!</span>")
+	user.visible_message("<span class='warning'>[capitalize(user.name)] blowing on the horn of the vanguard!</span>")
 	playsound(src, 'modular_twilight_axis/sound/items/horn/rallyVanguard.ogg', 100, TRUE)
 	var/turf/origin_turf = get_turf(src)
 
@@ -513,46 +513,46 @@
 		var/distance = get_dist(player, origin_turf)
 		if(distance <= 7)
 			continue
-		var/dirtext = " к "
+		var/dirtext = "to"
 		var/direction = angle2dir(Get_Angle(player, origin_turf))
 		switch(direction)
 			if(NORTH)
-				dirtext += "северу"
+				dirtext += "north"
 			if(SOUTH)
-				dirtext += "югу"
+				dirtext += "south"
 			if(EAST)
-				dirtext += "востоку"
+				dirtext += "east"
 			if(WEST)
-				dirtext += "западу"
+				dirtext += "west"
 			if(NORTHWEST)
-				dirtext += "северо-западу"
+				dirtext += "northwest"
 			if(NORTHEAST)
-				dirtext += "северо-востоку"
+				dirtext += "northeast"
 			if(SOUTHWEST)
-				dirtext += "юго-западу"
+				dirtext += "southwest"
 			if(SOUTHEAST)
-				dirtext += "юго-востоку"
+				dirtext += "southeast"
 			else //Where ARE you.
-				dirtext = ", но я не могу определить, откуда он раздался"
+				dirtext = ", but I can’t determine where it came from"
 		var/disttext
 		switch(distance)
 			if(0 to 20)
-				disttext = " очень близко"
+				disttext = "very close"
 			if(20 to 40)
-				disttext = " близко"
+				disttext = "close"
 			if(40 to 80)
 				disttext = ""
 			if(80 to 160)
-				disttext = " далеко"
+				disttext = "far"
 			else
-				disttext = " очень далеко"
+				disttext = "very far"
 
 		//sound played for other players
 		player.playsound_local(get_turf(player), 'modular_twilight_axis/sound/items/horn/rallyVanguard.ogg', 35, FALSE, pressure_affected = FALSE)
-		to_chat(player, "<span class='warning'>Я слышу созыв сбора при помощи сигнального рога авангарда где-то[disttext][dirtext]!</span>")
+		to_chat(player, "<span class='warning'>I hear the convening of a meeting using the vanguard signal horn somewhere[disttext][dirtext]!</span>")
 
 /obj/item/signal_hornn/green/proc/sound_horn_alert_green(mob/living/user)
-	user.visible_message("<span class='warning'>[capitalize(user.name)] дует в рог авангарда!</span>")
+	user.visible_message("<span class='warning'>[capitalize(user.name)] blowing on the horn of the vanguard!</span>")
 	playsound(src, 'modular_twilight_axis/sound/items/horn/AlertVanguard.ogg', 100, TRUE)
 	var/turf/origin_turf = get_turf(src)
 
@@ -565,46 +565,46 @@
 		var/distance = get_dist(player, origin_turf)
 		if(distance <= 7)
 			continue
-		var/dirtext = " к "
+		var/dirtext = "to"
 		var/direction = angle2dir(Get_Angle(player, origin_turf))
 		switch(direction)
 			if(NORTH)
-				dirtext += "северу"
+				dirtext += "north"
 			if(SOUTH)
-				dirtext += "югу"
+				dirtext += "south"
 			if(EAST)
-				dirtext += "востоку"
+				dirtext += "east"
 			if(WEST)
-				dirtext += "западу"
+				dirtext += "west"
 			if(NORTHWEST)
-				dirtext += "северо-западу"
+				dirtext += "northwest"
 			if(NORTHEAST)
-				dirtext += "северо-востоку"
+				dirtext += "northeast"
 			if(SOUTHWEST)
-				dirtext += "юго-западу"
+				dirtext += "southwest"
 			if(SOUTHEAST)
-				dirtext += "юго-востоку"
+				dirtext += "southeast"
 			else //Where ARE you.
-				dirtext = ", но я не могу определить, откуда он раздался"
+				dirtext = ", but I can’t determine where it came from"
 		var/disttext
 		switch(distance)
 			if(0 to 20)
-				disttext = " очень близко"
+				disttext = "very close"
 			if(20 to 40)
-				disttext = " близко"
+				disttext = "close"
 			if(40 to 80)
 				disttext = ""
 			if(80 to 160)
-				disttext = " далеко"
+				disttext = "far"
 			else
-				disttext = " очень далеко"
+				disttext = "very far"
 
 		//sound played for other players
 		player.playsound_local(get_turf(player), 'modular_twilight_axis/sound/items/horn/AlertVanguard.ogg', 35, FALSE, pressure_affected = FALSE)
-		to_chat(player, "<span class='warning'>Я слышу объявление тревоги при помощи сигнального рога авангарда где-то[disttext][dirtext]!</span>")
+		to_chat(player, "<span class='warning'>I hear an alarm being announced using the vanguard signal horn somewhere[disttext][dirtext]!</span>")
 
 /obj/item/signal_hornn/green/proc/sound_horn_alarm_green(mob/living/user)
-	user.visible_message("<span class='warning'>[capitalize(user.name)] дует в рог авангарда!</span>")
+	user.visible_message("<span class='warning'>[capitalize(user.name)] blowing on the horn of the vanguard!</span>")
 	playsound(src, 'modular_twilight_axis/sound/items/horn/FullAlertVanguard.ogg', 100, TRUE)
 	var/turf/origin_turf = get_turf(src)
 
@@ -617,43 +617,43 @@
 		var/distance = get_dist(player, origin_turf)
 		if(distance <= 7)
 			continue
-		var/dirtext = " к "
+		var/dirtext = "to"
 		var/direction = angle2dir(Get_Angle(player, origin_turf))
 		switch(direction)
 			if(NORTH)
-				dirtext += "северу"
+				dirtext += "north"
 			if(SOUTH)
-				dirtext += "югу"
+				dirtext += "south"
 			if(EAST)
-				dirtext += "востоку"
+				dirtext += "east"
 			if(WEST)
-				dirtext += "западу"
+				dirtext += "west"
 			if(NORTHWEST)
-				dirtext += "северо-западу"
+				dirtext += "northwest"
 			if(NORTHEAST)
-				dirtext += "северо-востоку"
+				dirtext += "northeast"
 			if(SOUTHWEST)
-				dirtext += "юго-западу"
+				dirtext += "southwest"
 			if(SOUTHEAST)
-				dirtext += "юго-востоку"
+				dirtext += "southeast"
 			else //Where ARE you.
-				dirtext = ", но я не могу определить, откуда он раздался"
+				dirtext = ", but I can’t determine where it came from"
 		var/disttext
 		switch(distance)
 			if(0 to 20)
-				disttext = " очень близко"
+				disttext = "very close"
 			if(20 to 40)
-				disttext = " близко"
+				disttext = "close"
 			if(40 to 80)
 				disttext = ""
 			if(80 to 160)
-				disttext = " далеко"
+				disttext = "far"
 			else
-				disttext = " очень далеко"
+				disttext = "very far"
 
 		//sound played for other players
 		player.playsound_local(get_turf(player), 'modular_twilight_axis/sound/items/horn/FullAlertVanguard.ogg', 35, FALSE, pressure_affected = FALSE)
-		to_chat(player, "<span class='warning'>Я слышу объявление полной тревоги при помощи сигнального рога авангарда где-то[disttext][dirtext]!</span>")
+		to_chat(player, "<span class='warning'>I hear a full alarm being announced by the signal horn of the vanguard somewhere[disttext][dirtext]!</span>")
 
 #define WARDEN_AMBUSH_MIN 2
 #define WARDEN_AMBUSH_MAX 9

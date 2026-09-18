@@ -16,7 +16,7 @@
  * that TRAIT_MIRROR_MAGIC/TRAIT_EDIT_DESCRIPTORS is still present and
  * the player is still near the mirror, independent of whether they're
  * actively interacting with the panel. On failure it waits a few
- * seconds (showing "Зеркало гаснет...") before closing itself.
+ * seconds (showing "Mirror goes out...") before closing itself.
  *
  * A NOTE ON A PRE-EXISTING BUG SPOTTED WHILE PORTING THE LEGACY MENU:
  *   In the original "Testicles" case, `testicles_type.get_default_colors(...)`
@@ -163,7 +163,7 @@ GLOBAL_LIST_EMPTY(mirror_thumb_cache)
 	for(var/i in 1 to color_keys)
 		out_colors += list(list(
 			"index" = i,
-			"label" = (length(labels) >= i) ? labels[i] : "Цвет [i]",
+			"label" = (length(labels) >= i) ? labels[i] : "Color [i]",
 			"value" = (length(colors) >= i) ? colors[i] : "#FFFFFF",
 		))
 	info["colors"] = out_colors
@@ -192,7 +192,7 @@ GLOBAL_LIST_EMPTY(mirror_thumb_cache)
 	for(var/i in 1 to color_keys)
 		out_colors += list(list(
 			"index" = i,
-			"label" = (length(labels) >= i) ? labels[i] : "Цвет [i]",
+			"label" = (length(labels) >= i) ? labels[i] : "Color [i]",
 			"value" = (length(colors) >= i) ? colors[i] : "#FFFFFF",
 		))
 	info["colors"] = out_colors
@@ -281,8 +281,8 @@ GLOBAL_LIST_EMPTY(mirror_thumb_cache)
 	var/list/out = list()
 	var/list/seen_names = list()
 	if(include_none)
-		out += list(list("name" = "Нет", "path" = ""))
-		seen_names["Нет"] = TRUE
+		out += list(list("name" = "No", "path" = ""))
+		seen_names["No"] = TRUE
 	for(var/sub_type in subtypesof(base_type))
 		var/instance_name = initial(sub_type:name)
 		if(!instance_name || !length(instance_name))
@@ -343,8 +343,8 @@ GLOBAL_LIST_EMPTY(mirror_thumb_cache)
  * panel reliably reacts within ~1s of the effect ending or the player
  * leaving range, not "whenever the next unrelated update happens to
  * occur". When check_still_valid() first fails, it doesn't close right
- * away - it keeps the panel open (showing the frontend's "Зеркало
- * гаснет..." placeholder) for a few seconds first, so the player sees
+ * away - it keeps the panel open (showing the frontend's "Mirror
+ * fades..." placeholder) for a few seconds first, so the player sees
  * why it's closing instead of it just vanishing.
  */
 /datum/mirror_appearance_ui/proc/schedule_validity_check()
@@ -413,8 +413,8 @@ GLOBAL_LIST_EMPTY(mirror_thumb_cache)
 	// so they silently inherited the base class's default appearance.
 	// Where a choice offers multiple sprite_accessories (e.g. "Knotted"
 	// has 2 variants), only the first/default one is exposed here.
-	var/list/penis_options = list(list("name" = "Нет", "path" = ""))
-	var/list/seen_penis_names = list("Нет" = TRUE)
+	var/list/penis_options = list(list("name" = "No", "path" = ""))
+	var/list/seen_penis_names = list("No" = TRUE)
 	for(var/choice_type in subtypesof(/datum/customizer_choice/organ/penis))
 		var/choice_name = initial(choice_type:name)
 		if(!choice_name || !length(choice_name) || seen_penis_names[choice_name])
@@ -454,8 +454,8 @@ GLOBAL_LIST_EMPTY(mirror_thumb_cache)
 		data["hairstyles"] = hairstyles
 
 		var/datum/customizer_choice/bodypart_feature/hair/facial/humanoid/facial_choice = CUSTOMIZER_CHOICE(/datum/customizer_choice/bodypart_feature/hair/facial/humanoid)
-		var/list/facial_styles = list(list("name" = "Нет", "path" = "", "thumb" = null))
-		var/list/seen_facial_names = list("Нет" = TRUE)
+		var/list/facial_styles = list(list("name" = "No", "path" = "", "thumb" = null))
+		var/list/seen_facial_names = list("No" = TRUE)
 		for(var/facial_type in facial_choice.sprite_accessories)
 			var/instance_name = initial(facial_type:name)
 			if(!instance_name || !length(instance_name) || seen_facial_names[instance_name])
@@ -466,8 +466,8 @@ GLOBAL_LIST_EMPTY(mirror_thumb_cache)
 		data["facial_hairstyles"] = facial_styles
 
 		var/datum/customizer_choice/bodypart_feature/accessory/accessory_choice = CUSTOMIZER_CHOICE(/datum/customizer_choice/bodypart_feature/accessory)
-		var/list/accessory_opts = list(list("name" = "Нет", "path" = ""))
-		var/list/seen_accessory_names = list("Нет" = TRUE)
+		var/list/accessory_opts = list(list("name" = "No", "path" = ""))
+		var/list/seen_accessory_names = list("No" = TRUE)
 		for(var/accessory_type in accessory_choice.sprite_accessories)
 			var/instance_name = initial(accessory_type:name)
 			if(!instance_name || !length(instance_name) || seen_accessory_names[instance_name])
@@ -477,8 +477,8 @@ GLOBAL_LIST_EMPTY(mirror_thumb_cache)
 		data["accessory_styles"] = accessory_opts
 
 		var/datum/customizer_choice/bodypart_feature/face_detail/face_choice = CUSTOMIZER_CHOICE(/datum/customizer_choice/bodypart_feature/face_detail)
-		var/list/face_opts = list(list("name" = "Нет", "path" = ""))
-		var/list/seen_face_names = list("Нет" = TRUE)
+		var/list/face_opts = list(list("name" = "No", "path" = ""))
+		var/list/seen_face_names = list("No" = TRUE)
 		for(var/detail_type in face_choice.sprite_accessories)
 			var/instance_name = initial(detail_type:name)
 			if(!instance_name || !length(instance_name) || seen_face_names[instance_name])
@@ -516,21 +516,21 @@ GLOBAL_LIST_EMPTY(mirror_thumb_cache)
 			var/named_zone = "?"
 			switch(zone)
 				if(BODY_ZONE_R_ARM)
-					named_zone = "Правая рука"
+					named_zone = "Right hand"
 				if(BODY_ZONE_L_ARM)
-					named_zone = "Левая рука"
+					named_zone = "Left hand"
 				if(BODY_ZONE_HEAD)
-					named_zone = "Голова"
+					named_zone = "Head"
 				if(BODY_ZONE_CHEST)
-					named_zone = "Грудь"
+					named_zone = "Chest"
 				if(BODY_ZONE_R_LEG)
-					named_zone = "Правая нога"
+					named_zone = "Right leg"
 				if(BODY_ZONE_L_LEG)
-					named_zone = "Левая нога"
+					named_zone = "Left leg"
 				if(BODY_ZONE_PRECISE_R_HAND)
-					named_zone = "Правая кисть"
+					named_zone = "Right wrist"
 				if(BODY_ZONE_PRECISE_L_HAND)
-					named_zone = "Левая кисть"
+					named_zone = "Left wrist"
 			marking_zone_list += list(list("zone" = "[zone]", "label" = named_zone))
 		data["marking_zone_list"] = marking_zone_list
 
@@ -979,7 +979,7 @@ GLOBAL_LIST_EMPTY(mirror_thumb_cache)
 				// Was: mirror_pick_accessory_colors(H, penis_accessory, old_colors) - that's
 				// the legacy chain of native input() popups, which made no sense to keep
 				// popping up here now that colors have their own proper pickers in this UI
-				// (Пенис tab, color swatches). Just carry over old colors if there were any,
+				//(Penis tab, color swatches). Just carry over old colors if there were any,
 				// otherwise fall back to sensible defaults - same as every other organ does
 				// on style change (set_ears/set_horns/etc).
 				new_penis.accessory_colors = old_colors ? old_colors : penis_accessory.get_default_colors(color_key_source_list_from_carbon(H))

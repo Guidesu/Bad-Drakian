@@ -1,4 +1,4 @@
-// Пример возможного бафа (пока не введено, но заготовка)
+//Example of a possible buff (not entered yet, but prepared)
 // /datum/status_effect/erp/oil_skin/on_apply()
 // 	. = ..()
 // 	var/mob/living/carbon/human/H = owner
@@ -16,7 +16,7 @@
 // /datum/status_effect/erp/oil_skin/proc/modify_sex_effect(mob/living/carbon/human/H, list/effect)
 // 	SIGNAL_HANDLER
 
-// 	// например, снижает боль на 40%
+//// for example, reduces pain by 40%
 // 	var/pain = effect["pain"] || 0
 // 	pain *= 0.6
 // 	effect["pain"] = pain

@@ -10,9 +10,9 @@
 	forbidden_races = list(RACES_DESPISED)
 	allowed_ages = list(AGE_ADULT, AGE_MIDDLEAGED)
 	job_traits = list(TRAIT_GUARDSMAN, TRAIT_STEELHEARTED)
-	tutorial = "Доказав свою преданность и способности, вы получили смысл жизни - защищать Королевскую семью и её двор в качестве лейб-гвардейца. \
-				Вы непосредственно подчиняетесь своему сержанту лейб-гвардии. Если вы регулярно проходите обучение боевым и осадным действиям, у вас есть небольшой шанс пережить правление Короля.\
-				Умереть в составе лейб-гвардии Его Высочества - большая честь, маршал напоминает вам об этом каждую ночь."
+	tutorial = "Having proven your loyalty and abilities, you received the purpose of life - to protect the Royal Family and its court as a Life Guardsman. \
+				You report directly to your Life Guards sergeant. If you regularly undergo training in combat and siege operations, you have a small chance of surviving the King's rule.\
+				To die as part of His Highness's Life Guards is a great honor, the marshal reminds you of this every night."
 	display_order = JDO_ROYALGUARD
 	whitelist_req = TRUE
 
@@ -51,7 +51,7 @@
 // Melee goon
 /datum/advclass/royal_guard/footsman
 	name = "Retinue Footman"
-	tutorial = "Вы - член королевской дружины. Обеспечьте безопасность Короля и его жителей, защитите власть предержащих от ужасов внешнего мира и сохраните Королевству Энигму."
+	tutorial = "You are a member of the royal squad. Ensure the safety of the King and his people, protect those in power from the horrors of the outside world and save the Enigma Kingdom."
 	outfit = /datum/outfit/job/roguetown/royal_guard/footsman
 
 	category_tags = list(CTAG_ROYALGUARD_ENIGMA)
@@ -154,7 +154,7 @@
 
 /datum/advclass/royal_guard/skirmisher
 	name = "Retinue Skirmisher"
-	tutorial = "Вы - член королевской дружины. Обеспечьте безопасность Короля и его жителей, защитите власть предержащих от ужасов внешнего мира и сохраните Королевству Энигму."
+	tutorial = "You are a member of the royal squad. Ensure the safety of the King and his people, protect those in power from the horrors of the outside world and save the Enigma Kingdom."
 	outfit = /datum/outfit/job/roguetown/royal_guard/skirmisher
 
 	category_tags = list(CTAG_ROYALGUARD_ENIGMA)
@@ -247,8 +247,8 @@
 
 /datum/advclass/royal_guard/standard_bearer
 	name = "Retinue Standard Bearer"
-	tutorial = "Ты тот, кому была удостоена честь нести знамя Королества. \
-	Вдохновляй своих товарищей на подвиги во имя Короля."
+	tutorial = "You are the one who has been given the honor of carrying the banner of the Kingdom. \
+	Inspire your comrades to deeds in the name of the King."
 	outfit = /datum/outfit/job/roguetown/royal_guard/standard_bearer
 	category_tags = list(CTAG_ROYALGUARD_ENIGMA)
 	traits_applied = list(TRAIT_STANDARD_BEARER, TRAIT_MEDIUMARMOR)

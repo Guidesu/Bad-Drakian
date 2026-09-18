@@ -257,7 +257,7 @@
 	if((!isnull(amt2change) && amt2change != 0) && !raisin)
 		return
 	if(canonical_ckey == src.ckey)	
-		to_chat(src, span_boldwarning("Самому себе PQ менять нельзя."))
+		to_chat(src, span_boldwarning("You cannot change your own PQ."))
 		return
 	adjust_playerquality(amt2change, canonical_ckey, src.ckey, raisin)
 	for(var/client/C in GLOB.clients) // I hate this, but I'm not refactoring the cancer above this point.
@@ -334,7 +334,7 @@
 		curcomm = 0
 	return curcomm
 
-// Трогаем ПКью через дискорд бота
+//Touching PC via discord bot
 
 /proc/can_adjust_playerquality_by_admin_ckey(admin)
 	if(!admin)

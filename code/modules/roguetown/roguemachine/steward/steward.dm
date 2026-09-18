@@ -403,10 +403,10 @@
 
 	if(href_list["buy_investment"])
 		if(SSinvestments.purchase_investment(locate(href_list["buy_investment"])))
-			say("Инвестиция произведена!")
+			say("The investment has been made!")
 			playsound(src, 'sound/misc/machineyes.ogg', 100, FALSE, -1)
 		else 
-			say("Недостаточно денег в казне")
+			say("Not enough money in the treasury")
 			playsound(src, 'sound/misc/machineno.ogg', 100, FALSE, -1)
 	
 	return attack_hand(usr)
@@ -681,7 +681,7 @@
 			contents += "<a href='?src=\ref[src];printresidency=1'>\[Print Letter of Citizenry\]</a><BR>"
 			contents += "<a href='?src=\ref[src];setpurchasefloor=1'>\[Purchase Floor: [SStreasury.stockpile_purchase_floor]m\]</a><BR>"
 			contents += "<BR>"
-		//	contents += "<a href='?src=\ref[src];switchtab=[TAB_INVESTMENTS]'>\[Инвестиции\]</a><BR>" Временно и лениво убрал инвестиции у казначея. Надо их будет переделать
+		//	contents += "<a href='?src=\ref[src];switchtab=[TAB_INVESTMENTS]'>\[Investment\]</a><BR>" Temporarily and lazily removed investments from the treasurer. They will need to be redone
 			contents += "</center>"
 		if(TAB_BANK)
 			contents += "<a href='?src=\ref[src];switchtab=[TAB_MAIN]'>\[Return\]</a>"
@@ -1012,16 +1012,16 @@
 
 		if(TAB_INVESTMENTS)
 			contents += "<a href='?src=\ref[src];switchtab=[TAB_MAIN]'>\[Return\]</a>"
-			contents += "<a href='?src=\ref[src];switchtab=[TAB_INVESTMENTS]'>\[ОБНОВИТЬ\]</a><BR>"
-			contents += "<center>Инвестиции<BR>"
-			contents += "------АКТИВНЫЕ------<BR>"
+			contents += "<a href='?src=\ref[src];switchtab=[TAB_INVESTMENTS]'>\[UPDATE\]</a><BR>"
+			contents += "<center>Investment<BR>"
+			contents += "------ACTIVE------<BR>"
 			for(var/datum/investment/investment in SSinvestments.active_investments)
 				contents += "<div style='background-color: #1c1c1c; margin-top:4px'>"
 				contents += "<b>[investment.investment_name]</b><BR>"
-				contents += "Доход: [investment.regular_payment]m/минута<BR>"
+				contents += "Income: [investment.regular_payment]m/minute<BR>"
 				contents += "</div>"
 
-			contents += "------ОЖИДАЮЩИЕ------<BR>"
+			contents += "------WAITING------<BR>"
 			for(var/datum/investment/investment in SSinvestments.awaiting_investments)
 				contents += "<div style='background-color: #1c1c1c; margin-top:4px'>"
 				contents += "<b>[investment.investment_name]</b><BR>"
@@ -1031,10 +1031,10 @@
 				var/min = round(total_seconds / 60)
 				var/sec = total_seconds % 60
 
-				contents += "Осталось времени: [max(min,0)] минут [max(sec,0) < 10 ? "0[sec]" : "[sec]"] секунд<BR>"
+				contents += "Time remaining: [max(min,0)] minutes [max(sec,0) < 10 ?"0[sec]" : "[sec]"] seconds<BR>"
 				contents += "</div>"
 
-			contents += "------ДОСТУПНЫЕ------<BR>"
+			contents += "------AVAILABLE------<BR>"
 			for(var/datum/investment/investment in SSinvestments.available_investments)
 				var/name
 				var/price
@@ -1050,10 +1050,10 @@
 					onetime_payment = investment.onetime_payment
 				else if(HAS_TRAIT(user, TRAIT_SEEPRICES_SHITTY))
 					name = "???"
-					price = "примерно [investment.price * (rand(80, 120)/100)]"
+					price = "approximately [investment.price * (rand(80, 120)/100)]"
 					fail_chance = "???"
-					regular_payment = "примерно [investment.regular_payment * (rand(80, 120)/100)]"
-					onetime_payment = "примерно [investment.onetime_payment * (rand(80, 120)/100)]"
+					regular_payment = "approximately [investment.regular_payment * (rand(80, 120)/100)]"
+					onetime_payment = "approximately [investment.onetime_payment * (rand(80, 120)/100)]"
 				else
 					name = "???"
 					price = "???"
@@ -1064,16 +1064,16 @@
 				contents += "<div style='background-color: #1c1c1c; margin-top:4px'>"
 				contents += "<b>[name]</b><BR>"
 				if(investment.regular_payment != 0)
-					contents += "Доход: [regular_payment]m/минута<BR>"
+					contents += "Income: [regular_payment]m/minute<BR>"
 				if(investment.onetime_payment != 0)
-					contents += "Одноразовая выплата: [onetime_payment]m<BR>"
-				contents += "Цена: [price]m "
-				contents += "Шанс провала: [fail_chance]%<BR>"
-				contents += "ETA: [round(investment.pay_eta / (1 MINUTES))] минут<BR>"
+					contents += "One-time payment: [onetime_payment]m<BR>"
+				contents += "Price: [price]m"
+				contents += "Chance of failure: [fail_chance]%<BR>"
+				contents += "ETA: [round(investment.pay_eta / (1 MINUTES))] minutes<BR>"
 				if(SStreasury.discretionary_fund.balance < investment.price)
-					contents += "<a href='?src=\ref[src];buy_investment=\ref[investment]'>\[НЕДОСТАТОЧНО СРЕДСТВ\]</a>"
+					contents += "<a href='?src=\ref[src];buy_investment=\ref[investment]'>\[INSUFFICIENT FUNDS\]</a>"
 				else 
-					contents += "<a href='?src=\ref[src];buy_investment=\ref[investment]'>\[КУПИТЬ\]</a>"
+					contents += "<a href='?src=\ref[src];buy_investment=\ref[investment]'>\[BUY\]</a>"
 				contents += "</div>"
 			
 

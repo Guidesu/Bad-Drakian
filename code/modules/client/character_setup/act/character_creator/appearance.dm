@@ -36,6 +36,18 @@
 				verbose_pref_log_change(user, "notice", "Taur Color", "[taur_color]", "[new_taur_color]")
 				taur_color = new_taur_color
 			return CHARACTER_ACT_PREVIEW_UPDATE
+		if("taur_markings")
+			var/new_taur_markings = tgui_color_picker(user, "Choose the markings color:", "Taur Markings", taur_markings)
+			if(new_taur_markings)
+				verbose_pref_log_change(user, "notice", "Taur Markings", taur_markings, new_taur_markings)
+				taur_markings = new_taur_markings
+			return CHARACTER_ACT_PREVIEW_UPDATE
+		if("taur_tertiary")
+			var/new_taur_tertiary = tgui_color_picker(user, "Choose the tertiary color:", "Taur Tertiary", taur_tertiary)
+			if(new_taur_tertiary)
+				verbose_pref_log_change(user, "notice", "Taur Tertiary", taur_tertiary, new_taur_tertiary)
+				taur_tertiary = new_taur_tertiary
+			return CHARACTER_ACT_PREVIEW_UPDATE
 		if("set_skin_tone")
 			var/list/valid_skin_tones = get_valid_skin_tones()
 

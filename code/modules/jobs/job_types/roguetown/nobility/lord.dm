@@ -3,7 +3,8 @@ GLOBAL_LIST_EMPTY(lord_titles)
 
 /datum/job/roguetown/lord
 	title = "Grand Duke"
-	f_title = "Grand Duchess"
+	display_title = "Count"
+	f_title = "Countess"
 	flag = LORD
 	department_flag = NOBLEMEN
 	faction = "Station"
@@ -43,21 +44,27 @@ GLOBAL_LIST_EMPTY(lord_titles)
 		/datum/advclass/lord/mage,
 		/datum/advclass/lord/inbred
 	)
-	default_subprefs = list("favorite_advclass" = null, "primcolor" = null, "seccolor" = null)
+	default_subprefs = list("favorite_advclass" = null, "primcolor" = null, "seccolor" = null, "sovereign_rank" = null)
 
 /datum/outfit/job/roguetown/lord
 	job_bitflag = BITFLAG_ROYALTY
 	has_loadout = TRUE
 
 /datum/job/roguetown/lord/update_subprefs_window(mob/user)
-	var/client/C = usr.client
+	var/client/C = user.client
 	if(!C || !C.prefs)
 		return
 	var/list/roleprefs = get_roleprefs(C)
+	var/list/rank_choices = get_sovereign_rank_choices(C.prefs.virtue_origin)
+	var/current_rank = roleprefs["sovereign_rank"]
+	if(!(current_rank in rank_choices))
+		current_rank = rank_choices[1]
 	var/HTML = {"
 		[subprefs_subclass_html(C)]
 		<hr>
-		<i>You can choose your ducal colors here; this will only take effect if both are set.</i><br/>
+		<i>The ruler is sovereign and owes allegiance to no higher crown. Choose a culturally appropriate rank for your character's origin.</i><br/>
+		<b>Sovereign rank:</b> <a href="?src=[REF(src)];sovereignrank=1">[current_rank]</a><br/>
+		<i>You can choose your royal colors here; this will only take effect if both are set.</i><br/>
 		<b>Primary color:</b> <a href="?src=[REF(src)];primcolor=1">[roleprefs["primcolor"] || "Choose"]</a><br/>
 		<b>Secondary color:</b> <a href="?src=[REF(src)];seccolor=1">[roleprefs["seccolor"] || "Choose"]</a><br/>
 		<center><a href="?src=[REF(src)];subprefsexit=1">EXIT</a>\t\t<a href="?src=[REF(src)];subprefsreset=1">RESET</a></center>
@@ -75,6 +82,12 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	if(!C || !C.prefs)
 		return
 	var/list/roleprefs = get_roleprefs(C)
+	if(href_list["sovereignrank"])
+		var/list/rank_choices = get_sovereign_rank_choices(C.prefs.virtue_origin)
+		var/choice = tgui_input_list(usr, "Choose the sovereign rank used by your independent realm.", "Sovereign Rank", rank_choices)
+		if(choice)
+			roleprefs["sovereign_rank"] = choice
+			update_subprefs_window(usr)
 	if(href_list["primcolor"])
 		var/choice = input(usr, "Choose a Primary Color", "ROYAL STANDARD") as anything in COLOR_MAP
 		if(choice)
@@ -95,8 +108,11 @@ GLOBAL_LIST_EMPTY(lord_titles)
 			GLOB.lordsurname = jointext(chopped_name, " ")
 		else
 			GLOB.lordsurname = "of [L.real_name]"
+		var/list/roleprefs = get_roleprefs(L.client)
+		apply_sovereign_rank(L, roleprefs?["sovereign_rank"])
 		SSticker.set_ruler_mob(L)
-		var/realm = SSticker.realm_name || "Azure Peak"
+		apply_sovereign_name_title(L)
+		var/realm = get_realm_name()
 		to_world("<b><span class='notice'><span class='big'>[L.real_name] is [SSticker.rulertype] of [realm].</span></span></b>")
 		if(istype(SSticker.regentmob, /mob/living/carbon/human))
 			var/mob/living/carbon/human/regentbuddy = SSticker.regentmob
@@ -120,6 +136,66 @@ GLOBAL_LIST_EMPTY(lord_titles)
 				else
 					L.lord_color_choice()
 			}
+
+/// Ranks are constrained by the ruler's existing lore origin. The technical job id remains
+/// "Grand Duke" for save, role-ban, and admin compatibility, but is never its public title.
+/datum/job/roguetown/lord/proc/get_sovereign_rank_choices(datum/virtue/origin/origin)
+	if(istype(origin, /datum/virtue/origin/gronn) || istype(origin, /datum/virtue/origin/hammerhold))
+		return list("Jarl", "Thane")
+	if(istype(origin, /datum/virtue/origin/grenzelhoft))
+		return list("Graf", "Margrave")
+	if(istype(origin, /datum/virtue/origin/zybantian) || istype(origin, /datum/virtue/origin/naledi) || istype(origin, /datum/virtue/origin/avar))
+		return list("Emir", "Bey")
+	if(istype(origin, /datum/virtue/origin/valorian) || istype(origin, /datum/virtue/origin/etrusca))
+		return list("Count", "Earl")
+	if(istype(origin, /datum/virtue/origin/enigma) || istype(origin, /datum/virtue/origin/heartfelt))
+		return list("Earl", "Count")
+	return list("Count", "Earl")
+
+/datum/job/roguetown/lord/proc/apply_sovereign_rank(mob/living/ruler, requested_rank)
+	var/list/allowed_ranks = get_sovereign_rank_choices(ruler?.client?.prefs?.virtue_origin)
+	var/rank = (requested_rank in allowed_ranks) ? requested_rank : allowed_ranks[1]
+	switch(rank)
+		if("Earl")
+			display_title = "Earl"
+			f_title = "Countess"
+			SSticker.realm_type = "Earldom"
+			SSticker.realm_type_short = "Earldom"
+		if("Jarl")
+			display_title = "Jarl"
+			f_title = "Jarl"
+			SSticker.realm_type = "Jarldom"
+			SSticker.realm_type_short = "Jarldom"
+		if("Thane")
+			display_title = "Thane"
+			f_title = "Thane"
+			SSticker.realm_type = "Thanedom"
+			SSticker.realm_type_short = "Thanedom"
+		if("Graf")
+			display_title = "Graf"
+			f_title = "Gräfin"
+			SSticker.realm_type = "Sovereign County"
+			SSticker.realm_type_short = "County"
+		if("Margrave")
+			display_title = "Margrave"
+			f_title = "Margravine"
+			SSticker.realm_type = "Sovereign March"
+			SSticker.realm_type_short = "March"
+		if("Emir")
+			display_title = "Emir"
+			f_title = "Emira"
+			SSticker.realm_type = "Emirate"
+			SSticker.realm_type_short = "Emirate"
+		if("Bey")
+			display_title = "Bey"
+			f_title = "Bey"
+			SSticker.realm_type = "Beylik"
+			SSticker.realm_type_short = "Beylik"
+		else
+			display_title = "Count"
+			f_title = "Countess"
+			SSticker.realm_type = "Sovereign County"
+			SSticker.realm_type_short = "County"
 
 /datum/outfit/job/roguetown/lord
 	neck = /obj/item/storage/belt/rogue/pouch/coins/rich
@@ -171,7 +247,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 					"Zybantu" = /datum/virtue/origin/zybantian
 				)
 				var/new_origin
-				var/choice = input(player, "Your origins are not compatible with the Kingdom. Where do you hail from?", "ANCESTRY") as anything in new_origins
+				var/choice = input(player, "Your origins are not compatible with this sovereign realm. Where do you hail from?", "ANCESTRY") as anything in new_origins
 				if(choice)
 					new_origin = new_origins[choice]
 				else
@@ -186,7 +262,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 					"Valoria" = /datum/virtue/origin/valorian
 				)
 				var/new_origin
-				var/choice = input(player, "Your origins are not compatible with the Duchy. Where do you hail from?", "ANCESTRY") as anything in new_origins
+				var/choice = input(player, "Your origins are not compatible with this sovereign realm. Where do you hail from?", "ANCESTRY") as anything in new_origins
 				if(choice)
 					new_origin = new_origins[choice]
 				else
@@ -234,7 +310,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	)
 
 	subclass_stashed_items = list(
-		"Ducal Caparison (Saiga)" = /obj/item/caparison/azure,
+		"Sovereign Caparison (Saiga)" = /obj/item/caparison/azure,
 		"Fogbeast Caparison" = /obj/item/caparison/fogbeast)
 
 /datum/outfit/job/roguetown/lord/warrior/pre_equip(mob/living/carbon/human/H)
@@ -250,7 +326,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 */
 /datum/advclass/lord/merchant
 	name = "Merchant Lord"
-	tutorial = "You were always talented with coins and trade. And your talents have brought you to the position of the Lord of Twilight Axis. You could be a merchant who bought his way into nobility and power, or an exceptionally talented noble who were inclined to be good with coins. Fighting directly is not your forte\
+	tutorial = "You were always talented with coins and trade. Your talents have brought you to rule the realm. You could be a merchant who bought his way into nobility and power, or an exceptionally talented noble inclined toward trade. Fighting directly is not your forte\
 	But you have plenty of wealth, keen ears, and know a good deal from a bad one."
 	outfit = /datum/outfit/job/roguetown/lord/merchant
 	category_tags = list(CTAG_LORD)
@@ -283,7 +359,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	)
 
 	subclass_stashed_items = list(
-		"Ducal Caparison (Saiga)" = /obj/item/caparison/azure,
+		"Sovereign Caparison (Saiga)" = /obj/item/caparison/azure,
 		"Fogbeast Caparison" = /obj/item/caparison/fogbeast)
 
 /datum/outfit/job/roguetown/lord/merchant/pre_equip(mob/living/carbon/human/H)
@@ -332,7 +408,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	)
 
 	subclass_stashed_items = list(
-		"Ducal Caparison (Saiga)" = /obj/item/caparison/azure,
+		"Sovereign Caparison (Saiga)" = /obj/item/caparison/azure,
 		"Fogbeast Caparison" = /obj/item/caparison/fogbeast)
 
 /datum/outfit/job/roguetown/lord/mage/pre_equip(mob/living/carbon/human/H)
@@ -351,7 +427,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 */
 /datum/advclass/lord/inbred
 	name = "Inbred Lord"
-	tutorial = "Psydon and Astrata smiles upon you. For despite your inbred and weak body, and your family's conspiracies to remove you from succession, you have somehow become the Lord of Twilight Axis. May your reign lasts a hundred years."
+	tutorial = "Psydon and Astrata smile upon you. Despite your weak body and your family's conspiracies to remove you from succession, you have somehow become ruler of the realm. May your reign last a hundred years."
 	outfit = /datum/outfit/job/roguetown/lord/inbred
 	category_tags = list(CTAG_LORD)
 	traits_applied = list(TRAIT_NOBLE, TRAIT_CRITICAL_WEAKNESS, TRAIT_NORUN, TRAIT_HEAVYARMOR, TRAIT_GOODLOVER, TRAIT_DNR)
@@ -376,7 +452,7 @@ GLOBAL_LIST_EMPTY(lord_titles)
 	)
 
 	subclass_stashed_items = list(
-		"Ducal Caparison (Saiga)" = /obj/item/caparison/azure,
+		"Sovereign Caparison (Saiga)" = /obj/item/caparison/azure,
 		"Fogbeast Caparison" = /obj/item/caparison/fogbeast)
 
 /datum/outfit/job/roguetown/lord/inbred/pre_equip(mob/living/carbon/human/H)

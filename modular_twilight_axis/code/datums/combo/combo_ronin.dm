@@ -53,7 +53,7 @@
 
 	var/obj/item/rogueweapon/listened_blade = null
 
-	/// Tanuki (minor): +4 PER на 4 успешных удара
+	/// Tanuki (minor): +4 PER for 4 successful hits
 	var/tanuki_per_hits_left = 0
 	var/elder_tanuki_riposte_ready = FALSE
 	var/counter_cooldown_until = 0

@@ -154,16 +154,16 @@
 		cmode_music = 'sound/music/combat_desert2.ogg'
 	..()
 
-// СПЕЛЛ КОНВЕРТА В РАБА
+//ENVELOPE TO SLAVE SPELL
 /obj/effect/proc_holder/spell/self/convertrole/slave
 	name = "Recruit Slave"
-	desc = "Позволяет обратить цель в рабство. Примените на цель, чтобы предложить ей стать рабом добровольно. Для насильственного подчинения цель должна быть связана, а вы должны держать её в агрессивном захвате (hard grab). Насильственный процесс занимает 30 секунд."
+	desc = "Allows you to turn a target into slavery. Cast on a target to invite them to voluntarily become a slave. To force a submission, the target must be restrained and you must have them in an aggressive hard grab. The violent process takes 30 seconds."
 	new_role = "Slave"
 	overlay_state = "recruit_servant"
 	recruitment_faction = "Servants"
-	recruitment_message = "Служи мне, %RECRUIT!"
-	accept_message = "ДА, МАСТЕР!"
-	refuse_message = "НЕТ!"
+	recruitment_message = "Serve me, %RECRUIT!"
+	accept_message = "YES, MASTER!"
+	refuse_message = "NO!"
 	recharge_time = 100
 
 /obj/effect/proc_holder/spell/self/convertrole/slave/can_convert(mob/living/carbon/human/recruit)
@@ -217,7 +217,7 @@
 	if(.)
 		ADD_TRAIT(recruit, TRAIT_SLAVE, TRAIT_GENERIC)
 
-// СПЕЛЛ КОНВЕРТА В АЗЕБЫ
+//SPELL OF ENVELOPE IN AZEBAS
 /obj/effect/proc_holder/spell/self/convertrole/azeb
 	name = "Recruit Azeb"
 	new_role = "Azeb"
@@ -226,10 +226,10 @@
 	accept_message = "FOR THE SULTAN!"
 	refuse_message = "I refuse."
 
-// СПЕЛЛ ОСВОБОЖДЕНИЯ РАБОВ
+//SPELL OF FREEING SLAVES
 /obj/effect/proc_holder/spell/targeted/unconvert_slave
 	name = "Unbind Slave"
-	desc = "Освобождает раба от его оков. Примените на цель, чтобы снять с неё статус раба. Этот процесс занимает 30 секунд."
+	desc = "Frees a slave from his shackles. Cast on a target to remove their slave status. This process takes 30 seconds."
 	action_icon = 'modular_twilight_axis/icons/mob/actions/matthios_miracles.dmi'
 	action_icon_state = "shacklebreaker"
 	recharge_time = 600
@@ -241,14 +241,14 @@
 		return
 	for(var/mob/living/carbon/human/target in targets)
 		if(!HAS_TRAIT(target, TRAIT_SLAVE))
-			to_chat(user, span_warning("[target] не является рабом!"))
+			to_chat(user, span_warning("[target] is not a slave!"))
 			continue
 
 		if(target.stat == DEAD)
-			to_chat(user, span_warning("[target] мёртв!"))
+			to_chat(user, span_warning("[target] is dead!"))
 			continue
 
-		user.visible_message(span_notice("[user] начинает освобождать [target]..."), span_notice("Вы начинаете снимать оковы с [target]..."))
+		user.visible_message(span_notice("[user] begins to free [target]..."), span_notice("You begin to unshackle [target]..."))
 
 		if(do_after(user, 300, target = target))
 			if(QDELETED(target) || QDELETED(user) || target.stat == DEAD)
@@ -256,13 +256,13 @@
 
 			REMOVE_TRAIT(target, TRAIT_SLAVE, TRAIT_GENERIC)
 			REMOVE_TRAIT(target, TRAIT_SLAVE, JOB_TRAIT)
-			to_chat(user, span_notice("Вы успешно освободили [target]!"))
-			to_chat(target, span_notice("Вы больше не раб! [user] даровал(а) вам свободу."))
+			to_chat(user, span_notice("You have successfully freed [target]!"))
+			to_chat(target, span_notice("You are no longer a slave! [user] granted you freedom."))
 			target.job = "Freeman"
 		else
-			to_chat(user, span_warning("Вам не удалось освободить [target]."))
+			to_chat(user, span_warning("You were unable to release [target]."))
 
-// Doctor override (я ебу чё это за роль?)
+//Doctor override (I fuck what kind of role is this?)
 /datum/outfit/job/roguetown/adventurer/doctor/pre_equip(mob/living/carbon/human/H)
 	. = ..()
 	if(SSmapping.config.map_name == "Desert Town")

@@ -1,8 +1,8 @@
 /datum/erp_action/other/mouth/foot_lick
 	abstract = FALSE
-	name = "Облизать ножки"
+	name = "Lick legs"
 	required_target_organ = SEX_ORGAN_LEGS
 	require_same_tile = FALSE
-	message_start = "{actor} припадает губами к ногам {partner}."
-	message_tick = "{actor} {force} и {speed} лижет ножки {partner}."
-	message_finish =  "{actor} убирает лицо с ножек {partner}."
+	message_start = "{actor} puts his lips on {partner}'s legs."
+	message_tick = "{actor} {force} and {speed} licking {partner}'s feet."
+	message_finish =  "{actor} removes his face from {partner}'s legs."

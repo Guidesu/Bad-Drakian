@@ -48,15 +48,15 @@ export const SexSession = () => {
 
   // TA EDIT START
   const finishConditionText = data.do_until_finished
-    ? 'ПОКА НЕ КОНЧУ'
-    : 'ПОКА НЕ ОСТАНОВЛЮСЬ';
+    ? 'UNTIL I FINISH'
+    : 'UNTIL I STOP';
   const interactionTarget = data.title
-    .replace('Соитие с ', '')
+    .replace('Do not use', '')
     .replace('...', '');
   // TA EDIT END
 
   return (
-    <Window title="Утолить Желания" width={500} height={600}>
+    <Window title="Satisfy Desires" width={500} height={600}>
       <Window.Content scrollable>
         <Stack vertical fill>
           <Stack.Item>
@@ -189,7 +189,7 @@ export const SexSession = () => {
                                 : '#eac8de',
                             }}
                           >
-                            {data.do_knot_action ? 'НЕ ИСПОЛЬЗОВАТЬ УЗЕЛ' : 'ИСПОЛЬЗОВАТЬ УЗЕЛ'}
+                            {data.do_knot_action ? 'intercourse Use NODE' : 'Use NODE'}
                           </Box>
                         </Button>
                       </>
@@ -201,7 +201,7 @@ export const SexSession = () => {
                 <Stack.Item>
                   <Box textAlign="center">
                     <Input
-                      placeholder="Задать возбуждение..."
+                      placeholder="Set excitation..."
                       value={arousalInput}
                       onChange={setArousalInput}
                       width="180px"
@@ -225,7 +225,7 @@ export const SexSession = () => {
                         }
                       }}
                     >
-                      УСТАНОВИТЬ
+                      INSTALL
                     </Button>
                     {' | '}
                     <Button
@@ -234,7 +234,7 @@ export const SexSession = () => {
                       color="transparent"
                       onClick={() => act('freeze_arousal')}
                     >
-                      {data.frozen ? 'НЕ ВОЗБУЖДАТЬСЯ' : 'ВОЗБУЖДАТЬСЯ'}
+                      {data.frozen ? 'DO NOT EXCITE' : 'EXCITE'}
                     </Button>
                     {' | '}
                     <Button
@@ -244,7 +244,7 @@ export const SexSession = () => {
                       disabled={!data.current_action}
                       onClick={() => act('stop_action')}
                     >
-                      ОСТАНОВИТЬСЯ
+                      STOP
                     </Button>
                   </Box>
                 </Stack.Item>
@@ -255,7 +255,7 @@ export const SexSession = () => {
           {/* Search */}
           <Stack.Item>
             <Box textAlign="center" italic color="label">
-              Сделать с {interactionTarget}
+              Make with{interactionTarget}
             </Box>
           </Stack.Item>
           <Stack.Item>

@@ -132,7 +132,7 @@ drinksomeblood()
 	if(!has_silver_cross && !HAS_TRAIT(H, TRAIT_SILVER_BLESSED))
 		return TRUE
 
-	to_chat(src, span_userdanger("СЕРЕБРО! МОЯ ПОГИБЕЛЬ!"))
+	to_chat(src, span_userdanger("SILVER! MY DEMISE!"))
 	adjust_fire_stacks(5, /datum/status_effect/fire_handler/fire_stacks/sunder)
 	Stun(5 SECONDS)
 	ignite_mob()
@@ -149,7 +149,7 @@ drinksomeblood()
 	if(!HAS_TRAIT(victim, TRAIT_CONJURED_SUMMON))
 		return TRUE
 
-	to_chat(src, span_warning("Это лишь иллюзия - в её жилах нет ни капли настоящей крови."))
+	to_chat(src, span_warning("This is just an illusion - there is not a drop of real blood in her veins."))
 	return FALSE
 
 /// CONTEXT
@@ -185,19 +185,19 @@ drinksomeblood()
 	SEND_SIGNAL(src, COMSIG_LIVING_DRINKED_LIMB_BLOOD, victim)
 
 	victim.visible_message(
-		span_danger("[src] пьёт кровь [victim]!"),
-		span_userdanger("[src] пьёт мою кровь!"),
+		span_danger("[src] is drinking blood [victim]!"),
+		span_userdanger("[src] is drinking my blood!"),
 		span_hear("..."),
 		COMBAT_MESSAGE_RANGE,
 		src
 	)
 
-	to_chat(src, span_warning("Я пью кровь [victim]."))
+	to_chat(src, span_warning("I am drinking blood [victim]."))
 	log_combat(src, victim, "drank blood from ")
 
 /// SIDE EFFECTS
 /mob/living/carbon/human/proc/force_puke(use_danger = FALSE)
-	to_chat(src, use_danger ? span_danger("Меня сейчас стошнит...") : span_warning("Меня сейчас стошнит..."))
+	to_chat(src, use_danger ? span_danger("I’m going to vomit now...") : span_warning("I’m going to vomit now..."))
 	addtimer(CALLBACK(src, TYPE_PROC_REF(/mob/living/carbon, vomit), 0, TRUE), rand(8 SECONDS, 15 SECONDS))
 
 /mob/living/carbon/human/proc/should_puke_nonvamp()
@@ -248,7 +248,7 @@ drinksomeblood()
 
 	if(victim.bloodpool < used_vitae)
 		used_vitae = victim.bloodpool
-		to_chat(src, span_warning("...Но увы, лишь жалкие остатки..."))
+		to_chat(src, span_warning("...But alas, only pitiful remnants..."))
 
 	victim.adjust_bloodpool(-used_vitae)
 	victim.adjust_hydration(- used_vitae * 0.1)
@@ -277,14 +277,14 @@ drinksomeblood()
 		message_admins("[ADMIN_LOOKUPFLW(src)] successfully Diablerized [ADMIN_LOOKUPFLW(victim)]")
 		log_attack("[key_name(src)] successfully Diablerized [key_name(victim)].")
 
-		to_chat(src, span_danger("Я... Поглотил своего сородича!"))
+		to_chat(src, span_danger("I... have devoured my kin!"))
 
 		if(is_breaker)
 			VDrinker.research_points += 2
 			GLOB.coven_breakers_list -= victim
 
-			to_chat(src, span_danger("Их кровь провоняла нарушенными клятвами. Я забираю больше силы!"))
-			to_chat(src, span_notice("Справедливость за Маскарад свершилась."))
+			to_chat(src, span_danger("Their blood reeked of broken oaths. I take more power!"))
+			to_chat(src, span_notice("Justice for the Masquerade has been done."))
 
 		if(VVictim.generation > VDrinker.generation)
 			VDrinker.generation = VVictim.generation
@@ -293,12 +293,12 @@ drinksomeblood()
 			var/drinker_blood_skill = get_skill_level(/datum/skill/magic/blood)
 			if(victim_blood_skill > drinker_blood_skill)
 				adjust_skillrank_up_to(/datum/skill/magic/blood, victim_blood_skill, TRUE)
-				to_chat(src, span_notice("Их мастерство гемомантии перетекает в меня!"))
+				to_chat(src, span_notice("Their skill in gemancy flows into me!"))
 
 			var/stolen_thralls = round(VVictim.max_thralls / 2)
 			if(stolen_thralls > 0)
 				VDrinker.max_thralls += stolen_thralls
-				to_chat(src, span_notice("Их власть над рабами усиливает мою! (+[stolen_thralls] макс. рабов)"))
+				to_chat(src, span_notice("Their control over slaves strengthens mine! (+[stolen_thralls] max. slaves)"))
 
 		if(victim.clan != clan)
 			VDrinker.research_points += TA_VAMP_DIABLERIE_RESEARCH_BONUS
@@ -311,7 +311,7 @@ drinksomeblood()
 
 	if(victim.blood_volume < BLOOD_VOLUME_SURVIVE && victim.stat != DEAD)
 
-		to_chat(src, span_warning("Эта жалкая жертва ради собственного удовольствия затрагивает что-то глубоко в моём разуме."))
+		to_chat(src, span_warning("This pitiful sacrifice for my own pleasure touches something deep within my mind."))
 
 		AdjustMasquerade(-1)
 
@@ -325,10 +325,10 @@ drinksomeblood()
 	if(!istype(victim) || !istype(VDrinker) || !istype(VVictim))
 		return FALSE
 
-	to_chat(src, span_userdanger("<b>Я ПЫТАЮСЬ ПОГЛОТИТЬ ДУШУ [victim].</b>"))
-	visible_message(span_danger("[src] впивается в [victim], пытаясь поглотить душу!"))
+	to_chat(src, span_userdanger("<b>I AM TRYING TO DEVOUR THE SOUL [victim].</b>"))
+	visible_message(span_danger("[src] sinks into [victim], trying to devour the soul!"))
 	if(!do_mob(src, victim, TA_VAMP_DIABLERIE_DELAY, double_progress = TRUE, can_move = FALSE))
-		to_chat(src, span_warning("Мне не удалось завершить диаблерию."))
+		to_chat(src, span_warning("I failed to complete the diablerie."))
 		return FALSE
 	if(QDELETED(src) || QDELETED(victim))
 		return TRUE
@@ -403,24 +403,24 @@ drinksomeblood()
 
 /mob/living/carbon/human/proc/show_conversion_cost_feedback(mob/living/carbon/human/target, datum/antagonist/vampire/VDrinker, voluntary = FALSE)
 	if(voluntary)
-		to_chat(src, span_warning("Я увлекаю [target] в проклятие."))
+		to_chat(src, span_warning("I drag [target] into the curse."))
 		return
 
 	var/list/costs = get_conversion_costs(VDrinker)
 	var/research_cost = costs["research_cost"]
 	var/maxbloodpool_cost = costs["maxbloodpool_cost"]
 
-	to_chat(src, span_warning("Я ломаю душу [target] и вбиваю проклятие силой, жертвуя собственной мощью."))
+	to_chat(src, span_warning("I break the soul of [target] and impose a curse with power, sacrificing my own strength."))
 
 	if(research_cost || maxbloodpool_cost)
 		var/list/losses = list()
 		if(research_cost)
-			losses += "[research_cost] ОИ"
+			losses += "[research_cost] OF"
 		if(maxbloodpool_cost)
-			losses += "[maxbloodpool_cost] макс. кровозапаса"
-		to_chat(src, span_notice("Я теряю [english_list(losses)]."))
+			losses += "[maxbloodpool_cost] max. health"
+		to_chat(src, span_notice("I lose [english_list(losses)]."))
 	else
-		to_chat(src, span_notice("Эта конвертация мне ничего не стоит."))
+		to_chat(src, span_notice("This conversion costs me nothing."))
 
 /mob/living/carbon/human/proc/get_vampire_conversion_reward_maxbloodpool_cap(datum/antagonist/vampire/VDrinker)
 	if(!istype(VDrinker))
@@ -456,10 +456,10 @@ drinksomeblood()
 		return FALSE
 
 	var/maxbloodpool_gain = apply_vampire_conversion_reward(VDrinker, TA_VAMP_CONVERT_OFFER_RESEARCH_REWARD, TA_VAMP_CONVERT_OFFER_MAXBLOODPOOL_REWARD)
-	var/reward_text = "+[TA_VAMP_CONVERT_OFFER_RESEARCH_REWARD] ОИ"
+	var/reward_text = "+[TA_VAMP_CONVERT_OFFER_RESEARCH_REWARD] OF"
 	if(maxbloodpool_gain)
-		reward_text = "[reward_text], +[maxbloodpool_gain] макс. кровозапаса"
-	to_chat(src, span_notice("Я поглотил часть жизненной силы жертвы и стал сильнее, а мое проклятие укоренилось в ней! ([reward_text])"))
+		reward_text = "[reward_text], +[maxbloodpool_gain] max. health"
+	to_chat(src, span_notice("I have absorbed part of the victim's life force and become stronger, and my curse has taken root in her! ([reward_text])"))
 	return TRUE
 
 /mob/living/carbon/human/proc/grant_pallid_drain_reward(datum/antagonist/vampire/VDrinker)
@@ -467,10 +467,10 @@ drinksomeblood()
 		return FALSE
 
 	var/maxbloodpool_gain = apply_vampire_conversion_reward(VDrinker, TA_VAMP_DRAIN_RESEARCH_REWARD, TA_VAMP_DRAIN_MAXBLOODPOOL_REWARD)
-	var/reward_text = "+[TA_VAMP_DRAIN_RESEARCH_REWARD] ОИ"
+	var/reward_text = "+[TA_VAMP_DRAIN_RESEARCH_REWARD] OF"
 	if(maxbloodpool_gain)
-		reward_text = "[reward_text], +[maxbloodpool_gain] макс. кровозапаса"
-	to_chat(src, span_notice("Иссушение питает мое проклятие. ([reward_text])"))
+		reward_text = "[reward_text], +[maxbloodpool_gain] max. health"
+	to_chat(src, span_notice("Drainage feeds my curse. ([reward_text])"))
 	return TRUE
 
 /mob/living/carbon/human/proc/use_pallid_conversion_rules()
@@ -504,22 +504,22 @@ drinksomeblood()
 
 /mob/living/carbon/human/proc/handle_offer_conversion_refusal(mob/living/carbon/human/sire)
 	if(HAS_TRAIT(src, TRAIT_PALLID) || HAS_TRAIT(src, TA_TRAIT_PALLID_DRAIN_IMMUNE) || HAS_TRAIT(src, TA_TRAIT_PALLID_DRAINED_ONCE))
-		to_chat(src, span_warning("Иссушенное тело уже не принимает проклятие Каина."))
-		to_chat(sire, span_warning("[src] уже иссушен, проклятие не может разорвать его повторно."))
+		to_chat(src, span_warning("The desiccated body no longer accepts Cain's curse."))
+		to_chat(sire, span_warning("[src] is already desiccated, the curse cannot tear him apart again."))
 		vampire_conversion_prompt_active = FALSE
 		return TRUE
 
 	ADD_TRAIT(src, TRAIT_REFUSED_VAMP_CONVERT, REF(sire))
 
-	to_chat(src, span_userdanger("Отвергнутое проклятие оставляет след на моей душе!"))
-	to_chat(sire, span_danger("[src] отвергает проклятие, но скверна остаётся в крови!"))
+	to_chat(src, span_userdanger("The rejected curse leaves a mark on my soul!"))
+	to_chat(sire, span_danger("[src] rejects the curse, but the corruption remains in the blood!"))
 
 	apply_pallid_curse(sire)
 
 	var/datum/antagonist/vampire/VDrinker = sire?.get_vampire_drinker()
 	if(VDrinker)
 		sire.apply_vampire_conversion_reward(VDrinker, TA_VAMP_REFUSAL_RESEARCH_REWARD, 0)
-		to_chat(sire, span_notice("Отвергнутая кровь всё же чему-то меня научила. +[TA_VAMP_REFUSAL_RESEARCH_REWARD] ОИ"))
+		to_chat(sire, span_notice("The rejected blood still taught me something. +[TA_VAMP_REFUSAL_RESEARCH_REWARD] OI"))
 
 	vampire_conversion_prompt_active = FALSE
 	return TRUE
@@ -531,7 +531,7 @@ drinksomeblood()
 	// Force convert costs resources; offer convert is free
 	if(!voluntary)
 		if(!sire.apply_conversion_cost(VDrinker))
-			to_chat(sire, span_warning("У меня больше нет сил для создания порождения."))
+			to_chat(sire, span_warning("I no longer have the strength to create offspring."))
 			vampire_conversion_prompt_active = FALSE
 			return FALSE
 
@@ -550,8 +550,8 @@ drinksomeblood()
 	if(client)
 		client.verbs.Remove(GLOB.ghost_verbs)
 
-	visible_message(span_danger("Тёмная энергия начинает перетекать от [sire] в [src]..."))
-	visible_message(span_red("[src] восстаёт как новое порождение!"))
+	visible_message(span_danger("Dark energy begins to flow from [sire] to [src]..."))
+	visible_message(span_red("[src] rises as new offspring!"))
 
 	original_mind?.transfer_to(src, TRUE)
 
@@ -576,29 +576,29 @@ drinksomeblood()
 /// SIRING TARGET VALIDATION
 /mob/living/carbon/human/proc/get_siring_block_reason(mob/living/carbon/victim, allow_stabilized_drain = FALSE)
 	if(!ishuman(victim))
-		return "Только живых людей можно обратить в порождение."
+		return "Only living humans can be turned into offspring."
 	if(victim.clan)
-		return "Эта цель уже принадлежит вампирскому клану."
+		return "This target already belongs to the vampire clan."
 	if(HAS_TRAIT(victim, TRAIT_PALLID) || HAS_TRAIT(victim, TA_TRAIT_PALLID_DRAINED_ONCE))
-		return "[victim] уже иссушен и не может стать порождением."
+		return "[victim] is already drained and cannot become an offspring."
 	if(!victim.mind)
-		return "У этой цели нет души, которую можно забрать."
+		return "This target has no soul to take."
 	if(victim.blood_volume > BLOOD_VOLUME_BAD && !allow_stabilized_drain)
-		return "В этой цели ещё слишком много крови."
+		return "There is still too much blood in this target."
 	if(victim.stat == DEAD && !allow_stabilized_drain)
-		return "Труп нельзя безопасно поднять как порождение."
+		return "The corpse cannot be safely raised as an offspring."
 	if(HAS_TRAIT(victim, TRAIT_UNLYCKERABLE))
-		return "[victim] не может нести Солнечное проклятие."
+		return "[victim] cannot bear the Solar Curse."
 	if(HAS_TRAIT(victim, TRAIT_SILVER_BLESSED))
-		return "Кровь [victim] благословлена серебром и отвергает проклятие."
+		return "The blood of [victim] is blessed with silver and rejects the curse."
 	if(victim.mind?.has_antag_datum(/datum/antagonist/zombie))
-		return "[victim] уже является умертвием."
+		return "[victim] is already undead."
 	if(victim.mind?.has_antag_datum(/datum/antagonist/werewolf))
-		return "[victim] уже отмечен другим проклятием."
+		return "[victim] is already marked by another curse."
 
 	var/mob/living/carbon/human/H = victim
 	if(istype(H.wear_neck, /obj/item/clothing/neck/roguetown/psicross/silver))
-		return "[victim] защищён серебром."
+		return "[victim] is protected by silver."
 
 	return null
 
@@ -617,12 +617,12 @@ drinksomeblood()
 		return
 
 	if(HAS_TRAIT_FROM(victim, TRAIT_REFUSED_VAMP_CONVERT, REF(src)) && !ta_get_rockhill_conversion_ambition(src, victim.mind))
-		to_chat(src, span_warning("[victim] преодолел проклятие, я не смогу пленить его душу."))
+		to_chat(src, span_warning("[victim] has overcome the curse, I will not be able to capture his soul."))
 		return
 
 	var/mob/living/carbon/human/H = victim
 	if(H.vampire_conversion_prompt_active)
-		to_chat(src, span_warning("[victim] уже находится под действием проклятия."))
+		to_chat(src, span_warning("[victim] is already under the effect of the curse."))
 		return
 	H.vampire_conversion_prompt_active = TRUE
 	var/datum/mind/victim_original_mind = H.mind
@@ -635,7 +635,7 @@ drinksomeblood()
 	var/can_drain = can_offer_pallid_drain(victim)
 	var/can_sire_thrall = VDrinker.can_sire_thrall()
 	if(!can_sire_thrall && !can_drain)
-		to_chat(src, span_warning("Клан достиг предела порождений, а [victim] уже нельзя иссушить."))
+		to_chat(src, span_warning("The clan has reached the limit of offspring, and [victim] can no longer be drained."))
 		H.vampire_conversion_prompt_active = FALSE
 		return
 
@@ -643,19 +643,19 @@ drinksomeblood()
 	var/remaining_maxbloodpool_reward = max(reward_maxbloodpool_cap - maxbloodpool, 0)
 	var/offer_maxbloodpool_reward = min(TA_VAMP_CONVERT_OFFER_MAXBLOODPOOL_REWARD, remaining_maxbloodpool_reward)
 	var/drain_maxbloodpool_reward = min(TA_VAMP_DRAIN_MAXBLOODPOOL_REWARD, remaining_maxbloodpool_reward)
-	var/offer_reward_text = "+[TA_VAMP_CONVERT_OFFER_RESEARCH_REWARD] ОИ"
-	var/drain_reward_text = "+[TA_VAMP_DRAIN_RESEARCH_REWARD] ОИ"
+	var/offer_reward_text = "+[TA_VAMP_CONVERT_OFFER_RESEARCH_REWARD] OF"
+	var/drain_reward_text = "+[TA_VAMP_DRAIN_RESEARCH_REWARD] OF"
 	if(offer_maxbloodpool_reward)
-		offer_reward_text = "[offer_reward_text], +[offer_maxbloodpool_reward] МАКС. КРОВИ"
+		offer_reward_text = "[offer_reward_text], +[offer_maxbloodpool_reward] MAX BLOOD"
 	if(drain_maxbloodpool_reward)
-		drain_reward_text = "[drain_reward_text], +[drain_maxbloodpool_reward] МАКС. КРОВИ"
-	var/force_price_text = "БЕСПЛАТНО"
-	var/invite_choice = "Приглашение в клан\nБЕСПЛАТНО / [offer_reward_text]"
-	var/force_choice = "Насильно обратить\n[force_price_text]"
-	var/drain_choice = "Дар смерти: иссушить\nЦЕЛЬ ВЫЖИВЕТ / [drain_reward_text]"
-	var/cancel_choice = "Отмена"
+		drain_reward_text = "[drain_reward_text], +[drain_maxbloodpool_reward] MAX BLOOD"
+	var/force_price_text = "FREE"
+	var/invite_choice = "Invitation to clan \n FREE / [offer_reward_text]"
+	var/force_choice = "To forcibly convert\n[force_price_text]"
+	var/drain_choice = "Gift of Death: wither\nTARGET WILL SURVIVE / [drain_reward_text]"
+	var/cancel_choice = "Cancel"
 
-	var/prompt_text = "Как я поступлю с [victim]?"
+	var/prompt_text = "What will I do with [victim]?"
 
 	var/list/options = list()
 	if(can_force_convert)
@@ -671,7 +671,7 @@ drinksomeblood()
 			options += drain_choice
 		options += cancel_choice
 
-	var/choice = tgui_alert(src, prompt_text, "ПРОКЛЯТИЕ КАИНА", options)
+	var/choice = tgui_alert(src, prompt_text, "THE CURSE OF CAIN", options)
 
 	if(choice == force_choice && !can_force_convert)
 		H.vampire_conversion_prompt_active = FALSE
@@ -683,21 +683,21 @@ drinksomeblood()
 
 	// === DO_MOB CHANNEL ===
 	if(choice == force_choice)
-		visible_message(span_danger("[src] преобразует тело [victim] тёмной энергией!"))
+		visible_message(span_danger("[src] transforms the body of [victim] with dark energy!"))
 	else if(choice == drain_choice)
-		visible_message(span_danger("[src] окутывает тело темной силой [victim], пытаясь похитить часть его жизненных сил!"))
-		to_chat(src, span_notice("Дар смерти должен оставить [victim] живым. Я иссушаю душу, но удерживаю тело от окончательной гибели."))
+		visible_message(span_danger("[src] envelops the body with dark power [victim], trying to steal part of its life force!"))
+		to_chat(src, span_notice("The gift of death should leave [victim] alive. I drain the soul but keep the body from ultimate demise."))
 	else
-		visible_message(span_danger("[src] обволакивает [victim] тёмной энергией, предлагая проклятие Каина!"))
+		visible_message(span_danger("[src] wraps [victim] in dark energy, offering the curse of Cain!"))
 	if(!do_mob(src, victim, 7 SECONDS, double_progress = TRUE, can_move = FALSE))
 		if(choice == drain_choice && !QDELETED(H) && H.stat == DEAD)
 			if(H.ta_stabilize_death_gift_body(TRUE, victim_original_mind))
-				to_chat(src, span_notice("Дар смерти возвращает душу [victim] в тело и смыкает кровоточащие раны."))
+				to_chat(src, span_notice("The gift of death returns the soul of [victim] to the body and closes the bleeding wounds."))
 			else
-				to_chat(src, span_warning("Дар смерти не смог удержать [victim] в живом теле."))
+				to_chat(src, span_warning("The gift of death could not keep [victim] in a living body."))
 			H.vampire_conversion_prompt_active = FALSE
 			return
-		to_chat(src, span_warning("Меня прервали во время обращения!"))
+		to_chat(src, span_warning("I was interrupted during the conversion!"))
 		H.vampire_conversion_prompt_active = FALSE
 		return
 
@@ -711,7 +711,7 @@ drinksomeblood()
 	if(choice == drain_choice && H.stat == DEAD)
 		if(H.ta_stabilize_death_gift_body(TRUE, victim_original_mind))
 			drain_restored_dead = TRUE
-			to_chat(src, span_notice("Дар смерти возвращает душу [victim] в тело и смыкает кровоточащие раны."))
+			to_chat(src, span_notice("The gift of death returns the soul of [victim] to the body and closes the bleeding wounds."))
 
 	block_reason = get_siring_block_reason(victim, drain_restored_dead)
 	if(block_reason)
@@ -720,29 +720,29 @@ drinksomeblood()
 		return
 
 	if(HAS_TRAIT_FROM(victim, TRAIT_REFUSED_VAMP_CONVERT, REF(src)) && !ta_get_rockhill_conversion_ambition(src, victim.mind))
-		to_chat(src, span_warning("[victim] преодолел проклятие, я не смогу пленить его душу."))
+		to_chat(src, span_warning("[victim] has overcome the curse, I will not be able to capture his soul."))
 		H.vampire_conversion_prompt_active = FALSE
 		return
 
 	if(choice != drain_choice && !VDrinker.can_sire_thrall())
-		to_chat(src, span_warning("Клан достиг предела порождений."))
+		to_chat(src, span_warning("The clan has reached the limit of progeny."))
 		H.vampire_conversion_prompt_active = FALSE
 		return
 
 	if(choice == force_choice)
 		if(!can_pay_conversion_cost(VDrinker))
-			to_chat(src, span_warning("Мне не хватает силы для насильственного обращения."))
+			to_chat(src, span_warning("I lack the strength for forced conversion."))
 			H.vampire_conversion_prompt_active = FALSE
 			return
 		if(!H.finish_vampire_conversion(src, VDrinker, FALSE))
 			H.vampire_conversion_prompt_active = FALSE
 	else if(choice == drain_choice)
 		if(HAS_TRAIT(H, TRAIT_PALLID) || HAS_TRAIT(H, TA_TRAIT_PALLID_DRAIN_IMMUNE) || HAS_TRAIT(H, TA_TRAIT_PALLID_DRAINED_ONCE))
-			to_chat(src, span_warning("[victim] уже защищён от повторного иссушения."))
+			to_chat(src, span_warning("[victim] is already protected from repeated draining."))
 			H.vampire_conversion_prompt_active = FALSE
 			return
-		to_chat(H, span_userdanger("Проклятая кровь выжигает след на моей душе и теле!"))
-		to_chat(src, span_danger("Я иссушаю [victim], оставляя в крови след Иссушения."))
+		to_chat(H, span_userdanger("Cursed blood burns a mark on my soul and body!"))
+		to_chat(src, span_danger("I drain [victim], leaving the trace of Draining in the blood."))
 		if(!H.apply_pallid_curse(src))
 			H.vampire_conversion_prompt_active = FALSE
 			return
@@ -769,7 +769,7 @@ drinksomeblood()
 		return
 
 	if(!VDrinker.can_sire_thrall())
-		to_chat(src, span_warning("Клан вампира достиг предела порождений. Проклятие рассеивается."))
+		to_chat(src, span_warning("The vampire clan has reached the limit of progeny. The curse dissipates."))
 		vampire_conversion_prompt_active = FALSE
 		return
 
@@ -787,25 +787,25 @@ drinksomeblood()
 		apply_status_effect(/datum/status_effect/incapacitating/stun, VAMP_CONVERT_TIMEOUT)
 		apply_status_effect(/datum/status_effect/incapacitating/knockdown, VAMP_CONVERT_TIMEOUT)
 
-	var/prompt_text = "Хотите стать ВАМПИРОМ?\nВы восстанете как вампир, но ваша душа попадёт в рабство.\n\n"
+	var/prompt_text = "Do you want to become a VAMPIRE?\nYou will rise as a vampire, but your soul will fall into slavery.\n\n"
 	if(use_pallid_conversion_rules())
-		prompt_text += "При отказе проклятие оставит неизгладимый след на вашей душе и теле."
+		prompt_text += "If you refuse, the curse will leave an indelible mark on your soul and body."
 	else
-		prompt_text += "При отказе проклятие убьёт вас."
+		prompt_text += "If you refuse, the curse will kill you."
 
 	var/vampire_choice
 	var/ambition_forces_acceptance = ta_get_rockhill_conversion_ambition(sire, mind)
 	if(ambition_forces_acceptance)
-		vampire_choice = "ДА"
-		to_chat(src, span_userdanger("Чужая вампирская амбиция опутывает мою судьбу. Я не могу отвергнуть предложенное обращение."))
-		to_chat(sire, span_notice("[src] не может отвергнуть обращение, предначертанное моей амбицией."))
+		vampire_choice = "YES"
+		to_chat(src, span_userdanger("Someone else's vampire ambition entangles my fate. I cannot reject the offered turning."))
+		to_chat(sire, span_notice("[src] cannot reject the turning predestined by my ambition."))
 	else
 		var/use_byond_alert = stat != CONSCIOUS || blood_volume <= BLOOD_VOLUME_SURVIVE || InCritical()
 		vampire_choice = ta_tgui_tooltip_alert(
 			src,
 			prompt_text,
-			"ПРОКЛЯТИЕ КАИНА",
-			list("ДА", "НЕТ"),
+			"THE CURSE OF CAIN",
+			list("YES", "NO"),
 			VAMP_CONVERT_TIMEOUT,
 			strict_byond = use_byond_alert,
 			ui_state = GLOB.tgui_always_state
@@ -833,11 +833,11 @@ drinksomeblood()
 		return
 
 	if(!VDrinker.can_sire_thrall())
-		to_chat(src, span_warning("Клан вампира достиг предела порождений. Проклятие рассеивается."))
+		to_chat(src, span_warning("The vampire clan has reached the limit of progeny. The curse dissipates."))
 		vampire_conversion_prompt_active = FALSE
 		return
 
-	if(vampire_choice != "ДА")
+	if(vampire_choice != "YES")
 		if(!vampire_choice)
 			vampire_conversion_prompt_active = FALSE
 			return
@@ -938,11 +938,11 @@ drinksomeblood()
 	last_drinkblood_use = world.time
 
 	if(!istype(victim))
-		to_chat(src, span_warning("Я могу пить кровь только из живых, разумных существ!"))
+		to_chat(src, span_warning("I can drink blood only from living, intelligent beings!"))
 		return
 
 	if(victim.dna?.species && (NOBLOOD in victim.dna.species.species_traits))
-		to_chat(src, span_warning("Увы. Нет крови."))
+		to_chat(src, span_warning("Alas. No blood."))
 		return
 
 	if(!check_conjured_summon_block(victim))
@@ -951,7 +951,7 @@ drinksomeblood()
 	var/datum/antagonist/vampire/VDrinker = get_vampire_drinker()
 	var/datum/antagonist/vampire/VVictim = get_vampire_victim(victim)
 	if(victim.blood_volume <= 0 && !(VDrinker && VVictim))
-		to_chat(src, span_warning("Увы. Нет крови."))
+		to_chat(src, span_warning("Alas. No blood."))
 		return
 
 	if(!check_silver_block(victim))
@@ -961,7 +961,7 @@ drinksomeblood()
 	var/lethal_finish = !conversion_priority && requires_finishing_blooddrink_delay(victim)
 
 	if(!conversion_priority && !lethal_finish && victim.client && victim.blood_volume <= BLOOD_VOLUME_BAD)
-		to_chat(src, span_warning("[victim] почти обескровлен - каждый глоток теперь душит его. Я перестаю тянуть кровь сам."))
+		to_chat(src, span_warning("[victim] is almost bloodless - every sip now chokes him. I stop pulling blood myself."))
 		ta_stop_blood_sipping()
 
 	ta_blooddrink_busy_since = world.time
@@ -970,9 +970,9 @@ drinksomeblood()
 
 /mob/living/carbon/human/proc/ta_run_blooddrink(mob/living/carbon/victim, sublimb_grabbed, lethal_finish = FALSE)
 	if(lethal_finish)
-		visible_message(span_danger("[src] сжимает хватку и готовится выпить [victim] до последней капли!"))
+		visible_message(span_danger("[src] tightens his grip and is ready to drink [victim] to the last drop!"))
 		if(!do_mob(src, victim, TA_VAMP_LETHAL_BLOODDRINK_DELAY, double_progress = TRUE, can_move = FALSE))
-			to_chat(src, span_warning("Мне не удалось завершить смертельное кровопитие."))
+			to_chat(src, span_warning("I failed to complete the deadly bloodletting."))
 			return
 		if(QDELETED(victim) || QDELETED(src))
 			return

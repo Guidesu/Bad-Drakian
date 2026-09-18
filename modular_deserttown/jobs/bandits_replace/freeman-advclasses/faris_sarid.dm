@@ -1,6 +1,6 @@
 /datum/advclass/faris_sarid
-	name = "Fāris-šārid"// Что означает "Фарис-изгой"
-	tutorial = "«... Так возникли Фа́рисы - каста стальных защитников, чей долг - быть оплотом чести и силы, когда вера других слабеет ...»"
+	name = "Fāris-šārid"//What does "Faris-outcast" mean
+	tutorial = "“... Thus the Faris arose - a caste of steel defenders, whose duty is to be a stronghold of honor and strength when the faith of others weakens...”"
 	allowed_sexes = list(MALE, FEMALE)
 	forbidden_races = list(RACES_CONSTRUCT RACES_DESPISED)
 	outfit = /datum/outfit/job/roguetown/freeman/faris_sarid

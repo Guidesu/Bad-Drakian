@@ -1631,3 +1631,36 @@
 	verbage = "constructs"
 	skillcraft = /datum/skill/craft/carpentry
 	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/structure/x_pillory
+	name = "x-pillory"
+	category = "Misc"
+	result = /obj/structure/bondage/x_pillory
+	reqs = list(/obj/item/natural/wood/plank = 5,
+				/obj/item/natural/fibers = 2)
+	verbage_simple = "construct"
+	verbage = "constructs"
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/structure/wooden_horse
+	name = "wooden horse"
+	category = "Misc"
+	result = /obj/structure/wooden_horse
+	reqs = list(/obj/item/natural/wood/plank = 5,
+				/obj/item/natural/fibers = 2)
+	verbage_simple = "construct"
+	verbage = "constructs"
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 2
+
+/datum/crafting_recipe/roguetown/structure/wooden_horse_mobile
+	name = "mobile wooden horse"
+	category = "Misc"
+	result = /obj/structure/wooden_horse/mobile
+	reqs = list(/obj/item/natural/wood/plank = 6,
+				/obj/item/natural/fibers = 2)
+	verbage_simple = "construct"
+	verbage = "constructs"
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 3

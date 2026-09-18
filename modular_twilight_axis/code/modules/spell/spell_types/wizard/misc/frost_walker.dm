@@ -25,7 +25,7 @@
 
 /obj/effect/proc_holder/spell/self/frost_walker
 	name = "Frost Walker"
-	desc = "Замораживает воду. Тратит стамину. Автоматически выключается при истощении."
+	desc = "Freezes water. Consumes stamina. Automatically turns off when depleted."
 	invocations = list("GLACIES VIA!")
 	cost = 3
 	active = FALSE
@@ -87,7 +87,7 @@
 
 	freeze_radius(user)
 
-/obj/effect/proc_holder/spell/self/frost_walker/charge_check(mob/user) //заглушка для оффкода
+/obj/effect/proc_holder/spell/self/frost_walker/charge_check(mob/user) //placeholder for offcode
 	if(active)
 		return TRUE
 

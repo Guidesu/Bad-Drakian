@@ -1,84 +1,19 @@
 {
-    "Contents": [
-"<h3><strong>Название: Книга Правосудия, том II</strong></h3><br>
-<strong>Автор первого тома: Маршал Эдуард Законотворец</strong><br>
-<strong>Автор второго тома: Фитзин Молчаливый</strong><br>
-<strong>Автор перевода на упрощённый имперский: Леди Рейнис Бессемер</strong><br>
+  "Contents": [
+    "<center><font size=\"12\"><b>Tome of Justice</b></font><br><hr><br><b>Issued by the Crown of the Kingdom of Ferentia</b><br><br><hr></center><u><b>Introduction:</b></u><br>Herein lies the framework for justice within the Kingdom of Ferentia. This tome shall serve as a guide for adjudicators in delivering equitable sentences and ensuring justice is achieved in the name of Ravox. The protections outlined within this tome do not extend to individuals classified as outlaws unless they are lawfully arrested.<br><br>Adjudicators shall consider the following factors when rendering a verdict and determining appropriate sentences: the nature of the offence, the accused's criminal history, their moral blameworthiness, how a reasonable person would have acted under similar circumstances, whom the offended party was, and any aggravating or mitigating factors brought to the court's attention.",
 
-<h3><strong>ВНЕМЛИТЕ! Сие есть писание маршала Эдуарда, коий поверг супостатов государства чернилами там, где меча было не достать. Да пребудет мудрость его вовеки, дабы наставлять и направлять силы Короны.</strong><br></h3>
+    "<u><b>Overview of Criminal Sanctions:</b></u><br><ol><li><b>Execution</b>: Shall be carried out by public beheading, burning, or hanging.</li><li><b>Enslavement</b>: Shall be enslaved by a local landed noble or the Inquisition.</li><li><b>Exile</b>: Duration of exile shall be determined based on the offence's severity.</li><li><b>Imprisonment</b>: Duration shall be dependent on the severity of the offence; imprisonment can be permanent in extreme cases.</li><li><b>Dismemberment</b>: Permanent removal of body parts as a punishment for severe crimes.</li><li><b>Maiming</b>: Severe injury that does not result in the loss of a limb or life.</li><li><b>Public Humiliation</b>: Public shaming or other forms of disgrace, such as being locked in a public pillory for a duration of time.</li><li><b>Fines</b>: Payable to the Crown or to the noble of the land where the offence occurred. Failure to pay shall result in imprisonment or indentured servitude.</li><li><b>Damages</b>: Paid to the victim or their family. If the offender cannot pay, they shall be subjected to imprisonment or indentured servitude.</li></ol>",
 
-Вот термины и определения, используемые в сем документе и единые для всей Гримории:<br><br>
-<strong>Душегубство</strong> - безвозвратная смерть живого и разумного существа, коего ни лекарь, ни святой муж, ни кто иной не властен вернуть к бытию.<br>
-<strong>Смертное посягательство</strong> - нападение, имеющее целью пресечь жизнь ближнего, либо деяние, жизнь отнимающее, ежели оная чудом Пантеона али стараниями лекаря была возвращена в Гриморию.<br>
-<strong>Ересь</strong> - славословие всяких Презренных али идолов ложных, а равно попрание Божественного Порядка Десяти или же умышленное противление делам праведным и законным Святого Престола.<br>
-<strong>Помеха правосудию</strong> - вспоможение лиходеям, неповиновение велениям законным, возведение напраслины; карается сие обычно штрафом, коий не выше пятидесяти маммонов.<br>
-<strong>Вандализм</strong> - порча стяжаний, зданий али товаров, но не люда.<br>
-<strong>Служивый чин</strong> - всякое лицо или лица, судом нанятые, включая стражу, наёмников, слуг общественных и гвардию Короны.<br><br>
+    "<u><b>Codified Offences:</b></u><br>Below are the criminal offences recognized by the Kingdom of Ferentia, along with suggested criminal sanctions for an adjudicator's consideration. Courts of law may issue alternative sentences as they deem just, but sentences harsher than those prescribed herein shall only be imposed with caution, lest the adjudicator hinders the Crown's Justice.",
 
-Кара за прегрешения может быть разной и налагается в порядке строгости, как здесь изложено:<br><br>
+    "<u><b>I. Offences Against the Crown, Royalty, and the Nobility:</b></u><br><ol><li><b>Assault, Murder, or Impersonation of the Monarch, Royalty, Crown Representatives, or Nobility:</b> Execution, enslavement, exile, imprisonment, maiming, or public humiliation.</li><li><b>Extortion of the Monarch, Royalty, Crown Representatives, or Nobility:</b> Exile, imprisonment, maiming, or public humiliation.</li><li><b>Defamation of the Monarch, Royalty, Crown Representatives, or Nobility:</b> Imprisonment, maiming, public humiliation, fines, or damages. Repeat offenders shall have their tongue removed if the defamation was spoken, or their hands removed if the defamation was written.</li><li><b>Defacing or Disrespecting Royal Symbols or Property:</b> Imprisonment, maiming, public humiliation, or fines.</li><li><b>High Treason:</b> Execution, exile, or imprisonment.</li><li><b>Petty Treason:</b> Execution, enslavement, exile, imprisonment, maiming, or public humiliation.</li><li><b>Forgery:</b> Exile, imprisonment, dismemberment, maiming, or public humiliation.</li><li><b>Tax Avoidance:</b> Enslavement, exile, imprisonment, maiming, public humiliation, or fines.</li><li><b>Hindering the Crown's Justice:</b> Enslavement, imprisonment, or fines.</li></ol>",
 
-<small>I.</small>&nbsp&nbsp
-<strong>Казнь:</strong> применяется лишь ежели изгнание было дерзко нарушено, или нарушалось не единожды, либо когда Виновный раз за разом бежит из-под стражи законной, или же несет в себе сущую угрозу для будущего Государства.<br>
-<small>II.</small>&nbsp
-<strong>Изгнание:</strong> на срок в несколько дней, месяцев или лет; нарушение коего может караться смертью или подневольным трудом.<br>
-<small>III.</small>
-<strong>Подневольный труд:</strong> на срок в несколько дней или месяцев.<br>
-<small>IV.</small>
-<strong>Публичное посрамление:</strong> клеймение человека, бросание в ров без членовредительства, выставление у позорного столба.<br>
-<small>V.</small>
-<strong>Телесное наказание:</strong> битье, сечение или иное причинение боли, но без лишения жизни или лишения конечностей.<br>
-<small>VI.</small>&nbsp
-<strong>Заточение:</strong> в темницах городских на срок в несколько дней или месяцев, глядя по тяжести содеянного зла.<br>
-<small>VII.</small>
-<strong>Штраф:</strong> уплачивается в пользу города; неспособность же платить почитается за вину, коя ведет к заточению, долговому рабству или к обоим сразу, покуда долг не будет возвращен.<br>
-<small>VIII.</small>
-<strong>Возмещение вреда:</strong> выплачивается пострадавшей стороне или ее родичам; неспособность к выплате ведет к темнице, суровой кабале или к обоим сразу, покуда долг не будет возвращен.<br>
+    "<u><b>II. Offences Against the Grenzelhoftian Holy See and the Inquisition:</b></u><br><ol><li><b>Assault, Murder, or Impersonation of Ordained Clergy or Inquisition Members:</b> Execution, enslavement, imprisonment, dismemberment, maiming, public humiliation, or damages.</li><li><b>Corrupting Clergy or Inquisition Members:</b> Enslavement, imprisonment, dismemberment, maiming, public humiliation, or damages.</li><li><b>Public Indecency on Hallowed Ground:</b> Imprisonment, maiming, public humiliation, or damages.</li><li><b>Blasphemy Against the Ten:</b> A warning detailing the blasphemy shall be issued. Failure to comply in the future shall be deemed heresy.</li><li><b>Heresy:</b><br><b><i>Greater Heresy</i></b> (Worship of the Ascendants): Execution, enslavement, or imprisonment.<br><b><i>Lesser Heresy</i></b> (Contradiction of the teachings of the Grenzelhoftian Holy See): Enslavement, imprisonment, maiming, fines, or damages paid to the Grenzelhoftian Holy See.<br><b><i>Note</i></b>: Psydonites are permitted to practice their faith by the Crown, provided it is not unnecessarily disruptive to followers of the Grenzelhoftian Holy See.</li><li><b>Desecration of Holy Symbols or Church Property:</b> Imprisonment, dismemberment, maiming, public humiliation, or damages.</li><li><b>Use of Unholy Powers:</b> Enslavement, exile, imprisonment, or dismemberment.</li><li><b>Theft of Goods or Offerings Given to the Ten:</b> Imprisonment, dismemberment, public humiliation, or damages.</li><li><b>Disturbing the Dead:</b> Imprisonment or damages paid to both the Grenzelhoftian Holy See and the deceased's descendants.</li></ol>",
 
+    "<u><b>III. Offences Against Public Order:</b></u><br><ol><li><b>Arson:</b> Enslavement, imprisonment, fines, or damages.</li><li><b>Brandishing Weapons Without Lawful Cause:</b> Imprisonment, public humiliation, or fines.</li><li><b>Espionage:</b> Execution or imprisonment.</li><li><b>Theft:</b> Imprisonment, maiming, public humiliation, or damages. Repeat offenders may be subject to dismemberment, but this shall not occur on the first offence.</li><li><b>Fencing Stolen Goods:</b> Imprisonment or fines.</li><li><b>Vandalism:</b> Imprisonment, fines, or damages.</li><li><b>Littering:</b> Imprisonment, fines, or damages.</li><li><b>Poisoning:</b> Enslavement, imprisonment, fines, or damages.</li><li><b>Extortion During Times of Hardship:</b> Exile, imprisonment, fines, or damages.</li></ol>",
 
-<strong><h3>I. Великие злодеяния против Государя нашего, вельмож его али чинов служивых.</h3></strong>
+    "<u><b>IV. Offences Against Commoners:</b></u><br><ol><li><b>Assault of a Citizen:</b> Imprisonment, maiming, public humiliation, or damages.</li><li><b>Extortion of a Citizen:</b> Imprisonment, fines, or damages.</li><li><b>Burglary:</b> Imprisonment, maiming, public humiliation, fines, or damages. Repeat offenders may be subject to dismemberment, but this shall not occur on the first offence.</li><li><b>Robbery:</b> Imprisonment, maiming, public humiliation, fines, or damages. Repeat offenders may be subject to dismemberment, but this shall not occur on the first offence.</li><li><b>Damage to Property or Livestock:</b> Fines or damages.</li><li><b>Disturbing the Peace:</b> Fines. Repeat offenders shall face harsher penalties, including imprisonment.</li><li><b>Murder Without Lawful Excuse:</b> Execution, exile, imprisonment, or damages paid to the victim's family.</li><li><b>Murder With Lawful Excuse:</b> Imprisonment, fines, or damages unless absolved of all guilt by an adjudicator.</li><li><b>Unwilling Enslavement of Citizens and Foreigners of Respected Status (Nobility, Merchant Traders, Skilled Labourers):</b> The offender shall be enslaved.</li></ol><b><i>Note</i></b>: Individuals do not require a licence to purchase, own, or transfer ownership of slaves.",
 
-<small>I.I.</small>&nbsp <strong>Душегубство Государя нашего:</strong> казнь убивца. ВМЕСТЕ С ЭТИМ: казнь, изгнание, публичное посрамление, телесное наказание и лишение чинов и стяжаний для стражи нерадивой, коя Государя не уберегла; вершить сие надлежит их подручным.<br>
-<small>I.II.</small>&nbsp <strong>Посягательство али смертное посягательство на Государя нашего:</strong> телесное наказание, публичное посрамление, а следом подневольный труд али изгнание. ВМЕСТЕ С ЭТИМ, публичное посрамление, телесное наказание али возмещение вреда и штраф для стражи нерадивой; вершить сие надлежит их начальникам.<br>
-<small>I.III.</small>&nbsp <strong>Посягательство на служивого чина али придворных Короны, либо присвоение их звания:</strong> публичное посрамление и заточение на день единый, а также пеня, коя не превосходит пятидесяти маммонов.<br>
-<small>I.IV.</small>&nbsp <strong>Порча али вандализм имущества Короны либо дворцов Государевых:</strong> выплата возмещения и публичное посрамление, либо подневольный труд до искупления долга и публичное посрамление.<br>
-<small>I.V.</small>&nbsp <strong>Смертное посягательство на служивого чина али вельмож Государевых:</strong> публичное посрамление и телесное наказание, либо заточение до трех дней, и в обоих случаях с уплатой штрафа и возмещением вреда.<br>
-<small>I.VI.</small>&nbsp <strong>Великое расхищение казны Государевой:</strong> публичное посрамление, заточение, возмещение вреда и штраф в размере всякой пропавшей монеты, а после того: отсечение руки виновного.<br>
-<small>I.VII.</small>&nbsp <strong>Помеха правосудию Короны:</strong> штраф, коий не превосходит двадцати маммонов.<br>
-<small>I.VIII.</small>&nbsp <strong>Противление законному взятию под стражу Государем али чинами судейскими:</strong> выплата до пятидесяти маммонов, глядя по тяжести вины. Коли противление силой было (кулаком али дубиною), карать как за помеху правосудию, а коли с угрозой жизни: как за посягательство али смертное посягательство.<br>
-
-
-<h3>II. Злодеяния против Божественного Порядка.</h3>
-
-<small>II.I.</small>&nbsp&nbsp <strong>Посягательство на священников наших али мирян верующих:</strong> штраф, коий не превосходит ста маммонов, и заточение на срок до трех дней.<br>
-<small>II.II.</small>&nbsp <strong>Деяния бесчинные во храме:</strong> штраф малый и предостережение; небрежение сим почитается за помеху правосудию.<br>
-<small>II.III.</small>&nbsp <strong>Богохульство против Десятерых али Святого Престола:</strong> предостережение; небрежение сим почитается за ересь.<br>
-<small>II.IV.</small>&nbsp <strong>Ересь:</strong> публичное посрамление и телесное наказание, а после решение церковное о судьбе еретика, кое не суровее изгнания, глядя по мере его искупления.<br>
-<small>II.V.</small>&nbsp <strong>Похищение стяжаний храмовых али приношений:</strong> заточение на срок до трех дней и возмещение вреда в двойном размере от цены украденного. Коли преступник не имеет мочи заплатить, да пребудет он в неволе, доколе долг не вернет.<br>
-<small>II.VI.</small>&nbsp <strong>Разорение могил:</strong> заточение на день единый, а равно возмещение на починку порушенного да еще пятьдесят маммонов в пользу церкви.<br>
-
-<h3>III. Злодеяния против всякого жития гражданского.</h3>
-
-<small>III.I.</small>&nbsp <strong>Грабёж и разбой:</strong> возмещение вреда и штраф, коий не превосходит сугубого размера оного вреда.<br>
-<small>III.II.</small>&nbsp <strong>Соглядатайство и измена великая:</strong> казнь али изгнание вечное.<br>
-<small>III.III.</small>&nbsp <strong>Сбыт краденого:</strong> штраф в размере цены стяжаний похищенных.<br>
-<small>III.IV.</small>&nbsp <strong>Засорение улиц:</strong> штраф, коий не превосходит пяти маммонов, и предостережение; небрежение сим почитается за помеху правосудию.<br>
-<small>III.V.</small>&nbsp <strong>Отравление воды городской:</strong> один год долгового рабства сурового за всякий день, когда вода была порченой; помимо этого - кара за посягательство и душегубство всякого, кто от воды той преставился, а также возмещение вреда, равное урону для хозяйства.<br>
-<small>III.VI.</small>&nbsp <strong>Грабёж без разбоя:</strong> возмещение вреда и штраф в размере цены краденого, либо подневольный труд в сугубом размере от цены стяжаний.<br>
-<small>III.VII.</small>&nbsp <strong>Вандализм:</strong> заточение на срок до трех дней и штраф али возмещение в размере цены починки, да еще десять маммонов.<br>
-<small>III.VIII.</small>&nbsp <strong>Лихоимство (взимание торговцем цены более чем троекратной):</strong> штраф в размере цены товара.<br>
-<small>III.IX.</small>&nbsp <strong>Утайка податей законных:</strong> возмещение недоимки, да штраф по двадцать маммонов за каждую сотню должную, но дабы штраф сей не превзошел сотни маммонов.<br>
-<small>III.X.</small>&nbsp <strong>Великий грабёж без разбоя, али кража свыше четырехсот маммонов:</strong> возмещение вреда в сугубом размере. А после, глядя по числу маммонов: публичное посрамление, заточение, телесное наказание, подневольный труд али отсечение руки виновного, в порядке строгости за куши великие.<br>
-
-<h3>IV. Злодеяния против остальных.</h3>
-
-<small>IV.I.</small>&nbsp <strong>Посягательство на гражданина:</strong> возмещение вреда, коий не превосходит пятидесяти маммонов, что равно плате утраченной и издержкам лекарским.<br>
-<small>IV.II.</small>&nbsp <strong>Шантаж али запугивание гражданина:</strong> штраф али возмещение вреда в размере, коий не выше пятидесяти маммонов.<br>
-<small>IV.III.</small>&nbsp <strong>Порча стяжаний али скотины:</strong> возмещение вреда ценою в починку, да еще сто маммонов помимо этого.<br>
-<small>IV.IV.</small>&nbsp <strong>Нарушение покоя:</strong> штраф, коий не выше десяти маммонов, и предостережение, либо публичное посрамление; небрежение сим почитается за помеху правосудию.<br>
-<small>IV.V.</small>&nbsp <strong>Душегубство гражданина:</strong> публичное посрамление, телесное наказание и возмещение вреда не менее двухсот маммонов родичам убиенного, а следом изгнание али долговое рабство на срок не менее тридцати лет.<br>
-<small>IV.VI.</small>&nbsp <strong>Смертное посягательство на гражданина:</strong> суровая неволя на срок до десяти лет, либо возмещение и штраф НЕ МЕНЕЕ двухсот маммонов, а следом публичное посрамление и телесное наказание.<br>
-<small>IV.VII.</small>&nbsp <strong>Рабство али принуждение к труду, Короной али Церковью не дозволенное:</strong> публичное посрамление и телесное наказание, выплата платы упущенной в пользу закрепощенного и штраф, коий не выше сугубого размера от сей выплаты.<br>
-
-
-<br>
-<strong>[Оставшаяся часть документа заполнена бесконечными страницами юридических тирад и мельчайших подробностей. Всё задокументировано настолько дотошно, что это граничит с безумием.]</strong>"]}
+    "<u><b>Additional Notes on Legal Procedure:</b></u><br><ol><li><b>Trial Process:</b> According to Ravox's Justice, everyone accused of an offence is entitled to a fair trial where the charges are clearly presented and the accused is given the opportunity to present a defence.</li><li><b>Appeals:</b> Royalty and landed nobility convicted of offences may appeal their sentence to the Crown (which may be referred to the Chancery). Unlanded nobility may appeal their sentence to landed nobility of the rank of Count or higher (which may be referred to the Chancery), or directly to the Chancery. Appeals shall be filed within a year of the conviction.</li><li><b>Protections of the Accused:</b> Every accused individual shall be presumed innocent until proven guilty. Evidence shall be presented for a conviction to be secured. Members of royalty and the nobility are entitled to a higher evidentiary standard than commoners.</li></ol>"
+  ]
+}

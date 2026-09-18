@@ -1,7 +1,7 @@
 /datum/erp_action/other/mouth/rimming
 	abstract = FALSE
-	name = "Римминг"
+	name = "Rimming"
 	required_target_organ = SEX_ORGAN_ANUS
-	message_start = "{actor} припадает к крупу {partner}."
-	message_tick = "{actor} {force} и {speed} вылизывает языком анус {partner}."
-	message_finish =  "{actor} убирает лицо от попки {partner}."
+	message_start = "{actor} falls to {partner}'s rump."
+	message_tick = "{actor} {force} and {speed} lick {partner}'s anus with his tongue."
+	message_finish =  "{actor} removes his face from {partner}'s ass."

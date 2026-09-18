@@ -1,10 +1,10 @@
 
 /datum/erp_action/other/hands/toy_anal
 	abstract = FALSE
-	name = "Секс-игрушка анальная"
+	name = "Anal sex toy"
 	required_target_organ = SEX_ORGAN_ANUS
-	message_start = "{actor} примеряет игрушку у анального кольца {partner}."
-	message_tick = "{actor} {force} и {speed} сношает анус {partner} игрушкой."
-	message_finish =  "{actor} медленно прекращает движение игрушки в попке {partner}."
-	message_climax_passive = "{partner} кончает, сжимая попкой игрушку {actor}."
+	message_start = "{actor} tries on the toy at {partner}'s anal ring."
+	message_tick = "{actor} {force} and {speed} fuck {partner}'s anus with a toy."
+	message_finish =  "{actor} slowly stops moving the toy in {partner}'s ass."
+	message_climax_passive = "{partner} cums, squeezing {actor}'s toy with her ass."
 	required_item_tags = list("dildo")
