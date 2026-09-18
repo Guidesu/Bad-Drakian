@@ -373,7 +373,7 @@
 	. = ..()
 	owner.add_filter(WEIGHTOFCHAINS_GLOW, 2, list("type" = "outline", "color" = outline_colour, "alpha" = 200, "size" = 1))
 	owner.visible_message(span_warning("[src] stumbles, suddenly finding it difficult to move!"), \
-		span_userdanger("Suddenly, my equipment seems to weight a lot more than it used to! Its slowing me down!"))
+		span_userdanger("Suddenly, my equipment weighs far more than it should! It's slowing me down!"))
 
 /datum/status_effect/debuff/twilight_weightofchains/on_remove()
 	. = ..()

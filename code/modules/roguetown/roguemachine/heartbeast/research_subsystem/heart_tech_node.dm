@@ -182,7 +182,7 @@
 
 /datum/chimeric_tech_node/infestation_attack_vector
 	name = "Virulent blade"
-	description = "Pestilent blade now has a small chance to trigger when landing a succesful blow, even whilst the target isn't infected."
+	description = "Pestilent Blade now has a small chance to trigger on a successful blow, even when the target is not infected."
 	string_id = "INFESTATION_ATTACK_VECTOR"
 	required_tier = 1
 	cost = 5

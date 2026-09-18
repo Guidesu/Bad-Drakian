@@ -32,7 +32,8 @@
 /datum/decree/proc/get_display_name()
 	return "[name] of [year]"
 
-/// flavor_text with %RULER% / %RULER_NAME% / %REALM% filled in. Safe for all decrees - if the
+/// flavor_text with %RULER% / %RULER_NAME% / %REALM% (the round-local realm name) filled in.
+/// Safe for all decrees - if the
 /// template has no placeholders, the replacetext calls are no-ops.
 /datum/decree/proc/get_display_flavor_text()
 	if(!flavor_text)

@@ -429,7 +429,7 @@ GLOBAL_LIST_INIT(averse_factions, list(
 	var/mob/living/carbon/human/H = user
 	if(logged == FALSE)
 		if(H.name) // If you don't check this, the log entry wont have a name as flaw_on_life is checked at least once before the name is set.
-			log_hunted("[H.ckey] playing as [H.name] had the targeted flaw by vice.") // we log this in the same place as hunted because making a seperate log for it would be silly
+			log_hunted("[H.ckey] playing as [H.name] had the targeted flaw by vice.") // Log this with hunted events rather than creating a separate log.
 			logged = TRUE
 
 /datum/charflaw/targeted/apply_post_equipment(mob/user)
@@ -660,7 +660,7 @@ GLOBAL_LIST_INIT(averse_factions, list(
 
 /datum/charflaw/mind_broken
 	name = "Asundered Mind (+3 TRI)"
-	desc = "My mind is asundered, wether it was by own means or an unfortunate accident. Nothing seems real to me... \
+	desc = "My mind has been torn asunder, whether by my own hand or by an unfortunate accident. Nothing seems real to me... \
 	\nWARNING: HALLUCINATIONS MAY JUMPSCARE YOU, AND PREVENT YOU FROM TELLING APART REALITY AND IMAGINATION. \
 	FURTHERMORE, THIS DOES NOT EXEMPT YOU FROM ANY RULES SET BY THE SERVER. ESCALATION STILL APPLIES."
 	ui_fa_icon = "ghost"

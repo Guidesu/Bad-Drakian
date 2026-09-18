@@ -3,14 +3,14 @@
 	name = "The Guild Charter of Arms"
 	category = DECREE_CATEGORY_NEW
 	mechanical_text = "Mercenaries get a capped poll tax at 15m; Guild remits a daily tribute to the Burgher Pledge."
-	flavor_text = {"These Mercenary Guild Statutes, negotiated under the banner of Ravox between the Crown of Azuria and the Mercenary Guild of the Western Kingdoms, indicate that the Crown recognizes the Guild as a registered foreign organization, self-governing in its affairs and answerable solely to its captains. Mercenaries who serve under the flag of the Guild will not bear any burden, except for the smallest possible taxes.
+	flavor_text = {"These Mercenary Guild Statutes, negotiated beneath Ravox's banner between the Crown of %REALM% and the Mercenary Guild of the Western Kingdoms, recognize the Guild as a lawful foreign organization. It shall govern its own affairs and answer to its captains, while mercenaries serving beneath its banner shall pay only the lowest lawful taxes.
 
-The Crown does not require an oath of loyalty from the Guild and is not obliged to provide it with any services in return. The Crown will not interfere in contracts concluded by the Guild and will protect the right of its members to bear arms, as well as to initiate battles and participate in them at their discretion, provided that this does not disturb the peace in the Duchy and is not related to piracy, robbery, or other actions directly threatening the interests of the Crown.
+The Crown shall demand no oath of loyalty from the Guild and owes it no service in return. It shall not interfere with lawful Guild contracts and shall protect its members' right to bear arms and fight by mutual agreement, provided they neither disturb the Crown's peace nor engage in piracy, robbery, or any act directly threatening %REALM%.
 
-In recognition of this status, the Guild's treasury, funded by the contributions of its members, will daily pay a levy as part of the Citizens' Oath, as a gesture of goodwill and a contribution to the common welfare of the Duchy from the bearers of arms and agents of Ravox, ensuring the administration of justice therein. And if a criminal is found bearing the symbols of the Guild, the Guild bears no responsibility for this, and the Crown's justice concerning this person is carried out unhindered.
+In recognition of this status, the Guild's treasury shall pay a daily levy toward the Citizens' Oath as a gesture of goodwill and a contribution to the realm's common defense. The Guild bears no collective responsibility for a criminal merely wearing its colors, and the Crown may pursue justice against that individual without obstruction.
 
 Certified by the seal of the Crown and the seal of the Guild of the Western Kingdoms."}
-	revoke_text = "The %RULER% has suspended the Guild Charter of Arms. The mercenaries of Azuria now bear the Crown's common levy in full - and the Guild's tribute to the Pledge ceases until the compact is renewed."
+	revoke_text = "The %RULER% has suspended the Guild Charter of Arms. The mercenaries of %REALM% now bear the Crown's common levy in full, and the Guild's tribute to the Pledge ceases until the compact is renewed."
 	restore_text = "The %RULER% has affirmed the Guild Charter of Arms. The Guild's recognition is restored, and its tribute to the Pledge resumes."
 
 /datum/decree/guild_charter_of_arms/roll_initial_year()

@@ -23,7 +23,7 @@ ui_state()
   with. This may be the standard checks that check if you are in range and
   conscious, or more.
 
-Once backend is complete, you create an new interface component on the
+Once the backend is complete, create a new interface component in the
 frontend, which will receive this JSON data and render it on screen.
 
 States are easy to write and extend, and what make tgui interactions so
@@ -102,7 +102,7 @@ Also note the use of `. = TRUE` (or `FALSE`), which is used to notify the UI
 that this input has been handled. When `ui_act` eventually returns, a value of
 `TRUE` indicates that the input has been handled and that the UI should update.
 This is important for UIs that do not auto-update, as otherwise the user will
-not be able to see the interface update based on thier actions.
+not be able to see the interface update based on their actions.
 
 ### Frontend
 

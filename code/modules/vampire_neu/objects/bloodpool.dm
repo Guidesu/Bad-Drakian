@@ -955,7 +955,7 @@ GLOBAL_LIST_EMPTY(crimson_crucible_personal_servant_summons)
 			to_chat(user, span_warning("I will no longer tire nor feel, stamina will no longer affect me, shocks will no longer affect me.")) //Trait hints
 			for(var/S in MOBSTATS)
 				lord_body.change_stat(S, 2)
-			ADD_TRAIT(lord_body, TRAIT_INFINITE_STAMINA, TRAIT_GENERIC) //You're now the OG vlord once more, you are exposed to the entire server knowing of your existance.
+			ADD_TRAIT(lord_body, TRAIT_INFINITE_STAMINA, TRAIT_GENERIC) // You are the original vampire lord once more, and the entire server knows of your existence.
 			ADD_TRAIT(lord_body, TRAIT_SHOCKIMMUNE, TRAIT_GENERIC) //No hardstunning them, fuck off. Lich has this for that reasoning too.
 			SSticker.sunsteal(initiator_clan?.clan_leader) //Universally ensures the town knows a literal calamity is about to show up.
 			lord_body.maxbloodpool += 1000
@@ -984,7 +984,7 @@ GLOBAL_LIST_EMPTY(crimson_crucible_personal_servant_summons)
 
 	bloodpool.available_project_types -= /datum/vampire_project/armor_crafting //ONE TIME RITUAL ONLY, we do not want this handed out en-mass.
 
-//CURRENTLY DISABLED AS A SEPERATE RITE, MOVED TO FULL POWER
+// Currently disabled as a separate rite; moved to Full Power.
 ///datum/vampire_project/sunsteal
 //	display_name = "Steal the Sun"
 //	description = "The scorching gaze of the Sun-Tyrant shall hamper our plans no more. This project can only be initiated by your Lorde. (Permanent night until the lord dies, most may see this as a declaration of war.)"

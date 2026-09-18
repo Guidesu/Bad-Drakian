@@ -8,11 +8,11 @@ SUBSYSTEM_DEF(events)
 	var/list/running = list()	//list of all existing /datum/round_event
 	var/list/currentrun = list()
 
-	var/scheduled = 0			//The next world.time that a naturally occuring random event can be selected.
+	var/scheduled = 0			// The next world.time at which a naturally occurring random event can be selected.
 	var/frequency_lower = 1800	//3 minutes lower bound.
 	var/frequency_upper = 3000	//10 minutes upper bound. Basically an event will happen every 3 to 10 minutes.
 
-	var/list/holidays			//List of all holidays occuring today or null if no holidays
+	var/list/holidays			// List of all holidays occurring today, or null if there are none.
 	var/wizardmode = FALSE
 
 /datum/controller/subsystem/events/Initialize(time, zlevel)

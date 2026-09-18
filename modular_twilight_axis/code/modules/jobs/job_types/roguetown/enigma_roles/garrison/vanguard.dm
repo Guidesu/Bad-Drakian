@@ -8,12 +8,9 @@
 	allowed_sexes = list(MALE, FEMALE)
 	forbidden_races = list(RACES_DESPISED)
 	job_traits = list(TRAIT_WOODSMAN)
-	tutorial = "The vanguard, so named for their destiny - to protect the distant borders of Rockhill - staunchly protects the village and the approaches to the city. \
-	Often recruited from local peasant sons and daughters, they often defend the interests not of the King or the Baron, but of their village.\
-	What business do they have with what happens in the city, if marsh creatures attack their home in the village, killing their neighbors and friends,\
-	acquaintances from the earliest years of life?\
-	Remaining one of the most inconspicuous military units, nevertheless, the Vanguard remains the one,\
-	who will take the first strike of all kinds of enemies."
+	tutorial = "The Vanguard guards Rockhill's distant borderlands, its villages, and the roads leading toward the city. \
+	Most recruits are the sons and daughters of local farmers. Their first loyalty is often not to a sovereign or noble, but to the neighbors and childhood friends who depend upon them.\
+	The city may overlook this modest force, yet the Vanguard is always the first to meet whatever emerges from the marsh."
 	display_order = JDO_VANGUARD
 	whitelist_req = TRUE
 

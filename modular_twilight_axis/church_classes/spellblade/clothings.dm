@@ -4,7 +4,7 @@
 
 /obj/item/clothing/head/roguetown/roguehood/newmoon
 	name = "newmoon hood"
-	desc = "Darkmoon hood woven from dense material. It is strong enough to tear and feels warm due to the lining. The secret of making the fabric remains a mystery even to the New Moons themselves."
+	desc = "A lined Darkmoon hood woven from dense, warm cloth. The secret of its remarkably strong fabric remains a mystery even to the New Moons themselves."
 	color = "#78a3c9"
 	slot_flags = ITEM_SLOT_HEAD
 	armor = ARMOR_NEWMOON_HOOD
@@ -15,7 +15,7 @@
 
 /obj/item/clothing/suit/roguetown/armor/leather/newmoon_jacket
 	name = "newmoon jacket"
-	desc = "A weighty, elegant, but at the same time quite protected coat made of dense and strong fabric. It is the insignia of the Holy Order of the Darkmoon with the Nok amulet in the center of the breastplate. A screaming symbol of radical Noctism."
+	desc = "A heavy yet elegant coat tailored from dense, protective cloth. Nok's amulet rests at the center of the breast, marking its wearer as a radical of the Holy Order of the Darkmoon."
 	icon = 'modular_twilight_axis/church_classes/icons/spellblade_clothes.dmi'
 	mob_overlay_icon = 'modular_twilight_axis/church_classes/icons/spellblade_clothes.dmi'
 	icon_state = "newmoon_jacket"

@@ -490,7 +490,7 @@
  *
  * Arguments:
  * * region_size: The size of regions
- * * threshold: the value that determines wether a cell is dead or alive
+ * * threshold: the value that determines whether a cell is dead or alive
  * * node_per_region_chance: chance of a node existiing in a region
  * * size: size of the returned grid
  * * node_min: minimum amount of nodes in a region (after the node_per_region_chance is applied)

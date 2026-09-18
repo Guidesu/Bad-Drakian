@@ -10,7 +10,7 @@
 	desc = ""
 	throw_speed = 1
 	throw_range = 5
-	w_class = WEIGHT_CLASS_NORMAL			//upped to three because books are, y'know, pretty big. (and you could hide them inside eachother recursively forever)
+	w_class = WEIGHT_CLASS_NORMAL			// Raised to three because books are fairly large, and otherwise could be nested inside each other indefinitely.
 	attack_verb = list("bashed", "whacked", "educated")
 	resistance_flags = FLAMMABLE
 	drop_sound = 'sound/blank.ogg'

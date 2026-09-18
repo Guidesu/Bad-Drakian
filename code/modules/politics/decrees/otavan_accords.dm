@@ -3,11 +3,11 @@
 	name = "The Otavan Accords"
 	category = DECREE_CATEGORY_NEW
 	mechanical_text = "Inquisition members pay no taxes."
-	flavor_text = {"These Treaties of Otavan, concluded in the name of the Ten Indivisibles and under the auspices of the Almighty All-Father, testify that the Holy Otavan Inquisition, the faithful servants of Psydon and the envoys of Otavika, are endowed with the right and duty to protect this land from heresy. In fulfillment of this mission, the Inquisition undertakes to persecute the servants of the Archenemy and false gods, not to raise a hand against subjects of Azuria who are not tainted by heresy, to judge only commoners and never to persecute either citizens or nobles, except in cases of official sanction of the Crown.
+	flavor_text = {"These Otavan Accords, concluded in the name of the Ten Indivisible beneath the authority of the Almighty All-Father, grant the Holy Otavan Inquisition the right and duty to defend %REALM% from heresy. The Inquisition shall pursue servants of the Archenemy and false gods, but shall not harm subjects untainted by heresy. Without the Crown's formal sanction, its temporal judgments shall extend only to commoners and never to burghers or nobles.
 
-In return, being recognized by the clergy of the Otavan Church of the All-Father, the Inquisition is exempt from taxes and levies regarding its members and instruments of their service; and the Crown shall not hinder their holy duty, except in the case of lawful claims presented before the Church of the Ten.
+In return for its recognition by the Otavan Church of the All-Father, the Inquisition and the instruments of its service shall be exempt from taxes and levies. The Crown shall not obstruct its holy duty except through a lawful appeal presented before the Church of the Ten.
 
-Certified by the Seal of the Crown, in the presence of Psaidon and his Ten."}
+Certified by the seal of the Crown, in the presence of Psydon and His Ten."}
 	revoke_text = "The %RULER% has broken the Otavan Accords. The Inquisition is stripped of its treaty protections - and Otava shall not take such an insult lightly."
 	restore_text = "The %RULER% has affirmed the Otavan Accords. The Holy Otavan Inquisition resumes its duty to purge the land of heretics, free from the Crown's interference."
 

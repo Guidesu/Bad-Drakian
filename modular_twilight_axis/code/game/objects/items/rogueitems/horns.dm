@@ -35,7 +35,7 @@
 		var/distance = get_dist(player, origin_turf)
 		if(distance <= 7)
 			continue
-		var/dirtext = "to"
+		var/dirtext = " to the "
 		var/direction = angle2dir(Get_Angle(player, origin_turf))
 		switch(direction)
 			if(NORTH)
@@ -71,11 +71,11 @@
 
 		//sound played for other players
 		player.playsound_local(get_turf(player), 'modular_twilight_axis/sound/items/horn/signalhorn.ogg', 35, FALSE, pressure_affected = FALSE)
-		to_chat(player, "<span class='warning'> I hear the roar of a signal horn somewhere[disttext][dirtext]!</span>")
+		to_chat(player, "<span class='warning'>I hear a signal horn somewhere[disttext ? " [disttext]" : ""][dirtext]!</span>")
 
 /datum/intent/rally
-	name = "Collection signal"
-	desc = "Upon hearing a single blast of the horn, all subordinates must come to formation."
+	name = "Rally signal"
+	desc = "A single blast orders all subordinates to assemble."
 	icon_state = "inrally"
 	no_attack = TRUE
 	candodge = TRUE
@@ -83,7 +83,7 @@
 
 /datum/intent/alert
 	name = "Alarm signal"
-	desc = "Hearing the double blaring of the horn, all subordinates must arrive with weapons as soon as possible."
+	desc = "Two blasts order all subordinates to take up arms and report immediately."
 	icon_state = "inalert"
 	no_attack = TRUE
 	candodge = TRUE
@@ -91,7 +91,7 @@
 
 /datum/intent/alarm
 	name = "Full alarm signal"
-	desc = "Having heard the triple roar of the horn, all subordinates are obliged to drop all current affairs and come to the rescue."
+	desc = "Three blasts order all subordinates to abandon their current duties and answer the emergency."
 	icon_state = "inalarm"
 	no_attack = TRUE
 	candodge = TRUE
@@ -128,7 +128,7 @@
 		sound_horn_alarm_red(user)
 
 /obj/item/signal_hornn/red/proc/sound_horn_rally_red(mob/living/user)
-	user.visible_message("<span class='warning'>[capitalize(user.name)] blowing the guard's horn!</span>")
+	user.visible_message("<span class='warning'>[capitalize(user.name)] is blowing the guard's horn!</span>")
 	playsound(src, 'modular_twilight_axis/sound/items/horn/rallyRetinue.ogg', 100, TRUE)
 	var/turf/origin_turf = get_turf(src)
 
@@ -141,7 +141,7 @@
 		var/distance = get_dist(player, origin_turf)
 		if(distance <= 7)
 			continue
-		var/dirtext = "to"
+		var/dirtext = " to the "
 		var/direction = angle2dir(Get_Angle(player, origin_turf))
 		switch(direction)
 			if(NORTH)
@@ -177,10 +177,10 @@
 
 		//sound played for other players
 		player.playsound_local(get_turf(player), 'modular_twilight_axis/sound/items/horn/rallyRetinue.ogg', 35, FALSE, pressure_affected = FALSE)
-		to_chat(player, "<span class='warning'>I hear the convening of a meeting with the help of the guard's signal horn somewhere[disttext][dirtext]!</span>")
+		to_chat(player, "<span class='warning'>I hear a guard's horn calling a meeting somewhere[disttext ? " [disttext]" : ""][dirtext]!</span>")
 
 /obj/item/signal_hornn/red/proc/sound_horn_alert_red(mob/living/user)
-	user.visible_message("<span class='warning'>[capitalize(user.name)] blowing the guard's horn!</span>")
+	user.visible_message("<span class='warning'>[capitalize(user.name)] is blowing the guard's horn!</span>")
 	playsound(src, 'modular_twilight_axis/sound/items/horn/AlertRetinue.ogg', 100, TRUE)
 	var/turf/origin_turf = get_turf(src)
 
@@ -193,7 +193,7 @@
 		var/distance = get_dist(player, origin_turf)
 		if(distance <= 7)
 			continue
-		var/dirtext = "to"
+		var/dirtext = " to the "
 		var/direction = angle2dir(Get_Angle(player, origin_turf))
 		switch(direction)
 			if(NORTH)
@@ -229,10 +229,10 @@
 
 		//sound played for other players
 		player.playsound_local(get_turf(player), 'modular_twilight_axis/sound/items/horn/AlertRetinue.ogg', 35, FALSE, pressure_affected = FALSE)
-		to_chat(player, "<span class='warning'>I hear an alarm being announced on a guard's signal horn somewhere[disttext][dirtext]!</span>")
+		to_chat(player, "<span class='warning'>I hear a guard's horn sounding an alarm somewhere[disttext ? " [disttext]" : ""][dirtext]!</span>")
 
 /obj/item/signal_hornn/red/proc/sound_horn_alarm_red(mob/living/user)
-	user.visible_message("<span class='warning'>[capitalize(user.name)] blowing the guard's horn!</span>")
+	user.visible_message("<span class='warning'>[capitalize(user.name)] is blowing the guard's horn!</span>")
 	playsound(src, 'modular_twilight_axis/sound/items/horn/FullAlertRetinue.ogg', 100, TRUE)
 	var/turf/origin_turf = get_turf(src)
 
@@ -245,7 +245,7 @@
 		var/distance = get_dist(player, origin_turf)
 		if(distance <= 7)
 			continue
-		var/dirtext = "to"
+		var/dirtext = " to the "
 		var/direction = angle2dir(Get_Angle(player, origin_turf))
 		switch(direction)
 			if(NORTH)
@@ -281,7 +281,7 @@
 
 		//sound played for other players
 		player.playsound_local(get_turf(player), 'modular_twilight_axis/sound/items/horn/FullAlertRetinue.ogg', 35, FALSE, pressure_affected = FALSE)
-		to_chat(player, "<span class='warning'>I hear a full alarm being announced on a guard's signal horn somewhere[disttext][dirtext]!</span>")
+		to_chat(player, "<span class='warning'>I hear a guard's horn sounding the full alarm somewhere[disttext ? " [disttext]" : ""][dirtext]!</span>")
 
 /obj/item/signal_hornn/blue
 	name = "town guard horn"
@@ -327,7 +327,7 @@
 		var/distance = get_dist(player, origin_turf)
 		if(distance <= 7)
 			continue
-		var/dirtext = "to"
+		var/dirtext = " to the "
 		var/direction = angle2dir(Get_Angle(player, origin_turf))
 		switch(direction)
 			if(NORTH)
@@ -363,7 +363,7 @@
 
 		//sound played for other players
 		player.playsound_local(get_turf(player), 'modular_twilight_axis/sound/items/horn/rallyWatchmen.ogg', 35, FALSE, pressure_affected = FALSE)
-		to_chat(player, "<span class='warning'>I hear the call for a meeting with the help of the watch signal horn somewhere[disttext][dirtext]!</span>")
+		to_chat(player, "<span class='warning'>I hear the watch horn calling a meeting somewhere[disttext ? " [disttext]" : ""][dirtext]!</span>")
 
 /obj/item/signal_hornn/blue/proc/sound_horn_alert_blue(mob/living/user)
 	user.visible_message("<span class='warning'>[capitalize(user.name)] is blowing the watch horn!</span>")
@@ -379,7 +379,7 @@
 		var/distance = get_dist(player, origin_turf)
 		if(distance <= 7)
 			continue
-		var/dirtext = "to"
+		var/dirtext = " to the "
 		var/direction = angle2dir(Get_Angle(player, origin_turf))
 		switch(direction)
 			if(NORTH)
@@ -415,7 +415,7 @@
 
 		//sound played for other players
 		player.playsound_local(get_turf(player), 'modular_twilight_axis/sound/items/horn/AlertWatchmen.ogg', 35, FALSE, pressure_affected = FALSE)
-		to_chat(player, "<span class='warning'>I hear an alarm being announced using a patrol signal horn somewhere[disttext][dirtext]!</span>")
+		to_chat(player, "<span class='warning'>I hear the watch horn sounding an alarm somewhere[disttext ? " [disttext]" : ""][dirtext]!</span>")
 
 /obj/item/signal_hornn/blue/proc/sound_horn_alarm_blue(mob/living/user)
 	user.visible_message("<span class='warning'>[capitalize(user.name)] is blowing the watch horn!</span>")
@@ -431,7 +431,7 @@
 		var/distance = get_dist(player, origin_turf)
 		if(distance <= 7)
 			continue
-		var/dirtext = "to"
+		var/dirtext = " to the "
 		var/direction = angle2dir(Get_Angle(player, origin_turf))
 		switch(direction)
 			if(NORTH)
@@ -467,7 +467,7 @@
 
 		//sound played for other players
 		player.playsound_local(get_turf(player), 'modular_twilight_axis/sound/items/horn/FullAlertWatchmen.ogg', 35, FALSE, pressure_affected = FALSE)
-		to_chat(player, "<span class='warning'>I I hear the announcement of a full alarm with the help of a watch horn somewhere[disttext][dirtext]!</span>")
+		to_chat(player, "<span class='warning'>I hear the watch horn sounding the full alarm somewhere[disttext ? " [disttext]" : ""][dirtext]!</span>")
 
 /obj/item/signal_hornn/green
 	name = "vanguard's horn"
@@ -500,7 +500,7 @@
 		sound_horn_alarm_green(user)
 
 /obj/item/signal_hornn/green/proc/sound_horn_rally_green(mob/living/user)
-	user.visible_message("<span class='warning'>[capitalize(user.name)] blowing on the horn of the vanguard!</span>")
+	user.visible_message("<span class='warning'>[capitalize(user.name)] is blowing the Vanguard horn!</span>")
 	playsound(src, 'modular_twilight_axis/sound/items/horn/rallyVanguard.ogg', 100, TRUE)
 	var/turf/origin_turf = get_turf(src)
 
@@ -513,7 +513,7 @@
 		var/distance = get_dist(player, origin_turf)
 		if(distance <= 7)
 			continue
-		var/dirtext = "to"
+		var/dirtext = " to the "
 		var/direction = angle2dir(Get_Angle(player, origin_turf))
 		switch(direction)
 			if(NORTH)
@@ -549,10 +549,10 @@
 
 		//sound played for other players
 		player.playsound_local(get_turf(player), 'modular_twilight_axis/sound/items/horn/rallyVanguard.ogg', 35, FALSE, pressure_affected = FALSE)
-		to_chat(player, "<span class='warning'>I hear the convening of a meeting using the vanguard signal horn somewhere[disttext][dirtext]!</span>")
+		to_chat(player, "<span class='warning'>I hear the Vanguard horn calling a meeting somewhere[disttext ? " [disttext]" : ""][dirtext]!</span>")
 
 /obj/item/signal_hornn/green/proc/sound_horn_alert_green(mob/living/user)
-	user.visible_message("<span class='warning'>[capitalize(user.name)] blowing on the horn of the vanguard!</span>")
+	user.visible_message("<span class='warning'>[capitalize(user.name)] is blowing the Vanguard horn!</span>")
 	playsound(src, 'modular_twilight_axis/sound/items/horn/AlertVanguard.ogg', 100, TRUE)
 	var/turf/origin_turf = get_turf(src)
 
@@ -565,7 +565,7 @@
 		var/distance = get_dist(player, origin_turf)
 		if(distance <= 7)
 			continue
-		var/dirtext = "to"
+		var/dirtext = " to the "
 		var/direction = angle2dir(Get_Angle(player, origin_turf))
 		switch(direction)
 			if(NORTH)
@@ -601,10 +601,10 @@
 
 		//sound played for other players
 		player.playsound_local(get_turf(player), 'modular_twilight_axis/sound/items/horn/AlertVanguard.ogg', 35, FALSE, pressure_affected = FALSE)
-		to_chat(player, "<span class='warning'>I hear an alarm being announced using the vanguard signal horn somewhere[disttext][dirtext]!</span>")
+		to_chat(player, "<span class='warning'>I hear the Vanguard horn sounding an alarm somewhere[disttext ? " [disttext]" : ""][dirtext]!</span>")
 
 /obj/item/signal_hornn/green/proc/sound_horn_alarm_green(mob/living/user)
-	user.visible_message("<span class='warning'>[capitalize(user.name)] blowing on the horn of the vanguard!</span>")
+	user.visible_message("<span class='warning'>[capitalize(user.name)] is blowing the Vanguard horn!</span>")
 	playsound(src, 'modular_twilight_axis/sound/items/horn/FullAlertVanguard.ogg', 100, TRUE)
 	var/turf/origin_turf = get_turf(src)
 
@@ -653,7 +653,7 @@
 
 		//sound played for other players
 		player.playsound_local(get_turf(player), 'modular_twilight_axis/sound/items/horn/FullAlertVanguard.ogg', 35, FALSE, pressure_affected = FALSE)
-		to_chat(player, "<span class='warning'>I hear a full alarm being announced by the signal horn of the vanguard somewhere[disttext][dirtext]!</span>")
+		to_chat(player, "<span class='warning'>I hear the Vanguard horn sounding the full alarm somewhere[disttext ? " [disttext]" : ""][dirtext]!</span>")
 
 #define WARDEN_AMBUSH_MIN 2
 #define WARDEN_AMBUSH_MAX 9

@@ -214,7 +214,7 @@
 
 	if(amt >= 8)
 		if(prob(30))
-			to_chat(M, span_warning("WHAT THE-.. I CANT FEEL MY BODY!"))
+			to_chat(M, span_warning("WHAT THE—? I CAN'T FEEL MY BODY!"))
 		M.Paralyze(600, 0)
 		M.emote("agony")
 

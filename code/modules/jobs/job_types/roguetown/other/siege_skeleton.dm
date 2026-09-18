@@ -13,7 +13,7 @@
 
 	//Unlike most roles of skeletons, these ones just dust. Rids you instantly out of the round so you can respawn.
 	//These are exclusive to skeleton sieges, they're a threat in numbers but advs can usually kill them with some effort solo by design.
-	//Your entire existance is to pick fights in town or around it and die. Then spawn in and do it over and over until the seige ends.
+	// Your entire existence is to fight in or around town, die, and respawn until the siege ends.
 
 	tutorial = "You are bygone, your mynd barely above the average feral. Find the lyving and kill. This is a disposable antagonist role, do not expect to last long." //Disposable throwaway antag
 
@@ -34,7 +34,7 @@
 	H.can_do_sex = FALSE //I know what you are
 
 //SIEGE SKELETONS, THESE ARE INTENTIONALLY VERY THROWAWAY ROLES. DUST ON DEATH + CRIT WEAKNESS + LOW STATS + TERRIBLE DECREPIT GEAR
-//Loyal to nobody, your existance is to fight and die, very very very quickly.
+// Loyal to nobody; your existence is to fight and die very, very quickly.
 
 
 //FOOTSOLDIER, OORAH, OORAH

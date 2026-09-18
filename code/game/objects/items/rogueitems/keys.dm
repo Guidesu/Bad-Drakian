@@ -25,7 +25,7 @@
 
 /obj/item/roguekey/get_mechanics_examine(mob/user)
 	. = ..()
-	. += span_info("Left-click an locked door to unlock it.")
+	. += span_info("Left-click a locked door to unlock it.")
 	. += span_info("Right-click an unlocked door to lock it.")
 	. += span_info("Most keys can only open a specific type of door.")
 
@@ -1172,7 +1172,7 @@
 			to_chat(user, span_notice("You rename the key to [name]."))
 
 //custom key blank
-/obj/item/customblank //i'd prefer not to make a seperate item for this honestly
+/obj/item/customblank // Kept as a distinct item type for compatibility.
 	name = "blank custom key"
 	desc = "A key without its teeth carved in. Endless possibilities..."
 	icon = 'icons/roguetown/items/keys.dmi'

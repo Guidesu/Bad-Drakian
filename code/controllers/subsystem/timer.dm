@@ -198,7 +198,7 @@ SUBSYSTEM_DEF(timer)
 				// Check for timers that are scheduled to run in the past
 				if (timer.timeToRun < head_offset)
 					bucket_resolution = null // force bucket recreation
-					stack_trace("[i] Invalid timer state: Timer in long run queue with a time to run less then head_offset. \
+					stack_trace("[i] Invalid timer state: Timer in long run queue with a time to run less than head_offset. \
 						[get_timer_debug_string(timer)] world.time: [world.time], head_offset: [head_offset], practical_offset: [practical_offset]")
 					break
 

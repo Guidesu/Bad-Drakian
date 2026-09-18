@@ -1,6 +1,6 @@
 /datum/advclass/twilight_afreet
 	name = "Afreet"
-	tutorial = "'Demon of Fire', the slaves used to call you, when you, dressed in black uniform, emerged from the sands, having shot their masters dead with weapons they could not comprehend. During the War, you were deployed deep within the Naledi lands, tasked with plundering Golden Empire's slave trade routes. Perhaps you found it too profitable and enjoyable to leave behind, or perhaps you still wage your war to this day — either way, you no longer answer to the Kaiser or his lackeys."
+	tutorial = "The enslaved once called you a 'Demon of Fire.' Clad in a black uniform, you emerged from the sands and shot their masters dead with weapons they could scarcely comprehend. During the Twilight War, you operated deep inside Naledi and raided the Golden Empire's slave routes. Perhaps the work proved too profitable to abandon, or perhaps you still believe the war never ended. Either way, you no longer answer to the Kaiser or his lackeys."
 	allowed_sexes = list(MALE, FEMALE)
 	outfit = /datum/outfit/job/roguetown/bandit/twilight_afreet
 	category_tags = list(CTAG_BANDIT)
@@ -8,7 +8,7 @@
 	maximum_possible_slots = 2
 	subclass_languages = list(/datum/language/grenzelhoftian)
 	traits_applied = list(TRAIT_FIREARMS_MARKSMAN, TRAIT_STEELHEARTED, TRAIT_DODGEEXPERT)
-	classes = list("Jäger Deserter" = "Ex-soldier with handgonne, excellent survival skills and axe to chop some wood and heads", "Veteran" = "Long ago you were a soldier...or pretend to be. Now you are a man from the road with your trusty pistol and dagger")
+	classes = list("Jäger Deserter" = "A former soldier with a handgonne, excellent survival skills, and an axe suited to splitting wood or skulls.", "Veteran" = "You were a soldier long ago—or have learned to pass as one. Now you wander the roads with a trusted pistol and dagger.")
 	subclass_stats = list(
 		STATKEY_STR = 1,
 		STATKEY_WIL = 2,
@@ -51,7 +51,7 @@
 	gloves = /obj/item/clothing/gloves/roguetown/angle/grenzelgloves
 	id = /obj/item/mattcoin
 	var/classes = list("Jäger Deserter", "Veteran")
-	var/classchoice = input(H, "Choose your archetypes", "Available archetypes") as anything in classes
+	var/classchoice = input(H, "Choose your archetype", "Available archetypes") as anything in classes
 	switch(classchoice)
 		if("Jäger Deserter")
 			mask = /obj/item/clothing/mask/rogue/facemask/steel

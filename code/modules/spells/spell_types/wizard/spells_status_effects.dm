@@ -135,7 +135,7 @@
 // aura
 #define ARCANEMARK_FILTER "mark_glow"
 
-/proc/apply_arcane_mark(mob/living/target) //this is on a seperate proc bc multiple spells can do this
+/proc/apply_arcane_mark(mob/living/target) // This is a separate proc because multiple spells can apply it.
 	if(!istype(target, /mob/living/carbon)) //idk if this gonna work on simplemobs so im not even gonna try lol. u already do silly dmg to em man
 		return
 	target.apply_status_effect(/datum/status_effect/debuff/arcanemark)

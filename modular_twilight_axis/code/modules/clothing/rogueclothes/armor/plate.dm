@@ -68,7 +68,7 @@
 /obj/item/clothing/suit/roguetown/armor/plate/cuirass/etrcuirass
 	name = "etruscan cuirass"
 	icon_state = "etrcuirass"
-	desc = "An steel cuirass, fine fitted with tassets for additional coverage. Typically seen on Etruscan heavy infantry."
+	desc = "A finely fitted steel cuirass with tassets for additional protection, commonly worn by Etruscan heavy infantry."
 	icon = 'modular_twilight_axis/icons/roguetown/clothing/armor.dmi'
 	mob_overlay_icon = 'modular_twilight_axis/icons/roguetown/clothing/onmob/armor.dmi'
 	body_parts_covered = CHEST | VITALS | LEGS | NECK

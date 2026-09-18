@@ -129,7 +129,7 @@
 //HELMET
 
 /datum/crafting_recipe/roguetown/survival/chaincoif
-	name = "scrap-weave an chain coif"
+	name = "scrap-weave a chain coif"
 	result = list(/obj/item/clothing/neck/roguetown/chaincoif/iron = 1)
 	reqs = list(/obj/item/scrap = 5)
 	craftdiff = 3
@@ -140,7 +140,7 @@
 	verbage = "scrap-weaves"
 
 /datum/crafting_recipe/roguetown/survival/chaincoif_full
-	name = "scrap-extend an chain coif into a full coif"
+	name = "scrap-extend a chain coif into a full coif"
 	result = list(/obj/item/craft_kit/full_chaincoif = 1)
 	reqs = list(/obj/item/scrap = 3, /obj/item/clothing/neck/roguetown/chaincoif/iron = 1)
 	craftdiff = 4
@@ -153,7 +153,7 @@
 //ARMOR
 
 /datum/crafting_recipe/roguetown/survival/haubergeon
-	name = "scrap-weave an haubergeon"
+	name = "scrap-weave a haubergeon"
 	result = list(/obj/item/craft_kit/haubergeon = 1)
 	reqs = list(/obj/item/scrap = 5)
 	craftdiff = 3
@@ -163,7 +163,7 @@
 	verbage = "scrap-weaves"
 
 /datum/crafting_recipe/roguetown/survival/brustplate
-	name = "scrap-reinforce an breastplate"
+	name = "scrap-reinforce a breastplate"
 	result = list(/obj/item/craft_kit/cuirass = 1)
 	reqs = list(/obj/item/scrap = 5, /obj/item/clothing/suit/roguetown/armor/chainmail/iron = 1)
 	craftdiff = 3
@@ -198,7 +198,7 @@
 //////////////////////////////////////// CONVERT ////////////////////////////////////////
 
 /datum/crafting_recipe/roguetown/survival/i_haubergeon
-	name = "scrap-shorten an hauberk into a haubergeon"
+	name = "scrap-shorten a hauberk into a haubergeon"
 	result = list(/obj/item/craft_kit/haubergeon = 1)
 	reqs = list(/obj/item/clothing/suit/roguetown/armor/chainmail/hauberk/iron = 1, /obj/item/scrap = 2)
 	craftdiff = 3
@@ -209,7 +209,7 @@
 	verbage = "scrap-shortens"
 
 /datum/crafting_recipe/roguetown/survival/i_hauberk
-	name = "scrap-lengthen an haubergeon into a hauberk"
+	name = "scrap-lengthen a haubergeon into a hauberk"
 	result = list(/obj/item/craft_kit/hauberk = 1)
 	reqs = list(/obj/item/clothing/suit/roguetown/armor/chainmail/iron = 1, /obj/item/scrap = 2)
 	craftdiff = 3
@@ -220,7 +220,7 @@
 	verbage = "scrap-lengthens"
 
 /datum/crafting_recipe/roguetown/survival/i_cuirass
-	name = "scrap-strip an half-plate down to a cuirass"
+	name = "scrap-strip a half-plate down to a cuirass"
 	result = list(/obj/item/craft_kit/cuirass = 1)
 	reqs = list(/obj/item/clothing/suit/roguetown/armor/plate/iron = 1, /obj/item/scrap = 2)
 	craftdiff = 3
@@ -231,7 +231,7 @@
 	verbage = "scrap-strips"
 
 /datum/crafting_recipe/roguetown/survival/i_cuirass_to_halfplate
-	name = "scrap-upgrade an cuirass to a half-plate"
+	name = "scrap-upgrade a cuirass to a half-plate"
 	result = list(/obj/item/craft_kit/halfplate = 1)
 	reqs = list(/obj/item/clothing/suit/roguetown/armor/plate/cuirass/iron = 1, /obj/item/scrap = 2)
 	craftdiff = 4
@@ -242,7 +242,7 @@
 	verbage = "scrap-upgrades"
 
 /datum/crafting_recipe/roguetown/survival/i_plate_to_halfplate
-	name = "scrap-disassemble an full-plate to a half-plate"
+	name = "scrap-disassemble a full-plate to a half-plate"
 	result = list(/obj/item/craft_kit/halfplate = 1)
 	reqs = list(/obj/item/clothing/suit/roguetown/armor/plate/full/iron = 1, /obj/item/scrap = 2)
 	craftdiff = 3
@@ -253,7 +253,7 @@
 	verbage = "scrap-disassembles"
 
 /datum/crafting_recipe/roguetown/survival/i_plate
-	name = "scrap-assemble an half-plate into a full-plate"
+	name = "scrap-assemble a half-plate into a full-plate"
 	result = list(/obj/item/craft_kit/plate = 1)
 	reqs = list(/obj/item/clothing/suit/roguetown/armor/plate/iron = 1, /obj/item/scrap = 2)
 	craftdiff = 4
@@ -315,7 +315,7 @@
 //////////////////////////////////////// CONVERT ////////////////////////////////////////
 
 /datum/crafting_recipe/roguetown/survival/i_chainlegs
-	name = "scrap-alter an chain kilt into chausses"
+	name = "scrap-alter a chain kilt into chausses"
 	result = list(/obj/item/craft_kit/chainlegs = 1)
 	reqs = list(/obj/item/clothing/under/roguetown/chainlegs/iron/kilt = 1, /obj/item/scrap = 2)
 	craftdiff = 3
@@ -339,7 +339,7 @@
 //////////////////////////////////////// ITEMS ////////////////////////////////////////
 
 /datum/crafting_recipe/roguetown/survival/scrap_lamp
-	name = "scrap-fashion an scrap lantern"
+	name = "scrap-fashion a scrap lantern"
 	result = list(/obj/item/flashlight/flare/torch/lantern/scrap = 1)
 	reqs = list(/obj/item/scrap = 4, /obj/item/natural/clay = 2, /obj/item/flashlight/flare/torch = 1)
 	craftdiff = 3

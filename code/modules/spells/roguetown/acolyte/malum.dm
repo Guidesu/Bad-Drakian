@@ -324,7 +324,7 @@
 	secondary_resource_cost = SPELLCOST_MIRACLE
 
 	invocations = list("With heat I wield, with flame I claim, Let metal serve in Malum's name!")
-	invocation_type = INVOCATION_SHOUT //It has seperate message ON USE
+	invocation_type = INVOCATION_SHOUT // It has a separate message on use.
 
 	charge_required = TRUE
 	charge_time = 1 SECONDS

@@ -89,7 +89,7 @@
 
 	// These two timers are not the same
 	// One manages the relation to the atom that spawned us, the other to the client we're displaying to
-	// We could lose our loc, and still need to talk to our client, so they are done seperately
+	// We could lose our loc and still need to communicate with our client, so these are handled separately.
 	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(remove_balloon_from_client), balloon_alert, viewer_client), BALLOON_TEXT_TOTAL_LIFETIME(length_mult))
 
 ///Proc for creating a balloon alert that only someone with a specific trait would see.

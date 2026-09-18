@@ -176,7 +176,7 @@
 
 /obj/effect/proc_holder/spell/self/mayor_announcement
 	name = "The Mayor's Speech"
-	desc = "Let your word be heard by everyone on this city and near of it. You need an SCOM to speak."
+	desc = "Broadcast your words throughout the city and its surroundings. You need an SCOM to speak."
 	overlay_state = "paper"
 	action_icon = 'modular_twilight_axis/icons/mob/actions/roguespells.dmi'
 	releasedrain = 40

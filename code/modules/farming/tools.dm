@@ -117,7 +117,7 @@
 
 /obj/item/rogueweapon/sickle/aalloy
 	name = "decrepit sickle"
-	desc = "Her thought was simple; to seperate the wheat from the chaff. By removing the limitations set upon one's spirit by lyfe, only then could divinity be obtained. She was correct - yet Her ascension had gone terribly awry, all-the-same."
+	desc = "Her reasoning was simple: separate the wheat from the chaff. Only by stripping away the limits imposed upon the spirit by lyfe could divinity be attained. She was correct—yet Her ascension went terribly awry all the same."
 	icon_state = "asickle"
 	color = "#bb9696"
 	smeltresult = /obj/item/ingot/aaslag
@@ -162,7 +162,7 @@
 	wlength = WLENGTH_NORMAL
 	drop_sound = 'sound/foley/dropsound/wooden_drop.ogg'
 	smeltresult = /obj/item/ingot/iron
-	hoe_damage = null //the durability damage recieved for every work cycle
+	hoe_damage = null // Durability damage received during each work cycle.
 	work_time = 3 SECONDS // the time it takes to make new soil or till soil
 	is_tool = TRUE
 

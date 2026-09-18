@@ -215,7 +215,7 @@
 		playsound(get_turf(holder), leavingSound, soundVolume, FALSE, FALSE)
 	if (reversing) //If we're reversing, we call the close proc. This sends the pod back up to centcom
 		close(holder)
-	else if (bluespace) //If we're a bluespace pod, then delete ourselves (along with our holder, if a seperate holder exists)
+	else if (bluespace) // If this is a bluespace pod, delete it along with any separate holder.
 		if (!effectQuiet && style != STYLE_INVISIBLE && style != STYLE_SEETHROUGH)
 			do_sparks(5, TRUE, holder) //Create some sparks right before closing
 		qdel(src) //Delete ourselves and the holder
@@ -278,7 +278,7 @@
 	layer = PROJECTILE_HIT_THRESHHOLD_LAYER
 	light_outer_range =	2
 	var/obj/effect/temp_visual/fallingPod //Temporary "falling pod" that we animate
-	var/obj/structure/closet/supplypod/pod //The supplyPod that will be landing ontop of this target
+	var/obj/structure/closet/supplypod/pod // The supply pod that will land on top of this target.
 
 /obj/effect/ex_act()
 	return

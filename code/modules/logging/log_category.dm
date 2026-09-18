@@ -17,7 +17,7 @@
 	/// If set this config flag is checked to enable this log category
 	var/config_flag
 
-	/// Whether or not this log should not be publically visible
+	/// Whether this log should be hidden from public view.
 	var/secret = FALSE
 
 	/// The list of header information for this category. Used for log file re-initialization

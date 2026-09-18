@@ -911,7 +911,7 @@
 			if(removing_bounty.target == H.real_name)
 				GLOB.head_bounties -= removing_bounty
 	else
-		alert(usr, "Target has no mind!") // Optional Error check that may or may not be neccessary
+		alert(usr, "Target has no mind!") // Optional error check that may or may not be necessary.
 	GLOB.chosen_names -= H.real_name
 	LAZYREMOVE(GLOB.actors_list, H.mobid)
 	H.returntolobby()

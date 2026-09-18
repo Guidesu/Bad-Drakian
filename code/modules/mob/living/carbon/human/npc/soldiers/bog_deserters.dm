@@ -1,6 +1,6 @@
 
 //After the bogfort fell to undead, the remaining guard who didn't flea turned to bandirty. Wellarmed and trained.
-//These guys use alot of iron stuff with small amounts of steel mixed in, not really one for finetuned balance might be too hard or easy idk. Going off vibes atm
+// These NPCs use mostly iron equipment with a little steel mixed in; their balance may need further tuning.
 /datum/outfit/job/roguetown/human/northern/bog_deserters/proc/add_random_deserter_cloak(mob/living/carbon/human/H)
 	var/random_deserter_cloak = rand(1,4)
 	switch(random_deserter_cloak)
@@ -540,4 +540,3 @@
 	H.STASTR = 15
 	H.STACON = 12
 	H.STAWIL = 12
-

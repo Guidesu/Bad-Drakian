@@ -1230,7 +1230,7 @@
 
 	var/current_time = world.time
 
-	// Reset hit count if it's been too long since the last succesful hit.
+	// Reset the hit count if too much time has passed since the last successful hit.
 	if(hit_count > 0 && (current_time - last_hit_time) > reset_timeout)
 		hit_count = 1
 		last_hit_time = current_time

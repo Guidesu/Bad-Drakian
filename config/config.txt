@@ -137,7 +137,7 @@ LOG_PRAYER
 ## log lawchanges
 LOG_LAW
 
-## log crew manifest to seperate file
+## log crew manifest to separate file
 LOG_MANIFEST
 
 ## log job divide debugging information
@@ -466,7 +466,7 @@ MINUTE_CLICK_LIMIT 400
 ## Send a message with the station name starting a new game. Also required for the notify function
 #CHAT_ANNOUNCE_NEW_GAME
 
-#CHANNEL_ANNOUNCE_NEW_GAME_MESSAGE A new round is beggining!!
+#CHANNEL_ANNOUNCE_NEW_GAME_MESSAGE A new round is beginning!!
 
 ## Allow admin hrefs that don't use the new token system, will eventually be removed
 DEBUG_ADMIN_HREFS

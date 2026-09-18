@@ -181,7 +181,7 @@
 	nodamage = TRUE
 	flag = "fire"
 	var/weld = TRUE
-	var/created = FALSE //prevents creation of more then one locker if it has multiple hits
+	var/created = FALSE // Prevents multiple lockers from being created if the projectile hits more than once.
 	var/locker_suck = TRUE
 	var/obj/structure/closet/locker_temp_instance = /obj/structure/closet/decay
 

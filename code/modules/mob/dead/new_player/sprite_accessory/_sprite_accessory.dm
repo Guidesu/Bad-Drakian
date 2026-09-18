@@ -8,7 +8,7 @@
 	var/icon_state
 	/// States to be stacked on top of each other to generate the character creator icon
 	var/list/preview_states
-	/// Whether the states for this accessory have an extra state that will get overlayed ontop of the resulting state. Per layer, suffix "_extra"
+	/// Whether this accessory has an extra state overlaid on the result. Uses the per-layer suffix "_extra".
 	var/extra_state = FALSE
 	/// Pixel x offset
 	var/pixel_x = 0

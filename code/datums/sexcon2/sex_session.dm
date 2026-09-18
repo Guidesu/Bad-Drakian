@@ -27,7 +27,7 @@
 	var/doing_subtly = FALSE
 
 	var/static/sex_id = 0
-	var/our_sex_id = 0 //this is so we can have more then 1 sex id open at once
+	var/our_sex_id = 0 // Allows more than one sex ID to be open at once.
 
 	// Moved here from proc/get_generic_force_adjective to reduce list initialization/destruction
 	var/static/list/stealth_force_adjectives 	= list("subtly", "sneakily", "covertly", "stealthily", "quietly")

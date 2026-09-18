@@ -4,7 +4,7 @@
 	name = "earthen behemoth"
 	desc = "A large earthen construct of dirt and rock, lumbering with the strength of eons. \
 	A rare sight, said to be a sign of severe imbalance that requires correction."
-	summon_primer = "You are an behemoth, a large elemental. Elementals such as yourself often lead groups of wardens in defending your plane. Now you've been pulled from your home into a new world, that is decidedly less peaceful then your carefully guarded plane. How you react to these events, only time can tell."
+	summon_primer = "You are a behemoth, a great elemental accustomed to leading wardens in defense of your native plane. You have been torn from that home and drawn into a far less peaceful world. Only you can decide how to answer this intrusion."
 	summon_tier = 3
 	icon_state = "behemoth"
 	icon_living = "behemoth"

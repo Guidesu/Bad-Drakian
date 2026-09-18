@@ -129,7 +129,7 @@
 
 	secondary_resource_cost = SPELLCOST_MINOR_PROJECTILE
 
-	invocation_type = INVOCATION_NONE //It has seperate message ON USE
+	invocation_type = INVOCATION_NONE // Uses a separate message on activation.
 
 	charge_required = FALSE
 	cooldown_time = 10 SECONDS//Does not matter it's single use

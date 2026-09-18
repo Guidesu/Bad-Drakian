@@ -101,7 +101,7 @@
 						H.adjust_skillrank_up_to(/datum/skill/combat/maces, SKILL_LEVEL_EXPERT, TRUE)
 						r_hand = /obj/item/rogueweapon/mace/goden/steel
 						backl = /obj/item/rogueweapon/scabbard/gwstrap
-					if("Longsword") //Swapped out the falx for this, it's a primary weapon afterall
+					if("Longsword") // Replaced the falx because this is a primary weapon, after all.
 						H.adjust_skillrank_up_to(/datum/skill/combat/swords, SKILL_LEVEL_EXPERT, TRUE)
 						beltr = /obj/item/rogueweapon/scabbard/sword
 						r_hand = /obj/item/rogueweapon/sword/falx

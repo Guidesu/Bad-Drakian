@@ -1,4 +1,4 @@
-// GENERIC OLD VERSION, UPDATE THIS SEPERATELY //
+// GENERIC OLD VERSION; UPDATE THIS SEPARATELY. //
 /obj/effect/proc_holder/spell/invoked/invisibility
 	name = "Invisibility"
 	action_icon = 'icons/mob/actions/nocmiracles.dmi'

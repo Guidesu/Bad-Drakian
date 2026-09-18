@@ -46,8 +46,8 @@
 
 /datum/buildmode_mode/ai_group/show_help(client/c)
 	to_chat(c, span_notice("<b>AI Group buildmode</b>"))
-	to_chat(c, span_notice("Left click an NPC with an AI controller: select it as the group."))
-	to_chat(c, span_notice("Ctrl + left click an NPC: add/remove it from the current group."))
+	to_chat(c, span_notice("Left-click an NPC with an AI controller to select its group."))
+	to_chat(c, span_notice("Ctrl-left-click an NPC to add it to or remove it from the current group."))
 	to_chat(c, span_notice("Left click empty/non-AI atom: clear the selection."))
 	to_chat(c, span_notice("Right click a turf/object: order the group to move there."))
 	to_chat(c, span_notice("Right click a living mob: order the group to attack it."))

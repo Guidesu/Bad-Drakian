@@ -300,7 +300,7 @@
 	name = "munition crossbow"
 	desc = "A deadly weapon that shoots a bolt with terrific power. Unlike the common bow, \
 	it uses a sophisticated mechanism to renock - and retain - its half-length bolts; a \
-	matter that relies more on raw strength than dexterity to master. </br>An cruder version of the common crossbow built with wrought iron with steel like property. When smelted, it does not yield good steel ingot but trash steel. but it is cheap and it works well and is often imported en masse from Grenzelhoft. Some of them find their way into the hands of common brigands and highwaymen."
+	matter that relies more on raw strength than dexterity to master. </br>This inexpensive Grenzelhoftian variant is built from hardened wrought iron. It performs reliably despite its crude construction, but yields only low-grade metal when smelted. Large imports have placed many in the hands of brigands and highwaymen."
 	smeltresult = /obj/item/ingot/iron
 	max_integrity = 80
 	damfactor = 1.1 // Lower than starting

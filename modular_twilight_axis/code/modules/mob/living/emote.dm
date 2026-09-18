@@ -633,7 +633,7 @@
 	)
 
 	success_message_list = list(
-		"proves that he is among one of the the smartest!",
+		"proves that he is among the smartest!",
 		"proves the sharpness of his mind!",
 		"knows what he is doing!",
 	)

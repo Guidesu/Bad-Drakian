@@ -195,7 +195,7 @@
 		/obj/item/clothing/neck/roguetown/carved/silverjade = 4,
 		/obj/item/clothing/neck/roguetown/carved/silvercoral = 5,
 
-	) //'Stat_' and 'Psicross_' rings at '2' or below provide statbuffs, and should be kept rare. Move to a seperate drop table if they become too common. Likeliest find is from high-end dungeons and mimics.
+	) // 'Stat_' and 'Psicross_' rings at '2' or below provide stat buffs and should remain rare. Move them to a separate drop table if they become too common. They are most likely to appear in high-end dungeons and mimics.
 
 /obj/effect/spawner/lootdrop/puzzlebox_rings
 	name = "royal puzzlebox ring spawner"

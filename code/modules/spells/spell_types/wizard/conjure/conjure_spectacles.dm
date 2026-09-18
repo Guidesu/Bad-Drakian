@@ -76,7 +76,7 @@
 	No-one truly knows who the original creator of these glasses was.\n\
 	But one thing, at least, is certain: they are quite fashionable."
 
-// Smokey onyxa spectacles summonable lesser varient - with no mechanical effects (seperate cause my third-eye senses potental for the original varient)
+// Summonable lesser variant of the smoky onyxa spectacles, with no mechanical effects. Kept separate to preserve the original variant's design space.
 // ALso because your specs aren't the authentic real-deal, its funnier to have them visably a knockoff varient.
 
 /obj/item/clothing/mask/rogue/spectacles/onyxa_lesser_summoned

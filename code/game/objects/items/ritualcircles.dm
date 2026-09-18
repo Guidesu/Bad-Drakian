@@ -1217,7 +1217,7 @@
 		target.visible_message(span_danger("[target] is looking on the verge of exploding again! Their core may need an extra whack from a hammer."))
 	target.add_stress(/datum/stressevent/necrarevive)
 	src.coinslot -= 1 // -1 coin, please insert more coins.
-	user.apply_status_effect(/datum/status_effect/debuff/ritesexpended) // only after a succesful revive
+	user.apply_status_effect(/datum/status_effect/debuff/ritesexpended) // Only after a successful revival.
 
 /obj/structure/ritualcircle/necra/proc/undermaidenbargain(src)
 	var/ritualtargets = view(7, loc)

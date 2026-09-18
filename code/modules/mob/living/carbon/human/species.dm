@@ -355,7 +355,7 @@ GLOBAL_LIST_EMPTY(roundstart_races_paths)
 		for(var/organ_slot in organ_dna_list)
 			C.dna.organ_dna[organ_slot] = organ_dna_list[organ_slot]
 
-	//what should be put in if there is no mutantorgan (brains handled seperately)
+	// Used when no mutant organ exists; brains are handled separately.
 	var/list/slot_mutantorgans = organs
 
 	var/list/slots_to_iterate = list()

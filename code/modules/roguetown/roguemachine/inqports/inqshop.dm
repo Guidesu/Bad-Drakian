@@ -245,7 +245,7 @@
 	maximum = 1
 	//it does 15% of max structure integ as damage, get siegebows if you want more leveling walls and faster.
 
-//Intended to exist seperate to inquisitor.
+// Intended to exist separately from the inquisitor.
 
 /obj/structure/closet/crate/chest/inqreliquary/relic/psymaul/Initialize(mapload)
 	. = ..()

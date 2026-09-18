@@ -186,7 +186,7 @@
 	if(do_after(user, crafttime, target = src))
 		user.visible_message(
 			span_warning("[user] carves an arcyne rune with [user.p_their()] [name]!"), \
-			span_notice("I finish dragging the blade in symbols and circles, leaving behind an ritual rune")
+			span_notice("I finish tracing symbols and circles with the blade, leaving behind a ritual rune.")
 		)
 		new rune_to_scribe(Turf, chosen_keyword)
 

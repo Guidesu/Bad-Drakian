@@ -216,13 +216,10 @@
 /datum/advclass/wapprentice/spellblade
 	name = "Magician's Practice"
 	maximum_possible_slots = 2
-	tutorial = "You are an Magician Practice — a Spellblade, carrier of the five hundred yils tradition \
-		originating in Azurea. You are employed under the University \
-		as a fellow Magos. The arcyne arts are dangerous, \
-		and you are to protect your peers from their own recklessness. \
-		You are not a member of the retinue - though the Crown may pay you a salary. \
-		It is not your job to wield your power in the Crown's name. \
-		Further your mastery, your camaraderie, and the safety of your fellow mages."
+	tutorial = "You are a Spellblade of the Magician's Practice, an Azurian tradition five hundred years old. \
+		The University employs you as a fellow magos and entrusts you with protecting your peers from the dangers of their own arcane work. \
+		Although the Crown may pay your salary, you do not belong to the ruler's retinue and are not obliged to wield magic in its name. \
+		Pursue mastery, stand beside your fellow mages, and keep them alive."
 	outfit = /datum/outfit/job/roguetown/wapprentice/spellblade
 	category_tags = list(CTAG_WAPPRENTICE)
 	traits_applied = list(TRAIT_ARCYNE)

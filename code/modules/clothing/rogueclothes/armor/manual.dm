@@ -215,7 +215,7 @@
  */
 
 /obj/item/clothing/suit/roguetown/armor/manual/tool
-	repair_fraction = 0.35 //35% per 7s of sewing, ~21s to full. Have to mend both layers seperately, so ~42s total.
+	repair_fraction = 0.35 // 35% per 7 seconds of sewing, about 21 seconds per layer and 42 seconds total.
 	var/list/repair_items[] = list(
 		/obj/item/needle = 'sound/foley/sewflesh.ogg',
 		/obj/item/needle/thorn = 'sound/foley/sewflesh.ogg',

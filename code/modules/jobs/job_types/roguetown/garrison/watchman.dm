@@ -46,5 +46,5 @@
 	shoes = /obj/item/clothing/shoes/roguetown/boots
 	saiga_shoes = /obj/item/clothing/shoes/roguetown/horseshoes
 	belt = /obj/item/storage/belt/rogue/leather/black
-	wrists = /obj/item/clothing/wrists/roguetown/bracers		//Would seperate to leather bracers for archer for dodge but - funnily, armor class doesn't exist on bracers.
+	wrists = /obj/item/clothing/wrists/roguetown/bracers		// Would use separate leather bracers for an archer's dodge, but bracers have no armor class.
 	backr = /obj/item/storage/backpack/rogue/satchel/black

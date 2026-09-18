@@ -263,7 +263,7 @@ export const OriginPicker = () => {
                     alignItems: 'center',
                     gap: '0.5rem',
                   }}>
-                  <div style={{ opacity: 0.9 }}>Current race:{current_species_name}</div>
+                  <div style={{ opacity: 0.9 }}>Current race: {current_species_name}</div>
                 </div>
               }
               fill>
@@ -287,7 +287,7 @@ export const OriginPicker = () => {
                     background: '#111',
                   }}>
                   <img
-                    src={resolveAsset('origin_picker_map.jpg')}
+                    src={resolveAsset('origin_picker_map.png')}
                     alt="Origins map"
                     style={{
                       width: '100%',

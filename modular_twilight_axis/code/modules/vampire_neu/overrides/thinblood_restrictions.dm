@@ -21,4 +21,4 @@
 	clan_selected = TRUE
 	after_gain()
 
-	to_chat(vampdude, span_notice("Now I belong to the clan «[custom_clan_name]». Disciplines available: [length(selected_covens)]."))
+	to_chat(vampdude, span_notice("I now belong to Clan [custom_clan_name]. Available disciplines: [length(selected_covens)]."))

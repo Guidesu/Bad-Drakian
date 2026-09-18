@@ -18,7 +18,7 @@
 /datum/log_category/quest
 	category = LOG_CATEGORY_QUEST
 
-// Logs seperately, printed into on server shutdown to store hard deletes and such
+// Logged separately and printed on server shutdown to record hard deletions and similar events.
 /datum/log_category/qdel
 	category = LOG_CATEGORY_QDEL
 	// We want this human readable so it's easy to see at a glance

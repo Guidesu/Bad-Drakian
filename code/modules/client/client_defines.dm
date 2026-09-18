@@ -181,7 +181,7 @@
 
 	/// Cooldowns for Real like - For Mentor
 	var/list/real_like_cooldowns  = list()
-	/// Total Real likes recieved in a round - For Mentor
+	/// Total Real likes received in a round, used for Mentor.
 	var/real_likes_received  = 0
 
 /client/proc/update_weather(force)

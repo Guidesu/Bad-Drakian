@@ -390,7 +390,7 @@
 
 /obj/item/roguestatue/glass
 	name = "glass statue"
-	desc = "A statue made of fine glass. An incredible amount of skill must have went into this fragile masterpiece!"
+	desc = "A statue made of fine glass. An extraordinary amount of skill must have gone into this fragile masterpiece!"
 	icon = 'icons/roguetown/items/cooking.dmi'
 	icon_state = "statueglass1"
 	smeltresult = /obj/item/natural/glass
@@ -724,4 +724,3 @@
 	name = "porcelain carp statuette"
 	desc = "A large carp statuette made out of porcelain."
 	icon_state = "clayporcelaincarp"
-

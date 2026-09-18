@@ -971,7 +971,7 @@
 	cuisine = CUISINE_SOUTH_IMPERIAL
 	dish_type = DISH_PASTRY
 	name = "pear bookbread"
-	desc = "Children on Nocsmas are traditionally granted both book and pastry without expectation of exchange, this variety is prefered by most little ones."
+	desc = "Children on Nocsmas traditionally receive both a book and a pastry without any expectation of exchange. Most little ones prefer this variety."
 	icon = 'modular/Neu_Food/icons/cooked/cooked_pastry.dmi'
 	icon_state = "pear_bookbread5"
 	slices_num = 5
@@ -1070,7 +1070,7 @@
 	cuisine = CUISINE_SOUTH_IMPERIAL
 	dish_type = DISH_PASTRY
 	name = "sliced plum bookbread"
-	desc = "A subtle flavor, best for enjoying subtler books. Mysteries prefered."
+	desc = "A subtle flavor best enjoyed with subtler books. Preferred by lovers of mysteries."
 	icon = 'modular/Neu_Food/icons/cooked/cooked_pastry.dmi'
 	icon_state = "plum_bookbread_slice"
 	faretype = FARE_FINE

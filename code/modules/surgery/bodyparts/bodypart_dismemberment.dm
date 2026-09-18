@@ -604,7 +604,7 @@
 		to_chat(H, span_warning("Without any prosthetics, I can no longer overclock them."))
 
 
-//adding this in seperate to add the overclock skill if we add an attachment
+// Kept separate so an attachment can grant the overclock skill later.
 /obj/item/bodypart/attach_limb(mob/living/carbon/C, special)
 	. = ..()
 	if(!.)

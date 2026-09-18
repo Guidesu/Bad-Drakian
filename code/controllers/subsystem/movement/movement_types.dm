@@ -384,7 +384,7 @@
 	///The rate at which we move, between 0 and 1
 	var/x_rate = 1
 	var/y_rate = 1
-	//We store the signs of x and y seperately, because byond will round negative numbers down
+	// We store the signs of x and y separately because BYOND rounds negative numbers down.
 	//So doing all our operations with absolute values then multiplying them is easier
 	var/x_sign = 0
 	var/y_sign = 0
@@ -453,14 +453,14 @@
  * Except we don't need to care about axis, since we do all our movement in steps of 1
  * Because of that all that matters is we only move one tile at a time
  * So we take the smaller delta, divide it by the larger one, and get smaller step per large step
- * Then we set the large step to 1, and we're done. This way we're guaranteed to never move more then a tile at once
+ * Then we set the large step to 1, ensuring that we never move more than one tile at once.
  * And we can have nice lines
 **/
 /datum/move_loop/has_target/move_towards/proc/update_slope()
 	SIGNAL_HANDLER
 
 	//You'll notice this is rise over run, except we flip the formula upside down depending on the larger number
-	//This is so we never move more then one tile at once
+	// This ensures that we never move more than one tile at once.
 	var/delta_y = target.y - moving.y
 	var/delta_x = target.x - moving.x
 	//It's more convienent to store delta x and y as absolute values

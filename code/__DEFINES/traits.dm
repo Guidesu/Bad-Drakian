@@ -338,8 +338,8 @@
 //For non-antags to exempt them from curses, currently only the bishop has this (Why?)
 #define TRAIT_CURSE_RESIST "Curse Resistance"
 
-// ASCENDANT CULTIST TRAITS (cursed-gear related) -> Matthiosians recognise eachother.
-#define TRAIT_FREEMAN "Blessing of Matthios" //Matthiosian cultists can recognise eachother + can use exclusive gear
+// ASCENDANT CULTIST TRAITS (cursed-gear related) -> Matthiosians recognize each other.
+#define TRAIT_FREEMAN "Blessing of Matthios" // Matthiosian cultists can recognize each other and use exclusive gear.
 #define TRAIT_CABAL "Of the Cabal" //Zizo cultists can use exclusive gear
 #define TRAIT_HORDE "Anointed" //Graggarites can use exclusive gear
 #define TRAIT_DEPRAVED "Fallen" //Baothans can use exclusive gear

@@ -3,7 +3,7 @@
 	return TRUE				//There's almost no cases where non /living mobs should be used in game as actual mobs, other than ghosts.
 
 /**
-	* If your mob is concious, drop the item in the active hand
+	* If your mob is conscious, drop the item in the active hand.
 	*
 	* This is a hidden verb, likely for binding with winset for hotkeys
 	*/

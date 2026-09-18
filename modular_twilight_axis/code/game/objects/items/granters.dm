@@ -51,28 +51,28 @@
 /obj/item/book/granter/residentcard/onlearned(mob/living/carbon/user)
 	..()
 	if(oneuse == TRUE)
-		name = "[user.real_name] - certificate of resident"
-		desc = "Certificate confirming residence with the signature of the owner."
+		name = "[user.real_name] - certificate of residence"
+		desc = "A certificate confirming the signatory's lawful residence."
 		icon_state = "contractsigned"
 
 #ifdef COMPILE_LEGACY_RESIDENTCARDVIRTUE
-#define MANUSCRIPT_ITEM_DESCRIPTION "This ivory-colored stretch scroll is perfectly smooth, cool, and free from imperfections. Its gilded edges shimmer as it unfolds, producing a dry crunch. The text is written in ingrained blue-black ink with lapis lazuli initials, and a detailed wax seal is attached to the bottom on a silk-gold cord. The document smells of wax, herbs and expensive leather."
+#define MANUSCRIPT_ITEM_DESCRIPTION "This ivory-colored parchment is perfectly smooth, cool, and free of imperfections. Its gilded edges shimmer as it unfolds with a dry rustle. The text is written in deep blue-black ink with lapis lazuli initials, and an intricate wax seal hangs from a silk-and-gold cord. The document smells of wax, herbs, and expensive leather."
 
-#define MANUSCRIPT_DESCRIPTION "This is announced publicly: by the will of the Crown and the supervision of the Council, the bearer of this document is recognized as a legal inhabitant of these lands and remains under the shadow of common law. Every rank and title is charged with the duty to recognize the person mentioned as a faithful subject, without creating obstacles for him in his affairs and paths. Anyone who, by deed or intent, causes harm to the bearer of this letter will answer before the law to the fullest extent of the regulations, for he is encroaching on the order established by the throne"
+#define MANUSCRIPT_DESCRIPTION "Let it be publicly known that, by the will of the Crown and under the Council's supervision, the bearer of this document is recognized as a lawful resident of these lands and enjoys the protection of common law. Every official and titled person must recognize the named bearer as a faithful subject and place no unlawful obstacle in their way. Anyone who harms the bearer by deed or design shall answer fully before the law for defying the order established by the throne."
 
 #define MANUSCRIPT_DEFECT_NOTES list(\
 	"A barely noticeable blot in the corner is visible on the paper.",\
 	"The ink on the print is slightly smudged.",\
 	"One of the letters in the name was written with an unsteady hand.",\
 	"The edge of the parchment is cut unevenly.",\
-	"The signature was not quite confident.",\
-	"Parchment gives off a stale smell.",\
-	"The lapis lazuli initial is knocked out of the line and has dried on top of the main text.",\
-	"The line punctures on the bottom margin are fresh next to each other and do not coincide with the flow of the lines.",\
-	"The gilded edging in some places lay on top of the fresh cut.",\
+	"The signature appears hesitant.",\
+	"The parchment gives off a stale smell.",\
+	"The lapis lazuli initial sits out of line and appears to have dried over the main text.",\
+	"Fresh ruling marks along the lower margin do not align with the written lines.",\
+	"In several places, the gilded edging overlaps a fresh cut.",\
 	"The silk-gold cord has been re-threaded: fiber breaks are visible around the holes.",\
 	"The sealing wax of one seal is warmer in color and shines as if recently melted.",\
-	"The ink in the middle of the line gives a bluish halo, as if diluted with another water.",\
+	"The ink in the middle of one line has a bluish halo, as though diluted with a different liquid.",\
 	"In the date, one stroke is crossed out too evenly for a clerical hand.",\
 	"Someone else’s postscript appears between the lines: “Zizo keeps a whisper, Graggar waits for blood, Matthios weighs his debt.”",\
 )
@@ -81,11 +81,11 @@
 #define MANUSCRIPT_MAX_FOUND_DEFECT_COUNT 5
 
 #define MANUSCRIPT_VALIDATION_NOTES list(\
-	"The stamps sit smoothly, the ink lays down confidently, and the cord shows no signs of re-attachment.",\
-	"The ruling, punctures and the course of the lines converge with each other: before you is a letter of proper form.",\
-	"The handwriting, seals and gilded edges are consistent. There is no reason to doubt his literacy.",\
-	"The sealing wax accepted the print deeply and without breaks, and the lines do not give away someone else’s hand.",\
-	"The document appears to be compiled according to all the rules of clerical ritual.",\
+	"The seals sit evenly, the ink is applied with confidence, and the cord shows no sign of reattachment.",\
+	"The ruling marks, guide holes, and written lines align perfectly; the letter follows the proper form.",\
+	"The handwriting, seals, and gilded edges are consistent. There is no reason to doubt the scribe's skill.",\
+	"The wax bears a deep, unbroken impression, and every line appears to be written by the same hand.",\
+	"The document follows every convention of clerical practice.",\
 )
 
 #define FAKE_DEFECT_CHANCE 65

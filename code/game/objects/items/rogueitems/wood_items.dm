@@ -64,7 +64,7 @@
 
 /obj/item/carvedwood/figurineelf
 	name = "wooden elf figurine"
-	desc = "An figurine carved out of wood that depicts an elf."
+	desc = "A wooden figurine depicting an elf."
 	icon_state = "figurine_wood_elf"
 
 /obj/item/carvedwood/figurineanthro
@@ -128,17 +128,17 @@
 
 /obj/item/carvedwood/moon
 	name = "wooden moon"
-	desc = "An medium sized moon statue carved out of wood."
+	desc = "A medium-sized wooden statue of the moon."
 	icon_state = "moon_wood"
 
 /obj/item/carvedwood/sun
 	name = "wooden sun"
-	desc = "An medium sized sun statue carved out of wood."
+	desc = "A medium-sized wooden statue of the sun."
 	icon_state = "sun_wood"
 
 /obj/item/carvedwood/heart
 	name = "wooden heart"
-	desc = "An medium sized heart statue carved out of wood."
+	desc = "A medium-sized wooden statue of a heart."
 	icon_state = "heart_wood"
 
 /obj/item/carvedwood/bust
@@ -150,14 +150,14 @@
 
 /obj/item/carvedwood/vase
 	name = "wooden vase"
-	desc = "An medium sized vase carved out of wood."
+	desc = "A medium-sized vase carved from wood."
 	icon_state = "vase_wood"
 	grid_height = 64
 	grid_width = 32
 
 /obj/item/carvedwood/fancyvase
 	name = "fancy wooden vase"
-	desc = "An medium sized fancy vase carved out of wood."
+	desc = "An ornate, medium-sized vase carved from wood."
 	icon_state = "fancyvase_wood"
 	grid_height = 64
 	grid_width = 32

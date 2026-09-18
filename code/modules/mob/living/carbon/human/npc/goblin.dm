@@ -521,7 +521,7 @@ GLOBAL_LIST_INIT(goblin_pyromancer_aggro, list(
 	layer = BELOW_OBJ_LAYER
 	var/gobs = 0
 	var/maxgobs = 6 //CHAOS, CHAOS, CHAOS
-	var/playergobs = 0 //Seperate so that goblin NPCs don't hog player slots
+	var/playergobs = 0 // Tracked separately so goblin NPCs do not occupy player slots.
 	var/maxplayergobs = 10 //upped for player shenngions with these. Below 30 active living players this will be capped to 5.
 	var/datum/looping_sound/boneloop/soundloop
 	var/spawning = FALSE

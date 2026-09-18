@@ -406,7 +406,7 @@
 	cuisine = CUISINE_NORTH_IMPERIAL|CUISINE_SOUTH_IMPERIAL
 	dish_type = DISH_BREAD
 	name = "decabun"
-	desc = "A bun bearing the symbol of the Ten, undivided and ever whole. The only thing to possibly seperate them would be a \
+	desc = "A bun bearing the symbol of the Ten, undivided and ever whole. The only thing that could possibly separate them would be a \
 	helping of jam or marmalade."
 	icon = 'modular/Neu_Food/icons/cooked/cooked_baked.dmi'
 	icon_state = "decabun"
@@ -423,7 +423,7 @@
 	cuisine = CUISINE_NORTH_IMPERIAL
 	dish_type = DISH_BREAD
 	name = "jamtallowed decabun"
-	desc = "A decabun, cruelly parted to be slathered with a spread of jamtallow. Seperate, but joined in sweet unity."
+	desc = "A decabun, cruelly parted to be slathered with a spread of jamtallow. Separate, yet joined in sweet unity."
 	icon = 'modular/Neu_Food/icons/cooked/cooked_baked.dmi'
 	icon_state = "decabun_jamtallow"
 	list_reagents = list(/datum/reagent/consumable/nutriment = NUTRITION_THREE_QUARTER_MEAL)

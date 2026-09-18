@@ -48,7 +48,7 @@
 
 /obj/item/clothing/neck/roguetown/psicross/inhumen/matthios/moneta
 	name = "pierced coin amulet"
-	desc = "A simple luck charm - a zenny, pierced by a blade and hanging on a thin iron chain. A tiny inscription upon the amulet's edge reads: «All tyrants will die alone.»"
+	desc = "A simple luck charm made from a zenny pierced by a blade and suspended from a thin iron chain. A tiny inscription along its edge reads: 'All tyrants will die alone.'"
 	icon_state = "matthios"
 	item_state = "matthios"
 	icon = 'modular_twilight_axis/icons/roguetown/clothing/neck.dmi'
@@ -58,9 +58,9 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		if(istype(H.patron, /datum/patron/inhumen/matthios))
-			desc = "A recognizible charm of Matthios' own - a coin shattered, a symbol the pure rejection of wealth by those who would be oppressed with it. The amulet contains no power of its own, yet as you hold it in the palm of your hand, you can feel the promise of freedom empowering you. A tiny inscription upon the amulet's edge reads: «All tyrants will die alone.»"
+			desc = "A recognizable charm of Matthios: a shattered coin symbolizing the rejection of wealth used as an instrument of oppression. The amulet holds no power of its own, yet its promise of freedom feels palpable in your hand. A tiny inscription along its edge reads: 'All tyrants will die alone.'"
 		else
-			desc = "A simple luck charm - a zenny, pierced by a blade and hanging on a thin iron chain. A tiny inscription upon the amulet's edge reads: «All tyrants will die alone.»"
+			desc = "A simple luck charm made from a zenny pierced by a blade and suspended from a thin iron chain. A tiny inscription along its edge reads: 'All tyrants will die alone.'"
 	. = ..()
 
 /obj/item/clothing/neck/roguetown/psicross/inhumen/matthios/moneta/get_examine_highlight_status()

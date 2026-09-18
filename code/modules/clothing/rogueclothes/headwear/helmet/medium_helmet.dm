@@ -204,7 +204,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/sallet/beastskull
 	name = "beast skull"
-	desc = "The skull of a horned beast, carved and fashioned into a helmet. An steel skull cap has been inserted on the inside."
+	desc = "The carved skull of a horned beast, reinforced inside with a steel skullcap."
 	icon_state = "marauder_head"
 	body_parts_covered = HEAD|EARS|HAIR
 	max_integrity = ARMOR_INT_HELMET_STEEL + 50
@@ -269,7 +269,7 @@
 
 /obj/item/clothing/head/roguetown/helmet/sallet/beastskull
 	name = "beast skull"
-	desc = "The skull of a horned beast, carved and fashioned into a helmet. An steel skull cap has been inserted on the inside."
+	desc = "The carved skull of a horned beast, reinforced inside with a steel skullcap."
 	icon_state = "marauder_head"
 	body_parts_covered = HEAD|EARS|HAIR
 	max_integrity = ARMOR_INT_HELMET_STEEL + 50

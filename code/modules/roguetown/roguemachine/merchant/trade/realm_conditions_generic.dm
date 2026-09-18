@@ -1,7 +1,7 @@
 /datum/realm_condition/aavnr_border_skirmish
 	id = "aavnr_border_skirmish"
 	name = "Border Skirmish"
-	description = "A border skirmish has been occuring in a province near the Aavnic border. While it hasn't escalated into a full scale war, grain trade is disrupted while livestocks are slaughtered for supplies. Hide sells cheap while iron ingots are driven up in price."
+	description = "A border skirmish has broken out in a province near Aavnia. Although it has not escalated into full-scale war, the fighting has disrupted the grain trade and driven armies to slaughter livestock for provisions. Hides sell cheaply, while the price of iron ingots continues to rise."
 	weight = 10
 	affected_realms = list(REALM_AAVNR)
 	supply_modifiers = list(

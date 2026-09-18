@@ -93,7 +93,7 @@
 /turf/open/floor/rogue/naturalstone
 	track_prob = 10
 
-//Probabilities end (albeit mud is handled seperately).
+// Probabilities end (although mud is handled separately).
 
 //Analysis levels depending on skillcheck during reveal.
 #define ANALYSIS_TERRIBLE 1

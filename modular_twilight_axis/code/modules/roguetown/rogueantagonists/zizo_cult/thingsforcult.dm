@@ -281,7 +281,7 @@ GLOBAL_DATUM_INIT(html_tags, /regex, regex(@"<.*?>", "g"))
 
 /obj/item/rogueweapon/sword/sabre/zizo
 	name = "cursed sword"
-	desc = "An cursed sword, which can steal life power"
+	desc = "A cursed sword that steals the life force of its victims."
 	icon = 'modular_twilight_axis/code/modules/roguetown/rogueantagonists/zizo_cult/sprites/zizo_weapone.dmi'
 	icon_state = "Zsword"
 	max_blade_int = 300
@@ -320,7 +320,7 @@ GLOBAL_DATUM_INIT(html_tags, /regex, regex(@"<.*?>", "g"))
 	icon = 'modular_twilight_axis/code/modules/roguetown/rogueantagonists/zizo_cult/sprites/zizo_weapone.dmi'
 	icon_state = "Zaxe"
 	name = "cursed battle axe"
-	desc = "An axe for battles, which was maden by cursed steel."
+	desc = "A battle axe forged from cursed steel."
 	wdefense = 5
 	max_blade_int = 350
 	max_integrity = 300
@@ -370,7 +370,7 @@ GLOBAL_DATUM_INIT(html_tags, /regex, regex(@"<.*?>", "g"))
 	icon = 'modular_twilight_axis/code/modules/roguetown/rogueantagonists/zizo_cult/sprites/zizo_weapone.dmi'
 	icon_state = "Zshield"
 	name = "cursed shield"
-	desc = "A gigantic cursed tower shield, which was maden by cursed steel."
+	desc = "A massive tower shield forged from cursed steel."
 	force = 10
 	throwforce = 10
 	wdefense = 12
@@ -399,7 +399,7 @@ GLOBAL_DATUM_INIT(html_tags, /regex, regex(@"<.*?>", "g"))
 
 /obj/item/rogueweapon/greataxe/steel/doublehead/zizo
 	name = "cursed greataxe"
-	desc = "An doublehead axe, which made for kills for Zizo-queen."
+	desc = "A double-headed greataxe forged to reap lives in Zizo's name."
 	icon = 'modular_twilight_axis/code/modules/roguetown/rogueantagonists/zizo_cult/sprites/zizo_weapone_twoh.dmi'
 	icon_state = "Ztaxe"
 	special = /datum/special_intent/vicious_swipe

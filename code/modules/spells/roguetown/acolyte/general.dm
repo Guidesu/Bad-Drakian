@@ -444,7 +444,7 @@
 
 	secondary_resource_cost = SPELLCOST_MINOR_PROJECTILE
 
-	invocation_type = INVOCATION_NONE //It has seperate message ON USE
+	invocation_type = INVOCATION_NONE // It has a separate message on use.
 
 	charge_required = TRUE
 	charge_time = CHARGETIME_POKE

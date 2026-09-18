@@ -50,7 +50,7 @@
 	var/do_subtle = sex_session.doing_subtly
 	return span_warning("[user] stops [do_subtle ? "subtly " : ""]scissoring with [target].")
 
-///if someone can convince me you can somehow find a way to do another action on scissoring that shouldn't be a seperate action I will remove this
+/// Remove this if another scissoring action can be represented without a separate action datum.
 /datum/sex_action/scissoring/lock_sex_object(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	sex_locks |= new /datum/sex_session_lock(user, ORGAN_SLOT_VAGINA)
 	sex_locks |= new /datum/sex_session_lock(target, ORGAN_SLOT_VAGINA)

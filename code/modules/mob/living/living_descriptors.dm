@@ -115,7 +115,7 @@
 	if(sixth)
 		lines += sixth
 
-	/// Print the remaining ones in seperate lines
+	/// Print the remaining entries on separate lines.
 	for(var/descriptor_type in desc_copy)
 		var/datum/mob_descriptor/descriptor = MOB_DESCRIPTOR(descriptor_type)
 		lines += treat_mob_descriptor_string(descriptor.get_standalone_text(described), described)

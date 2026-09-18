@@ -8,7 +8,7 @@
 
 /obj/item/clothing/suit/roguetown/armor/manual/arcyne_ward/druid
 	name = "vine armor"
-	desc = "An holy vine's armor."
+	desc = "Armor woven from sacred vines."
 	ward_color = GLOW_COLOR_EARTHEN
 
 /obj/item/clothing/suit/roguetown/armor/manual/arcyne_ward/druid/setup_ward(mob/living/carbon/human/user)

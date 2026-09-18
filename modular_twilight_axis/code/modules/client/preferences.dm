@@ -158,7 +158,7 @@
 
 /datum/asset/simple/origin_picker
 	assets = list(
-		"origin_picker_map.jpg" = 'modular_twilight_axis/lore/interface/origin_picker_map.jpg',
+		"origin_picker_map.png" = 'modular_twilight_axis/lore/interface/origin_picker_map.png',
 	)
 
 /datum/origin_picker_panel

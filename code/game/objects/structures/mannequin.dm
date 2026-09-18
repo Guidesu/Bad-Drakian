@@ -69,8 +69,8 @@
 
 	//Easily Editable Mapping Variables
 	/*
-	* Ideally this would be items placed ontop of the mannequin
-	* instead of this. If we did the everything ontop of this
+	* Ideally, these would be items placed on top of the mannequin
+	* instead. If everything were placed on top of it,
 	* mannequin becomes its equipment on spawn we couldnt
 	* choose if a tabbard is placed on a mannequins armor
 	* or cloak slot. Predefined spawners with a New(items_to_wear)
@@ -460,7 +460,7 @@
 
 /*
 * The fact that the side profiles of
-* things require a seperate icon
+* These items require a separate icon.
 * is a nightmare. This proc forms the
 * sleeve icons.
 * taken from /mob/living/carbon/proc/get_sleeves_layer()
@@ -547,7 +547,7 @@
 
 //For picking the mannequin back up off the floor
 /obj/structure/mannequin/proc/StandUp(mob/living/L)
-	//This is here to prevent mannequins from being stacked ontop of eachother.
+	// Prevent mannequins from being stacked on top of each other.
 	for(var/obj/structure/mannequin/O in get_turf(src))
 		if(O.density && !O.tipped_over)
 			return

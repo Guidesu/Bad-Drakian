@@ -7,7 +7,7 @@
 	icon_state = "colossus"
 	icon_living = "colossus"
 	icon_dead = "vvd"
-	summon_primer = "You are an colossus, a massive elemental. Elementals such as yourself are immeasurably old. Now you've been pulled from your home into a new world, that is decidedly less peaceful then your carefully guarded plane. How you react to these events, only time can tell."
+	summon_primer = "You are a colossus, a massive elemental of immeasurable age. You have been torn from your native plane and drawn into a far less peaceful world. Only you can decide how to answer this intrusion."
 	summon_tier = 4
 	gender = MALE
 	emote_hear = null

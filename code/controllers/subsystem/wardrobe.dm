@@ -18,7 +18,7 @@ SUBSYSTEM_DEF(wardrobe)
 	/// How much to cache outfit items
 	/// Multiplier, 2 would mean cache enough items to stock 1 of each preloaded order twice, etc
 	var/cache_intensity = 2
-	/// How many more then the template of a type are we allowed to have before we delete applicants?
+	/// How many more than the template count of a type may exist before applicants are deleted?
 	var/overflow_lienency = 2
 	/// List of type -> list(insertion callback, removal callback) callbacks for insertion/removal to use.
 	/// Set in setup_callbacks, used in canonization.
@@ -127,7 +127,7 @@ SUBSYSTEM_DEF(wardrobe)
 			if(state != SS_RUNNING)
 				return
 
-		// If we have more then we target, just don't you feel me?
+		// If we already have more than the target, do nothing.
 		target_delta = min(target_delta, 0) //I only want negative numbers to matter here
 
 		// If we don't have enough, queue enough to make up the remainder
@@ -202,7 +202,7 @@ SUBSYSTEM_DEF(wardrobe)
 	if(stock_info)
 		target_amount -= length(stock_info[WARDROBE_STOCK_CONTENTS])
 
-	amount = min(amount, target_amount) // If we're trying to set more then we need, don't!
+	amount = min(amount, target_amount) // Do not set more than the target amount.
 
 	if(amount <= 0) // If we already have all we need, end it
 		order_list -= queued_type

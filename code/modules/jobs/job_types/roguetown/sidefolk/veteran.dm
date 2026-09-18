@@ -269,7 +269,7 @@
 
 /datum/advclass/veteran/calvaryman
 	name = "Tarnished Knight"
-	tutorial = "You were once a member of a knightly calvary regiment, a prestigious title. You were ontop of the world, the townspeople rejoiced when you rode through their streets. Now, all you can hear is the screams of your brothers-in-arms as they fell. You specialize in mounted warfare."
+	tutorial = "You once served in a prestigious knightly cavalry regiment. You were on top of the world, and townspeople rejoiced as you rode through their streets. Now all you can hear are the screams of your fallen comrades. You specialize in mounted warfare."
 	outfit = /datum/outfit/job/roguetown/vet/calvaryman
 
 	category_tags = list(CTAG_VETERAN)

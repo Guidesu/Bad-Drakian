@@ -21,7 +21,7 @@
 #define HUMAN_NPC_CLICK_RECOVERY_JITTER_MAX	0.3
 
 
-//Note alot of this is just adapted from old code so its probably not the best
+// Much of this is adapted from old code, so it is probably not ideal.
 
 /datum/ai_planning_subtree/basic_melee_attack_subtree/human_npc
 	melee_attack_behavior = /datum/ai_behavior/basic_melee_attack/human_npc

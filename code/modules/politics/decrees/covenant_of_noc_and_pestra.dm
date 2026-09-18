@@ -21,13 +21,13 @@
 		"Head Physician" = 80,
 		"Apothecary" = 40,
 	)
-	flavor_text = {"This Covenant, made under the watchful eye of Nok and the merciful hand of Pestra, testifies that the learned minds of the University and the healers of the Apothecary's Chamber will bear no burden except the least possible taxes, and will receive from the treasury of the Crown the fair minimum of what is due them while this Covenant is in force.
+	flavor_text = {"This Covenant, made under the watchful eye of Noc and the merciful hand of Pestra, grants the scholars of the University and the healers of the Apothecary's Chamber the lowest lawful taxes and guarantees them a fair minimum wage from the Crown's treasury while the Covenant remains in force.
 
-In return, the licensed scholarly minds of the University shall commit to preserving the knowledge and wisdom of these scrolls, maintaining them, and teaching them to worthy and enlightened minds, for Nok has granted humans the gift of arcana and wisdom so that we may spread and multiply them. And the certified healers of the Apothecary Chamber, messengers of Pestr, pledge to heal the wounds of every subject of the Crown who comes to their threshold, whether beggar or townsman, and shall never refuse the wounded due to lack of coins, for Pestr is merciful and has taught us medicine so that we may care for one another.
+In return, the University's licensed scholars shall preserve its knowledge, maintain its collections, and teach all worthy students, for Noc granted mortals arcane wisdom so that it might be shared. The certified healers of the Apothecary's Chamber, as servants of Pestra, shall treat every subject of the Crown who comes to their threshold, whether beggar or burgher, and shall never refuse an injured person for lack of coin.
 
-Endorsed with the seal of the Crown, by the grace of Nok and Pestr."}
-	revoke_text = "The %RULER% has suspended the Covenant of Noc & Pestra. The scholars and healers of Azuria now bear the Crown's common levy in full - and Noc and Pestra may reckon how long their mercy lasts without their chartered hands."
-	restore_text = "The %RULER% has affirmed the Covenant of Noc & Pestra. The scholars and healers of Azuria resume their sheltered station, that the Realm may keep both its lore and its mercy."
+Endorsed with the seal of the Crown, by the grace of Noc and Pestra."}
+	revoke_text = "The %RULER% has suspended the Covenant of Noc & Pestra. The scholars and healers of %REALM% now bear the Crown's common levy in full—and the gods may judge how long learning and mercy endure without their chartered servants."
+	restore_text = "The %RULER% has affirmed the Covenant of Noc & Pestra. The realm's scholars and healers regain their protected station, so that %REALM% may preserve both knowledge and mercy."
 
 /datum/decree/noc_pestra_covenant/roll_initial_year()
 	return CALENDAR_EPOCH_YEAR - rand(20, 60)

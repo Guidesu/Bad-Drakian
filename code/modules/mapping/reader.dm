@@ -711,7 +711,7 @@ GLOBAL_LIST_EMPTY(map_model_default)
 		// Builds list of path/edits for later
 		// Of note: we cannot preallocate them to save time in list expansion later
 		// But fortunately lists allocate at least 8 entries normally anyway, and
-		// We are unlikely to have more then that many members
+		// We are unlikely to have more than that many members.
 		//will contain all members (paths) in model (in our example : /turf/unsimulated/wall)
 		var/list/members = list()
 		//will contain lists filled with corresponding variables, if any (in our example : list(icon_state = "rock") and list())

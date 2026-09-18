@@ -1449,7 +1449,7 @@ tile_coordinates = list(list(1,1), list(-1,1), list(-1,-1), list(1,-1),list(0,0)
 #undef SPECIAL_AOE_AROUND_ORIGIN
 #undef CUSTOM_TIMER_INDEX
 
-/datum/special_intent/upper_cut // 1x1 combo finisher, exposed targets get knocked down and take alot of damage, others take low damage.
+/datum/special_intent/upper_cut // 1x1 combo finisher; exposed targets are knocked down and take heavy damage, while others take light damage.
 	name = "Upper Cut"
 	desc = "Charge up a devastating strike infront of you. If the target is Exposed they will fall over and be flung back with tremendous damage, if not exposed they will be pushed slightly back. Aims for the targeted zone, finisher always hits the head."
 	tile_coordinates = list(list(0,0))
