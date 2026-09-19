@@ -1643,6 +1643,17 @@
 	skillcraft = /datum/skill/craft/carpentry
 	craftdiff = 2
 
+/datum/crafting_recipe/roguetown/structure/gloryhole
+	name = "gloryhole"
+	category = "Misc"
+	result = /obj/structure/bondage/gloryhole
+	reqs = list(/obj/item/natural/wood/plank = 2,
+				/obj/item/natural/fibers = 2)
+	verbage_simple = "construct"
+	verbage = "constructs"
+	skillcraft = /datum/skill/craft/carpentry
+	craftdiff = 2
+
 /datum/crafting_recipe/roguetown/structure/wooden_horse
 	name = "wooden horse"
 	category = "Misc"
