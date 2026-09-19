@@ -61,10 +61,16 @@
 		owner.attach_client(owner_client)
 		bottom_exposed = !!owner_client.prefs?.erp_bottom_exposed
 		freeuse = !!owner_client.prefs?.erp_freeuse
+		arousal_frozen = !!owner_client.prefs?.erp_arousal_frozen
+		allow_user_moan = !!owner_client.prefs?.erp_allow_moan
+		hidden_mode = !!owner_client.prefs?.erp_hidden_mode
+		do_until_finished = !!owner_client.prefs?.erp_continue_after_climax
 	var/mob/living/carbon/human/owner_human = owner.get_effect_mob()
 	if(istype(owner_human))
 		owner_human.erp_bottom_exposed = bottom_exposed
 		owner_human.erp_freeuse = freeuse
+		if(arousal_frozen)
+			SEND_SIGNAL(owner_human, COMSIG_SEX_FREEZE_AROUSAL)
 
 	actors += owner
 
@@ -428,6 +434,16 @@
 /// Toggles hidden mode.
 /datum/erp_controller/proc/change_hidden_mode()
 	hidden_mode = !hidden_mode
+	if(owner_client?.prefs)
+		owner_client.prefs.erp_hidden_mode = hidden_mode
+		owner_client.prefs.save_preferences()
+
+/// Sets whether newly started actions repeat after climax.
+/datum/erp_controller/proc/change_continue_after_climax()
+	do_until_finished = !do_until_finished
+	if(owner_client?.prefs)
+		owner_client.prefs.erp_continue_after_climax = do_until_finished
+		owner_client.prefs.save_preferences()
 
 /// Toggles surrender state.
 /datum/erp_controller/proc/change_yield_state()
@@ -456,10 +472,16 @@
 	var/list/ad = list()
 	SEND_SIGNAL(actor_object, COMSIG_SEX_GET_AROUSAL, ad)
 	arousal_frozen = !!ad["frozen"]
+	if(owner_client?.prefs)
+		owner_client.prefs.erp_arousal_frozen = arousal_frozen
+		owner_client.prefs.save_preferences()
 
 /// Toggles moaning.
 /datum/erp_controller/proc/change_moaning()
 	allow_user_moan = !allow_user_moan
+	if(owner_client?.prefs)
+		owner_client.prefs.erp_allow_moan = allow_user_moan
+		owner_client.prefs.save_preferences()
 
 /// Toggles Ratwood-compatible genital visibility independently of clothing.
 /datum/erp_controller/proc/change_bottom_exposed()

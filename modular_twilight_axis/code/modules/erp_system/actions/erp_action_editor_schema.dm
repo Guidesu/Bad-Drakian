@@ -23,7 +23,7 @@
 	. += list(_make_field("message_tick", "Message: process", "text", A.message_tick, "MESSAGES"))
 	. += list(_make_field("message_finish", "Message: finish", "text", A.message_finish, "MESSAGES"))
 	. += list(_make_field("message_climax_active", "Orgasm: initiator", "text", A.message_climax_active, "MESSAGES"))
-	. += list(_make_field("message_climax_passive", "Orgasm: goal", "text", A.message_climax_passive, "MESSAGES"))
+	. += list(_make_field("message_climax_passive", "Orgasm: receiver", "text", A.message_climax_passive, "MESSAGES"))
 
 /// Creates a single editor field descriptor.
 /datum/erp_action_editor_schema/proc/_make_field(id, label, type, value, section, min=null, max=null, step=null, options=null, desc=null, placeholder=null)

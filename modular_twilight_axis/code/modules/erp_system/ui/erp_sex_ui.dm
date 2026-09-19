@@ -64,6 +64,11 @@
 			request_update()
 			return TRUE
 
+		if("toggle_continue_after_climax")
+			controller?.change_continue_after_climax()
+			request_update()
+			return TRUE
+
 		if("yield")
 			controller?.change_yield_state()
 			request_update()

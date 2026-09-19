@@ -71,7 +71,7 @@
 	if(!init)
 		return "There is no initiating authority."
 	if(!target)
-		return "No goal."
+		return "No target selected."
 	if(!controller.active_partner)
 		return "No partner."
 

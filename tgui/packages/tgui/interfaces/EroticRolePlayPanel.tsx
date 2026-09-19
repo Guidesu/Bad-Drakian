@@ -161,6 +161,7 @@ export type SexSessionData = {
   yield_to_partner?: boolean;
   allow_user_moan?: boolean;
   hidden_mode?: boolean;
+  do_until_finished?: boolean;
   bottom_exposed?: boolean;
   freeuse?: boolean;
   active_tab?: string;
@@ -698,8 +699,8 @@ const ActionsListOldLike: React.FC<{
   );
 };
 
-const speedNames = ['Very Slow', 'Moderate', 'Fast', 'Frenzied'];
-const forceNames = ['Gentle', 'Firm', 'Rough', 'Brutal'];
+const speedNames = ['Very Slow', 'Moderate', 'Fast', 'Feral'];
+const forceNames = ['Gentle', 'Firm', 'Rough', 'Furious'];
 const speedColors = ['#a798a2ff', '#e67ec0ff', '#f05ee1', '#f54689ff'];
 const forceColors = ['#a798a2ff', '#e67ec0ff', '#f05ee1', '#f54689ff'];
 
@@ -2043,6 +2044,7 @@ export const EroticRolePlayPanel: React.FC = () => {
   const isYielding = !!data.yield_to_partner;
   const isMoaning = !!data.allow_user_moan;
   const isHidden = !!data.hidden_mode;
+  const continuesAfterClimax = !!data.do_until_finished;
   const isBottomExposed = !!data.bottom_exposed;
   const isFreeuse = !!data.freeuse;
   const [q, setQ] = useState('');
@@ -2118,6 +2120,15 @@ export const EroticRolePlayPanel: React.FC = () => {
               <Stack.Item style={{ margin: 0 }}>
                 <Pill selected={isFreeuse} onClick={() => act('toggle_freeuse')} tooltip="Allow partners to begin eligible actions without positioning or grab requirements. Consent restrictions still apply.">
                   FREE USE
+                </Pill>
+              </Stack.Item>
+              <Stack.Item style={{ margin: 0 }}>
+                <Pill
+                  selected={continuesAfterClimax}
+                  onClick={() => act('toggle_continue_after_climax')}
+                  tooltip="Make newly started actions repeat until stopped instead of ending at climax. You can still change each active action separately."
+                >
+                  CONTINUE AFTER CLIMAX
                 </Pill>
               </Stack.Item>
             </Stack>

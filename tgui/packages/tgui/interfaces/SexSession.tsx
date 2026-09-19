@@ -48,15 +48,15 @@ export const SexSession = () => {
 
   // TA EDIT START
   const finishConditionText = data.do_until_finished
-    ? 'UNTIL I FINISH'
-    : 'UNTIL I STOP';
+    ? 'CONTINUE AFTER CLIMAX'
+    : 'END AT CLIMAX';
   const interactionTarget = data.title
     .replace('Do not use', '')
     .replace('...', '');
   // TA EDIT END
 
   return (
-    <Window title="Sate Desires" width={500} height={600}>
+    <Window title="SexCon" width={500} height={600}>
       <Window.Content scrollable>
         <Stack vertical fill>
           <Stack.Item>
@@ -189,7 +189,7 @@ export const SexSession = () => {
                                 : '#eac8de',
                             }}
                           >
-                            {data.do_knot_action ? 'intercourse Use NODE' : 'Use NODE'}
+                            {data.do_knot_action ? 'KNOTTING ENABLED' : 'KNOTTING DISABLED'}
                           </Box>
                         </Button>
                       </>
@@ -225,7 +225,7 @@ export const SexSession = () => {
                         }
                       }}
                     >
-                      INSTALL
+                      SET
                     </Button>
                     {' | '}
                     <Button
@@ -234,7 +234,7 @@ export const SexSession = () => {
                       color="transparent"
                       onClick={() => act('freeze_arousal')}
                     >
-                      {data.frozen ? 'DO NOT EXCITE' : 'EXCITE'}
+                      {data.frozen ? 'UNFREEZE AROUSAL' : 'FREEZE AROUSAL'}
                     </Button>
                     {' | '}
                     <Button
@@ -255,7 +255,7 @@ export const SexSession = () => {
           {/* Search */}
           <Stack.Item>
             <Box textAlign="center" italic color="label">
-              Make with{interactionTarget}
+              Interactions with {interactionTarget.trim()}
             </Box>
           </Stack.Item>
           <Stack.Item>

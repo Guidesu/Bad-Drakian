@@ -4,6 +4,10 @@
 	var/list/erp_organ_prefs = list()
 	var/erp_bottom_exposed = FALSE
 	var/erp_freeuse = FALSE
+	var/erp_arousal_frozen = FALSE
+	var/erp_allow_moan = TRUE
+	var/erp_hidden_mode = FALSE
+	var/erp_continue_after_climax = TRUE
 
 /datum/preferences/proc/apply_erp_kinks_to_mob(mob/living/carbon/human/H)
 	if(!H || !islist(erp_kink_prefs) || !erp_kink_prefs.len)

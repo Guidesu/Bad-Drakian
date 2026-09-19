@@ -67,7 +67,7 @@ var/global/list/ERP_ACTION_EDITOR_FIELDS = list(
 	list("id"="message_tick",           "label"="Message: tick",      "type"="multiline", "section"="Messages"),
 	list("id"="message_finish",         "label"="Message: finish",    "type"="multiline", "section"="Messages"),
 	list("id"="message_climax_active",  "label"="Orgasm: actor",       "type"="multiline", "section"="Messages"),
-	list("id"="message_climax_passive", "label"="Orgasm: goal",        "type"="multiline", "section"="Messages"),
+	list("id"="message_climax_passive", "label"="Orgasm: receiver",    "type"="multiline", "section"="Messages"),
 )
 
 GLOBAL_LIST_INIT(erp_race_body_zone_bonus, list(

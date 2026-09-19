@@ -209,6 +209,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["erp_organ_sensitivity"] >> erp_organ_prefs
 	S["erp_bottom_exposed"] >> erp_bottom_exposed
 	S["erp_freeuse"] >> erp_freeuse
+	S["erp_arousal_frozen"] >> erp_arousal_frozen
+	S["erp_allow_moan"] >> erp_allow_moan
+	S["erp_hidden_mode"] >> erp_hidden_mode
+	S["erp_continue_after_climax"] >> erp_continue_after_climax
 	// TA Addition end - new ERP SYSTEM
 
 	//try to fix any outdated data if necessary
@@ -317,6 +321,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	sanitize_erp_organ_prefs()
 	erp_bottom_exposed	= !!erp_bottom_exposed
 	erp_freeuse			= !!erp_freeuse
+	erp_arousal_frozen	= !!erp_arousal_frozen
+	erp_allow_moan		= !!erp_allow_moan
+	erp_hidden_mode		= !!erp_hidden_mode
+	erp_continue_after_climax = !!erp_continue_after_climax
 
 	// etc
 	asaycolor			= sanitize_ooccolor(sanitize_hexcolor(asaycolor, 6, TRUE, initial(asaycolor)))
@@ -446,6 +454,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["erp_organ_sensitivity"], erp_organ_prefs)
 	WRITE_FILE(S["erp_bottom_exposed"], erp_bottom_exposed)
 	WRITE_FILE(S["erp_freeuse"], erp_freeuse)
+	WRITE_FILE(S["erp_arousal_frozen"], erp_arousal_frozen)
+	WRITE_FILE(S["erp_allow_moan"], erp_allow_moan)
+	WRITE_FILE(S["erp_hidden_mode"], erp_hidden_mode)
+	WRITE_FILE(S["erp_continue_after_climax"], erp_continue_after_climax)
 	// TA Addition end - new ERP SYSTEM
 	return TRUE
 

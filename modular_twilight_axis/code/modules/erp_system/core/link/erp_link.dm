@@ -41,6 +41,7 @@
 	if(session)
 		force = session.default_link_force
 		speed = session.default_link_speed
+		finish_mode = session.do_until_finished ? "until_stop" : "until_climax"
 
 	last_tick = world.time
 	var/mob/actor_mob = actor_active.get_mob()
