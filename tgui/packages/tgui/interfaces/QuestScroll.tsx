@@ -420,7 +420,7 @@ export const QuestScroll = () => {
                   fontSize: '0.92em',
                 }}
               >
-                By Royal Seal and Ducal Prerogative, the bearer of this writ is
+                By the Sovereign Seal and Prerogative, the bearer of this writ is
                 held exempt from the Crown&apos;s Levy upon its reward.
               </div>
             </>

@@ -250,7 +250,7 @@ const TEXTS: ResidentManuscriptTexts = {
     },
     retinue: {
       display_name: 'Certificate of Palace Service',
-      subtitle: 'Under the ducal hand and oath',
+      subtitle: 'Under the sovereign hand and oath',
       description:
         'Let it be known: the bearer is at the court of the Duchy of Azuria and performs personal service to the duke. His place, duties and right to be at court are confirmed by this charter.',
     },
@@ -443,7 +443,7 @@ const resolveOwnerStatusLabel = (
   if (profileId === 'retinue' && statusKey === 'noble') {
     return realmKey === 'rockhill'
       ? 'Royal service'
-      : 'Ducal service';
+      : 'Sovereign service';
   }
   if (profileId === 'imperial') {
     return statusKey === 'noble' ? 'Imperial protection' : 'Imperial service';

@@ -983,6 +983,10 @@
 	name = "sense"
 	icon_state = "insense"
 
+/datum/intent/hand/water
+	name = "water bolt"
+	icon_state = "inclean"
+
 /datum/intent/hand/draw
 	name = "draw"
 	icon_state = "indraw"

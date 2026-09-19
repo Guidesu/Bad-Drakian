@@ -2,6 +2,7 @@
 #define PRESTI_SPARK "presti_spark"
 #define PRESTI_MOTE "presti_mote"
 #define PRESTI_SENSE "presti_sense"
+#define PRESTI_WATER "presti_water"
 
 /datum/action/cooldown/spell/touch/prestidigitation
 	name = "Prestidigitation"
@@ -9,7 +10,8 @@
 	<b>Clean</b>: Use your arcyne powers to scrub an object or something clean, like using soap. Also known as the Apprentice's Woe.\n \
 	<b>Spark</b>: Will forth a spark on an item of your choosing (or in front of you, if used on the ground) to ignite flammable items and things like torches, lanterns or campfires. \n \
 	<b>Light</b>: Conjure forth an orbiting mote of magelight to light your way. Starts at 5 tiles light range and get one more per Int above 10 up to 15.\n \
-	<b>Sense</b>: Attune to the veil and sense nearby leylines. "
+	<b>Sense</b>: Attune to the veil and sense nearby leylines.\n \
+	<b>Water Bolt</b>: Conjure a harmless bolt of water that extinguishes flames."
 	button_icon_state = "prestidigitation"
 
 	draw_message = span_notice("I prepare to perform a minor arcyne incantation.")
@@ -48,6 +50,9 @@
 		if(/datum/intent/hand/sense)
 			if(presti_hand.sense_leylines(caster))
 				handle_presti_cost(caster, PRESTI_SENSE)
+		if(/datum/intent/hand/water)
+			if(presti_hand.cast_water_bolt(caster, victim))
+				handle_presti_cost(caster, PRESTI_WATER)
 
 	return FALSE // don't consume the hand
 
@@ -63,6 +68,8 @@
 			extra_fatigue = 15
 		if(PRESTI_SENSE)
 			extra_fatigue = 10
+		if(PRESTI_WATER)
+			extra_fatigue = 5
 
 	user.stamina_add(fatigue_used + extra_fatigue)
 
@@ -74,7 +81,7 @@
 
 /obj/item/melee/new_touch_attack/prestidigitation
 	name = "\improper prestidigitating touch"
-	possible_item_intents = list(/datum/intent/hand/clean, /datum/intent/hand/spark, /datum/intent/hand/light, /datum/intent/hand/sense)
+	possible_item_intents = list(/datum/intent/hand/clean, /datum/intent/hand/spark, /datum/intent/hand/light, /datum/intent/hand/sense, /datum/intent/hand/water)
 	icon = 'icons/mob/roguehudgrabs.dmi'
 	icon_state = "grabbing_greyscale"
 	color = "#3FBAFD"
@@ -243,6 +250,20 @@
 
 	return TRUE
 
+/obj/item/melee/new_touch_attack/prestidigitation/proc/cast_water_bolt(mob/living/carbon/human/user, atom/target)
+	if(!target || target == user)
+		return FALSE
+	var/obj/projectile/energy/waterbolt/bolt = new(get_turf(user))
+	bolt.firer = user
+	bolt.fired_from = get_turf(user)
+	bolt.def_zone = user.zone_selected
+	bolt.zone_aimed = user.zone_selected
+	user.apply_ranged_accuracy(bolt)
+	bolt.preparePixelProjectile(target, user)
+	bolt.fire()
+	user.visible_message(span_notice("[user] flicks a bead of conjured water toward [target]."), span_notice("I flick a bead of conjured water toward [target]."))
+	return TRUE
+
 /obj/item/melee/new_touch_attack/prestidigitation/proc/clean_thing(atom/target, mob/living/carbon/human/user)
 	cleanspeed = initial(cleanspeed) * get_int_speed_mult(user)
 
@@ -297,6 +318,7 @@
 #undef PRESTI_SPARK
 #undef PRESTI_MOTE
 #undef PRESTI_SENSE
+#undef PRESTI_WATER
 
 /obj/effect/temp_visual/cleaning_pulse
 	name = "cleaning pulse"
