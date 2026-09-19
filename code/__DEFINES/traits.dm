@@ -343,6 +343,7 @@
 #define TRAIT_CABAL "Of the Cabal" //Zizo cultists can use exclusive gear
 #define TRAIT_HORDE "Anointed" //Graggarites can use exclusive gear
 #define TRAIT_DEPRAVED "Fallen" //Baothans can use exclusive gear
+#define TRAIT_DEATHBYSNUSNU "Bed Breaker" //Ratwood compatibility trait for exceptionally forceful intimate actions.
 #define TRAIT_DUSTRUNNER "Dust Runner" //Dust runners recognize each other, and are known to bathhouse workers and matthiosites
 
 // ASSASSIN ANTAG TRAITS
@@ -622,6 +623,7 @@ GLOBAL_LIST_INIT(roguetraits, list(
 	TRAIT_LYCANRESILENCE = span_info("Dendor's fury flows through my veins, my wounds regenerate over time..."),
 	TRAIT_FORTITUDE = span_info("The typical drain I feel from day to day life is lessened, my athleticism greater."),
 	TRAIT_DEPRAVED = span_info("The languid scent of Her debauchery is known to me."),
+	TRAIT_DEATHBYSNUSNU = span_info("My exceptional size and strength make me capable of the roughest intimate acts."),
 	TRAIT_SILVER_BLESSED = span_info("I have been baptized in fire. Blessed silverdust flows through my blood, protecting me from both vampyrism and lycanthropy."),
 	TRAIT_UNLYCKERABLE = span_info("My kind cannot bear the Sun curse for it already has another."),
 	TRAIT_NOWW = span_info("Dendor's madness shall find no hold in me."),

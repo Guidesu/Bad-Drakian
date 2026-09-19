@@ -2,7 +2,7 @@
 	name = "Giant"
 	desc = "I've always been larger, stronger and hardier than the average person. I tend to lumber around a lot, and my immense size can break down frail, wooden doors."
 	ui_fa_icon = "expand"
-	added_traits = list(TRAIT_BIGGUY)
+	added_traits = list(TRAIT_BIGGUY, TRAIT_DEATHBYSNUSNU)
 	custom_text = "Increases your sprite size."
 
 /datum/virtue/size/giant/apply_to_human(mob/living/carbon/human/recipient)
