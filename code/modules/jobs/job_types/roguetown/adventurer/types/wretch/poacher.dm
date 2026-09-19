@@ -18,6 +18,8 @@
 	subclass_skills = list(
 		/datum/skill/misc/tracking = SKILL_LEVEL_EXPERT,
 		/datum/skill/combat/bows = SKILL_LEVEL_MASTER,
+		/datum/skill/combat/crossbows = SKILL_LEVEL_EXPERT,
+		/datum/skill/combat/slings = SKILL_LEVEL_EXPERT,
 		/datum/skill/combat/knives = SKILL_LEVEL_EXPERT,
 		/datum/skill/combat/axes = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/combat/maces = SKILL_LEVEL_APPRENTICE,
@@ -68,6 +70,18 @@
 		var/weapons = list("Dagger","Axe", "Cudgel", "My Bow Is Enough")
 		var/weapon_choice = input(H, "Choose your weapon.", "TAKE UP ARMS") as anything in weapons
 		H.set_blindness(0)
+		var/fashion = list("Cunning Archer", "Ruthless Hunter", "Unrelenting Beastslayer")
+		var/fashion_choice = input(H, "Choose your appearance. This choice is cosmetic.", "BE FASHIONABLE") as anything in fashion
+		switch(fashion_choice)
+			if("Cunning Archer")
+				head = /obj/item/clothing/head/roguetown/archercap
+				cloak = /obj/item/clothing/cloak/raincloak/green
+			if("Ruthless Hunter")
+				head = /obj/item/clothing/head/roguetown/duelhat
+				cloak = /obj/item/clothing/suit/roguetown/armor/longcoat
+			if("Unrelenting Beastslayer")
+				head = /obj/item/clothing/head/roguetown/roguehood/darkgreen
+				cloak = /obj/item/clothing/cloak/raincloak/furcloak/darkgreen
 		switch(weapon_choice)
 			if("Dagger")
 				H.adjust_skillrank_up_to(/datum/skill/combat/knives, SKILL_LEVEL_EXPERT, TRUE)
@@ -82,4 +96,20 @@
 			if ("My Bow Is Enough")
 				H.adjust_skillrank_up_to(/datum/skill/combat/bows, SKILL_LEVEL_LEGENDARY, TRUE)
 				head = /obj/item/clothing/head/roguetown/helmet/kettle
+		if(weapon_choice != "My Bow Is Enough")
+			var/ranged_weapons = list("Recurve Bow", "Crossbow", "Sling")
+			var/ranged_choice = input(H, "Choose your ranged weapon.", "TAKE UP ARMS") as anything in ranged_weapons
+			switch(ranged_choice)
+				if("Recurve Bow")
+					H.adjust_skillrank_up_to(/datum/skill/combat/bows, SKILL_LEVEL_LEGENDARY, TRUE)
+					beltl = /obj/item/quiver/arrows
+					backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve
+				if("Crossbow")
+					H.adjust_skillrank_up_to(/datum/skill/combat/crossbows, SKILL_LEVEL_LEGENDARY, TRUE)
+					beltl = /obj/item/quiver/bolt/standard
+					backr = /obj/item/gun/ballistic/revolver/grenadelauncher/crossbow
+				if("Sling")
+					H.adjust_skillrank_up_to(/datum/skill/combat/slings, SKILL_LEVEL_LEGENDARY, TRUE)
+					beltl = /obj/item/quiver/sling/iron
+					l_hand = /obj/item/gun/ballistic/revolver/grenadelauncher/sling
 	bountychoice_poacher(H)				//TA - EDIT
