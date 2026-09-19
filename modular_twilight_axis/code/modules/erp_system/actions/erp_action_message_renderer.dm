@@ -51,6 +51,16 @@
 	t = replacetext(t, "{force}", "[L.get_force_text()]")
 	t = replacetext(t, "{speed}", "[L.get_speed_text()]")
 	t = replacetext(t, "{zone}",  "[L.get_target_zone_text()]")
+	// Pronoun-aware tokens: resolve through the mob's chosen pronouns, not hardcoded gender.
+	t = replacetext(t, "{actor_they}",       "[L.actor_active?.get_mob()?.p_they()]")
+	t = replacetext(t, "{actor_them}",       "[L.actor_active?.get_mob()?.p_them()]")
+	t = replacetext(t, "{actor_their}",      "[L.actor_active?.get_mob()?.p_their()]")
+	t = replacetext(t, "{actor_theirself}",  "[L.actor_active?.get_mob()?.p_themselves()]")
+	t = replacetext(t, "{actor_s}",          "[L.actor_active?.get_mob()?.p_s()]")
+	t = replacetext(t, "{partner_they}",     "[L.actor_passive?.get_mob()?.p_they()]")
+	t = replacetext(t, "{partner_them}",     "[L.actor_passive?.get_mob()?.p_them()]")
+	t = replacetext(t, "{partner_their}",    "[L.actor_passive?.get_mob()?.p_their()]")
+	t = replacetext(t, "{partner_theirself}", "[L.actor_passive?.get_mob()?.p_themselves()]")
 	return t
 
 /datum/erp_action_message_renderer/proc/replace_knot_scene_keywords(text, datum/erp_sex_link/L)
@@ -62,4 +72,3 @@
 		return "[copytext(text, 1, length(text))] up to the very knot [last]"
 
 	return "[text] up to the very knot"
-

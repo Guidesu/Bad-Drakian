@@ -263,12 +263,9 @@
 	if(SSticker.rulermob && istype(SSticker.rulermob, /mob/living/carbon/human))
 		var/mob/living/carbon/human/ruler = SSticker.rulermob
 		if(ruler.stat != DEAD)
-			if(ruler.gender == "male")
-				sacrifice_info = "[ruler.real_name] (Grand Duke)"
-				target_role = "Grand Duke"
-			else
-				sacrifice_info = "[ruler.real_name] (Grand Duchess)"
-				target_role = "Grand Duchess"
+			var/ruler_title = ruler.get_role_title()
+			sacrifice_info = "[ruler.real_name] ([ruler_title])"
+			target_role = ruler.job
 
 	//Priority 2: Bishop
 	if(target_role == "Crown")

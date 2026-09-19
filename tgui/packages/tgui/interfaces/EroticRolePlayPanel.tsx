@@ -195,7 +195,7 @@ const BaseTuningPanel: React.FC<{
   const foIdx = fo - 1;
 
   return (
-    <Section title="Basic settings of new actions" style={{ paddingTop: 6, paddingBottom: 6 }}>
+    <Section title="Default Action Settings" style={{ paddingTop: 6, paddingBottom: 6 }}>
       <Stack align="center" justify="space-between">
         {/* LEFT SIDE: label -> control */}
         <Stack.Item grow>
@@ -305,7 +305,7 @@ const BaseTuningPanel: React.FC<{
                 color="label"
                 style={{ fontSize: 10, textTransform: 'uppercase', whiteSpace: 'nowrap' }}
               >
-                Strength
+                Intensity
               </Box>
             </Stack.Item>
           </Stack>
@@ -504,7 +504,7 @@ const TabsRow: React.FC<{ active: string; onSet: (tab: string) => void }> = ({ a
   const tabs = [
     { id: 'actions', name: 'ACTIONS' },
     { id: 'status', name: 'STATUS' },
-    { id: 'kinks', name: 'FETISHES' },
+    { id: 'kinks', name: 'PREFERENCES' },
     { id: 'editor', name: 'EDITOR' },
   ];
   return (
@@ -698,8 +698,8 @@ const ActionsListOldLike: React.FC<{
   );
 };
 
-const speedNames = ['Slowly', 'Medium', 'Fast', 'Fervently'];
-const forceNames = ['Gently', 'Confidently', 'Strongly', 'Hard'];
+const speedNames = ['Very Slow', 'Moderate', 'Fast', 'Frenzied'];
+const forceNames = ['Gentle', 'Firm', 'Rough', 'Brutal'];
 const speedColors = ['#a798a2ff', '#e67ec0ff', '#f05ee1', '#f54689ff'];
 const forceColors = ['#a798a2ff', '#e67ec0ff', '#f05ee1', '#f54689ff'];
 
@@ -719,7 +719,7 @@ const ActiveLinksPanel: React.FC<{
   };
 
   return (
-    <Section title="Active bundles">
+    <Section title="Active Actions">
       <Stack vertical>
         {links.map((l) => {
           const sp = clamp14(l.speed);
@@ -796,7 +796,7 @@ const ActiveLinksPanel: React.FC<{
                       color="transparent"
                       selected
                       onClick={() => onStop(l.id)}
-                      tooltip="Stop the bundle"
+                      tooltip="Stop this action"
                       style={{ padding: '1px 10px', lineHeight: 1.1 }}
                     >
                       {l.name || 'ACTION'}
@@ -858,9 +858,9 @@ const ActiveLinksPanel: React.FC<{
                     <Box textAlign="center">
                       <Pill
                         onClick={() => onToggleFinish(l.id, !doUntilClimax)}
-                        tooltip="Switch completion mode"
+                        tooltip="Choose whether this action repeats until stopped or ends at climax"
                       >
-                        {doUntilClimax ? 'TO CLIMAX' : 'UNTIL I STOP'}
+                        {doUntilClimax ? 'END AT CLIMAX' : 'REPEAT UNTIL STOPPED'}
                       </Pill>
                     </Box>
                   </Stack.Item>
@@ -919,17 +919,17 @@ const PenisTuningPanel: React.FC<{
     ? climaxModes
     : [{ id: 'outside', name: 'OUTSIDE' }, { id: 'inside', name: 'INSIDE' }];
   return (
-    <Section title="Member settings" style={{ paddingTop: 6, paddingBottom: 6 }}>
+    <Section title="Penis Settings" style={{ paddingTop: 6, paddingBottom: 6 }}>
       <Stack justify="space-between" align="center" wrap>
         {showKnotToggle ? (
           <Stack.Item>
             <Box color="label" style={{ fontSize: 10, textTransform: 'uppercase' }} mb={0.25}>
-              Node
+              Knotting
             </Box>
             <Stack>
               <Stack.Item>
                 <Pill disabled={!canKnot} selected={!!doKnotAction} onClick={canKnot ? onToggleKnot : undefined}>
-                  {doKnotAction ? 'TO NODE' : 'WITHOUT NODE'}
+                  {doKnotAction ? 'KNOT ENABLED' : 'KNOT DISABLED'}
                 </Pill>
               </Stack.Item>
             </Stack>
@@ -940,7 +940,7 @@ const PenisTuningPanel: React.FC<{
         {showClimaxControls ? (
         <Stack.Item>
           <Box color="label" style={{ fontSize: 10, textTransform: 'uppercase' }} mb={0.25} textAlign="right">
-            Where to finish
+            Climax Location
           </Box>
           <Stack justify="end" wrap>
             {modes.map((m) => (
@@ -968,7 +968,7 @@ const ActionsBottomSearch: React.FC<{
     <Section title="Filter" style={{ paddingTop: 6, paddingBottom: 6 }}>
       <Input
         fluid
-        placeholder="Interaction search..."
+        placeholder="Search interactions..."
         value={searchText}
         onChange={(value) => onSearchChange(value)}
       />
@@ -1286,7 +1286,7 @@ const StatusOrganCard: React.FC<{
         {hasOverflow ? (
           <Stack.Item>
             <Pill selected={overflow} onClick={() => onToggleOverflow(entry.id)}>
-              OVERFLOW.
+              ALLOW OVERFLOW
             </Pill>
           </Stack.Item>
         ) : null}
@@ -1294,7 +1294,7 @@ const StatusOrganCard: React.FC<{
       {hasErect && onSetErectMode && (
         <Box mt={0.5}>
           <Box color="label" style={{ fontSize: 10, textTransform: 'uppercase' }} mb={0.25}>
-            Arousal
+            Erection
           </Box>
           <Stack wrap>
             <Stack.Item>
@@ -1309,12 +1309,12 @@ const StatusOrganCard: React.FC<{
             </Stack.Item>
             <Stack.Item>
               <Pill selected={erectMode === 'partial'} onClick={() => onSetErectMode(entry.id, 'partial')}>
-                EXCITED
+                PARTIAL
               </Pill>
             </Stack.Item>
             <Stack.Item>
               <Pill selected={erectMode === 'hard'} onClick={() => onSetErectMode(entry.id, 'hard')}>
-                STRONG
+                HARD
               </Pill>
             </Stack.Item>
           </Stack>
@@ -1326,7 +1326,7 @@ const StatusOrganCard: React.FC<{
             Fullness:{' '}
           </Box>
           <Box as="span" bold>
-            {Math.round(fillTotal)}
+            {Math.round(fillTotal)}%
           </Box>
         </Box>
       )}
@@ -1335,7 +1335,7 @@ const StatusOrganCard: React.FC<{
           {passive.length > 0 && (
             <Box>
               <Box color="label" style={{ fontSize: 10, textTransform: 'uppercase' }}>
-                Effects on the organ
+                Receiving
               </Box>
               {passive.map((l) => (
                 <Box key={l.id} mt={0.25}>
@@ -1353,7 +1353,7 @@ const StatusOrganCard: React.FC<{
           {active.length > 0 && (
             <Box mt={0.5}>
               <Box color="label" style={{ fontSize: 10, textTransform: 'uppercase' }}>
-                Organ acts
+                Acting
               </Box>
               {active.map((l) => (
                 <Box key={l.id} mt={0.25}>
@@ -1391,13 +1391,13 @@ const ArousalPanel: React.FC<{
           Charge:<Box as="span" bold>{charge}</Box>/{chargeMax} ({charge_for_climax} to orgasm)
         </Box>
         <Box style={{ fontSize: 11 }}>
-          Well-being:{' '}
+          Stimulation:{' '}
           <Box as="span" bold>
             {spTierText || 'normal'}
           </Box>
           {overloadActive && (
             <Box color="bad" bold style={{ fontSize: 11 }}>
-              SUPER-STIMULATION
+              OVERSTIMULATED
             </Box>
           )}
         </Box>
@@ -1416,7 +1416,7 @@ const StatusTab: React.FC<{
     return (
       <Section title="Status">
         <Box color="label" textAlign="center">
-          Empty(entries did not arrive)
+          No organ information is available.
         </Box>
       </Section>
     );
@@ -1857,7 +1857,7 @@ const EditorTab: React.FC<{
 
           <Section title={`My custom (${customActions.length})`}>
             {!customActions.length ? (
-              <Box color="label">Still empty.</Box>
+              <Box color="label">You have no custom actions.</Box>
             ) : (
               <Stack vertical>
                 {customActions.map((c) => {
@@ -1887,7 +1887,7 @@ const EditorTab: React.FC<{
         <Stack.Item grow basis="68%">
           <Section title="Options" fill scrollable>
             {!source ? (
-              <Box color="label">Choose a template on the left or your action.</Box>
+              <Box color="label">Choose a template or one of your custom actions.</Box>
             ) : (
               <>
                 <Box mb={1}>
@@ -1936,7 +1936,7 @@ const EditorTab: React.FC<{
                       </Box>
                     ) : (
                       <Box mt={0.5} color="label">
-                        Fields did not arrive(orbackend have not fully delivered the selected action yet).
+                        No editable fields are available for this action.
                       </Box>
                     )
                   ) : (
@@ -1950,7 +1950,7 @@ const EditorTab: React.FC<{
                         }}
                       />
                       <Box mt={0.25} color="label" style={{ fontSize: 10 }}>
-                        InRAW you can editpayload fields. IfJSON is broken — the normal version will be used.
+                        Advanced: edit the action fields as JSON. Invalid JSON will be ignored.
                       </Box>
                     </Box>
                   )}
@@ -1978,7 +1978,7 @@ const EditorTab: React.FC<{
 
                 {isDirty && (
                   <Box mt={0.5} color="label" style={{ fontSize: 10 }}>
-                    Local edits will not be overwritten by updatesUI until saving or changing selection.
+                    Unsaved edits are preserved until you save them or select another action.
                   </Box>
                 )}
               </>
@@ -2070,7 +2070,7 @@ export const EroticRolePlayPanel: React.FC = () => {
       });
   }, [kinkEntries, q, cat]);
   return (
-    <Window title="Satisfy Desires" width={520} height={740}>
+    <Window title="SexCon" width={520} height={740}>
       <Window.Content scrollable>
         <Stack vertical fill>
           <Stack.Item>
@@ -2083,33 +2083,41 @@ export const EroticRolePlayPanel: React.FC = () => {
           <Box style={{ padding: 0, marginTop: 2 }}>
             <Stack justify="center" wrap>
               <Stack.Item style={{ margin: 0 }}>
-                <Pill selected={isArousing} onClick={() => act('freeze_arousal')}>
-                  EXCITE
+                <Pill
+                  selected={isArousing}
+                  onClick={() => act('freeze_arousal')}
+                  tooltip="Allow actions to increase your arousal. Disable this to freeze it at its current value."
+                >
+                  AROUSAL GAIN
                 </Pill>
               </Stack.Item>
               <Stack.Item style={{ margin: 0 }}>
-                <Pill selected={isYielding} onClick={() => act('yield')}>
-                  SUBMIT
+                <Pill
+                  selected={isYielding}
+                  onClick={() => act('yield')}
+                  tooltip="Allow your selected partner to control the pace and intensity of shared actions."
+                >
+                  YIELD CONTROL
                 </Pill>
               </Stack.Item>
               <Stack.Item style={{ margin: 0 }}>
-                <Pill selected={isMoaning} onClick={() => act('set_moaning')}>
-                  MOAN
+                <Pill selected={isMoaning} onClick={() => act('set_moaning')} tooltip="Allow automatic moaning during actions.">
+                  AUTO-MOAN
                 </Pill>
               </Stack.Item>
               <Stack.Item style={{ margin: 0 }}>
-                <Pill selected={isHidden} onClick={() => act('toggle_hidden')}>
-                  SECRETLY
+                <Pill selected={isHidden} onClick={() => act('toggle_hidden')} tooltip="Hide action messages from nearby observers when possible.">
+                  PRIVATE MESSAGES
                 </Pill>
               </Stack.Item>
               <Stack.Item style={{ margin: 0 }}>
-                <Pill selected={isBottomExposed} onClick={() => act('toggle_bottom_exposed')}>
-                  EXPOSED
+                <Pill selected={isBottomExposed} onClick={() => act('toggle_bottom_exposed')} tooltip="Treat your lower-body genitals as exposed and available for actions.">
+                  GENITALS EXPOSED
                 </Pill>
               </Stack.Item>
               <Stack.Item style={{ margin: 0 }}>
-                <Pill selected={isFreeuse} onClick={() => act('toggle_freeuse')}>
-                  FREEUSE
+                <Pill selected={isFreeuse} onClick={() => act('toggle_freeuse')} tooltip="Allow partners to begin eligible actions without positioning or grab requirements. Consent restrictions still apply.">
+                  FREE USE
                 </Pill>
               </Stack.Item>
             </Stack>
@@ -2146,10 +2154,10 @@ export const EroticRolePlayPanel: React.FC = () => {
             ) : activeTab === 'kinks' ? (
               <Stack vertical>
                 <Stack.Item>
-                  <Section title="Fetishes">
+                  <Section title="Interaction Preferences">
                     <Stack vertical>
                       <Stack.Item>
-                        <Input fluid placeholder="Search by links..." value={q} onChange={(v) => setQ(v)} />
+                        <Input fluid placeholder="Search preferences..." value={q} onChange={(v) => setQ(v)} />
                       </Stack.Item>
                       {categories.length > 1 && (
                         <Stack.Item mt={0.5}>
@@ -2171,11 +2179,11 @@ export const EroticRolePlayPanel: React.FC = () => {
                   <Section title={`Settings (${filteredKinks.length}/${kinkEntries.length})`}>
                     {!kinkEntries.length ? (
                       <Box color="label" textAlign="center">
-                        Empty(entries did not arrive)
+                        No interaction preferences are available.
                       </Box>
                     ) : !filteredKinks.length ? (
                       <Box color="label" textAlign="center">
-                        Nothing found with the filters.
+                        No preferences match these filters.
                       </Box>
                     ) : (
                       filteredKinks.map((k) => {
@@ -2225,7 +2233,7 @@ export const EroticRolePlayPanel: React.FC = () => {
               />
             ) : (
               <Box color="label" style={{ padding: 6 }}>
-                Tab content later.
+                This tab is unavailable.
               </Box>
             )}
           </Stack.Item>

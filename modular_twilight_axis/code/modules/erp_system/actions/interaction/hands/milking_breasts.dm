@@ -7,7 +7,7 @@
 	inject_timing = INJECT_CONTINUOUS
 	inject_source = INJECT_FROM_PASSIVE
 	inject_target_mode = INJECT_CONTAINER
-	message_start  = "{actor} puts his hands on {partner}'s breast."
-	message_tick   = "{actor} {force} and {speed} move their hands over {partner}'s chest."
-	message_finish = "{actor} removes his hands from {partner}'s chest."
+	message_start  = "{actor} puts {actor_their} hands on {partner}'s breast."
+	message_tick   = "{actor} {force} and {speed} move {actor_their} hands over {partner}'s chest."
+	message_finish = "{actor} removes {actor_their} hands from {partner}'s chest."
 	message_climax_passive = "{partner} feels the breasts releasing milk."

@@ -3,8 +3,8 @@
 
 	name = "Anal sex"
 	required_target_organ = SEX_ORGAN_ANUS
-	message_start = "{actor} puts his penis on {partner}'s anal ring."
+	message_start = "{actor} puts {actor_their} penis on {partner}'s anal ring."
 	message_tick = "{actor} {force} and {speed} fuck {partner} in the ass."
-	message_finish =  "{actor} pulls his dick out of {partner}'s ass."
+	message_finish =  "{actor} pulls {actor_their} dick out of {partner}'s ass."
 	message_climax_active = "{actor} cums in {partner}'s ass."
-	message_climax_passive = "{partner} cums squeezing his anus around {actor}'s dick."
+	message_climax_passive = "{partner} cums squeezing {partner_their} anus around {actor}'s dick."

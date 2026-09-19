@@ -3,8 +3,8 @@
 
 	name = "Vaginal sex"
 	required_target_organ = SEX_ORGAN_VAGINA
-	message_start = "{actor} puts his penis to {partner}'s womb."
+	message_start = "{actor} puts {actor_their} penis to {partner}'s womb."
 	message_tick = "{actor} {force} and {speed} fuck {partner} in the pussy."
-	message_finish =  "{actor} pulls his penis out of {partner}'s vagina."
+	message_finish =  "{actor} pulls {actor_their} penis out of {partner}'s vagina."
 	message_climax_active = "{actor} cums into {partner}'s womb."
-	message_climax_passive = "{partner} cums squeezing her pussy around {actor}'s dick."
+	message_climax_passive = "{partner} cums squeezing {partner_their} pussy around {actor}'s dick."

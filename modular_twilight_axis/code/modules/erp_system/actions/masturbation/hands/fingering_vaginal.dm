@@ -3,6 +3,6 @@
 
 	name = "Vaginal fingering"
 	required_target_organ = SEX_ORGAN_VAGINA
-	message_start = "{actor} puts his hand on his vagina, penetrating his finger."
+	message_start = "{actor} puts {actor_their} hand on {actor_their} vagina, penetrating {actor_their} finger."
 	message_tick = "{actor} {force} and {speed} moves a finger in the vagina."
-	message_finish =  "{actor} removes his hand from his crotch."
+	message_finish =  "{actor} removes {actor_their} hand from {actor_their} crotch."

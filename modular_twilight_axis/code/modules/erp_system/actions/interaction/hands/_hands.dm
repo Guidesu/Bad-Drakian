@@ -4,5 +4,5 @@
 	required_init_organ = SEX_ORGAN_HANDS
 	require_same_tile = FALSE
 
-	message_climax_active = "{actor} cums under himself."
-	message_climax_passive = "{partner} cums under himself."
+	message_climax_active = "{actor} cums under {actor_theirself}."
+	message_climax_passive = "{partner} cums under {partner_theirself}."

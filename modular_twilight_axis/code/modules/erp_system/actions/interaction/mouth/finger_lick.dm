@@ -5,4 +5,4 @@
 	require_same_tile = FALSE
 	message_start = "{actor} places {partner}'s finger in mouth."
 	message_tick = "{actor} {force} and {speed} licks {partner}'s finger."
-	message_finish =  "{actor} pulls {partner}'s finger out of his mouth."
+	message_finish =  "{actor} pulls {partner}'s finger out of {actor_their} mouth."

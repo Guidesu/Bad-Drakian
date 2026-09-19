@@ -221,5 +221,6 @@
 
 /obj/item/candle/silver/lit
 	icon_state = "scandle_lit"
+	start_lit = TRUE
 
 #undef CANDLE_LUMINOSITY

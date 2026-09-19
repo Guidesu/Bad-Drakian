@@ -8,7 +8,7 @@
 	inject_source = INJECT_FROM_PASSIVE
 	inject_target_mode = INJECT_CONTAINER
 
-	message_start  = "{actor} puts his hands on {partner}'s cock."
-	message_tick   = "{actor} {force} and {speed} run their hands over {partner}'s penis."
-	message_finish = "{actor} removes his hands from {partner}'s penis."
+	message_start  = "{actor} puts {actor_their} hands on {partner}'s cock."
+	message_tick   = "{actor} {force} and {speed} run {actor_their} hands over {partner}'s penis."
+	message_finish = "{actor} removes {actor_their} hands from {partner}'s penis."
 	message_climax_passive = "{partner} cums in {actor}'s hands."

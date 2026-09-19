@@ -5,4 +5,4 @@
 	action_tags = list("spanking")
 	message_start = "{actor} places hands on {partner}'s buttocks."
 	message_tick = "{actor} {force} and {speed} spanks {aggr?buttocks} {partner}."
-	message_finish =  "{actor} removes his hands from {partner}'s buttocks."
+	message_finish =  "{actor} removes {actor_their} hands from {partner}'s buttocks."

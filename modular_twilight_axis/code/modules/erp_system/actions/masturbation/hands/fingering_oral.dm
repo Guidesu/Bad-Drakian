@@ -3,6 +3,6 @@
 
 	name = "Fingering oral"
 	required_target_organ = SEX_ORGAN_MOUTH
-	message_start = "{actor} touches his lips with {dullahan?separated head :}finger."
-	message_tick = "{actor} {force} and {speed} suck on his finger."
-	message_finish =  "{actor} pulls his finger out of the mouth of {dullahan?his severed head :}."
+	message_start = "{actor} touches {actor_their} lips with {dullahan?separated head :}finger."
+	message_tick = "{actor} {force} and {speed} suck on {actor_their} finger."
+	message_finish =  "{actor} pulls {actor_their} finger out of the mouth of {dullahan?the severed head :}."

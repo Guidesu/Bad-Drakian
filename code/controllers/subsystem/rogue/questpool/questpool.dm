@@ -20,10 +20,17 @@ SUBSYSTEM_DEF(questpool)
 	init_quest_factions()
 	for(var/obj/effect/landmark/quest_spawner/landmark as anything in GLOB.quest_landmarks_list)
 		register_landmark(landmark)
-	// Front-load every region to its full target so roundstart has a healthy mix.
+	return ..()
+
+/// Populate the initial contract pool once mapping has installed the active map's
+/// threat regions. Questpool initializes earlier, when that region list is empty.
+/datum/controller/subsystem/questpool/proc/on_map_ready()
+	landmarks_by_type.Cut()
+	for(var/obj/effect/landmark/quest_spawner/landmark as anything in GLOB.quest_landmarks_list)
+		register_landmark(landmark)
+	rebuild_region_counts()
 	regen_kill_targets(total_kill_target())
 	regen_fetch_targets()
-	return ..()
 
 /datum/controller/subsystem/questpool/proc/get_nearest_ledger_turf(turf/reference)
 	var/turf/closest

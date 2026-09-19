@@ -45,7 +45,7 @@
 	action_tags = list("testicles")
 	active_arousal_coeff = 0.8
 	passive_arousal_coeff = 1.25
-	message_start = "{actor} lowers their mouth to {partner}'s balls."
+	message_start = "{actor} lowers {actor_their} mouth to {partner}'s balls."
 	message_tick = "{actor} {force} and {speed} sucks and laps at {partner}'s balls."
 	message_finish = "{actor} releases {partner}'s balls."
 
@@ -56,8 +56,8 @@
 	require_same_tile = FALSE
 	active_arousal_coeff = 0.8
 	passive_arousal_coeff = 0.8
-	message_start = "{actor} presses their tongue to {partner}'s body."
-	message_tick = "{actor} {force} and {speed} bathes {partner}'s body with their tongue."
+	message_start = "{actor} presses {actor_their} tongue to {partner}'s body."
+	message_tick = "{actor} {force} and {speed} bathes {partner}'s body with {actor_their} tongue."
 	message_finish = "{actor} finishes licking {partner}'s body."
 
 /datum/erp_action/other/hands/crossbowjob
@@ -125,9 +125,9 @@
 	active_arousal_coeff = 1.1
 	passive_arousal_coeff = 1.2
 	passive_pain_coeff = 1.1
-	message_start = "{actor} presses their penis into {partner}'s slit."
+	message_start = "{actor} presses {actor_their} penis into {partner}'s slit."
 	message_tick = "{actor} {force} and {speed} fucks {partner}'s slit."
-	message_finish = "{actor} pulls their penis from {partner}'s slit."
+	message_finish = "{actor} pulls {actor_their} penis from {partner}'s slit."
 	message_climax_active = "{actor} cums inside {partner}'s slit."
 	message_climax_passive = "{partner} cums around {actor}'s penis."
 
@@ -140,7 +140,7 @@
 	allow_sex_on_move = TRUE
 	active_arousal_coeff = 1.2
 	passive_arousal_coeff = 1.35
-	message_tick = "{actor} {force} and {speed} grinds their knot inside {partner}'s vagina."
+	message_tick = "{actor} {force} and {speed} grinds {actor_their} knot inside {partner}'s vagina."
 
 /datum/erp_action/other/penis/knot_grinding_anal
 	abstract = FALSE
@@ -152,7 +152,7 @@
 	active_arousal_coeff = 1.2
 	passive_arousal_coeff = 1.2
 	passive_pain_coeff = 1.2
-	message_tick = "{actor} {force} and {speed} grinds their knot inside {partner}'s ass."
+	message_tick = "{actor} {force} and {speed} grinds {actor_their} knot inside {partner}'s ass."
 
 /datum/erp_action/other/penis/knot_grinding_oral
 	abstract = FALSE
@@ -164,7 +164,7 @@
 	active_arousal_coeff = 1.2
 	passive_arousal_coeff = 0.3
 	passive_pain_coeff = 1.4
-	message_tick = "{actor} {force} and {speed} grinds their knot in {partner}'s mouth."
+	message_tick = "{actor} {force} and {speed} grinds {actor_their} knot in {partner}'s mouth."
 
 /datum/erp_action/self/hands/toy_handling
 	abstract = FALSE
@@ -173,9 +173,9 @@
 	required_item_tags = list("dildo")
 	active_arousal_coeff = 0.35
 	passive_arousal_coeff = 0
-	message_start = "{actor} takes hold of their toy."
-	message_tick = "{actor} {force} and {speed} strokes their toy."
-	message_finish = "{actor} stops stroking their toy."
+	message_start = "{actor} takes hold of {actor_their} toy."
+	message_tick = "{actor} {force} and {speed} strokes {actor_their} toy."
+	message_finish = "{actor} stops stroking {actor_their} toy."
 
 /datum/erp_action/self/hands/vagina_container
 	abstract = FALSE
@@ -186,6 +186,6 @@
 	inject_target_mode = INJECT_CONTAINER
 	active_arousal_coeff = 1.1
 	passive_arousal_coeff = 1.1
-	message_start = "{actor} positions a container beneath their vagina."
-	message_tick = "{actor} {force} and {speed} pleasures their vagina over the container."
-	message_finish = "{actor} draws their hand away from the container."
+	message_start = "{actor} positions a container beneath {actor_their} vagina."
+	message_tick = "{actor} {force} and {speed} pleasures {actor_their} vagina over the container."
+	message_finish = "{actor} draws {actor_their} hand away from the container."

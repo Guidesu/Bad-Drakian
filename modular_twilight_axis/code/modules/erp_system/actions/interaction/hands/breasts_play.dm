@@ -3,6 +3,6 @@
 
 	name = "Paw the chest"
 	required_target_organ = SEX_ORGAN_BREASTS
-	message_start = "{actor} places his hands on the chest of {partner}."
+	message_start = "{actor} places {actor_their} hands on the chest of {partner}."
 	message_tick = "{actor} {force} and {speed} paws {partner}'s breasts."
-	message_finish =  "{actor} removes his hands from {partner}'s chest."
+	message_finish =  "{actor} removes {actor_their} hands from {partner}'s chest."

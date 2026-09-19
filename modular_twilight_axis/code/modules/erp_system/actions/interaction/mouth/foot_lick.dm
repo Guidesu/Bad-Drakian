@@ -3,6 +3,6 @@
 	name = "Lick legs"
 	required_target_organ = SEX_ORGAN_LEGS
 	require_same_tile = FALSE
-	message_start = "{actor} puts his lips on {partner}'s legs."
+	message_start = "{actor} puts {actor_their} lips on {partner}'s legs."
 	message_tick = "{actor} {force} and {speed} licking {partner}'s feet."
-	message_finish =  "{actor} removes his face from {partner}'s legs."
+	message_finish =  "{actor} removes {actor_their} face from {partner}'s legs."

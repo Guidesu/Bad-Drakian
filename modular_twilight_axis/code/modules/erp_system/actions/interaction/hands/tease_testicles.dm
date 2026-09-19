@@ -6,4 +6,4 @@
 	require_same_tile = FALSE
 	message_start = "{actor} touches {partner}'s testicles with hands."
 	message_tick = "{actor} {force} and {speed} fingers {partner}'s testicles."
-	message_finish =  "{actor} removes his hands from {partner}'s testicles."
+	message_finish =  "{actor} removes {actor_their} hands from {partner}'s testicles."

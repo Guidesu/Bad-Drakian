@@ -79,8 +79,8 @@
 
 /datum/ccg_card/unique_azuria_grand_duke
 	id = "unique_azuria_grand_duke"
-	name = "Grand Duke"
-	desc = "Hero. The ducal banner gathers the infantry line."
+	name = "Sovereign Count"
+	desc = "Hero. The sovereign banner gathers the infantry line."
 	row = CCG_ROW_INFANTRY
 	power = 8
 	rarity = CCG_RARITY_UNIQUE
