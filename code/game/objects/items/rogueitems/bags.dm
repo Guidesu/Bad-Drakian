@@ -140,6 +140,23 @@
 	/obj/item/ash
 	)
 
+/// Ratwood's Acquired Tastes stash. Kept as one bundle so selecting the virtue
+/// does not scatter its equipment across the round-start spawn area.
+/obj/item/storage/roguebag/fetish
+	name = "intimate gear bag"
+	desc = "A discreet sack containing equipment for consensual intimate play."
+	populate_contents = list(
+		/obj/item/clothing/mask/rogue/blindfold,
+		/obj/item/chastity/chastity_cage,
+		/obj/item/chastity/chastity_belt,
+		/obj/item/reagent_containers/glass/bottle/rogue/emberwine,
+		/obj/item/dildo/wood,
+		/obj/item/natural/cloth,
+		/obj/item/rope/chain,
+		/obj/item/rogueweapon/whip,
+		/obj/item/branding_iron,
+	)
+
 /obj/item/storage/roguebag/leechbait
 	populate_contents = list(
 	/obj/item/bait/leech,

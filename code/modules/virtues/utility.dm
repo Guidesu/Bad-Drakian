@@ -1,3 +1,10 @@
+/datum/virtue/utility/acquired_tastes
+	name = "Acquired Tastes"
+	desc = "I keep a discreet collection of equipment for consensual intimate play."
+	ui_fa_icon = "mask"
+	custom_text = "Adds a bag of intimate gear, including a small bottle of emberwine, to your stash."
+	added_stashed_items = list("Bag of Intimate Gear" = /obj/item/storage/roguebag/fetish)
+
 /datum/virtue/utility/noble
 	name = "Nobility"
 	desc = "By birth, blade or brain, I am noble known to the royalty of these lands, and have all the benefits associated with it. I've cleverly stashed away a healthy amount of coinage, alongside a familial heirloom."
