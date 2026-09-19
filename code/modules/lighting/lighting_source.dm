@@ -269,12 +269,12 @@
 			source_turf = top_atom
 			pixel_turf = source_turf
 			update = TRUE
-	else if (top_atom.loc != source_turf)
-		source_turf = top_atom.loc
-		pixel_turf = get_turf_pixel(top_atom)
+	else if (get_turf(top_atom) != source_turf)
+		source_turf = get_turf(top_atom)
+		pixel_turf = get_turf_pixel(top_atom) || source_turf
 		update = TRUE
 	else
-		var/P = get_turf_pixel(top_atom)
+		var/P = get_turf_pixel(top_atom) || source_turf
 		if (P != pixel_turf)
 			pixel_turf = P
 			update = TRUE
@@ -349,10 +349,13 @@
 			if (!impacted_turf.lighting_corners_initialised)
 				impacted_turf.generate_missing_corners()
 			cached_corners = impacted_turf.corners
-			corners[cached_corners[1]] = 0
-			corners[cached_corners[2]] = 0
-			corners[cached_corners[3]] = 0
-			corners[cached_corners[4]] = 0
+			// Non-dynamically lit turfs deliberately do not generate corners.
+			// Multiz visibility can include those turfs in this list, so skip them.
+			if(length(cached_corners) < 4)
+				continue
+			for(var/datum/lighting_corner/cached_corner as anything in cached_corners)
+				if(cached_corner)
+					corners[cached_corner] = 0
 		source_turf.luminosity = oldlum
 
 	LAZYINITLIST(src.effect_str)
