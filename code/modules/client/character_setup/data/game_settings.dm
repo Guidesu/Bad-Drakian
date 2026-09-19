@@ -3,6 +3,7 @@
 		"tgui_theme" = get_tgui_theme_display_name(),
 		"parchment_skin" = get_parchment_skin_display_name(),
 		"statbrowser_theme" = get_statbrowser_theme_display_name(),
+		"interface_font" = interface_font,
 		"tgui_lock" = tgui_lock,
 		"ambientocclusion" = ambientocclusion,
 		"windowflashing" = windowflashing,
@@ -42,6 +43,10 @@
 
 /datum/preferences/proc/get_statbrowser_theme_display_name()
 	return GLOB.statbrowser_themes[statbrowser_theme] || GLOB.statbrowser_themes["dark"]
+
+/datum/preferences/proc/get_interface_font()
+	interface_font = sanitize_inlist(interface_font, GLOB.interface_fonts, "Mookmania")
+	return interface_font
 
 /datum/preferences/proc/ui_data_admin_prefs(mob/user)
 	if(!user.client.holder)

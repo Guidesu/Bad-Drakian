@@ -140,6 +140,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["tgui_theme"]			>> tgui_theme
 	S["parchment_skin"]		>> parchment_skin
 	S["statbrowser_theme"]	>> statbrowser_theme
+	S["interface_font"]	>> interface_font
 	S["preferred_ui_language"] >> preferred_ui_language
 	S["windowflash"]		>> windowflashing
 	S["be_special"]		>> be_special
@@ -309,6 +310,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	tgui_theme			= sanitize_inlist(tgui_theme, GLOB.tgui_themes, initial(tgui_theme))
 	parchment_skin		= sanitize_inlist(parchment_skin, GLOB.parchment_skins, "leatherbound")
 	statbrowser_theme	= sanitize_inlist(statbrowser_theme, GLOB.statbrowser_themes, "dark")
+	interface_font		= sanitize_inlist(interface_font, GLOB.interface_fonts, "Mookmania")
 	exp					= SANITIZE_LIST(exp)
 	menuoptions			= SANITIZE_LIST(menuoptions)
 	be_special			= SANITIZE_LIST(be_special)
@@ -427,6 +429,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["tgui_theme"], tgui_theme)
 	WRITE_FILE(S["parchment_skin"], parchment_skin)
 	WRITE_FILE(S["statbrowser_theme"], statbrowser_theme)
+	WRITE_FILE(S["interface_font"], interface_font)
 	WRITE_FILE(S["preferred_ui_language"], preferred_ui_language)
 	WRITE_FILE(S["windowflash"], windowflashing)
 	WRITE_FILE(S["be_special"], be_special)

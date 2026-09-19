@@ -528,6 +528,7 @@ GLOBAL_LIST_EMPTY(external_rsc_urls)
 
 	//TA EDIT END
 	apply_statbrowser_theme()
+	prefs?.apply_interface_font()
 	addtimer(CALLBACK(src, PROC_REF(check_panel_loaded)), 30 SECONDS)
 
 	connection_time = world.time

@@ -10,7 +10,8 @@ export type AllPagesData = {
 export type GameSettingsData = {
   tgui_theme: string;
   parchment_skin: string;
-  statbrowser_theme: string;
+	statbrowser_theme: string;
+	interface_font: string;
   tgui_lock: BooleanLike;
   ambientocclusion: BooleanLike;
   windowflashing: BooleanLike;

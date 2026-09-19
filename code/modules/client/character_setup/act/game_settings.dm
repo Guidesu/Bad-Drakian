@@ -34,6 +34,10 @@
 			cycle_statbrowser_theme()
 			user.client?.apply_statbrowser_theme()
 			return TRUE
+		if("interface_font")
+			cycle_interface_font()
+			apply_interface_font()
+			return TRUE
 		if("tgui_lock")
 			tgui_lock = !tgui_lock
 			return TRUE
@@ -104,6 +108,25 @@
 	if(!idx)
 		idx = 1
 	statbrowser_theme = keys[(idx % keys.len) + 1]
+
+/datum/preferences/proc/cycle_interface_font()
+	var/list/fonts = GLOB.interface_fonts
+	var/list/keys = list()
+	for(var/key in fonts)
+		keys += key
+	var/index = keys.Find(get_interface_font())
+	if(!index)
+		index = 1
+	interface_font = keys[(index % keys.len) + 1]
+
+/datum/preferences/proc/apply_interface_font()
+	if(!parent)
+		return
+	var/font = get_interface_font()
+	winset(parent, "mapwindow.map", "font-family=\"[font]\"")
+	winset(parent, "outputwindow.input", "font-family=\"[font]\"")
+	winset(parent, "output_legacy.output", "font-family=\"[font]\"")
+	winset(parent, "statwindow.statbrowser", "font-family=\"[font]\"")
 
 // Open the theme picker with live preview
 /datum/preferences/proc/setTguiStyle(mob/user)

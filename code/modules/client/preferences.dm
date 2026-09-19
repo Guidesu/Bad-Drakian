@@ -40,6 +40,9 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/tgui_theme = "azure_gilbranze" // TA EDIT
 	var/parchment_skin = "leatherbound"
 	var/statbrowser_theme = "dark"
+	/// Client-wide typeface for runechat and map/HUD text. Language-specific
+	/// typefaces remain untouched so their scripts remain legible.
+	var/interface_font = "Mookmania"
 	var/windowflashing = TRUE
 	var/verbose_character_creator = TRUE // Output chat messages for every change you make as a psuedo-history
 

@@ -49,7 +49,8 @@ const Settings = () => {
   const {
     tgui_theme,
     parchment_skin,
-    statbrowser_theme,
+		statbrowser_theme,
+		interface_font,
     tgui_lock,
     ambientocclusion,
     windowflashing,
@@ -102,14 +103,22 @@ const Settings = () => {
             {parchment_skin}
           </Button>
         </LabeledGridList.Item>
-        <LabeledGridList.Item
-          label="Panel Theme"
+		<LabeledGridList.Item
+			label="Panel Theme"
           tooltip="UI Theme for Side Panel"
         >
           <Button onClick={() => act('statbrowser_theme')}>
             {statbrowser_theme}
           </Button>
-        </LabeledGridList.Item>
+		</LabeledGridList.Item>
+		<LabeledGridList.Item
+			label="In-Game Font"
+			tooltip="Typeface for Runechat, HUD/map text, and built-in client panels."
+		>
+			<Button onClick={() => act('interface_font')}>
+				{interface_font}
+			</Button>
+		</LabeledGridList.Item>
         <LabeledGridList.Item
           label="TGUI Monitors"
           tooltip="Lock TGUI windows to primary monitor or not"

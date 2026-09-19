@@ -21,3 +21,14 @@ GLOBAL_LIST_INIT(statbrowser_themes, list(
 	"dark" = "Matte Black",
 	"light" = "Leatherbound",
 ))
+
+/// Fonts shipped with or expected by the client. Restricting this list keeps
+/// per-client maptext rendering deterministic and prevents markup injection.
+GLOBAL_LIST_INIT(interface_fonts, list(
+	"Mookmania" = "Mookmania",
+	"Arial" = "Arial",
+	"Verdana" = "Verdana",
+	"Georgia" = "Georgia",
+	"Times New Roman" = "Times New Roman",
+	"Courier New" = "Courier New",
+))
