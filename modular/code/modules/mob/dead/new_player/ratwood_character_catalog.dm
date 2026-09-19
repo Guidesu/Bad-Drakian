@@ -230,6 +230,7 @@
 	desc_title = "Harpy"
 	desc = "Nomadic songbirds from the cliffs of Etrusca, renowned as couriers, musicians, and collectors of bright treasures."
 	race_bonus = list(STAT_CONSTITUTION = -3, STAT_STRENGTH = -2, STAT_PERCEPTION = 1, STAT_INTELLIGENCE = 1, STAT_SPEED = 2)
+	inherent_traits = list(TRAIT_NOFALLDAMAGE1, TRAIT_STRONGBITE)
 	body_marking_sets = list(
 		/datum/body_marking_set/none,
 		/datum/body_marking_set/belly,
@@ -240,6 +241,127 @@
 	return TRUE
 /datum/species/harpy/qualifies_for_rank(rank, list/features)
 	return TRUE
+
+/datum/species/harpy/on_species_gain(mob/living/carbon/C, datum/species/old_species)
+	. = ..()
+	if(C.mind)
+		if(!C.mind.has_spell(/datum/action/cooldown/spell/harpy_flight))
+			C.mind.AddSpell(new /datum/action/cooldown/spell/harpy_flight)
+		if(!C.mind.has_spell(/datum/action/cooldown/spell/harpy_song))
+			C.mind.AddSpell(new /datum/action/cooldown/spell/harpy_song)
+
+/datum/species/harpy/on_species_loss(mob/living/carbon/C)
+	if(C.mind)
+		C.mind.RemoveSpell(/datum/action/cooldown/spell/harpy_flight)
+		C.mind.RemoveSpell(/datum/action/cooldown/spell/harpy_song)
+	C.remove_status_effect(/datum/status_effect/debuff/harpy_flight)
+	return ..()
+
+/datum/action/cooldown/spell/harpy_flight
+	name = "Harpy Flight"
+	desc = "Take flight on your natural wings. Armor, restraints, or exhaustion prevent takeoff."
+	button_icon = 'icons/mob/actions/roguespells.dmi'
+	button_icon_state = "zad"
+	click_to_activate = FALSE
+	charge_required = FALSE
+	cooldown_time = 1 SECONDS
+	spell_requirements = SPELL_REQUIRES_HUMAN
+
+/datum/action/cooldown/spell/harpy_flight/cast(atom/cast_on)
+	. = ..()
+	var/mob/living/carbon/human/harpy = owner
+	if(!istype(harpy))
+		return FALSE
+	if(harpy.has_status_effect(/datum/status_effect/debuff/harpy_flight))
+		harpy.remove_status_effect(/datum/status_effect/debuff/harpy_flight)
+		return TRUE
+	if(harpy.highest_ac_worn() != ARMOR_CLASS_NONE)
+		to_chat(harpy, span_warning("My armor is too heavy for flight."))
+		return FALSE
+	if(harpy.buckled || harpy.pulledby || harpy.restrained(ignore_grab = FALSE))
+		to_chat(harpy, span_warning("I cannot take flight while restrained or held."))
+		return FALSE
+	if(!(harpy.mobility_flags & MOBILITY_STAND))
+		to_chat(harpy, span_warning("I need firm footing before I can take flight."))
+		return FALSE
+	if(harpy.stamina >= harpy.max_stamina)
+		to_chat(harpy, span_warning("I am too exhausted to take flight."))
+		return FALSE
+	harpy.visible_message(span_notice("[harpy] spreads [harpy.p_their()] wings and takes flight."), span_notice("I spread my wings and take flight."))
+	harpy.apply_status_effect(/datum/status_effect/debuff/harpy_flight)
+	return TRUE
+
+/datum/status_effect/debuff/harpy_flight
+	id = "harpy_flight"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/harpy_flight
+	tick_interval = 10
+
+/datum/status_effect/debuff/harpy_flight/on_apply()
+	. = ..()
+	var/mob/living/carbon/human/harpy = owner
+	if(!istype(harpy))
+		return FALSE
+	harpy.movement_type |= FLYING
+	ADD_TRAIT(harpy, TRAIT_SPELLCOCKBLOCK, STATUS_EFFECT_TRAIT)
+	animate(harpy, pixel_y = harpy.pixel_y + 3, time = 6, loop = -1)
+	animate(pixel_y = harpy.pixel_y - 3, time = 6)
+	return TRUE
+
+/datum/status_effect/debuff/harpy_flight/tick()
+	. = ..()
+	var/mob/living/carbon/human/harpy = owner
+	if(!istype(harpy))
+		return
+	var/athletics = max(harpy.get_skill_level(/datum/skill/misc/athletics), SKILL_LEVEL_NOVICE)
+	harpy.stamina_add(max(3, 10 - athletics))
+	if(harpy.buckled || harpy.pulledby || !(harpy.mobility_flags & MOBILITY_STAND) || harpy.stamina >= harpy.max_stamina)
+		to_chat(harpy, span_warning("I can no longer remain airborne."))
+		harpy.remove_status_effect(type)
+
+/datum/status_effect/debuff/harpy_flight/on_remove()
+	var/mob/living/carbon/human/harpy = owner
+	if(istype(harpy))
+		harpy.movement_type &= ~FLYING
+		REMOVE_TRAIT(harpy, TRAIT_SPELLCOCKBLOCK, STATUS_EFFECT_TRAIT)
+		animate(harpy)
+		var/turf/landing_turf = get_turf(harpy)
+		landing_turf?.zFall(harpy)
+		harpy.visible_message(span_notice("[harpy] folds [harpy.p_their()] wings and lands."), span_notice("I fold my wings and land."))
+	return ..()
+
+/atom/movable/screen/alert/status_effect/debuff/harpy_flight
+	name = "Flying"
+	desc = "Your wings keep you above the ground at a steady stamina cost."
+	icon_state = "muscles"
+
+/obj/item/rogue/instrument/vocals/harpy
+	name = "harpy song"
+	desc = "A harpy's natural singing voice."
+
+/datum/action/cooldown/spell/harpy_song
+	name = "Harpy Song"
+	desc = "Use your natural voice as an instrument."
+	button_icon = 'icons/mob/actions/roguespells.dmi'
+	button_icon_state = "love"
+	click_to_activate = FALSE
+	charge_required = FALSE
+	cooldown_time = 2 SECONDS
+	spell_requirements = SPELL_REQUIRES_HUMAN
+	var/obj/item/rogue/instrument/vocals/harpy/vocals
+
+/datum/action/cooldown/spell/harpy_song/cast(atom/cast_on)
+	. = ..()
+	var/mob/living/carbon/human/harpy = owner
+	if(!istype(harpy))
+		return FALSE
+	if(!vocals || QDELETED(vocals))
+		vocals = new(harpy)
+	vocals.attack_self(harpy)
+	return TRUE
+
+/datum/action/cooldown/spell/harpy_song/Destroy()
+	QDEL_NULL(vocals)
+	return ..()
 
 /mob/living/carbon/human/species/construct/metal/porcelain
 	race = /datum/species/construct/metal/porcelain
