@@ -145,10 +145,6 @@
 			var/const/SKILL_NO_FAIL = SKILL_LEVEL_APPRENTICE
 			/// Each level in tanning/sewing reduces the skill chance by this much, so that at SKILL_NO_FAIL you don't fail anymore.
 			var/const/FAIL_REDUCTION_PER_LEVEL = BASE_FAIL_CHANCE / SKILL_NO_FAIL
-			/// The damage done to an item when sewing fails while entirely unskilled.
-			var/const/BASE_SEW_DAMAGE = 30
-			/// Each level in either tanning or sewing reduces the damage caused by a failure by this many points
-			var/const/DAMAGE_REDUCTION_PER_LEVEL = 5
 			/// The base integrity repaired when sewing succeeds while entirely unskilled.
 			var/const/BASE_SEW_REPAIR = 10
 			/// The additional integrity repaired per combined level in sewing/tanning.
@@ -180,33 +176,27 @@
 				failed = FALSE // Make sure they can't fail but let them suffer sewtime
 			if(!do_after(user, sewtime, target = I))
 				return
+			var/repair_amount = BASE_SEW_REPAIR + skill * SEW_REPAIR_PER_LEVEL
 			if(failed)
-				// We do DAMAGE_REDUCTION_PER_LEVEL less damage per level.
-				// You could write this as I.obj_integrity - BASE_SEW_DAMAGE + (skill * DAMAGE_REDUCTION_PER_LEVEL)
-				// but that's less obvious and makes it look like it could repair it if your skill was high enough (false).
-				I.obj_integrity = max(0, I.obj_integrity - (BASE_SEW_DAMAGE - (skill * DAMAGE_REDUCTION_PER_LEVEL)))
-				user.visible_message(span_info("[user] damages [I] due to a lack of skill!"))
-				playsound(src, 'sound/foley/cloth_rip.ogg', 50, TRUE)
+				repair_amount *= 0.5
+				user.visible_message(span_info("[user] makes a little progress repairing [I]."))
 				if(XP_ON_FAIL > 0)
 					user.mind.add_sleep_experience(/datum/skill/craft/sewing, user.STAINT * XP_ON_FAIL)
-				if(do_after(user, AUTO_SEW_DELAY, target = I))
-					attack_obj(I, user)
-				return
 			else
-				playsound(loc, 'sound/foley/sewflesh.ogg', 50, TRUE, -2)
 				user.visible_message(span_info("[user] repairs [I]!"))
-				if(I.body_parts_covered != I.body_parts_covered_dynamic)
-					user.visible_message(span_info("[user] repairs [I]'s coverage!"))
-					I.repair_coverage()
 				if(XP_ON_SUCCESS > 0)
 					user.mind.add_sleep_experience(/datum/skill/craft/sewing, user.STAINT * XP_ON_SUCCESS)
-				I.obj_integrity = min(I.obj_integrity + BASE_SEW_REPAIR + skill * SEW_REPAIR_PER_LEVEL, I.max_integrity)
-				if(I.obj_broken && istype(I, /obj/item) && I.obj_integrity >= I.max_integrity)
-					var/obj/item/cloth = I
-					cloth.obj_fix()
-					return
-				if(do_after(user, AUTO_SEW_DELAY, target = I))
-					attack_obj(I, user)
+			playsound(loc, 'sound/foley/sewflesh.ogg', 50, TRUE, -2)
+			if(I.body_parts_covered != I.body_parts_covered_dynamic)
+				user.visible_message(span_info("[user] repairs [I]'s coverage!"))
+				I.repair_coverage()
+			I.obj_integrity = min(I.obj_integrity + repair_amount, I.max_integrity)
+			if(I.obj_broken && istype(I, /obj/item) && I.obj_integrity >= I.max_integrity)
+				var/obj/item/cloth = I
+				cloth.obj_fix()
+				return
+			if(do_after(user, AUTO_SEW_DELAY, target = I))
+				attack_obj(I, user)
 		return
 	return ..()
 

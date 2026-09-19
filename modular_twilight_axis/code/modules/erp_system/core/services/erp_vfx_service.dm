@@ -208,14 +208,7 @@
 
 /// Spawns hearts VFX.
 /datum/erp_vfx_service/proc/spawn_hearts(mob/living/carbon/human/user)
-	if(!istype(user))
-		return
-
-	for(var/i in 1 to rand(1, 3))
-		if(!user.cmode)
-			new /obj/effect/temp_visual/heart/sex_effects(get_turf(user))
-		else
-			new /obj/effect/temp_visual/heart/sex_effects/red_heart(get_turf(user))
+	return
 
 /// Converts zone key to bodyzone const.
 /datum/erp_vfx_service/proc/zone_key_to_bodyzone(zone)
