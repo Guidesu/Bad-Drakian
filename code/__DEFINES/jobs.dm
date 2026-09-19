@@ -179,7 +179,7 @@
 	"Antagonists" = JCOLOR_ANTAGONIST,\
 )
 
-// Ducal Family
+// Sovereign Family
 #define JDO_LORD 1
 #define JDO_LADY 1.1
 #define JDO_PRINCE 1.2

@@ -525,7 +525,7 @@ export const MigrantPanel = () => {
               act={act}
             />
             <FormingCard
-              label="Triumph"
+              label="Points"
               color={SEAL_GREEN}
               forming={formingTriumph}
               emptyText="Pledge to call a wave"

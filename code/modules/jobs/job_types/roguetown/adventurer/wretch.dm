@@ -122,9 +122,6 @@
 			H.mind.add_antag_datum(new_antag)
 
 /datum/job/roguetown/wretch/on_round_removal(mob/M)
-	// Respawn delay applies immediately
-	if(same_job_respawn_delay && M?.ckey)
-		GLOB.job_respawn_delays[M.ckey] = world.time + same_job_respawn_delay
 
 	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(wretch_delayed_slot_reopen), M?.advjob), 1 HOURS)
 

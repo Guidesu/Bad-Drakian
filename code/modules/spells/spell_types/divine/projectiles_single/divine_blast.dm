@@ -3,7 +3,7 @@
 	button_icon = 'icons/mob/actions/genericmiracles.dmi'
 	button_icon_state = "dblast"
 	name = "Divine Blast"
-	desc = "Release a blast of sheer divine energy at your enemies. Deals more damage to apostates, undead, and simple-minded creatures. Once every 30 seconds, your God may smite the target, inflicting debilitating effects that are especially potent against the mindless. Incapacitated mindless are disintegrated by the blast.<br><br>Toggle firing mode (Shift+G): Focus or Arc."
+	desc = "Release a blast of sheer divine energy at your enemies. Deals more damage to apostates, undead, and simple-minded creatures. Periodically, your god may smite and ignite the target. Incapacitated mindless creatures are disintegrated by the blast.<br><br>Toggle firing mode (Shift+G): Focus or Arc."
 	fluff_desc = "Among the first miracles bestowed upon the faithful is the ability to channel their patron's essence into a focused blast of divine power. Though simple in execution, it is a versatile expression of a deity's will, carrying forth a fragment of the patron's true nature."
 	sound = 'sound/magic/vlightning.ogg'
 	spell_color = GLOW_COLOR_LIGHTNING
@@ -134,8 +134,6 @@
 	if(godless)
 		if(iscarbon(L))
 			L.emote("superagony")
-		L.Immobilize(3 SECONDS)
-		L.apply_status_effect(/datum/status_effect/debuff/exposed, 3 SECONDS)
 	var/turf/target_turf = get_turf(L)
 	new /obj/effect/temp_visual/thunderstrike_actual(target_turf)
 	playsound(target_turf, 'sound/magic/lightning.ogg', 50)

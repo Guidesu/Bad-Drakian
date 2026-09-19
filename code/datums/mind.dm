@@ -1424,7 +1424,7 @@ GLOBAL_LIST_EMPTY(personal_objective_minds)
 						if(LI?.triumph_cost)
 							var/discounted_cost = max(0, LI.triumph_cost - user.mind.triumph_discount_remaining)
 							if(discounted_cost > 0 && user.get_triumphs() < discounted_cost)
-								to_chat(user, span_warning("I can't afford [item] — I'd need [discounted_cost] more triumph."))
+								to_chat(user, span_warning("I can't afford [item] — I need [discounted_cost] more points."))
 								return
 							user.mind.triumph_discount_remaining = max(0, user.mind.triumph_discount_remaining - LI.triumph_cost)
 							if(discounted_cost > 0)

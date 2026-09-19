@@ -576,7 +576,7 @@
 			next_yap = world.time + 6 SECONDS
 			return
 
-		if(user.job in GLOB.noble_positions) //Ducal Family
+		if(user.job in GLOB.noble_positions) // Sovereign Family
 			say( "[user.job] [user.real_name], vostre seigneurie, j'avions pour vous tout temps par tout temps")
 			playsound(loc, 'sound/misc/gold_menu.ogg', 100, TRUE, -1)
 			next_yap = world.time + 30 SECONDS

@@ -425,9 +425,6 @@
 		return JOB_UNAVAILABLE_PATRON
 	if((client.prefs.lastclass == job.title) && !job.bypass_lastclass)
 		return JOB_UNAVAILABLE_LASTCLASS
-	if((job.same_job_respawn_delay) && (ckey in GLOB.job_respawn_delays))
-		if(world.time < GLOB.job_respawn_delays[ckey])
-			return JOB_UNAVAILABLE_JOB_COOLDOWN
 	if((job.current_positions >= job.total_positions) && job.total_positions != -1)
 		if(job.title == "Assistant")
 			if(isnum(client.player_age) && client.player_age <= 14)

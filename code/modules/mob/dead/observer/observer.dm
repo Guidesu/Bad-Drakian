@@ -1067,7 +1067,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 	var/department = SSjob.bitflag_to_department(J.department_flag, J.obfuscated_job)
 	switch(department)
 		if("Noblemen")
-			return "Ducal Family"
+			return "Sovereign Family"
 		if("Vanguard", "Town Guard", "City Watch")
 			return "Garrison"
 		if("ATC", "Azurian Trading Company")
@@ -1077,7 +1077,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 /datum/orbit_menu/proc/get_orbit_role_group_color(role_group)
 	switch(role_group)
-		if("Ducal Family")
+		if("Sovereign Family")
 			return "#aa83b9"
 		if("Courtiers")
 			return "#81adc8"

@@ -68,7 +68,7 @@
 /datum/controller/subsystem/familytree/proc/do_ask_monarch_noble_permission(mob/living/carbon/human/monarch)
 	if(!monarch?.client)
 		return
-	var/result = tgui_alert(monarch, "Can other nobles (knights, advisors, and others with noble blood) be part of your family?", "Ducal family", list("Yes", "No"))
+	var/result = tgui_alert(monarch, "Can other nobles (knights, advisors, and others with noble blood) be part of your family?", "Sovereign family", list("Yes", "No"))
 
 	if(!monarch || QDELETED(monarch))
 		return
@@ -132,7 +132,7 @@
 
 	ftlog("NOBLE DYNASTY: [H.real_name] added to ruling family")
 	familytree_admin_log_house_assignment(H, ruling_family, "joined ruling family through noble dynasty", monarch)
-	to_chat(H, span_love("You have been accepted into the ducal family!"))
+	to_chat(H, span_love("You have been accepted into the sovereign family!"))
 	stop_tracking_human(H, "assigned to ruling family as noble")
 
 /datum/controller/subsystem/familytree/proc/notify_family_head_departure(mob/living/carbon/human/departed)

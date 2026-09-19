@@ -3,7 +3,7 @@
 	domain = "God of the Moon, Nite, Knowledge and Arcyne"
 	desc = "The Nite-Scholar, brother and rival to Astrata. His wisdom paves the way in the moonlight. Tales of esoteric magicka at the destination are sung - in the words of decaying scripts."
 	worshippers = "Wizards, Alchemists, and Scholars"
-	mob_traits = list(TRAIT_NIGHT_OWL)
+	mob_traits = list(TRAIT_NIGHT_OWL, TRAIT_NITEVISION)
 	miracles = list(/datum/action/cooldown/spell/touch/orison					= CLERIC_ORI,
 					/datum/action/cooldown/spell/noc/nitevision					= CLERIC_T0,
 					/datum/action/cooldown/spell/miracle/heal					= CLERIC_T1,

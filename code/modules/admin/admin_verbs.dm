@@ -986,7 +986,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 /client/proc/adjusttriumph()
 	set category = "Admin.Special"
 	set name = "Adjust Points"
-	set desc = "Adjust a player's Triumphs by ckey, including offline players."
+	set desc = "Adjust a player's points by ckey, including offline players."
 	if(!holder || !check_rights(R_ADMIN))
 		return
 
@@ -995,7 +995,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	if(!target_ckey)
 		return
 	if(target_ckey == src.ckey)
-		to_chat(src, span_boldwarning("You can’t give yourself triumphs."))
+		to_chat(src, span_boldwarning("You cannot give yourself points."))
 		return
 
 	var/current_triumphs = SStriumphs.get_triumphs(target_ckey)
@@ -1006,7 +1006,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	if(current_triumphs + amt2change < 0)
 		amt2change = -current_triumphs
 	if(!amt2change)
-		to_chat(src, span_warning("The Triumph amount was not changed."))
+		to_chat(src, span_warning("The point amount was not changed."))
 		return
 
 	var/raisin = stripped_input(usr, "State a short reason for this change", "Game Master", null, null)
@@ -1014,15 +1014,15 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 		return
 
 	var/new_triumphs = current_triumphs + amt2change
-	if(alert(src, "Ckey: [target_ckey]\nTriumphs: [current_triumphs] -> [new_triumphs]\nReason: [raisin]", "Confirm Triumph Adjustment", "Confirm", "Cancel") != "Confirm")
+	if(alert(src, "Ckey: [target_ckey]\nPoints: [current_triumphs] -> [new_triumphs]\nReason: [raisin]", "Confirm Point Adjustment", "Confirm", "Cancel") != "Confirm")
 		return
 
 	SStriumphs.triumph_adjust(amt2change, target_ckey)
 	SStriumphs.adjust_leaderboard(target_ckey)
 	world.TgsAnnounceTriumphChanges(amt2change, target_ckey, src.ckey, raisin)
-	message_admins("[usr.key] adjusted [target_ckey]'s triumphs by [amt2change] with reason: [raisin].")
-	log_admin("[usr.key] adjusted [target_ckey]'s triumphs by [amt2change] with reason: [raisin].")
-	to_chat(src, span_adminnotice("[target_ckey]'s Triumphs: [current_triumphs] -> [new_triumphs]."))
+	message_admins("[usr.key] adjusted [target_ckey]'s points by [amt2change] with reason: [raisin].")
+	log_admin("[usr.key] adjusted [target_ckey]'s points by [amt2change] with reason: [raisin].")
+	to_chat(src, span_adminnotice("[target_ckey]'s points: [current_triumphs] -> [new_triumphs]."))
 
 	var/client/target_client = GLOB.directory[target_ckey]
 	if(target_client)

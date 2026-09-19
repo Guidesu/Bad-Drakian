@@ -61,7 +61,7 @@
 
 /proc/ta_roleban_department_class(department)
 	switch(department)
-		if("Ducal Family")
+		if("Sovereign Family")
 			return "nobles"
 		if("Courtiers")
 			return "courtier"
@@ -78,7 +78,7 @@
 
 /proc/ta_roleban_department_style(department)
 	switch(department)
-		if("Ducal Family")
+		if("Sovereign Family")
 			return "background-color: #aa83b9; color: #443a39;"
 		if("Courtiers")
 			return "background-color: #81adc8; color: #443a39;"
@@ -294,7 +294,7 @@
 	var/list/listed_rolebans = list()
 	var/list/groups = list()
 	var/list/group_sources = list(
-		"Ducal Family" = ta_roleban_panel_list_without(GLOB.noble_positions, list("Grand Duke", "Sultan"), list("Suitor", "Harem Favorite")),
+		"Sovereign Family" = ta_roleban_panel_list_without(GLOB.noble_positions, list("Grand Duke", "Sultan"), list("Suitor", "Harem Favorite")),
 		"Courtiers" = ta_roleban_panel_list(GLOB.courtier_positions, list("Hand", "Councillor", "Seneschal", "Vizier", "Sheikh", "Head Slave", "Suitor", "Harem Favorite")),
 		"Retinue" = ta_roleban_panel_list(GLOB.retinue_positions, list("Knight", "Cataphract", "Royal Knight")),
 		"Garrison" = ta_roleban_panel_list(ta_roleban_list(ta_roleban_list(GLOB.garrison_positions, GLOB.citywatch_positions), GLOB.vanguard_positions), list("Sergeant-at-Arms", "Man at Arms", "Sergeant", "Janissary Sergeant", "Janissary", "Azeb Agha", "Royal Guard Sergeant", "Royal Guard", "Slave Master", "Warden", "Vanguard", "Azeb", "Sheriff", "Watchman")),
@@ -887,7 +887,7 @@
 			if("server")
 				roles_to_ban += "Server"
 			if("role")
-				href_list.Remove("Command", "Security", "Engineering", "Medical", "Science", "Supply", "Silicon", "Abstract", "Service", "Ducal Family", "Courtiers", "Retinue", "Garrison", "Church", "Inquisition", "Wanderers", "Peasants", "Burghers", "ATC", "Sidefolk", "Ghost and Other Roles", "Antagonist Positions", "Lesser Antagonst Positions") //remove the role banner hidden input values
+				href_list.Remove("Command", "Security", "Engineering", "Medical", "Science", "Supply", "Silicon", "Abstract", "Service", "Sovereign Family", "Courtiers", "Retinue", "Garrison", "Church", "Inquisition", "Wanderers", "Peasants", "Burghers", "ATC", "Sidefolk", "Ghost and Other Roles", "Antagonist Positions", "Lesser Antagonst Positions") //remove the role banner hidden input values
 				if(href_list[href_list.len] == "roleban_delimiter")
 					error_state += "Role ban was selected but no roles to ban were selected."
 				else

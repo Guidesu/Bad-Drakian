@@ -536,7 +536,7 @@ SUBSYSTEM_DEF(migrants)
 
 	var/current_triumph = SStriumphs.get_triumphs(player.ckey)
 	if(current_triumph < amount)
-		to_chat(player, span_warning("You don't have enough triumph! You have [current_triumph], need [amount]."))
+		to_chat(player, span_warning("You don't have enough points! You have [current_triumph], need [amount]."))
 		return FALSE
 
 	player.adjust_triumphs(-amount, TRUE, "Wave influence: [wave.name]")
@@ -552,7 +552,7 @@ SUBSYSTEM_DEF(migrants)
 		global_triumph_contributions[player.ckey][wave_type] = 0
 	global_triumph_contributions[player.ckey][wave_type] += amount
 
-	to_chat(player, span_notice("You've contributed [amount] triumph to '[wave.name]'. Total: [wave.triumph_total]/[wave.triumph_threshold]"))
+	to_chat(player, span_notice("You've contributed [amount] points to '[wave.name]'. Total: [wave.triumph_total]/[wave.triumph_threshold]"))
 
 	if(wave.triumph_total >= wave.triumph_threshold)
 		message_admins("TRIUMPH: Wave '[wave.name]' has reached its triumph threshold ([wave.triumph_total]/[wave.triumph_threshold]) and will be prioritized!")
@@ -591,7 +591,7 @@ SUBSYSTEM_DEF(migrants)
 		SStriumphs.triumph_adjust(amount, ckey, "wave contribution refund: [wave.name]")
 		var/client/client = GLOB.directory[ckey]
 		if(client)
-			to_chat(client, span_nicegreen("[wave.name] failed to arrive - your [amount] pledged triumph has been refunded."))
+			to_chat(client, span_nicegreen("[wave.name] failed to arrive - your [amount] pledged points have been refunded."))
 	wave.triumph_contributions.Cut()
 	wave.triumph_total = 0
 	for(var/ckey in global_triumph_contributions)

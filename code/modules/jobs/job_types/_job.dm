@@ -442,12 +442,10 @@
 	else
 		H.mind.special_items["Fabric Patch (Repair kit)"] = /obj/item/repair_kit/bad
 
-/// Called when a player permanently leaves the round (via returntolobby). Handles slot reopening and respawn delays.
+/// Called when a player permanently leaves the round (via returntolobby). Handles slot reopening.
 /datum/job/proc/on_round_removal(mob/M)
 	if(job_reopens_slots_on_death)
 		current_positions = max(0, current_positions - 1)
-	if(same_job_respawn_delay && M.ckey)
-		GLOB.job_respawn_delays[M.ckey] = world.time + same_job_respawn_delay
 
 /client/verb/set_mugshot()
 	set category = "OOC"

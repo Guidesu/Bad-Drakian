@@ -299,10 +299,6 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 		return JOB_UNAVAILABLE_AGE
 	if(length(job.allowed_patrons) && !(client.prefs.selected_patron.type in job.allowed_patrons))
 		return JOB_UNAVAILABLE_PATRON
-	// Check if the player is on cooldown for the hiv+ role
-	if((job.same_job_respawn_delay) && (ckey in GLOB.job_respawn_delays))
-		if(world.time < GLOB.job_respawn_delays[ckey])
-			return JOB_UNAVAILABLE_JOB_COOLDOWN
 	if((job.current_positions >= job.total_positions) && job.total_positions != -1)
 		if(job.title == "Assistant")
 			if(isnum(client.player_age) && client.player_age <= 14) //Newbies can always be assistants
@@ -464,7 +460,7 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/rp_prompt.txt"))
 					if(SSmapping.config.map_name == "Rockhill")
 						cat_name = "Royal Family"
 					else
-						cat_name = "Ducal Family"
+						cat_name = "Sovereign Family"
 				if (COURTIERS)
 					cat_name = "Courtiers"
 				if (RETINUE)

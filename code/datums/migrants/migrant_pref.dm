@@ -201,11 +201,11 @@
 		return
 	var/current_triumph = SStriumphs.get_triumphs(client.ckey)
 	if(current_triumph <= 0)
-		to_chat(client, span_warning("You don't have any triumph to contribute!"))
+		to_chat(client, span_warning("You don't have any points to contribute!"))
 		return
 	var/player_contribution = wave.triumph_contributions[client.ckey] ? wave.triumph_contributions[client.ckey] : 0
 	var/max_contribute = min(current_triumph, 100)
-	var/amount = tgui_input_number(client, "Contribute triumph to '[wave.name]'?\n\nYour triumph: [current_triumph]\nYour contribution: [player_contribution]\nWave total: [wave.triumph_total]/[wave.triumph_threshold]", "Triumph Contribution", max_value = max_contribute, min_value = 1)
+	var/amount = tgui_input_number(client, "Contribute points to '[wave.name]'?\n\nYour points: [current_triumph]\nYour contribution: [player_contribution]\nWave total: [wave.triumph_total]/[wave.triumph_threshold]", "Point Contribution", max_value = max_contribute, min_value = 1)
 	if(!amount || amount <= 0 || amount > max_contribute)
 		return
 	SSmigrants.contribute_triumph_to_wave(client, wave_type, amount)

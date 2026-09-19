@@ -98,7 +98,7 @@ const roleGroupColors: Record<
   string,
   { backgroundColor: string; color: string }
 > = {
-  'Ducal Family': {
+  'Sovereign Family': {
     backgroundColor: '#aa83b9',
     color: '#443a39',
   },

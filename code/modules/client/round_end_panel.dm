@@ -160,8 +160,8 @@
 
 	// Right column
 	data += "<div style='display: table-cell; width: 50%; vertical-align: top; padding: 0 15px;'>"
-	data += "<font color='#36959c'><span class='bold'>Triumphs Awarded:</span></font> [GLOB.azure_round_stats[STATS_TRIUMPHS_AWARDED]]<br>"
-	data += "<font color='#a02fa4'><span class='bold'>Triumphs Stolen:</span></font> [GLOB.azure_round_stats[STATS_TRIUMPHS_STOLEN] * -1]<br>"
+	data += "<font color='#36959c'><span class='bold'>Points Awarded:</span></font> [GLOB.azure_round_stats[STATS_TRIUMPHS_AWARDED]]<br>"
+	data += "<font color='#a02fa4'><span class='bold'>Points Stolen:</span></font> [GLOB.azure_round_stats[STATS_TRIUMPHS_STOLEN] * -1]<br>"
 	data += "<font color='#d7da2f'><span class='bold'>Prayers Made:</span></font> [GLOB.azure_round_stats[STATS_PRAYERS_MADE]]<br>"
 	data += "<font color='#bacfd6'><span class='bold'>Graves Consecrated:</span></font> [GLOB.azure_round_stats[STATS_GRAVES_CONSECRATED]]<br>"
 	data += "<font color='#9c3e46'><span class='bold'>Active Deadites:</span></font> [GLOB.azure_round_stats[STATS_DEADITES_ALIVE]]<br>"

@@ -65,7 +65,7 @@
 #define ROLE_TIER_LOW 2
 
 /datum/controller/subsystem/familytree
-	// Nobility and ducal family
+	// Nobility and sovereign family
 	var/list/high_tier_nobility_types = list(
 		/datum/job/roguetown/lord,
 		/datum/job/roguetown/lady,

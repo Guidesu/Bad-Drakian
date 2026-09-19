@@ -76,7 +76,7 @@ const TRAILING_MASKED_DESCRIPTOR_REGEX = / \[[^\]]+\]$/;
 const TRAILING_DUPLICATE_SUFFIX_REGEX = / \(\d+\)$/;
 const EMPTY_TARGETS: OrbitTarget[] = [];
 const ROLE_GROUP_COLORS: Record<string, RoleColor> = {
-  'Ducal Family': {
+  'Sovereign Family': {
     backgroundColor: '#aa83b9',
     color: '#443a39',
   },
@@ -153,7 +153,7 @@ const LESSER_VAMPIRE_ROLE_NAMES = [
   'vampire spawn',
 ] as const;
 const ALIVE_NORMAL_GROUP_ORDER = [
-  'Ducal Family',
+  'Sovereign Family',
   'Courtiers',
   'Retinue',
   'Garrison',
@@ -469,7 +469,7 @@ function getRoleGroupKey(department: string | undefined, roleLabel: string) {
   }
 
   if (normalizedDepartment === 'Noblemen') {
-    return 'Ducal Family';
+    return 'Sovereign Family';
   }
 
   if (
