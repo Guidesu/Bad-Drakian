@@ -184,6 +184,7 @@
 	desc_title = "Lamia"
 	desc = "Sea-born and serpentine peoples descended from the southern coasts: nagas, sirens, merfolk, and their many related broods."
 	race_bonus = list(STAT_STRENGTH = 1, STAT_SPEED = -1)
+	inherent_traits = list(TRAIT_LONGSTRIDER, TRAIT_VENOMOUS)
 	allowed_taur_types = list(
 		/obj/item/bodypart/taur/lamia,
 		/obj/item/bodypart/taur/lamiastriped,
@@ -207,6 +208,8 @@
 	base_name = "Arachnid"
 	desc_title = "Arachnid"
 	desc = "Silk-spinning folk whose lower forms resemble spiders and other many-legged creatures."
+	race_bonus = list(STAT_STRENGTH = 1, STAT_SPEED = -1)
+	inherent_traits = list(TRAIT_LONGSTRIDER, TRAIT_VENOMOUS, TRAIT_WEBWALK)
 	allowed_taur_types = list(
 		/obj/item/bodypart/taur/spider,
 		/obj/item/bodypart/taur/centipede,

@@ -32,3 +32,27 @@
 /datum/reagent/rogueacid/reaction_mob(mob/living/M, method=TOUCH, reac_volume)
 	M.adjustFireLoss(35, 0)
 	..()
+
+/// Natural venom delivered by Lamia and Arachnid bite holds.
+/datum/reagent/lamia_venom
+	name = "Lamia Venom"
+	description = "A burning venom produced by several serpentine and arachnid peoples."
+	reagent_state = LIQUID
+	color = "#083b1c"
+	taste_description = "liquid fire"
+	metabolization_rate = 0.3 * REAGENTS_METABOLISM
+	harmful = TRUE
+
+/datum/reagent/lamia_venom/on_mob_life(mob/living/carbon/victim)
+	if(ishuman(victim))
+		var/mob/living/carbon/human/human_victim = victim
+		if(istype(human_victim.dna?.species, /datum/species/lamia) || istype(human_victim.dna?.species, /datum/species/arachnid))
+			return ..()
+	if(!HAS_TRAIT(victim, TRAIT_INFINITE_STAMINA) && victim.stamina <= victim.max_stamina / 2)
+		victim.stamina_add(10)
+	victim.adjust_drugginess(1)
+	if(prob(10))
+		to_chat(victim, span_warning("My flesh burns as venom spreads through me!"))
+		if(prob(1))
+			victim.emote("agony")
+	return ..()
