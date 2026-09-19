@@ -178,12 +178,16 @@
 
 	if(allow_force)
 		return TRUE
+	if(target.erp_freeuse)
+		return TRUE
 
 	if(organ_type == SEX_ORGAN_HANDS)
 		return TRUE
 
 	var/zone = _organ_type_to_bodyzone(organ_type)
 	if(!zone)
+		return TRUE
+	if(zone == BODY_ZONE_PRECISE_GROIN && target.erp_bottom_exposed)
 		return TRUE
 
 	return get_location_accessible(target, zone)

@@ -31,7 +31,7 @@
 		/datum/skill/combat/swords = SKILL_LEVEL_APPRENTICE,
 		/datum/skill/combat/staves = SKILL_LEVEL_APPRENTICE //awww yeah
 	)
-	extra_context = "This subclass is race-limited to: Drakian, Zardman, and Kobold. This subclass locks you to Matthios or Astrata-worship."
+	extra_context = "This subclass is race-limited to Drakians, Sisseans, and Kobolds. It also restricts your patron to Matthios or Astrata."
 
 /datum/outfit/job/roguetown/mercenary/lirvanmerc
 	allowed_patrons = list(/datum/patron/divine/astrata, /datum/patron/inhumen/matthios)

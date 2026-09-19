@@ -41,6 +41,8 @@
 		"do_until_finished" = controller.do_until_finished,
 		"yield_to_partner" = controller.yield_to_partner,
 		"allow_user_moan" = controller.allow_user_moan,
+		"bottom_exposed" = controller.bottom_exposed,
+		"freeuse" = controller.freeuse,
 		"frozen" = controller.arousal_frozen,
 		"current_partner_ref" = P ? P.get_ref() : null,
 		"current_partner_name" = P ? P.get_display_name() : null,
@@ -74,6 +76,16 @@
 
 		if("set_moaning")
 			controller?.change_moaning()
+			request_update()
+			return TRUE
+
+		if("toggle_bottom_exposed")
+			controller?.change_bottom_exposed()
+			request_update()
+			return TRUE
+
+		if("toggle_freeuse")
+			controller?.change_freeuse()
 			request_update()
 			return TRUE
 

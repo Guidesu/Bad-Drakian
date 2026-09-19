@@ -10,6 +10,9 @@ GLOBAL_LIST_EMPTY(roundstart_races_paths)
 	var/name	// this is the fluff name. these will be left generic (such as 'Lizardperson' for the lizard race) so servers can change them to whatever
 	var/desc
 	var/desc_title
+	/// Whether character creation offers Ratwood's cosmetic species-title selector.
+	var/use_titles = FALSE
+	var/list/race_titles = list()
 	var/list/mechanics_explanations // if this species has unique mechanics, explain each of them here. try to keep separate mechanics separated as individual list items
 	var/default_color = "#FFF"	// if alien colors are disabled, this is the color that will be used by that race
 	var/limbs_icon_m

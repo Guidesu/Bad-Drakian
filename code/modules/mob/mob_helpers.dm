@@ -1184,6 +1184,10 @@
 	return stat == DEAD || has_unlimited_silicon_privilege //Dead guys and silicons can always see reagents
 
 /mob/proc/get_role_title()
+	// "Grand Duke" remains the ruler job's internal compatibility id. Never leak
+	// it into player-facing titles after a sovereign rank has been selected.
+	if(SSticker?.rulermob == src && SSticker.rulertype)
+		return SSticker.rulertype
 	var/used_title
 	if(migrant_type)
 		var/datum/migrant_role/migrant = MIGRANT_ROLE(migrant_type)

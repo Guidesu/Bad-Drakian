@@ -21,6 +21,8 @@
 	character.dna.features = features.Copy()
 	character.gender = gender
 	character.set_species(chosen_species, icon_update = FALSE, pref_load = src)
+	if(pref_species.use_titles && selected_title in pref_species.race_titles)
+		character.dna.species.name = selected_title
 	character.dna.update_body_size()
 	var/obj/item/organ/breasts/breast_organ = character.getorganslot(ORGAN_SLOT_BREASTS)
 	if(breast_organ)

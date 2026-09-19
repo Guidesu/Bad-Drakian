@@ -266,6 +266,8 @@
 // TA EDIT BEGIN
 /datum/job/New()
 	..()
+	// BAD DRAKIAN permits returning to the same role without an arbitrary lockout.
+	same_job_respawn_delay = FALSE
 	if(length(allowed_races))
 		if(!forbidden_races)
 			forbidden_races = list()

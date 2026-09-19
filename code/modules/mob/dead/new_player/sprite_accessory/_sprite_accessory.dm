@@ -34,6 +34,8 @@
 	var/static/list/accessory_icon_cache = list()
 	/// Whether this specific accessory doesn't allow for coloring
 	var/color_disabled = FALSE
+	/// Mask sheet used when this accessory supports Ratwood-style colour gradients.
+	var/gradient_icon = 'icons/mob/sprite_accessory/hair/hair_gradients32x32.dmi'
 	/// Whether or not this accessory shows on skeletons for skele-customization
 	var/persists_through_skeletonize = FALSE
 

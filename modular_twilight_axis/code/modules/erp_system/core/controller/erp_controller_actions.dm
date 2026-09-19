@@ -76,14 +76,16 @@
 		return "No partner."
 
 	var/in_shared_closet = is_shared_closet_context()
+	var/mob/living/carbon/human/freeuse_target = controller.active_partner?.get_effect_mob()
+	var/target_allows_freeuse = istype(freeuse_target) && freeuse_target.erp_freeuse
 	
 	if(!in_shared_closet && ctx.distance > 1)
 		return "Too far."
 
-	if(!in_shared_closet && A.require_same_tile && !(ctx.same_tile || ctx.has_passive_grab))
+	if(!target_allows_freeuse && !in_shared_closet && A.require_same_tile && !(ctx.same_tile || ctx.has_passive_grab))
 		return "You need to be on the same tile or hold a partner."
 
-	if(!in_shared_closet && A.require_grab && !ctx.has_aggressive_grab)
+	if(!target_allows_freeuse && !in_shared_closet && A.require_grab && !ctx.has_aggressive_grab)
 		return "Need a stronger grip."
 
 	if(A.required_init_organ && init.erp_organ_type != A.required_init_organ)
@@ -92,7 +94,7 @@
 	if(A.required_target_organ && target.erp_organ_type != A.required_target_organ)
 		return "Need another target."
 
-	if(!ctx.has_passive_grab && !in_shared_closet)
+	if(!target_allows_freeuse && !ctx.has_passive_grab && !in_shared_closet)
 		var/it = init.erp_organ_type
 		if(!(it in ctx.self_access))
 			ctx.self_access[it] = controller.owner.is_organ_accessible_for(controller.owner, it, FALSE)

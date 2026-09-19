@@ -78,10 +78,7 @@
 	do
 		var/repair_percent = get_repair_percent(attacked_prosthetic)
 		if(user.get_skill_level(attacked_prosthetic.anvilrepair) <= 0)
-			if(prob(30))
-				repair_percent = 0.01
-			else
-				repair_percent = 0
+			repair_percent = 0.01
 		else
 			repair_percent *= user.get_skill_level(attacked_prosthetic.anvilrepair)
 
@@ -94,14 +91,11 @@
 			attacked_prosthetic.burn_dam = max(attacked_prosthetic.burn_dam - 10, 0)
 			attacked_prosthetic.wounds = null //Fixing fractures
 			attacked_prosthetic.disabled = BODYPART_NOT_DISABLED
-			if(repair_percent == 0.01) // If an inexperienced repair attempt has been successful
-				to_chat(user, span_warning("You fumble your way into slightly repairing [attacked_prosthetic]."))
+			if(repair_percent == 0.01)
+				to_chat(user, span_notice("You slowly repair [attacked_prosthetic]."))
 			else
 				user.visible_message(span_info("[user] repairs [attacked_prosthetic]!"))
 			user.mind.add_sleep_experience(attacked_prosthetic.anvilrepair, exp_gained/2) //We gain as much exp as we fix divided by 2
-		else
-			user.visible_message(span_warning("[user] fumbles trying to repair [attacked_prosthetic]!"))
-
 		if(attacked_prosthetic.obj_integrity >= attacked_prosthetic.max_integrity && attacked_prosthetic.brute_dam == 0 && attacked_prosthetic.burn_dam == 0 && attacked_prosthetic.wounds == null && attacked_prosthetic.disabled == BODYPART_NOT_DISABLED)
 			break
 
@@ -129,10 +123,8 @@
 				//Squires can repair on tables, but less efficiently
 				else if(attacked_item.ontable())
 					repair_percent = 0.015
-			else if(prob(30))
-				repair_percent = 0.01
 			else
-				repair_percent = 0
+				repair_percent = 0.01
 		else
 			repair_percent *= user.get_skill_level(attacked_item.anvilrepair)
 
@@ -141,8 +133,8 @@
 			repair_percent *= attacked_item.max_integrity
 			var/exp_gained = min(attacked_item.obj_integrity + repair_percent, attacked_item.max_integrity) - attacked_item.obj_integrity
 			attacked_item.obj_integrity = min(attacked_item.obj_integrity + repair_percent, attacked_item.max_integrity)
-			if(repair_percent == 0.01) // If an inexperienced repair attempt has been successful
-				to_chat(user, span_warning("You fumble your way into slightly repairing [attacked_item]."))
+			if(repair_percent == 0.01)
+				to_chat(user, span_notice("You slowly repair [attacked_item]."))
 			else
 				user.visible_message(span_info("[user] repairs [attacked_item]!"))
 				if(attacked_item.body_parts_covered != attacked_item.body_parts_covered_dynamic)
@@ -151,9 +143,6 @@
 			if(attacked_item.obj_broken && attacked_item.obj_integrity == attacked_item.max_integrity)
 				attacked_item.obj_fix()
 			user.mind.add_sleep_experience(attacked_item.anvilrepair, exp_gained/2) //We gain as much exp as we fix divided by 2
-		else
-			user.visible_message(span_warning("[user] fumbles trying to repair [attacked_item]!"))
-
 		if(attacked_item.obj_integrity >= attacked_item.max_integrity)
 			break
 

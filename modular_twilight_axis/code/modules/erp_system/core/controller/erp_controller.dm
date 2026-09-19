@@ -16,6 +16,8 @@
 	var/allow_user_moan = TRUE
 	var/arousal_frozen = FALSE
 	var/do_knot_action = FALSE
+	var/bottom_exposed = FALSE
+	var/freeuse = FALSE
 
 	var/last_scene_tick = 0
 	var/next_scene_tick = 0
@@ -57,6 +59,12 @@
 
 	if(owner_client)
 		owner.attach_client(owner_client)
+		bottom_exposed = !!owner_client.prefs?.erp_bottom_exposed
+		freeuse = !!owner_client.prefs?.erp_freeuse
+	var/mob/living/carbon/human/owner_human = owner.get_effect_mob()
+	if(istype(owner_human))
+		owner_human.erp_bottom_exposed = bottom_exposed
+		owner_human.erp_freeuse = freeuse
 
 	actors += owner
 
@@ -452,6 +460,33 @@
 /// Toggles moaning.
 /datum/erp_controller/proc/change_moaning()
 	allow_user_moan = !allow_user_moan
+
+/// Toggles Ratwood-compatible genital visibility independently of clothing.
+/datum/erp_controller/proc/change_bottom_exposed()
+	var/mob/living/carbon/human/user = _get_owner_effect_mob()
+	if(!istype(user))
+		return
+	bottom_exposed = !bottom_exposed
+	user.erp_bottom_exposed = bottom_exposed
+	user.update_body_parts(TRUE)
+	if(owner_client?.prefs)
+		owner_client.prefs.erp_bottom_exposed = bottom_exposed
+		owner_client.prefs.save_preferences()
+
+/// Free-use skips positioning and exposure checks, but never adjacency.
+/datum/erp_controller/proc/change_freeuse()
+	var/mob/living/carbon/human/user = _get_owner_effect_mob()
+	if(!istype(user))
+		return
+	freeuse = !freeuse
+	user.erp_freeuse = freeuse
+	if(owner_client?.prefs)
+		owner_client.prefs.erp_freeuse = freeuse
+		owner_client.prefs.save_preferences()
+
+/mob/living/carbon/human
+	var/erp_bottom_exposed = FALSE
+	var/erp_freeuse = FALSE
 
 /// Flips lying direction with cooldown.
 /datum/erp_controller/proc/change_direction()

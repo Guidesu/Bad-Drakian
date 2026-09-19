@@ -157,6 +157,7 @@
 /datum/sprite_accessory/wings/wide
 	abstract_type = /datum/sprite_accessory/wings/wide
 	icon = 'icons/mob/sprite_accessory/wings/wings_wide.dmi'
+	gradient_icon = 'icons/mob/sprite_accessory/hair/hair_gradients45x34.dmi'
 	pixel_x = -7
 
 /datum/sprite_accessory/wings/wide/succubus
@@ -228,6 +229,7 @@
 /datum/sprite_accessory/wings/huge
 	abstract_type = /datum/sprite_accessory/wings/huge
 	icon = 'icons/mob/sprite_accessory/wings/wings_huge.dmi'
+	gradient_icon = 'icons/mob/sprite_accessory/hair/hair_gradients96x34.dmi'
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_ADJ_LAYER, BODY_FRONT_LAYER)
 	pixel_x = -32
 	can_open = TRUE
@@ -259,6 +261,7 @@
 /datum/sprite_accessory/wings/large
 	abstract_type = /datum/sprite_accessory/wings/large
 	icon = 'icons/mob/sprite_accessory/wings/wings_64x32.dmi'
+	gradient_icon = 'icons/mob/sprite_accessory/hair/hair_gradients64x32.dmi'
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
 	pixel_x = -16
 

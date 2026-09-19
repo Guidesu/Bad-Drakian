@@ -15,7 +15,7 @@
 	accessory_type = /datum/sprite_accessory/tail/catbig
 
 /obj/item/organ/tail/lizard
-	name = "zardman tail"
+	name = "sissean tail"
 	desc = "A severed lizard tail. Somewhere, no doubt, a lizard hater is very pleased with themselves."
 	icon_state = "lizardtail" //TA_EDIT
 	color = "#116611"
@@ -73,7 +73,7 @@
 	accessory_type =	/datum/sprite_accessory/tail/shark
 
 /obj/item/organ/tail/lizard
-	name = "zardman tail"
+	name = "sissean tail"
 	desc = ""
 	icon_state = "lizardtail" //TA_EDIT
 	color = "#116611"

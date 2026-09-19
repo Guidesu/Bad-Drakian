@@ -3,6 +3,8 @@
 	color_keys = 2
 	color_key_names = list("Member", "Skin")
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER) //Vrell - Yes I know this is hacky but it works for now
+	/// Ratwood sprites encode erection as 1/2 and visual size as the final 1/2 frame.
+	var/uses_size_sprites = TRUE
 
 /datum/sprite_accessory/penis/adjust_appearance_list(list/appearance_list, obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_BELT, OFFSET_BELT_F)
@@ -21,39 +23,43 @@
 					return "slit_1"
 				else
 					return "slit_2"
+	if(uses_size_sprites)
+		if(pp.erect_state == ERECT_STATE_HARD)
+			return "[icon_state]_2_[min(pp.penis_size, 2)]"
+		return "[icon_state]_1_[min(pp.penis_size, 2)]"
 	if(pp.erect_state == ERECT_STATE_HARD)
-		return "[icon_state]_[pp.penis_size]_erect" // TA edit - NEW ERP SYSTEM
-	else
-		return "[icon_state]_1_[pp.penis_size]"
+		return "[icon_state]_2"
+	return "[icon_state]_1"
 
 /datum/sprite_accessory/penis/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
+	if(istype(owner, /mob/living/carbon/human))
+		var/mob/living/carbon/human/H = owner
+		if(H.erp_bottom_exposed)
+			return TRUE
 	if(owner.underwear)
 		return FALSE
 	return is_human_part_visible(owner, HIDEJUMPSUIT|HIDECROTCH)
 
 /datum/sprite_accessory/penis/human
 	icon_state = "human"
-	preview_states = list("human_1_2_FRONT_1")
 	name = "Plain"
 	color_key_defaults = list(KEY_CHEST_COLOR, KEY_CHEST_COLOR)
 
 /datum/sprite_accessory/penis/knotted
 	icon_state = "knotted"
-	preview_states = list("knotted_1_2_FRONT_1")
 	name = "Knotted"
 	color_key_defaults = list(null, KEY_CHEST_COLOR)
 	default_colors = list("C52828", null)
 
 /datum/sprite_accessory/penis/knotted2
 	name = "Knotted 2"
-	icon_state = "knotted2"
-	preview_states = list("knotted2_1_2_FRONT_1")
+	// Compatibility path for existing saves; Ratwood consolidated this into Knotted.
+	icon_state = "knotted"
 	color_key_defaults = list(null, KEY_CHEST_COLOR)
 	default_colors = list("C52828", null)
 
 /datum/sprite_accessory/penis/flared
 	icon_state = "flared"
-	preview_states = list("flared_1_2_FRONT_1")
 	name = "Flared"
 	color_key_defaults = list(KEY_CHEST_COLOR, KEY_CHEST_COLOR)
 
@@ -78,32 +84,27 @@
 
 /datum/sprite_accessory/penis/tapered
 	icon_state = "tapered"
-	preview_states = list("tapered_1_2_FRONT_1")
 	name = "Tapered"
 	default_colors = list("C52828", "C52828")
 
 /datum/sprite_accessory/penis/tapered_mammal
 	icon_state = "tapered"
-	preview_states = list("tapered_1_2_FRONT_1")
 	name = "Tapered"
 	color_key_defaults = list(null, KEY_CHEST_COLOR)
 	default_colors = list("C52828", null)
 
 /datum/sprite_accessory/penis/tentacle
 	icon_state = "tentacle"
-	preview_states = list("tentacle_1_2_FRONT_1")
 	name = "Tentacled"
 	default_colors = list("C52828", "C52828")
 
 /datum/sprite_accessory/penis/hemi
 	icon_state = "hemi"
-	preview_states = list("hemi_1_2_FRONT_1")
 	name = "Hemi"
 	default_colors = list("C52828", "C52828")
 
 /datum/sprite_accessory/penis/hemiknot
 	icon_state = "hemiknot"
-	preview_states = list("hemiknot_1_2_FRONT_1")
 	name = "Knotted Hemi"
 	default_colors = list("C52828", "C52828")
 
@@ -120,23 +121,26 @@
 	return "[icon_state]_[testes.ball_size]"
 
 /datum/sprite_accessory/testicles/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
-	if(owner.underwear)
-		return FALSE
 	var/obj/item/organ/penis/pp = owner.getorganslot(ORGAN_SLOT_PENIS)
 	if(pp && pp.sheath_type == SHEATH_TYPE_SLIT)
+		return FALSE
+	if(istype(owner, /mob/living/carbon/human))
+		var/mob/living/carbon/human/H = owner
+		if(H.erp_bottom_exposed)
+			return TRUE
+	if(owner.underwear)
 		return FALSE
 	return is_human_part_visible(owner, HIDEJUMPSUIT|HIDECROTCH)
 
 /datum/sprite_accessory/testicles/pair
 	name = "Pair"
 	icon_state = "pair"
-	preview_states = list("pair_2_ADJ")
 	color_key_defaults = list(KEY_SKIN_COLOR)
 
 /datum/sprite_accessory/breasts
 	icon = 'icons/mob/sprite_accessory/genitals/breasts.dmi'
 	color_key_name = "Breasts"
-	relevant_layers = list(BODY_ADJ_LAYER)
+	relevant_layers = list(BODY_ADJ_LAYER, BODY_BEHIND_LAYER)
 
 /datum/sprite_accessory/breasts/get_icon_state(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
 	var/obj/item/organ/breasts/badonkers = organ
@@ -152,19 +156,16 @@
 
 /datum/sprite_accessory/breasts/pair
 	icon_state = "pair"
-	preview_states = list("pair_2_ADJ")
 	name = "Pair"
 	color_key_defaults = list(KEY_CHEST_COLOR)
 
 /datum/sprite_accessory/breasts/quad
 	icon_state = "quad"
-	preview_states = list("quad_2_ADJ")
 	name = "Quad"
 	color_key_defaults = list(KEY_CHEST_COLOR)
 
 /datum/sprite_accessory/breasts/sextuple
 	icon_state = "sextuple"
-	preview_states = list("sextuple_2_ADJ")
 	name = "Sextuple"
 	color_key_defaults = list(KEY_CHEST_COLOR)
 
@@ -177,6 +178,10 @@
 	generic_gender_feature_adjust(appearance_list, organ, bodypart, owner, OFFSET_BELT, OFFSET_BELT_F)
 
 /datum/sprite_accessory/vagina/is_visible(obj/item/organ/organ, obj/item/bodypart/bodypart, mob/living/carbon/owner)
+	if(istype(owner, /mob/living/carbon/human))
+		var/mob/living/carbon/human/H = owner
+		if(H.erp_bottom_exposed)
+			return TRUE
 	if(owner.underwear)
 		return FALSE
 	return is_human_part_visible(owner, HIDECROTCH|HIDEJUMPSUIT)

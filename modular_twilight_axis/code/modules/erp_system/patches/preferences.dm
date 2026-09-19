@@ -2,6 +2,8 @@
 	var/list/erp_custom_actions = list()
 	var/list/erp_kink_prefs = list()
 	var/list/erp_organ_prefs = list()
+	var/erp_bottom_exposed = FALSE
+	var/erp_freeuse = FALSE
 
 /datum/preferences/proc/apply_erp_kinks_to_mob(mob/living/carbon/human/H)
 	if(!H || !islist(erp_kink_prefs) || !erp_kink_prefs.len)

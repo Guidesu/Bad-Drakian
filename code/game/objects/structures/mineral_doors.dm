@@ -247,8 +247,9 @@
 				user.visible_message(span_warning("[user] smashes through [src]!"))
 			return
 		if(locked)
-			if(istype(user.get_active_held_item(), /obj/item/roguekey) || istype(user.get_active_held_item(), /obj/item/storage/keyring))
-				src.attackby(user.get_active_held_item(), user, TRUE)
+			var/obj/item/key_item = get_user_key_item(user)
+			if(key_item)
+				src.attackby(key_item, user, TRUE)
 				return
 			to_chat(user, span_notice("It's locked."))
 			door_rattle()
@@ -272,6 +273,10 @@
 	if(try_award_resident_key(user))
 		return
 	if(locked)
+		var/obj/item/key_item = get_user_key_item(user)
+		if(key_item)
+			trykeylock(key_item, user)
+			return
 		if(isliving(user))
 			var/mob/living/L = user
 			if(L.m_intent == MOVE_INTENT_SNEAK)
@@ -361,7 +366,7 @@
 	update_icon()
 	isSwitchingStates = FALSE
 	if(autobump && src.Adjacent(last_bumper))
-		if(istype(last_bumper.get_active_held_item(), /obj/item/roguekey) || istype(last_bumper.get_active_held_item(), /obj/item/storage/keyring))
+		if(get_user_key_item(last_bumper))
 			src.attack_right(last_bumper)
 	last_bumper = null
 
@@ -501,7 +506,7 @@
 
 /obj/structure/mineral_door/attack_right(mob/user)
 	user.changeNext_move(CLICK_CD_FAST)
-	var/obj/item = user.get_active_held_item()
+	var/obj/item = get_user_key_item(user)
 	if(istype(item, /obj/item/roguekey) || istype(item, /obj/item/storage/keyring))
 		if(locked)
 			to_chat(user, span_warning("The lock won't turn this way. Try turning to the left."))
@@ -510,6 +515,27 @@
 		trykeylock(item, user)
 	else
 		return ..()
+
+/// Finds a held or readily worn key/keyring. Belt-side slots and keyrings
+/// carried inside the waist belt are deliberately usable without juggling.
+/obj/structure/mineral_door/proc/get_user_key_item(mob/user)
+	var/obj/item/held = user?.get_active_held_item()
+	if(istype(held, /obj/item/roguekey) || istype(held, /obj/item/storage/keyring))
+		return held
+	if(!ishuman(user))
+		return null
+	var/mob/living/carbon/human/H = user
+	for(var/obj/item/candidate as anything in list(H.beltl, H.beltr, H.wear_neck, H.wear_wrists))
+		if(istype(candidate, /obj/item/roguekey) || istype(candidate, /obj/item/storage/keyring))
+			return candidate
+	if(H.belt)
+		var/obj/item/storage/keyring/ring = locate(/obj/item/storage/keyring) in H.belt
+		if(ring)
+			return ring
+		var/obj/item/roguekey/key = locate(/obj/item/roguekey) in H.belt
+		if(key)
+			return key
+	return null
 
 /obj/structure/mineral_door/proc/trykeylock(obj/item/I, mob/user, autobump = FALSE)
 	if(door_opened || isSwitchingStates)

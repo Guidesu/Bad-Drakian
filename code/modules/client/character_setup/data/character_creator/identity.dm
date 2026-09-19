@@ -4,6 +4,7 @@
 		"species_sub_name" = pref_species.sub_name,
 		"species_check" = spec_check(user),
 		"race_bonus" = null,
+		"race_title" = pref_species.use_titles ? selected_title : null,
 
 		"nickname" = nickname,
 		"highlight_color" = highlight_color,

@@ -91,9 +91,8 @@
 	var/mob/living/carbon/human/H = source
 	var/message = speech_args[SPEECH_MESSAGE]
 
-	if(!GLOB.string_cache[UNIVERSAL_ACCENT_FILENAME])
-		strings(UNIVERSAL_ACCENT_FILENAME, "full") //populate glob
-	message = treat_message_accent(message, GLOB.string_cache[UNIVERSAL_ACCENT_FILENAME])
+	var/list/universal_words = strings(UNIVERSAL_ACCENT_FILENAME, "universal")
+	message = treat_message_accent(message, universal_words)
 
 	if(istype(H) && !accent_ignores_language(H, speech_args[SPEECH_LANGUAGE]))
 		message = treat_message_accent(message, get_accent(H))
@@ -134,6 +133,12 @@
 		return message
 	if(message[1] == "*") //this is to ignore emotes
 		return message
+
+	// Universal replacements are stored as one flat dictionary, while named
+	// accents use full/start/end/multi dictionaries. Accept both formats so a
+	// malformed lookup can never prevent a player from speaking.
+	if(!("full" in accent_list) && !("start" in accent_list) && !("end" in accent_list) && !("multi" in accent_list))
+		accent_list = list("full" = accent_list)
 
 	message = html_decode(message)
 	var/list/tokens = splittext_char(message, " ")

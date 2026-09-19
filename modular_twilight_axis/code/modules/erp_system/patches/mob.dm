@@ -151,6 +151,15 @@
 
 	return erp_try_start(src, target_atom, src)
 
+/// Ratwood-compatible shortcut: Ctrl+Shift-click a living target to open the
+/// ERP panel. Failed ERP checks fall through to the normal click signal.
+/mob/living/CtrlShiftClick(mob/user)
+	if(isliving(user) && ishuman(user))
+		var/mob/living/actor = user
+		if(erp_try_start(actor, src, actor))
+			return TRUE
+	return ..()
+
 /atom/proc/erp_is_familiar_menu_blocked()
 	if(islist(GLOB.familiar_types))
 		for(var/familiar_name in GLOB.familiar_types)

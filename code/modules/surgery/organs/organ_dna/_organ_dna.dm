@@ -75,3 +75,19 @@
 	vagina_organ.fertility = fertility
 	//if(vagina_organ.accessory_type == /datum/sprite_accessory/vagina/cloaca)
 	//	vagina_organ.monohole = TRUE
+
+/datum/organ_dna/wings
+	var/wings_color = "#FFFFFF"
+	var/wing_natural_gradient = /datum/hair_gradient/none
+	var/wing_natural_color = "#FFFFFF"
+	var/wing_dye_gradient = /datum/hair_gradient/none
+	var/wing_dye_color = "#FFFFFF"
+
+/datum/organ_dna/wings/imprint_organ(obj/item/organ/organ)
+	. = ..()
+	var/obj/item/organ/wings/wing_organ = organ
+	wing_organ.wings_color = wings_color
+	wing_organ.wing_natural_gradient = wing_natural_gradient
+	wing_organ.wing_natural_color = wing_natural_color
+	wing_organ.wing_dye_gradient = wing_dye_gradient
+	wing_organ.wing_dye_color = wing_dye_color

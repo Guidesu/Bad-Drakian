@@ -1,7 +1,7 @@
 /datum/species/ooze
-	name = "Murkling"
+	name = "Ooze"
 	id = "ooze"
-	desc_title = "Murkling"
+	desc_title = "Ooze"
 	desc = "Few know the true origins of the Murklings. Ancient records place their beginnings deep within the cold caverns of the Underdark \
 	where primordial ooze infested tunnels and defended its spawning pits with relentless hostility. \
 	For centuries, Dark Elves and Dwarven delvers alike sealed these regions away, leaving the living mire undisturbed. \

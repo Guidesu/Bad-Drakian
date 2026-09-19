@@ -9,6 +9,20 @@
 //	This also works with decimals.
 #define SAVEFILE_VERSION_MAX	36
 
+/// Converts Ratwood, Azure Peak, and earlier BAD DRAKIAN display names to the
+/// canonical species names used by the current character creator.
+/proc/canonical_species_save_name(species_name)
+	switch(species_name)
+		if("Zardman")
+			return "Sissean"
+		if("Verminvolk", "Verminfolk")
+			return "Critterkin"
+		if("Murkling")
+			return "Ooze"
+		if("Vulpkian", "Vulpkanin")
+			return "Venardine"
+	return species_name
+
 /*
 SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Carn
 	This proc checks if the current directory of the savefile S needs updating
@@ -63,9 +77,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			var/newtype = GLOB.species_list[species_name]
 			if(!newtype)
 				switch(species_name)
-					if("Sissean")
-
-						species_name = "Zardman"
+					if("Zardman")
+						species_name = "Sissean"
 					if("Vulpkian")
 
 						species_name = "Venardine"
@@ -194,6 +207,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["erp_custom_actions"] >> erp_custom_actions
 	S["erp_kink_prefs"] >> erp_kink_prefs
 	S["erp_organ_sensitivity"] >> erp_organ_prefs
+	S["erp_bottom_exposed"] >> erp_bottom_exposed
+	S["erp_freeuse"] >> erp_freeuse
 	// TA Addition end - new ERP SYSTEM
 
 	//try to fix any outdated data if necessary
@@ -300,6 +315,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	sanitize_erp_kink_prefs()
 	erp_organ_prefs		= sanitize_islist(erp_organ_prefs, list())
 	sanitize_erp_organ_prefs()
+	erp_bottom_exposed	= !!erp_bottom_exposed
+	erp_freeuse			= !!erp_freeuse
 
 	// etc
 	asaycolor			= sanitize_ooccolor(sanitize_hexcolor(asaycolor, 6, TRUE, initial(asaycolor)))
@@ -427,6 +444,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["erp_custom_actions"], erp_custom_actions)
 	WRITE_FILE(S["erp_kink_prefs"], erp_kink_prefs)
 	WRITE_FILE(S["erp_organ_sensitivity"], erp_organ_prefs)
+	WRITE_FILE(S["erp_bottom_exposed"], erp_bottom_exposed)
+	WRITE_FILE(S["erp_freeuse"], erp_freeuse)
 	// TA Addition end - new ERP SYSTEM
 	return TRUE
 
@@ -436,6 +455,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		S["species"] >> species_name
 
 	if(species_name)
+		species_name = canonical_species_save_name(species_name)
 		var/newtype = GLOB.species_list[species_name]
 		if(newtype)
 			pref_species = new newtype
@@ -701,6 +721,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["taur_color"]			>> taur_color
 	S["taur_markings"]		>> taur_markings
 	S["taur_tertiary"]		>> taur_tertiary
+	S["selected_title"]		>> selected_title
 
 /datum/preferences/proc/_load_familiar_prefs(S)
 	S["familiar_names"]					>> familiar_prefs.familiar_names
@@ -900,6 +921,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	voice_pack		= sanitize_inlist(voice_pack, GLOB.voice_packs_list, VOICE_PACK_DEFAULT)
 	char_accent		= sanitize_inlist(char_accent, GLOB.character_accents, initial(char_accent))
 	race_bonus		= sanitize_inlist_no_pick(race_bonus, pref_species.custom_selection, initial(race_bonus))
+	selected_title	= pref_species.use_titles ? sanitize_inlist(selected_title, list("None") + pref_species.race_titles, "None") : "None"
 	examine_theme	= sanitize_inlist_no_pick(examine_theme, GLOB.tgui_themes, initial(examine_theme))
 	taur_type		= sanitize_inlist_no_pick(taur_type, pref_species.get_taur_list(), null)
 	averse_chosen_faction = sanitize_inlist(averse_chosen_faction, GLOB.averse_factions, initial(averse_chosen_faction))
@@ -1088,6 +1110,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 
 	var/species_name
 	S["species"] >> species_name
+	species_name = canonical_species_save_name(species_name)
 	if(species_name && GLOB.species_list[species_name])
 		var/race_type = GLOB.species_list[species_name]
 		pref_species = new race_type
@@ -1157,6 +1180,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["voice_pitch"]			, voice_pitch)
 	WRITE_FILE(S["skin_tone"]			, skin_tone)
 	WRITE_FILE(S["species"]				, pref_species.name)
+	WRITE_FILE(S["selected_title"]		, selected_title)
 	WRITE_FILE(S["charflaws"]			, charflaws)
 	WRITE_FILE(S["feature_mcolor"]		, features["mcolor"])
 	WRITE_FILE(S["feature_mcolor2"]		, features["mcolor2"])

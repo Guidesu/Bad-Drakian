@@ -2,12 +2,19 @@
 	race = /datum/species/anthromorphsmall
 
 /datum/species/anthromorphsmall
-	name = "Verminvolk"
+	name = "Critterkin"
 	id = "anthromorphsmall"
 	is_subrace = TRUE
 	base_name = "Beastvolk"
-	desc_title = "Verminvolk"
-	desc = "A race akin to wild-kin, except afflicted with significantly smaller stature. A bit less respected than their kin due to their closer resemblance to vermin, like the dichotomy between Kobold and Zardman."
+	desc_title = "Critterkin"
+	desc = "A people akin to wild-kin, but of significantly smaller stature. They receive less respect than their larger kin because of their closer resemblance to vermin, much like the distinction between Kobolds and Sisseans."
+	use_titles = TRUE
+	race_titles = list(
+		"Catvolk", "Dogvolk", "Volfvolk", "Lionvolk", "Venardvolk", "Tigervolk", "Sheepvolk", "Goatvolk", "Rousvolk", "Possumvolk",
+		"Pigvolk", "Boarvolk", "Rabbitvolk", "Cabbitvolk", "Harevolk", "Horsevolk", "Donkeyvolk", "Hyenavolk", "Deervolk", "Bearvolk",
+		"Pandavolk", "Coyotevolk", "Moosevolk", "Rakunvolk", "Jackalvolk", "Panthervolk", "Lynxvolk", "Leopardvolk", "Monkeyvolk", "Birdvolk",
+		"Sealvolk", "Frogvolk", "Batvolk", "Ottervolk", "Cowvolk", "Bullvolk", "Beevolk", "Drakianvolk", "Dragonvolk", "Monstervolk", "Chimeravolk",
+	)
 	default_color = "444"
 	species_traits = list(
 		MUTCOLORS,
@@ -166,4 +173,3 @@
 	returned["mcolor2"] = second_color
 	returned["mcolor3"] = third_color
 	return returned
-

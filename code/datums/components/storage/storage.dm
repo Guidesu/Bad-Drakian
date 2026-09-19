@@ -817,7 +817,7 @@
 
 /datum/component/storage/proc/rmb_show(mob/user)
 	var/atom/A = parent
-	if((user.active_storage == src) && A.Adjacent(user)) //if you're already looking inside the storage item
+	if((user.active_storage == src) && (A.loc == user || A.Adjacent(user))) //if you're already looking inside the storage item
 		user.active_storage.close(user)
 		close(user)
 		. = COMPONENT_NO_ATTACK_HAND
@@ -850,7 +850,9 @@
 					H.putItemFromInventoryInHandIfPossible(A, H.active_hand_index)
 				return
 
-	if(A.Adjacent(user))
+	// Equipped containers live inside the mob and are not consistently reported
+	// as Adjacent by BYOND. They must remain directly accessible from the HUD.
+	if(A.loc == user || A.Adjacent(user))
 		. = COMPONENT_NO_ATTACK_HAND
 		if(locked || !allow_look_inside)
 //			to_chat(user, span_warning("[parent] seems to be locked!"))

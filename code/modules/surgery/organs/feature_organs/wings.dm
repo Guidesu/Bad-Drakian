@@ -14,6 +14,37 @@
 	var/is_open
 	///Whether the owner of wings has flight thanks to the wings
 	var/granted_flight
+	var/wings_color = "#FFFFFF"
+	var/wing_natural_gradient = /datum/hair_gradient/none
+	var/wing_natural_color = "#FFFFFF"
+	var/wing_dye_gradient = /datum/hair_gradient/none
+	var/wing_dye_color = "#FFFFFF"
+
+/obj/item/organ/wings/bodypart_overlays(mutable_appearance/standing)
+	add_gradient_overlay(standing, wing_natural_gradient, wing_natural_color)
+	add_gradient_overlay(standing, wing_dye_gradient, wing_dye_color)
+
+/obj/item/organ/wings/proc/add_gradient_overlay(mutable_appearance/standing, gradient_type, gradient_color)
+	if(gradient_type == /datum/hair_gradient/none || isnull(gradient_type))
+		return
+	var/datum/sprite_accessory/accessory = SPRITE_ACCESSORY(accessory_type)
+	var/datum/hair_gradient/gradient = HAIR_GRADIENT(gradient_type)
+	if(!accessory?.gradient_icon || !gradient?.icon_state)
+		return
+	var/icon/gradient_mask = icon(accessory.gradient_icon, gradient.icon_state)
+	if(accessory.pixel_x > 0)
+		gradient_mask.Shift(NORTH, accessory.pixel_x, wrap = TRUE)
+	else if(accessory.pixel_x < 0)
+		gradient_mask.Shift(SOUTH, abs(accessory.pixel_x), wrap = TRUE)
+	var/layered_icon_state = accessory.icon_state
+	var/layer_suffix = accessory.get_layer_suffix(-(standing.layer))
+	if(layer_suffix)
+		layered_icon_state = "[accessory.icon_state]_[layer_suffix]"
+	var/icon/wing_icon = icon(accessory.icon, layered_icon_state)
+	gradient_mask.Blend(wing_icon, ICON_ADD)
+	var/mutable_appearance/gradient_appearance = mutable_appearance(gradient_mask)
+	gradient_appearance.color = sanitize_hexcolor(gradient_color, 6, TRUE, "#FFFFFF")
+	standing.overlays += gradient_appearance
 
 //TODO: Well you know what this flight stuff is a bit complicated and hardcoded, this is enough for now
 

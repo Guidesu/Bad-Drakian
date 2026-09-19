@@ -23,7 +23,6 @@
 	E["thrust_link"] = null
 	E["suck_link"] = null
 	E["slap_link"] = null
-	E["hearts_mobs"] = list()
 	for(var/datum/erp_sex_link/L in active_links)
 		if(!L || QDELETED(L) || !L.is_valid())
 			continue
@@ -40,22 +39,6 @@
 
 		if(!E["thrust_link"] && is_thrust_init(init_t))
 			E["thrust_link"] = L
-
-	for(var/datum/erp_sex_link/L2 in active_links)
-		if(!L2 || QDELETED(L2) || !L2.is_valid())
-			continue
-		var/mob/living/carbon/human/A = L2.actor_active?.get_effect_mob()
-		var/mob/living/carbon/human/B = L2.actor_passive?.get_effect_mob()
-
-		if(istype(A))
-			var/arA = get_arousal_value(A)
-			if(isnum(arA) && arA >= 20)
-				E["hearts_mobs"][A] = TRUE
-
-		if(istype(B))
-			var/arB = get_arousal_value(B)
-			if(isnum(arB) && arB >= 20)
-				E["hearts_mobs"][B] = TRUE
 
 	return E
 
@@ -87,12 +70,6 @@
 		if(istype(thrust_mob))
 			do_onomatopoeia(thrust_mob, thrustL)
 			play_thrust_sound(thrust_mob, thrustL)
-
-	var/list/HM = E["hearts_mobs"]
-	if(islist(HM))
-		for(var/mob/living/carbon/human/H as anything in HM)
-			if(istype(H))
-				spawn_hearts(H)
 
 /// Performs thrust bump animation.
 /datum/erp_vfx_service/proc/do_thrust_bump(datum/erp_sex_link/best)

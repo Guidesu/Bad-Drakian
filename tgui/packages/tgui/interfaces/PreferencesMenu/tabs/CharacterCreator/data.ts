@@ -233,7 +233,8 @@ export type IdentityData = {
   species_base_name: string;
   species_sub_name: string;
   species_check: BooleanLike;
-  race_bonus: string | null; // null indicates no race bonus
+	race_bonus: string | null; // null indicates no race bonus
+	race_title: string | null; // null indicates this species has no cosmetic title selector
 
   nickname: string;
   highlight_color: Color;

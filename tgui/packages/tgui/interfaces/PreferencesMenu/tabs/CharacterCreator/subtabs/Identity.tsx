@@ -78,7 +78,8 @@ export const SubtabIdentityCardInfo = () => {
     highlight_color,
     nickname,
     pronouns,
-    race_bonus,
+		race_bonus,
+		race_title,
     real_name,
     species_base_name,
     species_check,
@@ -108,13 +109,20 @@ export const SubtabIdentityCardInfo = () => {
             {species_check ? null : '(!)'}
           </Button>
         </LabeledGridList.Item>
-        {race_bonus !== null ? (
+		{race_bonus !== null ? (
           <LabeledGridList.Item label="Race Bonus">
             <Button fluid onClick={() => act('race_bonus_select')}>
               {race_bonus || 'None'}
             </Button>
           </LabeledGridList.Item>
-        ) : null}
+		) : null}
+		{race_title !== null ? (
+		  <LabeledGridList.Item label="Species Title">
+			<Button fluid onClick={() => act('race_title_select')}>
+			  {race_title || 'None'}
+			</Button>
+		  </LabeledGridList.Item>
+		) : null}
         <LabeledGridList.Item label="Name" verticalAlign="center">
           <Stack>
             <Stack.Item grow>

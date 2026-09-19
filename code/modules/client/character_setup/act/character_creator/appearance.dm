@@ -30,6 +30,13 @@
 					verbose_pref_log_change(user, "notice", "Racial Bonus", race_bonus, choice)
 					race_bonus = choice
 			return CHARACTER_ACT_DATA_UPDATE
+		if("race_title_select")
+			if(pref_species.use_titles)
+				var/list/title_choices = list("None") + pref_species.race_titles
+				var/choice = tgui_input_list(user, "Choose a cosmetic species title:", "Species Title", title_choices, selected_title)
+				if(choice)
+					selected_title = choice
+			return CHARACTER_ACT_PREVIEW_UPDATE
 		if("taur_color")
 			var/new_taur_color = tgui_color_picker(user, "Choose your character's taur color:", "Taur Color", taur_color)
 			if(new_taur_color)

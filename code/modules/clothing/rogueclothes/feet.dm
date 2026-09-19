@@ -27,34 +27,75 @@
 	salvage_amount = 1
 	armor = ARMOR_CLOTHING
 	salvage_result = /obj/item/natural/hide/cured
-	var/atom/movable/holdingknife = null
+	/// Small items concealed in the boot. These live inside the boot so inventory
+	/// traversal and deletion behave like normal storage.
+	var/atom/movable/holdingknife
+	var/atom/movable/holdinglockpick
+
+/obj/item/clothing/shoes/roguetown/boots/Destroy()
+	QDEL_NULL(holdingknife)
+	QDEL_NULL(holdinglockpick)
+	return ..()
+
+/obj/item/clothing/shoes/roguetown/boots/deconstruct(disassembled)
+	if(holdingknife)
+		holdingknife.forceMove(get_turf(src))
+		holdingknife = null
+	if(holdinglockpick)
+		holdinglockpick.forceMove(get_turf(src))
+		holdinglockpick = null
+	return ..()
 
 /obj/item/clothing/shoes/roguetown/boots/examine(mob/user)
 	. = ..()
-	if(holdingknife)
-		. += span_notice("There is a knife tucked into the side of the boot.")
+	. += span_smallnotice("Knives and lockpicks can be stowed inside.")
+	if(holdingknife || holdinglockpick)
+		. += span_notice("Something is tucked into the boot.")
 
-/obj/item/clothing/shoes/roguetown/boots/attackby(obj/item/W, mob/living/carbon/user, params)
-	// Special exception for rotfang to help deal with inventory woes / make it harder to steal.
-	if(istype(W, /obj/item/rogueweapon/huntingknife/throwingknife) || istype(W, /obj/item/rogueweapon/huntingknife/idagger/steel/rotfang))
-		if(holdingknife == null)
-			for(var/obj/item/clothing/shoes/roguetown/boots/B in user.get_equipped_items(TRUE))
-				to_chat(loc, span_warning("I quickly slot [W] into [B]!"))
-				user.transferItemToLoc(W, holdingknife)
-				holdingknife = W
-				playsound(loc, 'sound/foley/equip/swordsmall1.ogg')
-		else
-			to_chat(loc, span_warning("My boot already holds a knife."))
+/obj/item/clothing/shoes/roguetown/boots/attackby(obj/item/storing_item, mob/living/carbon/user, params)
+	if(istype(storing_item, /obj/item/rogueweapon/huntingknife))
+		if(holdingknife)
+			to_chat(user, span_warning("My boot already holds a knife."))
+			return
+		if(!user.transferItemToLoc(storing_item, src))
+			return
+		holdingknife = storing_item
+		to_chat(user, span_notice("I quickly slot [storing_item] into [src]."))
+		playsound(user, 'sound/foley/equip/swordsmall1.ogg')
 		return
-	. = ..()
+	if(istype(storing_item, /obj/item/lockpick))
+		if(holdinglockpick)
+			to_chat(user, span_warning("My boot already holds a lockpick."))
+			return
+		if(!user.transferItemToLoc(storing_item, src))
+			return
+		holdinglockpick = storing_item
+		to_chat(user, span_notice("I quickly slot [storing_item] into [src]."))
+		playsound(user, 'sound/foley/equip/rummaging-01.ogg')
+		return
+	return ..()
 
 /obj/item/clothing/shoes/roguetown/boots/attack_right(mob/user)
-	if(holdingknife != null)
-		if(!user.get_active_held_item())
-			user.put_in_active_hand(holdingknife, user.active_hand_index)
-			holdingknife = null
-			playsound(loc, 'sound/foley/equip/swordsmall1.ogg')
-			return TRUE
+	if(!holdingknife)
+		return ..()
+	user.visible_message(span_notice("[user] begins drawing something from [src]."), span_notice("I begin drawing a knife from [src]."))
+	if(!do_after(user, 2 SECONDS))
+		return TRUE
+	user.put_in_hands(holdingknife)
+	holdingknife = null
+	playsound(user, 'sound/foley/equip/swordsmall1.ogg')
+	return TRUE
+
+/obj/item/clothing/shoes/roguetown/boots/MiddleClick(mob/user)
+	if(!holdinglockpick)
+		return ..()
+	user.visible_message(span_notice("[user] begins drawing something from [src]."), span_notice("I begin drawing a lockpick from [src]."))
+	if(!do_after(user, 2 SECONDS))
+		return TRUE
+	user.put_in_hands(holdinglockpick)
+	holdinglockpick = null
+	playsound(user, 'sound/foley/equip/rummaging-01.ogg')
+	return TRUE
 
 /obj/item/clothing/shoes/roguetown/boots/aalloy
 	name = "decrepit boots"
@@ -152,7 +193,7 @@
 		if(holdingknife == null)
 			for(var/obj/item/clothing/shoes/roguetown/ridingboots/B in user.get_equipped_items(TRUE))
 				to_chat(loc, span_warning("I quickly slot [W] into [B]!"))
-				user.transferItemToLoc(W, holdingknife)
+				user.transferItemToLoc(W, src)
 				holdingknife = W
 				playsound(loc, 'sound/foley/equip/swordsmall1.ogg')
 		else
@@ -1006,4 +1047,3 @@
 /obj/item/clothing/shoes/roguetown/rosa/ten
 	name = "stately shoes"
 	icon_state = "rosashoes10"
-

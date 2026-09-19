@@ -161,6 +161,8 @@ export type SexSessionData = {
   yield_to_partner?: boolean;
   allow_user_moan?: boolean;
   hidden_mode?: boolean;
+  bottom_exposed?: boolean;
+  freeuse?: boolean;
   active_tab?: string;
 
   tabs?: {
@@ -2041,6 +2043,8 @@ export const EroticRolePlayPanel: React.FC = () => {
   const isYielding = !!data.yield_to_partner;
   const isMoaning = !!data.allow_user_moan;
   const isHidden = !!data.hidden_mode;
+  const isBottomExposed = !!data.bottom_exposed;
+  const isFreeuse = !!data.freeuse;
   const [q, setQ] = useState('');
   const [cat, setCat] = useState<string>('ALL');
   const categories = useMemo(() => {
@@ -2096,6 +2100,16 @@ export const EroticRolePlayPanel: React.FC = () => {
               <Stack.Item style={{ margin: 0 }}>
                 <Pill selected={isHidden} onClick={() => act('toggle_hidden')}>
                   SECRETLY
+                </Pill>
+              </Stack.Item>
+              <Stack.Item style={{ margin: 0 }}>
+                <Pill selected={isBottomExposed} onClick={() => act('toggle_bottom_exposed')}>
+                  EXPOSED
+                </Pill>
+              </Stack.Item>
+              <Stack.Item style={{ margin: 0 }}>
+                <Pill selected={isFreeuse} onClick={() => act('toggle_freeuse')}>
+                  FREEUSE
                 </Pill>
               </Stack.Item>
             </Stack>

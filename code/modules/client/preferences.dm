@@ -73,6 +73,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 	var/voice_color = "#a0a0a0"
 	var/voice_pitch = 1
 	var/datum/species/pref_species = new /datum/species/human/northern()	//Mutant race
+	var/selected_title = "None"
 	var/static/datum/species/default_species = new /datum/species/human/northern()
 	var/datum/patron/selected_patron
 	var/static/datum/patron/default_patron = /datum/patron/divine/undivided
@@ -487,6 +488,7 @@ GLOBAL_LIST_EMPTY(chosen_names)
 
 	// get them back to a stable default
 	race_bonus = null
+	selected_title = "None"
 	customizer_entries = list()
 	validate_customizer_entries()
 	// Descriptors depend on species, so we have to reset them

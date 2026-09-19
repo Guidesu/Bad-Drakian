@@ -7,6 +7,89 @@
 	name = "Wings"
 	organ_type = /obj/item/organ/wings
 	organ_slot = ORGAN_SLOT_WINGS
+	organ_dna_type = /datum/organ_dna/wings
+	customizer_entry_type = /datum/customizer_entry/organ/wings
+	allows_accessory_color_customization = FALSE
+	tgui_template = "FeatureChoiceWings"
+	var/allows_natural_gradient = TRUE
+	var/allows_dye_gradient = TRUE
+
+/datum/customizer_entry/organ/wings
+	var/wings_color = "#FFFFFF"
+	var/natural_gradient = /datum/hair_gradient/none
+	var/natural_color = "#FFFFFF"
+	var/dye_gradient = /datum/hair_gradient/none
+	var/dye_color = "#FFFFFF"
+
+/datum/customizer_choice/organ/wings/validate_entry(datum/preferences/prefs, datum/customizer_entry/entry)
+	..()
+	var/datum/customizer_entry/organ/wings/wings_entry = entry
+	wings_entry.wings_color = sanitize_hexcolor(wings_entry.wings_color, 6, TRUE, "#FFFFFF")
+	wings_entry.natural_gradient = sanitize_hair_gradient(wings_entry.natural_gradient)
+	wings_entry.natural_color = sanitize_hexcolor(wings_entry.natural_color, 6, TRUE, "#FFFFFF")
+	wings_entry.dye_gradient = sanitize_hair_gradient(wings_entry.dye_gradient)
+	wings_entry.dye_color = sanitize_hexcolor(wings_entry.dye_color, 6, TRUE, "#FFFFFF")
+
+/datum/customizer_choice/organ/wings/imprint_organ_dna(datum/organ_dna/organ_dna, datum/customizer_entry/entry, datum/preferences/prefs)
+	..()
+	var/datum/organ_dna/wings/wings_dna = organ_dna
+	var/datum/customizer_entry/organ/wings/wings_entry = entry
+	var/datum/sprite_accessory/wings/wing_accessory = SPRITE_ACCESSORY(entry.accessory_type)
+	if(wing_accessory.color_keys > 1)
+		wings_dna.wings_color = wings_entry.accessory_colors
+		return
+	wings_dna.wings_color = wings_entry.wings_color
+	wings_dna.wing_natural_gradient = wings_entry.natural_gradient
+	wings_dna.wing_natural_color = wings_entry.natural_color
+	wings_dna.wing_dye_gradient = wings_entry.dye_gradient
+	wings_dna.wing_dye_color = wings_entry.dye_color
+
+/datum/customizer_choice/organ/wings/tgui_pref_choices(datum/preferences/prefs, datum/customizer_entry/entry, customizer_type)
+	var/list/data = ..()
+	var/datum/customizer_entry/organ/wings/wings_entry = entry
+	data["wings_color"] = wings_entry.wings_color
+	data["natural_gradient"] = wings_entry.natural_gradient
+	data["natural_color"] = wings_entry.natural_color
+	data["dye_gradient"] = wings_entry.dye_gradient
+	data["dye_color"] = wings_entry.dye_color
+	data["allows_natural_gradient"] = allows_natural_gradient
+	data["allows_dye_gradient"] = allows_dye_gradient
+	return data
+
+/datum/customizer_choice/organ/wings/handle_tgui_act(list/params, datum/tgui/ui, datum/preferences/prefs, datum/customizer_entry/entry, customizer_type)
+	. = ..()
+	if(.)
+		return
+	var/mob/user = ui.user
+	var/datum/customizer_entry/organ/wings/wings_entry = entry
+	switch(params["customizer_task"])
+		if("wings_color", "natural_color", "dye_color")
+			var/task = params["customizer_task"]
+			var/current_color = wings_entry.wings_color
+			if(task == "natural_color")
+				current_color = wings_entry.natural_color
+			else if(task == "dye_color")
+				current_color = wings_entry.dye_color
+			var/new_color = color_pick_sanitized(user, "Choose a wing colour:", "Character Preference", current_color)
+			if(!new_color)
+				return TRUE
+			if(task == "wings_color")
+				wings_entry.wings_color = new_color
+			else if(task == "natural_color")
+				wings_entry.natural_color = new_color
+			else
+				wings_entry.dye_color = new_color
+			return TRUE
+		if("natural_gradient", "dye_gradient")
+			var/list/choice_list = hair_gradient_types()
+			var/chosen = tgui_input_list(user, "Choose a wing gradient:", "Character Preference", choice_list)
+			if(isnull(chosen))
+				return TRUE
+			if(params["customizer_task"] == "natural_gradient")
+				wings_entry.natural_gradient = choice_list[chosen]
+			else
+				wings_entry.dye_gradient = choice_list[chosen]
+			return TRUE
 
 /datum/customizer/organ/wings/anthro
 	customizer_choices = list(/datum/customizer_choice/organ/wings/anthro)
