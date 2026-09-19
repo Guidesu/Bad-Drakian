@@ -70,7 +70,7 @@
 		var/weapons = list("Dagger","Axe", "Cudgel", "My Bow Is Enough")
 		var/weapon_choice = input(H, "Choose your weapon.", "TAKE UP ARMS") as anything in weapons
 		H.set_blindness(0)
-		var/fashion = list("Cunning Archer", "Ruthless Hunter", "Unrelenting Beastslayer")
+		var/fashion = list("Cunning Archer", "Ruthless Hunter", "Unrelenting Beastslayer", "Disgraced Warden")
 		var/fashion_choice = input(H, "Choose your appearance. This choice is cosmetic.", "BE FASHIONABLE") as anything in fashion
 		switch(fashion_choice)
 			if("Cunning Archer")
@@ -82,6 +82,9 @@
 			if("Unrelenting Beastslayer")
 				head = /obj/item/clothing/head/roguetown/roguehood/darkgreen
 				cloak = /obj/item/clothing/cloak/raincloak/furcloak/darkgreen
+			if("Disgraced Warden")
+				head = /obj/item/clothing/head/roguetown/roguehood/warden/antler
+				cloak = /obj/item/clothing/cloak/wardencloak
 		switch(weapon_choice)
 			if("Dagger")
 				H.adjust_skillrank_up_to(/datum/skill/combat/knives, SKILL_LEVEL_EXPERT, TRUE)
