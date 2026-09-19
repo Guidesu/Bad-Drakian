@@ -1125,6 +1125,10 @@
 	var/obj/item/organ/testicles/testicles = getorganslot(ORGAN_SLOT_TESTICLES)
 	return testicles.virility
 
+/// Set by Baotha's fertility rite. This mirrors the persistent pregnancy flag on
+/// a vagina for marked characters who have no vagina.
+/mob/living/carbon/human/var/mpreg = FALSE
+
 /mob/living/carbon/human/update_mobility()
 	. = ..()
 	if(!(mobility_flags & MOBILITY_CANSTAND) && mouth?.spitoutmouth)

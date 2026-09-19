@@ -1131,6 +1131,9 @@
 				. += span_greentext("<b>[m1] an agent of the court!</b>")
 
 		if(user != src && !HAS_TRAIT(src, TRAIT_DECEIVING_MEEKNESS))
+			if(HAS_TRAIT(src, TRAIT_BAOTHA_FERTILITY_BOON) && !get_item_by_slot(SLOT_PANTS))
+				. += span_purple("A violet ritual mark rests across [m2] lower abdomen.")
+
 			if(has_flaw(/datum/charflaw/addiction/lovefiend) && user.has_flaw(/datum/charflaw/addiction/lovefiend))
 				. += span_aiprivradio("[m1] as lovesick as I.")
 

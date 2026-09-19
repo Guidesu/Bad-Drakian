@@ -59,6 +59,7 @@
 	var/do_subtle = sex_session.doing_subtly
 	if(flipped)	// The one being ridden is accessing this.
 		user.visible_message(span_love("[user] [do_subtle ? "subtly " : ""]cums into [target]'s butt!"), vision_distance = (do_subtle ? 1 : DEFAULT_MESSAGE_RANGE))
+		user.try_impregnate(target)
 		user.virginity = FALSE
 	else 		// The Rider
 		user.visible_message(span_love("[user] [do_subtle ? "subtly " : ""]quivers onto [target]'s pintle!"), vision_distance = (do_subtle ? 1 : DEFAULT_MESSAGE_RANGE))

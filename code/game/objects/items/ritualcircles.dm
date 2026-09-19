@@ -2081,7 +2081,7 @@ More uniquely, her rites always cut out the light in the room, then proc. 10 sec
 	name = "Rune of Hedonism"
 	desc = "A holy rune of <font color='bf64d0'>Baotha.</font> </br> <i>Relief for the broken hearted.</i>"
 	icon_state = "baotha_chalky"
-	var/baotharites = list("Rite of Armaments", "Joybringer")
+	var/baotharites = list("Rite of Armaments", "Rite of Fertility", "Joybringer")
 
 /obj/structure/ritualcircle/baotha/attack_hand(mob/living/user)
 	if(!..())
@@ -2148,6 +2148,30 @@ More uniquely, her rites always cut out the light in the room, then proc. 10 sec
 			user.apply_status_effect(/datum/status_effect/debuff/ritesexpended)
 			user.apply_status_effect(/datum/status_effect/joybringer)
 
+			return TRUE
+		if("Rite of Fertility")
+			var/list/candidates = list()
+			for(var/mob/living/carbon/human/person in view(1, loc))
+				if(person.loc == loc)
+					candidates += person
+			var/mob/living/carbon/human/target = input(user, "Choose a recipient standing on the rune.", "Rite of Fertility") as null|anything in candidates
+			if(!target || target.loc != loc)
+				return
+			if(HAS_TRAIT(target, TRAIT_BAOTHA_FERTILITY_BOON))
+				to_chat(user, span_warning("Baotha has already marked [target]."))
+				return
+			if(alert(target, "Baotha offers Her fertility mark. Accept it?", "Rite of Fertility", "Accept", "Refuse") != "Accept")
+				target.visible_message(span_warning("[target] rejects Baotha's offered mark."))
+				return
+			if(!do_after(user, 8 SECONDS) || target.loc != loc)
+				return
+			user.apply_status_effect(/datum/status_effect/debuff/ritesexpended)
+			ADD_TRAIT(target, TRAIT_BAOTHA_FERTILITY_BOON, TRAIT_RITUAL)
+			var/obj/item/organ/vagina/vagina = target.getorganslot(ORGAN_SLOT_VAGINA)
+			if(vagina)
+				vagina.fertility = TRUE
+			target.visible_message(span_notice("A violet mark briefly flares across [target]'s lower abdomen before fading into the skin."), span_notice("Baotha's mark burns across my lower abdomen, then settles into my flesh."))
+			to_chat(target, span_info("The mark is visible when your groin is exposed, and it grants fertility even without a vagina."))
 			return TRUE
 
 /obj/structure/ritualcircle/baotha/proc/baothaarmaments(mob/living/carbon/human/target)

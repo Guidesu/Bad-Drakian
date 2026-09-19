@@ -80,10 +80,14 @@
 	if(!testes)
 		return
 	var/obj/item/organ/vagina/vag = wife.getorganslot(ORGAN_SLOT_VAGINA)
-	if(!vag)
+	if(!wife || !is_virile())
 		return
-	if(prob(25) && wife.is_fertile() && is_virile())
+	if(vag && prob(25) && wife.is_fertile())
 		vag.be_impregnated(src)
+		return
+	if(!vag && HAS_TRAIT(wife, TRAIT_BAOTHA_FERTILITY_BOON) && !wife.mpreg && prob(25))
+		wife.mpreg = TRUE
+		to_chat(wife, span_love("A strange warmth gathers in my abdomen. Baotha's mark has taken hold: I am pregnant."))
 
 /mob/living/proc/can_do_sex()
 	return TRUE

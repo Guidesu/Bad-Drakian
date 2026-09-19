@@ -71,6 +71,7 @@
 	var/datum/sex_session/sex_session = get_sex_session(user, target)
 	var/do_subtle = sex_session.doing_subtly
 	user.visible_message(span_love("[user] [do_subtle ? "subtly " : ""]cums into [target]'s butt!"))
+	user.try_impregnate(target)
 	user.virginity = FALSE
 	return "into"
 
