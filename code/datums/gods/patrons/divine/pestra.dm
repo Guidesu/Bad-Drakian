@@ -51,7 +51,7 @@
 	// Allows prayer near wells. Weird one, but makes sense for health and disease. Miasma, water, etc.
 	for(var/obj/structure/well/W in view(4, get_turf(follower)))
 		return TRUE
-	to_chat(follower, span_danger("For Pestra to hear my prayer I must either pray within the church, phyisican's building, near a psycross, or near a well to observe the full circle of life.."))
+	to_chat(follower, span_danger("For Pestra to hear my prayer, I must stand within the church or physician's house, near a psycross, or beside a well that reflects the cycle of life."))
 	return FALSE
 
 /datum/patron/divine/pestra/on_lesser_heal(

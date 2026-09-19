@@ -256,7 +256,7 @@
 	// Allows praying atop ritual chalk of the god.
 	for(var/obj/structure/ritualcircle/graggar in view(1, get_turf(follower)))
 		return TRUE
-	to_chat(follower, span_danger("For Graggar to hear my prayers I must either be in the church of the abandoned, near an altar dedicated to Him, near fresh blood or draw blood of my own!"))
+	to_chat(follower, span_danger("For Graggar to hear my prayer, I must stand in the abandoned church, near an altar dedicated to Him or fresh blood, or spill blood myself."))
 	return FALSE
 
 // Matthios - Basically any way you'd like really, so long as there are comrades with you
@@ -311,5 +311,5 @@
 	// Allows praying atop ritual chalk of the god.
 	for(var/obj/structure/ritualcircle/baotha in view(1, get_turf(follower)))
 		return TRUE
-	to_chat(follower, span_danger("For Baotha to hear my prayers I must either be in the church of the abandoned, within the town's bathhouse, or actively enjoying myself, be that through drugs, sex, or whatever it is that gets my blood pumpin'!"))
+	to_chat(follower, span_danger("For Baotha to hear my prayer, I must stand in the abandoned church or town bathhouse, or actively indulge in pleasure, whether through intoxicants, intimacy, or another stirring vice."))
 	return FALSE

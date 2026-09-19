@@ -58,7 +58,7 @@
 	// Allows praying atop ritual chalk of the god.
 	for(var/obj/structure/ritualcircle/matthios in view(1, get_turf(follower)))
 		return TRUE
-	to_chat(follower, span_danger("For Matthios to hear my prayers I must either be in the church of the abandoned, near an inverted psycross, flaunting wealth upon me of at least 100 mammon, or offer a coin of at least five mammon up to him!"))
+	to_chat(follower, span_danger("For Matthios to hear my prayer, I must stand in the abandoned church, near an inverted psycross, openly carry at least 100 mammon, or offer Him a coin worth at least five mammon."))
 	return FALSE
 
 /datum/patron/inhumen/matthios/on_lesser_heal(

@@ -1,7 +1,7 @@
 /datum/patron/inhumen/graggar
 	name = "Graggar"
 	domain = "God of Conquest, War, Strategy, Bind-Breaking"
-	desc = "Slave orc turned deity, said by the Holy Ecclesial to have been blessed by Ravox himself. He took his blessings to wage a bloody war against his once-captors, and then continued his conquest in his own name. Some Graggarites might care for honor, however many do not- what matters are results, and victory at a reasonable cost."
+	desc = "An enslaved orc who became a deity, Graggar is said by the Holy Ecclesiarchy to have received Ravox's blessing. He used that power to wage a bloody war against his captors, then continued his conquests in his own name. Some Graggarites still value honor, but many care only for results and victory at an acceptable cost."
 	worshippers = "Prisoners, Slaves, Militants, and the Cruel"
 	mob_traits = list(TRAIT_HORDE, TRAIT_ORGAN_EATER)
 	traits_tier = list(TRAIT_NASTY_EATER = CLERIC_T1)
@@ -91,5 +91,5 @@
 	// Allows praying atop ritual chalk of the god.
 	for(var/obj/structure/ritualcircle/graggar in view(1, get_turf(follower)))
 		return TRUE
-	to_chat(follower, span_danger("For Graggar to hear my prayers I must either be in the church of the abandoned, near an inverted psycross, near fresh blood or draw blood of my own!"))
+	to_chat(follower, span_danger("For Graggar to hear my prayer, I must stand in the abandoned church, near an inverted psycross or fresh blood, or spill blood myself."))
 	return FALSE

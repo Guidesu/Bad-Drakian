@@ -8,7 +8,7 @@ GLOBAL_LIST_EMPTY(preference_faiths)
 	/// Description of the faith
 	var/desc = "A faith that believes in the power of reporting this issue on GitHub - You shouldn't be seeing this, someone forgot to set the description for this faith."
 	/// People most likely to practice this faith
-	var/worshippers = "Coderbus"
+	var/worshippers = "Those who follow this faith."
 	/// Our "primary" patron god
 	var/datum/patron/godhead = /datum/patron
 	/// Whether or not this faith can be accessed in preferences

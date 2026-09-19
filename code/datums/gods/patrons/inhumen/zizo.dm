@@ -79,7 +79,7 @@
 	if(locate(/obj/effect/decal/cleanable/sigil) in T)
 		return TRUE
 	
-	to_chat(follower, span_danger("For Zizo to hear my prayers I must either be in the church of the abandoned, near an inverted psycross, atop a drawn Zizite symbol, stand in sigil, or while the sun is blotted from the sky!"))
+	to_chat(follower, span_danger("For Zizo to hear my prayer, I must stand in the abandoned church, near an inverted psycross, upon a Zizite ritual mark or sigil, or beneath a sky from which the sun has been blotted out."))
 	return FALSE
 
 /datum/patron/inhumen/zizo/on_lesser_heal(

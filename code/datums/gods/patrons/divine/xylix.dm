@@ -60,7 +60,7 @@
 	// Allows prayer near gambling machines.
 	for(var/obj/structure/roguemachine/lottery_roguetown/L in view(4, get_turf(follower)))
 		return TRUE
-	to_chat(follower, span_danger("For Xylix to hear my prayer I must either pray within the church, near a psycross, or near a machine of fortune blessed by the grand jester.."))
+	to_chat(follower, span_danger("For Xylix to hear my prayer, I must stand within the church, near a psycross, or beside a game of chance blessed by the Grand Jester."))
 	return FALSE
 
 /datum/patron/divine/xylix/on_lesser_heal(

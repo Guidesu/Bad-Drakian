@@ -60,7 +60,7 @@
 	// Allows praying atop ritual chalk of the god.
 	for(var/obj/structure/ritualcircle/baotha in view(1, get_turf(follower)))
 		return TRUE
-	to_chat(follower, span_danger("For Baotha to hear my prayers I must either be in the church of the abandoned, near an inverted psycross, within the town's bathhouse, or actively partaking in a substance."))
+	to_chat(follower, span_danger("For Baotha to hear my prayer, I must stand in the abandoned church, near an inverted psycross, within the town bathhouse, or while indulging in an intoxicating substance."))
 	return FALSE
 
 #define BAOTHA_SUFFERING_DIVIDER 3.535 // max bonus at 50 pain/bleedrate and pain_mod = 1
