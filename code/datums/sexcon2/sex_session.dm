@@ -295,6 +295,9 @@
 	return FALSE
 
 /datum/sex_session/proc/on_climax(mob/source)
+	if(ishuman(source))
+		var/mob/living/carbon/human/human_source = source
+		human_source.sate_addiction(/datum/charflaw/addiction/baothamarked)
 	if(!do_until_finished)
 		return
 	just_climaxed = TRUE

@@ -282,6 +282,8 @@
 
 	climaxer.sate_addiction(/datum/charflaw/addiction/lovefiend)
 	partner.sate_addiction(/datum/charflaw/addiction/lovefiend)
+	climaxer.sate_addiction(/datum/charflaw/addiction/baothamarked)
+	partner.sate_addiction(/datum/charflaw/addiction/baothamarked)
 
 	switch(intensity)
 		if(1) //Should only be achievable with masturbation

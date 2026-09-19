@@ -2167,11 +2167,12 @@ More uniquely, her rites always cut out the light in the room, then proc. 10 sec
 				return
 			user.apply_status_effect(/datum/status_effect/debuff/ritesexpended)
 			ADD_TRAIT(target, TRAIT_BAOTHA_FERTILITY_BOON, TRAIT_RITUAL)
+			target.add_baotha_mark_vice()
 			var/obj/item/organ/vagina/vagina = target.getorganslot(ORGAN_SLOT_VAGINA)
 			if(vagina)
 				vagina.fertility = TRUE
 			target.visible_message(span_notice("A violet mark briefly flares across [target]'s lower abdomen before fading into the skin."), span_notice("Baotha's mark burns across my lower abdomen, then settles into my flesh."))
-			to_chat(target, span_info("The mark is visible when your groin is exposed, and it grants fertility even without a vagina."))
+			to_chat(target, span_info("The mark is visible when your groin is exposed, grants fertility even without a vagina, and carries Baotha's recurring need for intimacy."))
 			return TRUE
 
 /obj/structure/ritualcircle/baotha/proc/baothaarmaments(mob/living/carbon/human/target)

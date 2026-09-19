@@ -276,6 +276,35 @@
 	voyeur_descriptor = "looking lovesick"
 	debuff = /datum/status_effect/debuff/addiction/nympho
 
+/// Granted by Baotha's Rite of Fertility. This is deliberately separate from
+/// Nymphomania: the mark is a ritual consequence, not a character-creation flaw.
+/datum/charflaw/addiction/baothamarked
+	name = "Marked by Baotha"
+	desc = "Baotha's fertility mark leaves me needing physical intimacy regularly."
+	ui_fa_icon = "venus"
+	time = ADDICT_TIME_FREQUENT
+	needsate_text = "Baotha's mark burns with unsated longing."
+	voyeur_descriptor = "restlessly touching their fertility mark"
+	debuff = /datum/status_effect/debuff/addiction/baothamarked
+
+/datum/status_effect/debuff/addiction/baothamarked
+	id = "addiction_baothamark"
+	alert_type = /atom/movable/screen/alert/status_effect/debuff/addiction/baothamarked
+	effectedstats = list(STATKEY_WIL = -1, STATKEY_LCK = -1)
+
+/atom/movable/screen/alert/status_effect/debuff/addiction/baothamarked
+	name = "Marked by Baotha"
+	desc = "Baotha's mark aches for intimacy."
+	icon_state = "nymphomaniac"
+
+/mob/living/carbon/human/proc/add_baotha_mark_vice()
+	if(has_flaw(/datum/charflaw/addiction/baothamarked))
+		return FALSE
+	var/datum/charflaw/addiction/baothamarked/mark_vice = new
+	charflaws += mark_vice
+	mark_vice.on_mob_creation(src)
+	return TRUE
+
 /datum/status_effect/debuff/addiction/nympho
 	id = "addiction_nympho"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/addiction/nympho
