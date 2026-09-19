@@ -1,7 +1,7 @@
 /datum/patron/divine/dendor
 	name = "Dendor"
 	domain = "God of the Earth and Nature"
-	desc = "The God of Wilds, born from Abyssor's feverish dreams. Spilt forth life from the oceans to land in a wild craze, it's said that He had brought nature to nothingness; and with it, all the perils that followed."
+	desc = "Dendor, God of the Wilds, was born from Abyssor's fevered dreams. He drove life from the oceans onto the land in an untamed surge, creating the natural world and every peril that followed with it."
 	worshippers = "Druids, Beasts, and Madmen"
 	mob_traits = list(TRAIT_KNEESTINGER_IMMUNITY, TRAIT_LEECHIMMUNE)
 	miracles = list(/datum/action/cooldown/spell/touch/orison					= CLERIC_ORI,

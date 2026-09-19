@@ -1,7 +1,7 @@
 /datum/patron/divine/eora
 	name = "Eora"
 	domain = "Goddess of Love, Life and Beauty"
-	desc = "Baotha's fairer half, made from blind, unconditional love. She is without a shred of hate in her heart and taught mankind that true love that even transcends Necra's grasp."
+	desc = "Eora embodies unconditional love, untouched by hatred. She taught mortals that sincere devotion can endure suffering, separation, and even Necra's final embrace."
 	worshippers = "Lovers, the Romantically Inclined, and Doting Grandparents"
 	mob_traits = list(TRAIT_EMPATH, TRAIT_EXTEROCEPTION, TRAIT_MARRIAGE_CAPABLE)
 	miracles = list(/datum/action/cooldown/spell/touch/orison					= CLERIC_ORI,

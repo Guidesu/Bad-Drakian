@@ -1,7 +1,7 @@
 /datum/patron/divine/abyssor
 	name = "Abyssor"
 	domain = "God of the Sea, Dreams, and The Unknown"
-	desc = "The strongest of the Ten; when awakened, the world flooded for a thousand daes and a thousand nights before He was put to slumber. Resting fitfully did Dendor split from his skull like a gaping wound, blessing the primodal men with the first taste of water - and in their dreams, the first nightmares."
+	desc = "Abyssor is the strongest of the Ten. When He awoke, the world flooded for a thousand days and nights before He returned to slumber. From His restless dreams came Dendor, while the first mortals received both the gift of water and the terror of nightmares."
 	worshippers = "Sailors, Seapeople, and Sages"
 	mob_traits = list(TRAIT_ABYSSOR_SWIM, TRAIT_SEA_DRINKER)
 	miracles = list(/datum/action/cooldown/spell/touch/orison					= CLERIC_ORI,

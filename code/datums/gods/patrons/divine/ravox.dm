@@ -1,7 +1,7 @@
 /datum/patron/divine/ravox
 	name = "Ravox"
 	domain = "God of Justice, Glory, Battle"
-	desc = "Stalwart warrior, glorious justicar; legends say he came down to the Basin to repel the vile hordes of demons with his own hands, and that he seeks warriors for his divine army among mortals."
+	desc = "Ravox is the steadfast warrior and divine justiciar. Legends claim He descended into the Basin to repel demonic hordes with His own hands, and that He still seeks worthy mortals for His celestial host."
 	worshippers = "Warriors, Sellswords, and those who seek Justice"
 	mob_traits = list(TRAIT_SHARPER_BLADES)
 	traits_tier = list(TRAIT_BATTLEMASTER = CLERIC_T1, TRAIT_JUSTICARSIGHT = CLERIC_T3)

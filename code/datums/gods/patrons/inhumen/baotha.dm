@@ -1,7 +1,7 @@
 /datum/patron/inhumen/baotha
 	name = "Baotha"
 	domain = "Goddess of Comfort, Passion, Addiction, and Heartbreak"
-	desc = "Belladoth was the Eleventh of the Pantheon, In taboo rituo, she took on the pain of the uncomforted and outcast, those that had been rejected by her siblings; and together, their pain became Baotha. A saccharine truth that the hurts of the world need not be shouldered alone, no matter who you are. She offers succor to those that cannot find it elsewhere. Baothans range from the Heartbroken and Damaged to those that have simply turned to Nihilism in the face of the death of Psydonia."
+	desc = "Belladoth was once counted as the Eleventh of the Pantheon. Through a forbidden rite, She accepted the pain of those rejected by Her siblings, and their shared anguish transformed Her into Baotha. She offers comfort, pleasure, and oblivion to the heartbroken, the wounded, and those who can no longer bear the world's grief alone."
 	worshippers = "The Anguished, the Hollow, the Heartbroken, the Addicted, those who break taboo"
 	mob_traits = list(TRAIT_DEPRAVED, TRAIT_CICERONE, TRAIT_BAOTHAN_CALM) ///this is fine
 	miracles = list(/datum/action/cooldown/spell/touch/orison						= CLERIC_ORI,

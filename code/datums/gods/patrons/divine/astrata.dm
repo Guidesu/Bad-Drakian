@@ -1,7 +1,7 @@
 /datum/patron/divine/astrata
 	name = "Astrata"
 	domain = "Goddess of the Sun, Dae, and Order"
-	desc = "The Tyrant of the Ten, sister and rival to Noc - and the eldest of them all. Her radiance keeps the evils at bay during the dae. Nite, however, is a different tale."
+	desc = "Astrata is the eldest of the Ten, the stern sovereign of the heavens and the sister and rival of Noc. Her radiance holds the world's evils at bay throughout the day; night belongs to other powers."
 	worshippers = "Zealots, Farmers, and the Noble-Hearted"
 	mob_traits = list(TRAIT_APRICITY)
 	miracles = list(/datum/action/cooldown/spell/touch/orison					= CLERIC_ORI,

@@ -1,7 +1,7 @@
 /datum/patron/divine/malum
 	name = "Malum"
 	domain = "God of Fire, Destruction and Rebirth"
-	desc = "Opinionless god of the crafts. He teaches that great works for killing or saving are great works, either way. The well-oiled guillotine and the well-sharpened axe are tools, and there is no good and evil to their craft."
+	desc = "Malum is the impartial god of craft. He teaches that workmanship has no morality of its own: a healer's instrument and an executioner's blade are both judged by the discipline and skill of their maker."
 	worshippers = "Smiths, Miners, Engineers"
 	mob_traits = list(TRAIT_FORGEBLESSED)
 	miracles = list(/datum/action/cooldown/spell/touch/orison				= CLERIC_ORI,

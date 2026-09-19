@@ -1,7 +1,7 @@
 /datum/patron/inhumen/matthios
 	name = "Matthios"
 	domain = "God of Exchange, Alchemy, Theft, and Greed"
-	desc = "The Man who stole fire from the sun and used it in his pursuit of immortality; exchanging the knowledge of how to make fire with the lessers for safety in doing so. He guides those who live in the dark, away from the flame of civilization; and those who believe in his cause bring the wealth of the undeserving in the light to the deserving in the dark."
+	desc = "Matthios was the mortal who stole fire from the sun while pursuing immortality. He traded its secrets to the dispossessed in return for shelter and loyalty. His followers take wealth from those who hoard it in the light and carry it to those forced to survive in darkness."
 	worshippers = "Highwaymen, Alchemists, Downtrodden Peasants, and Merchants"
 	crafting_recipes = list(/datum/crafting_recipe/roguetown/sewing/bandithood, /datum/crafting_recipe/roguetown/structure/matthios_cross_stone, /datum/crafting_recipe/roguetown/structure/matthios_cross_meat)
 	mob_traits = list(TRAIT_FREEMAN, TRAIT_MATTHIOS_EYES, TRAIT_SEEPRICES_SHITTY)

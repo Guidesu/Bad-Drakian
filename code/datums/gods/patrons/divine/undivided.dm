@@ -1,7 +1,7 @@
 /datum/patron/divine/undivided
 	name = "Undivided"
 	domain = "The Divine, Lyfe, Death, Existence"
-	desc = "Ten Eternal, Divine Pantheon United, Bulwark against the Darkness. The Ten dilligently watch over their flock granting them potent boons, but not every man catches the attention of merely one. Take lessons from all from them all, for they are your masters and mentors."
+	desc = "The Ten Eternal stand united as the Divine Pantheon and the mortal world's bulwark against darkness. Those who worship the Pantheon Undivided seek wisdom from every member rather than devoting themselves to one alone."
 	worshippers = "Commonfolk, Grenzelhoftians, Clergymen of the Holy See, and Pragmatists of the Ten"
 	mob_traits = list(TRAIT_UNDIVIDED)
 	miracles = list(/datum/action/cooldown/spell/touch/orison					= CLERIC_ORI,

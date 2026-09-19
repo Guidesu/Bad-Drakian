@@ -1,7 +1,7 @@
 /datum/patron/inhumen/zizo
 	name = "Zizo"
 	domain = "Progress, Undeath, Hubris, Artifice, Left Hand Magicks"
-	desc = "A once-mortal snow elf turned goddess. Her hubris in thinking she could harvest lux from the planet itself led to the elimination of her entire race. Her works are still used to this dae in some cases."
+	desc = "Zizo was a mortal snow elf who ascended to godhood. Her attempt to draw lux from the world itself destroyed Her people, yet fragments of Her forbidden craft remain in use among sorcerers and cultists."
 	worshippers = "Necromancers, Researchers, Wizards, Warlocks and the Undead"
 	traits_tier = list(TRAIT_ZIZOSIGHT = CLERIC_T1)
 	mob_traits = list(TRAIT_CABAL, TRAIT_GRAVEROBBER)
