@@ -1,10 +1,8 @@
 /datum/faith/old_god
-	name = "Genesism"
+	name = "Church of the All-Father"
 	translated_name = "The Church of the All-Father"
-	desc = "Church turned its back on <b>architector of the Universe</b>, believing that he had fallen at the hands of <b>archiva</b>. But we know the truth. \n\
-		<b>PSYDON IS ALIVE. PSYDON WILL ENDURE.</b>\n\
-		PSYDON has sent us<b>THE COMET OF ZION</b>, so that we do not doubt His eternal power over the world. The eyes of the blind will be opened at the End of Times, when the FATHER returns to us — until then, we will be ready to answer HIS call."
-	worshippers = "Giza, Otava, the Masters of the Church of Grenzelhoft, as well as the Orthodox diasporas throughout <b>PydoniaZZP0001ZZ."
+	desc = "The Church of the Ten teaches that Psydon fell during the War in Heaven. The faithful of the All-Father reject that claim. To them, His silence is a trial rather than proof of His death, and the Comet of Zion is a sign that His power still reaches the world. They prepare for the day when the Architect returns and calls His children to account."
+	worshippers = "The people of Giza and Otava, Grenzelhoftian churchmen, inquisitors, and Psydonite communities throughout Psydonia."
 	godhead = /datum/patron/old_god
 
 /datum/patron/old_god
@@ -46,18 +44,16 @@
 	)
 	miracles = list()
 	traits_tier = list(TRAIT_PSYDONITE = CLERIC_T0, TRAIT_PSYDONITE_2 = CLERIC_T1, TRAIT_PSYDONIC_MEDICINE = CLERIC_T2, TRAIT_PSYDONITE_3 = CLERIC_T2, TRAIT_PSYDONITE_4 = CLERIC_T3)
-	domain = "Everything is subject to the Architect of Being."
-	desc = "Architect of the universe, true lord <b>Psyidonia</b>. Martyr. \n\
-«....» - Only oppressive silence in the heavenly halls from now on. The Architect of Being no longer proclaims His edicts.\n\
-Psydon is now known as the wounded god, the martyr god, but true believers know — the Architect of Being, the All-Father, is alive. It is He who created the world according to His vision, creating it only for Himself and His followers."
-	worshippers = "Inhabitants of Giza, Ottawa, and the imperial territories of Grenzelhoft, inquisitors, fanatics, masters of steam and gunpowder, martyrs and the doomed."
+	domain = "Creation, humanity, sacrifice, endurance, and rightful order."
+	desc = "Psydon is the Architect of Being and the wounded All-Father. The heavens have fallen silent since the War in Heaven, yet His faithful insist that silence is not death. He made the world according to His design, suffered for it, and will one day return to judge what mortalkind has made of His creation."
+	worshippers = "The people of Giza and Otava, Grenzelhoftian faithful, inquisitors, engineers, soldiers, martyrs, and the desperate."
 	associated_faith = /datum/faith/old_god
 	confess_lines = list(
 		"THERE IS ONLY ONE GOD!",
-		"PSYIDON IS STILL ALIVE! PSYIDON STILL PREVAILS!!",
-		"JUDGE THE HERETICS - PSAIDON WILL ENDURE!",
+		"PSYDON LIVES! PSYDON ENDURES!",
+		"JUDGE THE HERETICS - PSYDON WILL ENDURE!",
 		"EXPOSE THE PAGAN, KILL THE MONSTER!",
 		"MY GOD – WITH EVERY BROKEN BONE I SWEAR THAT I AM ALIVE!",
-		"EVEN NOW THERE IS STILL HOPE FOR HUMANITY! GLORY TO PSYIDON!",
-		"BEHOLD ME, PSAIDON; THE SACRIFICE HAS TAKEN FORM!"
+		"EVEN NOW THERE IS STILL HOPE FOR HUMANITY! GLORY TO PSYDON!",
+		"BEHOLD ME, PSYDON; THE SACRIFICE HAS TAKEN FORM!"
 	)

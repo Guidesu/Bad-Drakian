@@ -18,11 +18,10 @@
 	name = "ornate scales cross"
 
 /datum/faith/inhumen
-	name = "Ascendents"
+	name = "The Ascended"
 	translated_name = "Ascended"
-	desc = "<b> The Holy Ecclesiarchy</b>, also known among the followers of the Ten as <b> Pantheon of the Despicable</b> is a collection of three religious movements centered around the ideologies of those called <b> The Ascended</b>. Once mortal, the Ascended Ones have mastered divine powers by stealing the shards of the fallen <b>eotfather</b> in the confusion <b>Voyns in Heaven</b>.\n\
-		The ideologies of the Despicable are diverse and contradictory, and although in mortal life they were comrades, the followers of the Three can act both together and against each other — they are united only by hatred for the world order maintained by the Ten."
-	worshippers = "Rejected by the Church of Ten, radicals, nonconformists."
+	desc = "The Ascended are former mortals who seized fragments of divine power amid the chaos of the War in Heaven. The Church of the Ten condemns them as usurpers, but their followers see proof that divinity can be taken rather than inherited. Their doctrines differ sharply, united chiefly by contempt for the old order."
+	worshippers = "Outcasts rejected by the Church of the Ten, radicals, rebels, and religious nonconformists."
 	godhead = /datum/patron/inhumen/baotha
 
 /datum/patron/inhumen
@@ -69,7 +68,7 @@
 		"By the weaver woman", "To the weaver woman"
 )
 	domain = "Immortality, progress, blood, darkness, forbidden knowledge, ambitions."
-	desc = "Goddess of unliving, vengeance, metamorphosis, and darkness. Slayer of Psyidon, Archwing of the Pantheon of Ten, despised by all except her followers, Zizo herself does not see mortals as the object of her hatred. This is wonderfully demonstrated by her main commandment, which is often sung in the prayers of her cultists: 'The last enemy shall be destroyed — death.'"
+	desc = "Zizo is the goddess of undeath, vengeance, transformation, and forbidden knowledge. Reviled as Psydon's slayer and the great enemy of the Ten, she claims not to hate mortalkind but to liberate it from its final limitation. Her central promise is simple: 'The last enemy to be destroyed is death.'"
 	associated_faith = /datum/faith/cult_of_salvation
 	worshippers = "Drow loyalists, necromancers, sorcerers, researchers and practitioners of the dark aspects of magic, some clans of elder vampires, undead."
 	confess_lines = list(
@@ -103,7 +102,7 @@
 	)
 
 	domain = "Power, strength, superiority, conquest."
-	desc = "The god of strength and power that comes with it. While other deities condemn their flock to a miserable existence in a world where power comes through their blessing and by right of birth, Graggar proclaims that anyone strong enough to take what they desire can rule. \"The weak will inherit only dirt,\" he warns, reminding of the fate of those who do not strive to become stronger."
+	desc = "Graggar is the god of strength, conquest, and power claimed by force. Where other faiths sanctify birthright or divine favor, he teaches that anyone strong enough to seize authority has earned it. 'The weak will inherit only dirt,' his priests warn."
 	undead_hater = TRUE
 	worshippers = "Tribal peoples, madmen, maniacs, cruel people."
 	miracles = list(/datum/action/cooldown/spell/touch/orison					        = CLERIC_ORI,
@@ -150,7 +149,7 @@
 	)
 
 	domain = "Anarchy, freedom, revolution, equality, and brotherhood."
-	desc = "God of absolute freedom, anarchy, and rebellion. \"Through discord to prosperity,\" promises his chief commandment, and his followers will do anything to make it a reality, destroying the world order as we know it."
+	desc = "Matthios is the god of absolute freedom, rebellion, equality, and anarchy. His followers hold that no throne, church, or inherited chain possesses legitimate authority. 'Through discord to prosperity,' they proclaim as they labor to overturn the established order."
 	undead_hater = TRUE
 	worshippers = "Robbers, mercenaries, revolutionaries, freedom-loving people."
 	miracles = list(/datum/action/cooldown/spell/touch/orison									        = CLERIC_ORI,
@@ -180,7 +179,7 @@
 
 /datum/patron/inhumen/baotha
 	name = "Baotha"
-	translated_name = "Baota"
+	translated_name = "Baotha"
 	rusgodnames = list(
 		"Baota", "Baoty", "Baote", "Baotu", "Baotoy", "Baote",
 		"Enjoying", "Enjoying", "Enjoying", "Enjoying",
@@ -194,8 +193,8 @@
 	)
 
 	domain = "Hedonism, worldly pleasures, individualism."
-	desc = "Baota is the goddess of hedonism, worldly pleasures, and passions. \"Live, love, laugh!\" she said, watching the hustle around her and the efforts of those trying to move the world somewhere."
-	worshippers = "Spoiled rich people, marginals, escapists."
+	desc = "Baotha is the goddess of hedonism, passion, worldly pleasure, and escape from suffering. She dismisses grand designs for remaking the world in favor of living fully within it: seek joy, share desire, and refuse needless misery."
+	worshippers = "Hedonists, revelers, wealthy libertines, addicts, artists, and those seeking refuge from suffering."
 	undead_hater = TRUE
 	miracles = list(/datum/action/cooldown/spell/touch/orison					        = CLERIC_ORI,
 					/obj/effect/proc_holder/spell/invoked/TAbaothavice					= CLERIC_T0,
@@ -215,9 +214,9 @@
 					/obj/effect/proc_holder/spell/invoked/resurrect/baotha				= CLERIC_T4,
 	)
 	confess_lines = list(
-		"BAOTA DEMANDS PLEASURE!",
+		"BAOTHA DEMANDS PLEASURE!",
 		"LIVE, LAUGH, LOVE!",
-		"BAOTA - MY JOY!",
+		"BAOTHA - MY JOY!",
 	)
 
 /////////////////////////////////
@@ -241,7 +240,7 @@
 		return TRUE
 	for(var/obj/structure/fluff/psycross/cross in view(4, get_turf(follower)))
 		if(cross.divine == TRUE)
-			to_chat(follower, span_danger("That acursed cross interupts my prayers!"))
+			to_chat(follower, span_danger("That accursed cross interrupts my prayers!"))
 			return FALSE
 	for(var/obj/structure/fluff/psycross/graggar/cross in view(4, get_turf(follower)))
 		if(cross.divine == TRUE)
@@ -265,7 +264,7 @@
 	. = ..()
 	for(var/obj/structure/fluff/psycross/cross in view(4, get_turf(follower)))
 		if(cross.divine == TRUE)
-			to_chat(follower, span_danger("That acursed cross interupts my prayers!"))
+			to_chat(follower, span_danger("That accursed cross interrupts my prayers!"))
 			return FALSE
 	for(var/obj/structure/fluff/psycross/matthios/cross in view(4, get_turf(follower)))
 		if(cross.divine == TRUE)
@@ -285,7 +284,7 @@
 	. = ..()
 	for(var/obj/structure/fluff/psycross/cross in view(4, get_turf(follower)))
 		if(cross.divine == TRUE)
-			to_chat(follower, span_danger("That acursed cross interupts my prayers!"))
+			to_chat(follower, span_danger("That accursed cross interrupts my prayers!"))
 			return FALSE
 	for(var/obj/structure/fluff/psycross/baotha/cross in view(4, get_turf(follower)))
 		if(cross.divine == TRUE)

@@ -8,9 +8,8 @@
 /datum/faith/divine
 	name = "Divine Pantheon"
 	translated_name = "Pantheon of Ten"
-	desc = "The most prevalent religion of Grimoria, centered around <b>DesyZZP0001ZZ deities who inherited the world from <b>ethefather</b>, who died at the hands of <b>archivraga</b>. \n\
-		The hordes of the Archenemy, may her name remain forgotten, are drawing ever closer; the pantheon<b>of the Despised</b> threatens to destroy our world; and even the Architect of the Universe can no longer help us. Only sincere, absolute faith in the Pantheon can save us from<b>the End of Times</b>."
-	worshippers = "Most of the inhabitants of the Grand Duchy of Azuria and many other states of Psydonia."
+	desc = "The dominant faith of Grimoria venerates the Ten, the gods who inherited stewardship of the world after the fall of the All-Father. Its churches teach that the Ten preserve creation against Zizo, the Ascended, and the ruin left by the War in Heaven. Only faith, righteous conduct, and Divine Order stand between mortalkind and the end of all things."
+	worshippers = "Most inhabitants of the western realms and communities of the faithful throughout Psydonia."
 
 /datum/patron/divine
 	profane_words = list(
@@ -45,7 +44,7 @@
 		"in the Pantheon", "Ten", "Of Ten", "Ten", "Tens", "by ten", "Of Ten"
 	)
 	domain = "All is subject to the Ten."
-	desc = "Ten, united under the shadow of Divine Order. The teaching of the Indivisible Pantheon is key for the Valorian Holy See and places understanding the domains of each of the Ten as inseparable elements of the cycle of life, as conceived by the Architect of the Universe, at the forefront."
+	desc = "The Ten are worshipped as a single, indivisible expression of Divine Order. This doctrine, championed by the Valorian Holy See, teaches that each god's domain forms an inseparable part of the cycle of creation first ordained by Psydon."
 	worshippers = "Clergy of the Valorian confession, Knights of the Oath, pragmatists of the Church of the Ten."
 	confess_lines = list(
 		"THE SACRED DECAGRAM WILL PROTECT MY SOUL!",
@@ -82,7 +81,7 @@
 	)
 
 	domain = "Sun, order, justice, faith, tactics and strategy, fertility."
-	desc = "Radiant Goddess of the Sun, His loving daughter and the one who has taken upon herself the heavy burden of watching over Grimoria in the absence of the Father and fighting the forces that try to plunge the world into darkness and chaos."
+	desc = "Astrata is the radiant goddess of the sun and Psydon's firstborn daughter. In the All-Father's absence, she bears the burden of defending Grimoria against darkness and chaos, demanding order, discipline, and faith from those who live beneath her light."
 	worshippers = "Priests of the Grenzelhoft confession, nobles, fanatics, officers, peasants, and farmers."
 	confess_lines = list(
 		"ASTRATA - MY LIGHT!",
@@ -92,7 +91,7 @@
 
 /datum/patron/divine/noc
 	name = "Noc"
-	translated_name = "Nok"
+	translated_name = "Noc"
 	rusgodnames = list(
 		"Nok",
 		"Moon Maiden", "Moon Maiden's", "Moon Maiden to", "Moon Maiden",
@@ -101,7 +100,7 @@
 	)
 
 	domain = "Moon, knowledge, twilight, arcana, control, dreams."
-	desc = "Goddess of knowledge, night, Moon, and secrets. The first ruler of the Arcana. Nok is the twin sister of the firstborn Astrata. Upon seeing the Moon for the first time, she named it her possession, and every time she raises it to the skies above Grimoria to illuminate the dark night for those who follow her."
+	desc = "Noc is the goddess of knowledge, night, the moon, and guarded secrets, and the first master of the arcane arts. Astrata's twin and rival, she raises the moon over Grimoria to guide those who seek wisdom beyond the certainty of daylight."
 	worshippers = "Priests of the Dvergale Patriarchy, mages, scholars, scribes, ambitious individuals, researchers."
 /*	miracles = list(/datum/action/cooldown/spell/touch/orison				= CLERIC_ORI,
 					/datum/action/cooldown/spell/noc/sight					= CLERIC_T0,
@@ -118,8 +117,8 @@
 					/obj/effect/proc_holder/spell/invoked/resurrect/noc		= CLERIC_T4,
 	)*/
 	confess_lines = list(
-		"NOK IS THE NIGHT!",
-		"NOK SEES EVERYTHING!",
+		"NOC IS THE NIGHT!",
+		"NOC SEES EVERYTHING!",
 		"I SEEK THE SECRETS OF THE MOON!",
 	)
 
@@ -137,7 +136,7 @@
 	)
 
 	domain = "Nature, animals, hunting, fertility, madness, transformation."
-	desc = "The youngest son of Poseidon, the one to whom a loving Father allotted green thickets, mighty beasts, and groves as his possession. Over time, he went mad from the cruelty of this world and his influence weakened, and nevertheless… the further from civilization, in forests dark with thickets, in humid jungles and mountains… you will understand how great his influence is."
+	desc = "Dendor, youngest son of Psydon, was entrusted with the forests, beasts, and untamed places of the world. The cruelty of creation drove him to madness, yet his power has never vanished. Beyond roads and walls, in ancient forests, jungles, and mountains, his will remains absolute."
 	worshippers = "Druids, shamans, beasts, madmen, hunters, herders, gatherers."
 	confess_lines = list(
 		"DENDOR PROVIDES FOOD!",
@@ -161,7 +160,7 @@
 	)
 
 	domain = "Sea, wind, element, trade, sailing, natural magic, nightmares, mysteries."
-	desc = "The wrathful sea god, raging sea element that sends storms to the seas and winds to the land. Son of Poseidon, who failed to inherit his father's throne, and yet people fear and respect his unrestrained element."
+	desc = "Abyssor is the wrathful god of the sea, master of storms, winds, and the mysteries beneath the waves. Though Psydon's son did not inherit the All-Father's throne, sailors and coastal peoples honor him because no mortal command can restrain the ocean."
 	worshippers = "Sailors, pirates, fishermen, merchants."
 	confess_lines = list(
 		"ABYSSOR COMMANDS THE WAVES!",
@@ -181,7 +180,7 @@
 	)
 
 	domain = "War, courage, justice, strength, pride."
-	desc = "A mortal who, by his unwavering will, determination, honest word, and courage, rightly earned a place in the Pantheon. A hero of the divine war and one who, in a time of need, stood to protect mortals."
+	desc = "Ravox was a mortal whose courage, steadfast word, and unbreakable will earned him a place among the Ten. A hero of the War in Heaven, he stood in defense of mortalkind when the gods themselves faltered."
 	worshippers = "Warriors, soldiers, mercenaries, wandering knights, judges."
 	miracles = list(/datum/action/cooldown/spell/touch/orison								= CLERIC_ORI,
 					/obj/effect/proc_holder/spell/targeted/touch/summonrogueweapon/TAravoxgrasp = CLERIC_T0,
@@ -205,7 +204,7 @@
 
 /datum/patron/divine/necra
 	name = "Necra"
-	translated_name = "Nekra"
+	translated_name = "Necra"
 	rusgodnames = list(
 		"Nekra", "Necra", "Necra", "Nekru", "Nekroy", "Necra",
 		"Lady of the Veil", "Ladies of the Veil", "To the Lady of the Veil", "Lady of the Veil (Accusative)",
@@ -214,7 +213,7 @@
 		"Faceless (Dative)", "Faceless (Dative)"
 	)
 	domain = "Death, life, cycle, fate."
-	desc = "Mistress of the underworld, she-who-knows-everything that was and what is to come, the middle daughter of Psideon, who always remained in the shadows, tirelessly bearing the burden placed on her by her father."
+	desc = "Necra is the veiled mistress of the underworld, keeper of what has passed and what must yet come. Psydon's middle daughter has always worked beyond the light, tirelessly guiding the dead and preserving the boundary between life and the afterworld."
 	worshippers = "Mourners, gravediggers, the dead, philosophers."
 	miracles = list(/datum/action/cooldown/spell/touch/orison						= CLERIC_ORI,
 					/obj/effect/proc_holder/spell/invoked/necras_sight				= CLERIC_T0,
@@ -248,12 +247,12 @@
 	)
 
 	domain = "Cunning, movement, laughter, mischief, eloquence, luck."
-	desc = "The many-faced god of cunning and mischief, the only one of the Ten who gained divinity solely through his own tricks, is the subject of many legends and rumors, and just as many of them are true, just as many are false."
+	desc = "Xylix is the many-faced god of cunning, luck, eloquence, and mischief. He is said to be the only member of the Ten who won divinity through wit alone. Countless stories recount his exploits; appropriately, no one knows which are true."
 	worshippers = "Jesters, actors, minstrels, con artists, scoundrels, thieves, lucky ones."
 	confess_lines = list(
 		"I SERVE THE DIVINE PANTHEON!",
 		"ASTRATA - MY LIGHT!",
-		"NOK IS THE NIGHT!",
+		"NOC IS THE NIGHT!",
 		"DENDOR PROVIDES FOOD!",
 		"ABYSSOR COMMANDS THE WAVES!",
 		"RAVOX IS JUSTICE!",
@@ -265,13 +264,13 @@
 		"LONG LIVE ZIZO!",
 		"GRAGGAR - THE BEAST I WORSHIP!",
 		"MATTIOS - MY LORD!",
-		"BAOTA - MY JOY!",
-		"JUDGE THE HERETICS - PSAIDON WILL ENDURE!",
+		"BAOTHA - MY JOY!",
+		"JUDGE THE HERETICS - PSYDON WILL ENDURE!",
 	)
 
 /datum/patron/divine/pestra
 	name = "Pestra"
-	translated_name = "Motley"
+	translated_name = "Pestra"
 	rusgodnames = list(
 		"Motley", "Pestri", "Pestre", "Pestru", "Pestraya", "Pestre",
 		"Maiden-Martyr", "Maidens-Martyrs", "Maiden-Martyr", "Maiden-Martyr",
@@ -281,7 +280,7 @@
 	)
 
 	domain = "Diseases, suffering, healing, mercy, overcoming, purification, peace."
-	desc = "Patroness of diseases, medicine, and those in need, whose merciful hand seeks to rid the world of the spawn of darkness, infection, and torment."
+	desc = "Pestra is the patron of medicine, disease, mercy, and those who suffer. Her faithful study corruption and contagion not to glorify them, but to understand, contain, and overcome the afflictions that torment mortalkind."
 	worshippers = "Doctors, surgeons, patients, martyrs, sorcerers, apothecaries."
 	confess_lines = list(
 		"PESTRA HEALS ALL AILMENTS!",
@@ -300,7 +299,7 @@
 		"By the God-Smith", "About the God-Smith"
 	)
 	domain = "Fire, steel, labor, craft, patience, perseverance."
-	desc = "Fiery God-Smith, the first of the ascended mortals, patron of the working, the one who carries craft and creation alongside the forging of his own soul. 'Labor is already a reward.' Malum is known both for his indifference and strictness toward followers; their creations please him far more."
+	desc = "Malum is the fiery God-Smith, first among the mortals raised into the Ten and patron of labor and craft. He teaches that work is its own reward and judges followers by what they create rather than what they promise."
 	worshippers = "Smiths, builders, architects, masons, workers."
 	miracles = list(/datum/action/cooldown/spell/touch/orison					= CLERIC_ORI,
 					/obj/effect/proc_holder/spell/invoked/TArestoration			= CLERIC_T0,
@@ -333,7 +332,7 @@
 	)
 
 	domain = "Life, family, peace, beauty, compassion."
-	desc = "The youngest of the gods, the one who brought an end to the strife between the gods and between mortals, uniting them under the sign of love."
+	desc = "Eora is the youngest of the Ten, goddess of love, beauty, family, and reconciliation. She ended feuds among gods and mortals alike, teaching that compassion can bind together what violence has torn apart."
 	worshippers = "Painters, sculptors, writers, diplomats, orators, spouses and lovers."
 	confess_lines = list(
 		"EORA UNITES US!",

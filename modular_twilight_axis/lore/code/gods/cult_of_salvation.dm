@@ -1,7 +1,6 @@
 /datum/faith/cult_of_salvation
 	name = "The Cult of Salvation"
 	translated_name = "Cult of Salvation"
-	desc = "Cultists of the Savior reject the world order as we know it and follow the dark, bloody light of Zizo. \n\
-		The ideas of the doctrine followed by the zizoids have deep roots in the history of this world, shrouded in tëby me with a veil of secrets and mysteries. But they converge in one thing. This world is yours. There are no shackles, rules, morality, or boundaries here. You are free to create around yourself whatever you wish; you only need courage, desire, and the knowledge of how to achieve it."
+	desc = "The Cult of Salvation rejects the established order and follows Zizo's dark, blood-red light. Its many secretive doctrines share one promise: death is the final chain, and knowledge can break it. To the cult, inherited law and conventional morality are tools of submission; will, courage, and forbidden understanding are the means by which mortals may remake themselves and their world."
 	worshippers = "Those who seek forbidden knowledge; those who are turned away by others; those who desperately fear death."
 	godhead = /datum/patron/inhumen/zizo
