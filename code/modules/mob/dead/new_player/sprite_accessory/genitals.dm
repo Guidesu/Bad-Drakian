@@ -80,6 +80,12 @@
 	icon_state = "taperedknot"
 	name = "Tapered, Knotted"
 	default_colors = list("C52828", "C52828")
+
+/datum/sprite_accessory/penis/tapered_knot_mammal
+	icon_state = "taperedknot"
+	name = "Tapered, Knotted (Mammal)"
+	color_key_defaults = list(null, KEY_CHEST_COLOR)
+	default_colors = list("C52828", null)
 //TA add end - NEW ERP SYSTEM
 
 /datum/sprite_accessory/penis/tapered
@@ -102,6 +108,12 @@
 	icon_state = "hemi"
 	name = "Hemi"
 	default_colors = list("C52828", "C52828")
+
+/datum/sprite_accessory/penis/hemi_mammal
+	icon_state = "hemi"
+	name = "Hemi (Mammal)"
+	color_key_defaults = list(null, KEY_CHEST_COLOR)
+	default_colors = list("C52828", null)
 
 /datum/sprite_accessory/penis/hemiknot
 	icon_state = "hemiknot"

@@ -15,6 +15,9 @@
 	copy_to(mannequin, 1, TRUE, TRUE)
 	var/obj/item/organ/penis/preview_penis = mannequin.getorganslot(ORGAN_SLOT_PENIS)
 	if(preview_penis)
+		// The arousal preview must remain visible through the mannequin's saved
+		// underwear so sheath opening and erect sprite states can be inspected.
+		mannequin.erp_bottom_exposed = preview_boner_state != ERECT_STATE_NONE
 		preview_penis.update_erect_state(preview_boner_state)
 	return mannequin.appearance
 
